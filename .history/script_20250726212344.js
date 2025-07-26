@@ -65,17 +65,4 @@ document.querySelectorAll(".menu-tab").forEach((tab) => {
     const category = this.dataset.category;
     showMenuCategory(category);
   });
-});
-// Event-Listener für mobile Menü-Toggle
-document.getElementById("mobile-menu-toggle").addEventListener("click", function () {
-  toggleMobileMenu();
-});
-// Event-Listener für mobile Menü-Klicks        
-document.querySelectorAll(".mobile-menu-item").forEach((item) => {
-  item.addEventListener("click", function () {
-    const category = this.dataset.category;
-    showMenuCategory(category);
-    toggleMobileMenu();
-  });
-});
-
+}

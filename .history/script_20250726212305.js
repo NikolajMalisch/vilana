@@ -39,43 +39,4 @@ function setLanguage(lang) {
 function getSavedLanguage() {
   return localStorage.getItem("vilana-lang");
 }
-// Initiale Sprache setzen
-if (getSavedLanguage()) {
-  setLanguage(getSavedLanguage());
-}
-// Event-Listener für Sprachumschalter
-document.querySelectorAll(".lang-switch").forEach((el) => {
-  el.addEventListener("click", function () {
-    const lang = this.dataset.lang;
-    setLanguage(lang);
-  });
-});
-// Menü-Kategorie beim Laden anzeigen
-document.addEventListener("DOMContentLoaded", function () {
-  const initialCategory = document.querySelector(".menu-category:not(.hidden)")?.id.replace("menu-", "");
-  if (initialCategory) {
-    showMenuCategory(initialCategory);
-  } else {
-    showMenuCategory("food");
-  }
-});
-// Event-Listener für Menü-Klicks
-document.querySelectorAll(".menu-tab").forEach((tab) => {
-  tab.addEventListener("click", function () {
-    const category = this.dataset.category;
-    showMenuCategory(category);
-  });
-});
-// Event-Listener für mobile Menü-Toggle
-document.getElementById("mobile-menu-toggle").addEventListener("click", function () {
-  toggleMobileMenu();
-});
-// Event-Listener für mobile Menü-Klicks        
-document.querySelectorAll(".mobile-menu-item").forEach((item) => {
-  item.addEventListener("click", function () {
-    const category = this.dataset.category;
-    showMenuCategory(category);
-    toggleMobileMenu();
-  });
-});
-
+// Initiale Sprache setzen  

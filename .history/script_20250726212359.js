@@ -78,4 +78,3 @@ document.querySelectorAll(".mobile-menu-item").forEach((item) => {
     toggleMobileMenu();
   });
 });
-
