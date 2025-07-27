@@ -78,29 +78,29 @@ document.querySelectorAll(".mobile-menu-item").forEach((item) => {
     item.addEventListener("click", function () {
     const category = this.dataset.category;
     showMenuCategory(category);
-    toggleMobileMenu();
+      toggleMobileMenu();
     });
-});
+  });
 }
 
 // Event-Listener für das Schließen des mobilen Menüs bei Klick außerhalb
 if (document.getElementById("mobile-menu")) {
-document.addEventListener("click", function (event) {
+  document.addEventListener("click", function (event) {
     const menu = document.getElementById("mobile-menu");
     if (!menu.contains(event.target) && !document.getElementById("mobile-menu-toggle").contains(event.target)) {
-    menu.classList.add("hidden");
+      menu.classList.add("hidden");
     }
-});
+  });
 }
 
 // Event-Listener für das Schließen des mobilen Menüs bei Escape-Taste
 if (document.getElementById("mobile-menu")) {
-document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-    const menu = document.getElementById("mobile-menu");
-    if (!menu.classList.contains("hidden")) {
+      const menu = document.getElementById("mobile-menu");
+      if (!menu.classList.contains("hidden")) {
         menu.classList.add("hidden");
+      }
     }
-    }
-});
+  });
 }

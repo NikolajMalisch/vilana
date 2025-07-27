@@ -100,7 +100,7 @@ document.addEventListener("keydown", function (event) {
     const menu = document.getElementById("mobile-menu");
     if (!menu.classList.contains("hidden")) {
         menu.classList.add("hidden");
+      }
     }
-    }
-});
+  });
 }

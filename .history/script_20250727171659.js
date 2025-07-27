@@ -102,5 +102,5 @@ document.addEventListener("keydown", function (event) {
         menu.classList.add("hidden");
     }
     }
-});
+  });
 }

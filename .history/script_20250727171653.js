@@ -95,12 +95,12 @@ document.addEventListener("click", function (event) {
 
 // Event-Listener für das Schließen des mobilen Menüs bei Escape-Taste
 if (document.getElementById("mobile-menu")) {
-document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-    const menu = document.getElementById("mobile-menu");
-    if (!menu.classList.contains("hidden")) {
+      const menu = document.getElementById("mobile-menu");
+      if (!menu.classList.contains("hidden")) {
         menu.classList.add("hidden");
+      }
     }
-    }
-});
+  });
 }
