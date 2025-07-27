@@ -3,13 +3,13 @@
 // Sobald die Seite geladen ist...
 document.addEventListener("DOMContentLoaded", function () {
   // Sprache setzen (aus localStorage oder Standard = Deutsch)
-setLanguage(getSavedLanguage() || "de");
+  setLanguage(getSavedLanguage() || "de");
 
   // Menü-Kategorie-Anzeige-Funktion definieren
-window.showMenuCategory = function (category) {
+  window.showMenuCategory = function (category) {
     // Alle Kategorien ausblenden
     document.querySelectorAll(".menu-category").forEach((el) =>
-    el.classList.add("hidden")
+      el.classList.add("hidden")
     );
     // Ausgewählte Kategorie anzeigen
     const selected = document.querySelector(`#menu-${category}`);
@@ -17,22 +17,22 @@ window.showMenuCategory = function (category) {
 
     // Alle Tabs visuell zurücksetzen
     document.querySelectorAll(".menu-tab").forEach((tab) => {
-    tab.classList.remove("bg-amber-600", "text-white");
-    tab.classList.add("bg-gray-300", "text-gray-700");
+      tab.classList.remove("bg-amber-600", "text-white");
+      tab.classList.add("bg-gray-300", "text-gray-700");
     });
     // Aktiven Tab hervorheben
     const activeTab = document.querySelector(`#menu-tab-${category}`);
     if (activeTab) activeTab.classList.add("bg-amber-600", "text-white");
-};
+  };
 
   // Mobile-Menü ein-/ausblenden
-window.toggleMobileMenu = function () {
+  window.toggleMobileMenu = function () {
     const menu = document.getElementById("mobile-menu");
     if (menu) menu.classList.toggle("hidden");
-};
+  };
 
   // Beim Laden eine Standard-Kategorie anzeigen
-const initialCategory = document
+  const initialCategory = document
     .querySelector(".menu-category:not(.hidden)")
     ?.id.replace("menu-", "");
 if (initialCategory) {

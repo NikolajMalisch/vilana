@@ -3,13 +3,13 @@
 // Sobald die Seite geladen ist...
 document.addEventListener("DOMContentLoaded", function () {
   // Sprache setzen (aus localStorage oder Standard = Deutsch)
-setLanguage(getSavedLanguage() || "de");
+  setLanguage(getSavedLanguage() || "de");
 
   // Menü-Kategorie-Anzeige-Funktion definieren
-window.showMenuCategory = function (category) {
+  window.showMenuCategory = function (category) {
     // Alle Kategorien ausblenden
     document.querySelectorAll(".menu-category").forEach((el) =>
-    el.classList.add("hidden")
+      el.classList.add("hidden")
     );
     // Ausgewählte Kategorie anzeigen
     const selected = document.querySelector(`#menu-${category}`);
@@ -17,8 +17,8 @@ window.showMenuCategory = function (category) {
 
     // Alle Tabs visuell zurücksetzen
     document.querySelectorAll(".menu-tab").forEach((tab) => {
-    tab.classList.remove("bg-amber-600", "text-white");
-    tab.classList.add("bg-gray-300", "text-gray-700");
+      tab.classList.remove("bg-amber-600", "text-white");
+      tab.classList.add("bg-gray-300", "text-gray-700");
     });
     // Aktiven Tab hervorheben
     const activeTab = document.querySelector(`#menu-tab-${category}`);

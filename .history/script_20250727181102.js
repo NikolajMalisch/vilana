@@ -3,7 +3,7 @@
 // Sobald die Seite geladen ist...
 document.addEventListener("DOMContentLoaded", function () {
   // Sprache setzen (aus localStorage oder Standard = Deutsch)
-setLanguage(getSavedLanguage() || "de");
+  setLanguage(getSavedLanguage() || "de");
 
   // Menü-Kategorie-Anzeige-Funktion definieren
 window.showMenuCategory = function (category) {
