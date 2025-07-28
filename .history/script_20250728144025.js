@@ -95,18 +95,18 @@ document.querySelectorAll(".lang").forEach((el) => el.classList.add("hidden"));
   // Ausgewählte Sprache einblenden
 document.querySelectorAll(`.lang-${lang}`).forEach((el) =>
     el.classList.remove("hidden")
-);
+  );
 
   // Aktiven Sprachbutton hervorheben
-document.getElementById("lang-de")?.classList.remove("lang-active");
-document.getElementById("lang-ru")?.classList.remove("lang-active");
-document.getElementById(`lang-${lang}`)?.classList.add("lang-active");
+  document.getElementById("lang-de")?.classList.remove("lang-active");
+  document.getElementById("lang-ru")?.classList.remove("lang-active");
+  document.getElementById(`lang-${lang}`)?.classList.add("lang-active");
 
   // Sprache speichern
-localStorage.setItem("vilana-lang", lang);
+  localStorage.setItem("vilana-lang", lang);
 }
 
 // Gespeicherte Sprache abrufen
 function getSavedLanguage() {
-return localStorage.getItem("vilana-lang");
+  return localStorage.getItem("vilana-lang");
 }

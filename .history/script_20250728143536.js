@@ -1,5 +1,6 @@
 // script.js  Sprachumschaltung und Menülogik für Vilana Event & Catering
 
+// Sobald die Seite geladen ist...
 document.addEventListener("DOMContentLoaded", function () {
   // Sprache setzen (aus localStorage oder Standard = Deutsch)
 setLanguage(getSavedLanguage() || "de");
@@ -21,10 +22,7 @@ window.showMenuCategory = function (category) {
     });
     // Aktiven Tab hervorheben
     const activeTab = document.querySelector(`#menu-tab-${category}`);
-    if (activeTab) {
-    activeTab.classList.add("bg-amber-600", "text-white");
-    activeTab.classList.remove("bg-gray-300", "text-gray-700");
-    }
+    if (activeTab) activeTab.classList.add("bg-amber-600", "text-white");
 };
 
   // Mobile-Menü ein-/ausblenden
@@ -78,14 +76,6 @@ document.addEventListener("keydown", function (event) {
     }
     }
 });
-
-  // Sprachumschalter-Klicks verarbeiten (добавлено внутрь DOMContentLoaded)
-document.querySelectorAll(".lang-switch").forEach((el) => {
-    el.addEventListener("click", function () {
-    const lang = this.dataset.lang;
-    setLanguage(lang);
-    });
-});
 });
 
 // Sprache setzen
@@ -110,3 +100,11 @@ localStorage.setItem("vilana-lang", lang);
 function getSavedLanguage() {
 return localStorage.getItem("vilana-lang");
 }
+
+// Sprachumschalter-Klicks verarbeiten
+document.querySelectorAll(".lang-switch").forEach((el) => {
+el.addEventListener("click", function () {
+    const lang = this.dataset.lang;
+    setLanguage(lang);
+});
+});

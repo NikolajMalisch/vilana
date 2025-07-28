@@ -72,41 +72,41 @@ document.addEventListener("click", function (event) {
   // Mobile-Menü schließen bei ESC-Taste
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-    const menu = document.getElementById("mobile-menu");
-    if (menu && !menu.classList.contains("hidden")) {
+      const menu = document.getElementById("mobile-menu");
+      if (menu && !menu.classList.contains("hidden")) {
         menu.classList.add("hidden");
+      }
     }
-    }
-});
+  });
 
   // Sprachumschalter-Klicks verarbeiten (добавлено внутрь DOMContentLoaded)
-document.querySelectorAll(".lang-switch").forEach((el) => {
+  document.querySelectorAll(".lang-switch").forEach((el) => {
     el.addEventListener("click", function () {
-    const lang = this.dataset.lang;
-    setLanguage(lang);
+      const lang = this.dataset.lang;
+      setLanguage(lang);
     });
-});
+  });
 });
 
 // Sprache setzen
 function setLanguage(lang) {
   // Alle Sprachblöcke ausblenden
-document.querySelectorAll(".lang").forEach((el) => el.classList.add("hidden"));
+  document.querySelectorAll(".lang").forEach((el) => el.classList.add("hidden"));
   // Ausgewählte Sprache einblenden
-document.querySelectorAll(`.lang-${lang}`).forEach((el) =>
+  document.querySelectorAll(`.lang-${lang}`).forEach((el) =>
     el.classList.remove("hidden")
-);
+  );
 
   // Aktiven Sprachbutton hervorheben
-document.getElementById("lang-de")?.classList.remove("lang-active");
-document.getElementById("lang-ru")?.classList.remove("lang-active");
-document.getElementById(`lang-${lang}`)?.classList.add("lang-active");
+  document.getElementById("lang-de")?.classList.remove("lang-active");
+  document.getElementById("lang-ru")?.classList.remove("lang-active");
+  document.getElementById(`lang-${lang}`)?.classList.add("lang-active");
 
   // Sprache speichern
-localStorage.setItem("vilana-lang", lang);
+  localStorage.setItem("vilana-lang", lang);
 }
 
 // Gespeicherte Sprache abrufen
 function getSavedLanguage() {
-return localStorage.getItem("vilana-lang");
+  return localStorage.getItem("vilana-lang");
 }

@@ -108,5 +108,5 @@ localStorage.setItem("vilana-lang", lang);
 
 // Gespeicherte Sprache abrufen
 function getSavedLanguage() {
-return localStorage.getItem("vilana-lang");
+  return localStorage.getItem("vilana-lang");
 }
