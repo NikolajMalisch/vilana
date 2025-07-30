@@ -1,23 +1,21 @@
-/* Google Fonts: Cinzel Decorative & Cinzel */
+/* ✅ Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@300;400;500;600&family=Cinzel+Decorative&family=Cinzel&display=swap');
+
+/* 🌟 Logo-Schriftarten */
 .logo-title {
 font-family: 'Cinzel Decorative', serif;
-font-size: 1.8rem;
+font-size: 1.5rem;
 font-weight: 400;
-letter-spacing: 0.5px;
+letter-spacing: 1px;
 }
 
 .logo-subtitle {
 font-family: 'Cinzel', serif;
-font-size: 1.2rem;
+font-size: 1rem;
 font-weight: 400;
-letter-spacing: 0.3px;
-margin-left: 6px;
+letter-spacing: 0.5px;
+margin-left: 4px;
 }
-
-.font-raleway {
-font-family: 'Raleway', sans-serif;
-}
-
 
 /* 🎨 Allgemeine Textschriftarten */
 .font-vilana {
@@ -39,13 +37,13 @@ transition: all 0.3s ease;
 }
 .logo-title {
 font-family: 'Cinzel Decorative', serif;
-font-weight: 400;
-font-size: 1.8rem;
+  font-weight: 400;
+  font-size: 1.8rem;
 }
 
 .logo-subtitle {
-font-family: 'Cinzel', serif;
-font-weight: 400;
-font-size: 1.2rem;
-margin-left: 8px;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-left: 8px;
 }
