@@ -22333,6 +22333,14 @@ video {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-cinzel {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.font-cormorant {
+  font-family: "Cormorant SC", serif;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -52935,6 +52943,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .sm\:font-cinzel {
+    font-family: "Cinzel Decorative", cursive;
+  }
+
+  .sm\:font-cormorant {
+    font-family: "Cormorant SC", serif;
+  }
+
   .sm\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -83183,6 +83199,14 @@ video {
 
   .md\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .md\:font-cinzel {
+    font-family: "Cinzel Decorative", cursive;
+  }
+
+  .md\:font-cormorant {
+    font-family: "Cormorant SC", serif;
   }
 
   .md\:text-xs {
@@ -113435,6 +113459,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-cinzel {
+    font-family: "Cinzel Decorative", cursive;
+  }
+
+  .lg\:font-cormorant {
+    font-family: "Cormorant SC", serif;
+  }
+
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -143685,6 +143717,14 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-cinzel {
+    font-family: "Cinzel Decorative", cursive;
+  }
+
+  .xl\:font-cormorant {
+    font-family: "Cormorant SC", serif;
+  }
+
   .xl\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -173933,6 +173973,14 @@ video {
 
   .\32xl\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .\32xl\:font-cinzel {
+    font-family: "Cinzel Decorative", cursive;
+  }
+
+  .\32xl\:font-cormorant {
+    font-family: "Cormorant SC", serif;
   }
 
   .\32xl\:text-xs {
