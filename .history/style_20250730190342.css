@@ -1,15 +1,15 @@
 /* 🎨 Google Fonts: Cinzel Decorative & Cinzel */
 .logo-title {
-font-family: 'Cinzel Decorative', serif;
-font-size: 1.8rem;
-font-weight: 400;
-letter-spacing: 0.5px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .logo-subtitle {
-font-family: 'Cinzel', serif;
-font-size: 1.2rem;
-font-weight: 400;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
 letter-spacing: 0.2px;
 margin-left: 8px;
 }
