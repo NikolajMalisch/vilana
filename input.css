@@ -1,0 +1,15 @@
+/* input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+.lang {
+    display: none;
+}
+.lang-de {
+    display: block;
+}
+.lang-ru.hidden {
+    display: none;
+}
+}
