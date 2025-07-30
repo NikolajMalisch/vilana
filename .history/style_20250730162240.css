@@ -29,14 +29,14 @@ font-weight: 400;
 
 /* Schriftarten für Überschrift */
 .font-vilana {
-font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cinzel Decorative', serif;
 }
 
 .font-vilana-sub {
-font-family: 'Cinzel', serif;
+  font-family: 'Cinzel', serif;
 }
 
 /* Button Hover Optimierung */
 a:hover, button:hover {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
