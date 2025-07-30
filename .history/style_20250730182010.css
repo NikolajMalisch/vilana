@@ -52,10 +52,10 @@ margin-left: 8px;
 
 /* === Vilana Logo Schrift === */
 .logo-title {
-font-family: 'Cinzel Decorative', serif !important;
-font-size: 1.8rem;
-font-weight: 400;
-letter-spacing: 0.5px;
+  font-family: 'Cinzel Decorative', serif !important;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .logo-subtitle {
