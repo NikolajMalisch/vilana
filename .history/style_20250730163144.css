@@ -12,26 +12,26 @@ letter-spacing: 1px;
 .logo-subtitle {
 font-family: 'Cinzel', serif;
 font-size: 1rem;
-font-weight: 400;
+  font-weight: 400;
 letter-spacing: 0.5px;
 margin-left: 4px;
 }
 
 /* 🎨 Allgemeine Textschriftarten */
 .font-vilana {
-font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cinzel Decorative', serif;
 }
 
 .font-vilana-sub {
-font-family: 'Cinzel', serif;
+  font-family: 'Cinzel', serif;
 }
 
 .font-raleway {
-font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* 🖱️ Smooth Hover Effekte für Links und Buttons */
 a:hover,
 button:hover {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }

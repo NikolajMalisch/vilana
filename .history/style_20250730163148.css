@@ -27,11 +27,11 @@ font-family: 'Cinzel', serif;
 }
 
 .font-raleway {
-font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* 🖱️ Smooth Hover Effekte für Links und Buttons */
 a:hover,
 button:hover {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
