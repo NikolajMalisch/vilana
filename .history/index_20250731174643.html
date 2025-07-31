@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vilana Event & Catering</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vilana Event & Catering</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel&family=Cormorant+SC&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel&family=Cormorant+SC&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
-    <style>
+  <!-- Custom Styles -->
+  <style>
     body {
-        font-family: 'Cormorant SC', serif;
+      font-family: 'Cormorant SC', serif;
     }
 
     .logo-container {
-        display: flex;
-        align-items: baseline;
-        gap: 0.3rem;
-        margin-top: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-top: 4px;
     }
 
-    .l ogo-title {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.8rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        line-height: 1.1;
-        margin-bottom: 2px;
+    .logo-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      margin-bottom: 2px;
     }
 
     .logo-subtitle {
-        font-family: 'Cormorant SC', serif;
-        font-size: 1.2rem;
-        font-weight: 400;
-        letter-spacing: 0.2px;
-        line-height: 1;
-        margin-top: 0;
+      font-family: 'Cormorant SC', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      margin-top: 0;
     }
 
     .lang-de, .lang-ru { display: none; }
     .lang-active { display: block; }
-    </style>
+  </style>
 </head>
 <body>
 
 <!-- Header -->
 <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
     <!-- Logo -->
     <div class="flex items-center">
-        <h1 class="logo-title">Vilana</h1>
-        <span class="logo-subtitle">&nbsp;Event & Catering</span>
+      <h1 class="logo-title">Vilana</h1>
+      <span class="logo-subtitle">&nbsp;Event & Catering</span>
     </div>
 
     <!-- Navigation -->
     <div class="flex items-center">
-        <nav class="hidden md:flex space-x-8 mr-8">
+      <nav class="hidden md:flex space-x-8 mr-8">
         <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
         <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
         <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
         <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
-        </nav>
+      </nav>
 
-        <!-- Language Switcher -->
-        <div class="language-selector">
+      <!-- Language Switcher -->
+      <div class="language-selector">
         <button onclick="setLanguage('de')" class="px-2 lang-active">🇩🇪</button>
         <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
-        </div>
+      </div>
 
-        <!-- Mobile Menu Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         </button>
     </div>
