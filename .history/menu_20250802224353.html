@@ -1,93 +1,126 @@
-<!DOCTYPE html>
-<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vilana Event & Catering | Menü</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilana Event & Catering</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
-  <style>
+    <!-- Benutzerdefinierte Schriftarten anwenden -->
+    <style>
     body {
-      font-family: 'Cormorant SC', serif;
-      background-color: #fdfaf6;
+        font-family: 'Cormorant SC', serif;
+        background-color: #fdfaf6;
     }
 
     h1, h2, h3, p, span {
-      font-family: 'Cormorant SC', serif;
+        font-family: 'Cormorant SC', serif;
     }
 
     .logo-container {
-      display: flex;
-      align-items: baseline;
-      gap: 0.3rem;
-      margin-top: 4px;
+        display: flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: 4px;
     }
 
     .logo-title {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      color: #1f2937;
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin-bottom: 2px;
+      color: #1f2937; /* Tailwind gray-800 */
     }
 
     .logo-subtitle {
-      font-size: 1.2rem;
-      color: #1f2937;
+        font-family: 'Cormorant SC', serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        margin-top: 0;
+      color: #1f2937; /* Tailwind gray-800 */
     }
 
-    .lang { display: none; }
-    .lang.active { display: block; }
-  </style>
+    .lang-de, .lang-ru {
+        display: none;
+    }
+
+    .lang-active {
+        display: block;
+    }
+    </style>
 </head>
 
+
 <body>
-  <!-- HEADER -->
-  <header class="bg-white shadow-md">
+
+<!-- Header -->
+    <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="logo-container">
+    <div class="logo-container">
         <h1 class="logo-title">Vilana</h1>
         <span class="logo-subtitle">Event & Catering</span>
-      </div>
+    </div>
 
-      <div class="flex items-center">
-        <nav class="hidden md:flex space-x-6 mr-8">
-          <a href="#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
-          <a href="#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-          <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-          <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
-          <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+    <!-- Navigation -->
+    <div class="flex items-center">
+        <nav class="hidden md:flex space-x-8 mr-8">
+        <a href="#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+        <a href="#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+        <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+        <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+        <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
 
-        <div class="language-selector ml-2">
-          <button onclick="switchLanguage('de')" class="px-2">🇩🇪</button>
-          <button onclick="switchLanguage('ru')" class="px-2">🇷🇺</button>
+        <!-- Language Switcher -->
+        <div class="language-selector">
+        <button onclick="setLanguage('de')" class="px-2 lang-active">🇩🇪</button>
+        <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
         </div>
-      </div>
+
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        </button>
     </div>
-  </header>
+    </div>
 
-  <!-- MAIN -->
-  <main class="py-16 bg-amber-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 lang lang-de active">Unser Menü</h2>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 lang lang-ru">Наше меню</h2>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+    <nav class="flex flex-col space-y-3">
+        <a href="#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+        <a href="#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+        <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+        <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+        <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+    </nav>
+    </div>
+</header>
 
-      <!-- Kategorie Tabs -->
-      <div class="flex justify-center mb-8 flex-wrap gap-2">
-        <button data-category="warm" class="menu-tab bg-amber-600 text-white px-4 py-2 rounded-full font-medium">Warme Speisen</button>
-        <button data-category="cold" class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">Kalte Platten</button>
-        <button data-category="salad" class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">Salate</button>
-        <button data-category="dessert" class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">Nachspeisen</button>
-        <button data-category="candy" class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">Candy Bar</button>
-      </div>
+<!-- MAIN CONTENT -->
+<main class="py-16 bg-amber-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 lang lang-de active">Unser Menü</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 lang lang-ru">Наше меню</h2>
+
+    <!-- Kategorie Tabs -->
+    <div class="flex justify-center mb-8">
+      <button data-category="warm" id="menu-tab-warm" class="px-4 py-2 mx-2 rounded-full bg-amber-600 text-white font-medium menu-tab">Warme Speisen</button>
+      <button data-category="cold" id="menu-tab-cold" class="px-4 py-2 mx-2 rounded-full bg-gray-300 text-gray-700 font-medium menu-tab">Kalte Platten</button>
+      <button data-category="salad" id="menu-tab-salad" class="px-4 py-2 mx-2 rounded-full bg-gray-300 text-gray-700 font-medium menu-tab">Salate</button>
+      <button data-category="dessert" id="menu-tab-dessert" class="px-4 py-2 mx-2 rounded-full bg-gray-300 text-gray-700 font-medium menu-tab">Nachspeisen</button>
+      <button data-category="candy" id="menu-tab-candy" class="px-4 py-2 mx-2 rounded-full bg-gray-300 text-gray-700 font-medium menu-tab">Candy Bar</button>
+    </div>
 
 
 <!-- Warme Speisen / Тёплые блюда -->
@@ -550,36 +583,33 @@
 
 </main>
 <!-- FOOTER -->
-  <footer class="bg-gray-800 text-white py-6 mt-16">
-    <div class="container mx-auto px-4 text-center text-sm">
-      &copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.
-    </div>
-  </footer>
+<footer class="bg-gray-800 text-white py-8 mt-16">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-sm">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
 
-  <!-- JavaScript -->
-  <script>
-    function switchLanguage(lang) {
-      document.querySelectorAll(".lang").forEach(el => el.classList.remove("active"));
-      document.querySelectorAll(".lang-" + lang).forEach(el => el.classList.add("active"));
-    }
+<!-- Optional Script für Sprache und Tabs -->
+<script>
+  function switchLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('active'));
+  }
 
-    document.querySelectorAll(".menu-tab").forEach(tab => {
-      tab.addEventListener("click", () => {
-        const category = tab.dataset.category;
+  document.querySelectorAll(".menu-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".menu-tab").forEach(t => t.classList.remove("bg-amber-600", "text-white"));
+      tab.classList.add("bg-amber-600", "text-white");
 
-        // Update buttons
-        document.querySelectorAll(".menu-tab").forEach(t => {
-          t.classList.remove("bg-amber-600", "text-white");
-          t.classList.add("bg-gray-300", "text-gray-700");
-        });
-        tab.classList.add("bg-amber-600", "text-white");
-        tab.classList.remove("bg-gray-300", "text-gray-700");
-
-        // Update category view
-        document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
-        document.getElementById("menu-" + category).classList.remove("hidden");
-      });
+      const category = tab.dataset.category;
+      document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
+      document.querySelector("#menu-" + category).classList.remove("hidden");
     });
-  </script>
+  });
+</script>
+
+<!-- Optional: eigenes Script -->
+<script src="script.js"></script>
+
 </body>
 </html>
