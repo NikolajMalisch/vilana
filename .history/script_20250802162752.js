@@ -136,6 +136,6 @@ imagePaths.forEach((path, index) => {
   wrapper.innerHTML = `
     <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-        onclick="openLightbox(${index})">`;
+         onclick="openLightbox(${index})">`;
   gallery.appendChild(wrapper);
 });

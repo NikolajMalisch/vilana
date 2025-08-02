@@ -128,14 +128,3 @@ function getSavedLanguage() {
   return localStorage.getItem("vilana-lang");
 }
 
-const gallery = document.getElementById('gallery');
-
-imagePaths.forEach((path, index) => {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
-  wrapper.innerHTML = `
-    <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
-        class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-        onclick="openLightbox(${index})">`;
-  gallery.appendChild(wrapper);
-});

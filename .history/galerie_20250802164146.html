@@ -3,81 +3,81 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering | Galerie</title>
+  <title>Vilana Event & Catering | Galerie</title>
 
-<!-- Tailwind CSS laden -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS laden -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts: Cinzel Decorative & Cormorant SC -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts: Cinzel Decorative & Cormorant SC -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Benutzerdefiniertes Styling -->
-<style>
+  <!-- Benutzerdefiniertes Styling -->
+  <style>
     body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
+      font-family: 'Cormorant SC', serif;
+      background-color: #fdfaf6;
     }
 
     /* Zoom-Effekt im Lightbox */
     .zoomed {
-    transform: scale(1.6);
-    transition: transform 0.3s ease-in-out;
-    cursor: zoom-out;
+      transform: scale(1.6);
+      transition: transform 0.3s ease-in-out;
+      cursor: zoom-out;
     }
 
     /* Titel-Schriftart */
     .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
+      font-family: 'Cinzel Decorative', cursive;
     }
 
     /* Sprachumschaltung */
     .lang-de, .lang-ru {
-    display: none;
+      display: none;
     }
 
     .lang-active {
-    display: block;
+      display: block;
     }
-</style>
+  </style>
 </head>
 
 <body>
-<!-- Kopfbereich mit Logo und Navigation -->
-<header class="bg-white shadow-md">
+  <!-- Kopfbereich mit Logo und Navigation -->
+  <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="flex items-baseline gap-2">
+      <div class="flex items-baseline gap-2">
         <h1 class="text-2xl font-bold logo-title text-gray-800">Vilana</h1>
         <span class="text-lg text-gray-800">Event & Catering</span>
-    </div>
-    <!-- Navigationsmenü -->
-    <nav class="hidden md:flex space-x-6">
+      </div>
+      <!-- Navigationsmenü -->
+      <nav class="hidden md:flex space-x-6">
         <a href="index.html" class="text-gray-800 hover:text-amber-800">Startseite</a>
         <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
         <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
         <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
         <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
-    </nav>
+      </nav>
     </div>
-</header>
+  </header>
 
-<!-- Hauptbereich mit Titel und Galerie -->
-<main class="py-16 px-4 max-w-7xl mx-auto">
+  <!-- Hauptbereich mit Titel und Galerie -->
+  <main class="py-16 px-4 max-w-7xl mx-auto">
     <!-- Deutscher und russischer Titel -->
     <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-de lang-active">
-    Galerie unserer Veranstaltungen
+      Galerie unserer Veranstaltungen
     </h2>
     <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-ru">
-    Галерея наших мероприятий
+      Галерея наших мероприятий
     </h2>
 
     <!-- Galerie-Container -->
     <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Bilder werden per JavaScript eingefügt -->
+      <!-- Bilder werden per JavaScript eingefügt -->
     </div>
-</main>
+  </main>
 
-<!-- Lightbox-Overlay -->
-<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <!-- Lightbox-Overlay -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
     <!-- Schließen-Knopf -->
     <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white text-3xl font-bold">&times;</button>
 
@@ -89,17 +89,17 @@
 
     <!-- Nächstes Bild -->
     <button onclick="nextImage()" class="absolute right-5 text-white text-4xl">&#10095;</button>
-</div>
+  </div>
 
-<!-- Fußbereich -->
-<footer class="bg-gray-800 text-white py-8">
+  <!-- Fußbereich -->
+  <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-4 text-center">
-    <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     </div>
-</footer>
+  </footer>
 
-<!-- JavaScript zum Einfügen der Bilder und Steuerung der Lightbox -->
-<script>
+  <!-- JavaScript zum Einfügen der Bilder und Steuerung der Lightbox -->
+  <script>
     // Liste der Bildpfade – exakt benennen!
     const imagePaths = [
     'images/Event/event-1.JPG',
@@ -128,65 +128,65 @@
 
     // Bilder dynamisch in die Galerie einfügen
     imagePaths.forEach((path, index) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
-    wrapper.innerHTML = `
+      const wrapper = document.createElement('div');
+      wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
+      wrapper.innerHTML = `
         <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
         onclick="openLightbox(${index})">`;
-    gallery.appendChild(wrapper);
+      gallery.appendChild(wrapper);
     });
 
     // Lightbox öffnen
     function openLightbox(index) {
-    currentIndex = index;
-    const image = document.getElementById('lightbox-image');
-    image.src = imagePaths[index];
-    image.classList.remove('zoomed');
-    document.getElementById('lightbox').classList.remove('hidden');
+      currentIndex = index;
+      const image = document.getElementById('lightbox-image');
+      image.src = imagePaths[index];
+      image.classList.remove('zoomed');
+      document.getElementById('lightbox').classList.remove('hidden');
     }
 
     // Lightbox schließen
     function closeLightbox() {
-    document.getElementById('lightbox').classList.add('hidden');
-    const image = document.getElementById('lightbox-image');
-    image.src = '';
-    image.classList.remove('zoomed');
+      document.getElementById('lightbox').classList.add('hidden');
+      const image = document.getElementById('lightbox-image');
+      image.src = '';
+      image.classList.remove('zoomed');
     }
 
     // Vorheriges Bild anzeigen
     function prevImage() {
-    currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-    updateLightboxImage();
+      currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+      updateLightboxImage();
     }
 
     // Nächstes Bild anzeigen
     function nextImage() {
-    currentIndex = (currentIndex + 1) % imagePaths.length;
-    updateLightboxImage();
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      updateLightboxImage();
     }
 
     // Bild im Lightbox aktualisieren
     function updateLightboxImage() {
-    const image = document.getElementById('lightbox-image');
-    image.src = imagePaths[currentIndex];
-    image.classList.remove('zoomed');
+      const image = document.getElementById('lightbox-image');
+      image.src = imagePaths[currentIndex];
+      image.classList.remove('zoomed');
     }
 
     // Zoom-Funktion (ein-/auszoomen)
     function toggleZoom(e) {
-    e.target.classList.toggle('zoomed');
+      e.target.classList.toggle('zoomed');
     }
 
     // Tastatursteuerung: ←, →, ESC
     document.addEventListener('keydown', function (e) {
-    const lightbox = document.getElementById('lightbox');
-    if (!lightbox.classList.contains('hidden')) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'Escape') closeLightbox();
-    }
+      }
     });
-</script>
+  </script>
 </body>
 </html>

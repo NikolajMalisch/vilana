@@ -169,24 +169,24 @@
     // Bild im Lightbox aktualisieren
     function updateLightboxImage() {
     const image = document.getElementById('lightbox-image');
-    image.src = imagePaths[currentIndex];
-    image.classList.remove('zoomed');
+      image.src = imagePaths[currentIndex];
+      image.classList.remove('zoomed');
     }
 
     // Zoom-Funktion (ein-/auszoomen)
     function toggleZoom(e) {
-    e.target.classList.toggle('zoomed');
+      e.target.classList.toggle('zoomed');
     }
 
     // Tastatursteuerung: ←, →, ESC
     document.addEventListener('keydown', function (e) {
-    const lightbox = document.getElementById('lightbox');
-    if (!lightbox.classList.contains('hidden')) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'Escape') closeLightbox();
-    }
+      }
     });
-</script>
+  </script>
 </body>
 </html>

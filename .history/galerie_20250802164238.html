@@ -99,7 +99,7 @@
 </footer>
 
 <!-- JavaScript zum Einfügen der Bilder und Steuerung der Lightbox -->
-<script>
+  <script>
     // Liste der Bildpfade – exakt benennen!
     const imagePaths = [
     'images/Event/event-1.JPG',
@@ -128,65 +128,65 @@
 
     // Bilder dynamisch in die Galerie einfügen
     imagePaths.forEach((path, index) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
-    wrapper.innerHTML = `
+      const wrapper = document.createElement('div');
+      wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
+      wrapper.innerHTML = `
         <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
         class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
         onclick="openLightbox(${index})">`;
-    gallery.appendChild(wrapper);
+      gallery.appendChild(wrapper);
     });
 
     // Lightbox öffnen
     function openLightbox(index) {
-    currentIndex = index;
-    const image = document.getElementById('lightbox-image');
-    image.src = imagePaths[index];
-    image.classList.remove('zoomed');
-    document.getElementById('lightbox').classList.remove('hidden');
+      currentIndex = index;
+      const image = document.getElementById('lightbox-image');
+      image.src = imagePaths[index];
+      image.classList.remove('zoomed');
+      document.getElementById('lightbox').classList.remove('hidden');
     }
 
     // Lightbox schließen
     function closeLightbox() {
-    document.getElementById('lightbox').classList.add('hidden');
-    const image = document.getElementById('lightbox-image');
-    image.src = '';
-    image.classList.remove('zoomed');
+      document.getElementById('lightbox').classList.add('hidden');
+      const image = document.getElementById('lightbox-image');
+      image.src = '';
+      image.classList.remove('zoomed');
     }
 
     // Vorheriges Bild anzeigen
     function prevImage() {
-    currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-    updateLightboxImage();
+      currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+      updateLightboxImage();
     }
 
     // Nächstes Bild anzeigen
     function nextImage() {
-    currentIndex = (currentIndex + 1) % imagePaths.length;
-    updateLightboxImage();
+      currentIndex = (currentIndex + 1) % imagePaths.length;
+      updateLightboxImage();
     }
 
     // Bild im Lightbox aktualisieren
     function updateLightboxImage() {
-    const image = document.getElementById('lightbox-image');
-    image.src = imagePaths[currentIndex];
-    image.classList.remove('zoomed');
+      const image = document.getElementById('lightbox-image');
+      image.src = imagePaths[currentIndex];
+      image.classList.remove('zoomed');
     }
 
     // Zoom-Funktion (ein-/auszoomen)
     function toggleZoom(e) {
-    e.target.classList.toggle('zoomed');
+      e.target.classList.toggle('zoomed');
     }
 
     // Tastatursteuerung: ←, →, ESC
     document.addEventListener('keydown', function (e) {
-    const lightbox = document.getElementById('lightbox');
-    if (!lightbox.classList.contains('hidden')) {
+      const lightbox = document.getElementById('lightbox');
+      if (!lightbox.classList.contains('hidden')) {
         if (e.key === 'ArrowLeft') prevImage();
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'Escape') closeLightbox();
-    }
+      }
     });
-</script>
+  </script>
 </body>
 </html>
