@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering | Galerie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vilana Event & Catering | Galerie</title>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Custom Styles -->
-<style>
+  <!-- Custom Styles -->
+  <style>
     body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
+      font-family: 'Cormorant SC', serif;
+      background-color: #fdfaf6;
     }
 
     .logo-container {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-top: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-top: 4px;
     }
 
     .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    line-height: 1.1;
-    margin-bottom: 2px;
-    color: #1f2937;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      margin-bottom: 2px;
+      color: #1f2937;
     }
 
     .logo-subtitle {
-    font-family: 'Cormorant SC', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: 0.2px;
-    color: #1f2937;
+      font-family: 'Cormorant SC', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      color: #1f2937;
     }
 
     .lang-de, .lang-ru {
-    display: none;
+      display: none;
     }
 
     .lang-active {
-    display: block;
+      display: block;
     }
 
     .zoomed {
-    transform: scale(1.6);
-    transition: transform 0.3s ease-in-out;
-    cursor: zoom-out;
+      transform: scale(1.6);
+      transition: transform 0.3s ease-in-out;
+      cursor: zoom-out;
     }
-</style>
+  </style>
 </head>
 <body>
 
 <!-- Header mit Navigation -->
 <header class="bg-white shadow-md">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
     <div class="logo-container">
-    <h1 class="logo-title">Vilana</h1>
-    <span class="logo-subtitle">Event & Catering</span>
+      <h1 class="logo-title">Vilana</h1>
+      <span class="logo-subtitle">Event & Catering</span>
     </div>
 
     <div class="flex items-center">
-    <nav class="hidden md:flex space-x-6 mr-6">
+      <nav class="hidden md:flex space-x-6 mr-6">
         <a href="index.html" class="text-gray-800 hover:text-amber-800">Startseite</a>
         <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
         <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
         <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
         <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
-    </nav>
+      </nav>
 
-    <!-- Language Switch -->
-    <div class="language-selector">
+      <!-- Language Switch -->
+      <div class="language-selector">
         <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
         <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
-    </div>
+      </div>
 
-    <!-- Mobile Burger Button -->
-    <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
+      <!-- Mobile Burger Button -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-    </button>
+      </button>
     </div>
-</div>
+  </div>
 
-<!-- Mobile Navigation -->
-<div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
     <nav class="flex flex-col space-y-3">
-    <a href="index.html" class="text-gray-800 hover:text-amber-800">Startseite</a>
-    <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-    <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-    <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+      <a href="index.html" class="text-gray-800 hover:text-amber-800">Startseite</a>
+      <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+      <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+      <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
     <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
     </nav>
 </div>
