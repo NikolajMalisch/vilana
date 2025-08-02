@@ -551,34 +551,13 @@
 </div>
 
 </main>
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-8 mt-16">
-  <div class="container mx-auto px-4 text-center">
-    <p class="text-sm">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
-  </div>
+
+<footer class="bg-gray-800 text-white py-8">
+<div class="container mx-auto px-4 text-center">
+<p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+</div>
 </footer>
 
-<!-- Optional Script für Sprache und Tabs -->
-<script>
-  function switchLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('active'));
-  }
-
-  document.querySelectorAll(".menu-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".menu-tab").forEach(t => t.classList.remove("bg-amber-600", "text-white"));
-      tab.classList.add("bg-amber-600", "text-white");
-
-      const category = tab.dataset.category;
-      document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
-      document.querySelector("#menu-" + category).classList.remove("hidden");
-    });
-  });
-</script>
-
-<!-- Optional: eigenes Script -->
 <script src="script.js"></script>
-
 </body>
 </html>
