@@ -115,23 +115,23 @@
 <!-- Scripts -->
 <script>
     function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
     }
 
     // Fade-In Effekt beim Scrollen
     const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-    });
+      });
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
+      observer.observe(el);
     });
-</script>
+  </script>
 </body>
 </html>

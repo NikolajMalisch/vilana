@@ -89,49 +89,49 @@
         </div>
         <div class="mb-4">
         <label class="block text-gray-700 mb-2 lang lang-de" for="email">Ihre E-Mail</label>
-        <label class="block text-gray-700 mb-2 lang lang-ru hidden" for="email">Ваш e-mail</label>
-        <input class="w-full border border-gray-300 rounded px-4 py-2" type="email" id="email" name="email" required />
+          <label class="block text-gray-700 mb-2 lang lang-ru hidden" for="email">Ваш e-mail</label>
+          <input class="w-full border border-gray-300 rounded px-4 py-2" type="email" id="email" name="email" required />
         </div>
         <div class="mb-4">
-        <label class="block text-gray-700 mb-2 lang lang-de" for="message">Ihre Nachricht</label>
-        <label class="block text-gray-700 mb-2 lang lang-ru hidden" for="message">Ваше сообщение</label>
-        <textarea class="w-full border border-gray-300 rounded px-4 py-2" id="message" name="message" rows="5" required></textarea>
+          <label class="block text-gray-700 mb-2 lang lang-de" for="message">Ihre Nachricht</label>
+          <label class="block text-gray-700 mb-2 lang lang-ru hidden" for="message">Ваше сообщение</label>
+          <textarea class="w-full border border-gray-300 rounded px-4 py-2" id="message" name="message" rows="5" required></textarea>
         </div>
         <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full">
-        <span class="lang lang-de">Senden</span>
-        <span class="lang lang-ru hidden">Отправить</span>
+          <span class="lang lang-de">Senden</span>
+          <span class="lang lang-ru hidden">Отправить</span>
         </button>
-    </form>
+      </form>
     </div>
-</main>
+  </main>
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-8 mt-16">
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
     <div class="container mx-auto px-4 text-center">
-    <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     </div>
-</footer>
+  </footer>
 
-<!-- Scripts -->
-<script>
+  <!-- Scripts -->
+  <script>
     function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
     }
 
     // Fade-In Effekt beim Scrollen
     const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-    });
+      });
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
+      observer.observe(el);
     });
-</script>
+  </script>
 </body>
 </html>

@@ -108,30 +108,30 @@
 <!-- Footer -->
 <footer class="bg-gray-800 text-white py-8 mt-16">
     <div class="container mx-auto px-4 text-center">
-    <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+      <p>&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     </div>
-</footer>
+  </footer>
 
-<!-- Scripts -->
-<script>
+  <!-- Scripts -->
+  <script>
     function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
     }
 
     // Fade-In Effekt beim Scrollen
     const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-    });
+      });
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
+      observer.observe(el);
     });
-</script>
+  </script>
 </body>
 </html>
