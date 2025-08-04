@@ -1,60 +1,71 @@
-<!DOCTYPE html>
-<html lang="de">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Über uns – Vilana Event & Catering</title>
+    <title>Vilana Event & Catering</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Sprachumschalter -->
-    <script src="script.js" defer></script>
-
-    <!-- Eigene Styles -->
+    <!-- Benutzerdefinierte Schriftarten anwenden -->
     <style>
     body {
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Cormorant SC', serif;
         background-color: #fdfaf6;
     }
 
-    h1 {
-        font-family: 'Cinzel Decorative', cursive;
-        color: #474e57;
+    h1, h2, h3, p, span {
+            font-family: 'Cormorant SC', serif;
     }
 
-    h2, h3, .subtitle {
-        font-family: 'Cormorant SC', serif;
-        color: #474e57;
+    .logo-container {
+        display: flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: 4px;
     }
 
     .logo-title {
         font-family: 'Cinzel Decorative', cursive;
         font-size: 1.8rem;
         font-weight: 500;
-        color: #474e57;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin-bottom: 2px;
+      color: #1f2937; /* Tailwind gray-800 */
     }
 
     .logo-subtitle {
         font-family: 'Cormorant SC', serif;
         font-size: 1.2rem;
-        font-weight: 500;
-        color: #474e57;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        margin-top: 0;
+      color: #1f2937; /* Tailwind gray-800 */
+    }
+
+    .lang-de, .lang-ru {
+        display: none;
+    }
+
+    .lang-active {
+        display: block;
     }
     </style>
 </head>
-<body class="text-gray-700">
+
+
+<body>
 
 <!-- Header -->
-<header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <div class="flex items-baseline gap-2">
-        <h1 class="text-2xl font-bold">Vilana</h1>
-        <span class="subtitle text-lg text-gray-600">Event & Catering</span>
+    <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="logo-container">
+        <h1 class="logo-title">Vilana</h1>
+        <span class="logo-subtitle">Event & Catering</span>
     </div>
 
     <!-- Navigation -->

@@ -1,88 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vilana Event & Catering</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Vilana Event & Catering</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- Benutzerdefinierte Schriftarten anwenden -->
-    <style>
+  <!-- Пользовательские стили -->
+  <style>
     body {
-        font-family: 'Cormorant SC', serif;
-        background-color: #fdfaf6;
+      font-family: 'Cormorant SC', serif;
+      background-color: #fdf6ef;
     }
 
-    h1, h2, h3, p, span {
-            font-family: 'Cormorant SC', serif;
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: baseline;
-        gap: 0.3rem;
-        margin-top: 4px;
-    }
-
+    /* Логотип: основная надпись */
     .logo-title {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.8rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        line-height: 1.1;
-        margin-bottom: 2px;
-      color: #1f2937; /* Tailwind gray-800 */
+      font-family: 'Cinzel Decorative', cursive;
     }
 
+    /* Логотип: подзаголовок */
     .logo-subtitle {
-        font-family: 'Cormorant SC', serif;
-        font-size: 1.2rem;
-        font-weight: 400;
-        letter-spacing: 0.2px;
-        line-height: 1;
-        margin-top: 0;
-      color: #1f2937; /* Tailwind gray-800 */
+      font-family: 'Cormorant SC', serif;
     }
 
-    .lang-de, .lang-ru {
-        display: none;
+    /* Эффект плавного появления */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    .lang-active {
-        display: block;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    </style>
+  </style>
 </head>
 
+<body class="text-gray-800">
 
-<body>
-
-<!-- Header -->
-    <header class="bg-white shadow-md">
+  <!-- Header с логотипом и меню -->
+  <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="logo-container">
-        <h1 class="logo-title">Vilana</h1>
-        <span class="logo-subtitle">Event & Catering</span>
-    </div>
 
-    <!-- Навигация -->
-    <nav class="hidden md:flex space-x-8">
+      <!-- 🔰 Логотип как в galerie.html -->
+      <div class="logo-container flex items-baseline gap-1 mt-1">
+        <h1 class="logo-title text-2xl font-bold text-gray-800">VILANA</h1>
+        <span class="logo-subtitle text-lg text-gray-700 ml-1">Event & Catering</span>
+      </div>
+
+      <!-- Навигация -->
+      <nav class="hidden md:flex space-x-8">
         <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
         <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
         <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
         <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
         <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
-    </nav>
+      </nav>
 
-    <!-- Переключение языка -->
-    <div class="language-selector">
+      <!-- Переключение языка -->
+      <div class="language-selector">
         <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
         <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
-    </div>
+      </div>
     </div>
     </header>
 
