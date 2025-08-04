@@ -1,0 +1,53 @@
+<!-- vilana-legal.html: enthält Impressum, Datenschutz, AGB, Cookie-Hinweis (DE + RU) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rechtliche Hinweise – Vilana Event & Catering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Cormorant SC', serif;
+      background-color: #fdfaf6;
+      color: #111;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    hr {
+      margin: 2rem 0;
+    }
+    .lang { display: none; }
+    .lang.active { display: block; }
+</style>
+</head>
+<body class="p-8 max-w-4xl mx-auto">
+
+<!-- Sprachumschalter -->
+<div class="flex justify-end gap-4 mb-4">
+    <button onclick="switchLanguage('de')" class="bg-amber-600 text-white px-4 py-1 rounded hover:bg-amber-700">Deutsch</button>
+    <button onclick="switchLanguage('ru')" class="bg-gray-300 text-black px-4 py-1 rounded hover:bg-gray-400">Русский</button>
+</div>
+
+<!-- Inhalt: ALLE TEXTE bleiben unverändert -->
+<div class="lang lang-de active">
+    <!-- DE Inhalt hier (wie oben, bereits vorhanden) -->
+</div>
+<div class="lang lang-ru">
+    <!-- RU Inhalt hier (wie oben, bereits vorhanden) -->
+</div>
+
+<!-- JavaScript für Sprachumschaltung -->
+<script>
+    function switchLanguage(lang) {
+    document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+    document.querySelector('.lang-' + lang).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
