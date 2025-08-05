@@ -77,7 +77,7 @@
 </header>
 
 <main class="py-16">
-    <div class="mx-auto px-4 max-w-3xl text-center">
+<div class="container mx-auto px-4 max-w-3xl">
     <!-- Titel -->
     <h2 class="text-4xl font-bold text-center mb-12 lang lang-de">Kontaktieren Sie uns</h2>
     <h2 class="text-4xl font-bold text-center mb-12 lang lang-ru">Свяжитесь с нами</h2>
@@ -172,33 +172,33 @@
 function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
-}
+  }
 
   // Standardmäßig Deutsch aktivieren
-window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", () => {
     setLanguage('de');
-});
+  });
 
   // Formular-Submit
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const form = e.target;
     if (form.honeypot.value !== "") return; // Bot erkannt
     const data = new FormData(form);
     fetch("contact.php", {
-    method: "POST",
-    body: data
+      method: "POST",
+      body: data
     })
-    .then(response => {
+      .then(response => {
         if (response.ok) {
-        document.getElementById("formMsg").classList.remove("hidden");
-        form.reset();
+          document.getElementById("formMsg").classList.remove("hidden");
+          form.reset();
         } else {
-        alert("Fehler beim Senden.");
+          alert("Fehler beim Senden.");
         }
-    })
-    .catch(() => alert("Netzwerkfehler."));
-});
+      })
+      .catch(() => alert("Netzwerkfehler."));
+  });
 </script>
 
 </body>
