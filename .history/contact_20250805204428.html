@@ -172,49 +172,49 @@
         <a href="agb.html" class="hover:underline">AGB</a>
     </p>
 
-    <!-- Copyright -->
-    <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru hidden">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
+      <!-- Copyright -->
+      <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+      <p class="lang lang-ru hidden">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
     </div>
 
     <!-- Zurück-nach-oben-Button -->
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
             class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
             title="Nach oben">
-    ▲
+      ▲
     </button>
-</footer>
+  </footer>
 
-!-- SPRACHE & FORMULAR SCRIPT -->
-<script>
+  <!-- SPRACHE & FORMULAR SCRIPT -->
+  <script>
     // Sprache umschalten
     function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
     }
 
     // Kontaktformular per AJAX absenden + Spam-Schutz (Honeypot)
     document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
+      e.preventDefault();
+      const form = e.target;
       if (form.honeypot.value !== "") return; // Bot blockieren
 
-    const data = new FormData(form);
+      const data = new FormData(form);
 
-    fetch("contact.php", {
+      fetch("contact.php", {
         method: "POST",
         body: data
-    })
-    .then(response => {
+      })
+      .then(response => {
         if (response.ok) {
-        document.getElementById("formMsg").classList.remove("hidden");
-        form.reset();
+          document.getElementById("formMsg").classList.remove("hidden");
+          form.reset();
         } else {
-        alert("Fehler beim Senden.");
+          alert("Fehler beim Senden.");
         }
-    })
-    .catch(() => alert("Netzwerkfehler."));
+      })
+      .catch(() => alert("Netzwerkfehler."));
     });
-</script>
+  </script>
 </body>
 </html>

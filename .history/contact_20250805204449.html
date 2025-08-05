@@ -207,14 +207,14 @@
     })
     .then(response => {
         if (response.ok) {
-        document.getElementById("formMsg").classList.remove("hidden");
-        form.reset();
+          document.getElementById("formMsg").classList.remove("hidden");
+          form.reset();
         } else {
-        alert("Fehler beim Senden.");
+          alert("Fehler beim Senden.");
         }
-    })
-    .catch(() => alert("Netzwerkfehler."));
+      })
+      .catch(() => alert("Netzwerkfehler."));
     });
-</script>
+  </script>
 </body>
 </html>
