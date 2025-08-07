@@ -119,8 +119,8 @@
 
 <!-- Hauptbereich -->
 <main class="py-16 px-4 max-w-7xl mx-auto">
-<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-de lang-active">Galerie unserer Veranstaltungen</h2>
-<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-ru">Галерея наших мероприятий</h2>
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-de lang-active">Galerie unserer Veranstaltungen</h2>
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-ru">Галерея наших мероприятий</h2>
 
 <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <!-- JavaScript fügt Bilder ein -->
@@ -167,8 +167,9 @@
     ▲
 </button>
 </footer>
+
+<!-- Scripts -->
 <script>
-  // === Галерея ===
 const imagePaths = [
     'images/Event/event-1.JPG', 'images/Event/event-2.JPG', 'images/Event/event-3.JPG',
     'images/Event/event-4.JPG', 'images/Event/event-5.JPG', 'images/Event/event-6.JPG',
@@ -233,8 +234,6 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-  // === Языки ===
-
 function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.classList.remove('lang-active'));
     document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('lang-active'));
@@ -245,34 +244,8 @@ function toggleMobileMenu() {
     menu.classList.toggle("hidden");
 }
 
-function toggleLangDropdown() {
-    document.getElementById("lang-dropdown").classList.toggle("hidden");
-}
-
-function closeLangDropdown() {
-    document.getElementById("lang-dropdown").classList.add("hidden");
-}
-
-function selectLanguage(lang) {
-    setLanguage(lang);
-    const button = document.getElementById("lang-button");
-    if (button) {
-    button.innerHTML = lang.toUpperCase() + ' ▾';
-    }
-    closeLangDropdown();
-}
-
-document.addEventListener("click", function (e) {
-    const dropdown = document.getElementById("lang-dropdown");
-    const button = document.getElementById("lang-button");
-    if (dropdown && !dropdown.contains(e.target) && e.target !== button) {
-    dropdown.classList.add("hidden");
-    }
-});
-
-  // Стартовый язык
+  // Standard: Deutsch
 setLanguage('de');
 </script>
-
 </body>
 </html>

@@ -119,8 +119,8 @@
 
 <!-- Hauptbereich -->
 <main class="py-16 px-4 max-w-7xl mx-auto">
-<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-de lang-active">Galerie unserer Veranstaltungen</h2>
-<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-ru">Галерея наших мероприятий</h2>
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-de lang-active">Galerie unserer Veranstaltungen</h2>
+<h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang-ru">Галерея наших мероприятий</h2>
 
 <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     <!-- JavaScript fügt Bilder ein -->
@@ -169,7 +169,7 @@
 </footer>
 <script>
   // === Галерея ===
-const imagePaths = [
+  const imagePaths = [
     'images/Event/event-1.JPG', 'images/Event/event-2.JPG', 'images/Event/event-3.JPG',
     'images/Event/event-4.JPG', 'images/Event/event-5.JPG', 'images/Event/event-6.JPG',
     'images/Event/Event-7.JPG', 'images/Event/event-8.jpg', 'images/Event/event-9.jpg',
@@ -177,90 +177,90 @@ const imagePaths = [
     'images/Event/event-13.jpeg', 'images/Event/event-14.jpeg', 'images/Event/event-15.jpeg',
     'images/Event/event-16.JPG', 'images/Event/event-17.JPG', 'images/Event/event-18.jpg',
     'images/Event/event-19.jpg', 'images/Event/event-20.jpg', 'images/Event/event-21.jpg'
-];
+  ];
 
-const gallery = document.getElementById('gallery');
-let currentIndex = 0;
+  const gallery = document.getElementById('gallery');
+  let currentIndex = 0;
 
-imagePaths.forEach((path, index) => {
+  imagePaths.forEach((path, index) => {
     const wrapper = document.createElement('div');
     wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
     wrapper.innerHTML = `<img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105" onclick="openLightbox(${index})">`;
     gallery.appendChild(wrapper);
-});
+  });
 
-function openLightbox(index) {
+  function openLightbox(index) {
     currentIndex = index;
     const image = document.getElementById('lightbox-image');
     image.src = imagePaths[index];
     image.classList.remove('zoomed');
     document.getElementById('lightbox').classList.remove('hidden');
-}
+  }
 
-function closeLightbox() {
+  function closeLightbox() {
     document.getElementById('lightbox').classList.add('hidden');
     const image = document.getElementById('lightbox-image');
     image.src = '';
     image.classList.remove('zoomed');
-}
+  }
 
-function prevImage() {
+  function prevImage() {
     currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
     updateLightboxImage();
-}
+  }
 
-function nextImage() {
+  function nextImage() {
     currentIndex = (currentIndex + 1) % imagePaths.length;
     updateLightboxImage();
-}
+  }
 
-function updateLightboxImage() {
+  function updateLightboxImage() {
     const image = document.getElementById('lightbox-image');
     image.src = imagePaths[currentIndex];
     image.classList.remove('zoomed');
-}
+  }
 
-function toggleZoom(e) {
+  function toggleZoom(e) {
     e.target.classList.toggle('zoomed');
-}
+  }
 
-document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', function (e) {
     const lightbox = document.getElementById('lightbox');
     if (!lightbox.classList.contains('hidden')) {
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'Escape') closeLightbox();
     }
-});
+  });
 
   // === Языки ===
 
-function setLanguage(lang) {
+  function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.classList.remove('lang-active'));
     document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.add('lang-active'));
-}
+  }
 
-function toggleMobileMenu() {
+  function toggleMobileMenu() {
     const menu = document.getElementById("mobile-menu");
     menu.classList.toggle("hidden");
-}
+  }
 
-function toggleLangDropdown() {
+  function toggleLangDropdown() {
     document.getElementById("lang-dropdown").classList.toggle("hidden");
-}
+  }
 
-function closeLangDropdown() {
+  function closeLangDropdown() {
     document.getElementById("lang-dropdown").classList.add("hidden");
-}
+  }
 
-function selectLanguage(lang) {
+  function selectLanguage(lang) {
     setLanguage(lang);
     const button = document.getElementById("lang-button");
     if (button) {
-    button.innerHTML = lang.toUpperCase() + ' ▾';
+      button.innerHTML = lang.toUpperCase() + ' ▾';
     }
     closeLangDropdown();
-}
+  }
 
 document.addEventListener("click", function (e) {
     const dropdown = document.getElementById("lang-dropdown");
