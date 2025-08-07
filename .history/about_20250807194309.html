@@ -110,6 +110,9 @@
 <!-- INHALT -->
 <main class="py-16">
 <div class="max-w-3xl mx-auto px-4 text-center">
+    <!-- Sprachgesteuerte Überschrift -->
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-de">Über uns</h2>
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 lang lang-ru">О нас</h2>
 
     <!-- Deutscher Inhalt -->
     <div class="lang lang-de text-left space-y-4">
@@ -215,28 +218,28 @@ function toggleLangDropdown() {
     document.getElementById("lang-dropdown").classList.toggle("hidden");
 }
 
-function closeLangDropdown() {
+  function closeLangDropdown() {
     document.getElementById("lang-dropdown").classList.add("hidden");
-}
+  }
 
-function toggleMobileMenu() {
+  function toggleMobileMenu() {
     document.getElementById("mobile-menu").classList.toggle("hidden");
-}
+  }
 
   // Beim Laden: Sprache wiederherstellen
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const savedLang = localStorage.getItem('language') || 'de';
     setLanguage(savedLang);
-});
+  });
 
   // Klick außerhalb des Dropdowns → schließen
-document.addEventListener("click", function (e) {
+  document.addEventListener("click", function (e) {
     const dropdown = document.getElementById("lang-dropdown");
     const button = document.getElementById("lang-button");
     if (dropdown && !dropdown.contains(e.target) && e.target !== button) {
-    dropdown.classList.add("hidden");
+      dropdown.classList.add("hidden");
     }
-});
+  });
 </script>
 
 </body>
