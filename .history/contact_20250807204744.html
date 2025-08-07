@@ -174,18 +174,18 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     });
 });
 
-function setLanguage(lang) {
+  function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
-}
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     setLanguage('de');
-});
+  });
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 
 </body>

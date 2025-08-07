@@ -101,91 +101,91 @@
     <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
     <input type="text" name="honeypot" class="hidden-field" autocomplete="off">
 
-    <div class="mb-4">
+      <div class="mb-4">
         <label for="name" class="block text-gray-700 mb-2">
-        <span class="lang lang-de">Ihr Name</span>
-        <span class="lang lang-ru">Ваше имя</span>
+          <span class="lang lang-de">Ihr Name</span>
+          <span class="lang lang-ru">Ваше имя</span>
         </label>
         <input class="w-full border border-gray-300 rounded px-4 py-2" type="text" id="name" name="name" required />
-    </div>
+      </div>
 
-    <div class="mb-4">
+      <div class="mb-4">
         <label for="email" class="block text-gray-700 mb-2">
-        <span class="lang lang-de">Ihre E-Mail</span>
-        <span class="lang lang-ru">Ваш e-mail</span>
+          <span class="lang lang-de">Ihre E-Mail</span>
+          <span class="lang lang-ru">Ваш e-mail</span>
         </label>
         <input class="w-full border border-gray-300 rounded px-4 py-2" type="email" id="email" name="email" required />
-    </div>
+      </div>
 
-    <div class="mb-4">
+      <div class="mb-4">
         <label for="message" class="block text-gray-700 mb-2">
-        <span class="lang lang-de">Ihre Nachricht</span>
-        <span class="lang lang-ru">Ваше сообщение</span>
+          <span class="lang lang-de">Ihre Nachricht</span>
+          <span class="lang lang-ru">Ваше сообщение</span>
         </label>
         <textarea class="w-full border border-gray-300 rounded px-4 py-2" id="message" name="message" rows="5" required></textarea>
-    </div>
+      </div>
 
-    <div class="mb-4">
+      <div class="mb-4">
         <label class="inline-flex items-center">
-        <input type="checkbox" required class="mr-2" />
-        <span class="text-sm lang lang-de">Ich akzeptiere die <a href="vilana-legal.html" class="text-amber-700 underline">AGB & Datenschutz</a></span>
-        <span class="text-sm lang lang-ru">Я принимаю <a href="vilana-legal.html" class="text-amber-700 underline">условия и политику конфиденциальности</a></span>
+          <input type="checkbox" required class="mr-2" />
+          <span class="text-sm lang lang-de">Ich akzeptiere die <a href="vilana-legal.html" class="text-amber-700 underline">AGB & Datenschutz</a></span>
+          <span class="text-sm lang lang-ru">Я принимаю <a href="vilana-legal.html" class="text-amber-700 underline">условия и политику конфиденциальности</a></span>
         </label>
-    </div>
+      </div>
 
-    <div id="formMsg" class="text-center text-green-600 font-semibold hidden mb-4">Nachricht erfolgreich gesendet!</div>
+      <div id="formMsg" class="text-center text-green-600 font-semibold hidden mb-4">Nachricht erfolgreich gesendet!</div>
 
-    <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full">
+      <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full">
         <span class="lang lang-de">Senden</span>
         <span class="lang lang-ru">Отправить</span>
-    </button>
+      </button>
     </form>
-</div>
+  </div>
 </main>
 
 <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-<div class="container mx-auto px-4 text-center">
+  <div class="container mx-auto px-4 text-center">
     <div class="mb-4">
-    <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
+      <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
     </div>
     <p><a href="impressum.html" class="hover:underline">Impressum</a> | <a href="datenschutz.html" class="hover:underline">Datenschutz</a> | <a href="agb.html" class="hover:underline">AGB</a></p>
     <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
-</div>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
+  </div>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
 </footer>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init("vfmomNKrMxrf2xqDW");
+  emailjs.init("vfmomNKrMxrf2xqDW");
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const form = this;
     if (form.honeypot.value !== "") return;
 
     emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
-    .then(() => {
+      .then(() => {
         document.getElementById("formMsg").classList.remove("hidden");
         form.reset();
-    }, (error) => {
+      }, (error) => {
         alert("Fehler beim Senden: " + error.text);
-    });
-});
+      });
+  });
 
-function setLanguage(lang) {
+  function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
-}
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     setLanguage('de');
-});
+  });
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 
 </body>

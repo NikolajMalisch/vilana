@@ -166,26 +166,26 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     if (form.honeypot.value !== "") return;
 
     emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
-    .then(() => {
+      .then(() => {
         document.getElementById("formMsg").classList.remove("hidden");
         form.reset();
-    }, (error) => {
+      }, (error) => {
         alert("Fehler beim Senden: " + error.text);
-    });
-});
+      });
+  });
 
-function setLanguage(lang) {
+  function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
-}
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     setLanguage('de');
-});
+  });
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 
 </body>

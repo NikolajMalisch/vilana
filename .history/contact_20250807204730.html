@@ -140,52 +140,52 @@
         <span class="lang lang-ru">Отправить</span>
     </button>
     </form>
-</div>
+  </div>
 </main>
 
 <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-<div class="container mx-auto px-4 text-center">
+  <div class="container mx-auto px-4 text-center">
     <div class="mb-4">
-    <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
+      <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
     </div>
     <p><a href="impressum.html" class="hover:underline">Impressum</a> | <a href="datenschutz.html" class="hover:underline">Datenschutz</a> | <a href="agb.html" class="hover:underline">AGB</a></p>
     <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
-</div>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
+  </div>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
 </footer>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init("vfmomNKrMxrf2xqDW");
+  emailjs.init("vfmomNKrMxrf2xqDW");
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const form = this;
     if (form.honeypot.value !== "") return;
 
     emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
-    .then(() => {
+      .then(() => {
         document.getElementById("formMsg").classList.remove("hidden");
         form.reset();
-    }, (error) => {
+      }, (error) => {
         alert("Fehler beim Senden: " + error.text);
-    });
-});
+      });
+  });
 
-function setLanguage(lang) {
+  function setLanguage(lang) {
     document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
-}
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     setLanguage('de');
-});
+  });
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 
 </body>
