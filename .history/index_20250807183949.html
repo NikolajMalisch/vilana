@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vilana Event & Catering</title>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Benutzerdefinierte Schriftarten -->
-<style>
+  <!-- Benutzerdefinierte Schriftarten -->
+  <style>
     body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
+      font-family: 'Cormorant SC', serif;
+      background-color: #fdfaf6;
     }
 
     h1, h2, h3, p, span {
-    font-family: 'Cormorant SC', serif;
+      font-family: 'Cormorant SC', serif;
     }
 
     .logo-container {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-top: 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-top: 4px;
     }
 
     .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #1f2937;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #1f2937;
     }
 
     .logo-subtitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #1f2937;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #1f2937;
     }
-</style>
+  </style>
 </head>
 
 <body>
-<!-- Header -->
-<header class="bg-white shadow-md">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <div class="logo-container">
+      <!-- Logo -->
+      <div class="logo-container">
         <h1 class="logo-title">Vilana</h1>
         <span class="logo-subtitle">Event & Catering</span>
-    </div>
+      </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex space-x-8">
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
         <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
         <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
         <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
         <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
         <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
-    </nav>
+      </nav>
 
-    <!-- Sprachumschalter Desktop -->
-    <div class="hidden md:block relative ml-4">
+      <!-- Sprachumschalter Desktop -->
+      <div class="hidden md:block relative ml-4">
         <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm">DE ▾</button>
         <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50">
-        <li><button onclick="setLanguage('de')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
-        <li><button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
+          <li><button onclick="setLanguage('de')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
+          <li><button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
         </ul>
-    </div>
+      </div>
 
-    <!-- Mobile Burger-Menü -->
-    <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
+      <!-- Mobile Burger-Menü -->
+      <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
         <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>

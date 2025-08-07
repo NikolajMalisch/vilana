@@ -1,102 +1,119 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering</title>
+<html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilana Event & Catering</title>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Benutzerdefinierte Schriftarten -->
-<style>
+    <!-- Benutzerdefinierte Schriftarten anwenden -->
+    <style>
     body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
+        font-family: 'Cormorant SC', serif;
+        background-color: #fdfaf6;
     }
 
     h1, h2, h3, p, span {
-    font-family: 'Cormorant SC', serif;
+            font-family: 'Cormorant SC', serif;
     }
 
     .logo-container {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-top: 4px;
+        display: flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: 4px;
     }
 
     .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #1f2937;
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin-bottom: 2px;
+      color: #1f2937; /* Tailwind gray-800 */
     }
 
     .logo-subtitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #1f2937;
+        font-family: 'Cormorant SC', serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        margin-top: 0;
+      color: #1f2937; /* Tailwind gray-800 */
     }
-</style>
+
+    .lang-de, .lang-ru {
+        display: none;
+    }
+
+    .lang-active {
+        display: block;
+    }
+    </style>
 </head>
+
 
 <body>
 <!-- Header -->
-<header class="bg-white shadow-md">
+    <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
     <div class="logo-container">
         <h1 class="logo-title">Vilana</h1>
         <span class="logo-subtitle">Event & Catering</span>
     </div>
 
-    <!-- Desktop Navigation -->
+    <!-- 🖥️ Navigation (nur sichtbar auf Desktop) -->
     <nav class="hidden md:flex space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-        <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-        <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-        <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-        <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-        <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
+    <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
+    <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+    <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
     </nav>
 
-    <!-- Sprachumschalter Desktop -->
+    <!-- 🌐 Sprachumschalter Desktop (Dropdown) -->
     <div class="hidden md:block relative ml-4">
-        <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm">DE ▾</button>
-        <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50">
-        <li><button onclick="setLanguage('de')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
-        <li><button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
-        </ul>
-    </div>
-
-    <!-- Mobile Burger-Menü -->
-    <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
-        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+    <!-- Button zum Öffnen des Dropdowns -->
+    <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm">
+        DE ▾
     </button>
+    <!-- Dropdown-Menü mit Sprachauswahl -->
+    <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50">
+        <li><a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Deutsch</a></li>
+        <li><a href="index-ru.html" class="block px-4 py-2 hover:bg-gray-100">Русский</a></li>
+    </ul>
     </div>
 
-    <!-- Mobile Menü -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
+    <!-- 🍔 Burger-Menü Button (für Mobile) -->
+    <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
+    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    </button>
+</div>
+
+<!-- 📱 Mobile-Menü (sichtbar nach Klick auf Burger) -->
+<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
     <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
     <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
     <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="contact.html" class="block text-amber-700 font-bold underline">Kontakt</a>
 
-    <!-- Sprachumschalter Mobile -->
+    <!-- 🌐 Sprachumschalter Mobile mit Flaggen -->
     <div class="flex gap-4 mt-2">
-        <button onclick="setLanguage('de')" class="text-xl">🇩🇪</button>
-        <button onclick="setLanguage('ru')" class="text-xl">🇷🇺</button>
+    <a href="index.html" class="px-2 text-xl">🇩🇪</a>
+    <a href="index-ru.html" class="px-2 text-xl">🇷🇺</a>
     </div>
-    </div>
+</div>
 </header>
 
 <!-- Hero Section -->
@@ -173,18 +190,18 @@
 
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-white py-10 mt-16 relative">
+  <footer class="bg-gray-800 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
-    <div class="mb-4">
+      <div class="mb-4">
         <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-amber-400 transition">
-        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 2.2c3.2 0 3.6 0 ... Z"/>
-        </svg>
-        Instagram
+          </svg>
+          Instagram
         </a>
-    </div>
+      </div>
 
-    <p class="mb-2">
+      <p class="mb-2">
         <a href="impressum.html" class="hover:underline">Impressum</a> |
         <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
         <a href="agb.html" class="hover:underline">AGB</a>

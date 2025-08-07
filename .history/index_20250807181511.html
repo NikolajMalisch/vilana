@@ -1,102 +1,119 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering</title>
+<html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilana Event & Catering</title>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-<!-- Benutzerdefinierte Schriftarten -->
-<style>
+    <!-- Benutzerdefinierte Schriftarten anwenden -->
+    <style>
     body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
+        font-family: 'Cormorant SC', serif;
+        background-color: #fdfaf6;
     }
 
     h1, h2, h3, p, span {
-    font-family: 'Cormorant SC', serif;
+            font-family: 'Cormorant SC', serif;
     }
 
     .logo-container {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-top: 4px;
+        display: flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: 4px;
     }
 
     .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #1f2937;
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin-bottom: 2px;
+      color: #1f2937; /* Tailwind gray-800 */
     }
 
     .logo-subtitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #1f2937;
+        font-family: 'Cormorant SC', serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        margin-top: 0;
+      color: #1f2937; /* Tailwind gray-800 */
     }
-</style>
+
+    .lang-de, .lang-ru {
+        display: none;
+    }
+
+    .lang-active {
+        display: block;
+    }
+    </style>
 </head>
+
 
 <body>
 <!-- Header -->
-<header class="bg-white shadow-md">
+    <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
     <div class="logo-container">
         <h1 class="logo-title">Vilana</h1>
         <span class="logo-subtitle">Event & Catering</span>
     </div>
 
-    <!-- Desktop Navigation -->
+    <!-- 🖥️ Navigation (nur sichtbar auf Desktop) -->
     <nav class="hidden md:flex space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-        <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-        <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-        <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-        <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-        <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
+    <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
+    <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+    <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
     </nav>
 
-    <!-- Sprachumschalter Desktop -->
+    <!-- 🌐 Sprachumschalter Desktop (Dropdown) -->
     <div class="hidden md:block relative ml-4">
-        <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm">DE ▾</button>
-        <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50">
-        <li><button onclick="setLanguage('de')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
-        <li><button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
-        </ul>
-    </div>
-
-    <!-- Mobile Burger-Menü -->
-    <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
-        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+    <!-- Button zum Öffnen des Dropdowns -->
+    <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm">
+        DE ▾
     </button>
+    <!-- Dropdown-Menü mit Sprachauswahl -->
+    <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50">
+        <li><a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Deutsch</a></li>
+        <li><a href="index-ru.html" class="block px-4 py-2 hover:bg-gray-100">Русский</a></li>
+    </ul>
     </div>
 
-    <!-- Mobile Menü -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
+    <!-- 🍔 Burger-Menü Button (für Mobile) -->
+    <button id="menuToggle" class="md:hidden focus:outline-none ml-4" aria-label="Menü öffnen">
+    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    </button>
+</div>
+
+<!-- 📱 Mobile-Menü (sichtbar nach Klick auf Burger) -->
+<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
     <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
     <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
     <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="contact.html" class="block text-amber-700 font-bold underline">Kontakt</a>
 
-    <!-- Sprachumschalter Mobile -->
+    <!-- 🌐 Sprachumschalter Mobile mit Flaggen -->
     <div class="flex gap-4 mt-2">
-        <button onclick="setLanguage('de')" class="text-xl">🇩🇪</button>
-        <button onclick="setLanguage('ru')" class="text-xl">🇷🇺</button>
+    <a href="index.html" class="px-2 text-xl">🇩🇪</a>
+    <a href="index-ru.html" class="px-2 text-xl">🇷🇺</a>
     </div>
-    </div>
+</div>
 </header>
 
 <!-- Hero Section -->
@@ -107,8 +124,7 @@
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru">Любовь к деталям</p>
     <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-de">Erleben Sie Catering neu mit Liebe, Geschmack und Stil</p>
     <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-ru">Откройте для себя кейтеринг заново – с любовью, вкусом и стилем</p>
-    <a href="contact.html" class="lang lang-de inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs">Kontaktieren Sie uns</a>
-    <a href="contact.html" class="lang lang-ru inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs">Связаться с нами</a>
+    <a href="contact.html" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block lang lang-de">Kontaktieren Sie uns</a>
     <div class="mt-12 text-3xl animate-bounce text-white">↓</div>
     </div>
 </section>
@@ -172,63 +188,61 @@
 </section>
 
 
-<!-- Footer -->
 <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-    <div class="container mx-auto px-4 text-center">
+<div class="container mx-auto px-4 text-center">
+
+    <!-- Социальные сети -->
     <div class="mb-4">
-        <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-amber-400 transition">
+    <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-amber-400 transition">
         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2.2c3.2 0 3.6 0 ... Z"/>
+        <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.5.2.9.5 1.3.9.4.4.7.8.9 1.3.2.4.3 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.3-.4.4-.8.7-1.3.9-.4.2-1 .3-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.5-.2-.9-.5-1.3-.9-.4-.4-.7-.8-.9-1.3-.2-.4-.3-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.5.5-.9.9-1.3.4-.4.8-.7 1.3-.9.4-.2 1-.3 2.2-.4 1.2-.1 1.6-.1 4.8-.1m0-2.2C8.7 0 8.3 0 7.1.1 5.8.2 4.8.4 4 .7c-.9.3-1.7.7-2.4 1.5-.8.7-1.2 1.5-1.5 2.4C.4 5.8.2 6.8.1 8.1 0 9.3 0 9.7 0 12s0 2.7.1 3.9c.1 1.3.3 2.3.6 3.2.3.9.7 1.7 1.5 2.4.7.8 1.5 1.2 2.4 1.5.9.3 1.9.5 3.2.6 1.2.1 1.6.1 3.9.1s2.7 0 3.9-.1c1.3-.1 2.3-.3 3.2-.6.9-.3 1.7-.7 2.4-1.5.8-.7 1.2-1.5 1.5-2.4.3-.9.5-1.9.6-3.2.1-1.2.1-1.6.1-3.9s0-2.7-.1-3.9c-.1-1.3-.3-2.3-.6-3.2-.3-.9-.7-1.7-1.5-2.4-.7-.8-1.5-1.2-2.4-1.5-.9-.3-1.9-.5-3.2-.6C14.7 0 14.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8.1 4 4 0 0 1 0 8.1zm6.4-11.6a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
         </svg>
         Instagram
-        </a>
+    </a>
     </div>
 
+    <!-- Юридическая информация -->
     <p class="mb-2">
-        <a href="impressum.html" class="hover:underline">Impressum</a> |
-        <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-        <a href="agb.html" class="hover:underline">AGB</a>
+    <a href="impressum.html" class="hover:underline">Impressum</a> |
+    <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+    <a href="agb.html" class="hover:underline">AGB</a>
     </p>
 
-    <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
+    <p class="lang lang-de active">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
-    </div>
+</div>
 
-    <!-- Scroll-to-top -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition" title="Nach oben">▲</button>
+<!-- Scroll to Top Button -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
+        title="Nach oben">
+    ▲
+</button>
 </footer>
 
-<!-- Sprache & Menü JS -->
+
+<!-- Language Switch & Mobile Menu -->
 <script>
-    // Mobile Menü
-    document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-    });
+  // 🍔 Burger-Menü öffnen/schließen
+  document.getElementById('menuToggle').addEventListener('click', function () {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden');
+  });
 
-    // Sprach-Dropdown Desktop
-    const langToggle = document.getElementById('langToggle');
-    const langMenu = document.getElementById('langMenu');
-    langToggle.addEventListener('click', () => {
+  // 🌐 Sprachmenü (Dropdown) auf Desktop öffnen/schließen
+  const langToggle = document.getElementById('langToggle');
+  const langMenu = document.getElementById('langMenu');
+
+  langToggle.addEventListener('click', () => {
     langMenu.classList.toggle('hidden');
-    });
-    document.addEventListener('click', function (event) {
+  });
+
+  // Schließt das Sprachmenü beim Klick außerhalb
+  document.addEventListener('click', function (event) {
     if (!langToggle.contains(event.target) && !langMenu.contains(event.target)) {
-        langMenu.classList.add('hidden');
-    }
-    });
-
-    // Sprache wechseln
-    function setLanguage(lang) {
-    const all = document.querySelectorAll('.lang-de, .lang-ru');
-    all.forEach(el => el.style.display = 'none');
-    const show = document.querySelectorAll(`.lang-${lang}`);
-    show.forEach(el => el.style.display = 'block');
-    }
-
-    // Standard-Sprache beim Laden
-    document.addEventListener('DOMContentLoaded', () => {
-      setLanguage('de'); // oder 'ru'
-    });
+    langMenu.classList.add('hidden');
+    } });
 </script>
+
 </body>
 </html>
