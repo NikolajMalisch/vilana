@@ -65,18 +65,17 @@
           <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
           <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
-
-<!-- Language Dropdown (Desktop only) -->
+      
+        <!-- Language Dropdown (Desktop only) -->
 <div class="relative hidden md:block ml-4">
-  <button id="lang-button" onclick="toggleLangDropdown()" class="flex items-center gap-1 text-gray-800 hover:text-amber-600 px-2 py-1">
+  <button onclick="toggleLangDropdown()" class="flex items-center gap-1 text-gray-800 hover:text-amber-600 px-2 py-1">
     DE ▾
   </button>
   <div id="lang-dropdown" class="absolute right-0 mt-1 w-24 bg-white border rounded shadow-md hidden z-50">
-    <button onclick="selectLanguage('de')" class="block w-full text-left px-3 py-1 hover:bg-amber-100">🇩🇪 Deutsch</button>
-    <button onclick="selectLanguage('ru')" class="block w-full text-left px-3 py-1 hover:bg-amber-100">🇷🇺 Русский</button>
+    <button onclick="setLanguage('de'); closeLangDropdown();" class="block w-full text-left px-3 py-1 hover:bg-amber-100">Deutsch</button>
+    <button onclick="setLanguage('ru'); closeLangDropdown();" class="block w-full text-left px-3 py-1 hover:bg-amber-100">Русский</button>
   </div>
 </div>
-
 
         <!-- Mobile Burger Button -->
         <button onclick="toggleMobileMenu()" class="md:hidden text-gray-700 ml-4">
@@ -616,67 +615,38 @@
 </footer>
 
 
+  <!-- JavaScript -->
   <script>
-  function setLanguage(lang) {
-    document.querySelectorAll(".lang").forEach(el => el.classList.remove("active"));
-    document.querySelectorAll(".lang-" + lang).forEach(el => el.classList.add("active"));
-  }
+    function setLanguage(lang) {
+      document.querySelectorAll(".lang").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".lang-" + lang).forEach(el => el.classList.add("active"));
+    }
 
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-  }
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
 
-  document.querySelectorAll(".menu-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      const category = tab.dataset.category;
+    document.querySelectorAll(".menu-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        const category = tab.dataset.category;
 
-      // Update buttons
-      document.querySelectorAll(".menu-tab").forEach(t => {
-        t.classList.remove("bg-amber-600", "text-white");
-        t.classList.add("bg-gray-300", "text-gray-700");
+        // Update buttons
+        document.querySelectorAll(".menu-tab").forEach(t => {
+          t.classList.remove("bg-amber-600", "text-white");
+          t.classList.add("bg-gray-300", "text-gray-700");
+        });
+        tab.classList.add("bg-amber-600", "text-white");
+        tab.classList.remove("bg-gray-300", "text-gray-700");
+
+        // Update category view
+        document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
+        document.getElementById("menu-" + category).classList.remove("hidden");
       });
-      tab.classList.add("bg-amber-600", "text-white");
-      tab.classList.remove("bg-gray-300", "text-gray-700");
-
-      // Update category view
-      document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
-      document.getElementById("menu-" + category).classList.remove("hidden");
     });
-  });
 
-  // 🔤 Language Dropdown (desktop)
-  function toggleLangDropdown() {
-    document.getElementById("lang-dropdown").classList.toggle("hidden");
-  }
-
-  function closeLangDropdown() {
-    document.getElementById("lang-dropdown").classList.add("hidden");
-  }
-
-  function selectLanguage(lang) {
-    setLanguage(lang);
-    const button = document.getElementById("lang-button");
-    if (lang === 'de') {
-      button.innerHTML = 'DE ▾';
-    } else if (lang === 'ru') {
-      button.innerHTML = 'RU ▾';
-    }
-    closeLangDropdown();
-  }
-
-  // Закрытие языка при клике вне меню
-  document.addEventListener("click", function (e) {
-    const dropdown = document.getElementById("lang-dropdown");
-    const button = document.getElementById("lang-button");
-    if (!dropdown.contains(e.target) && e.target !== button) {
-      dropdown.classList.add("hidden");
-    }
-  });
-
-  // Стартовый язык
-  setLanguage('de');
-</script>
-
+    // Standard: Deutsch
+    setLanguage('de');
+  </script>
 </body>
 </html>
