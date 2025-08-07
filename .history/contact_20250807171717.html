@@ -56,14 +56,11 @@
 <!-- Header mit Navigation -->
 <header class="bg-white shadow-md">
 <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
     <div class="logo-container">
     <h1 class="logo-title">Vilana</h1>
     <span class="logo-subtitle">Event & Catering</span>
     </div>
-
-    <!-- Desktop-Menü -->
-    <nav class="hidden md:flex space-x-8">
+    <nav class="hiden md:flex space-x-8">
     <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
     <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
     <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
@@ -71,36 +68,13 @@
     <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
     </nav>
-
-    <!-- Sprachwahl -->
-    <div class="hidden md:flex gap-2">
-    <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
-    <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
-    </div>
-
-    <!-- Burger-Menü Button -->
-    <button id="menuToggle" class="md:hidden focus:outline-none">
-    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-    </button>
-</div>
-
-<!-- Mobile-Menü -->
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="contact.html" class="block text-amber-700 font-bold underline">Kontakt</a>
-    <div class="flex gap-4 mt-2">
+    <!-- Sprachumschaltung -->
+    <div class="language-selector">
     <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
     <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
     </div>
 </div>
 </header>
-
 
 <main class="py-16">
     <div class="mx-auto px-4 max-w-3xl text-center">
@@ -224,16 +198,6 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     .catch(() => alert("Netzwerkfehler."));
 });
 </script>
-
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
-</script>
-
 
 </body>
 </html>
