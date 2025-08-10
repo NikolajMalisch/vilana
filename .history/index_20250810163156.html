@@ -1,0 +1,47 @@
+ry { return localStorage.getItem('siteLang'); } catch(e) { return null; } })();
+    setLanguage(saved || 'de');
+  });
+</script>
+
+<!-- Google Maps: responsive + 200-km-Kreis -->
+<script>
+  // Wird von der Google Maps API nach dem Laden aufgerufen
+  function initMap() {
+    // Mittelpunkt: Hameln (als Einsatzbasis)
+    const center = { lat: 52.104, lng: 9.358 };
+
+    // Zoom je nach Bildschirmbreite (mobil etwas weiter raus)
+    const zoom = window.innerWidth < 640 ? 6 : 7;
+
+    // Karte initialisieren
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center,
+      zoom,
+      gestureHandling: "cooperative",
+      fullscreenControl: false,
+      mapTypeControl: false,
+      streetViewControl: false
+    });
+
+    // Marker am Standort
+    new google.maps.Marker({
+      position: center,
+      map,
+      title: "Vilana Event & Catering – Hameln"
+    });
+
+    // 200-km Radius (Einsatzgebiet)
+    new google.maps.Circle({
+      map,
+      center,
+      radius: 200000,      // 200 km
+      fillColor: "#FF0000",
+      fillOpacity: 0.1,
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.35,
+      strokeWeight: 2
+    });
+
+    // Beim Resize Karte sanft zentrieren (verhindert „Wegrutschen“)
+    let lastCenter = center;
+    google.maps.event.add
