@@ -42,39 +42,15 @@
     .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
     .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
     .logo-subtitle { font-size: 1.2rem; font-weight: 400; color: #1f2937; }
-
     /* Фикс пропорций лотоса */
-
-    /* Лого */
-    .logo-container {
-        display: flex;
-        align-items: baseline;
-        gap: 0.3rem;
-        margin-top: 4px;
-    }
-
-    .logo-title {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.8rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        color: #1f2937;
-    }
-
-    .logo-subtitle {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #1f2937;
-    }
-
-    /* Фикс размера лотоса */
     .logo-container img {
-        height: auto;
-        max-height: 50px;  /* уменьши или увеличь по вкусу */
-        width: auto;
-        max-width: 100px;  /* уменьши или увеличь по вкусу */
-        object-fit: contain;
+    height: auto;
+      max-height: 80px;   /* можно увеличить или уменьшить */
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
     }
+
 
     /* Кнопки */
     .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
@@ -177,15 +153,13 @@
     <div class="container mx-auto px-4">
 
         <!-- Примечание: для идеальной резкости логотип лучше как SVG -->
-<img
+    <img
     src="images/vilana_logo.png"
     alt="Vilana Logo"
     loading="lazy"
     decoding="async"
-    class="mx-auto w-auto max-w-[140px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
-/>
-
-
+    class="mx-auto w-full max-w-[420px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+    />
 
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">Liebe zum Detail</p>
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru">Любовь к деталям</p>

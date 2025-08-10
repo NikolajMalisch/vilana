@@ -70,9 +70,9 @@
     /* Фикс размера лотоса */
     .logo-container img {
         height: auto;
-        max-height: 50px;  /* уменьши или увеличь по вкусу */
+        max-height: 0px;  /* уменьши или увеличь по вкусу */
         width: auto;
-        max-width: 100px;  /* уменьши или увеличь по вкусу */
+        max-width: 160px;  /* уменьши или увеличь по вкусу */
         object-fit: contain;
     }
 
@@ -177,15 +177,13 @@
     <div class="container mx-auto px-4">
 
         <!-- Примечание: для идеальной резкости логотип лучше как SVG -->
-<img
+    <img
     src="images/vilana_logo.png"
     alt="Vilana Logo"
     loading="lazy"
     decoding="async"
-    class="mx-auto w-auto max-w-[140px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
-/>
-
-
+    class="mx-auto w-full max-w-[420px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+    />
 
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">Liebe zum Detail</p>
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru">Любовь к деталям</p>
