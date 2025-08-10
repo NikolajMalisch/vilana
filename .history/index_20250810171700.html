@@ -38,32 +38,32 @@
 
   <!-- Базовые стили проекта (минимум, остальное — через Tailwind) -->
   <style>
-  /* Плавная прокрутка к якорям */
-  html { scroll-behavior: smooth; }
+    /* Плавная прокрутка к якорям */
+    html { scroll-behavior: smooth; }
 
-  /* Базовая типографика */
-  body, h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
-  body { background-color: #fdfaf6; }
+    /* Базовая типографика */
+    body, h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
+    body { background-color: #fdfaf6; }
 
-  /* Лого в шапке (текст) */
-  .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
-  .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
-  .logo-subtitle { font-size: 1.2rem; font-weight: 400; color: #1f2937; }
+    /* Лого (одна версия, без дубликатов) */
+    .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
+    .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
+    .logo-subtitle { font-size: 1.2rem; font-weight: 400; color: #1f2937; }
 
-  /* Если будет иконка/лотос в шапке */
-  .logo-container img {
-    height: auto;
-    max-height: 100px;
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
-  }
+    /* Размеры лотоса/лого-изображения (если PNG, лучше заменить на SVG) */
+    .logo-container img <img
+  src="images/vilana_logo.png"
+  alt="Vilana Logo"
+  loading="lazy"
+  decoding="async"
+  class="mx-auto w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[230px] lg:max-w-[250px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+  width="250" height="250"/>
+ }
 
-  /* Кнопки */
-  .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
-  .btn:hover { box-shadow:0 8px 24px rgba(0,0,0,.08); }
-</style>
-
+    /* Кнопки (тонкая рамка для общего стиля) */
+    .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
+    .btn:hover { box-shadow:0 8px 24px rgba(0,0,0,.08); }
+  </style>
 
 <!-- JSON-LD: CateringService -->
 <script type="application/ld+json">
@@ -362,7 +362,7 @@
       <div class="grid md:grid-cols-3 gap-6">
         <!-- HAMELN -->
         <article id="hameln" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-          <img src="images/stadte name/Event&Catering.svg"
+          <img src="images/stadte name/images/stadte/Event&Catering.svg"
               alt="Catering Hameln – Buffet und Service vor Ort"
               loading="lazy" decoding="async" width="1200" height="800"
               class="w-full h-48 object-cover">

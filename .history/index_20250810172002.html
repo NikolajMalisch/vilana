@@ -37,33 +37,69 @@
   <meta name="twitter:image" content="https://www.vilana-event.de/images/og-cover.webp" />
 
   <!-- Базовые стили проекта (минимум, остальное — через Tailwind) -->
+   <!-- Базовые стили проекта (минимум, остальное — через Tailwind) -->
   <style>
-  /* Плавная прокрутка к якорям */
-  html { scroll-behavior: smooth; }
+    /* Плавная прокрутка к якорям */
+    html { scroll-behavior: smooth; }
 
-  /* Базовая типографика */
-  body, h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
-  body { background-color: #fdfaf6; }
+    /* Базовая типографика */
+    body, h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
+    body { background-color: #fdfaf6; }
 
-  /* Лого в шапке (текст) */
-  .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
-  .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
-  .logo-subtitle { font-size: 1.2rem; font-weight: 400; color: #1f2937; }
+    /* Лого (текстовая часть в шапке) */
+    .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
+    .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
+    .logo-subtitle { font-size: 1.2rem; font-weight: 400; color: #1f2937; }
 
-  /* Если будет иконка/лотос в шапке */
-  .logo-container img {
-    height: auto;
-    max-height: 100px;
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
-  }
+    /* Лого-изображение (лотос или картинка в шапке) */
+    .logo-container img {
+      height: auto;
+      max-height: 60px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+    }
 
-  /* Кнопки */
-  .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
-  .btn:hover { box-shadow:0 8px 24px rgba(0,0,0,.08); }
-</style>
+    /* Кнопки */
+    .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
+    .btn:hover { box-shadow:0 8px 24px rgba(0,0,0,.08); }
+  </style>
+</head>
 
+<body class="text-gray-800 antialiased">
+<!-- Ссылка «пропустить к содержимому» для доступности -->
+<a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">Zum Inhalt springen</a>
+
+<!-- HEADER -->
+<header class="bg-white shadow-md sticky top-0 z-40">
+  ...
+</header>
+
+<!-- HERO -->
+<section id="home" class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center">
+  <div class="container mx-auto px-4">
+
+    <!-- Логотип в HERO (увеличенный) -->
+    <img
+      src="images/vilana_logo.png"
+      alt="Vilana Logo"
+      loading="lazy"
+      decoding="async"
+      class="mx-auto w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[230px] lg:max-w-[250px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+      width="250" height="250"
+    />
+
+    <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">Liebe zum Detail</p>
+    <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru hidden">Любовь к деталям</p>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-de">Erleben Sie Catering neu mit Liebe, Geschmack und Stil</p>
+    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-ru hidden">Откройте для себя кейтеринг заново – с любовью, вкусом и стилем</p>
+
+    <a href="contact.html" class="lang lang-de inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs">Kontaktieren Sie uns</a>
+    <a href="contact.html" class="lang lang-ru inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs hidden">Связаться с нами</a>
+
+    <div class="mt-12 text-3xl animate-bounce text-white" aria-hidden="true">↓</div>
+  </div>
+</section>
 
 <!-- JSON-LD: CateringService -->
 <script type="application/ld+json">
@@ -362,7 +398,7 @@
       <div class="grid md:grid-cols-3 gap-6">
         <!-- HAMELN -->
         <article id="hameln" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-          <img src="images/stadte name/Event&Catering.svg"
+          <img src="images/stadte name/images/stadte/Event&Catering.svg"
               alt="Catering Hameln – Buffet und Service vor Ort"
               loading="lazy" decoding="async" width="1200" height="800"
               class="w-full h-48 object-cover">
