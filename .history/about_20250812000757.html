@@ -239,90 +239,90 @@
 
       // показать только выбранный язык
     document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
 
       // обновить подписи на кнопках языка
-    const btnD = document.getElementById('langToggle');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuD = document.getElementById('langMenu');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuD = document.getElementById('langMenu');
+      const menuM = document.getElementById('langMenuMobile');
 
-    if (btnD){
+      if (btnD){
         btnD.textContent = isRu ? 'RU ▾' : 'DE ▾';
         btnD.setAttribute('aria-expanded','false');
-    }
-    if (btnM){
+      }
+      if (btnM){
         btnM.textContent = isRu ? 'RU' : 'DE';
         btnM.setAttribute('aria-expanded','false');
-    }
-    menuD?.classList.add('hidden');
-    menuM?.classList.add('hidden');
+      }
+      menuD?.classList.add('hidden');
+      menuM?.classList.add('hidden');
 
       // год в футере
-    const y = new Date().getFullYear();
-    const yDe = document.getElementById('year-de');
-    const yRu = document.getElementById('year-ru');
-    if (yDe) yDe.textContent = y;
-    if (yRu) yRu.textContent = y;
+      const y = new Date().getFullYear();
+      const yDe = document.getElementById('year-de');
+      const yRu = document.getElementById('year-ru');
+      if (yDe) yDe.textContent = y;
+      if (yRu) yRu.textContent = y;
     }
 
     function initHeader(){
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    const btnD = document.getElementById('langToggle');
-    const menuD = document.getElementById('langMenu');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const menuD = document.getElementById('langMenu');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuM = document.getElementById('langMenuMobile');
 
       // burger
-    if (menuToggle && mobileMenu){
+      if (menuToggle && mobileMenu){
         menuToggle.addEventListener('click', () => {
-        const hidden = mobileMenu.classList.toggle('hidden');
-        menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+          const hidden = mobileMenu.classList.toggle('hidden');
+          menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
         });
         mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
+          a.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             menuToggle.setAttribute('aria-expanded','false');
+          });
         });
-        });
-    }
+      }
 
       // desktop lang open/close
-    btnD?.addEventListener('click', () => {
+      btnD?.addEventListener('click', () => {
         const hidden = menuD.classList.toggle('hidden');
         btnD.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuD?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuD?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // mobile lang open/close
-    btnM?.addEventListener('click', () => {
+      btnM?.addEventListener('click', () => {
         const hidden = menuM.classList.toggle('hidden');
         btnM.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuM?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuM?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // click outside → close both lang menus
-    document.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
         if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)){
-        menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+          menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
         }
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
-        menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+          menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>

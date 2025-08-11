@@ -287,42 +287,42 @@
             menuToggle.setAttribute('aria-expanded','false');
         });
         });
-    }
+      }
 
       // desktop lang open/close
-    btnD?.addEventListener('click', () => {
+      btnD?.addEventListener('click', () => {
         const hidden = menuD.classList.toggle('hidden');
         btnD.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuD?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuD?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // mobile lang open/close
-    btnM?.addEventListener('click', () => {
+      btnM?.addEventListener('click', () => {
         const hidden = menuM.classList.toggle('hidden');
         btnM.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuM?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuM?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // click outside → close both lang menus
-    document.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
         if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)){
-        menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+          menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
         }
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
-        menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+          menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>

@@ -315,14 +315,14 @@
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
         menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>

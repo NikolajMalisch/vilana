@@ -30,27 +30,27 @@
     body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; }
     .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: .5px; color: #1f2937; }
     .logo-subtitle { font-size: 1.2rem; color: #1f2937; }
-</style>
+  </style>
 
-<noscript>
+  <noscript>
     <!-- Если JS выключен, показываем немецкий -->
     <style>.lang-ru{display:none!important;}</style>
-</noscript>
+  </noscript>
 </head>
 <body class="text-gray-800 antialiased">
 
-<!-- HEADER -->
-<header class="bg-white shadow-md sticky top-0 z-40">
+  <!-- HEADER -->
+  <header class="bg-white shadow-md sticky top-0 z-40">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
-    <!-- Logo -->
-    <div class="flex items-baseline gap-1">
+      <!-- Logo -->
+      <div class="flex items-baseline gap-1">
         <span class="logo-title">Vilana</span>
         <span class="logo-subtitle">Event &amp; Catering</span>
-    </div>
+      </div>
 
-    <!-- Desktop-Navigation -->
-    <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+      <!-- Desktop-Navigation -->
+      <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
         <a href="index.html" class="text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
         <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
@@ -60,269 +60,269 @@
 
         <!-- Языковое меню (Desktop) -->
         <div class="relative ml-2">
-        <button id="langToggle"
-                class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100"
-                type="button"
-                aria-haspopup="true" aria-expanded="false"
-                aria-controls="langMenu" aria-label="Sprache wählen – Deutsch">
+          <button id="langToggle"
+                  class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100"
+                  type="button"
+                  aria-haspopup="true" aria-expanded="false"
+                  aria-controls="langMenu" aria-label="Sprache wählen – Deutsch">
             DE ▾
-        </button>
+          </button>
 
-        <!-- Важно: ul[role=menu] > li[role=none] > button[role=menuitem] -->
-        <ul id="langMenu"
-            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50 ring-1 ring-black/5"
-            role="menu" aria-labelledby="langToggle">
+          <!-- Важно: ul[role=menu] > li[role=none] > button[role=menuitem] -->
+          <ul id="langMenu"
+              class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50 ring-1 ring-black/5"
+              role="menu" aria-labelledby="langToggle">
             <li role="none">
-            <button type="button" data-lang="de" role="menuitem"
-                    class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button>
+              <button type="button" data-lang="de" role="menuitem"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button>
             </li>
             <li role="none">
-            <button type="button" data-lang="ru" role="menuitem"
-                class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button>
+              <button type="button" data-lang="ru" role="menuitem"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button>
             </li>
-        </ul>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
-    <!-- Mobile: язык + бургер (кнопка языка меньше, без рамки — как на index) -->
-    <div class="flex items-center md:hidden gap-2 relative">
+      <!-- Mobile: язык + бургер (кнопка языка меньше, без рамки — как на index) -->
+      <div class="flex items-center md:hidden gap-2 relative">
         <button id="langToggleMobile"
                 type="button"
                 class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800 focus:outline-none active:scale-[.98]"
                 aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile"
                 aria-label="Sprache wählen – Mobil, Deutsch">
-        DE
+          DE
         </button>
         <ul id="langMenuMobile"
             class="hidden absolute right-12 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
             role="menu" aria-label="Sprache wählen (mobil)">
-        <li role="none">
+          <li role="none">
             <button type="button" data-lang="de" role="menuitem"
                     class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button>
-        </li>
-        <li role="none">
+          </li>
+          <li role="none">
             <button type="button" data-lang="ru" role="menuitem"
                     class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button>
-        </li>
+          </li>
         </ul>
 
         <button id="menuToggle" type="button"
                 class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
                 aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+          </svg>
         </button>
-    </div>
+      </div>
     </div>
 
     <!-- Mobile Menü -->
     <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="navigation" aria-label="Mobiles Menü">
-    <a href="index.html" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" aria-current="page" class="block text-amber-700 font-semibold underline underline-offset-4">Über uns</a>
-    <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
+      <a href="index.html" class="block text-gray-700 hover:text-amber-700">Startseite</a>
+      <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
+      <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
+      <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
+      <a href="about.html" aria-current="page" class="block text-amber-700 font-semibold underline underline-offset-4">Über uns</a>
+      <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
     </div>
-</header>
+  </header>
 
-<!-- MAIN -->
-<main class="py-16">
+  <!-- MAIN -->
+  <main class="py-16">
     <div class="max-w-3xl mx-auto px-4 text-center">
 
-    <!-- DE -->
-    <div class="lang lang-de text-left space-y-6">
+      <!-- DE -->
+      <div class="lang lang-de text-left space-y-6">
         <div class="flex justify-center">
-        <img src="images/vilana_logo.png" alt="Vilana Logo"
-            class="h-60 sm:h-80 drop-shadow-lg transition-transform duration-300 hover:scale-105"
-            width="320" height="320" decoding="async" loading="lazy">
+          <img src="images/vilana_logo.png" alt="Vilana Logo"
+               class="h-60 sm:h-80 drop-shadow-lg transition-transform duration-300 hover:scale-105"
+               width="320" height="320" decoding="async" loading="lazy">
         </div>
 
         <p class="text-base sm:text-lg leading-relaxed">
-        <span class="logo-title">Vilana</span> – steht für exklusiven Service und kulinarische Erlebnisse auf höchstem Niveau.
-        Wir richten uns an Menschen, die erstklassige Qualität und persönliche Betreuung schätzen.
+          <span class="logo-title">Vilana</span> – steht für exklusiven Service und kulinarische Erlebnisse auf höchstem Niveau.
+          Wir richten uns an Menschen, die erstklassige Qualität und persönliche Betreuung schätzen.
         </p>
 
         <div>
-        <h3 class="text-2xl font-semibold mb-2">Individuelle Konzepte</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Individuelle Konzepte</h3>
+          <p class="text-base sm:text-lg leading-relaxed">
             Ob private Feier oder großes Firmenevent: Wir kreieren maßgeschneiderte Konzepte, die begeistern und lange in Erinnerung bleiben.
-        </p>
+          </p>
         </div>
 
         <div>
-        <h3 class="text-2xl font-semibold mb-2">Leidenschaft &amp; Präzision</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Leidenschaft &amp; Präzision</h3>
+          <p class="text-base sm:text-lg leading-relaxed">
             Mit Liebe zum Detail verwandelt unser Team jede Idee in ein unvergessliches Erlebnis.
             Lassen Sie sich inspirieren von Geschmack, Stil und Perfektion.
-        </p>
+          </p>
         </div>
-    </div>
+      </div>
 
-    <!-- RU (скрыт по умолчанию) -->
-    <div class="lang lang-ru text-left space-y-6 hidden">
+      <!-- RU (скрыт по умолчанию) -->
+      <div class="lang lang-ru text-left space-y-6 hidden">
         <div class="flex justify-center">
-        <img src="images/vilana_logo.png" alt="Логотип Vilana"
-            class="h-60 sm:h-80 drop-shadow-lg transition-transform duration-300 hover:scale-105"
-            width="320" height="320" decoding="async" loading="lazy">
+          <img src="images/vilana_logo.png" alt="Логотип Vilana"
+               class="h-60 sm:h-80 drop-shadow-lg transition-transform duration-300 hover:scale-105"
+               width="320" height="320" decoding="async" loading="lazy">
         </div>
 
         <p class="text-base sm:text-lg leading-relaxed">
-        <span class="logo-title">Vilana</span> — премиальный сервис мероприятий и кейтеринга, созданный для тех,
-        кто ценит безупречное качество и индивидуальный подход.
+          <span class="logo-title">Vilana</span> — премиальный сервис мероприятий и кейтеринга, созданный для тех,
+          кто ценит безупречное качество и индивидуальный подход.
         </p>
 
         <div>
-        <h3 class="text-2xl font-semibold mb-2">Персональный подход</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Персональный подход</h3>
+          <p class="text-base sm:text-lg leading-relaxed">
             Мы разрабатываем уникальные гастрономические концепции под любые форматы —
             от уютных семейных встреч до масштабных корпоративных событий.
-        </p>
+          </p>
         </div>
 
         <div>
-        <h3 class="text-2xl font-semibold mb-2">Точность и вдохновение</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Точность и вдохновение</h3>
+          <p class="text-base sm:text-lg leading-relaxed">
             Наша команда реализует ваши идеи с вниманием к деталям. Мы объединяем вкус, эстетику и сервис высокого уровня,
             чтобы ваше событие стало по-настоящему незабываемым.
-        </p>
+          </p>
         </div>
-    </div>
+      </div>
 
     </div>
-</main>
+  </main>
 
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 relative" role="contentinfo">
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-10 relative" role="contentinfo">
     <div class="container mx-auto px-4 text-center">
-    <div class="mb-4">
+      <div class="mb-4">
         <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 hover:text-amber-400 transition" aria-label="Instagram – vilana_catering">
-        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+           class="inline-flex items-center gap-2 hover:text-amber-400 transition" aria-label="Instagram – vilana_catering">
+          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
             <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-        </svg>
-        Instagram
+          </svg>
+          Instagram
         </a>
-    </div>
+      </div>
 
-    <p class="mb-2">
+      <p class="mb-2">
         <a href="impressum.html" class="hover:underline">Impressum</a> |
         <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
         <a href="agb.html" class="hover:underline">AGB</a>
-    </p>
+      </p>
 
-    <p class="lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.</p>
+      <p class="lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+      <p class="lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.</p>
     </div>
 
     <button type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})"
             class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
             title="Nach oben" aria-label="Nach oben">▲</button>
-</footer>
+  </footer>
 
-<!-- JS: один чистый переключатель языка + меню -->
-<script>
+  <!-- JS: один чистый переключатель языка + меню -->
+  <script>
     // ----- helpers
     function getCurrentLang(){
-    try{
+      try{
         const v = localStorage.getItem('lang') || localStorage.getItem('siteLang') || 'de';
         return (v === 'ru' || v === 'de') ? v : 'de';
-    }catch(e){ return 'de'; }
+      }catch(e){ return 'de'; }
     }
 
     function setLanguage(lang){
-    const isRu = (lang === 'ru');
-    try{ localStorage.setItem('lang', lang); }catch(e){}
+      const isRu = (lang === 'ru');
+      try{ localStorage.setItem('lang', lang); }catch(e){}
 
-    document.documentElement.lang = isRu ? 'ru' : 'de';
+      document.documentElement.lang = isRu ? 'ru' : 'de';
 
       // показать только выбранный язык
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
 
       // обновить подписи на кнопках языка
-    const btnD = document.getElementById('langToggle');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuD = document.getElementById('langMenu');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuD = document.getElementById('langMenu');
+      const menuM = document.getElementById('langMenuMobile');
 
-    if (btnD){
+      if (btnD){
         btnD.textContent = isRu ? 'RU ▾' : 'DE ▾';
         btnD.setAttribute('aria-expanded','false');
-    }
-    if (btnM){
+      }
+      if (btnM){
         btnM.textContent = isRu ? 'RU' : 'DE';
         btnM.setAttribute('aria-expanded','false');
-    }
-    menuD?.classList.add('hidden');
-    menuM?.classList.add('hidden');
+      }
+      menuD?.classList.add('hidden');
+      menuM?.classList.add('hidden');
 
       // год в футере
-    const y = new Date().getFullYear();
-    const yDe = document.getElementById('year-de');
-    const yRu = document.getElementById('year-ru');
-    if (yDe) yDe.textContent = y;
-    if (yRu) yRu.textContent = y;
+      const y = new Date().getFullYear();
+      const yDe = document.getElementById('year-de');
+      const yRu = document.getElementById('year-ru');
+      if (yDe) yDe.textContent = y;
+      if (yRu) yRu.textContent = y;
     }
 
     function initHeader(){
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    const btnD = document.getElementById('langToggle');
-    const menuD = document.getElementById('langMenu');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const menuD = document.getElementById('langMenu');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuM = document.getElementById('langMenuMobile');
 
       // burger
-    if (menuToggle && mobileMenu){
+      if (menuToggle && mobileMenu){
         menuToggle.addEventListener('click', () => {
-        const hidden = mobileMenu.classList.toggle('hidden');
-        menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+          const hidden = mobileMenu.classList.toggle('hidden');
+          menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
         });
         mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
+          a.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             menuToggle.setAttribute('aria-expanded','false');
+          });
         });
-        });
-    }
+      }
 
       // desktop lang open/close
-    btnD?.addEventListener('click', () => {
+      btnD?.addEventListener('click', () => {
         const hidden = menuD.classList.toggle('hidden');
         btnD.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuD?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuD?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // mobile lang open/close
-    btnM?.addEventListener('click', () => {
+      btnM?.addEventListener('click', () => {
         const hidden = menuM.classList.toggle('hidden');
         btnM.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuM?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuM?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // click outside → close both lang menus
-    document.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
         if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)){
-        menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+          menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
         }
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
-        menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+          menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>

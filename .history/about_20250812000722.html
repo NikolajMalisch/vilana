@@ -175,154 +175,154 @@
 
         <div>
         <h3 class="text-2xl font-semibold mb-2">Персональный подход</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <p class="text-base sm:text-lg leading-relaxed">
             Мы разрабатываем уникальные гастрономические концепции под любые форматы —
             от уютных семейных встреч до масштабных корпоративных событий.
-        </p>
+          </p>
         </div>
 
         <div>
-        <h3 class="text-2xl font-semibold mb-2">Точность и вдохновение</h3>
-        <p class="text-base sm:text-lg leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-2">Точность и вдохновение</h3>
+          <p class="text-base sm:text-lg leading-relaxed">
             Наша команда реализует ваши идеи с вниманием к деталям. Мы объединяем вкус, эстетику и сервис высокого уровня,
             чтобы ваше событие стало по-настоящему незабываемым.
-        </p>
+          </p>
         </div>
-    </div>
+      </div>
 
     </div>
-</main>
+  </main>
 
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 relative" role="contentinfo">
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-10 relative" role="contentinfo">
     <div class="container mx-auto px-4 text-center">
-    <div class="mb-4">
+      <div class="mb-4">
         <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 hover:text-amber-400 transition" aria-label="Instagram – vilana_catering">
-        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+           class="inline-flex items-center gap-2 hover:text-amber-400 transition" aria-label="Instagram – vilana_catering">
+          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
             <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-        </svg>
-        Instagram
+          </svg>
+          Instagram
         </a>
-    </div>
+      </div>
 
-    <p class="mb-2">
+      <p class="mb-2">
         <a href="impressum.html" class="hover:underline">Impressum</a> |
         <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
         <a href="agb.html" class="hover:underline">AGB</a>
-    </p>
+      </p>
 
-    <p class="lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.</p>
+      <p class="lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+      <p class="lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.</p>
     </div>
 
     <button type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})"
             class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
             title="Nach oben" aria-label="Nach oben">▲</button>
-</footer>
+  </footer>
 
-<!-- JS: один чистый переключатель языка + меню -->
-<script>
+  <!-- JS: один чистый переключатель языка + меню -->
+  <script>
     // ----- helpers
     function getCurrentLang(){
-    try{
+      try{
         const v = localStorage.getItem('lang') || localStorage.getItem('siteLang') || 'de';
         return (v === 'ru' || v === 'de') ? v : 'de';
-    }catch(e){ return 'de'; }
+      }catch(e){ return 'de'; }
     }
 
     function setLanguage(lang){
-    const isRu = (lang === 'ru');
-    try{ localStorage.setItem('lang', lang); }catch(e){}
+      const isRu = (lang === 'ru');
+      try{ localStorage.setItem('lang', lang); }catch(e){}
 
-    document.documentElement.lang = isRu ? 'ru' : 'de';
+      document.documentElement.lang = isRu ? 'ru' : 'de';
 
       // показать только выбранный язык
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.classList.remove('hidden'));
 
       // обновить подписи на кнопках языка
-    const btnD = document.getElementById('langToggle');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuD = document.getElementById('langMenu');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuD = document.getElementById('langMenu');
+      const menuM = document.getElementById('langMenuMobile');
 
-    if (btnD){
+      if (btnD){
         btnD.textContent = isRu ? 'RU ▾' : 'DE ▾';
         btnD.setAttribute('aria-expanded','false');
-    }
-    if (btnM){
+      }
+      if (btnM){
         btnM.textContent = isRu ? 'RU' : 'DE';
         btnM.setAttribute('aria-expanded','false');
-    }
-    menuD?.classList.add('hidden');
-    menuM?.classList.add('hidden');
+      }
+      menuD?.classList.add('hidden');
+      menuM?.classList.add('hidden');
 
       // год в футере
-    const y = new Date().getFullYear();
-    const yDe = document.getElementById('year-de');
-    const yRu = document.getElementById('year-ru');
-    if (yDe) yDe.textContent = y;
-    if (yRu) yRu.textContent = y;
+      const y = new Date().getFullYear();
+      const yDe = document.getElementById('year-de');
+      const yRu = document.getElementById('year-ru');
+      if (yDe) yDe.textContent = y;
+      if (yRu) yRu.textContent = y;
     }
 
     function initHeader(){
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    const btnD = document.getElementById('langToggle');
-    const menuD = document.getElementById('langMenu');
-    const btnM = document.getElementById('langToggleMobile');
-    const menuM = document.getElementById('langMenuMobile');
+      const btnD = document.getElementById('langToggle');
+      const menuD = document.getElementById('langMenu');
+      const btnM = document.getElementById('langToggleMobile');
+      const menuM = document.getElementById('langMenuMobile');
 
       // burger
-    if (menuToggle && mobileMenu){
+      if (menuToggle && mobileMenu){
         menuToggle.addEventListener('click', () => {
-        const hidden = mobileMenu.classList.toggle('hidden');
-        menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+          const hidden = mobileMenu.classList.toggle('hidden');
+          menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
         });
         mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
+          a.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             menuToggle.setAttribute('aria-expanded','false');
+          });
         });
-        });
-    }
+      }
 
       // desktop lang open/close
-    btnD?.addEventListener('click', () => {
+      btnD?.addEventListener('click', () => {
         const hidden = menuD.classList.toggle('hidden');
         btnD.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuD?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuD?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // mobile lang open/close
-    btnM?.addEventListener('click', () => {
+      btnM?.addEventListener('click', () => {
         const hidden = menuM.classList.toggle('hidden');
         btnM.setAttribute('aria-expanded', hidden ? 'false' : 'true');
-    });
-    menuM?.querySelectorAll('button[data-lang]').forEach(b =>
+      });
+      menuM?.querySelectorAll('button[data-lang]').forEach(b =>
         b.addEventListener('click', () => setLanguage(b.dataset.lang))
-    );
+      );
 
       // click outside → close both lang menus
-    document.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
         if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)){
-        menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+          menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
         }
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
-        menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+          menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>

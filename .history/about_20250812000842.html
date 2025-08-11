@@ -308,21 +308,21 @@
     );
 
       // click outside → close both lang menus
-    document.addEventListener('click', (e) => {
+      document.addEventListener('click', (e) => {
         if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)){
-        menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+          menuD.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
         }
         if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
-        menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+          menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
         }
-    });
+      });
     }
 
     // init
     document.addEventListener('DOMContentLoaded', () => {
-    initHeader();
-    setLanguage(getCurrentLang());
+      initHeader();
+      setLanguage(getCurrentLang());
     });
-</script>
+  </script>
 </body>
 </html>
