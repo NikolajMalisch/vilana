@@ -225,19 +225,20 @@ langToggleDesktop?.addEventListener('click', () => {
     langMenuDesktop.classList.toggle('hidden');
     langToggleDesktop.setAttribute('aria-expanded', langMenuDesktop.classList.contains('hidden') ? 'false' : 'true');
 });
-langMenuDesktop?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  langMenuDesktop?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
-langToggleMobile?.addEventListener('click', () => {
+  langToggleMobile?.addEventListener('click', () => {
     langMenuMobile.classList.toggle('hidden');
     langToggleMobile.setAttribute('aria-expanded', langMenuMobile.classList.contains('hidden') ? 'false' : 'true');
-});
-langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  });
+  langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
-document.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     if (langMenuDesktop && !langMenuDesktop.contains(e.target) && !langToggleDesktop?.contains(e.target)) langMenuDesktop.classList.add('hidden');
-});
+    if (langMenuMobile && !langMenuMobile.contains(e.target) && !langToggleMobile?.contains(e.target)) langMenuMobile.classList.add('hidden');
+  });
 
-function setLanguage(lang){
+  function setLanguage(lang){
     document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
     document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
     document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
@@ -245,12 +246,12 @@ function setLanguage(lang){
     if (langToggleMobile)  langToggleMobile.textContent  = lang.toUpperCase();
     langMenuDesktop?.classList.add('hidden');
     langMenuMobile?.classList.add('hidden');
-}
-setLanguage('de');
+  }
+  setLanguage('de');
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 </body>
 </html>

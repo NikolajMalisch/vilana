@@ -118,16 +118,16 @@
 
 <script>
     /* =========================
-    Einstellungen für Größe & Darstellung
+     Einstellungen für Größe & Darstellung
      ========================= */
   // Einheitliches Seitenverhältnis für jede Kachel (3:2 wie das erste Foto)
-const CARD_RATIO = '3 / 2';
+  const CARD_RATIO = '3 / 2';
   // Modus der Bildanpassung:
   // 'contain' = ganzes Foto sichtbar (mit ggf. Rändern), 'cover' = ohne Ränder, kann zuschneiden
-const IMAGE_FIT  = 'contain';
+  const IMAGE_FIT  = 'contain';
 
   /* ---------- Datenquelle (deine Pfade bleiben unverändert) ---------- */
-const imagePaths = [
+  const imagePaths = [
     'images/event/event-1.webp','images/event/event-2.webp','images/event/event-3.webp',
     'images/event/event-4.webp','images/event/event-5.webp','images/event/event-6-1.webp',
     'images/event/event-7.webp','images/event/event-8.webp','images/event/event-9.webp',
@@ -135,10 +135,10 @@ const imagePaths = [
     'images/event/event-13.webp','images/event/event-14.webp','images/event/event-15.webp',
     'images/event/event-16.webp','images/event/event-17.webp','images/event/event-18.webp',
     'images/event/event-19.webp','images/event/event-20.webp','images/event/event-21.webp'
-];
+  ];
 
   // Alternativtexte für SEO/Screenreader (DE; bei RU umschaltbar über dein Sprachmenü)
-const altTemplates = [
+  const altTemplates = [
     "Hochzeit Catering Hameln","Eventservice Niedersachsen","Catering Buffet Hameln",
     "Hochzeitstorte Niedersachsen","Party Catering Hannover","Catering mit Servicepersonal",
     "Buffet Hochzeit Niedersachsen","Event Buffet Hameln","Hochzeit in Bad Pyrmont",
@@ -146,22 +146,22 @@ const altTemplates = [
     "Hochzeitstafel Niedersachsen","Eventdekoration Hameln","Candy Bar Hochzeit",
     "Menü für Firmenfeier","Hochzeit Empfang","Eventservice NRW",
     "Hochzeit Catering Buffet","Abendveranstaltung Niedersachsen","Hochzeit Catering in Hannover"
-];
+  ];
 
   // Intrinsische Größen: helfen dem Browser, sofort Platz zu reservieren (kein Layout-Sprung)
-const DEF_W = 1200, DEF_H = 800;
+  const DEF_W = 1200, DEF_H = 800;
 
-const gallery = document.getElementById('gallery');
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightbox-image');
-let currentIndex = 0;
+  const gallery = document.getElementById('gallery');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-image');
+  let currentIndex = 0;
 
-/* =========================
-    Galerie dynamisch aufbauen
-    – Kachel hat feste Ratio (CARD_RATIO)
-    – Bild wird vollständig angezeigt (IMAGE_FIT = 'contain')
+  /* =========================
+     Galerie dynamisch aufbauen
+     – Kachel hat feste Ratio (CARD_RATIO)
+     – Bild wird vollständig angezeigt (IMAGE_FIT = 'contain')
      ========================= */
-imagePaths.forEach((src, i) => {
+  imagePaths.forEach((src, i) => {
     // Kachel/Container
     const fig = document.createElement('figure');
     fig.className = 'relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5';
@@ -186,58 +186,59 @@ imagePaths.forEach((src, i) => {
 
     fig.appendChild(img);
     gallery.appendChild(fig);
-});
+  });
 
   // Log für fehlende Pfade
-document.addEventListener('error', (e) => {
+  document.addEventListener('error', (e) => {
     const t = e.target;
     if (t.tagName === 'IMG') console.error('Bild nicht gefunden:', t.src);
-}, true);
+  }, true);
 
-    /* =========================
-    Lightbox-Logik
+  /* =========================
+     Lightbox-Logik
      ========================= */
-function openLightbox(i){ currentIndex=i; updateLightbox(); lb.classList.remove('hidden'); lbImg.classList.remove('zoomed'); }
-function closeLightbox(){ lb.classList.add('hidden'); lbImg.src=''; lbImg.classList.remove('zoomed'); }
-function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; updateLightbox(); }
-function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; updateLightbox(); }
-function updateLightbox(){ lbImg.src=imagePaths[currentIndex]; }
-function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
+  function openLightbox(i){ currentIndex=i; updateLightbox(); lb.classList.remove('hidden'); lbImg.classList.remove('zoomed'); }
+  function closeLightbox(){ lb.classList.add('hidden'); lbImg.src=''; lbImg.classList.remove('zoomed'); }
+  function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; updateLightbox(); }
+  function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; updateLightbox(); }
+  function updateLightbox(){ lbImg.src=imagePaths[currentIndex]; }
+  function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
 
   // Tastaturbedienung (optional)
-document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', (e) => {
     if (lb.classList.contains('hidden')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft')  prevImage();
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleZoom({target: lbImg}); }
-});
+  });
 
-/* =========================
-    Sprache + Burger-Menü (wie bei dir)
+  /* =========================
+     Sprache + Burger-Menü (wie bei dir)
      ========================= */
-const langToggleDesktop = document.getElementById('langToggle');
-const langMenuDesktop   = document.getElementById('langMenu');
-const langToggleMobile  = document.getElementById('langToggleMobile');
-const langMenuMobile    = document.getElementById('langMenuMobile');
+  const langToggleDesktop = document.getElementById('langToggle');
+  const langMenuDesktop   = document.getElementById('langMenu');
+  const langToggleMobile  = document.getElementById('langToggleMobile');
+  const langMenuMobile    = document.getElementById('langMenuMobile');
 
-langToggleDesktop?.addEventListener('click', () => {
+  langToggleDesktop?.addEventListener('click', () => {
     langMenuDesktop.classList.toggle('hidden');
     langToggleDesktop.setAttribute('aria-expanded', langMenuDesktop.classList.contains('hidden') ? 'false' : 'true');
-});
-langMenuDesktop?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  });
+  langMenuDesktop?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
-langToggleMobile?.addEventListener('click', () => {
+  langToggleMobile?.addEventListener('click', () => {
     langMenuMobile.classList.toggle('hidden');
     langToggleMobile.setAttribute('aria-expanded', langMenuMobile.classList.contains('hidden') ? 'false' : 'true');
-});
-langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  });
+  langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
-document.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     if (langMenuDesktop && !langMenuDesktop.contains(e.target) && !langToggleDesktop?.contains(e.target)) langMenuDesktop.classList.add('hidden');
-});
+    if (langMenuMobile && !langMenuMobile.contains(e.target) && !langToggleMobile?.contains(e.target)) langMenuMobile.classList.add('hidden');
+  });
 
-function setLanguage(lang){
+  function setLanguage(lang){
     document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
     document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
     document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
@@ -245,12 +246,12 @@ function setLanguage(lang){
     if (langToggleMobile)  langToggleMobile.textContent  = lang.toUpperCase();
     langMenuDesktop?.classList.add('hidden');
     langMenuMobile?.classList.add('hidden');
-}
-setLanguage('de');
+  }
+  setLanguage('de');
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 </body>
 </html>

@@ -235,7 +235,7 @@ langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click'
 
 document.addEventListener('click', (e) => {
     if (langMenuDesktop && !langMenuDesktop.contains(e.target) && !langToggleDesktop?.contains(e.target)) langMenuDesktop.classList.add('hidden');
-});
+  });
 
 function setLanguage(lang){
     document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
@@ -245,12 +245,12 @@ function setLanguage(lang){
     if (langToggleMobile)  langToggleMobile.textContent  = lang.toUpperCase();
     langMenuDesktop?.classList.add('hidden');
     langMenuMobile?.classList.add('hidden');
-}
-setLanguage('de');
+  }
+  setLanguage('de');
 
-document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+  });
 </script>
 </body>
 </html>
