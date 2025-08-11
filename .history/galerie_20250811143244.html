@@ -163,7 +163,7 @@ document.addEventListener('click',(e)=>{
     if(!langMenuMobile.contains(e.target)&&!langToggleMobile.contains(e.target)) langMenuMobile.classList.add('hidden');
 });
 
-function setLanguage(lang){
+  function setLanguage(lang){
     document.documentElement.lang=lang;
     document.querySelectorAll('.lang').forEach(el=>el.classList.add('hidden'));
     document.querySelectorAll(`.lang-${lang}`).forEach(el=>el.classList.remove('hidden'));
@@ -171,11 +171,11 @@ function setLanguage(lang){
     langToggleMobile.textContent = lang.toUpperCase();
     langMenuDesktop.classList.add('hidden');
     langMenuMobile.classList.add('hidden');
-}
-setLanguage('de');
+  }
+  setLanguage('de');
 
   // Burger menu
-document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+  document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
 </script>
 </body>
 </html>

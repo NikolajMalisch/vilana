@@ -122,7 +122,7 @@ const DEF_W = 1200, DEF_H = 800;
 const gallery = document.getElementById('gallery');
 let currentIndex = 0;
 
-imagePaths.forEach((src, i) => {
+  imagePaths.forEach((src, i) => {
     const fig = document.createElement('figure');
     fig.className = 'group overflow-hidden rounded-lg shadow-md cursor-pointer aspect-[3/2]';
     const img = document.createElement('img');
@@ -135,35 +135,35 @@ imagePaths.forEach((src, i) => {
     img.addEventListener('click', () => openLightbox(i));
     fig.appendChild(img);
     gallery.appendChild(fig);
-});
+  });
 
   // Lightbox
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightbox-image');
-function openLightbox(i){ currentIndex=i; lbImg.src=imagePaths[i]; lb.classList.remove('hidden'); }
-function closeLightbox(){ lb.classList.add('hidden'); lbImg.src=''; }
-function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; lbImg.src=imagePaths[currentIndex]; }
-function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; lbImg.src=imagePaths[currentIndex]; }
-function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
-window.closeLightbox=closeLightbox; window.prevImage=prevImage; window.nextImage=nextImage; window.toggleZoom=toggleZoom;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-image');
+  function openLightbox(i){ currentIndex=i; lbImg.src=imagePaths[i]; lb.classList.remove('hidden'); }
+  function closeLightbox(){ lb.classList.add('hidden'); lbImg.src=''; }
+  function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; lbImg.src=imagePaths[currentIndex]; }
+  function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; lbImg.src=imagePaths[currentIndex]; }
+  function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
+  window.closeLightbox=closeLightbox; window.prevImage=prevImage; window.nextImage=nextImage; window.toggleZoom=toggleZoom;
 
   // Язык переключение
-const langToggleDesktop=document.getElementById('langToggle');
-const langMenuDesktop=document.getElementById('langMenu');
-const langToggleMobile=document.getElementById('langToggleMobile');
-const langMenuMobile=document.getElementById('langMenuMobile');
+  const langToggleDesktop=document.getElementById('langToggle');
+  const langMenuDesktop=document.getElementById('langMenu');
+  const langToggleMobile=document.getElementById('langToggleMobile');
+  const langMenuMobile=document.getElementById('langMenuMobile');
 
-langToggleDesktop.addEventListener('click',()=>langMenuDesktop.classList.toggle('hidden'));
-langMenuDesktop.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
-langToggleMobile.addEventListener('click',()=>langMenuMobile.classList.toggle('hidden'));
-langMenuMobile.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  langToggleDesktop.addEventListener('click',()=>langMenuDesktop.classList.toggle('hidden'));
+  langMenuDesktop.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
+  langToggleMobile.addEventListener('click',()=>langMenuMobile.classList.toggle('hidden'));
+  langMenuMobile.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
 
-document.addEventListener('click',(e)=>{
+  document.addEventListener('click',(e)=>{
     if(!langMenuDesktop.contains(e.target)&&!langToggleDesktop.contains(e.target)) langMenuDesktop.classList.add('hidden');
     if(!langMenuMobile.contains(e.target)&&!langToggleMobile.contains(e.target)) langMenuMobile.classList.add('hidden');
-});
+  });
 
-function setLanguage(lang){
+  function setLanguage(lang){
     document.documentElement.lang=lang;
     document.querySelectorAll('.lang').forEach(el=>el.classList.add('hidden'));
     document.querySelectorAll(`.lang-${lang}`).forEach(el=>el.classList.remove('hidden'));
@@ -171,11 +171,11 @@ function setLanguage(lang){
     langToggleMobile.textContent = lang.toUpperCase();
     langMenuDesktop.classList.add('hidden');
     langMenuMobile.classList.add('hidden');
-}
-setLanguage('de');
+  }
+  setLanguage('de');
 
   // Burger menu
-document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+  document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
 </script>
 </body>
 </html>
