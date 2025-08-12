@@ -1,0 +1,11 @@
+.copy {
+  max-width: var(--measure);
+  margin-inline: auto;
+  /* Запасные варианты для старых браузеров */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  /* Основное свойство для современных браузеров */
+  text-wrap: pretty;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
