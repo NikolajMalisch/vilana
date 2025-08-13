@@ -49,6 +49,8 @@ gtag('config', 'G-YW71FCW4FJ');
     <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="galerie.html" class="text-amber-700 font-bold underline">Galerie</a>
     <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
+    <!-- Новый пункт меню (href поставим из JS) -->
+    <a id="eventLink" class="text-amber-700 font-semibold">Event</a>
 
     <!-- Sprachmenü (Desktop) -->
     <div class="relative ml-2">
@@ -89,6 +91,10 @@ gtag('config', 'G-YW71FCW4FJ');
     <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="galerie.html" class="block text-amber-700 font-bold underline">Galerie</a>
     <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
+    id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <!-- ...твои пункты... -->
+    <a id="eventLinkMobile" class="block text-amber-700 font-semibold">Event</a>
+    <!-- ...флаги... -->
     </div>
     </header>
 
@@ -260,6 +266,24 @@ setLanguage('de');
 document.getElementById('menuToggle').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
 });
+
+(function(){
+    // какой event открывать
+    var EVENT_ID = 'russian-oktoberfest-2025';
+
+    // определяем язык
+    var url     = new URL(location.href);
+    var lang    = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
+
+    // собираем ссылку на event.html
+    var ev = new URL('event.html', location.href);
+    ev.searchParams.set('id', EVENT_ID);
+    ev.searchParams.set('lang', lang);
+
+    // проставляем href туда, где нашёлся id
+    var links = [document.getElementById('eventLink'), document.getElementById('eventLinkMobile')].filter(Boolean);
+    links.forEach(function(a){ a.href = ev.pathname + ev.search; });
+})()
 </script>
 </body>
 </html>
