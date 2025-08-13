@@ -668,6 +668,58 @@ gtag('config', 'G-YW71FCW4FJ');
     setEventLinks();
   }
 })();
+
+(function () {
+  // Оборачиваем числовые последовательности в <span class="digits ...">
+  function wrapDigits(root) {
+    var walker = document.createTreeWalker(
+      root,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function (node) {
+          if (!node.nodeValue || !/\d/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+
+          // пропускаем скрипты/стили/инпуты и элементы, где уже стоят digits или помечены исключением
+          var p = node.parentNode;
+          while (p) {
+            if (p.nodeType === 1) {
+              var t = p.tagName;
+              if (t === 'SCRIPT' || t === 'STYLE' || t === 'NOSCRIPT' || t === 'TEXTAREA' || t === 'INPUT')
+                return NodeFilter.FILTER_REJECT;
+              if (p.classList && (p.classList.contains('digits') || p.classList.contains('no-digit-wrap')))
+                return NodeFilter.FILTER_REJECT;
+            }
+            p = p.parentNode;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    var texts = [], n;
+    while ((n = walker.nextNode())) texts.push(n);
+
+    texts.forEach(function (text) {
+      // Находим «телефоноподобные»/IBAN-подобные/обычные группы цифр
+      // Пример: +49 176 57775996, 22.10.2025, 12:00, 79.99, DE48 2546 2160 0665 6480 01 (цифры внутри IBAN)
+      var html = text.nodeValue.replace(
+        /(\d[\d\s().:-]{1,}\d|\d{2,})/g,
+        '<span class="digits font-mono font-semibold tracking-wide">$1</span>'
+      );
+      if (html === text.nodeValue) return;
+
+      var wrapper = document.createElement('span');
+      wrapper.innerHTML = html;
+      text.parentNode.replaceChild(wrapper, text);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ wrapDigits(document.body); });
+  } else {
+    wrapDigits(document.body);
+  }
+})();
 </script>
 </body>
 </html>
