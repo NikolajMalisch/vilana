@@ -596,6 +596,43 @@ gtag('config', 'G-YW71FCW4FJ');
     var links = [document.getElementById('eventLink'), document.getElementById('eventLinkMobile')].filter(Boolean);
     links.forEach(function(a){ a.href = ev.pathname + ev.search; });
     })();
+    (function () {
+  // ID события, которое нужно открыть
+  var EVENT_ID = 'russian-oktoberfest-2025';
+
+  function copyTrackingParams(fromURL, toURL) {
+    var keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+    keep.forEach(function (k) {
+      var v = fromURL.searchParams.get(k);
+      if (v) toURL.searchParams.set(k, v);
+    });
+  }
+
+  function setEventLinks() {
+    var url  = new URL(location.href);
+    var lang = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
+
+    // event.html относительно текущей страницы (работает из любых подпапок)
+    var ev = new URL('event.html', url);
+    ev.searchParams.set('id', EVENT_ID);
+    ev.searchParams.set('lang', lang);
+
+    // сохраняем UTM/клики, если пришли с рекламы
+    copyTrackingParams(url, ev);
+
+    // Обновим все ссылки на событие (можно вёрсткой добавить data-ev-link где нужно)
+    var selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
+    document.querySelectorAll(selectors).forEach(function(a){
+      a.href = ev.href; // абсолютный URL надёжнее, чем pathname+search
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setEventLinks);
+  } else {
+    setEventLinks();
+  }
+})();
   </script>
 </body>
 </html>
