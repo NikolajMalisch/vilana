@@ -84,19 +84,27 @@ gtag('config', 'G-YW71FCW4FJ');
     </div>
     </div>
 
-    <!-- Mobile Menü -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="galerie.html" class="block text-amber-700 font-bold underline">Galerie</a>
-    <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
-    id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <!-- ...твои пункты... -->
-    <a id="eventLinkMobile" class="block text-amber-700 font-semibold">Event</a>
-    <!-- ...флаги... -->
-    </div>
-    </header>
+<!-- Mobile Menü -->
+<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="menu" aria-label="Mobiles Menü">
+<a href="index.html"  class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+<a href="menu.html"   class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+<a href="about.html"  class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+<a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+<a href="contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+
+<!-- Ссылка на Event: href подставит твой JS -->
+<a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
+</div>
+</header>
+
+<!-- Флаги -->
+<div class="flex gap-4 mt-2">
+    <button onclick="setLanguage('de')" class="px-2" aria-label="Deutsch">🇩🇪</button>
+    <button onclick="setLanguage('ru')" class="px-2" aria-label="Русский">🇷🇺</button>
+</div>
+</div>
+</header>
+
 
 <!-- MAIN -->
 <main class="py-16 px-4 max-w-7xl mx-auto">
