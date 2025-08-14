@@ -23,13 +23,13 @@
 <meta property="og:title" content="Russian Oktoberfest 2025 – Bad Pyrmont" />
 <meta property="og:description" content="Ein Abend voller Musik, Tanz & Kulinarik – inklusive Softgetränke, Bier & Essen. 25.10.2025, Lindenhof. Tickets 65,00 €." />
 <meta property="og:url" content="https://www.vilana-event.de/event.html?id=russian-oktoberfest-2025" />
-<meta property="og:image" content="https://www.vilana-event.de/images/russian%20octoberfest.png" />
+<meta property="og:image" content="https://www.vilana-event.de/images/russian%20octoberfest.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Russian Oktoberfest 2025 – Bad Pyrmont" />
 <meta name="twitter:description" content="Musik, Tanz & Kulinarik – inklusive Softgetränke, Bier & Essen. 25.10.2025, Lindenhof. Tickets 65,00 €." />
-<meta name="twitter:image" content="https://www.vilana-event.de/images/russian%20octoberfest.png" />
+<meta name="twitter:image" content="https://www.vilana-event.de/images/russian%20octoberfest.webp" />
 
 <!-- JSON-LD (заполним из JS) -->
 <script id="event-jsonld" type="application/ld+json"></script>
@@ -37,8 +37,9 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YW71FCW4FJ');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-YW71FCW4FJ');
 </script>
 
 <!-- Performance -->
@@ -51,61 +52,76 @@
 <!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- ✅ Preload hero (тот же путь, что в IMG и EVENTS.hero) -->
-<link rel="preload" as="image" href="images/russian%20octoberfest.png" type="image/png">
+<!-- ✅ Preload hero (исправлен путь) -->
+<link rel="preload" as="image" href="images/russian%20octoberfest.webp" type="image/webp">
 
 <style>
-    body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; color:#353c45; }
-    h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
-    .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
-    .logo-title { font-family:'Cinzel Decorative', cursive; font-size:1.8rem; font-weight:500; letter-spacing:.5px; color:#1f2937; }
-    .logo-subtitle { font-size:1.2rem; color:#1f2937; }
-    .lang { display:none; }
-    .chip { border-radius:9999px; padding:.35rem .85rem; background:#f3f4f6; font-size:.95rem; display:inline-flex; align-items:center; gap:.4rem; }
-    .card { background:white; border-radius:1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.07); }
-    .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.85); z-index:50; }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width:90vw; max-height:85vh; border-radius:1rem; }
+  /* Базовая типографика */
+  body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; color:#353c45; }
+  h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
+  .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+  .logo-title { font-family:'Cinzel Decorative', cursive; font-size:1.8rem; font-weight:500; letter-spacing:.5px; color:#1f2937; }
+  .logo-subtitle { font-size:1.2rem; color:#1f2937; }
+  .lang { display:none; }
+  .chip { border-radius:9999px; padding:.35rem .85rem; background:#f3f4f6; font-size:.95rem; display:inline-flex; align-items:center; gap:.4rem; }
+  .card { background:white; border-radius:1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.07); }
+  .lightbox { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.85); z-index:50; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:90vw; max-height:85vh; border-radius:1rem; }
+
+  /* ✅ Читаемые цифры: IBAN / BIC / Telefon */
+  #ev-iban, #ev-bic, #ev-phone {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    font-variant-numeric: lining-nums tabular-nums; /* ровные, табличные цифры */
+    color: #1f2937;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  #ev-phone-link { text-decoration: none; }
+  #ev-phone-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
+<!-- ======== HEADER ======== -->
 <header class="bg-white shadow-md">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
     <div class="logo-container">
-    <h1 class="logo-title">Vilana</h1>
-    <span class="logo-subtitle">Event & Catering</span>
+      <h1 class="logo-title">Vilana</h1>
+      <span class="logo-subtitle">Event & Catering</span>
     </div>
 
     <nav class="hidden md:flex space-x-8" aria-label="Hauptnavigation">
-    <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
+      <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
+      <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+      <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+      <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
+      <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+      <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
     </nav>
 
     <!-- Выпадающий переключатель языка -->
     <div class="hidden md:block relative" id="langSwitcher" aria-label="Sprachauswahl">
-    <button id="langBtn" class="flex items-center gap-1 px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">
+      <button id="langBtn" class="flex items-center gap-1 px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">
         <span id="langLabel">DE</span>
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
-    </button>
-    <div id="langMenu" class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-xl shadow-lg py-1 hidden z-50">
+      </button>
+      <div id="langMenu" class="absolute right-0 mt-2 w-36 bg-white border border-gray-200 rounded-xl shadow-lg py-1 hidden z-50">
         <button type="button" data-lang="de" class="w-full text-left px-3 py-2 hover:bg-gray-100">Deutsch</button>
         <button type="button" data-lang="ru" class="w-full text-left px-3 py-2 hover:bg-gray-100">Русский</button>
-    </div>
+      </div>
     </div>
 
     <button id="menuToggle" class="md:hidden" aria-label="Menü öffnen">
-    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
+      </svg>
     </button>
-</div>
+  </div>
 
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
     <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
     <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
     <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
@@ -113,149 +129,152 @@
     <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
     <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
     <div class="flex gap-4 mt-2">
-    <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
-    <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
+      <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
+      <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
     </div>
-</div>
+  </div>
 </header>
 
+<!-- ======== MAIN ======== -->
 <main class="py-12">
-<div class="mx-auto px-4 max-w-6xl">
+  <div class="mx-auto px-4 max-w-6xl">
 
     <!-- H1 + Key Facts -->
     <section class="grid md:grid-cols-2 gap-6 items-stretch">
-    <div class="card p-6 flex flex-col gap-4">
+      <!-- Text -->
+      <div class="card p-6 flex flex-col gap-4">
         <h1 class="text-3xl md:text-4xl font-bold">
-        <span class="lang lang-de" id="ev-title-de">Russian Oktoberfest</span>
-        <span class="lang lang-ru" id="ev-title-ru">Русский Октоберфест</span>
+          <span class="lang lang-de" id="ev-title-de">Russian Oktoberfest</span>
+          <span class="lang lang-ru" id="ev-title-ru">Русский Октоберфест</span>
         </h1>
         <p class="text-lg leading-relaxed">
-        <span class="lang lang-de" id="ev-subtitle-de">Bayerischer Flair trifft russische Seele</span>
-        <span class="lang lang-ru" id="ev-subtitle-ru">Баварский стиль встречает русскую душу</span>
+          <span class="lang lang-de" id="ev-subtitle-de">Bayerischer Flair trifft russische Seele</span>
+          <span class="lang lang-ru" id="ev-subtitle-ru">Баварский стиль встречает русскую душу</span>
         </p>
         <div class="flex flex-wrap gap-2 pt-2">
-        <span class="chip">📅 <span id="ev-date">25. Oktober 2025</span></span>
-        <span class="chip">🕒 <span id="ev-time">18:00</span></span>
-        <span class="chip">📍 <span id="ev-venue">Lindenhof</span></span>
-        <span class="chip">🏙️ <span id="ev-city">Bad Pyrmont</span></span>
+          <span class="chip">📅 <span id="ev-date">25. Oktober 2025</span></span>
+          <span class="chip">🕒 <span id="ev-time">18:00</span></span>
+          <span class="chip">📍 <span id="ev-venue">Lindenhof</span></span>
+          <span class="chip">🏙️ <span id="ev-city">Bad Pyrmont</span></span>
         </div>
 
         <div class="mt-4 card p-4">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div class="text-xl">
-            <strong id="ev-price">65,00 €</strong>
-            <span class="text-gray-500 lang lang-de" id="ev-price-note-de"> inkl. Softgetränke, Bier & Essen • 18+</span>
-            <span class="text-gray-500 lang lang-ru" id="ev-price-note-ru"> включая безалкогольные напитки, пиво и еду • 18+</span>
+              <strong id="ev-price">65,00 €</strong>
+              <span class="text-gray-500 lang lang-de" id="ev-price-note-de"> inkl. Softgetränke, Bier & Essen • 18+</span>
+              <span class="text-gray-500 lang lang-ru" id="ev-price-note-ru"> включая безалкогольные напитки, пиво и еду • 18+</span>
             </div>
             <div class="flex gap-3">
-            <a id="ev-ticket-url" href="#tickets" class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90 lang lang-de">Jetzt Tickets kaufen</a>
-            <a id="ev-ticket-url-ru" href="#tickets" class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90 lang lang-ru">Купить билет</a>
-            <a href="#tickets" class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white lang lang-de">Mehr Infos</a>
-            <a href="#tickets" class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white lang lang-ru">Подробнее</a>
+              <a id="ev-ticket-url" href="#tickets" class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90 lang lang-de">Jetzt Tickets kaufen</a>
+              <a id="ev-ticket-url-ru" href="#tickets" class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90 lang lang-ru">Купить билет</a>
+              <a href="#tickets" class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white lang lang-de">Mehr Infos</a>
+              <a href="#tickets" class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white lang lang-ru">Подробнее</a>
             </div>
+          </div>
         </div>
-        </div>
-    </div>
+      </div>
 
-    <!-- ✅ Hero -->
-    <div class="card overflow-hidden">
+      <!-- ✅ Hero -->
+      <div class="card overflow-hidden">
         <img id="ev-hero"
-            src="images/russian%20octoberfest.png"
-            alt="Russian Oktoberfest – Hero"
-            class="w-full h-full object-cover max-h-[420px]"
-            fetchpriority="high" />
-    </div>
+             src="images/russian%20octoberfest.webp"
+             alt="Russian Oktoberfest – Hero"
+             class="w-full h-full object-cover max-h-[420px]"
+             fetchpriority="high" />
+      </div>
     </section>
 
     <!-- Beschreibung -->
     <section class="mt-10 card p-6">
-    <h2 class="text-2xl font-semibold mb-3">
+      <h2 class="text-2xl font-semibold mb-3">
         <span class="lang lang-de">Über das Event</span>
         <span class="lang lang-ru">О мероприятии</span>
-    </h2>
-    <p class="text-lg leading-7 whitespace-pre-line">
+      </h2>
+      <p class="text-lg leading-7 whitespace-pre-line">
         <span class="lang lang-de" id="ev-desc-de">Ein Abend voller Musik, Tanz und Kulinarik: deftige Klassiker und russische Spezialitäten, inklusive Softgetränke, Bier & Essen. Dresscode: Tracht willkommen!</span>
         <span class="lang lang-ru" id="ev-desc-ru">Вечер музыки, танцев и вкусной кухни: немецкая классика и русские деликатесы. В стоимость включены безалкогольные напитки, пиво и еда. Дресс-код: национальные костюмы приветствуются!</span>
-    </p>
+      </p>
     </section>
 
     <!-- Programm + Tickets/Zahlung -->
     <section class="mt-10 grid md:grid-cols-2 gap-6">
-    <div class="card p-6">
+      <div class="card p-6">
         <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
         <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
-    </div>
+      </div>
 
-    <div id="tickets" class="card p-6">
+      <div id="tickets" class="card p-6">
         <h3 class="text-xl font-semibold mb-3">
-        <span class="lang lang-de">Tickets & Zahlung</span>
-        <span class="lang lang-ru">Билеты и оплата</span>
+          <span class="lang lang-de">Tickets & Zahlung</span>
+          <span class="lang lang-ru">Билеты и оплата</span>
         </h3>
         <div class="space-y-3">
-        <p><strong>IBAN:</strong> <span id="ev-iban">DE48254621600665648001</span></p>
-        <p><strong>BIC:</strong> <span id="ev-bic">GENODEF1HMP</span></p>
-        <p><strong class="lang lang-de">Kontoinhaber:</strong><strong class="lang lang-ru">Владелец счёта:</strong> <span id="ev-holder">Vilana Event & Catering</span></p>
-        <p><strong class="lang lang-de">Telefon:</strong><strong class="lang lang-ru">Телефон:</strong>
+          <p><strong>IBAN:</strong> <span id="ev-iban">DE48254621600665648001</span></p>
+          <p><strong>BIC:</strong> <span id="ev-bic">GENODEF1HMP</span></p>
+          <p><strong class="lang lang-de">Kontoinhaber:</strong><strong class="lang lang-ru">Владелец счёта:</strong> <span id="ev-holder">Vilana Event & Catering</span></p>
+          <p><strong class="lang lang-de">Telefon:</strong><strong class="lang lang-ru">Телефон:</strong>
             <a id="ev-phone-link" href="tel:+4917657775996" class="underline"><span id="ev-phone">+49 176 57775996</span></a>
-        </p>
-        <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">Reservierung erforderlich. Zahlung per Überweisung möglich.</p>
-        <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">Требуется бронирование. Оплата банковским переводом.</p>
+          </p>
+          <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">Reservierung erforderlich. Zahlung per Überweisung möglich.</p>
+          <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">Требуется бронирование. Оплата банковским переводом.</p>
         </div>
-    </div>
+      </div>
     </section>
 
     <!-- Lage -->
     <section class="mt-10 card p-6">
-    <h3 class="text-xl font-semibold mb-3">
+      <h3 class="text-xl font-semibold mb-3">
         <span class="lang lang-de">Lage</span>
         <span class="lang lang-ru">Локация</span>
-    </h3>
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      </h3>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-        <p class="text-lg"><span id="ev-venue-2">Lindenhof</span> — <span id="ev-city-2">Bad Pyrmont</span></p>
-        <p class="text-gray-600" id="ev-address">Lindenhof, 31812 Bad Pyrmont</p>
+          <p class="text-lg"><span id="ev-venue-2">Lindenhof</span> — <span id="ev-city-2">Bad Pyrmont</span></p>
+          <p class="text-gray-600" id="ev-address">Lindenhof, 31812 Bad Pyrmont</p>
         </div>
         <a id="ev-map" href="https://maps.google.com/?q=Lindenhof%20Bad%20Pyrmont" target="_blank" class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white">
-        <span class="lang lang-de">Karte öffnen</span>
-        <span class="lang lang-ru">Открыть карту</span>
+          <span class="lang lang-de">Karte öffnen</span>
+          <span class="lang lang-ru">Открыть карту</span>
         </a>
-    </div>
+      </div>
     </section>
 
     <!-- Galerie -->
     <section class="mt-10">
-    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-semibold">
-        <span class="lang lang-de">Galerie</span>
-        <span class="lang lang-ru">Галерея</span>
+          <span class="lang lang-de">Galerie</span>
+          <span class="lang lang-ru">Галерея</span>
         </h2>
         <div class="text-sm text-gray-500">
-        <span class="lang lang-de">Klicken zum Vergrößern</span>
-        <span class="lang lang-ru">Нажмите, чтобы увеличить</span>
+          <span class="lang lang-de">Klicken zum Vergrößern</span>
+          <span class="lang lang-ru">Нажмите, чтобы увеличить</span>
         </div>
-    </div>
-    <div id="ev-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+      </div>
+      <div id="ev-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
     </section>
 
     <!-- FAQ -->
     <section class="mt-10 card p-6" id="ev-faq-wrap" hidden>
-    <h3 class="text-xl font-semibold mb-4">FAQ</h3>
-    <div id="ev-faq"></div>
+      <h3 class="text-xl font-semibold mb-4">FAQ</h3>
+      <div id="ev-faq"></div>
     </section>
 
-</div>
+  </div>
 </main>
 
+<!-- ======== FOOTER ======== -->
 <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-<div class="container mx-auto px-4 text-center">
+  <div class="container mx-auto px-4 text-center">
     <div class="mb-4">
-    <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400" rel="noopener">Instagram</a>
     </div>
     <p><a href="impressum.html" class="hover:underline">Impressum</a> | <a href="datenschutz.html" class="hover:underline">Datenschutz</a> | <a href="agb.html" class="hover:underline">AGB</a></p>
     <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
-</div>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full" aria-label="Nach oben">▲</button>
+  </div>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full" aria-label="Nach oben">▲</button>
 </footer>
 
 <!-- Lightbox -->
@@ -263,35 +282,36 @@
   <img id="lightbox-img" src="" alt="Preview" />
 </div>
 
+<!-- ======== SCRIPTS ======== -->
 <script>
   // ========= EVENTS DATEN =========
-const EVENTS = {
+  const EVENTS = {
     'russian-oktoberfest-2025': {
-    title:    { de: 'Russian Oktoberfest', ru: 'Русский Октоберфест' },
-    subtitle: { de: 'Bayerischer Flair trifft russische Seele', ru: 'Баварский стиль встречает русскую душу' },
-    date: '2025-10-25',
-    time: '18:00',
-    venue: 'Lindenhof',
-    city: 'Bad Pyrmont',
-    address: 'Lindenhof, 31812 Bad Pyrmont',
-      hero: 'images/russian%20octoberfest.png',   // ← одинаково в preload/IMG/OG
-    price: '65,00 €',
-    price_note: {
+      title:    { de: 'Russian Oktoberfest', ru: 'Русский Октоберфест' },
+      subtitle: { de: 'Bayerischer Flair trifft russische Seele', ru: 'Баварский стиль встречает русскую душу' },
+      date: '2025-10-25',
+      time: '18:00',
+      venue: 'Lindenhof',
+      city: 'Bad Pyrmont',
+      address: 'Lindenhof, 31812 Bad Pyrmont',
+      hero: 'images/russian%20octoberfest.webp',   // ← одинаково в preload/IMG/OG
+      price: '65,00 €',
+      price_note: {
         de: 'inkl. Softgetränke, Bier & Essen •',
         ru: 'включая безалкогольные напитки, пиво и еду •'
-    },
-    ticket_url: '',
-    description: {
+      },
+      ticket_url: '',
+      description: {
         de: 'Ein Abend voller Musik, Tanz und Kulinarik: deftige Klassiker und russische Spezialitäten, inklusive Softgetränke, Bier & Essen. Dresscode: Tracht willkommen!',
         ru: 'Вечер музыки, танцев и вкусной кухни: немецкая классика и русские деликатесы. В стоимость включены безалкогольные напитки, пиво и еда. Дресс-код: национальные костюмы приветствуются!'
-    },
-    highlights: [
+      },
+      highlights: [
         { de: 'Live-Musik, Tamada Julia & DJ Ivan', ru: 'Живая музыка, тамада Юлия и диджей Иван' },
         { de: 'Rustikales Buffet + русские закуски', ru: 'Деревенский буфет + русские закуски' },
         { de: 'Wettbewerbe und Preise', ru: 'Конкурсы и призы' },
         { de: 'Security: Hetzel WS', ru: 'Охрана: Hetzel WS' }
-    ],
-    ticket_note: {
+      ],
+      ticket_note: {
         de: 'Reservierung erforderlich. Zahlung per Überweisung möglich.',
         ru: 'Требуется бронирование. Оплата банковским переводом.'
       },
@@ -299,16 +319,15 @@ const EVENTS = {
       contact: { phone: '+4917657775996', email: 'vilana-event@outlook.de' },
       map: 'https://maps.google.com/?q=Lindenhof%20Bad%20Pyrmont',
       gallery: [
-        { src: 'images/oktoberfest/1.jpg', alt: 'Buffet' },
-        { src: 'images/oktoberfest/2.jpg', alt: 'Dekoration' },
-        { src: 'images/oktoberfest/3.jpg', alt: 'Musik' }
+  { src: 'images/badpyrmont.png', alt: 'Bad Pyrmont – charmante Kurstadt für unvergessliche Events' },
+  { src: 'images/bad-pyrmont/location2.jpg', alt: 'Schloss Bad Pyrmont – historische Sehenswürdigkeit' },
+  { src: 'images/bad-pyrmont/location3.jpg', alt: 'Kurpark Bad Pyrmont – idyllische Atmosphäre für Veranstaltungen' }
       ],
       faq: [
         { q: { de: 'Gibt es Sitzplatzreservierung?', ru: 'Есть ли резерв мест?' },
           a: { de: 'Ja, bitte bei der Buchung angeben.', ru: 'Да, укажите при бронировании.' } },
         { q: { de: 'Kinder-Tickets?', ru: 'Билеты для детей?' },
-          a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.',
-               ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' } }
+          a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.', ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' } }
       ]
     }
   };
@@ -320,8 +339,19 @@ const EVENTS = {
   const currentLang = (getParam('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
 
   function formatDate(iso, lang){
-    try { return new Date(iso+'T00:00:00').toLocaleDateString(lang==='ru'?'ru-RU':'de-DE', {year:'numeric',month:'long',day:'numeric'}); }
-    catch { return iso; }
+    try {
+      return new Date(iso+'T00:00:00').toLocaleDateString(lang==='ru'?'ru-RU':'de-DE', {year:'numeric',month:'long',day:'numeric'});
+    } catch { return iso; }
+  }
+  function formatIBAN(raw){
+    const s = String(raw).replace(/\s+/g,'').toUpperCase();
+    return s.replace(/(.{4})/g,'$1 ').trim(); // DE48 2546 2160 0665 6480 01
+  }
+  function formatPhone(raw){
+    const s = String(raw).replace(/\s+/g,'');
+    // +49 176 5777 5996 (простое группирование)
+    const m = s.match(/^(\+\d{2})(\d{3})(\d{4})(\d{3,4})$/);
+    return m ? `${m[1]} ${m[2]} ${m[3]} ${m[4]}` : raw;
   }
 
   function setLanguage(lang){
@@ -329,12 +359,23 @@ const EVENTS = {
     document.querySelectorAll('.lang-'+lang).forEach(el=>el.style.display='inline');
     document.documentElement.setAttribute('lang', lang==='ru'?'ru':'de');
     localStorage.setItem('vilana_lang', lang);
-    const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null,'',url.toString());
+    const url = new URL(location.href);
+    url.searchParams.set('lang', lang);
+    history.replaceState(null,'',url.toString());
     updateLangUI();
   }
 
-  function openLightbox(src, alt){ const lb=$('#lightbox'),img=$('#lightbox-img'); img.src=src; img.alt=alt||'Preview'; lb.classList.add('open'); }
-  function closeLightbox(e){ if(!e||e.target.id==='lightbox'||e.target.id==='lightbox-img'){ $('#lightbox').classList.remove('open'); } }
+  // Lightbox handlers
+  function openLightbox(src, alt){
+    const lb = $('#lightbox'), img = $('#lightbox-img');
+    img.src = src; img.alt = alt||'Preview';
+    lb.classList.add('open');
+  }
+  function closeLightbox(e){
+    if(!e || e.target.id==='lightbox' || e.target.id==='lightbox-img'){
+      $('#lightbox').classList.remove('open');
+    }
+  }
   window.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeLightbox(); });
 
   // Dropdown UI
@@ -369,9 +410,9 @@ const EVENTS = {
     $('#ev-date').textContent = formatDate(ev.date, currentLang);
     $('#ev-time').textContent = ev.time;
     $('#ev-venue').textContent = ev.venue;
-    $('#ev-city').textContent = ev.city;
+    $('#ev-city').textContent  = ev.city;
     $('#ev-venue-2').textContent = ev.venue;
-    $('#ev-city-2').textContent = ev.city;
+    $('#ev-city-2').textContent  = ev.city;
     $('#ev-address').textContent = ev.address || '';
 
     // Preis / Hinweise
@@ -384,43 +425,53 @@ const EVENTS = {
     $('#ev-desc-ru').textContent = ev.description.ru;
 
     // Hero
-    const hero = $('#ev-hero'); hero.src = ev.hero; hero.alt = `${ev.title.de} – Hero`;
+    const hero = $('#ev-hero');
+    hero.src = ev.hero;
+    hero.alt = `${ev.title.de} – Hero`;
 
-    // Zahlung / Kontakt
-    $('#ev-iban').textContent = ev.payment.iban;
-    $('#ev-bic').textContent = ev.payment.bic;
+    // Zahlung / Kontakt (с форматированием)
+    $('#ev-iban').textContent   = formatIBAN(ev.payment.iban);
+    $('#ev-bic').textContent    = ev.payment.bic;
     $('#ev-holder').textContent = ev.payment.holder;
-    $('#ev-phone').textContent = ev.contact.phone;
-    $('#ev-phone-link').href = 'tel:' + ev.contact.phone.replace(/\s+/g,'');
+
+    const phonePretty = formatPhone(ev.contact.phone);
+    $('#ev-phone').textContent  = phonePretty;
+    $('#ev-phone-link').href    = 'tel:' + ev.contact.phone.replace(/\s+/g,'');
+
     $('#ev-ticket-note-de').textContent = ev.ticket_note.de;
     $('#ev-ticket-note-ru').textContent = ev.ticket_note.ru;
 
     // Ticket-Buttons
-    const t1=$('#ev-ticket-url'), t2=$('#ev-ticket-url-ru');
+    const t1 = $('#ev-ticket-url'), t2 = $('#ev-ticket-url-ru');
     if(ev.ticket_url){ t1.href = ev.ticket_url; t2.href = ev.ticket_url; }
 
     // Karte
     $('#ev-map').href = ev.map;
 
     // Highlights
-    const hl=$('#ev-highlights'); hl.innerHTML='';
+    const hl = $('#ev-highlights'); hl.innerHTML = '';
     ev.highlights.forEach(item=>{
-      const li=document.createElement('li');
+      const li = document.createElement('li');
       li.innerHTML = `<span class="lang lang-de">${item.de}</span> <span class="lang lang-ru">${item.ru}</span>`;
       hl.appendChild(li);
     });
 
-    // Galerie
-    const g=$('#ev-gallery'); g.innerHTML='';
-    ev.gallery.forEach(img=>{
-      const fig=document.createElement('figure'); fig.className='card overflow-hidden cursor-zoom-in';
-      fig.innerHTML=`<img src="${img.src}" alt="${img.alt||'Event Foto'}" class="w-full h-44 md:h-52 object-cover" loading="lazy" decoding="async"/>`;
-      fig.addEventListener('click',()=>openLightbox(img.src,img.alt));
-      g.appendChild(fig);
-    });
+  // Galerie
+const g=$('#ev-gallery'); g.innerHTML='';
+ev.gallery.forEach(img=>{
+  const fig=document.createElement('figure');
+  fig.className='relative card overflow-hidden cursor-zoom-in';
+  fig.innerHTML=`
+    <img src="${img.src}" alt="${img.alt||'Event Foto'}" class="w-full h-44 md:h-52 object-cover" loading="lazy" decoding="async"/>
+    <figcaption class="absolute bottom-0 left-0 w-full bg-black bg-opacity-40 text-white text-sm p-2">${img.alt||''}</figcaption>
+  `;
+  fig.addEventListener('click',()=>openLightbox(img.src,img.alt));
+  g.appendChild(fig);
+});
+
 
     // FAQ
-    const wrap=$('#ev-faq-wrap'), root=$('#ev-faq'); root.innerHTML='';
+    const wrap = $('#ev-faq-wrap'), root = $('#ev-faq'); root.innerHTML='';
     if(ev.faq && ev.faq.length){
       wrap.hidden=false;
       ev.faq.forEach(qa=>{
