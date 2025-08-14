@@ -14,7 +14,6 @@ gtag('js', new Date());
 gtag('config', 'G-YW71FCW4FJ');
 </script>
 
-
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -22,89 +21,30 @@ gtag('config', 'G-YW71FCW4FJ');
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <style>
-    body {
-    font-family: 'Cormorant SC', serif;
-    background-color: #fdfaf6;
-    }
-    h1, h2, h3, p, span {
-    font-family: 'Cormorant SC', serif;
-    }
-    .logo-container {
-    display: flex;
-    align-items: baseline;
-    gap: 0.3rem;
-    margin-top: 4px;
-    }
-    .logo-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #1f2937;
-    }
-    .logo-subtitle {
-    font-size: 1.2rem;
-    color: #1f2937;
-    }
-    .lang { display: none; }
-    .hidden-field { display: none; }
+body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; }
+h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
+.logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
+.logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
+.logo-subtitle { font-size: 1.2rem; color: #1f2937; }
+  .lang { display: none; }       /* скрываем всё, показываем нужный язык скриптом */
+  .hidden-field { display: none; }/* honeypot */
 </style>
 </head>
 <body>
 
-<!-- Header mit Navigation -->
-<header class="bg-white shadow-md">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="logo-container">
-    <h1 class="logo-title">Vilana</h1>
-    <span class="logo-subtitle">Event & Catering</span>
-    </div>
-
-    <nav class="hidden md:flex space-x-8">
-    <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
-    <!-- Новый пункт меню (href поставим из JS) -->
-    <a id="eventLink" class="text-amber-700 font-semibold">Event</a>
-    </nav>
-
-    <div class="hidden md:flex gap-2">
-    <button onclick="setLanguage('de')" class="px-2">🇩🇪</button>
-    <button onclick="setLanguage('ru')" class="px-2">🇷🇺</button>
-    </div>
-
-    <button id="menuToggle" class="md:hidden">
-    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-    </button>
-</div>
-
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="contact.html" class="block text-amber-700 font-bold underline">Kontakt</a>
-    <!-- Ссылка на Event: href подставит твой JS -->
-    <a id="eventLinkMobile" class="block text-amber-700 font-semibold">Event</a>
-</div>
-</header>
+<!-- Плейсхолдеры: сюда подставятся шапка и футер из index.html -->
+<div id="site-header"></div>
 
 <main class="py-16">
 <div class="mx-auto px-4 max-w-3xl text-center">
-    <h2 class="text-4xl font-bold mb-12 lang lang-de">Kontaktieren Sie uns</h2>
-    <h2 class="text-4xl font-bold mb-12 lang lang-ru">Свяжитесь с нами</h2>
+    <h2 class="text-4xl font-bold mb-12 lang lang-de" data-disp="block">Kontaktieren Sie uns</h2>
+    <h2 class="text-4xl font-bold mb-12 lang lang-ru" data-disp="block">Свяжитесь с нами</h2>
 
     <div class="text-center mb-12 space-y-2">
     <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:v.s@vilana.info" class="text-amber-700">v.s@vilana.info</a></p>
     <p class="text-lg"><strong>Telefon 1:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176 5777 5996</a></p>
     <p class="text-lg"><strong>Telefon 2:</strong> <a href="tel:+4917642288707" class="text-amber-700">+49 176 4228 8707</a></p>
-    <p class="text-lg"><strong>WhatsApp:</strong> <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank" rel="noopener noreferrer" >Jetzt schreiben</a></p>
+    <p class="text-lg"><strong>WhatsApp:</strong> <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank" rel="noopener noreferrer">Jetzt schreiben</a></p>
     <p class="text-lg"><strong>Adresse:</strong> 31855 Aerzen / Osterstr. 28</p>
     </div>
 
@@ -153,87 +93,126 @@ gtag('config', 'G-YW71FCW4FJ');
 </div>
 </main>
 
-<footer class="bg-gray-800 text-white py-10 mt-16 relative">
-<div class="container mx-auto px-4 text-center">
-    <div class="mb-4">
-    <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
-    </div>
-    <p><a href="impressum.html" class="hover:underline">Impressum</a> | <a href="datenschutz.html" class="hover:underline">Datenschutz</a> | <a href="agb.html" class="hover:underline">AGB</a></p>
-    <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
-</div>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
-</footer>
+<div id="site-footer"></div>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-emailjs.init("vfmomNKrMxrf2xqDW");
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+<script>
+/* ================== 1) Подтягиваем header/footer с index.html ================== */
+async function loadFromIndex(selector, targetId) {
+try {
+    const resp = await fetch('index.html', { cache: 'no-cache' });
+    const text = await resp.text();
+    const doc = new DOMParser().parseFromString(text, 'text/html');
+    const part = doc.querySelector(selector);
+    if (part) document.getElementById(targetId).innerHTML = part.outerHTML;
+} catch (err) {
+    console.error('Ошибка загрузки из index.html:', err);
+}
+}
+
+/* ================== 2) Унифицированный язык ================== */
+function setLanguage(lang) {
+  // сохраняем для всех страниц и для event-ссылки
+localStorage.setItem('vilana_lang', lang);
+
+  // тумблеры на <html> (на будущее, если стили по классу)
+document.documentElement.classList.toggle('lang-de', lang === 'de');
+document.documentElement.classList.toggle('lang-ru', lang === 'ru');
+
+  // спрятать всё .lang и показать нужный язык
+document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+
+const blockTags = new Set(['H1','H2','H3','H4','H5','H6','P','DIV','LI','UL','OL','SECTION','ARTICLE','FOOTER','HEADER']);
+document.querySelectorAll('.lang-' + lang).forEach(el => {
+    const hint = el.getAttribute('data-disp');
+    el.style.display = hint ? hint : (blockTags.has(el.tagName) ? 'block' : 'inline');
+});
+
+  // подсветка активного флага (если кнопки есть в header)
+document.querySelectorAll('[onclick^="setLanguage"]').forEach(btn => {
+    const isActive = btn.getAttribute('onclick').includes("'" + lang + "'");
+    btn.classList.toggle('ring-2', isActive);
+    btn.classList.toggle('ring-amber-500', isActive);
+});
+}
+
+/* ================== 3) Ссылка Event с UTM и языком ================== */
+(function(){
+const EVENT_ID = 'russian-oktoberfest-2025';
+function copyTrackingParams(fromURL, toURL) {
+    const keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+    for (const k of keep) {
+    const v = fromURL.searchParams.get(k);
+    if (v) toURL.searchParams.set(k, v);
+    }
+}
+window.setEventLinks = function setEventLinks() {
+    const url  = new URL(location.href);
+    const lang = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
+
+    const ev = new URL('event.html', url);
+    ev.searchParams.set('id', EVENT_ID);
+    ev.searchParams.set('lang', lang);
+    copyTrackingParams(url, ev);
+
+    const selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
+    document.querySelectorAll(selectors).forEach(a => { a.href = ev.href; });
+};
+})();
+
+/* ================== 4) Инициализация после вставки header/footer ================== */
+function initHeaderInteractions() {
+const toggleBtn  = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+}
+}
+
+/* ================== 5) EmailJS отправка ================== */
+function initEmailJS() {
+  emailjs.init("vfmomNKrMxrf2xqDW"); // ваш public key
+
+const form = document.getElementById("contactForm");
+if (!form) return;
+
+form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const form = this;
-    if (form.honeypot.value !== "") return;
+    if (form.honeypot.value !== "") return; // антиспам
 
     emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
     .then(() => {
         document.getElementById("formMsg").classList.remove("hidden");
         form.reset();
     }, (error) => {
-        alert("Fehler beim Senden: " + error.text);
+        alert("Fehler beim Senden: " + (error?.text || 'Unbekannter Fehler'));
     });
 });
-
-function setLanguage(lang) {
-    document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'inline');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    setLanguage('de');
+/* ================== 6) Boot ================== */
+document.addEventListener('DOMContentLoaded', async () => {
+  // подставляем header/footer из index.html
+await loadFromIndex('header', 'site-header');
+await loadFromIndex('footer', 'site-footer');
+
+  // теперь элементы header уже в DOM — можно навесить логику меню
+initHeaderInteractions();
+
+  // язык: ?lang=… > localStorage > de
+const url = new URL(location.href);
+const urlLang = (url.searchParams.get('lang') || '').toLowerCase();
+const saved   = (localStorage.getItem('vilana_lang') || '').toLowerCase();
+setLanguage(urlLang || saved || 'de');
+
+  // обновляем ссылки Event (использует сохранённый язык)
+window.setEventLinks();
+
+  // включаем EmailJS
+ initEmailJS();
 });
-
-document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-});
-
-(function(){
-    // какой event открывать(function () {
-var EVENT_ID = 'russian-oktoberfest-2025';
-
-function copyTrackingParams(fromURL, toURL) {
-    var keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-    keep.forEach(function (k) {
-    var v = fromURL.searchParams.get(k);
-    if (v) toURL.searchParams.set(k, v);
-    });
-}
-
-function setEventLinks() {
-    var url  = new URL(location.href);
-    var lang = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
-
-    // event.html относительно текущей страницы (работает из любых подпапок)
-    var ev = new URL('event.html', url);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-
-    // сохраняем UTM/клики, если пришли с рекламы
-    copyTrackingParams(url, ev);
-
-    // Обновим все ссылки на событие (можно вёрсткой добавить data-ev-link где нужно)
-    var selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
-    document.querySelectorAll(selectors).forEach(function(a){
-      a.href = ev.href; // абсолютный URL надёжнее, чем pathname+search
-    });
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setEventLinks);
-} else {
-    setEventLinks();
-}
-})();
 </script>
 
 </body>
