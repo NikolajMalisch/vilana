@@ -32,3 +32,16 @@ a:hover,
 button:hover {
 transition: all 0.3s ease;
 }
+
+/* 📜 Footer-Text Formatierung */
+.footer-text {
+    display: inline-block;
+    white-space: nowrap; /* Не переносить фразу на 2 строки на больших экранах */
+}
+
+@media (max-width: 500px) {
+    .footer-text {
+        white-space: normal; /* Разрешить перенос на маленьких экранах */
+        text-align: center;   /* Центрирование */
+    }
+}
