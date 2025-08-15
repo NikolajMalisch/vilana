@@ -45,3 +45,11 @@ transition: all 0.3s ease;
         text-align: center;   /* Центрирование */
     }
 }
+
+/* скрывать бургер на экранах от 768px и выше */
+@media (min-width: 768px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
