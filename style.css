@@ -53,3 +53,110 @@ transition: all 0.3s ease;
     }
 }
 
+/* ================================
+🎨 Fonts
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel&family=Raleway&display=swap');
+
+/* Логотип */
+.logo-title {
+font-family: 'Cinzel Decorative', serif;
+font-size: 2rem;
+font-weight: 500;
+letter-spacing: 1px;
+background: linear-gradient(90deg, #b08968, #d4a373);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.logo-subtitle {
+font-family: 'Cinzel', serif;
+font-size: 1.2rem;
+font-weight: 400;
+letter-spacing: 0.3px;
+margin-left: 8px;
+color: #4a4a4a;
+}
+
+/* Дополнительные классы */
+.font-vilana { font-family: 'Cinzel Decorative', serif; }
+.font-vilana-sub { font-family: 'Cinzel', serif; }
+.font-raleway { font-family: 'Raleway', sans-serif; }
+
+/* ================================
+🔤 Links & Buttons
+   ================================ */
+a, button {
+transition: all 0.3s ease;
+}
+
+a:hover, a:focus, a:active,
+button:hover, button:focus, button:active {
+transform: translateY(-1px);
+opacity: 0.9;
+}
+
+/* ================================
+📜 Footer
+   ================================ */
+footer {
+background: linear-gradient(135deg, #fdfaf6, #f2ede7);
+padding: 2rem 1rem;
+}
+
+.footer-text {
+display: inline-block;
+white-space: nowrap;
+font-size: 0.9rem;
+color: #444;
+}
+
+@media (max-width: 500px) {
+.footer-text {
+    white-space: normal;
+    text-align: center;
+}
+}
+
+/* ================================
+🍔 Burger Menu
+   ================================ */
+@media (min-width: 768px) {
+.burger-menu {
+    display: none;
+}
+}
+
+.mobile-menu {
+position: fixed;
+top: 0;
+right: 0;
+height: 100vh;
+width: 70%;
+max-width: 300px;
+background: white;
+box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+transform: translateX(100%);
+transition: transform 0.3s ease;
+z-index: 50;
+padding: 2rem 1rem;
+}
+
+.mobile-menu.open {
+transform: translateX(0);
+}
+
+/* ================================
+✨ Extra Small Effects
+   ================================ */
+img {
+transition: transform 0.4s ease;
+}
+
+img:hover {
+transform: scale(1.03);
+}
+
+button:active {
+transform: scale(0.97);
+}

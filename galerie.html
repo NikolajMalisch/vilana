@@ -112,18 +112,31 @@ gtag('config', 'G-YW71FCW4FJ');
 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-de">Galerie unserer Veranstaltungen</h2>
 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-ru hidden">Галерея наших мероприятий</h2>
 
-<!-- Galerie-Grid -->
-<div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
-</main>
+<!-- Grid для миниатюр -->
+<div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
-<button onclick="closeLightbox()" class="absolute top-5 right-5 text-white text-3xl font-bold" aria-label="Schließen">&times;</button>
-<button onclick="prevImage()" class="absolute left-5 text-white text-4xl" aria-label="Vorheriges">&#10094;</button>
-<!-- Bild in der Lightbox ohne Beschnitt anzeigen -->
-<img id="lightbox-image" src="" alt="Vergrößertes Bild" class="max-w-[96vw] max-h-[80vh] object-contain cursor-zoom-in" onclick="toggleZoom(event)" />
-<button onclick="nextImage()" class="absolute right-5 text-white text-4xl" aria-label="Nächstes">&#10095;</button>
+<!-- Лайтбокс -->
+<div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center">
+<button id="lightbox-close"
+        class="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+        aria-label="Schließen">✕</button>
+
+<button id="lightbox-prev"
+        class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+        aria-label="Zurück">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+
+<img id="lightbox-image" alt=""
+    class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform"/>
+
+<button id="lightbox-next"
+        class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+        aria-label="Weiter">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
 </div>
+
 
 <!-- FOOTER -->
 <footer class="bg-gray-800 text-white py-10 mt-16 relative">
@@ -141,13 +154,14 @@ gtag('config', 'G-YW71FCW4FJ');
 </footer>
 
 <script>
-    /* =========================
-    Einstellungen für Größe & Darstellung
-     ========================= */
-  // Einheitliches Seitenverhältnis für jede Kachel (3:2 wie das erste Foto)
+// =========================
+// Einstellungen für Größe & Darstellung
+// Соотношение сторон каждой карточки (например 3:2 или 4:3)
 const CARD_RATIO = '3 / 2';
-  // Modus der Bildanpassung:
-  // 'contain' = ganzes Foto sichtbar (mit ggf. Rändern), 'cover' = ohne Ränder, kann zuschneiden
+
+// Как картинка вписывается в контейнер:
+//  - 'contain' = всё фото видно, могут быть поля (рекомендуется для полного кадра)
+//  - 'cover'   = фото обрезается по краям, зато всегда заполняет блок без полей
 const IMAGE_FIT  = 'contain';
 
   /* ---------- Datenquelle (deine Pfade bleiben unverändert) ---------- */
