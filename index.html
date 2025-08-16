@@ -102,93 +102,82 @@ gtag('config', 'G-YW71FCW4FJ');
 
 <!-- HEADER -->
 <header class="bg-white shadow-md sticky top-0 z-40">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <div class="logo-container">
-        <!-- Совет: заменить PNG на SVG для идеальной резкости -->
-        <h1 class="logo-title">Vilana</h1>
-        <span class="logo-subtitle">Event &amp; Catering</span>
-    </div>
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- ЛОГО -->
+    <a href="index.html" class="flex items-baseline gap-1">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle">Event &amp; Catering</span>
+    </a>
 
-    <!-- Desktop-Navigation -->
+    <!-- DESKTOP NAV -->
     <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-        <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-        <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-        <a href="#regions" class="text-gray-700 hover:text-amber-700">Regionen &amp; Städte</a>
-        <a href="#faq" class="text-gray-700 hover:text-amber-700">FAQ</a>
-        <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-        <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-        <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-        <a href="contact.html" class="text-amber-700 font-bold underline">Kontakt</a>
-          <!-- Новый пункт меню (href поставим из JS) -->
-        <a id="eventLink" class="text-amber-700 font-semibold">Event</a>
+      <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
+      <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+      <a href="#regions" class="text-gray-700 hover:text-amber-700">Regionen &amp; Städte</a>
+      <a href="#faq" class="text-gray-700 hover:text-amber-700">FAQ</a>
+      <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+      <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
+      <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+      <a href="contact.html" class="text-amber-700 font-semibold">Kontakt</a>
+      <a id="eventLink" class="text-amber-700 font-semibold">Event</a>
 
-        <!-- Языковое меню (Desktop) -->
-        <div class="relative ml-2">
-        <button id="langToggle" class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
-                type="button" aria-haspopup="true" aria-expanded="false"
-                aria-label="Sprache wählen – Deutsch">DE ▾</button>
-        <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50" role="menu" aria-label="Sprache wählen">
-            <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-            <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
+      <!-- ЯЗЫК (DESKTOP) -->
+      <div class="relative">
+        <button id="langToggle" type="button"
+                class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Desktop">
+          DE ▾
+        </button>
+        <ul id="langMenu"
+            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
+            role="menu" aria-label="Sprache wählen">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
         </ul>
-        </div>
+      </div>
     </nav>
 
-<!-- Mobile: Sprache + Burger -->
-  <!-- Языковое меню (Mobile) -->
-  <!-- Мобильный переключатель языка — без рамки и чуть меньше -->
-  <button
-  id="langToggleMobile"
-  type="button"
-  aria-haspopup="true"
-  aria-expanded="false"
-  aria-label="Sprache wählen – Mobil"
-  class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800
-  focus:outline-none focus:ring-2 focus:ring-amber-500 active:scale-[.98]"
->
-  <span class="text-xs font-semibold leading-none">DE</span>
-  <div class="flex items-center md:hidden"></div>
-  </button>
+    <!-- ПРАВЫЙ БЛОК: ЯЗЫК (MOBILE) + БУРГЕР -->
+    <div class="flex items-center gap-2 md:hidden">
+      <div class="relative">
+        <button id="langToggleMobile" type="button"
+                class="inline-flex h-8 w-8 items-center justify-center text-gray-800"
+                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">
+          <span class="text-xs font-semibold leading-none">DE</span>
+        </button>
+        <ul id="langMenuMobile"
+            class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
+            role="menu" aria-label="Sprache wählen (mobil)">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Русский</button></li>
+        </ul>
+      </div>
 
-
-    <ul
-      id="langMenuMobile"
-      role="menu"
-      aria-label="Sprache wählen (mobil)"
-      class="hidden absolute right-0 mt-2 z-50 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5"
-    >
-      <li><button type="button" data-lang="de" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button></li>
-      <li><button type="button" data-lang="ru" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button></li>
-    </ul>
+      <button id="menuToggle" type="button" aria-label="Menü öffnen"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
-  <!-- Бургер-меню -->
-  <button
-    id="menuToggle"
-    type="button"
-    aria-label="Menü öffnen"
-    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
-  >
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
-</div>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+      class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+      role="menu" aria-label="Mobiles Menü">
+    <a href="#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+    <a href="#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+    <a href="#regions" class="block text-gray-700 hover:text-amber-700" role="menuitem">Regionen &amp; Städte</a>
+    <a href="#faq" class="block text-gray-700 hover:text-amber-700" role="menuitem">FAQ</a>
+    <a href="menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+    <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+    <a href="contact.html" class="block text-amber-700 font-semibold" role="menuitem">Kontakt</a>
+    <a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
+  </div>
+</header>
 
-<!-- Mobile Menü -->
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="menu" aria-label="Mobiles Menü">
-  <a href="#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
-  <a href="#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
-  <a href="#regions" class="block text-gray-700 hover:text-amber-700" role="menuitem">Regionen &amp; Städte</a>
-  <a href="#faq" class="block text-gray-700 hover:text-amber-700" role="menuitem">FAQ</a>
-  <a href="menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
-  <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
-  <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-  <a href="contact.html" class="block text-amber-700 font-bold underline" role="menuitem">Kontakt</a>
-  <!-- ВАЖНО: Event — внутри ЭТОГО ЖЕ контейнера -->
-  <a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
-</div>
   <!-- HERO SECTION -->
 <section id="home" class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center">
     <div class="container mx-auto px-4">
@@ -463,14 +452,9 @@ gtag('config', 'G-YW71FCW4FJ');
         <a href="agb.html" class="hover:underline">AGB</a>
       </p>
 
-<<<<<<< HEAD
       <p class="footer-text"> © 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
     </div>
-=======
-      <p class="footer-text">
-    © 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
-   </div>
->>>>>>> ac2ff92be356feacac82fc273b4079c990f0ef05
+
 
     <!-- Scroll-to-top -->
     <button
@@ -724,6 +708,108 @@ gtag('config', 'G-YW71FCW4FJ');
   } else {
     wrapDigits(document.body);
   }
+})();
+
+(function () {
+  // ====== ССЫЛКИ НА EVENT (если нужно централизованно менять) ======
+  const EVENT_URL = "event.html?id=russian-oktoberfest-2025";
+  const elEvent = document.getElementById('eventLink');
+  const elEventM = document.getElementById('eventLinkMobile');
+  if (elEvent) elEvent.setAttribute('href', EVENT_URL);
+  if (elEventM) elEventM.setAttribute('href', EVENT_URL);
+
+  // ====== БУРГЕР ======
+  const menuBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+  });
+
+  // Клик вне меню — закрыть
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.classList.contains('hidden')) {
+      const inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
+      if (!inside) closeMobileMenu();
+    }
+  });
+
+  // Закрыть при Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  // Закрыть при переходе на desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) closeMobileMenu();
+  });
+
+  // ====== ЯЗЫК (DESKTOP) ======
+  const btnDesk  = document.getElementById('langToggle');
+  const menuDesk = document.getElementById('langMenu');
+
+  btnDesk.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDesk.classList.toggle('hidden');
+    btnDesk.setAttribute('aria-expanded', String(!menuDesk.classList.contains('hidden')));
+  });
+
+  // ====== ЯЗЫК (MOBILE) ======
+  const btnMob  = document.getElementById('langToggleMobile');
+  const menuMob = document.getElementById('langMenuMobile');
+
+  btnMob.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuMob.classList.toggle('hidden');
+    btnMob.setAttribute('aria-expanded', String(!menuMob.classList.contains('hidden')));
+  });
+
+  // Закрытие обоих меню языка при клике вне
+  document.addEventListener('click', () => {
+    if (!menuDesk.classList.contains('hidden')) {
+      menuDesk.classList.add('hidden');
+      btnDesk.setAttribute('aria-expanded', 'false');
+    }
+    if (!menuMob.classList.contains('hidden')) {
+      menuMob.classList.add('hidden');
+      btnMob.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Выбор языка (общая логика)
+  function setLang(lang) {
+    if (window.setLanguage) window.setLanguage(lang);
+    localStorage.setItem('lang', lang);
+    if (btnDesk) btnDesk.textContent = (lang === 'de' ? 'DE ▾' : 'RU ▾');
+    if (btnMob)  btnMob.querySelector('span').textContent = (lang === 'de' ? 'DE' : 'RU');
+  }
+
+  menuDesk.querySelectorAll('[data-lang]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      setLang(e.currentTarget.dataset.lang);
+      menuDesk.classList.add('hidden');
+      btnDesk.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  menuMob.querySelectorAll('[data-lang]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      setLang(e.currentTarget.dataset.lang);
+      menuMob.classList.add('hidden');
+      btnMob.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Инициализация ярлыков языка
+  const saved = localStorage.getItem('lang') || 'de';
+  setLang(saved);
 })();
 </script>
 </body>
