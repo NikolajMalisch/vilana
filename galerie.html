@@ -139,19 +139,20 @@ gtag('config', 'G-YW71FCW4FJ');
 
 
 <!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 mt-16 relative">
-<div class="container mx-auto px-4 text-center">
-    <p class="mb-2">
+<footer class="bg-gray-800 text-white py-10 mt-16 relative w-full">
+<div class="px-6 text-center">
+    <p class="mb-2 space-x-2">
     <a href="impressum.html" class="hover:underline">Impressum</a> |
     <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
     <a href="agb.html" class="hover:underline">AGB</a>
     </p>
-    <p>&copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+    <p class="footer-text lang lang-de">
+    &copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
+    </p>
+    <p class="footer-text lang lang-ru hidden">
+    &copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.
+    </p>
 </div>
-<button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
-        title="Nach oben" aria-label="Nach oben">▲</button>
-</footer>
 
 <script>
 // =========================
