@@ -323,15 +323,26 @@
   { src: 'images/octoberfest_1.webp', alt: 'Russian Oktoberfest – Festliche Stimmung in Bad Pyrmont' },
   { src: 'images/octoberfest_dance.webp', alt: 'Tanzende Gäste' },
       ],
+
       faq: [
-        { q: { de: 'Gibt es Sitzplatzreservierung?', ru: 'Есть ли резерв мест?' },
-          a: { de: 'Ja, bitte bei der Buchung angeben.', ru: 'Да, укажите при бронировании.' } },
-        { q: { de: 'Kinder-Tickets?', ru: 'Билеты для детей?' },
-          a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.', ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' } }
+  {
+    q: {
+      de: 'Welche Tische und Sitzordnungen gibt es?',
+      ru: 'Какие столы и варианты рассадки доступны?'
+    },
+    a: {
+      de: 'Wir bieten verschiedene Tischgrößen und Sitzordnungen an – von kleinen Tischen für 2–4 Personen bis zu großen Tafeln für Gruppen. Bei der Buchung kannst du die gewünschte Tischgröße wählen, wir bestätigen die Plätze nach Verfügbarkeit.',
+      ru: 'У нас есть разные размеры столов и варианты рассадки — от небольших столиков на 2–4 человека до больших столов для компаний. При бронировании можно выбрать нужный размер стола, мы подтвердим посадку при наличии мест.'
+    }
+  },
+  {
+    q: { de: 'Kinder-Tickets?', ru: 'Билеты для детей?' },
+    a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.', ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' }
+  }
+
       ]
     }
   };
-
   // ========= UTILS =========
   const $ = (s) => document.querySelector(s);
   const getParam = (n) => new URL(location.href).searchParams.get(n);
