@@ -1,37 +1,15 @@
 /* 🎨 Google Fonts: Cinzel Decorative & Cinzel */
-.logo-title {
-font-family: 'Cinzel Decorative', serif;
-font-size: 1.8rem;
-font-weight: 400;
-letter-spacing: 0.5px;
-}
+/* Removed duplicate .logo-title definition */
 
 .logo-subtitle {
 font-family: 'Cinzel', serif;
 font-size: 1.2rem;
 font-weight: 400;
 letter-spacing: 0.2px;
-margin-left: 8px;
-}
-
-/* 🔤 Allgemeine Schriftarten */
-.font-vilana {
-font-family: 'Cinzel Decorative', serif;
-}
+/* Removed duplicate .logo-subtitle definition */
 
 .font-vilana-sub {
-font-family: 'Cinzel', serif;
-}
-
-.font-raleway {
-font-family: 'Raleway', sans-serif;
-}
-
-/* 🖱️ Smooth Hover-Effekt für Links und Buttons */
-a:hover,
-button:hover {
-transition: all 0.3s ease;
-}
+/* 🔤 Allgemeine Schriftarten */
 
 /* 📜 Footer-Text Formatierung */
 .footer-text {
