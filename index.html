@@ -119,7 +119,7 @@ gtag('config', 'G-YW71FCW4FJ');
       <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
       <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
       <a href="contact.html" class="text-amber-700 font-semibold">Kontakt</a>
-      <a id="eventLink" class="text-amber-700 font-semibold">Event</a>
+      <a href="event.html" class="text-amber-700 font-semibold">Event</a>
 
       <!-- ЯЗЫК (DESKTOP) -->
       <div class="relative">
@@ -470,347 +470,135 @@ gtag('config', 'G-YW71FCW4FJ');
     <style>.lang-ru { display:none !important; }</style>
   </noscript>
 
-  <!-- JS: язык + меню (defer — не блокирует рендер) -->
-  <script defer>
-    // ===== Селекторы
-    const menuToggle        = document.getElementById('menuToggle');
-    const mobileMenu        = document.getElementById('mobileMenu');
-
-    const langToggleDesktop = document.getElementById('langToggle');
-    const langMenuDesktop   = document.getElementById('langMenu');
-
-    const langToggleMobile  = document.getElementById('langToggleMobile');
-    const langMenuMobile    = document.getElementById('langMenuMobile');
-
-    // ===== Mobile меню: открыть/закрыть
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      // Закрываем мобильное меню при клике на любую ссылку
-      mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-      });
-    }
-
-    // ===== Desktop язык: открыть/закрыть дропдаун
-    if (langToggleDesktop && langMenuDesktop) {
-      langToggleDesktop.addEventListener('click', () => {
-        langMenuDesktop.classList.toggle('hidden');
-        langToggleDesktop.setAttribute('aria-expanded', langMenuDesktop.classList.contains('hidden') ? 'false' : 'true');
-      });
-      langMenuDesktop.querySelectorAll('button[data-lang]').forEach(btn => {
-        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-      });
-    }
-
-    // ===== Mobile язык: открыть/закрыть дропдаун
-    if (langToggleMobile && langMenuMobile) {
-      langToggleMobile.addEventListener('click', () => {
-        langMenuMobile.classList.toggle('hidden');
-        langToggleMobile.setAttribute('aria-expanded', langMenuMobile.classList.contains('hidden') ? 'false' : 'true');
-      });
-      langMenuMobile.querySelectorAll('button[data-lang]').forEach(btn => {
-        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-      });
-    }
-
-    // ===== Клик вне языковых меню — закрыть
-    document.addEventListener('click', (e) => {
-      if (langMenuDesktop && !langMenuDesktop.contains(e.target) && !langToggleDesktop?.contains(e.target)) {
-        langMenuDesktop.classList.add('hidden');
-        langToggleDesktop?.setAttribute('aria-expanded', 'false');
-      }
-      if (langMenuMobile && !langMenuMobile.contains(e.target) && !langToggleMobile?.contains(e.target)) {
-        langMenuMobile.classList.add('hidden');
-        langToggleMobile?.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // ===== Смена языка (через класс .hidden)
-    function setLanguage(lang) {
-      // Сохраняем выбор
-      try { localStorage.setItem('siteLang', lang); } catch (e) {}
-
-      // HTML lang атрибут (для SEO/доступности)
-      document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
-
-      // Спрятать всё RU и DE, затем показать нужное
-      document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
-
-      // Кнопки-лейблы
-      const label = (lang === 'ru') ? 'RU ▾' : 'DE ▾';
-      if (langToggleDesktop) {
-        langToggleDesktop.textContent = label;
-        langToggleDesktop.setAttribute('aria-label', `Sprache wählen – ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
-      }
-      if (langToggleMobile)  {
-        langToggleMobile.textContent  = label;
-        langToggleMobile.setAttribute('aria-label', `Sprache wählen – Mobil, ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
-      }
-
-      // Год в футере
-      const year = new Date().getFullYear();
-      const yearDe = document.getElementById('year-de');
-      const yearRu = document.getElementById('year-ru');
-      if (yearDe) yearDe.textContent = year;
-      if (yearRu) yearRu.textContent = year;
-
-      // Закрыть языковые меню
-      langMenuDesktop?.classList.add('hidden');
-      langMenuMobile?.classList.add('hidden');
-      langToggleDesktop?.setAttribute('aria-expanded', 'false');
-      langToggleMobile?.setAttribute('aria-expanded', 'false');
-    }
-
-    // ===== Инициализация: язык из localStorage, по умолчанию DE
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = (() => { try { return localStorage.getItem('siteLang'); } catch(e) { return null; } })();
-      setLanguage(saved || 'de');
-    });
-      (function(){
-    // какой event открывать
-    var EVENT_ID = 'russian-oktoberfest-2025';
-
-    // определяем язык
-    var url     = new URL(location.href);
-    var lang    = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
-
-    // собираем ссылку на event.html
-    var ev = new URL('event.html', location.href);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-
-    // проставляем href туда, где нашёлся id
-    var links = [document.getElementById('eventLink'), document.getElementById('eventLinkMobile')].filter(Boolean);
-    links.forEach(function(a){ a.href = ev.pathname + ev.search; });
-    })();
-    (function () {
-  // ID события, которое нужно открыть
-  var EVENT_ID = 'russian-oktoberfest-2025';
-
-  function copyTrackingParams(fromURL, toURL) {
-    var keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-    keep.forEach(function (k) {
-      var v = fromURL.searchParams.get(k);
-      if (v) toURL.searchParams.set(k, v);
-    });
-  }
-
-  function setEventLinks() {
-    var url  = new URL(location.href);
-    var lang = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
-
-    // event.html относительно текущей страницы (работает из любых подпапок)
-    var ev = new URL('event.html', url);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-
-    // сохраняем UTM/клики, если пришли с рекламы
-    copyTrackingParams(url, ev);
-
-    // Обновим все ссылки на событие (можно вёрсткой добавить data-ev-link где нужно)
-    var selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
-    document.querySelectorAll(selectors).forEach(function(a){
-      a.href = ev.href; // абсолютный URL надёжнее, чем pathname+search
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setEventLinks);
-  } else {
-    setEventLinks();
-  }
-})();
-
+<script defer>
 (function () {
-  var EVENT_ID = 'russian-oktoberfest-2025';
-
-  function copyTrackingParams(fromURL, toURL) {
-    var keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-    keep.forEach(function (k) {
-      var v = fromURL.searchParams.get(k);
-      if (v) toURL.searchParams.set(k, v);
-    });
-  }
-
-  function setEventLinks() {
-    var url  = new URL(location.href);
-    // читаем язык из URL или из того же ключа, что и setLanguage()
-    var lang = (url.searchParams.get('lang') || localStorage.getItem('siteLang') || 'de').toLowerCase();
-
-    var ev = new URL('event.html', url);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-    copyTrackingParams(url, ev);
-
-    var selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
-    document.querySelectorAll(selectors).forEach(function(a){
-      a.href = ev.href; // абсолютная ссылка — надёжнее
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setEventLinks);
-  } else {
-    setEventLinks();
-  }
-})();
-
-(function () {
-  // Оборачиваем числовые последовательности в <span class="digits ...">
-  function wrapDigits(root) {
-    var walker = document.createTreeWalker(
-      root,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: function (node) {
-          if (!node.nodeValue || !/\d/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
-
-          // пропускаем скрипты/стили/инпуты и элементы, где уже стоят digits или помечены исключением
-          var p = node.parentNode;
-          while (p) {
-            if (p.nodeType === 1) {
-              var t = p.tagName;
-              if (t === 'SCRIPT' || t === 'STYLE' || t === 'NOSCRIPT' || t === 'TEXTAREA' || t === 'INPUT')
-                return NodeFilter.FILTER_REJECT;
-              if (p.classList && (p.classList.contains('digits') || p.classList.contains('no-digit-wrap')))
-                return NodeFilter.FILTER_REJECT;
-            }
-            p = p.parentNode;
-          }
-          return NodeFilter.FILTER_ACCEPT;
-        }
-      }
-    );
-
-    var texts = [], n;
-    while ((n = walker.nextNode())) texts.push(n);
-
-    texts.forEach(function (text) {
-      // Находим «телефоноподобные»/IBAN-подобные/обычные группы цифр
-      // Пример: +49 176 57775996, 22.10.2025, 12:00, 79.99, DE48 2546 2160 0665 6480 01 (цифры внутри IBAN)
-      var html = text.nodeValue.replace(
-        /(\d[\d\s().:-]{1,}\d|\d{2,})/g,
-        '<span class="digits font-mono font-semibold tracking-wide">$1</span>'
-      );
-      if (html === text.nodeValue) return;
-
-      var wrapper = document.createElement('span');
-      wrapper.innerHTML = html;
-      text.parentNode.replaceChild(wrapper, text);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function(){ wrapDigits(document.body); });
-  } else {
-    wrapDigits(document.body);
-  }
-})();
-
-(function () {
-  // ====== ССЫЛКИ НА EVENT (если нужно централизованно менять) ======
-  const EVENT_URL = "event.html?id=russian-oktoberfest-2025";
-  const elEvent = document.getElementById('eventLink');
-  const elEventM = document.getElementById('eventLinkMobile');
-  if (elEvent) elEvent.setAttribute('href', EVENT_URL);
-  if (elEventM) elEventM.setAttribute('href', EVENT_URL);
-
-  // ====== БУРГЕР ======
-  const menuBtn = document.getElementById('menuToggle');
+  // ===== СЕЛЕКТОРЫ =====
+  const menuBtn    = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
+  const btnDesk  = document.getElementById('langToggle');
+  const menuDesk = document.getElementById('langMenu');
+
+  const btnMob   = document.getElementById('langToggleMobile');
+  const menuMob  = document.getElementById('langMenuMobile');
+
+  const EVENT_ID = 'russian-oktoberfest-2025';
+
+  // ===== БУРГЕР =====
   function closeMobileMenu() {
+    if (!mobileMenu) return;
     mobileMenu.classList.add('hidden');
     menuBtn?.setAttribute('aria-expanded', 'false');
   }
-
-  menuBtn.addEventListener('click', (e) => {
+  menuBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
+    if (!mobileMenu) return;
     mobileMenu.classList.toggle('hidden');
     menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
   });
 
-  // Клик вне меню — закрыть
+  // Закрытие мобильного меню по клику вне / ESC / resize
   document.addEventListener('click', (e) => {
-    if (!mobileMenu.classList.contains('hidden')) {
-      const inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
-      if (!inside) closeMobileMenu();
+    if (!mobileMenu || mobileMenu.classList.contains('hidden')) return;
+    const inside = mobileMenu.contains(e.target) || menuBtn?.contains(e.target);
+    if (!inside) closeMobileMenu();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+  window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+
+  // ===== ЯЗЫК: переключение и метки
+  function setLanguage(lang) {
+    // сохранить выбор
+    try { localStorage.setItem('siteLang', lang); } catch(e) {}
+    document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
+
+    // показать нужные блоки
+    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
+
+    // лейблы кнопок
+    const labelDesk = (lang === 'ru') ? 'RU ▾' : 'DE ▾';
+    const labelMob  = (lang === 'ru') ? 'RU'   : 'DE';
+    if (btnDesk) {
+      btnDesk.textContent = labelDesk;
+      btnDesk.setAttribute('aria-label', `Sprache wählen – ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
     }
-  });
-
-  // Закрыть при Esc
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMobileMenu();
-  });
-
-  // Закрыть при переходе на desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) closeMobileMenu();
-  });
-
-  // ====== ЯЗЫК (DESKTOP) ======
-  const btnDesk  = document.getElementById('langToggle');
-  const menuDesk = document.getElementById('langMenu');
-
-  btnDesk.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuDesk.classList.toggle('hidden');
-    btnDesk.setAttribute('aria-expanded', String(!menuDesk.classList.contains('hidden')));
-  });
-
-  // ====== ЯЗЫК (MOBILE) ======
-  const btnMob  = document.getElementById('langToggleMobile');
-  const menuMob = document.getElementById('langMenuMobile');
-
-  btnMob.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuMob.classList.toggle('hidden');
-    btnMob.setAttribute('aria-expanded', String(!menuMob.classList.contains('hidden')));
-  });
-
-  // Закрытие обоих меню языка при клике вне
-  document.addEventListener('click', () => {
-    if (!menuDesk.classList.contains('hidden')) {
-      menuDesk.classList.add('hidden');
-      btnDesk.setAttribute('aria-expanded', 'false');
+    if (btnMob) {
+      // ожидание <span> внутри кнопки (как в твоей разметке). Если нет — используем textContent
+      const s = btnMob.querySelector('span');
+      if (s) s.textContent = labelMob; else btnMob.textContent = labelDesk;
+      btnMob.setAttribute('aria-label', `Sprache wählen – Mobil, ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
     }
-    if (!menuMob.classList.contains('hidden')) {
-      menuMob.classList.add('hidden');
-      btnMob.setAttribute('aria-expanded', 'false');
-    }
-  });
 
-  // Выбор языка (общая логика)
-  function setLang(lang) {
-    if (window.setLanguage) window.setLanguage(lang);
-    localStorage.setItem('lang', lang);
-    if (btnDesk) btnDesk.textContent = (lang === 'de' ? 'DE ▾' : 'RU ▾');
-    if (btnMob)  btnMob.querySelector('span').textContent = (lang === 'de' ? 'DE' : 'RU');
+    // год в футере
+    const y = new Date().getFullYear();
+    document.getElementById('year-de')?.textContent = y;
+    document.getElementById('year-ru')?.textContent = y;
   }
 
-  menuDesk.querySelectorAll('[data-lang]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      setLang(e.currentTarget.dataset.lang);
+  // Открытие/закрытие списков языков
+  btnDesk?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDesk?.classList.toggle('hidden');
+    btnDesk.setAttribute('aria-expanded', String(!menuDesk?.classList.contains('hidden')));
+  });
+  btnMob?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuMob?.classList.toggle('hidden');
+    btnMob.setAttribute('aria-expanded', String(!menuMob?.classList.contains('hidden')));
+  });
+
+  // Выбор языка из меню
+  menuDesk?.querySelectorAll('[data-lang]').forEach(el => {
+    el.addEventListener('click', () => {
+      setLanguage(el.dataset.lang);
       menuDesk.classList.add('hidden');
-      btnDesk.setAttribute('aria-expanded', 'false');
+      btnDesk?.setAttribute('aria-expanded', 'false');
     });
   });
-
-  menuMob.querySelectorAll('[data-lang]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      setLang(e.currentTarget.dataset.lang);
+  menuMob?.querySelectorAll('[data-lang]').forEach(el => {
+    el.addEventListener('click', () => {
+      setLanguage(el.dataset.lang);
       menuMob.classList.add('hidden');
-      btnMob.setAttribute('aria-expanded', 'false');
+      btnMob?.setAttribute('aria-expanded', 'false');
     });
   });
 
-  // Инициализация ярлыков языка
-  const saved = localStorage.getItem('lang') || 'de';
-  setLang(saved);
+  // Клик вне — закрыть оба меню языков
+  document.addEventListener('click', (e) => {
+    if (menuDesk && !menuDesk.contains(e.target) && !btnDesk?.contains(e.target)) {
+      menuDesk.classList.add('hidden'); btnDesk?.setAttribute('aria-expanded', 'false');
+    }
+    if (menuMob && !menuMob.contains(e.target) && !btnMob?.contains(e.target)) {
+      menuMob.classList.add('hidden'); btnMob?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ===== EVENT ссылки с передачей UTM
+  function copyTrackingParams(fromURL, toURL) {
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k => {
+      const v = fromURL.searchParams.get(k);
+      if (v) toURL.searchParams.set(k, v);
+    });
+  }
+  function setEventLinks() {
+    const url  = new URL(location.href);
+    const lang = (url.searchParams.get('lang') || localStorage.getItem('siteLang') || 'de').toLowerCase();
+    const ev   = new URL('event.html', url);
+    ev.searchParams.set('id', EVENT_ID);
+    ev.searchParams.set('lang', lang);
+    copyTrackingParams(url, ev);
+    document.querySelectorAll('#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]')
+      .forEach(a => { a.href = ev.href; });
+  }
+
+  // ===== INIT =====
+  document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(localStorage.getItem('siteLang') || 'de');
+    setEventLinks();
+  });
 })();
 </script>
+</main>
 </body>
 </html>
