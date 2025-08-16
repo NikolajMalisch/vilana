@@ -8,13 +8,13 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-YW71FCW4FJ');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YW71FCW4FJ');
 </script>
 
-<!-- Tailwind CSS -->
+<!-- Tailwind CSS (CDN) -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Google Fonts -->
@@ -26,68 +26,85 @@ gtag('config', 'G-YW71FCW4FJ');
   .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
   .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
   .logo-subtitle { font-size: 1.2rem; color: #1f2937; }
-  .lang { display: none; }
+  .lang { display: none; }  /* по умолчанию всё скрыто — JS покажет нужный язык */
   .hidden-field { display: none; }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="bg-white shadow-md">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="logo-container">
-      <h1 class="logo-title">Vilana</h1>
-      <span class="logo-subtitle">Event & Catering</span>
-    </div>
+<header class="bg-white shadow-md sticky top-0 z-40">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- ЛОГО -->
+    <a href="index.html" class="flex items-baseline gap-1">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle">Event &amp; Catering</span>
+    </a>
 
-  <nav class="hidden md:flex space-x-8" aria-label="Hauptnavigation">
-  <a href="index.html#home" class="nav-link">Startseite</a>
-  <a href="index.html#services" class="nav-link">Leistungen</a>
-  <a href="menu.html" class="nav-link">Menü</a>
-  <a href="galerie.html" class="nav-link">Galerie</a>
-  <a href="about.html" class="nav-link">Über uns</a>
-  <a href="contact.html" class="nav-link">Kontakt</a>
-  <a href="event.html" class="nav-link">Event</a>
-</nav>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+      <a href="index.html#home" class="nav-link">Startseite</a>
+      <a href="index.html#services" class="nav-link">Leistungen</a>
+      <a href="menu.html" class="nav-link">Menü</a>
+      <a href="galerie.html" class="nav-link">Galerie</a>
+      <a href="about.html" class="nav-link">Über uns</a>
+      <a href="contact.html" class="nav-link">Kontakt</a>
+      <a id="eventLink" class="nav-link">Event</a>
 
+      <!-- ЯЗЫК (DESKTOP) — ДРОПДАУН КАК НА ГЛАВНОЙ -->
+      <div class="relative">
+        <button id="langToggle" type="button"
+                class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Desktop">
+          DE ▾
+        </button>
+        <ul id="langMenu"
+            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
+            role="menu" aria-label="Sprache wählen">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- Desktop Sprachumschalter -->
-<div class="hidden md:flex items-center gap-2">
-  <button id="langToggle" class="flex items-center gap-1 text-gray-700 hover:text-amber-700">
+    <!-- MOBILE: язык + бургер (тоже как на главной) -->
+    <div class="flex items-center gap-2 md:hidden">
+      <div class="relative">
+        <button id="langToggleMobile" type="button"
+                class="inline-flex h-8 w-8 items-center justify-center text-gray-800"
+                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">
+          <span class="text-xs font-semibold leading-none">DE</span>
+        </button>
+        <ul id="langMenuMobile"
+            class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
+            role="menu" aria-label="Sprache wählen (mobil)">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Русский</button></li>
+        </ul>
+      </div>
 
-    DE ▾
-
-  </button>
-</div>
-
-<!-- Mobile Sprachumschalter -->
-<div class="md:hidden flex items-center gap-2">
-  <button id="langToggleMobile" class="px-2">🇩🇪</button>
-  <button data-lang="ru" class="px-2">🇷🇺</button>
-</div>
-
-<!-- Burger-Menü -->
-  <button id="menuToggle" class="md:hidden ml-2">
-  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
-
-
-  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" class="block text-gray-700 hover:text-amber-700">Über uns</a>
-    <a href="contact.html" class="block text-amber-700 font-bold underline">Kontakt</a>
-    <a id="eventLinkMobile" class="block text-amber-700 font-semibold">Event</a>
-    <div class="flex gap-3 items-center pt-2">
-      <button type="button" data-lang="de" class="px-2">🇩🇪</button>
-      <button type="button" data-lang="ru" class="px-2">🇷🇺</button>
+      <button id="menuToggle" type="button" aria-label="Menü öffnen"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
   </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+      class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+      role="menu" aria-label="Mobiles Menü">
+    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+    <a href="menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+    <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+    <a href="contact.html" class="block text-amber-700 font-semibold" role="menuitem">Kontakt</a>
+    <a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
+  </div>
 </header>
+
 
 <!-- ===== MAIN ===== -->
 <main class="py-16">
@@ -154,29 +171,43 @@ gtag('config', 'G-YW71FCW4FJ');
     <div class="mb-4">
       <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
     </div>
-    <p><a href="impressum.html" class="hover:underline">Impressum</a> | <a href="datenschutz.html" class="hover:underline">Datenschutz</a> | <a href="agb.html" class="hover:underline">AGB</a></p>
-    <p class="lang lang-de">&copy; 2025 Vilana Event & Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru">&copy; 2025 Vilana Event & Catering. Все права защищены.</p>
+    <p>
+      <a href="impressum.html" class="hover:underline">Impressum</a> |
+      <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+      <a href="agb.html" class="hover:underline">AGB</a>
+    </p>
+    <p class="lang lang-de" data-disp="block">&copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+    <p class="lang lang-ru" data-disp="block">&copy; 2025 Vilana Event &amp; Catering. Все права защищены.</p>
   </div>
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full">▲</button>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full" aria-label="Nach oben">▲</button>
 </footer>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<!-- ЛОГИКА: язык, меню, EmailJS, Event-ссылки -->
 <script>
-/* Переключение языка */
+/* Переключение языка (единый для всех страниц) */
 window.setLanguage = function(lang) {
+  lang = (lang === 'ru') ? 'ru' : 'de';
   localStorage.setItem('vilana_lang', lang);
+
+  // показать/скрыть элементы нужного языка
   document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
   const blockTags = new Set(['H1','H2','H3','H4','H5','H6','P','DIV','LI','UL','OL','SECTION','ARTICLE','FOOTER','HEADER']);
   document.querySelectorAll('.lang-' + lang).forEach(el => {
     const hint = el.getAttribute('data-disp');
     el.style.display = hint ? hint : (blockTags.has(el.tagName) ? 'block' : 'inline');
   });
+
+  // обновить ссылки Event (сохраним utm/gclid/fbclid)
+  wireEventLinks(lang);
+
+  // <html lang=".."> (для SEO/доступности)
+  document.documentElement.lang = lang;
 };
 
-/* Делегатор клика по кнопкам языка */
+/* Делегатор клика по кнопкам языка (desktop + mobile) */
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-lang]');
   if (!btn) return;
@@ -193,7 +224,7 @@ emailjs.init("vfmomNKrMxrf2xqDW");
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
   const form = this;
-  if (form.honeypot.value !== "") return;
+  if (form.honeypot.value !== "") return; // антиспам
   emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
     .then(() => {
       document.getElementById("formMsg").classList.remove("hidden");
@@ -203,13 +234,36 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     });
 });
 
-/* Устанавливаем язык при загрузке */
+/* Генерация ссылок на Event с учётом lang + UTM */
+function wireEventLinks(lang){
+  try{
+    const cur = new URL(location.href);
+    const target = new URL('event.html', cur);
+    target.searchParams.set('id', 'russian-oktoberfest-2025');
+    target.searchParams.set('lang', lang);
+
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k=>{
+      const v = cur.searchParams.get(k);
+      if(v) target.searchParams.set(k, v);
+    });
+
+    const a1 = document.getElementById('eventLink');
+    const a2 = document.getElementById('eventLinkMobile');
+    if(a1) a1.href = target.href;
+    if(a2) a2.href = target.href;
+  }catch(e){}
+}
+
+/* Инициализация: читаем ?lang=… или localStorage, применяем язык и ссылки */
 document.addEventListener('DOMContentLoaded', () => {
-  const lang = localStorage.getItem('vilana_lang') || 'de';
-  setLanguage(lang);
+  const url = new URL(location.href);
+  const qLang = (url.searchParams.get('lang') || '').toLowerCase();
+  const saved = localStorage.getItem('vilana_lang') || 'de';
+  setLanguage(qLang || saved || 'de');
 });
 </script>
 <script src="js/main.js" defer></script>
 <script src="js/nav.js"></script>
 </body>
 </html>
+

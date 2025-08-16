@@ -1,173 +1,268 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vilana Event &amp; Catering | Galerie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vilana Event &amp; Catering | Galerie</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-YW71FCW4FJ');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YW71FCW4FJ');
+  </script>
 
-<!-- Tailwind CSS (lokal kompiliert) -->
-<link rel="stylesheet" href="css/output.css">
+  <!-- Tailwind CSS (lokal kompiliert) -->
+  <link rel="stylesheet" href="css/output.css">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Fallback: wenn lokales CSS nicht greift — CDN laden -->
+  <script>
+    (function(){
+      try{
+        const probe = document.createElement('div');
+        probe.className = 'hidden';
+        document.documentElement.appendChild(probe);
+        const ok = getComputedStyle(probe).display === 'none';
+        probe.remove();
+        if(!ok){
+          const s = document.createElement('script');
+          s.src = 'https://cdn.tailwindcss.com';
+          document.head.appendChild(s);
+          console.warn('Tailwind CDN Fallback aktiviert');
+        }
+      }catch(e){}
+    })();
+  </script>
 
-<style>
-    /* Grundstil der Seite */
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ——— Basis ——— */
     body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; }
     .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
     .logo-title { font-family:'Cinzel Decorative',cursive; font-size:1.8rem; font-weight:500; letter-spacing:.5px; color:#1f2937; }
     .logo-subtitle { font-size:1.2rem; font-weight:400; color:#1f2937; }
-
-    /* Zoom-Zustand im Lightbox-Bild (optional) */
+    /* Zoom-Zustand im Lightbox-Bild */
     .zoomed { transform: scale(1.6); transition: transform .25s ease; cursor: zoom-out; }
-</style>
+  </style>
 </head>
+
 <body class="text-gray-800 antialiased">
+  <!-- ===== HEADER (identisch zu index) ===== -->
+  <header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-baseline gap-1">
+        <span class="logo-title">Vilana</span>
+        <span class="logo-subtitle">Event &amp; Catering</span>
+      </a>
 
-<!-- HEADER -->
-<header class="bg-white shadow-md sticky top-0 z-40">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <div class="logo-container">
-    <h1 class="logo-title">Vilana</h1>
-    <span class="logo-subtitle">Event &amp; Catering</span>
+      <!-- Desktop-Navigation -->
+      <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+        <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
+        <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+        <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+        <a href="galerie.html" class="text-gray-700 hover:text-amber-700 underline font-semibold">Galerie</a>
+        <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+        <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
+        <a id="eventLink" class="text-gray-700 hover:text-amber-700">Event</a>
+
+        <!-- Sprache (Desktop) – Dropdown wie auf der Startseite -->
+        <div class="relative">
+          <button id="langToggle" type="button"
+                  class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+                  aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Desktop">
+            DE ▾
+          </button>
+          <ul id="langMenu"
+              class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
+              role="menu" aria-label="Sprache wählen">
+            <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+            <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Mobile: Sprache + Burger -->
+      <div class="flex items-center md:hidden gap-2 relative">
+        <button id="langToggleMobile" type="button"
+                class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800 focus:outline-none active:scale-[.98]"
+                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">
+          <span class="text-xs font-semibold leading-none">DE</span>
+        </button>
+        <ul id="langMenuMobile"
+            class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
+            role="menu" aria-label="Sprache wählen (mobil)">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Русский</button></li>
+        </ul>
+
+        <button id="menuToggle" type="button"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
+                aria-label="Menü öffnen">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Desktop-Navigation -->
-<nav class="hidden md:flex space-x-8" aria-label="Hauptnavigation">
-<a href="index.html#home" class="nav-link">Startseite</a>
-<a href="index.html#services" class="nav-link">Leistungen</a>
-<a href="menu.html" class="nav-link">Menü</a>
-<a href="galerie.html" class="nav-link">Galerie</a>
-<a href="about.html" class="nav-link">Über uns</a>
-<a href="contact.html" class="nav-link">Kontakt</a>
-<a href="event.html" class="nav-link">Event</a></nav>
-
-    <!-- Sprachmenü (Desktop) -->
-    <div class="relative ml-2">
-    <button id="langToggle">DE ▾</button>
-    <ul id="langMenu">
-    <li><button data-lang="de">Deutsch</button></li>
-    <li><button data-lang="ru">Русский</button></li>
-    </ul>
-
+    <!-- Mobile Menü -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="menu" aria-label="Mobiles Menü">
+      <a href="index.html#home"    class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+      <a href="index.html#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+      <a href="menu.html"          class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+      <a href="galerie.html"       class="block text-gray-700 hover:text-amber-700 underline font-semibold" role="menuitem">Galerie</a>
+      <a href="about.html"         class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+      <a href="contact.html"       class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+      <a id="eventLinkMobile"      class="block text-amber-700 font-semibold" role="menuitem">Event</a>
     </div>
-    </nav>
+  </header>
 
-    <!-- Mobile: Sprache + Burger -->
-    <div class="flex items-center md:hidden gap-2 relative">
-    <button id="langToggleMobile" type="button"
-            class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800 focus:outline-none active:scale-[.98]"
-            aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">DE</button>
+  <!-- ===== MAIN ===== -->
+  <main class="py-16 px-4 max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-de">Galerie unserer Veranstaltungen</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-ru hidden">Галерея наших мероприятий</h2>
 
-    <ul id="langMenuMobile"
-        class="hidden absolute right-12 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50">
-        <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button></li>
-        <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button></li>
-    </ul>
+    <!-- Grid für Thumbnails -->
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-    <button id="menuToggle" type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
-            aria-label="Menü öffnen">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-    </button>
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center">
+      <button id="lightbox-close"
+              class="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+              aria-label="Schließen">✕</button>
+
+      <button id="lightbox-prev"
+              class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+              aria-label="Zurück">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <img id="lightbox-image" alt=""
+           class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform"/>
+
+      <button id="lightbox-next"
+              class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+              aria-label="Weiter">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-800 text-white py-10 mt-16 relative w-full">
+    <div class="px-6 text-center">
+      <p class="mb-2 space-x-2">
+        <a href="impressum.html" class="hover:underline">Impressum</a> |
+        <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+        <a href="agb.html" class="hover:underline">AGB</a>
+      </p>
+      <p class="footer-text lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+      <p class="footer-text lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.</p>
     </div>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+            aria-label="Nach oben">▲</button>
+  </footer>
 
-<!-- Mobile Menü -->
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="menu" aria-label="Mobiles Menü">
-<a href="index.html"  class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
-<a href="menu.html"   class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
-<a href="about.html"  class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-<a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
-<a href="contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
-<a href="event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+  <!-- ===== Seitenskripte (Sprache, Menü, Galerie, Lightbox) ===== -->
+  <script>
+    // ===== Jahr im Footer
+    (function(){ const y=new Date().getFullYear(); const d=document.getElementById('year-de'); const r=document.getElementById('year-ru'); if(d) d.textContent=y; if(r) r.textContent=y; })();
 
-<!-- Ссылка на Event: href подставит твой JS -->
-<a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
-</div>
-</header>
+    // ===== Hilfsfunktionen
+    const $ = (id) => document.getElementById(id);
+    const el = {
+      html: document.documentElement,
+      langToggle: $('langToggle'),
+      langMenu: $('langMenu'),
+      langToggleMobile: $('langToggleMobile'),
+      langMenuMobile: $('langMenuMobile'),
+      menuToggle: $('menuToggle'),
+      mobileMenu: $('mobileMenu'),
+      eventLink: $('eventLink'),
+      eventLinkMobile: $('eventLinkMobile'),
+      gallery: $('gallery'),
+      lb: $('lightbox'),
+      lbImg: $('lightbox-image'),
+      lbClose: $('lightbox-close'),
+      lbPrev: $('lightbox-prev'),
+      lbNext: $('lightbox-next'),
+    };
 
-<!-- Флаги
-<div class="flex gap-4 mt-2">
-    <button onclick="setLanguage('de')" class="px-2" aria-label="Deutsch">🇩🇪</button>
-    <button onclick="setLanguage('ru')" class="px-2" aria-label="Русский">🇷🇺</button>
-</div>-->
-</div>
-</header>
+    // ===== Sprache
+    function setLanguage(lang){
+      lang = (lang === 'ru') ? 'ru' : 'de';
+      try { localStorage.setItem('vilana_lang', lang); } catch(e){}
+      el.html.lang = lang;
 
+      document.querySelectorAll('.lang').forEach(n => n.classList.add('hidden'));
+      document.querySelectorAll('.lang-' + lang).forEach(n => n.classList.remove('hidden'));
 
-<!-- MAIN -->
-<main class="py-16 px-4 max-w-7xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-de">Galerie unserer Veranstaltungen</h2>
-<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-ru hidden">Галерея наших мероприятий</h2>
+    if (el.langToggle) el.langToggle.textContent = (lang === 'de' ? 'DE ▾' : 'RU ▾');
+    if (el.langToggleMobile){
+        const s = el.langToggleMobile.querySelector('span');
+        if (s) s.textContent = (lang === 'de' ? 'DE' : 'RU');
+    }
 
-<!-- Grid для миниатюр -->
-<div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    hide(el.langMenu); hide(el.langMenuMobile);
+    wireEventLinks(lang);
+    }
 
-<!-- Лайтбокс -->
-<div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center">
-<button id="lightbox-close"
-        class="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
-        aria-label="Schließen">✕</button>
+    (function initLang(){
+    const u = new URL(location.href);
+    const q = (u.searchParams.get('lang') || '').toLowerCase();
+    const saved = (function(){ try { return localStorage.getItem('vilana_lang'); } catch(e){ return null; } })();
+    setLanguage(q || saved || 'de');
+    })();
 
-<button id="lightbox-prev"
-        class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
-        aria-label="Zurück">
-    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-</button>
+    function toggle(x){ if(x) x.classList.toggle('hidden'); }
+    function hide(x){ if(x) x.classList.add('hidden'); }
+    function isHidden(x){ return !x || x.classList.contains('hidden'); }
 
-<img id="lightbox-image" alt=""
-    class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform"/>
+    el.langToggle?.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(el.langMenu); el.langToggle.setAttribute('aria-expanded', String(!isHidden(el.langMenu))); });
+    el.langMenu?.querySelectorAll('[data-lang]').forEach(b=> b.addEventListener('click', ()=> setLanguage(b.dataset.lang)));
 
-<button id="lightbox-next"
-        class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
-        aria-label="Weiter">
-    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-</button>
-</div>
+    el.langToggleMobile?.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(el.langMenuMobile); el.langToggleMobile.setAttribute('aria-expanded', String(!isHidden(el.langMenuMobile))); });
+    el.langMenuMobile?.querySelectorAll('[data-lang]').forEach(b=> b.addEventListener('click', ()=> setLanguage(b.dataset.lang)));
 
+    document.addEventListener('click', (e) => {
+    if (el.langMenu && !el.langMenu.contains(e.target) && !el.langToggle?.contains(e.target)) hide(el.langMenu);
+    if (el.langMenuMobile && !el.langMenuMobile.contains(e.target) && !el.langToggleMobile?.contains(e.target)) hide(el.langMenuMobile);
+    });
 
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 mt-16 relative w-full">
-<div class="px-6 text-center">
-    <p class="mb-2 space-x-2">
-    <a href="impressum.html" class="hover:underline">Impressum</a> |
-    <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-    <a href="agb.html" class="hover:underline">AGB</a>
-    </p>
-    <p class="footer-text lang lang-de">
-    &copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
-    </p>
-    <p class="footer-text lang lang-ru hidden">
-    &copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.
-    </p>
-</div>
+    // Burger
+    el.menuToggle?.addEventListener('click', ()=> toggle(el.mobileMenu));
+    window.addEventListener('resize', ()=> { if (window.innerWidth >= 768) hide(el.mobileMenu); });
+    document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') hide(el.mobileMenu); });
 
-<script>
-// =========================
-// Einstellungen für Größe & Darstellung
-// Соотношение сторон каждой карточки (например 3:2 или 4:3)
-const CARD_RATIO = '3 / 2';
+    // ===== Event-Links (lang + UTM)
+    function wireEventLinks(lang){
+    try{
+        const cur = new URL(location.href);
+        const target = new URL('event.html', cur);
+        target.searchParams.set('id', 'russian-oktoberfest-2025');
+        target.searchParams.set('lang', lang);
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k=>{
+        const v = cur.searchParams.get(k);
+        if (v) target.searchParams.set(k, v);
+        });
+        if (el.eventLink) el.eventLink.href = target.href;
+        if (el.eventLinkMobile) el.eventLinkMobile.href = target.href;
+    }catch(e){}
+    }
+    wireEventLinks(localStorage.getItem('vilana_lang') || 'de');
 
-// Как картинка вписывается в контейнер:
-//  - 'contain' = всё фото видно, могут быть поля (рекомендуется для полного кадра)
-//  - 'cover'   = фото обрезается по краям, зато всегда заполняет блок без полей
-const IMAGE_FIT  = 'contain';
+    // ===== Galerie (dynamisch)
+    const CARD_RATIO = '3 / 2';
+    const IMAGE_FIT  = 'contain'; // 'contain' oder 'cover'
+    const DEF_W = 1200, DEF_H = 800;
 
-  /* ---------- Datenquelle (deine Pfade bleiben unverändert) ---------- */
-const imagePaths = [
+    const imagePaths = [
     'images/event/event-1.webp','images/event/event-2.webp','images/event/event-3.webp',
     'images/event/event-4.webp','images/event/event-5.webp','images/event/event-6-1.webp',
     'images/event/event-7.webp','images/event/event-8.webp','images/event/event-9.webp',
@@ -175,10 +270,9 @@ const imagePaths = [
     'images/event/event-13.webp','images/event/event-14.webp','images/event/event-15.webp',
     'images/event/event-16.webp','images/event/event-17.webp','images/event/event-18.webp',
     'images/event/event-19.webp','images/event/event-20.webp','images/event/event-21.webp'
-];
+    ];
 
-  // Alternativtexte für SEO/Screenreader (DE; bei RU umschaltbar über dein Sprachmenü)
-const altTemplates = [
+    const altTemplates = [
     "Hochzeit Catering Hameln","Eventservice Niedersachsen","Catering Buffet Hameln",
     "Hochzeitstorte Niedersachsen","Party Catering Hannover","Catering mit Servicepersonal",
     "Buffet Hochzeit Niedersachsen","Event Buffet Hameln","Hochzeit in Bad Pyrmont",
@@ -186,131 +280,59 @@ const altTemplates = [
     "Hochzeitstafel Niedersachsen","Eventdekoration Hameln","Candy Bar Hochzeit",
     "Menü für Firmenfeier","Hochzeit Empfang","Eventservice NRW",
     "Hochzeit Catering Buffet","Abendveranstaltung Niedersachsen","Hochzeit Catering in Hannover"
-];
+    ];
 
-  // Intrinsische Größen: helfen dem Browser, sofort Platz zu reservieren (kein Layout-Sprung)
-const DEF_W = 1200, DEF_H = 800;
+    let currentIndex = 0;
 
-const gallery = document.getElementById('gallery');
-const lb = document.getElementById('lightbox');
-const lbImg = document.getElementById('lightbox-image');
-let currentIndex = 0;
-
-/* =========================
-    Galerie dynamisch aufbauen
-    – Kachel hat feste Ratio (CARD_RATIO)
-    – Bild wird vollständig angezeigt (IMAGE_FIT = 'contain')
-     ========================= */
-imagePaths.forEach((src, i) => {
-    // Kachel/Container
+    imagePaths.forEach((src, i) => {
     const fig = document.createElement('figure');
-    fig.className = 'relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5';
-    // Wichtig: feste Höhe per Ratio, funktioniert ohne Tailwind-Plugin
+    fig.className = 'relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group';
     fig.style.aspectRatio = CARD_RATIO;
 
-    // Bild
     const img = document.createElement('img');
     img.src = src;
     img.alt = `Vilana Event & Catering – ${altTemplates[i] || 'Event Catering Niedersachsen'}`;
-    img.width = DEF_W;   // reserviert Platz, verhindert CLS
+    img.width = DEF_W;
     img.height = DEF_H;
     img.decoding = 'async';
     img.loading = i === 0 ? 'eager' : 'lazy';
     if (i === 0) img.fetchPriority = 'high';
-    // -> Ganzes Foto sichtbar; für Zuschnitt stattdessen object-cover nehmen
-    img.className = 'w-full h-full object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105';
+    img.className = `w-full h-full object-${IMAGE_FIT} bg-gray-100 transition-transform duration-300 group-hover:scale-105`;
 
-
-    // Klick öffnet Lightbox
     img.addEventListener('click', () => openLightbox(i));
 
     fig.appendChild(img);
-    gallery.appendChild(fig);
-});
+    el.gallery.appendChild(fig);
+    });
 
-  // Log für fehlende Pfade
-document.addEventListener('error', (e) => {
+    document.addEventListener('error', (e) => {
     const t = e.target;
     if (t.tagName === 'IMG') console.error('Bild nicht gefunden:', t.src);
-}, true);
+    }, true);
 
-    /* =========================
-    Lightbox-Logik
-     ========================= */
-function openLightbox(i){ currentIndex=i; updateLightbox(); lb.classList.remove('hidden'); lbImg.classList.remove('zoomed'); }
-function closeLightbox(){ lb.classList.add('hidden'); lbImg.src=''; lbImg.classList.remove('zoomed'); }
-function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; updateLightbox(); }
-function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; updateLightbox(); }
-function updateLightbox(){ lbImg.src=imagePaths[currentIndex]; }
-function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
+    // ===== Lightbox
+    function openLightbox(i){ currentIndex=i; updateLightbox(); el.lb.classList.remove('hidden'); el.lbImg.classList.remove('zoomed'); }
+    function closeLightbox(){ el.lb.classList.add('hidden'); el.lbImg.src=''; el.lbImg.classList.remove('zoomed'); }
+    function prevImage(){ currentIndex=(currentIndex-1+imagePaths.length)%imagePaths.length; updateLightbox(); }
+    function nextImage(){ currentIndex=(currentIndex+1)%imagePaths.length; updateLightbox(); }
+    function updateLightbox(){ el.lbImg.src=imagePaths[currentIndex]; }
+    function toggleZoom(e){ e.target.classList.toggle('zoomed'); }
 
-  // Tastaturbedienung (optional)
-document.addEventListener('keydown', (e) => {
-    if (lb.classList.contains('hidden')) return;
+    el.lbClose?.addEventListener('click', closeLightbox);
+    el.lbPrev?.addEventListener('click', prevImage);
+    el.lbNext?.addEventListener('click', nextImage);
+    el.lbImg?.addEventListener('click', toggleZoom);
+
+    document.addEventListener('keydown', (e) => {
+    if (el.lb.classList.contains('hidden')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft')  prevImage();
     if (e.key === 'ArrowRight') nextImage();
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleZoom({target: lbImg}); }
-});
-
-/* =========================
-    Sprache + Burger-Menü (wie bei dir)
-     ========================= */
-const langToggleDesktop = document.getElementById('langToggle');
-const langMenuDesktop   = document.getElementById('langMenu');
-const langToggleMobile  = document.getElementById('langToggleMobile');
-const langMenuMobile    = document.getElementById('langMenuMobile');
-
-langToggleDesktop?.addEventListener('click', () => {
-    langMenuDesktop.classList.toggle('hidden');
-    langToggleDesktop.setAttribute('aria-expanded', langMenuDesktop.classList.contains('hidden') ? 'false' : 'true');
-});
-langMenuDesktop?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
-
-langToggleMobile?.addEventListener('click', () => {
-    langMenuMobile.classList.toggle('hidden');
-    langToggleMobile.setAttribute('aria-expanded', langMenuMobile.classList.contains('hidden') ? 'false' : 'true');
-});
-langMenuMobile?.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.lang)));
-
-document.addEventListener('click', (e) => {
-    if (langMenuDesktop && !langMenuDesktop.contains(e.target) && !langToggleDesktop?.contains(e.target)) langMenuDesktop.classList.add('hidden');
-});
-
-function setLanguage(lang){
-    document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
-    if (langToggleDesktop) langToggleDesktop.textContent = lang.toUpperCase() + ' ▾';
-    if (langToggleMobile)  langToggleMobile.textContent  = lang.toUpperCase();
-    langMenuDesktop?.classList.add('hidden');
-    langMenuMobile?.classList.add('hidden');
-}
-setLanguage('de');
-
-document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-});
-
-(function(){
-    // какой event открывать
-    var EVENT_ID = 'russian-oktoberfest-2025';
-
-    // определяем язык
-    var url     = new URL(location.href);
-    var lang    = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
-
-    // собираем ссылку на event.html
-    var ev = new URL('event.html', location.href);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-
-    // проставляем href туда, где нашёлся id
-    var links = [document.getElementById('eventLink'), document.getElementById('eventLinkMobile')].filter(Boolean);
-    links.forEach(function(a){ a.href = ev.pathname + ev.search; });
-})()
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggleZoom({target: el.lbImg}); }
+    });
 </script>
+
+<!-- (optional) dein gemeinsamer JS --
 <script src="js/main.js" defer></script>
-<script src="js/gallery.js" defer></script>
 </body>
 </html>
