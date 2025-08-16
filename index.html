@@ -470,133 +470,151 @@ gtag('config', 'G-YW71FCW4FJ');
     <style>.lang-ru { display:none !important; }</style>
   </noscript>
 
-<script defer>
-(function () {
-  // ===== СЕЛЕКТОРЫ =====
-  const menuBtn    = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+<script>
+(function(){
+  // ===== МАЛЕНЬКИЕ ХЕЛПЕРЫ =====
+  function $(id){ return document.getElementById(id); }
+  function bindOnce(el, ev, fn){
+    if(!el) return;
+    const key = '__bound_'+ev;
+    if(el[key]) return;
+    el.addEventListener(ev, fn);
+    el[key] = true;
+  }
+  function toggle(el, cls='hidden'){ if(el) el.classList.toggle(cls); }
+  function add(el, cls='hidden'){ if(el) el.classList.add(cls); }
+  function has(el, cls='hidden'){ return el && el.classList.contains(cls); }
 
-  const btnDesk  = document.getElementById('langToggle');
-  const menuDesk = document.getElementById('langMenu');
-
-  const btnMob   = document.getElementById('langToggleMobile');
-  const menuMob  = document.getElementById('langMenuMobile');
-
+  // ===== ССЫЛКИ НА EVENT (если нет — просто пропустим) =====
   const EVENT_ID = 'russian-oktoberfest-2025';
+  function copyUTM(fromURL, toURL){
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k=>{
+      const v = fromURL.searchParams.get(k); if(v) toURL.searchParams.set(k, v);
+    });
+  }
+  function setEventLinks(){
+    try{
+      const url = new URL(location.href);
+      const lang = (url.searchParams.get('lang') || localStorage.getItem('siteLang') || 'de').toLowerCase();
+      const ev = new URL('event.html', url);
+      ev.searchParams.set('id', EVENT_ID);
+      ev.searchParams.set('lang', lang);
+      copyUTM(url, ev);
+      document.querySelectorAll('#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]')
+        .forEach(a=>{ a.href = ev.href; });
+    }catch(e){}
+  }
+
+  // ===== ЯЗЫК =====
+  const btnDesk = $('langToggle');
+  const menuDesk = $('langMenu');
+  const btnMob = $('langToggleMobile');
+  const menuMob = $('langMenuMobile');
+
+  function setLanguage(lang){
+    try{ localStorage.setItem('siteLang', lang); }catch(e){}
+    document.documentElement.lang = (lang==='ru')?'ru':'de';
+
+    document.querySelectorAll('.lang').forEach(el=>el.classList.add('hidden'));
+    document.querySelectorAll('.lang-'+lang).forEach(el=>el.classList.remove('hidden'));
+
+    if(btnDesk){
+      btnDesk.textContent = (lang==='ru'?'RU ▾':'DE ▾');
+      btnDesk.setAttribute('aria-label', 'Sprache wählen – ' + (lang==='ru'?'Russisch':'Deutsch'));
+    }
+    if(btnMob){
+      const s = btnMob.querySelector('span');
+      if(s) s.textContent = (lang==='ru'?'RU':'DE'); else btnMob.textContent = (lang==='ru'?'RU ▾':'DE ▾');
+      btnMob.setAttribute('aria-label', 'Sprache wählen – Mobil, ' + (lang==='ru'?'Russisch':'Deutsch'));
+    }
+
+    // год в футере (если есть оба спана)
+    const y = new Date().getFullYear();
+    const yde = $('year-de'); if(yde) yde.textContent = y;
+    const yru = $('year-ru'); if(yru) yru.textContent = y;
+
+    // закрыть дропдауны языков
+    add(menuDesk,'hidden'); add(menuMob,'hidden');
+    if(btnDesk) btnDesk.setAttribute('aria-expanded','false');
+    if(btnMob) btnMob.setAttribute('aria-expanded','false');
+
+    setEventLinks();
+  }
+
+  // Инициализация языка — мягко, без ломаний существующего кода
+  const initialLang = (function(){ try{ return localStorage.getItem('siteLang'); }catch(e){ return null; } })() || 'de';
+  setLanguage(initialLang);
+
+  // Desktop язык: открыть/закрыть
+  bindOnce(btnDesk, 'click', function(e){
+    e.stopPropagation();
+    toggle(menuDesk,'hidden');
+    btnDesk.setAttribute('aria-expanded', String(!has(menuDesk,'hidden')));
+  });
+  // Desktop язык: выбор
+  if(menuDesk){
+    menuDesk.querySelectorAll('[data-lang]').forEach(el=>{
+      bindOnce(el, 'click', function(){
+        setLanguage(el.dataset.lang || 'de');
+        add(menuDesk,'hidden'); btnDesk && btnDesk.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  // Mobile язык: открыть/закрыть
+  bindOnce(btnMob, 'click', function(e){
+    e.stopPropagation();
+    toggle(menuMob,'hidden');
+    btnMob.setAttribute('aria-expanded', String(!has(menuMob,'hidden')));
+  });
+  // Mobile язык: выбор
+  if(menuMob){
+    menuMob.querySelectorAll('[data-lang]').forEach(el=>{
+      bindOnce(el, 'click', function(){
+        setLanguage(el.dataset.lang || 'de');
+        add(menuMob,'hidden'); btnMob && btnMob.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  // Клик вне — закрыть оба меню языка
+  bindOnce(document, 'click', function(e){
+    if(menuDesk && !menuDesk.contains(e.target) && !btnDesk?.contains(e.target)){ add(menuDesk,'hidden'); btnDesk?.setAttribute('aria-expanded','false'); }
+    if(menuMob  && !menuMob.contains(e.target)  && !btnMob?.contains(e.target)) { add(menuMob,'hidden');  btnMob?.setAttribute('aria-expanded','false'); }
+  });
 
   // ===== БУРГЕР =====
-  function closeMobileMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.add('hidden');
-    menuBtn?.setAttribute('aria-expanded', 'false');
+  const menuBtn = $('menuToggle');
+  const mobileMenu = $('mobileMenu');
+
+  function closeMobileMenu(){
+    add(mobileMenu,'hidden');
+    menuBtn?.setAttribute('aria-expanded','false');
   }
-  menuBtn?.addEventListener('click', (e) => {
+  bindOnce(menuBtn, 'click', function(e){
     e.stopPropagation();
-    if (!mobileMenu) return;
-    mobileMenu.classList.toggle('hidden');
-    menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+    toggle(mobileMenu,'hidden');
+    menuBtn.setAttribute('aria-expanded', String(!has(mobileMenu,'hidden')));
   });
-
-  // Закрытие мобильного меню по клику вне / ESC / resize
-  document.addEventListener('click', (e) => {
-    if (!mobileMenu || mobileMenu.classList.contains('hidden')) return;
-    const inside = mobileMenu.contains(e.target) || menuBtn?.contains(e.target);
-    if (!inside) closeMobileMenu();
+  // клик вне
+  bindOnce(document, 'click', function(e){
+    if(mobileMenu && !has(mobileMenu,'hidden')){
+      const inside = mobileMenu.contains(e.target) || menuBtn?.contains(e.target);
+      if(!inside) closeMobileMenu();
+    }
   });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
-  window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+  // Esc + resize
+  bindOnce(document, 'keydown', function(e){ if(e.key==='Escape') closeMobileMenu(); });
+  bindOnce(window, 'resize', function(){ if(window.innerWidth>=768) closeMobileMenu(); });
 
-  // ===== ЯЗЫК: переключение и метки
-  function setLanguage(lang) {
-    // сохранить выбор
-    try { localStorage.setItem('siteLang', lang); } catch(e) {}
-    document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
-
-    // показать нужные блоки
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
-
-    // лейблы кнопок
-    const labelDesk = (lang === 'ru') ? 'RU ▾' : 'DE ▾';
-    const labelMob  = (lang === 'ru') ? 'RU'   : 'DE';
-    if (btnDesk) {
-      btnDesk.textContent = labelDesk;
-      btnDesk.setAttribute('aria-label', `Sprache wählen – ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
-    }
-    if (btnMob) {
-      // ожидание <span> внутри кнопки (как в твоей разметке). Если нет — используем textContent
-      const s = btnMob.querySelector('span');
-      if (s) s.textContent = labelMob; else btnMob.textContent = labelDesk;
-      btnMob.setAttribute('aria-label', `Sprache wählen – Mobil, ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
-    }
-
-    // год в футере
-    const y = new Date().getFullYear();
-    document.getElementById('year-de')?.textContent = y;
-    document.getElementById('year-ru')?.textContent = y;
+  // На всякий случай: если mobileMenu по умолчанию не позиционирован — мягкий фикс (не ломает существующее)
+  if(mobileMenu && !/absolute|fixed/.test(getComputedStyle(mobileMenu).position)){
+    mobileMenu.style.position = 'absolute';
+    mobileMenu.style.left = '0';
+    mobileMenu.style.right = '0';
+    mobileMenu.style.top = '100%';
+    mobileMenu.style.zIndex = '40';
   }
-
-  // Открытие/закрытие списков языков
-  btnDesk?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuDesk?.classList.toggle('hidden');
-    btnDesk.setAttribute('aria-expanded', String(!menuDesk?.classList.contains('hidden')));
-  });
-  btnMob?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuMob?.classList.toggle('hidden');
-    btnMob.setAttribute('aria-expanded', String(!menuMob?.classList.contains('hidden')));
-  });
-
-  // Выбор языка из меню
-  menuDesk?.querySelectorAll('[data-lang]').forEach(el => {
-    el.addEventListener('click', () => {
-      setLanguage(el.dataset.lang);
-      menuDesk.classList.add('hidden');
-      btnDesk?.setAttribute('aria-expanded', 'false');
-    });
-  });
-  menuMob?.querySelectorAll('[data-lang]').forEach(el => {
-    el.addEventListener('click', () => {
-      setLanguage(el.dataset.lang);
-      menuMob.classList.add('hidden');
-      btnMob?.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Клик вне — закрыть оба меню языков
-  document.addEventListener('click', (e) => {
-    if (menuDesk && !menuDesk.contains(e.target) && !btnDesk?.contains(e.target)) {
-      menuDesk.classList.add('hidden'); btnDesk?.setAttribute('aria-expanded', 'false');
-    }
-    if (menuMob && !menuMob.contains(e.target) && !btnMob?.contains(e.target)) {
-      menuMob.classList.add('hidden'); btnMob?.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // ===== EVENT ссылки с передачей UTM
-  function copyTrackingParams(fromURL, toURL) {
-    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k => {
-      const v = fromURL.searchParams.get(k);
-      if (v) toURL.searchParams.set(k, v);
-    });
-  }
-  function setEventLinks() {
-    const url  = new URL(location.href);
-    const lang = (url.searchParams.get('lang') || localStorage.getItem('siteLang') || 'de').toLowerCase();
-    const ev   = new URL('event.html', url);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-    copyTrackingParams(url, ev);
-    document.querySelectorAll('#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]')
-      .forEach(a => { a.href = ev.href; });
-  }
-
-  // ===== INIT =====
-  document.addEventListener('DOMContentLoaded', () => {
-    setLanguage(localStorage.getItem('siteLang') || 'de');
-    setEventLinks();
-  });
 })();
 </script>
 </main>
