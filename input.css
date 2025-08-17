@@ -13,3 +13,22 @@
     display: none;
 }
 }
+
+/* === LOGO STYLE FIX === */
+.logo-container {
+display: flex;
+  flex-wrap: nowrap;      /* не переносить текст */
+  align-items: baseline;  /* красиво выровнять */
+  gap: 6px;               /* расстояние между словами */
+  white-space: nowrap;    /* всегда в одну строку */
+}
+
+.logo-title {
+  font-size: clamp(18px, 4vw, 32px); /* гибкий размер */
+font-weight: 700;
+}
+
+.logo-subtitle {
+font-size: clamp(12px, 2.5vw, 18px);
+font-weight: 400;
+}
