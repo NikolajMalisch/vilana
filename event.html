@@ -195,30 +195,59 @@
       </p>
     </section>
 
-    <!-- Programm + Tickets/Zahlung -->
-    <section class="mt-10 grid md:grid-cols-2 gap-6">
-      <div class="card p-6">
-        <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
-        <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
-      </div>
+<!-- Programm + Tickets/Zahlung -->
+<section class="mt-10 grid md:grid-cols-2 gap-6">
+  <div class="card p-6">
+    <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
+    <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
+  </div>
 
-      <div id="tickets" class="card p-6">
-        <h3 class="text-xl font-semibold mb-3">
-          <span class="lang lang-de">Tickets & Zahlung</span>
-          <span class="lang lang-ru">Билеты и оплата</span>
-        </h3>
-        <div class="space-y-3">
-          <p><strong>IBAN:</strong> <span id="ev-iban">DE48254621600665648001</span></p>
-          <p><strong>BIC:</strong> <span id="ev-bic">GENODEF1HMP</span></p>
-          <p><strong class="lang lang-de">Kontoinhaber:</strong><strong class="lang lang-ru">Владелец счёта:</strong> <span id="ev-holder">Vilana Event & Catering</span></p>
-          <p><strong class="lang lang-de">Telefon:</strong><strong class="lang lang-ru">Телефон:</strong>
-            <a id="ev-phone-link" href="tel:+4917657775996" class="underline"><span id="ev-phone">+49 176 57775996</span></a>
-          </p>
-          <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">Reservierung erforderlich. Zahlung per Überweisung möglich.</p>
-          <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">Требуется бронирование. Оплата банковским переводом.</p>
-        </div>
-      </div>
-    </section>
+  <div id="tickets" class="card p-6">
+    <h3 class="text-xl font-semibold mb-3">
+      <span class="lang lang-de">Tickets & Zahlung</span>
+      <span class="lang lang-ru">Билеты и оплата</span>
+    </h3>
+
+    <!-- Кнопка -->
+    <button id="show-bank-btn"
+            class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 text-sm mb-3">
+      <span class="lang lang-de">Requisiten anzeigen</span>
+      <span class="lang lang-ru">Показать реквизиты</span>
+    </button>
+
+    <!-- Реквизиты (скрыты по умолчанию) -->
+    <div id="bank-details" class="hidden space-y-3">
+      <p><strong>IBAN:</strong> 
+        <span id="ev-iban">•••• •••• •••• •••• 8001</span>
+        <button id="copy-iban" type="button"
+                class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
+      </p>
+      <p><strong>BIC:</strong> 
+        <span id="ev-bic">GENODEF1HMP</span>
+        <button id="copy-bic" type="button"
+                class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
+      </p>
+      <p>
+        <strong class="lang lang-de">Kontoinhaber:</strong>
+        <strong class="lang lang-ru">Владелец счёта:</strong>
+        <span id="ev-holder">Vilana Event &amp; Catering</span>
+      </p>
+      <p>
+        <strong class="lang lang-de">Telefon:</strong>
+        <strong class="lang lang-ru">Телефон:</strong>
+        <a id="ev-phone-link" href="tel:+4917657775996" class="underline">
+          <span id="ev-phone">+49 176 57775996</span>
+        </a>
+      </p>
+      <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">
+        Reservierung erforderlich. Zahlung per Überweisung möglich.
+      </p>
+      <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">
+        Требуется бронирование. Оплата банковским переводом.
+      </p>
+    </div>
+  </div>
+</section>
 
     <!-- Lage -->
     <section class="mt-10 card p-6">
@@ -535,6 +564,51 @@ ev.gallery.forEach(img=>{
     setupLangDropdown();
     updateLangUI();
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const fullIban = "DE48254621600665648001";
+  const ibanSpan = document.getElementById("ev-iban");
+  const bicSpan  = document.getElementById("ev-bic");
+  const bankBox  = document.getElementById("bank-details");
+  const showBtn  = document.getElementById("show-bank-btn");
+  const copyIban = document.getElementById("copy-iban");
+  const copyBic  = document.getElementById("copy-bic");
+
+  // Маскировка IBAN
+  const masked = "•••• •••• •••• •••• " + fullIban.slice(-4);
+  ibanSpan.textContent = masked;
+
+  // Показ/скрытие реквизитов
+  showBtn.addEventListener("click", () => {
+    if (bankBox.classList.contains("hidden")) {
+      bankBox.classList.remove("hidden");
+      ibanSpan.textContent = fullIban.replace(/(.{4})/g, "$1 ").trim();
+      showBtn.innerHTML = '<span class="lang lang-de">Requisiten verbergen</span><span class="lang lang-ru">Скрыть реквизиты</span>';
+    } else {
+      bankBox.classList.add("hidden");
+      ibanSpan.textContent = masked;
+      showBtn.innerHTML = '<span class="lang lang-de">Requisiten anzeigen</span><span class="lang lang-ru">Показать реквизиты</span>';
+    }
+  });
+
+  // Копировать IBAN
+  copyIban.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(fullIban);
+      copyIban.textContent = "✓";
+      setTimeout(() => copyIban.textContent = "Kopieren", 1200);
+    } catch (e) { alert(fullIban); }
+  });
+
+  // Копировать BIC
+  copyBic.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(bicSpan.textContent);
+      copyBic.textContent = "✓";
+      setTimeout(() => copyBic.textContent = "Kopieren", 1200);
+    } catch (e) { alert(bicSpan.textContent); }
+  });
+});
 </script>
 <script src="js/main.js" defer></script>
 </body>
