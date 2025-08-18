@@ -152,68 +152,73 @@
 <body>
 <!-- HEADER -->
 <header class="bg-white shadow-md">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- LOGO -->
-    <div class="logo-container whitespace-nowrap overflow-hidden">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- ЛОГО -->
+    <a href="index.html" class="logo-container whitespace-nowrap overflow-hidden">
       <h1 class="logo-title">Vilana</h1>
-      <span class="logo-subtitle">Event & Catering</span>
-    </div>
+      <span class="logo-subtitle block -mt-1 leading-none text-xs sm:text-sm tracking-wide">
+        Event &amp; Catering
+      </span>
+    </a>
 
-    <!-- DESKTOP NAV -->
-    <div class="flex items-center">
-      <nav class="hidden md:flex space-x-6 mr-8">
+    <!-- Правый блок: навигация + язык + бургер -->
+    <div class="flex items-center gap-3">
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-6 mr-2">
         <a href="index.html#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
         <a href="index.html#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-        <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="menu.html" class="text-amber-700 font-semibold">Menü</a>
         <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
         <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
         <a href="event.html" class="text-gray-800 hover:text-amber-800">Event</a>
         <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
       </nav>
 
-<!-- Language Dropdown (без стрелки) -->
-<div class="relative ml-4">
-  <button id="lang-button"
-          onclick="toggleLangDropdown()"
-          class="text-gray-800 hover:text-amber-600 px-2 py-1">
-    <span id="lang-label">DE</span>
-  </button>
-  <div id="lang-dropdown"
-      class="absolute right-0 mt-1 w-28 bg-white border rounded shadow-md hidden z-50">
-    <button onclick="selectLanguage('de')"
-            class="block w-full text-left px-3 py-1 hover:bg-amber-100">Deutsch</button>
-    <button onclick="selectLanguage('ru')"
-            class="block w-full text-left px-3 py-1 hover:bg-amber-100">Русский</button>
+      <!-- Язык (универсальный) -->
+      <div class="relative">
+        <button id="langToggle" type="button"
+                class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+                aria-haspopup="true" aria-expanded="false" aria-controls="langMenu"
+                aria-label="Sprache wählen">
+          <span id="langLabel">DE</span>
+        </button>
+
+        <ul id="langMenu"
+            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-32 z-50"
+            role="menu" aria-label="Sprache wählen">
+          <li><button type="button" data-lang="de"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                      role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                      role="menuitem">Русский</button></li>
+        </ul>
+      </div>
+
+      <!-- БУРГЕР для мобилы -->
+      <button id="menuToggle" type="button" aria-label="Menü öffnen"
+              class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
   </div>
-</div>
 
-
-<!-- Mobile Burger Button -->
-<button onclick="toggleMobileMenu()"
-        class="md:hidden text-gray-700 ml-4"
-        aria-label="Menu">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-      fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
-</div>
-</div>
-
-<!-- Mobile Navigation -->
-<div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
-  <nav class="flex flex-col space-y-3">
-    <a href="index.html#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
-    <a href="index.html#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-    <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-    <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
-    <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-    <a href="event.html" class="text-gray-800 hover:text-amber-800">Event</a>
-    <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
-  </nav>
-</div>
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+      class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+      role="menu" aria-label="Mobiles Menü">
+    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+    <a href="menu.html" class="block text-amber-700 font-semibold" role="menuitem">Menü</a>
+    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+    <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+    <a href="event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+    <a href="contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+  </div>
 </header>
+
 
 
 <!-- MAIN -->
@@ -786,86 +791,109 @@
 </footer>
 
 <!-- ==== Scripts ==== -->
+<!-- ==== Scripts (универсально для обоих вариантов ID) ==== -->
 <script>
-  // --- Переключение языка и запоминание выбора ---
-  function setLanguage(lang) {
-    // Показ нужных языковых блоков
-    document.querySelectorAll(".lang").forEach(el => el.classList.remove("active"));
-    document.querySelectorAll(".lang-" + lang).forEach(el => el.classList.add("active"));
+(function(){
+  // ------- helpers -------
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const show = el => el && el.classList.remove('hidden');
+  const hide = el => el && el.classList.add('hidden');
+  const toggle = el => el && el.classList.toggle('hidden');
 
-    // Обновляем ярлык на кнопках
-    const btn = document.getElementById("lang-button");
-    if (btn) btn.textContent = (lang === 'de') ? 'DE ▾' : 'RU ▾';
-    const btnm = document.getElementById("lang-button-mobile");
-    if (btnm) btnm.textContent = (lang === 'de') ? 'DE ▾' : 'RU ▾';
+  // ------- элементы: поддерживаем обе схемы ID -------
+  const btnDesk   = $('#langToggle')        || $('#lang-button');
+  const menuDesk  = $('#langMenu')          || $('#lang-dropdown');
+  const btnMob    = $('#langToggleMobile')  || $('#lang-button-mobile');
+  const menuMob   = $('#langMenuMobile')    || $('#lang-dropdown-mobile');
+  const burger    = $('#menuToggle');       // в новой шапке
+  const mobileNav = $('#mobileMenu')        || $('#mobile-menu');
 
-    // Сохраняем выбор
-    try { localStorage.setItem('vilana_lang', lang); } catch(e) {}
+  // ------- язык -------
+  function setLanguage(lang){
+    // показать нужные блоки .lang-de / .lang-ru (если используешь)
+    $$('.lang').forEach(el => el.classList.remove('active'));
+    $$('.lang-' + lang).forEach(el => el.classList.add('active'));
+
+    // ярлыки на кнопках (без стрелок; если нужна стрелка — добавь ' ▾')
+    if (btnDesk) btnDesk.textContent = (lang === 'de') ? 'DE' : 'RU';
+    if (btnMob) {
+      const s = btnMob.querySelector('span');
+      if (s) s.textContent = (lang === 'de') ? 'DE' : 'RU';
+      else btnMob.textContent = (lang === 'de') ? 'DE' : 'RU';
+    }
+
+    try { localStorage.setItem('vilana_lang', lang); } catch(e){}
+    hide(menuDesk); hide(menuMob);
+    btnDesk && btnDesk.setAttribute('aria-expanded','false');
+    btnMob  && btnMob.setAttribute('aria-expanded','false');
   }
 
-  // Вызывается из HTML: selectLanguage('de'|'ru')
-  function selectLanguage(lang) {
-    setLanguage(lang);
-    // Закрыть дропдауны
-    document.getElementById("lang-dropdown")?.classList.add("hidden");
-    document.getElementById("lang-dropdown-mobile")?.classList.add("hidden");
-  }
-
-  // --- Мобильное меню ---
-  function toggleMobileMenu() {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-  }
-
-  // --- Табы категорий меню ---
-  document.querySelectorAll(".menu-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      const category = tab.dataset.category;
-      // Кнопки
-      document.querySelectorAll(".menu-tab").forEach(t => {
-        t.classList.remove("bg-amber-600","text-white");
-        t.classList.add("bg-gray-300","text-gray-700");
-      });
-      tab.classList.add("bg-amber-600","text-white");
-      tab.classList.remove("bg-gray-300","text-gray-700");
-      // Категории
-      document.querySelectorAll(".menu-category").forEach(c => c.classList.add("hidden"));
-      document.getElementById("menu-" + category)?.classList.remove("hidden");
-    });
-  });
-
-  // --- Языковые дропдауны ---
-  function toggleLangDropdown() {
-    document.getElementById("lang-dropdown")?.classList.toggle("hidden");
-  }
-  function closeLangDropdown() {
-    document.getElementById("lang-dropdown")?.classList.add("hidden");
-  }
-  function toggleLangDropdownMobile() {
-    document.getElementById("lang-dropdown-mobile")?.classList.toggle("hidden");
-  }
-  function closeLangDropdownMobile() {
-    document.getElementById("lang-dropdown-mobile")?.classList.add("hidden");
-  }
-
-  // Закрытие дропдаунов при клике вне них
-  document.addEventListener("click", function (e) {
-    const dd  = document.getElementById("lang-dropdown");
-    const btn = document.getElementById("lang-button");
-    if (dd && btn && !dd.contains(e.target) && !btn.contains(e.target)) dd.classList.add("hidden");
-
-    const ddm  = document.getElementById("lang-dropdown-mobile");
-    const btnm = document.getElementById("lang-button-mobile");
-    if (ddm && btnm && !ddm.contains(e.target) && !btnm.contains(e.target)) ddm.classList.add("hidden");
-  });
-
-  // --- Стартовый язык: берем сохранённый, иначе DE ---
-  (function initLang(){
+  function initLanguage(){
     let lang = 'de';
-    try { lang = localStorage.getItem('vilana_lang') || 'de'; } catch(e) {}
+    try { lang = localStorage.getItem('vilana_lang') || 'de'; } catch(e){}
     setLanguage(lang);
-  })();
+  }
+
+  // открыть/закрыть десктопный дропдаун
+  btnDesk && btnDesk.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    toggle(menuDesk);
+    btnDesk.setAttribute('aria-expanded', String(!menuDesk.classList.contains('hidden')));
+  });
+
+  // выбор языка из меню
+  if (menuDesk) {
+    $$('#langMenu [data-lang], #lang-dropdown [data-lang]').forEach(b=>{
+      b.addEventListener('click', ()=> setLanguage(b.dataset.lang || 'de'));
+    });
+  }
+  // мобильный дропдаун языка
+  btnMob && btnMob.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    toggle(menuMob);
+    btnMob.setAttribute('aria-expanded', String(!menuMob.classList.contains('hidden')));
+  });
+  if (menuMob) {
+    $$('#langMenuMobile [data-lang], #lang-dropdown-mobile [data-lang]').forEach(b=>{
+      b.addEventListener('click', ()=> setLanguage(b.dataset.lang || 'de'));
+    });
+  }
+
+  // клик вне — закрыть оба меню языка
+  document.addEventListener('click', (e)=>{
+    if (menuDesk && !menuDesk.contains(e.target) && !btnDesk?.contains(e.target)) hide(menuDesk);
+    if (menuMob  && !menuMob.contains(e.target)  && !btnMob?.contains(e.target)) hide(menuMob);
+  });
+
+  // ------- бургер -------
+  function closeMobile(){ hide(mobileNav); burger && burger.setAttribute('aria-expanded','false'); }
+
+  if (burger && mobileNav) {
+    burger.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      toggle(mobileNav);
+      burger.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden')));
+      const header = document.querySelector('header');
+      if (header) mobileNav.style.top = header.offsetHeight + 'px';
+    });
+
+    document.addEventListener('click', (e)=>{
+      if (!mobileNav.classList.contains('hidden') &&
+          !mobileNav.contains(e.target) && !burger.contains(e.target)) {
+        closeMobile();
+      }
+    });
+
+    document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeMobile(); });
+    window.addEventListener('resize', ()=>{ if (window.innerWidth >= 768) closeMobile(); });
+  }
+
+  // стартовый язык
+  initLanguage();
+})();
 </script>
+
 
 <script src="js/main.js" defer></script>
 </body>
