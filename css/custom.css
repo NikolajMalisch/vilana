@@ -1,0 +1,7 @@
+/* 🔧 Убрать стрелку у переключателя языка */
+#lang-button::after,
+#lang-button::before {
+content: none !important;
+display: none !important;
+border: 0 !important;
+}
