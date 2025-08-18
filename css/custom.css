@@ -5,3 +5,12 @@ content: none !important;
 display: none !important;
 border: 0 !important;
 }
+
+<style>
+  /* показываем только активный язык */
+.lang-de .lang.lang-ru { display: none; }
+.lang-ru .lang.lang-de { display: none; }
+
+  /* на всякий случай: убираем любые каретки, если плагин их добавляет */
+#langToggle::after, #langToggle::before { content: none !important; }
+</style>
