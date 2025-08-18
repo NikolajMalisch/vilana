@@ -101,68 +101,50 @@ gtag('config', 'G-YW71FCW4FJ');
 <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">Zum Inhalt springen</a>
 
 <!-- HEADER -->
-<header class="bg-white shadow-md sticky top-0 z-40">
+<header class="bg-white shadow-md">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
     <!-- ЛОГО -->
-    <a href="index.html" class="flex items-baseline gap-1">
-      <span class="logo-title">Vilana</span>
+    <a href="index.html" class="logo-container whitespace-nowrap overflow-hidden">
+      <h1 class="logo-title">Vilana</h1>
       <span class="logo-subtitle">Event &amp; Catering</span>
     </a>
 
-    <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-      <a href="#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
-      <a href="#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-      <a href="#regions" class="text-gray-700 hover:text-amber-700">Regionen &amp; Städte</a>
-      <a href="#faq" class="text-gray-700 hover:text-amber-700">FAQ</a>
-      <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-      <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-      <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-      <a href="contact.html" class="text-amber-700 font-semibold">Kontakt</a>
-      <a href="event.html" class="text-amber-700 font-semibold">Event</a>
+    <!-- Правый блок: навигация + язык + бургер -->
+    <div class="flex items-center gap-3">
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-6 mr-2">
+        <a href="index.html#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+        <a href="index.html#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+        <a href="menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+        <a href="about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+        <a href="event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+        <a href="contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+      </nav>
 
-    <!-- ЯЗЫК (DESKTOP) -->
-<div class="relative">
-    <button id="langToggle" type="button"
-          class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
-          aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Desktop">
-    DE
-    </button>
-  <ul id="langMenu"
-      class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
-      role="menu" aria-label="Sprache wählen">
-    <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-    <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
-  </ul>
-</div>
-
-        <ul id="langMenu"
-            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
-            role="menu" aria-label="Sprache wählen">
-          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- ПРАВЫЙ БЛОК: ЯЗЫК (MOBILE) + БУРГЕР -->
-    <div class="flex items-center gap-2 md:hidden">
+      <!-- Переключатель языка (универсальный, без стрелки) -->
       <div class="relative">
-        <button id="langToggleMobile" type="button"
-                class="inline-flex h-8 w-8 items-center justify-center text-gray-800"
-                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">
-          <span class="text-xs font-semibold leading-none">DE</span>
+        <button id="langToggle" type="button"
+                class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+                aria-haspopup="true" aria-expanded="false" aria-controls="langMenu"
+                aria-label="Sprache wählen">
+          <span id="langLabel">DE</span>
         </button>
-        <ul id="langMenuMobile"
-            class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
-            role="menu" aria-label="Sprache wählen (mobil)">
-          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Русский</button></li>
+        <ul id="langMenu"
+            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-32 z-50"
+            role="menu" aria-label="Sprache wählen">
+          <li><button type="button" data-lang="de"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                      role="menuitem">Deutsch</button></li>
+          <li><button type="button" data-lang="ru"
+                      class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                      role="menuitem">Русский</button></li>
         </ul>
       </div>
 
+      <!-- БУРГЕР для мобилы -->
       <button id="menuToggle" type="button" aria-label="Menü öffnen"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+              class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -172,19 +154,19 @@ gtag('config', 'G-YW71FCW4FJ');
 
   <!-- MOBILE MENU -->
   <div id="mobileMenu"
-      class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+      class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
       role="menu" aria-label="Mobiles Menü">
     <a href="#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
     <a href="#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
-    <a href="#regions" class="block text-gray-700 hover:text-amber-700" role="menuitem">Regionen &amp; Städte</a>
-    <a href="#faq" class="block text-gray-700 hover:text-amber-700" role="menuitem">FAQ</a>
     <a href="menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
     <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
     <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-    <a href="contact.html" class="block text-amber-700 font-semibold" role="menuitem">Kontakt</a>
-    <a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
+    <a href="contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+    <a href="event.html" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
   </div>
 </header>
+
+
 
   <!-- HERO SECTION -->
 <section id="home" class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center">
