@@ -52,11 +52,10 @@
 <!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- ✅ Preload hero (исправлен путь) -->
+<!-- ✅ Preload hero -->
 <link rel="preload" as="image" href="images/russian%20octoberfest.webp" type="image/webp">
 
 <style>
-  /* Базовая типографика */
   body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; color:#353c45; }
   h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
   .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
@@ -69,12 +68,12 @@
   .lightbox.open { display:flex; }
   .lightbox img { max-width:90vw; max-height:85vh; border-radius:1rem; }
 
-  /* ✅ Читаемые цифры: IBAN / BIC / Telefon */
+  /* ✅ Читаемые цифры */
   #ev-iban, #ev-bic, #ev-phone {
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
     font-weight: 300;
     letter-spacing: 0.4px;
-    font-variant-numeric: lining-nums tabular-nums; /* ровные, табличные цифры */
+    font-variant-numeric: lining-nums tabular-nums;
     color: #1f2937;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -175,11 +174,13 @@
         </div>
       </div>
 
-      <!-- ✅ Hero -->
+      <!-- Hero -->
       <div class="card overflow-hidden">
-<img id="ev-hero"
-    src="images/russian%20octoberfest.webp"      alt="Russian Oktoberfest – Hero"      class="w-full h-full object-cover max-h-[420px]"
-    loading="eager" />
+        <img id="ev-hero"
+            src="images/russian%20octoberfest.webp"
+            alt="Russian Oktoberfest – Hero"
+            class="w-full h-full object-cover max-h-[420px]"
+            loading="eager" />
       </div>
     </section>
 
@@ -195,59 +196,77 @@
       </p>
     </section>
 
-<!-- Programm + Tickets/Zahlung -->
-<section class="mt-10 grid md:grid-cols-2 gap-6">
-  <div class="card p-6">
-    <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
-    <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
-  </div>
+    <!-- Programm + Tickets/Zahlung -->
+    <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="card p-6">
+        <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
+        <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
+      </div>
 
-  <div id="tickets" class="card p-6">
-    <h3 class="text-xl font-semibold mb-3">
-      <span class="lang lang-de">Tickets & Zahlung</span>
-      <span class="lang lang-ru">Билеты и оплата</span>
-    </h3>
+      <div id="tickets" class="card p-6">
+        <h3 class="text-xl font-semibold mb-3">
+          <span class="lang lang-de">Tickets & Zahlung</span>
+          <span class="lang lang-ru">Билеты и оплата</span>
+        </h3>
 
-    <!-- Кнопка -->
-    <button id="show-bank-btn"
-            class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 text-sm mb-3">
-      <span class="lang lang-de">Requisiten anzeigen</span>
-      <span class="lang lang-ru">Показать реквизиты</span>
-    </button>
+        <!-- Кнопка -->
+        <button id="show-bank-btn"
+                class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 text-sm mb-3">
+          <span class="lang lang-de">Requisiten anzeigen</span>
+          <span class="lang lang-ru">Показать реквизиты</span>
+        </button>
 
-    <!-- Реквизиты (скрыты по умолчанию) -->
-    <div id="bank-details" class="hidden space-y-3">
-      <p><strong>IBAN:</strong> 
-        <span id="ev-iban">•••• •••• •••• •••• 8001</span>
-        <button id="copy-iban" type="button"
-                class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
-      </p>
-      <p><strong>BIC:</strong> 
-        <span id="ev-bic">GENODEF1HMP</span>
-        <button id="copy-bic" type="button"
-                class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
-      </p>
-      <p>
-        <strong class="lang lang-de">Kontoinhaber:</strong>
-        <strong class="lang lang-ru">Владелец счёта:</strong>
-        <span id="ev-holder">Vilana Event &amp; Catering</span>
-      </p>
-      <p>
-        <strong class="lang lang-de">Telefon:</strong>
-        <strong class="lang lang-ru">Телефон:</strong>
-        <a id="ev-phone-link" href="tel:+4917657775996" class="underline">
-          <span id="ev-phone">+49 176 57775996</span>
-        </a>
-      </p>
-      <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">
-        Reservierung erforderlich. Zahlung per Überweisung möglich.
-      </p>
-      <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">
-        Требуется бронирование. Оплата банковским переводом.
-      </p>
-    </div>
-  </div>
-</section>
+        <!-- Реквизиты -->
+        <div id="bank-details" class="hidden space-y-3">
+          <p><strong>IBAN:</strong>
+            <span id="ev-iban">•••• •••• •••• •••• 8001</span>
+            <button id="copy-iban" type="button"
+                    class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
+          </p>
+          <p><strong>BIC:</strong>
+            <span id="ev-bic">GENODEF1HMP</span>
+            <button id="copy-bic" type="button"
+                    class="ml-2 text-xs underline hover:no-underline">Kopieren</button>
+          </p>
+          <p>
+            <strong class="lang lang-de">Kontoinhaber:</strong>
+            <strong class="lang lang-ru">Владелец счёта:</strong>
+            <span id="ev-holder">Vilana Event &amp; Catering</span>
+          </p>
+          <p>
+            <strong class="lang lang-de">Telefon:</strong>
+            <strong class="lang lang-ru">Телефон:</strong>
+            <a id="ev-phone-link" href="tel:+4917657775996" class="underline">
+              <span id="ev-phone">+49 176 57775996</span>
+            </a>
+          </p>
+
+          <!-- ✅ Verwendungszweck -->
+          <p>
+            <strong class="lang lang-de">Verwendungszweck:</strong>
+            <strong class="lang lang-ru">Назначение платежа:</strong>
+            <span id="ev-purpose">Oktoberfest 2025 – Ihr Name – Anzahl Tickets</span>
+            <button id="copy-purpose" type="button" class="ml-2 text-xs underline hover:no-underline">
+              <span class="lang lang-de">Kopieren</span>
+              <span class="lang lang-ru">Копировать</span>
+            </button>
+          </p>
+          <p class="text-sm text-gray-500 lang lang-de" id="ev-purpose-ex-de">
+            Beispiel: „Oktoberfest 2025 – Müller – 2 Tickets“
+          </p>
+          <p class="text-sm text-gray-500 lang lang-ru" id="ev-purpose-ex-ru">
+            Пример: «Oktoberfest 2025 – Müller – 2 билета»
+          </p>
+
+          <p class="text-sm text-gray-500 lang lang-de" id="ev-ticket-note-de">
+            Reservierung erforderlich. Zahlung per Überweisung möglich.
+          </p>
+          <p class="text-sm text-gray-500 lang lang-ru" id="ev-ticket-note-ru">
+            Требуется бронирование. Оплата банковским переводом.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Lage -->
     <section class="mt-10 card p-6">
@@ -321,7 +340,7 @@
       venue: 'Lindenhof',
       city: 'Bad Pyrmont',
       address: 'Lindenhof, 31812 Bad Pyrmont',
-      hero: 'images/russian%20octoberfest.webp',   // ← одинаково в preload/IMG/OG
+      hero: 'images/russian%20octoberfest.webp',
       price: '65,00 €',
       price_note: {
         de: 'inkl. Softgetränke, Bier & Essen •',
@@ -342,34 +361,33 @@
         de: 'Reservierung erforderlich. Zahlung per Überweisung möglich.',
         ru: 'Требуется бронирование. Оплата банковским переводом.'
       },
+
+      /* ✅ Добавлено: Verwendungszweck */
+      purpose: {
+        de: 'Oktoberfest 2025 – Ihr Name – Anzahl Tickets',
+        ru: 'Oktoberfest 2025 – ваше имя – кол-во билетов'
+      },
+
       payment: { holder: 'Vilana Event & Catering', iban: 'DE48254621600665648001', bic: 'GENODEF1HMP' },
       contact: { phone: '+4917657775996', email: 'vilana-event@outlook.de' },
       map: 'https://maps.google.com/?q=Lindenhof%20Bad%20Pyrmont',
       gallery: [
-  { src: 'images/badpyrmont.png', alt: 'Bad Pyrmont – charmante Kurstadt für unvergessliche Events' },
-  { src: 'images/octoberfest_1.webp', alt: 'Russian Oktoberfest – Festliche Stimmung in Bad Pyrmont' },
-  { src: 'images/octoberfest_dance.webp', alt: 'Tanzende Gäste' },
+        { src: 'images/badpyrmont.png', alt: 'Bad Pyrmont – charmante Kurstadt für unvergessliche Events' },
+        { src: 'images/octoberfest_1.webp', alt: 'Russian Oktoberfest – Festliche Stimmung in Bad Pyrmont' },
+        { src: 'images/octoberfest_dance.webp', alt: 'Tanzende Gäste' },
       ],
-
       faq: [
-  {
-    q: {
-      de: 'Welche Tische und Sitzordnungen gibt es?',
-      ru: 'Какие столы и варианты рассадки доступны?'
-    },
-    a: {
-      de: 'Wir bieten verschiedene Tischgrößen und Sitzordnungen an – von kleinen Tischen für 2–4 Personen bis zu großen Tafeln für Gruppen. Bei der Buchung kannst du die gewünschte Tischgröße wählen, wir bestätigen die Plätze nach Verfügbarkeit.',
-      ru: 'У нас есть разные размеры столов и варианты рассадки — от небольших столиков на 2–4 человека до больших столов для компаний. При бронировании можно выбрать нужный размер стола, мы подтвердим посадку при наличии мест.'
-    }
-  },
-  {
-    q: { de: 'Kinder-Tickets?', ru: 'Билеты для детей?' },
-    a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.', ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' }
-  }
-
+        {
+          q: { de: 'Welche Tische und Sitzordnungen gibt es?', ru: 'Какие столы и варианты рассадки доступны?' },
+          a: { de: 'Wir bieten verschiedene Tischgrößen und Sitzordnungen an – von kleinen Tischen für 2–4 Personen bis zu großen Tafeln für Gruppen. Bei der Buchung kannst du die gewünschte Tischgröße wählen, wir bestätigen die Plätze nach Verfügbarkeit.',
+              ru: 'У нас есть разные размеры столов и варианты рассадки — от небольших столиков на 2–4 человека до больших столов для компаний. При бронировании можно выбрать нужный размер стола, мы подтвердим посадку при наличии мест.' }
+        },
+        { q: { de: 'Kinder-Tickets?', ru: 'Билеты для детей?' },
+          a: { de: 'Nein, ab 18 Jahren (18+). Ausweiskontrolle am Einlass.', ru: 'Нет, вход строго с 18 лет (18+). Проверка удостоверений на входе.' } }
       ]
     }
   };
+
   // ========= UTILS =========
   const $ = (s) => document.querySelector(s);
   const getParam = (n) => new URL(location.href).searchParams.get(n);
@@ -383,11 +401,10 @@
   }
   function formatIBAN(raw){
     const s = String(raw).replace(/\s+/g,'').toUpperCase();
-    return s.replace(/(.{4})/g,'$1 ').trim(); // DE48 2546 2160 0665 6480 01
+    return s.replace(/(.{4})/g,'$1 ').trim();
   }
   function formatPhone(raw){
     const s = String(raw).replace(/\s+/g,'');
-    // +49 176 5777 5996 (простое группирование)
     const m = s.match(/^(\+\d{2})(\d{3})(\d{4})(\d{3,4})$/);
     return m ? `${m[1]} ${m[2]} ${m[3]} ${m[4]}` : raw;
   }
@@ -401,9 +418,14 @@
     url.searchParams.set('lang', lang);
     history.replaceState(null,'',url.toString());
     updateLangUI();
+
+    // ⬇️ Обновить текст Verwendungszweck при смене языка
+    const ev = EVENTS[currentId];
+    const p = document.getElementById('ev-purpose');
+    if (ev?.purpose && p) p.textContent = (lang === 'ru') ? ev.purpose.ru : ev.purpose.de;
   }
 
-  // Lightbox handlers
+  // Lightbox
   function openLightbox(src, alt){
     const lb = $('#lightbox'), img = $('#lightbox-img');
     img.src = src; img.alt = alt||'Preview';
@@ -467,7 +489,7 @@
     hero.src = ev.hero;
     hero.alt = `${ev.title.de} – Hero`;
 
-    // Zahlung / Kontakt (с форматированием)
+    // Zahlung / Kontakt
     $('#ev-iban').textContent   = formatIBAN(ev.payment.iban);
     $('#ev-bic').textContent    = ev.payment.bic;
     $('#ev-holder').textContent = ev.payment.holder;
@@ -475,6 +497,12 @@
     const phonePretty = formatPhone(ev.contact.phone);
     $('#ev-phone').textContent  = phonePretty;
     $('#ev-phone-link').href    = 'tel:' + ev.contact.phone.replace(/\s+/g,'');
+
+    // ✅ Verwendungszweck
+    if (ev.purpose) {
+      const p = document.getElementById('ev-purpose');
+      if (p) p.textContent = (currentLang === 'ru') ? ev.purpose.ru : ev.purpose.de;
+    }
 
     $('#ev-ticket-note-de').textContent = ev.ticket_note.de;
     $('#ev-ticket-note-ru').textContent = ev.ticket_note.ru;
@@ -494,19 +522,18 @@
       hl.appendChild(li);
     });
 
-  // Galerie
-const g=$('#ev-gallery'); g.innerHTML='';
-ev.gallery.forEach(img=>{
-  const fig=document.createElement('figure');
-  fig.className='relative card overflow-hidden cursor-zoom-in';
-  fig.innerHTML=`
-    <img src="${img.src}" alt="${img.alt||'Event Foto'}" class="w-full h-44 md:h-52 object-cover" loading="lazy" decoding="async"/>
-    <figcaption class="absolute bottom-0 left-0 w-full bg-black bg-opacity-40 text-white text-sm p-2">${img.alt||''}</figcaption>
-  `;
-  fig.addEventListener('click',()=>openLightbox(img.src,img.alt));
-  g.appendChild(fig);
-});
-
+    // Galerie
+    const g=$('#ev-gallery'); g.innerHTML='';
+    ev.gallery.forEach(img=>{
+      const fig=document.createElement('figure');
+      fig.className='relative card overflow-hidden cursor-zoom-in';
+      fig.innerHTML=`
+        <img src="${img.src}" alt="${img.alt||'Event Foto'}" class="w-full h-44 md:h-52 object-cover" loading="lazy" decoding="async"/>
+        <figcaption class="absolute bottom-0 left-0 w-full bg-black bg-opacity-40 text-white text-sm p-2">${img.alt||''}</figcaption>
+      `;
+      fig.addEventListener('click',()=>openLightbox(img.src,img.alt));
+      g.appendChild(fig);
+    });
 
     // FAQ
     const wrap = $('#ev-faq-wrap'), root = $('#ev-faq'); root.innerHTML='';
@@ -519,7 +546,7 @@ ev.gallery.forEach(img=>{
       });
     } else { wrap.hidden=true; }
 
-    // ✅ JSON-LD (absolute URLs)
+    // ✅ JSON-LD
     const imgsAbs = [ev.hero, ...ev.gallery.map(i=>i.src)].map(u => new URL(u, location.origin).href);
     const jsonLd = {
       '@context':'https://schema.org',
@@ -565,51 +592,71 @@ ev.gallery.forEach(img=>{
     updateLangUI();
   });
 
+  // ======== Маскирование/копирование реквизитов + Verwendungszweck ========
   document.addEventListener("DOMContentLoaded", () => {
-  const fullIban = "DE48254621600665648001";
-  const ibanSpan = document.getElementById("ev-iban");
-  const bicSpan  = document.getElementById("ev-bic");
-  const bankBox  = document.getElementById("bank-details");
-  const showBtn  = document.getElementById("show-bank-btn");
-  const copyIban = document.getElementById("copy-iban");
-  const copyBic  = document.getElementById("copy-bic");
+    const fullIban = "DE48254621600665648001";
+    const ibanSpan = document.getElementById("ev-iban");
+    const bicSpan  = document.getElementById("ev-bic");
+    const bankBox  = document.getElementById("bank-details");
+    const showBtn  = document.getElementById("show-bank-btn");
+    const copyIban = document.getElementById("copy-iban");
+    const copyBic  = document.getElementById("copy-bic");
 
-  // Маскировка IBAN
-  const masked = "•••• •••• •••• •••• " + fullIban.slice(-4);
-  ibanSpan.textContent = masked;
+    // Маскировка IBAN
+    const masked = "•••• •••• •••• •••• " + fullIban.slice(-4);
+    ibanSpan.textContent = masked;
 
-  // Показ/скрытие реквизитов
-  showBtn.addEventListener("click", () => {
-    if (bankBox.classList.contains("hidden")) {
-      bankBox.classList.remove("hidden");
-      ibanSpan.textContent = fullIban.replace(/(.{4})/g, "$1 ").trim();
-      showBtn.innerHTML = '<span class="lang lang-de">Requisiten verbergen</span><span class="lang lang-ru">Скрыть реквизиты</span>';
-    } else {
-      bankBox.classList.add("hidden");
-      ibanSpan.textContent = masked;
-      showBtn.innerHTML = '<span class="lang lang-de">Requisiten anzeigen</span><span class="lang lang-ru">Показать реквизиты</span>';
+    // Показ/скрытие реквизитов
+    showBtn.addEventListener("click", () => {
+      if (bankBox.classList.contains("hidden")) {
+        bankBox.classList.remove("hidden");
+        ibanSpan.textContent = fullIban.replace(/(.{4})/g, "$1 ").trim();
+        showBtn.innerHTML = '<span class="lang lang-de">Requisiten verbergen</span><span class="lang lang-ru">Скрыть реквизиты</span>';
+      } else {
+        bankBox.classList.add("hidden");
+        ibanSpan.textContent = masked;
+        showBtn.innerHTML = '<span class="lang lang-de">Requisiten anzeigen</span><span class="lang lang-ru">Показать реквизиты</span>';
+      }
+    });
+
+    // Копировать IBAN
+    copyIban.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(fullIban);
+        copyIban.textContent = "✓";
+        setTimeout(() => copyIban.textContent = "Kopieren", 1200);
+      } catch (e) { alert(fullIban); }
+    });
+
+    // Копировать BIC
+    copyBic.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(bicSpan.textContent);
+        copyBic.textContent = "✓";
+        setTimeout(() => copyBic.textContent = "Kopieren", 1200);
+      } catch (e) { alert(bicSpan.textContent); }
+    });
+
+    // ✅ Копировать Verwendungszweck
+    const copyPurposeBtn = document.getElementById("copy-purpose");
+    const purposeSpan    = document.getElementById("ev-purpose");
+    if (copyPurposeBtn && purposeSpan) {
+      copyPurposeBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(purposeSpan.textContent.trim());
+          copyPurposeBtn.textContent = "✓";
+          setTimeout(() => {
+            copyPurposeBtn.innerHTML = '<span class="lang lang-de">Kopieren</span><span class="lang lang-ru">Копировать</span>';
+          }, 1200);
+        } catch (e) {
+          alert(purposeSpan.textContent.trim());
+        }
+      });
     }
   });
-
-  // Копировать IBAN
-  copyIban.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(fullIban);
-      copyIban.textContent = "✓";
-      setTimeout(() => copyIban.textContent = "Kopieren", 1200);
-    } catch (e) { alert(fullIban); }
-  });
-
-  // Копировать BIC
-  copyBic.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(bicSpan.textContent);
-      copyBic.textContent = "✓";
-      setTimeout(() => copyBic.textContent = "Kopieren", 1200);
-    } catch (e) { alert(bicSpan.textContent); }
-  });
-});
 </script>
+
+<!-- ваш общий main.js, если нужен -->
 <script src="js/main.js" defer></script>
 </body>
 </html>
