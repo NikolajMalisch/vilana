@@ -1,305 +1,572 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vilana Event & Catering</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vilana Event & Catering</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YW71FCW4FJ');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-YW71FCW4FJ");
+    </script>
 
-<!-- Tailwind CSS (CDN) -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-  body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; }
-  h1, h2, h3, p, span { font-family: 'Cormorant SC', serif; }
-  .logo-container { display: flex; align-items: baseline; gap: 0.3rem; margin-top: 4px; }
-  .logo-title { font-family: 'Cinzel Decorative', cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: 0.5px; color: #1f2937; }
-  .logo-subtitle { font-size: 1rem; color: #1f2937; }
-  .lang { display: none; }  /* по умолчанию всё скрыто — JS покажет нужный язык */
-  .hidden-field { display: none; }
-</style>
-</head>
-<body>
+    <style>
+      body {
+        font-family: "Cormorant SC", serif;
+        background-color: #fdfaf6;
+      }
+      h1,
+      h2,
+      h3,
+      p,
+      span {
+        font-family: "Cormorant SC", serif;
+      }
+      .logo-container {
+        display: flex;
+        align-items: baseline;
+        gap: 0.3rem;
+        margin-top: 4px;
+      }
+      .logo-title {
+        font-family: "Cinzel Decorative", cursive;
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: #1f2937;
+      }
+      .logo-subtitle {
+        font-size: 1rem;
+        color: #1f2937;
+      }
+      .lang {
+        display: none;
+      } /* по умолчанию всё скрыто — JS покажет нужный язык */
+      .hidden-field {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white shadow-md sticky top-0 z-40">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <!-- ЛОГО -->
+        <a href="index.html" class="flex items-baseline gap-1">
+          <span class="logo-title">Vilana</span>
+          <span class="logo-subtitle">Event &amp; Catering</span>
+        </a>
 
-<header class="bg-white shadow-md sticky top-0 z-40">
-  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <!-- ЛОГО -->
-    <a href="index.html" class="flex items-baseline gap-1">
-      <span class="logo-title">Vilana</span>
-      <span class="logo-subtitle">Event &amp; Catering</span>
-    </a>
+        <!-- DESKTOP NAV -->
+        <nav
+          class="hidden md:flex items-center space-x-8"
+          aria-label="Hauptnavigation"
+        >
+          <a href="index.html#home" class="nav-link">Startseite</a>
+          <a href="index.html#services" class="nav-link">Leistungen</a>
+          <a href="menu.html" class="nav-link">Menü</a>
+          <a href="galerie.html" class="nav-link">Galerie</a>
+          <a href="about.html" class="nav-link">Über uns</a>
+          <a href="bewertung.html" class="nav-link">Bewertung</a>
+          <a href="contact.html" class="nav-link">Kontakt</a>
+          <a id="eventLink" class="nav-link">Event</a>
 
-    <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-      <a href="index.html#home" class="nav-link">Startseite</a>
-      <a href="index.html#services" class="nav-link">Leistungen</a>
-      <a href="menu.html" class="nav-link">Menü</a>
-      <a href="galerie.html" class="nav-link">Galerie</a>
-      <a href="about.html" class="nav-link">Über uns</a>
-      <a href="bewertung.html" class="nav-link">Bewertung</a>
-      <a href="contact.html" class="nav-link">Kontakt</a>
-      <a id="eventLink" class="nav-link">Event</a>
+          <!-- ЯЗЫК (DESKTOP) — ДРОПДАУН КАК НА ГЛАВНОЙ -->
+          <div class="relative">
+            <button
+              id="langToggle"
+              type="button"
+              class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Sprache wählen – Desktop"
+            >
+              DE ▾
+            </button>
+            <ul
+              id="langMenu"
+              class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
+              role="menu"
+              aria-label="Sprache wählen"
+            >
+              <li>
+                <button
+                  type="button"
+                  data-lang="de"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  role="menuitem"
+                >
+                  Deutsch
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  data-lang="ru"
+                  class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  role="menuitem"
+                >
+                  Русский
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-      <!-- ЯЗЫК (DESKTOP) — ДРОПДАУН КАК НА ГЛАВНОЙ -->
-      <div class="relative">
-        <button id="langToggle" type="button"
-                class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm"
-                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Desktop">
-          DE ▾
-        </button>
-        <ul id="langMenu"
-            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50"
-            role="menu" aria-label="Sprache wählen">
-          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100" role="menuitem">Русский</button></li>
-        </ul>
+        <!-- MOBILE: язык + бургер (тоже как на главной) -->
+        <div class="flex items-center gap-2 md:hidden">
+          <div class="relative">
+            <button
+              id="langToggleMobile"
+              type="button"
+              class="inline-flex h-8 w-8 items-center justify-center text-gray-800"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Sprache wählen – Mobil"
+            >
+              <span class="text-xs font-semibold leading-none">DE</span>
+            </button>
+            <ul
+              id="langMenuMobile"
+              class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
+              role="menu"
+              aria-label="Sprache wählen (mobil)"
+            >
+              <li>
+                <button
+                  type="button"
+                  data-lang="de"
+                  class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                  role="menuitem"
+                >
+                  Deutsch
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  data-lang="ru"
+                  class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                  role="menuitem"
+                >
+                  Русский
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            id="menuToggle"
+            type="button"
+            aria-label="Menü öffnen"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
+          >
+            <svg
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </nav>
 
-    <!-- MOBILE: язык + бургер (тоже как на главной) -->
-    <div class="flex items-center gap-2 md:hidden">
-      <div class="relative">
-        <button id="langToggleMobile" type="button"
-                class="inline-flex h-8 w-8 items-center justify-center text-gray-800"
-                aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen – Mobil">
-          <span class="text-xs font-semibold leading-none">DE</span>
-        </button>
-        <ul id="langMenuMobile"
-            class="hidden absolute right-0 mt-2 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
-            role="menu" aria-label="Sprache wählen (mobil)">
-          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Deutsch</button></li>
-          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Русский</button></li>
-        </ul>
+      <!-- MOBILE MENU -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+        role="menu"
+        aria-label="Mobiles Menü"
+      >
+        <a
+          href="index.html#home"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Startseite</a
+        >
+        <a
+          href="index.html#services"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Leistungen</a
+        >
+        <a
+          href="menu.html"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Menü</a
+        >
+        <a
+          href="galerie.html"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Galerie</a
+        >
+        <a
+          href="about.html"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Über uns</a
+        >
+        <a
+          href="bewertung.html"
+          class="block text-gray-700 hover:text-amber-700"
+          role="menuitem"
+          >Bewertung</a
+        >
+        <a
+          href="contact.html"
+          class="block text-amber-700 font-semibold"
+          role="menuitem"
+          >Kontakt</a
+        >
+        <a
+          id="eventLinkMobile"
+          class="block text-amber-700 font-semibold"
+          role="menuitem"
+          >Event</a
+        >
       </div>
+    </header>
 
-      <button id="menuToggle" type="button" aria-label="Menü öffnen"
-              class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
+    <!-- ===== MAIN ===== -->
+    <main class="py-16">
+      <div class="mx-auto px-4 max-w-3xl text-center">
+        <h2 class="text-4xl font-bold mb-12 lang lang-de" data-disp="block">
+          Kontaktieren Sie uns
+        </h2>
+        <h2 class="text-4xl font-bold mb-12 lang lang-ru" data-disp="block">
+          Свяжитесь с нами
+        </h2>
+
+        <div class="text-center mb-12 space-y-2">
+          <p class="text-lg">
+            <strong>E-Mail:</strong>
+            <a href="mailto:v.s@vilana.info" class="text-amber-700"
+              >v.s@vilana.info</a
+            >
+          </p>
+          <p class="text-lg">
+            <strong>Telefon 1:</strong>
+            <a href="tel:+4917657775996" class="text-amber-700"
+              >+49 176 5777 5996</a
+            >
+          </p>
+          <p class="text-lg">
+            <strong>Telefon 2:</strong>
+            <a href="tel:+4917642288707" class="text-amber-700"
+              >+49 176 4228 8707</a
+            >
+          </p>
+          <p class="text-lg">
+            <strong>WhatsApp:</strong>
+            <a
+              href="https://wa.me/4917657775996"
+              class="text-amber-700"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Jetzt schreiben</a
+            >
+          </p>
+          <p class="text-lg">
+            <strong>Adresse:</strong> 31855 Aerzen / Osterstr. 28
+          </p>
+        </div>
+
+        <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
+          <input
+            type="text"
+            name="honeypot"
+            class="hidden-field"
+            autocomplete="off"
+          />
+
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 mb-2">
+              <span class="lang lang-de">Ihr Name</span>
+              <span class="lang lang-ru">Ваше имя</span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded px-4 py-2"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 mb-2">
+              <span class="lang lang-de">Ihre E-Mail</span>
+              <span class="lang lang-ru">Ваш e-mail</span>
+            </label>
+            <input
+              class="w-full border border-gray-300 rounded px-4 py-2"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 mb-2">
+              <span class="lang lang-de">Ihre Nachricht</span>
+              <span class="lang lang-ru">Ваше сообщение</span>
+            </label>
+            <textarea
+              class="w-full border border-gray-300 rounded px-4 py-2"
+              id="message"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <div class="mb-4">
+            <label class="inline-flex items-center">
+              <input type="checkbox" required class="mr-2" />
+              <span class="text-sm lang lang-de"
+                >Ich akzeptiere die
+                <a href="vilana-legal.html" class="text-amber-700 underline"
+                  >AGB & Datenschutz</a
+                ></span
+              >
+              <span class="text-sm lang lang-ru"
+                >Я принимаю
+                <a href="vilana-legal.html" class="text-amber-700 underline"
+                  >условия и политику конфиденциальности</a
+                ></span
+              >
+            </label>
+          </div>
+
+          <div
+            id="formMsg"
+            class="text-center text-green-600 font-semibold hidden mb-4"
+          >
+            Nachricht erfolgreich gesendet!
+          </div>
+
+          <button
+            type="submit"
+            class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full"
+          >
+            <span class="lang lang-de">Senden</span>
+            <span class="lang lang-ru">Отправить</span>
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+      <div class="container mx-auto px-4 text-center">
+        <div class="mb-4">
+          <a
+            href="https://www.instagram.com/vilana_catering/"
+            class="hover:text-amber-400"
+            >Instagram</a
+          >
+        </div>
+        <p>
+          <a href="impressum.html" class="hover:underline">Impressum</a> |
+          <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+          <a href="agb.html" class="hover:underline">AGB</a>
+        </p>
+        <p class="lang lang-de" data-disp="block">
+          &copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.
+        </p>
+        <p class="lang lang-ru" data-disp="block">
+          &copy; 2025 Vilana Event &amp; Catering. Все права защищены.
+        </p>
+      </div>
+      <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+        aria-label="Nach oben"
+      >
+        ▲
       </button>
-    </div>
-  </div>
+    </footer>
 
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu"
-      class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-      role="menu" aria-label="Mobiles Menü">
-    <a href="index.html#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
-    <a href="about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-    <a href="bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
-    <a href="contact.html" class="block text-amber-700 font-semibold" role="menuitem">Kontakt</a>
-    <a id="eventLinkMobile" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
-  </div>
-</header>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <!-- ЛОГИКА: язык, меню, EmailJS, Event-ссылки -->
+    <script>
+      /* Переключение языка (единый для всех страниц) */
+      window.setLanguage = function (lang) {
+        lang = lang === "ru" ? "ru" : "de";
+        localStorage.setItem("vilana_lang", lang);
 
-<!-- ===== MAIN ===== -->
-<main class="py-16">
-  <div class="mx-auto px-4 max-w-3xl text-center">
-    <h2 class="text-4xl font-bold mb-12 lang lang-de" data-disp="block">Kontaktieren Sie uns</h2>
-    <h2 class="text-4xl font-bold mb-12 lang lang-ru" data-disp="block">Свяжитесь с нами</h2>
+        // показать/скрыть элементы нужного языка
+        document
+          .querySelectorAll(".lang")
+          .forEach((el) => (el.style.display = "none"));
+        const blockTags = new Set([
+          "H1",
+          "H2",
+          "H3",
+          "H4",
+          "H5",
+          "H6",
+          "P",
+          "DIV",
+          "LI",
+          "UL",
+          "OL",
+          "SECTION",
+          "ARTICLE",
+          "FOOTER",
+          "HEADER",
+        ]);
+        document.querySelectorAll(".lang-" + lang).forEach((el) => {
+          const hint = el.getAttribute("data-disp");
+          el.style.display = hint
+            ? hint
+            : blockTags.has(el.tagName)
+              ? "block"
+              : "inline";
+        });
 
-    <div class="text-center mb-12 space-y-2">
-      <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:v.s@vilana.info" class="text-amber-700">v.s@vilana.info</a></p>
-      <p class="text-lg"><strong>Telefon 1:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176 5777 5996</a></p>
-      <p class="text-lg"><strong>Telefon 2:</strong> <a href="tel:+4917642288707" class="text-amber-700">+49 176 4228 8707</a></p>
-      <p class="text-lg"><strong>WhatsApp:</strong> <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank" rel="noopener noreferrer">Jetzt schreiben</a></p>
-      <p class="text-lg"><strong>Adresse:</strong> 31855 Aerzen / Osterstr. 28</p>
-    </div>
+        // обновить ссылки Event (сохраним utm/gclid/fbclid)
+        wireEventLinks(lang);
 
-    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
-      <input type="text" name="honeypot" class="hidden-field" autocomplete="off">
+        // <html lang=".."> (для SEO/доступности)
+        document.documentElement.lang = lang;
+      };
 
-      <div class="mb-4">
-        <label for="name" class="block text-gray-700 mb-2">
-          <span class="lang lang-de">Ihr Name</span>
-          <span class="lang lang-ru">Ваше имя</span>
-        </label>
-        <input class="w-full border border-gray-300 rounded px-4 py-2" type="text" id="name" name="name" required />
-      </div>
+      /* Делегатор клика по кнопкам языка (desktop + mobile) */
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-lang]");
+        if (!btn) return;
+        setLanguage(btn.getAttribute("data-lang"));
+      });
 
-      <div class="mb-4">
-        <label for="email" class="block text-gray-700 mb-2">
-          <span class="lang lang-de">Ihre E-Mail</span>
-          <span class="lang lang-ru">Ваш e-mail</span>
-        </label>
-        <input class="w-full border border-gray-300 rounded px-4 py-2" type="email" id="email" name="email" required />
-      </div>
+      /* Бургер меню */
+      document.getElementById("menuToggle").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      });
 
-      <div class="mb-4">
-        <label for="message" class="block text-gray-700 mb-2">
-          <span class="lang lang-de">Ihre Nachricht</span>
-          <span class="lang lang-ru">Ваше сообщение</span>
-        </label>
-        <textarea class="w-full border border-gray-300 rounded px-4 py-2" id="message" name="message" rows="5" required></textarea>
-      </div>
+      /* EmailJS */
+      emailjs.init("vfmomNKrMxrf2xqDW");
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const form = this;
+          if (form.honeypot.value !== "") return; // антиспам
+          emailjs.sendForm("service_75biswm", "template_fuxgrlb", form).then(
+            () => {
+              document.getElementById("formMsg").classList.remove("hidden");
+              form.reset();
+            },
+            (error) => {
+              alert("Fehler beim Senden: " + error.text);
+            },
+          );
+        });
 
-      <div class="mb-4">
-        <label class="inline-flex items-center">
-          <input type="checkbox" required class="mr-2" />
-          <span class="text-sm lang lang-de">Ich akzeptiere die <a href="vilana-legal.html" class="text-amber-700 underline">AGB & Datenschutz</a></span>
-          <span class="text-sm lang lang-ru">Я принимаю <a href="vilana-legal.html" class="text-amber-700 underline">условия и политику конфиденциальности</a></span>
-        </label>
-      </div>
+      /* Генерация ссылок на Event с учётом lang + UTM */
+      function wireEventLinks(lang) {
+        try {
+          const cur = new URL(location.href);
+          const target = new URL("event.html", cur);
+          target.searchParams.set("id", "russian-oktoberfest-2025");
+          target.searchParams.set("lang", lang);
 
-      <div id="formMsg" class="text-center text-green-600 font-semibold hidden mb-4">Nachricht erfolgreich gesendet!</div>
+          [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_term",
+            "utm_content",
+            "gclid",
+            "fbclid",
+          ].forEach((k) => {
+            const v = cur.searchParams.get(k);
+            if (v) target.searchParams.set(k, v);
+          });
 
-      <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full">
-        <span class="lang lang-de">Senden</span>
-        <span class="lang lang-ru">Отправить</span>
-      </button>
-    </form>
-  </div>
-</main>
+          const a1 = document.getElementById("eventLink");
+          const a2 = document.getElementById("eventLinkMobile");
+          if (a1) a1.href = target.href;
+          if (a2) a2.href = target.href;
+        } catch (e) {}
+      }
 
-<!-- ===== FOOTER ===== -->
-<footer class="bg-gray-800 text-white py-10 mt-16 relative">
-  <div class="container mx-auto px-4 text-center">
-    <div class="mb-4">
-      <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
-    </div>
-    <p>
-      <a href="impressum.html" class="hover:underline">Impressum</a> |
-      <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-      <a href="agb.html" class="hover:underline">AGB</a>
-    </p>
-    <p class="lang lang-de" data-disp="block">&copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
-    <p class="lang lang-ru" data-disp="block">&copy; 2025 Vilana Event &amp; Catering. Все права защищены.</p>
-  </div>
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full" aria-label="Nach oben">▲</button>
-</footer>
+      /* Инициализация: читаем ?lang=… или localStorage, применяем язык и ссылки */
+      document.addEventListener("DOMContentLoaded", () => {
+        const url = new URL(location.href);
+        const qLang = (url.searchParams.get("lang") || "").toLowerCase();
+        const saved = localStorage.getItem("vilana_lang") || "de";
+        setLanguage(qLang || saved || "de");
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        if (!menuBtn || !mobileMenu) return;
 
-<!-- ЛОГИКА: язык, меню, EmailJS, Event-ссылки -->
-<script>
-/* Переключение языка (единый для всех страниц) */
-window.setLanguage = function(lang) {
-  lang = (lang === 'ru') ? 'ru' : 'de';
-  localStorage.setItem('vilana_lang', lang);
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          menuBtn.setAttribute("aria-expanded", "true");
+        }
+        function closeMenu() {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+        function toggleMenu(e) {
+          e.stopPropagation();
+          mobileMenu.classList.contains("hidden") ? openMenu() : closeMenu();
+        }
 
-  // показать/скрыть элементы нужного языка
-  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-  const blockTags = new Set(['H1','H2','H3','H4','H5','H6','P','DIV','LI','UL','OL','SECTION','ARTICLE','FOOTER','HEADER']);
-  document.querySelectorAll('.lang-' + lang).forEach(el => {
-    const hint = el.getAttribute('data-disp');
-    el.style.display = hint ? hint : (blockTags.has(el.tagName) ? 'block' : 'inline');
-  });
+        // Клик по кнопке
+        menuBtn.addEventListener("click", toggleMenu);
 
-  // обновить ссылки Event (сохраним utm/gclid/fbclid)
-  wireEventLinks(lang);
+        // Закрыть по клику вне меню
+        document.addEventListener("click", (e) => {
+          if (mobileMenu.classList.contains("hidden")) return;
+          const inside =
+            mobileMenu.contains(e.target) || menuBtn.contains(e.target);
+          if (!inside) closeMenu();
+        });
 
-  // <html lang=".."> (для SEO/доступности)
-  document.documentElement.lang = lang;
-};
-
-/* Делегатор клика по кнопкам языка (desktop + mobile) */
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-lang]');
-  if (!btn) return;
-  setLanguage(btn.getAttribute('data-lang'));
-});
-
-/* Бургер меню */
-document.getElementById('menuToggle').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-});
-
-/* EmailJS */
-emailjs.init("vfmomNKrMxrf2xqDW");
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const form = this;
-  if (form.honeypot.value !== "") return; // антиспам
-  emailjs.sendForm('service_75biswm', 'template_fuxgrlb', form)
-    .then(() => {
-      document.getElementById("formMsg").classList.remove("hidden");
-      form.reset();
-    }, (error) => {
-      alert("Fehler beim Senden: " + error.text);
-    });
-});
-
-/* Генерация ссылок на Event с учётом lang + UTM */
-function wireEventLinks(lang){
-  try{
-    const cur = new URL(location.href);
-    const target = new URL('event.html', cur);
-    target.searchParams.set('id', 'russian-oktoberfest-2025');
-    target.searchParams.set('lang', lang);
-
-    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k=>{
-      const v = cur.searchParams.get(k);
-      if(v) target.searchParams.set(k, v);
-    });
-
-    const a1 = document.getElementById('eventLink');
-    const a2 = document.getElementById('eventLinkMobile');
-    if(a1) a1.href = target.href;
-    if(a2) a2.href = target.href;
-  }catch(e){}
-}
-
-/* Инициализация: читаем ?lang=… или localStorage, применяем язык и ссылки */
-document.addEventListener('DOMContentLoaded', () => {
-  const url = new URL(location.href);
-  const qLang = (url.searchParams.get('lang') || '').toLowerCase();
-  const saved = localStorage.getItem('vilana_lang') || 'de';
-  setLanguage(qLang || saved || 'de');
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (!menuBtn || !mobileMenu) return;
-
-  function openMenu() {
-    mobileMenu.classList.remove('hidden');
-    menuBtn.setAttribute('aria-expanded', 'true');
-  }
-  function closeMenu() {
-    mobileMenu.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }
-  function toggleMenu(e) {
-    e.stopPropagation();
-    mobileMenu.classList.contains('hidden') ? openMenu() : closeMenu();
-  }
-
-  // Клик по кнопке
-  menuBtn.addEventListener('click', toggleMenu);
-
-  // Закрыть по клику вне меню
-  document.addEventListener('click', (e) => {
-    if (mobileMenu.classList.contains('hidden')) return;
-    const inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
-    if (!inside) closeMenu();
-  });
-
-  // Закрыть по Esc
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-});
-</script>
-<script src="js/main.js" defer></script>
-<script src="js/nav.js"></script>
-</body>
+        // Закрыть по Esc
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMenu();
+        });
+      });
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/nav.js"></script>
+  </body>
 </html>
-

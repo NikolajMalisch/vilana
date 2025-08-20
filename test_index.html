@@ -1,127 +1,175 @@
 <!-- test_index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Vilana Index Accessibility & Structure Tests</title>
     <script>
-        // Helper for test output
-        function logResult(testName, passed, message) {
-            const el = document.createElement('li');
-            el.textContent = (passed ? '✅ ' : '❌ ') + testName + (message ? ' — ' + message : '');
-            el.style.color = passed ? 'green' : 'red';
-            document.getElementById('results').appendChild(el);
-        }
+      // Helper for test output
+      function logResult(testName, passed, message) {
+        const el = document.createElement("li");
+        el.textContent =
+          (passed ? "✅ " : "❌ ") +
+          testName +
+          (message ? " — " + message : "");
+        el.style.color = passed ? "green" : "red";
+        document.getElementById("results").appendChild(el);
+      }
 
-        window.addEventListener('DOMContentLoaded', function() {
-            // 1. Title exists
-            logResult(
-                'Title exists',
-                !!document.title && document.title.length > 0,
-                document.title ? '' : 'No <title> found'
-            );
+      window.addEventListener("DOMContentLoaded", function () {
+        // 1. Title exists
+        logResult(
+          "Title exists",
+          !!document.title && document.title.length > 0,
+          document.title ? "" : "No <title> found",
+        );
 
-            // 2. Main navigation links exist
-            const navLinks = Array.from(document.querySelectorAll('nav a'));
-            logResult(
-                'Main navigation links exist',
-                navLinks.length >= 7,
-                'Found ' + navLinks.length + ' nav links'
-            );
+        // 2. Main navigation links exist
+        const navLinks = Array.from(document.querySelectorAll("nav a"));
+        logResult(
+          "Main navigation links exist",
+          navLinks.length >= 7,
+          "Found " + navLinks.length + " nav links",
+        );
 
-            // 3. Language menu buttons have type and aria-label
-            const langBtns = Array.from(document.querySelectorAll('button[id^="langToggle"], #langMenu button, #langMenuMobile button'));
-            let allLangType = langBtns.every(btn => btn.type === 'button');
-            let allLangAria = langBtns.every(btn => btn.hasAttribute('aria-label'));
-            logResult('Language buttons have type="button"', allLangType);
-            logResult('Language buttons have aria-label', allLangAria);
+        // 3. Language menu buttons have type and aria-label
+        const langBtns = Array.from(
+          document.querySelectorAll(
+            'button[id^="langToggle"], #langMenu button, #langMenuMobile button',
+          ),
+        );
+        let allLangType = langBtns.every((btn) => btn.type === "button");
+        let allLangAria = langBtns.every((btn) =>
+          btn.hasAttribute("aria-label"),
+        );
+        logResult('Language buttons have type="button"', allLangType);
+        logResult("Language buttons have aria-label", allLangAria);
 
-            // 4. Burger menu button has type and aria-label
-            const burgerBtn = document.getElementById('menuToggle');
-            logResult(
-                'Burger menu button has type="button"',
-                burgerBtn && burgerBtn.type === 'button'
-            );
-            logResult(
-                'Burger menu button has aria-label',
-                burgerBtn && burgerBtn.hasAttribute('aria-label')
-            );
+        // 4. Burger menu button has type and aria-label
+        const burgerBtn = document.getElementById("menuToggle");
+        logResult(
+          'Burger menu button has type="button"',
+          burgerBtn && burgerBtn.type === "button",
+        );
+        logResult(
+          "Burger menu button has aria-label",
+          burgerBtn && burgerBtn.hasAttribute("aria-label"),
+        );
 
-            // 5. Mobile menu links have role="menuitem"
-            const mobileMenuLinks = Array.from(document.querySelectorAll('#mobileMenu a'));
-            let allMobileMenuRole = mobileMenuLinks.every(a => a.getAttribute('role') === 'menuitem');
-            logResult('Mobile menu links have role="menuitem"', allMobileMenuRole);
+        // 5. Mobile menu links have role="menuitem"
+        const mobileMenuLinks = Array.from(
+          document.querySelectorAll("#mobileMenu a"),
+        );
+        let allMobileMenuRole = mobileMenuLinks.every(
+          (a) => a.getAttribute("role") === "menuitem",
+        );
+        logResult('Mobile menu links have role="menuitem"', allMobileMenuRole);
 
-            // 6. No <li tabindex> inside ARIA menu
-            let liTabindex = Array.from(document.querySelectorAll('ul[role="menu"] li[tabindex]'));
-            logResult('No <li tabindex> inside ARIA menu', liTabindex.length === 0, liTabindex.length ? 'Found ' + liTabindex.length : '');
+        // 6. No <li tabindex> inside ARIA menu
+        let liTabindex = Array.from(
+          document.querySelectorAll('ul[role="menu"] li[tabindex]'),
+        );
+        logResult(
+          "No <li tabindex> inside ARIA menu",
+          liTabindex.length === 0,
+          liTabindex.length ? "Found " + liTabindex.length : "",
+        );
 
-            // 7. No duplicate id="mobileMenu"
-            let mobileMenus = document.querySelectorAll('#mobileMenu');
-            logResult('No duplicate id="mobileMenu"', mobileMenus.length === 1, 'Found ' + mobileMenus.length);
+        // 7. No duplicate id="mobileMenu"
+        let mobileMenus = document.querySelectorAll("#mobileMenu");
+        logResult(
+          'No duplicate id="mobileMenu"',
+          mobileMenus.length === 1,
+          "Found " + mobileMenus.length,
+        );
 
-            // 8. All .btn elements are accessible
-            let btns = Array.from(document.querySelectorAll('.btn'));
-            let allBtnText = btns.every(btn => btn.textContent.trim().length > 0);
-            logResult('.btn elements have discernible text', allBtnText);
+        // 8. All .btn elements are accessible
+        let btns = Array.from(document.querySelectorAll(".btn"));
+        let allBtnText = btns.every((btn) => btn.textContent.trim().length > 0);
+        logResult(".btn elements have discernible text", allBtnText);
 
-            // 9. Meta description exists
-            let metaDesc = document.querySelector('meta[name="description"]');
-            logResult('Meta description exists', !!metaDesc);
+        // 9. Meta description exists
+        let metaDesc = document.querySelector('meta[name="description"]');
+        logResult("Meta description exists", !!metaDesc);
 
-            // 10. Open Graph tags exist
-            let ogTitle = document.querySelector('meta[property="og:title"]');
-            let ogImage = document.querySelector('meta[property="og:image"]');
-            logResult('Open Graph title exists', !!ogTitle);
-            logResult('Open Graph image exists', !!ogImage);
+        // 10. Open Graph tags exist
+        let ogTitle = document.querySelector('meta[property="og:title"]');
+        let ogImage = document.querySelector('meta[property="og:image"]');
+        logResult("Open Graph title exists", !!ogTitle);
+        logResult("Open Graph image exists", !!ogImage);
 
-            // 11. Twitter card meta exists
-            let twitterCard = document.querySelector('meta[name="twitter:card"]');
-            logResult('Twitter card meta exists', !!twitterCard);
+        // 11. Twitter card meta exists
+        let twitterCard = document.querySelector('meta[name="twitter:card"]');
+        logResult("Twitter card meta exists", !!twitterCard);
 
-            // 12. Canonical link exists
-            let canonical = document.querySelector('link[rel="canonical"]');
-            logResult('Canonical link exists', !!canonical);
+        // 12. Canonical link exists
+        let canonical = document.querySelector('link[rel="canonical"]');
+        logResult("Canonical link exists", !!canonical);
 
-            // 13. Robots meta exists
-            let robots = document.querySelector('meta[name="robots"]');
-            logResult('Robots meta exists', !!robots);
+        // 13. Robots meta exists
+        let robots = document.querySelector('meta[name="robots"]');
+        logResult("Robots meta exists", !!robots);
 
-            // 14. Tailwind CSS is loaded
-            let tailwindLink = document.querySelector('link[href*="output.css"]');
-            logResult('Tailwind CSS loaded', !!tailwindLink);
+        // 14. Tailwind CSS is loaded
+        let tailwindLink = document.querySelector('link[href*="output.css"]');
+        logResult("Tailwind CSS loaded", !!tailwindLink);
 
-            // 15. Google Fonts loaded
-            let googleFonts = document.querySelector('link[href*="fonts.googleapis.com"]');
-            logResult('Google Fonts loaded', !!googleFonts);
+        // 15. Google Fonts loaded
+        let googleFonts = document.querySelector(
+          'link[href*="fonts.googleapis.com"]',
+        );
+        logResult("Google Fonts loaded", !!googleFonts);
 
-            // 16. JSON-LD script exists
-            let jsonLd = document.querySelector('script[type="application/ld+json"]');
-            logResult('JSON-LD script exists', !!jsonLd);
+        // 16. JSON-LD script exists
+        let jsonLd = document.querySelector(
+          'script[type="application/ld+json"]',
+        );
+        logResult("JSON-LD script exists", !!jsonLd);
 
-            // 17. Accessibility skip link exists
-            let skipLink = document.querySelector('a[href="#home"].sr-only');
-            logResult('Accessibility skip link exists', !!skipLink);
+        // 17. Accessibility skip link exists
+        let skipLink = document.querySelector('a[href="#home"].sr-only');
+        logResult("Accessibility skip link exists", !!skipLink);
 
-            // 18. Footer exists
-            let footer = document.querySelector('footer');
-            logResult('Footer exists', !!footer);
+        // 18. Footer exists
+        let footer = document.querySelector("footer");
+        logResult("Footer exists", !!footer);
 
-            // 19. Scroll-to-top button has type and aria-label
-            let scrollBtn = footer ? footer.querySelector('button[aria-label]') : null;
-            logResult('Scroll-to-top button has type="button"', scrollBtn && scrollBtn.type === 'button');
-            logResult('Scroll-to-top button has aria-label', scrollBtn && scrollBtn.hasAttribute('aria-label'));
-        });
+        // 19. Scroll-to-top button has type and aria-label
+        let scrollBtn = footer
+          ? footer.querySelector("button[aria-label]")
+          : null;
+        logResult(
+          'Scroll-to-top button has type="button"',
+          scrollBtn && scrollBtn.type === "button",
+        );
+        logResult(
+          "Scroll-to-top button has aria-label",
+          scrollBtn && scrollBtn.hasAttribute("aria-label"),
+        );
+      });
     </script>
     <style>
-        body { font-family: sans-serif; background: #f9f9f9; }
-        h1 { font-size: 1.2rem; margin-bottom: 1rem; }
-        ul { background: #fff; border-radius: 8px; padding: 1rem 2rem; box-shadow: 0 2px 8px #0001; }
-        li { margin-bottom: 0.5rem; }
+      body {
+        font-family: sans-serif;
+        background: #f9f9f9;
+      }
+      h1 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      ul {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 8px #0001;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Vilana Index Accessibility & Structure Tests</h1>
     <ul id="results"></ul>
-</body>
+  </body>
 </html>
