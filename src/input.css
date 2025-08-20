@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* твои доп. стили, если нужны */
-.btn {
-@apply inline-block rounded-full px-4 py-2 border border-brand-600;
-}
-.btn:hover {
-box-shadow: 0 8px 24px rgba(0,0,0,.08);
+@layer components {
+.card{background:#fff;border-radius:1.25rem;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+.chip{border-radius:9999px;padding:.35rem .85rem;background:#f3f4f6;font-size:.95rem;display:inline-flex;align-items:center;gap:.4rem}
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:50}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:1rem}
 }
