@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bewertungen | Vilana Event & Catering</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bewertungen | Vilana Event & Catering</title>
 
-  <!-- SEO: eindeutiger Titel, Beschreibung, Canonical -->
-  <meta name="description" content="Echte Kundenbewertungen über Vilana Event & Catering – Catering, Events & Hochzeiten in Hameln-Pyrmont & Umgebung." />
-  <link rel="canonical" href="https://www.vilana-event.de/bewertung.html" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#111827" />
+<!-- SEO: eindeutiger Titel, Beschreibung, Canonical -->
+<meta name="description" content="Echte Kundenbewertungen über Vilana Event & Catering – Catering, Events & Hochzeiten in Hameln-Pyrmont & Umgebung." />
+<link rel="canonical" href="https://www.vilana-event.de/bewertung.html" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#111827" />
 
-  <!-- Open Graph für Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Bewertungen | Vilana Event & Catering" />
-  <meta property="og:description" content="Echte Kundenmeinungen über Catering, Events & Hochzeiten in Hameln-Pyrmont & Umgebung." />
-  <meta property="og:url" content="https://www.vilana-event.de/bewertung.html" />
-  <meta property="og:image" content="https://www.vilana-event.de/images/og/og-cover.webp" />
-  <meta property="og:locale" content="de_DE" />
+<!-- Open Graph für Social Media -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bewertungen | Vilana Event & Catering" />
+<meta property="og:description" content="Echte Kundenmeinungen über Catering, Events & Hochzeiten in Hameln-Pyrmont & Umgebung." />
+<meta property="og:url" content="https://www.vilana-event.de/bewertung.html" />
+<meta property="og:image" content="https://www.vilana-event.de/images/og/og-cover.webp" />
+<meta property="og:locale" content="de_DE" />
 
-  <!-- Tailwind (lokaler Build) -->
-  <link rel="stylesheet" href="css/output.css" />
+<!-- Tailwind (lokaler Build) -->
+<link rel="stylesheet" href="css/output.css" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <style>
+<style>
     /* Grundtypografie + dezenter Seitenhintergrund wie auf anderen Seiten */
     body { font-family: 'Cormorant SC', serif; background-color: #fdfaf6; }
     /* Logo-Schriftzüge */
@@ -33,92 +33,103 @@
     .logo-subtitle { font-size: 1.1rem; color: #1f2937; }
     /* Dekorative Linie unter H1 */
     .divider { height: 2px; width: 140px; margin: 0.75rem auto; background: linear-gradient(90deg, transparent, #f59e0b, transparent); border-radius: 999px; }
-  </style>
 
-  <noscript>
+    /* DE: Goldene Sterne mit leichtem Glanz-Effekt (einheitlich für DE/RU) */
+    .stars-gold {
+    background: linear-gradient(90deg,#f59e0b 0%,#fbbf24 40%,#f59e0b 70%,#d97706 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+      color: transparent;                 /* Text wird vom Verlauf gefüllt */
+      text-shadow: 0 0 0.5px rgba(0,0,0,0.15); /* leichte Tiefe */
+    letter-spacing: 1px;
+    font-size: 1.05rem;
+    }
+</style>
+
+<noscript>
     <!-- Fallback: wenn JS aus → DE anzeigen -->
     <style>.lang-ru{display:none!important;}</style>
-  </noscript>
+</noscript>
 </head>
 <body class="text-gray-800 antialiased">
 
 <!-- ========== HEADER ========== -->
 <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-40">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
     <!-- Logo -->
     <a href="index.html" class="flex items-baseline gap-1" aria-label="Vilana Event & Catering – Startseite">
-      <span class="logo-title">Vilana</span>
-      <span class="logo-subtitle">Event &amp; Catering</span>
+    <span class="logo-title">Vilana</span>
+    <span class="logo-subtitle">Event &amp; Catering</span>
     </a>
 
-    <!-- Desktop-Navigation (+ Sprachumschalter wie auf anderen Seiten) -->
+    <!-- Desktop-Navigation (+ Sprachumschalter) -->
     <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-      <a href="index.html" class="text-gray-700 hover:text-amber-700">Startseite</a>
-      <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-      <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-      <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-      <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
-      <a href="event.html" class="text-gray-700 hover:text-amber-700">Event</a>
-      <a href="bewertung.html" aria-current="page" class="text-amber-700 font-semibold underline underline-offset-4">Bewertungen</a>
-      <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
+    <a href="index.html" class="text-gray-700 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
+    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
+    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
+    <a href="about.html" class="text-gray-700 hover:text-amber-700">Über uns</a>
+    <a href="event.html" class="text-gray-700 hover:text-amber-700">Event</a>
+    <a href="bewertung.html" aria-current="page" class="text-amber-700 font-semibold underline underline-offset-4">Bewertungen</a>
+    <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
 
-      <!-- Sprachumschalter Desktop (ohne Flaggen) -->
-      <div class="relative ml-2">
+    <!-- Sprachumschalter Desktop (ohne Flaggen) -->
+    <div class="relative ml-2">
         <button id="langToggle"
                 type="button"
                 class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100"
                 aria-haspopup="true" aria-expanded="false" aria-controls="langMenu" aria-label="Sprache wählen – Deutsch">
-          DE ▾
+        DE ▾
         </button>
         <ul id="langMenu"
             class="hidden absolute right-0 mt-2 w-32 bg-white text-gray-800 shadow-lg rounded z-50 ring-1 ring-black/5"
             role="menu" aria-labelledby="langToggle">
-          <li role="none">
+        <li role="none">
             <button type="button" role="menuitem" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button>
-          </li>
-          <li role="none">
+        </li>
+        <li role="none">
             <button type="button" role="menuitem" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button>
-          </li>
+        </li>
         </ul>
-      </div>
+    </div>
     </nav>
 
-    <!-- Mobile: Sprachumschalter direkt NEBEN dem Burger (wie gewünscht) -->
+    <!-- Mobile: Sprachumschalter NEBEN dem Burger -->
     <div class="md:hidden flex items-center gap-2 relative">
-      <!-- Mobiler Sprach-Button (klein, ohne Flaggen) -->
-      <button id="langToggleMobile"
-              type="button"
-              class="h-8 w-8 inline-flex items-center justify-center text-gray-800 rounded hover:bg-gray-100"
-              aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" aria-label="Sprache wählen – Mobil, Deutsch">
+    <!-- Mobiler Sprach-Button -->
+    <button id="langToggleMobile"
+            type="button"
+            class="h-8 w-8 inline-flex items-center justify-center text-gray-800 rounded hover:bg-gray-100"
+            aria-haspopup="true" aria-expanded="false" aria-controls="langMenuMobile" aria-label="Sprache wählen – Mobil, Deutsch">
         DE
-      </button>
-      <!-- Dropdown für mobil -->
-      <ul id="langMenuMobile"
-          class="hidden absolute right-14 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
-          role="menu" aria-label="Sprache wählen (mobil)">
+    </button>
+    <!-- Dropdown mobil -->
+    <ul id="langMenuMobile"
+        class="hidden absolute right-14 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50"
+        role="menu" aria-label="Sprache wählen (mobil)">
         <li role="none">
-          <button type="button" data-lang="de" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button>
+        <button type="button" data-lang="de" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button>
         </li>
         <li role="none">
-          <button type="button" data-lang="ru" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button>
+        <button type="button" data-lang="ru" role="menuitem" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button>
         </li>
-      </ul>
+    </ul>
 
-      <!-- Burger-Menü-Button -->
-      <button id="menuToggle"
-              type="button"
-              class="h-10 w-10 inline-flex items-center justify-center rounded-md border border-gray-400 bg-black/40 text-white"
-              aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false">
+    <!-- Burger-Menü-Button -->
+    <button id="menuToggle"
+            type="button"
+            class="h-10 w-10 inline-flex items-center justify-center rounded-md border border-gray-400 bg-black/40 text-white"
+            aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false">
         <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-      </button>
+    </button>
     </div>
-  </div>
+</div>
 
-  <!-- Mobiles Menü -->
-  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 bg-white/95 backdrop-blur-sm" role="navigation" aria-label="Mobiles Menü">
+<!-- Mobiles Menü -->
+<div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 bg-white/95 backdrop-blur-sm" role="navigation" aria-label="Mobiles Menü">
     <a href="index.html" class="block text-gray-700 hover:text-amber-700">Startseite</a>
     <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
     <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
@@ -127,133 +138,146 @@
     <a href="event.html" class="block text-gray-700 hover:text-amber-700">Event</a>
     <a href="bewertung.html" aria-current="page" class="block text-amber-700 font-semibold underline underline-offset-4">Bewertungen</a>
     <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
-  </div>
+</div>
 </header>
 
 <!-- ========== MAIN ========== -->
 <main class="max-w-3xl mx-auto px-4 py-12">
-  <!-- H1 + dezente Trennlinie -->
-  <h1 class="text-3xl sm:text-4xl font-semibold text-center mb-10">Kundenbewertungen</h1>
-  <div class="divider" aria-hidden="true"></div>
+<!-- H1 + dezente Trennlinie -->
+<h1 class="text-3xl sm:text-4xl font-semibold text-center mb-10">Kundenbewertungen</h1>
+<div class="divider" aria-hidden="true"></div>
 
-  <!-- ===== Deutsch ===== -->
-  <div class="lang lang-de" lang="de">
+<!-- ===== Deutsch ===== -->
+<div class="lang lang-de" lang="de">
     <!-- Rezension 1 -->
     <article itemscope itemtype="https://schema.org/Review"
-             class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg" itemprop="author">Kevin Siya</h2>
-      <p class="text-sm text-gray-500 mb-3">
+            class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
+    <h2 class="font-semibold text-lg" itemprop="author">Kevin Siya</h2>
+    <p class="text-sm text-gray-500 mb-3">
         <time itemprop="datePublished" datetime="2025-07">vor einem Monat</time> · 7 Rezensionen
-      </p>
-      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
+    </p>
+    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
         <meta itemprop="ratingValue" content="5" />
-        <span aria-label="Bewertung 5 von 5">★★★★★</span>
-      </div>
-      <p class="leading-relaxed" itemprop="reviewBody">
+        <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed" itemprop="reviewBody">
         Wir möchten uns von ganzem Herzen bei dem gesamten Catering-Team bedanken, das unsere Hochzeit zu einem
         unvergesslichen Fest gemacht hat. Vom ersten Kontakt bis zum Abräumen war alles absolut professionell,
         reibungslos und perfekt organisiert. Das Essen war einfach fantastisch – geschmacklich auf höchstem Niveau,
         wunderschön angerichtet und mit viel Liebe zum Detail zubereitet. Unsere Gäste schwärmen noch immer …
         Wir können euch von Herzen weiterempfehlen.
-      </p>
+    </p>
     </article>
 
     <!-- Rezension 2 -->
     <article itemscope itemtype="https://schema.org/Review"
-             class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg" itemprop="author">Arnold Tararin</h2>
-      <p class="text-sm text-gray-500 mb-3">
+            class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
+    <h2 class="font-semibold text-lg" itemprop="author">Arnold Tararin</h2>
+    <p class="text-sm text-gray-500 mb-3">
         <time itemprop="datePublished" datetime="2025-03">vor 5 Monaten</time> · Local Guide · 17 Rezensionen
-      </p>
-      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
+    </p>
+    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
         <meta itemprop="ratingValue" content="5" />
-        <span aria-label="Bewertung 5 von 5">★★★★★</span>
-      </div>
-      <p class="leading-relaxed" itemprop="reviewBody">
+        <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed" itemprop="reviewBody">
         Super netter und professioneller Service! Der Kontakt war total angenehm, und alle Antworten kamen schnell
         und freundlich. Auch wenn wir letztendlich kein Catering bestellt haben … durchweg positiver Eindruck!
-      </p>
+    </p>
     </article>
 
     <!-- Rezension 3 -->
     <article itemscope itemtype="https://schema.org/Review"
-             class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg" itemprop="author">Hilda Werens</h2>
-      <p class="text-sm text-gray-500 mb-3">
+            class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
+    <h2 class="font-semibold text-lg" itemprop="author">Hilda Werens</h2>
+    <p class="text-sm text-gray-500 mb-3">
         <time itemprop="datePublished" datetime="2025-08-18">vor 1 Tag</time> · 4 Rezensionen
-      </p>
-      <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
+    </p>
+    <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="mb-2">
         <meta itemprop="ratingValue" content="5" />
-        <span aria-label="Bewertung 5 von 5">★★★★★</span>
-      </div>
-      <p class="leading-relaxed" itemprop="reviewBody">
+        <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed" itemprop="reviewBody">
         „Das Catering war einfach großartig! Das Essen war frisch, vielfältig und geschmacklich hervorragend.
         Der Service war herzlich, aufmerksam und sehr professionell. Alles lief reibungslos …
         Unsere Gäste waren begeistert – jederzeit wieder!“
-      </p>
+    </p>
     </article>
-  </div>
+</div>
 
-  <!-- ===== Russisch ===== -->
-  <div class="lang lang-ru hidden" lang="ru">
+<!-- ===== Russisch ===== -->
+<div class="lang lang-ru hidden" lang="ru">
+    <!-- RU 1 -->
     <article class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg">Кевин Сия</h2>
-      <p class="text-sm text-gray-500 mb-3">Около месяца назад · 7 отзывов</p>
-      <p class="leading-relaxed">
+    <h2 class="font-semibold text-lg">Кевин Сия</h2>
+    <p class="text-sm text-gray-500 mb-3">Около месяца назад · 7 отзывов</p>
+    <!-- RU: те же золотые звёзды для визуальной консистентности -->
+    <div class="mb-2">
+        <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed">
         Мы хотим от всего сердца поблагодарить команду за то, что сделали нашу свадьбу незабываемым праздником…
         Всё было профессионально и организовано безупречно. Рекомендуем от всей души!
-      </p>
+    </p>
     </article>
 
+    <!-- RU 2 -->
     <article class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg">Арнольд Тарарин</h2>
-      <p class="text-sm text-gray-500 mb-3">5 месяцев назад · Local Guide · 17 отзывов</p>
-      <p class="leading-relaxed">
+    <h2 class="font-semibold text-lg">Арнольд Тарарин</h2>
+    <p class="text-sm text-gray-500 mb-3">5 месяцев назад · Local Guide · 17 отзывов</p>
+    <div class="mb-2">
+        <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed">
         Очень вежливый и профессиональный сервис! Общение приятное, ответы быстрые и дружелюбные…
         При случае обязательно обратимся снова!
-      </p>
+    </p>
     </article>
 
+    <!-- RU 3 -->
     <article class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6">
-      <h2 class="font-semibold text-lg">Хильда Веренс</h2>
-      <p class="text-sm text-gray-500 mb-3">1 день назад · 4 отзыва</p>
-      <p class="leading-relaxed">
+    <h2 class="font-semibold text-lg">Хильда Веренс</h2>
+    <p class="text-sm text-gray-500 mb-3">1 день назад · 4 отзыва</p>
+    <div class="mb-2">
+        <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
+    </div>
+    <p class="leading-relaxed">
         «Кейтеринг был просто великолепным! Еда свежая, разнообразная и очень вкусная. Сервис внимательный и профессиональный.
         Всё прошло идеально — гости в восторге. Обратимся снова!»
-      </p>
+    </p>
     </article>
-  </div>
+</div>
 </main>
 
 <!-- ========== FOOTER ========== -->
 <footer class="bg-gray-800 text-white py-10 relative" role="contentinfo">
-  <div class="container mx-auto px-4 text-center">
+<div class="container mx-auto px-4 text-center">
     <p class="mb-2">
-      <a href="impressum.html" class="hover:underline">Impressum</a> |
-      <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-      <a href="agb.html" class="hover:underline">AGB</a>
+    <a href="impressum.html" class="hover:underline">Impressum</a> |
+    <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+    <a href="agb.html" class="hover:underline">AGB</a>
     </p>
     <p>&copy; <span id="year"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
-  </div>
-  <button type="button" title="Nach oben" aria-label="Nach oben"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg">
+</div>
+<button type="button" title="Nach oben" aria-label="Nach oben"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg">
     ▲
-  </button>
+</button>
 </footer>
 
 <script>
-  /* ==========================
-     Hilfsfunktionen Sprache
+    /* ==========================
+    Hilfsfunktionen Sprache
      ========================== */
-  function getCurrentLang(){
+    function getCurrentLang(){
     try {
-      const v = localStorage.getItem('lang') || 'de';
-      return (v === 'ru' || v === 'de') ? v : 'de';
+    const v = localStorage.getItem('lang') || 'de';
+    return (v === 'ru' || v === 'de') ? v : 'de';
     } catch(e){ return 'de'; }
-  }
+    }
 
-  function setLanguage(lang){
+    function setLanguage(lang){
     const isRu = (lang === 'ru');
     // persistente Auswahl
     try { localStorage.setItem('lang', lang); } catch(e){}
@@ -271,21 +295,21 @@
     const menuM = document.getElementById('langMenuMobile');
 
     if (btnD){
-      btnD.textContent = (isRu ? 'RU ▾' : 'DE ▾');
-      btnD.setAttribute('aria-expanded','false');
+    btnD.textContent = (isRu ? 'RU ▾' : 'DE ▾');
+    btnD.setAttribute('aria-expanded','false');
     }
     if (btnM){
-      btnM.textContent = (isRu ? 'RU' : 'DE');
-      btnM.setAttribute('aria-expanded','false');
+    btnM.textContent = (isRu ? 'RU' : 'DE');
+    btnM.setAttribute('aria-expanded','false');
     }
     menuD?.classList.add('hidden');
     menuM?.classList.add('hidden');
-  }
+    }
 
-  /* ==========================
-     Header-Interaktionen
+    /* ==========================
+    Header-Interaktionen
      ========================== */
-  function initHeader(){
+    function initHeader(){
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -296,7 +320,7 @@
 
     // Burger-Menü toggeln
     if (menuToggle && mobileMenu){
-      menuToggle.addEventListener('click', (e) => {
+    menuToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         const hidden = mobileMenu.classList.toggle('hidden');
         menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
