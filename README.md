@@ -1,41 +1,90 @@
-# Vilana Event & Catering Website
+# 🌸 Vilana Event & Catering Website
 
-Dies ist die offizielle Website für **Vilana Event & Catering** – ein deutsch-russischer Catering-Service mit Fokus auf Events wie Hochzeiten, Geburtstage, Firmenfeiern und mehr.
+Offizielle Website von **Vilana Event & Catering** – einem deutsch-russischen Catering-Service aus Hameln, spezialisiert auf Hochzeiten, Firmenfeiern, Geburtstage und exklusive Events.  
+Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit Fokus auf Eleganz und Benutzerfreundlichkeit entwickelt.  
 
-## 🌐 Website-Struktur
+![Status](https://img.shields.io/badge/status-live-success) ![License](https://img.shields.io/badge/license-MIT-informational)
 
-Die Website ist in HTML, Tailwind CSS und JavaScript aufgebaut und besteht aus folgenden Seiten:
+---
 
-- `index.html` – Startseite mit Logo und Navigation
-- `about.html` – Über uns, Geschichte und Philosophie
-- `services.html` – Catering-Angebote mit Speisekategorien
-- `gallery.html` – Galerie mit Lightbox-Bildern
-- `event.html` – Informationen zu besonderen Veranstaltungen (z. B. Oktoberfest)
-- `agb.html` – Allgemeine Geschäftsbedingungen
-- `datenschutz.html` – Datenschutzerklärung
-- `impressum.html` – Impressum mit Unternehmensangaben
-- `contact.html` – Kontaktseite mit Formular (aus dieser Version entfernt)
+## 📑 Inhaltsverzeichnis
+- [🌸 Vilana Event \& Catering Website](#-vilana-event--catering-website)
+  - [📑 Inhaltsverzeichnis](#-inhaltsverzeichnis)
+  - [🌐 Überblick](#-überblick)
+  - [🗂 Website-Struktur](#-website-struktur)
+  - [⚙ Technologien](#-technologien)
+  - [🎨 Design-Merkmale](#-design-merkmale)
+  - [📁 Projektstruktur](#-projektstruktur)
 
-## 📦 Technologien
+---
 
-- **HTML5** & **Tailwind CSS** für modernes, responsives Design
-- **JavaScript** für Lightbox und Interaktionen
-- **Google Fonts**: `Cinzel Decorative` (Logo) & `Cormorant SC` (Fließtext)
-- **Zweisprachigkeit**: Deutsch 🇩🇪 und Russisch 🇷🇺
-- **Responsives Menü** für Desktop und Mobilgeräte
+## 🌐 Überblick
 
-## 🖼️ Design-Merkmale
+Die Website dient als zentrale Anlaufstelle für:
+- Präsentation von **Menüs, Buffets & Candy Bar**
+- Vorstellung von **Events** (z. B. Russian Oktoberfest)
+- Kundenbewertungen & Referenzen
+- Kontaktformular für **Anfragen & Buchungen**
+- Rechtliche Seiten (AGB, Datenschutz, Impressum)
 
-- Stil: Elegant, klar, mit einem Fokus auf „Liebe zum Detail“
-- Farbpalette: Sanfte Beigetöne, edle Typografie
-- Alle Inhalte sind gut strukturiert und benutzerfreundlich gestaltet
+---
 
-## 👤 Autor
+## 🗂 Website-Struktur
 
-**Nikolaj Malischko**
-Entwicklung, Design und Deployment der Website
-📍 Hameln, Deutschland
-🌐 [github.com/nikolajmalisch](https://github.com/nikolajmalisch)
+- **index.html** – Startseite mit Logo, Navigation & Intro  
+- **about.html** – Über uns: Geschichte & Philosophie  
+- **menu.html** – Menü: warme Speisen, kalte Platten, Salate, Desserts & Candy Bar  
+- **galerie.html** – Galerie mit Lightbox  
+- **event.html** – Besondere Events (z. B. Oktoberfest)  
+- **bewertung.html** – Kundenbewertungen (Google Reviews + eigene)  
+- **contact.html** – Kontaktformular mit E-Mail-Versand  
+- **agb.html** – Allgemeine Geschäftsbedingungen  
+- **datenschutz.html** – Datenschutzerklärung (DSGVO)  
+- **impressum.html** – Impressum  
 
-Mit Liebe zum Detail und einem klaren Blick für Ästhetik und Funktionalität.
-© 2025 – Vilana Event & Catering
+👉 [Alle HTML-Dateien im Repository durchsuchen](https://github.com/NikolajMalisch/vilana/search?q=html&type=code)
+
+---
+
+## ⚙ Technologien
+
+- **HTML5** + **Tailwind CSS** (modernes & responsives Design)
+- **JavaScript (ES6)** für Interaktionen (Sprache, Menü, Formulare)
+- **EmailJS** für Kontaktformular (mit DSGVO-Checkbox & Spam-Schutz)
+- **Google Fonts**:  
+  - `Cinzel Decorative` – Logo  
+  - `Cormorant SC` – Fließtext  
+- **Google Maps JavaScript API** (Standortkarte)  
+- **Zweisprachigkeit (DE 🇩🇪 & RU 🇷🇺)**  
+- **Responsives Menü** (Desktop & Mobil)
+
+---
+
+## 🎨 Design-Merkmale
+
+- Eleganter Stil mit **Beigetönen & klarer Typografie**  
+- Fokus auf **Benutzerfreundlichkeit**  
+- **Mobile First** entwickelt  
+- Sanfte Animationen & strukturierte Inhalte  
+- **Bilinguale UI**: Sprachumschalter Desktop & Mobile  
+
+---
+
+## 📁 Projektstruktur
+
+```text
+/
+├─ css/               # kompiliertes Tailwind CSS
+├─ js/                # JavaScript-Dateien (Menu, Formulare, Sprache)
+├─ img/               # Bilder & Assets
+├─ index.html
+├─ about.html
+├─ menu.html
+├─ galerie.html
+├─ event.html
+├─ bewertung.html
+├─ contact.html
+├─ agb.html
+├─ datenschutz.html
+├─ impressum.html
+└─ README.md
