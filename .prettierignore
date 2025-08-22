@@ -1,0 +1,42 @@
+# Verzeichnisse und Artefakte, die nicht formatiert werden sollen
+node_modules/
+.history/
+dist/
+build/
+.cache/
+coverage/
+.tmp/
+temp/
+.vite/
+.next/
+.nuxt/
+.svelte-kit/
+public/build/
+
+# Editor-/IDE-Konfigurationen
+.vscode/
+
+# Generierte/gebündelte Dateien
+**/css/output.css
+**/output.css
+**/*.min.css
+**/*.min.js
+**/*.bundle.js
+**/*.map
+
+# Protokolle
+*.log
+
+# Betriebssystem-Hilfsdateien
+.DS_Store
+Thumbs.db
+
+# (optional) Binäre Assets – Prettier ignoriert diese ohnehin
+# *.png
+# *.jpg
+# *.jpeg
+# *.webp
+# *.avif
+# *.gif
+# *.svg
+# *.ico
