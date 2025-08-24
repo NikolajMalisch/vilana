@@ -1,13 +1,14 @@
 # 🌸 Vilana Event & Catering Website
 
-Offizielle Website von **Vilana Event & Catering** – einem deutsch-russischen Catering-Service aus Hameln, spezialisiert auf Hochzeiten, Firmenfeiern, Geburtstage und exklusive Events.  
-Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit Fokus auf Eleganz und Benutzerfreundlichkeit entwickelt.  
+Offizielle Website von **Vilana Event & Catering** – einem deutsch-russischen Catering-Service aus Hameln, spezialisiert auf Hochzeiten, Firmenfeiern, Geburtstage und exklusive Events.
+Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit Fokus auf Eleganz und Benutzerfreundlichkeit entwickelt.
 
 ![Status](https://img.shields.io/badge/status-live-success) ![License](https://img.shields.io/badge/license-MIT-informational)
 
 ---
 
 ## 📑 Inhaltsverzeichnis
+
 - [🌸 Vilana Event \& Catering Website](#-vilana-event--catering-website)
   - [📑 Inhaltsverzeichnis](#-inhaltsverzeichnis)
   - [🌐 Überblick](#-überblick)
@@ -15,12 +16,14 @@ Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit F
   - [⚙ Technologien](#-technologien)
   - [🎨 Design-Merkmale](#-design-merkmale)
   - [📁 Projektstruktur](#-projektstruktur)
+  - [📜 Lizenz](#-lizenz)
 
 ---
 
 ## 🌐 Überblick
 
 Die Website dient als zentrale Anlaufstelle für:
+
 - Präsentation von **Menüs, Buffets & Candy Bar**
 - Vorstellung von **Events** (z. B. Russian Oktoberfest)
 - Kundenbewertungen & Referenzen
@@ -31,16 +34,16 @@ Die Website dient als zentrale Anlaufstelle für:
 
 ## 🗂 Website-Struktur
 
-- **index.html** – Startseite mit Logo, Navigation & Intro  
-- **about.html** – Über uns: Geschichte & Philosophie  
-- **menu.html** – Menü: warme Speisen, kalte Platten, Salate, Desserts & Candy Bar  
-- **galerie.html** – Galerie mit Lightbox  
-- **event.html** – Besondere Events (z. B. Oktoberfest)  
-- **bewertung.html** – Kundenbewertungen (Google Reviews + eigene)  
-- **contact.html** – Kontaktformular mit E-Mail-Versand  
-- **agb.html** – Allgemeine Geschäftsbedingungen  
-- **datenschutz.html** – Datenschutzerklärung (DSGVO)  
-- **impressum.html** – Impressum  
+- **index.html** – Startseite mit Logo, Navigation & Intro
+- **about.html** – Über uns: Geschichte & Philosophie
+- **menu.html** – Menü: warme Speisen, kalte Platten, Salate, Desserts & Candy Bar
+- **galerie.html** – Galerie mit Lightbox
+- **event.html** – Besondere Events (z. B. Oktoberfest)
+- **bewertung.html** – Kundenbewertungen (Google Reviews + eigene)
+- **contact.html** – Kontaktformular mit E-Mail-Versand
+- **agb.html** – Allgemeine Geschäftsbedingungen
+- **datenschutz.html** – Datenschutzerklärung (DSGVO)
+- **impressum.html** – Impressum
 
 👉 [Alle HTML-Dateien im Repository durchsuchen](https://github.com/NikolajMalisch/vilana/search?q=html&type=code)
 
@@ -51,22 +54,22 @@ Die Website dient als zentrale Anlaufstelle für:
 - **HTML5** + **Tailwind CSS** (modernes & responsives Design)
 - **JavaScript (ES6)** für Interaktionen (Sprache, Menü, Formulare)
 - **EmailJS** für Kontaktformular (mit DSGVO-Checkbox & Spam-Schutz)
-- **Google Fonts**:  
-  - `Cinzel Decorative` – Logo  
-  - `Cormorant SC` – Fließtext  
-- **Google Maps JavaScript API** (Standortkarte)  
-- **Zweisprachigkeit (DE 🇩🇪 & RU 🇷🇺)**  
+- **Google Fonts**:
+  - `Cinzel Decorative` – Logo
+  - `Cormorant SC` – Fließtext
+- **Google Maps JavaScript API** (Standortkarte)
+- **Zweisprachigkeit (DE 🇩🇪 & RU 🇷🇺)**
 - **Responsives Menü** (Desktop & Mobil)
 
 ---
 
 ## 🎨 Design-Merkmale
 
-- Eleganter Stil mit **Beigetönen & klarer Typografie**  
-- Fokus auf **Benutzerfreundlichkeit**  
-- **Mobile First** entwickelt  
-- Sanfte Animationen & strukturierte Inhalte  
-- **Bilinguale UI**: Sprachumschalter Desktop & Mobile  
+- Eleganter Stil mit **Beigetönen & klarer Typografie**
+- Fokus auf **Benutzerfreundlichkeit**
+- **Mobile First** entwickelt
+- Sanfte Animationen & strukturierte Inhalte
+- **Bilinguale UI**: Sprachumschalter Desktop & Mobile
 
 ---
 
@@ -88,3 +91,11 @@ Die Website dient als zentrale Anlaufstelle für:
 ├─ datenschutz.html
 ├─ impressum.html
 └─ README.md
+
+## 📜 Lizenz
+
+Dieses Projekt ist **urheberrechtlich geschützt**.
+Alle Inhalte (Texte, Bilder, Code) sind Eigentum von **Vilana Event & Catering**.
+Eine Vervielfältigung, Verbreitung oder Nutzung ist **ohne ausdrückliche Genehmigung** nicht gestattet.
+
+© 2025 Vilana Event & Catering. Alle Rechte vorbehalten.
