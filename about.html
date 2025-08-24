@@ -234,18 +234,36 @@ body { font-family: 'Cormorant SC', serif; background-color: #0e0e0e; }
 </div>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 text-center">
-<div class="container mx-auto px-4">
-    <p class="mb-2">
-    <a href="impressum.html" class="hover:underline">Impressum</a> |
-    <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-    <a href="agb.html" class="hover:underline">AGB</a>
-    </p>
-    <p class="lang lang-de">&copy; <span id="year-de"></span> Vilana Event &amp; Catering</p>
-    <p class="lang lang-ru hidden">&copy; <span id="year-ru"></span> Vilana Event &amp; Catering</p>
-</div>
-</footer>
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+    <div class="container mx-auto px-4 text-center">
+        <div class="mb-4">
+        <a
+            href="https://www.instagram.com/vilana_catering/"
+            class="hover:text-amber-400"
+            >Instagram</a
+        >
+        </div>
+        <p>
+        <a href="impressum.html" class="hover:underline">Impressum</a> |
+        <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+        <a href="agb.html" class="hover:underline">AGB</a>
+        </p>
+        <p class="lang lang-de" data-disp="block">
+        &copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.
+        </p>
+        <p class="lang lang-ru" data-disp="block">
+        &copy; 2025 Vilana Event &amp; Catering. Все права защищены.
+        </p>
+    </div>
+    <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+        aria-label="Nach oben"
+    >
+        ▲
+    </button>
+    </footer>
 
 <script>
 // ----- helpers
