@@ -16,9 +16,6 @@ Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit F
   - [⚙ Technologien](#-technologien)
   - [🎨 Design-Merkmale](#-design-merkmale)
   - [📁 Projektstruktur](#-projektstruktur)
-  - [📜 Lizenz](#-lizenz)
-
----
 
 ## 🌐 Überblick
 
@@ -91,8 +88,6 @@ Die Website dient als zentrale Anlaufstelle für:
 ├─ datenschutz.html
 ├─ impressum.html
 └─ README.md
-
-## 📜 Lizenz
 
 Dieses Projekt ist **urheberrechtlich geschützt**.
 Alle Inhalte (Texte, Bilder, Code) sind Eigentum von **Vilana Event & Catering**.

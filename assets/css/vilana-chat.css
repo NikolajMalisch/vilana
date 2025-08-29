@@ -1,0 +1,31 @@
+/* assets/css/vilana-chat.css */
+#vilana-ai-chat { all: initial; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+#vilana-ai-chat *, #vilana-ai-chat *::before, #vilana-ai-chat *::after { box-sizing: border-box; }
+
+#vilana-ai-chat .vaic-btn { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 999px; background:#111827; color:#fff; border:none; cursor:pointer; box-shadow:0 10px 20px rgba(0,0,0,.15); font-size:22px; line-height:56px; text-align:center; display:flex; align-items:center; justify-content:center; }
+#vilana-ai-chat .vaic-btn img { width:28px; height:28px; object-fit:contain; }
+#vilana-ai-chat .vaic-btn:active { transform: translateY(1px); }
+
+#vilana-ai-chat .vaic-win { position: fixed; right: 20px; bottom: 86px; width: 360px; max-width: calc(100vw - 24px); max-height: 70vh; background:#fff; border:1px solid #e5e7eb; border-radius: 16px; box-shadow:0 20px 40px rgba(0,0,0,.2); display:none; overflow:hidden; z-index:9999; }
+#vilana-ai-chat .vaic-win.open { display:flex; flex-direction:column; }
+
+#vilana-ai-chat .vaic-head { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; background:linear-gradient(90deg,#111827,#374151); color:#fff; }
+#vilana-ai-chat .vaic-brand { display:flex; gap:8px; align-items:center; }
+#vilana-ai-chat .vaic-brand img { width:20px; height:20px; border-radius:6px; }
+#vilana-ai-chat .vaic-brand .title { font-weight:600; font-size:14px; }
+#vilana-ai-chat .vaic-brand .subtitle { opacity:.8; font-size:12px; }
+#vilana-ai-chat select { font-size:12px; padding:4px 6px; border-radius:6px; }
+
+#vilana-ai-chat .vaic-msgs { flex:1; overflow:auto; padding:12px; background:#f9fafb; }
+#vilana-ai-chat .vaic-bubble { display:inline-block; max-width:85%; padding:8px 10px; border-radius:14px; box-shadow:0 1px 2px rgba(0,0,0,.08); margin:6px 0; white-space:pre-wrap; word-wrap:break-word; }
+#vilana-ai-chat .from-user { background:#111827; color:#fff; border-bottom-right-radius:4px; float:right; clear:both; }
+#vilana-ai-chat .from-bot { background:#fff; color:#111827; border:1px solid #e5e7eb; border-bottom-left-radius:4px; float:left; clear:both; }
+#vilana-ai-chat .vaic-typing { text-align:center; color:#6b7280; font-size:12px; margin:6px 0; }
+
+#vilana-ai-chat .vaic-form { border-top:1px solid #e5e7eb; padding:8px; display:flex; gap:6px; background:#fff; }
+#vilana-ai-chat .vaic-input { flex:1; border:1px solid #d1d5db; border-radius:12px; padding:8px 10px; font-size:14px; }
+#vilana-ai-chat .vaic-send { background:#111827; color:#fff; border:none; border-radius:12px; padding:8px 12px; font-size:14px; cursor:pointer; }
+#vilana-ai-chat .vaic-foot { padding:8px 12px; color:#6b7280; font-size:11px; border-top:1px solid #e5e7eb; }
+
+#vilana-ai-chat .vaic-quick { display:flex; gap:8px; padding:8px 12px; background:#fff; border-top:1px solid #e5e7eb; flex-wrap:wrap; }
+#vilana-ai-chat .vaic-chip { border:1px solid #d1d5db; padding:6px 10px; border-radius:999px; font-size:12px; cursor:pointer; background:#fff; }
