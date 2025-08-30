@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutz | Vilana Event & Catering</title>
     <link href="dist/output.css" rel="stylesheet">
+    <style>
+      /* Показываем RU-подсказку только на русской версии сайта */
+      html[lang="de"] .ru-only { display: none; }
+      html[lang="ru"] .ru-only { display: block; }
+    </style>
   </head>
   <body class="bg-white text-gray-800">
     <div class="container mx-auto px-4 py-12 max-w-3xl prose prose-gray">
@@ -154,10 +159,33 @@
         veröffentlichte Fassung.
       </p>
 
+      <!-- EU-Streitschlichtung – красивый блок -->
+      <section class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
+        <h2 class="text-xl font-semibold mb-3 text-gray-800">EU-Streitschlichtung</h2>
+        <p class="text-sm text-gray-700 mb-2">
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a
+            href="https://ec.europa.eu/consumers/odr/"
+            target="_blank"
+            rel="noopener"
+            class="text-indigo-700 hover:underline"
+          >https://ec.europa.eu/consumers/odr/</a>.
+        </p>
+        <p class="text-sm text-gray-700">
+          Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren
+          vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
+        </p>
+
+        <!-- RU nur bei lang="ru" -->
+        <p class="ru-only mt-3 text-xs italic text-gray-500">
+          RU: Информация об онлайн-платформе ЕС по урегулированию споров указана выше.
+          Юридически обязательной считается только немецкая версия.
+        </p>
+      </section>
+
       <footer class="mt-12 text-center text-sm text-gray-500">
         © 2025 Vilana Event &amp; Catering – Alle Rechte vorbehalten.
       </footer>
     </div>
   </body>
 </html>
-
