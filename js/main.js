@@ -1,64 +1,67 @@
-// js/main.js
-document.addEventListener('DOMContentLoaded', () => {
+// js/main.js (версия без optional chaining + авто-закрытие по клику на ссылку)
+document.addEventListener('DOMContentLoaded', function () {
   // ===== БУРГЕР-МЕНЮ =====
-  const menuBtn    = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  var menuBtn    = document.getElementById('menuToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
 
   function closeMobileMenu() {
-    mobileMenu?.classList.add('hidden');
-    menuBtn?.setAttribute('aria-expanded', 'false');
+    if (mobileMenu) mobileMenu.classList.add('hidden');
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
   }
 
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', (e) => {
+    menuBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       mobileMenu.classList.toggle('hidden');
       menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
     });
 
-    // Закрытие по клику вне
-    document.addEventListener('click', (e) => {
+    // Клик вне меню — закрыть
+    document.addEventListener('click', function (e) {
       if (!mobileMenu.classList.contains('hidden')) {
-        const inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
+        var inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
         if (!inside) closeMobileMenu();
       }
     });
 
-    // Закрытие по Esc
-    document.addEventListener('keydown', (e) => {
+    // Esc — закрыть
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMobileMenu();
     });
 
-    // Закрытие при переходе на desktop
-    window.addEventListener('resize', () => {
+    // При ресайзе на desktop — закрыть
+    window.addEventListener('resize', function () {
       if (window.innerWidth >= 768) closeMobileMenu();
+    });
+
+    // Закрывать при клике на любую ссылку внутри мобильного меню
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileMenu);
     });
   }
 
   // ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА =====
-  const btnDesk  = document.getElementById('langToggle');
-  const menuDesk = document.getElementById('langMenu');
+  var btnDesk  = document.getElementById('langToggle');
+  var menuDesk = document.getElementById('langMenu');
+  var btnMob   = document.getElementById('langToggleMobile');
+  var menuMob  = document.getElementById('langMenuMobile');
 
-  const btnMob   = document.getElementById('langToggleMobile');
-  const menuMob  = document.getElementById('langMenuMobile');
-
-  // ===== EVENT LINKS =====
-  const EVENT_ID = 'russian-oktoberfest-2025';
+  var EVENT_ID = 'russian-oktoberfest-2025';
 
   function copyTrackingParams(fromURL, toURL) {
-    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(k => {
-      const v = fromURL.searchParams.get(k);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'].forEach(function(k){
+      var v = fromURL.searchParams.get(k);
       if (v) toURL.searchParams.set(k, v);
     });
   }
 
   function buildEventURL() {
-    const url  = new URL(location.href);
-    let savedLang = 'de';
+    var url  = new URL(location.href);
+    var savedLang = 'de';
     try { savedLang = localStorage.getItem('siteLang') || 'de'; } catch(e) {}
-    const lang = (url.searchParams.get('lang') || savedLang || 'de').toLowerCase();
+    var lang = (url.searchParams.get('lang') || savedLang || 'de').toLowerCase();
 
-    const ev   = new URL('event.html', url);
+    var ev   = new URL('event.html', url);
     ev.searchParams.set('id', EVENT_ID);
     ev.searchParams.set('lang', lang);
     copyTrackingParams(url, ev);
@@ -66,92 +69,86 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setEventLinks() {
-    const href = buildEventURL();
-    document
-      .querySelectorAll('#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]')
-      .forEach(a => { if (a instanceof HTMLAnchorElement) a.href = href; });
+    var href = buildEventURL();
+    document.querySelectorAll('#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]')
+      .forEach(function(a){
+        if (a instanceof HTMLAnchorElement) a.href = href;
+      });
   }
 
-  // ===== ЯЗЫК =====
   function setLanguage(lang) {
-    // Сохраняем выбор (безопасно)
     try { localStorage.setItem('siteLang', lang); } catch (e) {}
 
-    // Атрибут <html lang>
     document.documentElement.lang = (lang === 'ru') ? 'ru' : 'de';
 
-    // Переключение блоков
-    document.querySelectorAll('.lang').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll(`.lang-${lang}`).forEach(el => el.classList.remove('hidden'));
+    document.querySelectorAll('.lang').forEach(function(el){ el.classList.add('hidden'); });
+    document.querySelectorAll('.lang-' + lang).forEach(function(el){ el.classList.remove('hidden'); });
 
-    // Лейблы на кнопках
     if (btnDesk) {
       btnDesk.textContent = (lang === 'ru') ? 'RU ▾' : 'DE ▾';
-      btnDesk.setAttribute('aria-label', `Sprache wählen – ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
+      btnDesk.setAttribute('aria-label', 'Sprache wählen – ' + (lang === 'ru' ? 'Russisch' : 'Deutsch'));
     }
     if (btnMob) {
-      const span = btnMob.querySelector('span');
+      var span = btnMob.querySelector('span');
       if (span) span.textContent = (lang === 'ru') ? 'RU' : 'DE';
       else btnMob.textContent = (lang === 'ru') ? 'RU ▾' : 'DE ▾';
-      btnMob.setAttribute('aria-label', `Sprache wählen – Mobil, ${lang === 'ru' ? 'Russisch' : 'Deutsch'}`);
+      btnMob.setAttribute('aria-label', 'Sprache wählen – Mobil, ' + (lang === 'ru' ? 'Russisch' : 'Deutsch'));
     }
 
-    // Закрыть выпадающие меню языков
-    menuDesk?.classList.add('hidden'); btnDesk?.setAttribute('aria-expanded','false');
-    menuMob?.classList.add('hidden');  btnMob?.setAttribute('aria-expanded','false');
+    if (menuDesk) menuDesk.classList.add('hidden');
+    if (btnDesk)  btnDesk.setAttribute('aria-expanded','false');
+    if (menuMob)  menuMob.classList.add('hidden');
+    if (btnMob)   btnMob.setAttribute('aria-expanded','false');
   }
 
-  // Desktop dropdown
   if (btnDesk && menuDesk) {
-    btnDesk.addEventListener('click', (e) => {
+    btnDesk.addEventListener('click', function (e) {
       e.stopPropagation();
       menuDesk.classList.toggle('hidden');
       btnDesk.setAttribute('aria-expanded', String(!menuDesk.classList.contains('hidden')));
     });
-    menuDesk.querySelectorAll('[data-lang]').forEach(el => {
-      el.addEventListener('click', () => {
+    menuDesk.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.addEventListener('click', function () {
         setLanguage(el.dataset.lang || 'de');
-        setEventLinks(); // обновляем ссылки под выбранный язык
+        setEventLinks();
       });
     });
   }
 
-  // Mobile dropdown
   if (btnMob && menuMob) {
-    btnMob.addEventListener('click', (e) => {
+    btnMob.addEventListener('click', function (e) {
       e.stopPropagation();
       menuMob.classList.toggle('hidden');
       btnMob.setAttribute('aria-expanded', String(!menuMob.classList.contains('hidden')));
     });
-    menuMob.querySelectorAll('[data-lang]').forEach(el => {
-      el.addEventListener('click', () => {
+    menuMob.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.addEventListener('click', function () {
         setLanguage(el.dataset.lang || 'de');
-        setEventLinks(); // обновляем ссылки под выбранный язык
+        setEventLinks();
       });
     });
   }
 
-  // Закрытие языковых меню при клике вне
-  document.addEventListener('click', (e) => {
-    if (menuDesk && !menuDesk.contains(e.target) && !btnDesk?.contains(e.target)) {
+  document.addEventListener('click', function (e) {
+    if (menuDesk && !menuDesk.contains(e.target) && !(btnDesk && btnDesk.contains(e.target))) {
       menuDesk.classList.add('hidden');
-      btnDesk?.setAttribute('aria-expanded', 'false');
+      if (btnDesk) btnDesk.setAttribute('aria-expanded', 'false');
     }
-    if (menuMob && !menuMob.contains(e.target) && !btnMob?.contains(e.target)) {
+    if (menuMob && !menuMob.contains(e.target) && !(btnMob && btnMob.contains(e.target))) {
       menuMob.classList.add('hidden');
-      btnMob?.setAttribute('aria-expanded', 'false');
+      if (btnMob) btnMob.setAttribute('aria-expanded', 'false');
     }
   });
 
-  // ===== ГОД В ФУТЕРЕ (универсально) =====
-  (function setFooterYear() {
-    const year = new Date().getFullYear();
+  // Год в футере
+  (function () {
+    var year = new Date().getFullYear();
     document.querySelectorAll('.year, #year-de, #year-ru')
-      .forEach(el => { el.textContent = String(year); });
+      .forEach(function (el) { el.textContent = String(year); });
   })();
 
-  // ===== INIT =====
-  let initial = 'de';
+  // INIT
+  var initial = 'de';
   try { initial = localStorage.getItem('siteLang') || 'de'; } catch(e) {}
   setLanguage(initial);
   setEventLinks();
