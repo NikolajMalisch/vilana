@@ -1,11 +1,14 @@
 // tailwind.config.js
 module.exports = {
 content: [
-    "./*.html",
-    "./**/*.html",
-    "./js/**/*.js",        // важное: чтобы Tailwind сканировал твой consent-скрипт
+    "./*.html",                     // корневые HTML
+    "./**/*.{html,js,vue}",         // все подпапки с html/js/vue
+    "!./node_modules/**",           // исключить node_modules
+    "!./dist/**",                   // исключить финальный билд
+    "!./build/**",                  // исключить сборки
+    "!./.history/**",               // исключить историю редактора
 ],
-  darkMode: 'class',       // опционально: если используешь тёмную тему через класс
+  darkMode: "class",                // если хочешь поддержку тёмной темы
 theme: {
     extend: {
     fontFamily: {
@@ -16,7 +19,7 @@ theme: {
 },
 plugins: [],
 safelist: [
-    // ===== Consent-Wall UI (кнопки/контейнер) =====
+    // ===== Consent-Wall UI =====
     // контейнер/оверлей/карточка
     'fixed','inset-0','z-[100]','z-[9999]','absolute','bg-black/50','relative',
     'min-h-full','items-center','justify-center','p-4','w-full','max-w-2xl',
@@ -27,13 +30,14 @@ safelist: [
     'flex','flex-col-reverse','gap-2','sm:flex-row','sm:justify-end',
     'text-xs','text-gray-500','underline','mt-6','text-center',
 
-    // кнопки (outline + primary)
-    'px-4','py-2','font-medium','font-semibold','text-white',
-    'ring-gray-300','hover:bg-gray-50',
-    'bg-indigo-600','hover:bg-indigo-700',   // если хочешь чёрную кнопку — см. ниже
-    'bg-black','hover:bg-neutral-800',       // альтернативные классы под чёрный стиль
+    // ===== Кнопки =====
+    // outline
+    'px-4','py-2','font-medium','ring-1','ring-gray-300','hover:bg-gray-50',
+    // primary (чёрная кнопка)
+    'bg-black','hover:bg-neutral-800','text-white','font-semibold',
 
-    // текстовые цвета, которые часто выпиливаются
-    'text-gray-600','text-gray-700','text-gray-900','text-gray-500',
+    // ===== Дополнительно =====
+    'hidden','backdrop-blur-md','bg-white/90','border-t','border-gray-200',
+    'text-gray-600','text-gray-700','text-gray-900',
 ],
-}
+};
