@@ -237,10 +237,12 @@
 
       <!-- Mobile Menü -->
       <div
-        id="mobileMenu"
-        class="md:hidden hidden px-4 pb-4 space-y-2"
-        role="menu"
-        aria-label="Mobiles Menü"
+  id="mobileMenu"
+  class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+  role="menu"
+  aria-label="Mobiles Menü"
+>
+
       >
         <a
           href="index.html#home"
@@ -390,296 +392,96 @@
 
     <!-- ===== Seitenskripte (Sprache, Menü, Galerie, Lightbox) ===== -->
     <script>
-      // ===== Jahr im Footer
-      (function () {
-        const y = new Date().getFullYear();
-        const d = document.getElementById("year-de");
-        const r = document.getElementById("year-ru");
-        if (d) d.textContent = y;
-        if (r) r.textContent = y;
-      })();
+// ===== Jahr im Footer
+(function () {
+  const y = new Date().getFullYear();
+  const d = document.getElementById("year-de");
+  const r = document.getElementById("year-ru");
+  if (d) d.textContent = y;
+  if (r) r.textContent = y;
+})();
 
-      // ===== Hilfsfunktionen
-      const $ = (id) => document.getElementById(id);
-      const el = {
-        html: document.documentElement,
-        langToggle: $("langToggle"),
-        langMenu: $("langMenu"),
-        langToggleMobile: $("langToggleMobile"),
-        langMenuMobile: $("langMenuMobile"),
-        menuToggle: $("menuToggle"),
-        mobileMenu: $("mobileMenu"),
-        eventLink: $("eventLink"),
-        eventLinkMobile: $("eventLinkMobile"),
-        gallery: $("gallery"),
-        lb: $("lightbox"),
-        lbImg: $("lightbox-image"),
-        lbClose: $("lightbox-close"),
-        lbPrev: $("lightbox-prev"),
-        lbNext: $("lightbox-next"),
-      };
+// ===== Galerie + Lightbox (без языка/бургера — этим занимается main.js)
+(function () {
+  const gallery = document.getElementById("gallery");
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightbox-image");
+  const lbClose = document.getElementById("lightbox-close");
+  const lbPrev = document.getElementById("lightbox-prev");
+  const lbNext = document.getElementById("lightbox-next");
 
-      // ===== Sprache
-      function setLanguage(lang) {
-        lang = lang === "ru" ? "ru" : "de";
-        try {
-          localStorage.setItem("vilana_lang", lang);
-        } catch (e) {}
-        el.html.lang = lang;
+  const CARD_RATIO = "3 / 2";
+  const IMAGE_FIT = "cover";
+  const DEF_W = 1200, DEF_H = 800;
 
-        document
-          .querySelectorAll(".lang")
-          .forEach((n) => n.classList.add("hidden"));
-        document
-          .querySelectorAll(".lang-" + lang)
-          .forEach((n) => n.classList.remove("hidden"));
+  const imagePaths = [
+    "images/event/event-1.webp","images/event/event-2.webp","images/event/event-3.webp",
+    "images/event/event-4.webp","images/event/event-5.webp","images/event/event-6-1.webp",
+    "images/event/event-7.webp","images/event/event-8.webp","images/event/event-9.webp",
+    "images/event/event-10.webp","images/event/event-11.webp","images/event/event-12.webp",
+    "images/event/event-13.webp","images/event/event-14.webp","images/event/event-15.webp",
+    "images/event/event-16.webp","images/event/event-17.webp","images/event/event-18.webp",
+    "images/event/event-19.webp","images/event/event-20.webp","images/event/event-21.webp",
+  ];
 
-        if (el.langToggle)
-          el.langToggle.textContent = lang === "de" ? "DE ▾" : "RU ▾";
-        if (el.langToggleMobile) {
-          const s = el.langToggleMobile.querySelector("span");
-          if (s) s.textContent = lang === "de" ? "DE" : "RU";
-        }
+  const altTemplates = [
+    "Hochzeit Catering Hameln","Eventservice Niedersachsen","Catering Buffet Hameln",
+    "Hochzeitstorte Niedersachsen","Party Catering Hannover","Catering mit Servicepersonal",
+    "Buffet Hochzeit Niedersachsen","Event Buffet Hameln","Hochzeit in Bad Pyrmont",
+    "Catering für Firmenfeier","Russischer Abend Niedersachsen","Fingerfood Catering Hameln",
+    "Hochzeitstafel Niedersachsen","Eventdekoration Hameln","Candy Bar Hochzeit",
+    "Menü für Firmenfeier","Hochzeit Empfang","Eventservice NRW",
+    "Hochzeit Catering Buffet","Abendveranstaltung Niedersachsen","Hochzeit Catering in Hannover",
+  ];
 
-        hide(el.langMenu);
-        hide(el.langMenuMobile);
-        wireEventLinks(lang);
-      }
+  let currentIndex = 0;
 
-      (function initLang() {
-        const u = new URL(location.href);
-        const q = (u.searchParams.get("lang") || "").toLowerCase();
-        const saved = (function () {
-          try {
-            return localStorage.getItem("vilana_lang");
-          } catch (e) {
-            return null;
-          }
-        })();
-        setLanguage(q || saved || "de");
-      })();
+  imagePaths.forEach((src, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
+    fig.style.aspectRatio = CARD_RATIO;
 
-      function toggle(x) {
-        if (x) x.classList.toggle("hidden");
-      }
-      function hide(x) {
-        if (x) x.classList.add("hidden");
-      }
-      function isHidden(x) {
-        return !x || x.classList.contains("hidden");
-      }
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Vilana Event & Catering – ${altTemplates[i] || "Event Catering Niedersachsen"}`;
+    img.width = DEF_W; img.height = DEF_H;
+    img.decoding = "async";
+    img.loading = i === 0 ? "eager" : "lazy";
+    if (i === 0) img.fetchPriority = "high";
+    img.className = "w-full h-full object-" + IMAGE_FIT + " bg-gray-100 transition-transform duration-300 group-hover:scale-105";
+    img.addEventListener("click", () => openLightbox(i));
 
-      el.langToggle?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        toggle(el.langMenu);
-        el.langToggle.setAttribute(
-          "aria-expanded",
-          String(!isHidden(el.langMenu)),
-        );
-      });
-      el.langMenu
-        ?.querySelectorAll("[data-lang]")
-        .forEach((b) =>
-          b.addEventListener("click", () => setLanguage(b.dataset.lang)),
-        );
+    fig.appendChild(img);
+    gallery.appendChild(fig);
+  });
 
-      el.langToggleMobile?.addEventListener("click", (e) => {
-        e.stopPropagation();
-        toggle(el.langMenuMobile);
-        el.langToggleMobile.setAttribute(
-          "aria-expanded",
-          String(!isHidden(el.langMenuMobile)),
-        );
-      });
-      el.langMenuMobile
-        ?.querySelectorAll("[data-lang]")
-        .forEach((b) =>
-          b.addEventListener("click", () => setLanguage(b.dataset.lang)),
-        );
+  document.addEventListener("error", (e) => {
+    const t = e.target;
+    if (t.tagName === "IMG") console.error("Bild nicht gefunden:", t.src);
+  }, true);
 
-      document.addEventListener("click", (e) => {
-        if (
-          el.langMenu &&
-          !el.langMenu.contains(e.target) &&
-          !el.langToggle?.contains(e.target)
-        )
-          hide(el.langMenu);
-        if (
-          el.langMenuMobile &&
-          !el.langMenuMobile.contains(e.target) &&
-          !el.langToggleMobile?.contains(e.target)
-        )
-          hide(el.langMenuMobile);
-      });
+  function openLightbox(i) { currentIndex = i; update(); lb.classList.remove("hidden"); lbImg.classList.remove("zoomed"); }
+  function closeLightbox() { lb.classList.add("hidden"); lbImg.src = ""; lbImg.classList.remove("zoomed"); }
+  function prevImage() { currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length; update(); }
+  function nextImage() { currentIndex = (currentIndex + 1) % imagePaths.length; update(); }
+  function update() { lbImg.src = imagePaths[currentIndex]; }
+  function toggleZoom(e) { e.target.classList.toggle("zoomed"); }
 
-      // Burger
-      el.menuToggle?.addEventListener("click", () => toggle(el.mobileMenu));
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) hide(el.mobileMenu);
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") hide(el.mobileMenu);
-      });
+  lbClose?.addEventListener("click", closeLightbox);
+  lbPrev?.addEventListener("click", prevImage);
+  lbNext?.addEventListener("click", nextImage);
+  lbImg?.addEventListener("click", toggleZoom);
 
-      // ===== Event-Links (lang + UTM)
-      function wireEventLinks(lang) {
-        try {
-          const cur = new URL(location.href);
-          const target = new URL("event.html", cur);
-          target.searchParams.set("id", "russian-oktoberfest-2025");
-          target.searchParams.set("lang", lang);
-          [
-            "utm_source",
-            "utm_medium",
-            "utm_campaign",
-            "utm_term",
-            "utm_content",
-            "gclid",
-            "fbclid",
-          ].forEach((k) => {
-            const v = cur.searchParams.get(k);
-            if (v) target.searchParams.set(k, v);
-          });
-          if (el.eventLink) el.eventLink.href = target.href;
-          if (el.eventLinkMobile) el.eventLinkMobile.href = target.href;
-        } catch (e) {}
-      }
-      wireEventLinks(localStorage.getItem("vilana_lang") || "de");
-
-      // ===== Galerie (dynamisch)
-      const CARD_RATIO = "3 / 2";
-      const IMAGE_FIT = "cover"; // 'contain' oder 'cover'
-      const DEF_W = 1200,
-        DEF_H = 800;
-
-      const imagePaths = [
-        "images/event/event-1.webp",
-        "images/event/event-2.webp",
-        "images/event/event-3.webp",
-        "images/event/event-4.webp",
-        "images/event/event-5.webp",
-        "images/event/event-6-1.webp",
-        "images/event/event-7.webp",
-        "images/event/event-8.webp",
-        "images/event/event-9.webp",
-        "images/event/event-10.webp",
-        "images/event/event-11.webp",
-        "images/event/event-12.webp",
-        "images/event/event-13.webp",
-        "images/event/event-14.webp",
-        "images/event/event-15.webp",
-        "images/event/event-16.webp",
-        "images/event/event-17.webp",
-        "images/event/event-18.webp",
-        "images/event/event-19.webp",
-        "images/event/event-20.webp",
-        "images/event/event-21.webp",
-      ];
-
-      const altTemplates = [
-        "Hochzeit Catering Hameln",
-        "Eventservice Niedersachsen",
-        "Catering Buffet Hameln",
-        "Hochzeitstorte Niedersachsen",
-        "Party Catering Hannover",
-        "Catering mit Servicepersonal",
-        "Buffet Hochzeit Niedersachsen",
-        "Event Buffet Hameln",
-        "Hochzeit in Bad Pyrmont",
-        "Catering für Firmenfeier",
-        "Russischer Abend Niedersachsen",
-        "Fingerfood Catering Hameln",
-        "Hochzeitstafel Niedersachsen",
-        "Eventdekoration Hameln",
-        "Candy Bar Hochzeit",
-        "Menü für Firmenfeier",
-        "Hochzeit Empfang",
-        "Eventservice NRW",
-        "Hochzeit Catering Buffet",
-        "Abendveranstaltung Niedersachsen",
-        "Hochzeit Catering in Hannover",
-      ];
-
-      let currentIndex = 0;
-
-      imagePaths.forEach((src, i) => {
-        const fig = document.createElement("figure");
-        fig.className =
-          "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
-        fig.style.aspectRatio = CARD_RATIO;
-
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = `Vilana Event & Catering – ${altTemplates[i] || "Event Catering Niedersachsen"}`;
-        img.width = DEF_W;
-        img.height = DEF_H;
-        img.decoding = "async";
-        img.loading = i === 0 ? "eager" : "lazy";
-        if (i === 0) img.fetchPriority = "high";
-        img.className = `w-full h-full object-${IMAGE_FIT} bg-gray-100 transition-transform duration-300 group-hover:scale-105`;
-
-        img.addEventListener("click", () => openLightbox(i));
-
-        fig.appendChild(img);
-        el.gallery.appendChild(fig);
-      });
-
-      document.addEventListener(
-        "error",
-        (e) => {
-          const t = e.target;
-          if (t.tagName === "IMG") console.error("Bild nicht gefunden:", t.src);
-        },
-        true,
-      );
-
-      // ===== Lightbox
-      function openLightbox(i) {
-        currentIndex = i;
-        updateLightbox();
-        el.lb.classList.remove("hidden");
-        el.lbImg.classList.remove("zoomed");
-      }
-      function closeLightbox() {
-        el.lb.classList.add("hidden");
-        el.lbImg.src = "";
-        el.lbImg.classList.remove("zoomed");
-      }
-      function prevImage() {
-        currentIndex =
-          (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-        updateLightbox();
-      }
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % imagePaths.length;
-        updateLightbox();
-      }
-      function updateLightbox() {
-        el.lbImg.src = imagePaths[currentIndex];
-      }
-      function toggleZoom(e) {
-        e.target.classList.toggle("zoomed");
-      }
-
-      el.lbClose?.addEventListener("click", closeLightbox);
-      el.lbPrev?.addEventListener("click", prevImage);
-      el.lbNext?.addEventListener("click", nextImage);
-      el.lbImg?.addEventListener("click", toggleZoom);
-
-      document.addEventListener("keydown", (e) => {
-        if (el.lb.classList.contains("hidden")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") prevImage();
-        if (e.key === "ArrowRight") nextImage();
-        if (e.key === " " || e.key === "Enter") {
-          e.preventDefault();
-          toggleZoom({ target: el.lbImg });
-        }
-      });
-    </script>
-
-    <!-- (optional) dein gemeinsamer JS -->
-    <script src="js/main.js" defer></script>
+  document.addEventListener("keydown", (e) => {
+    if (lb.classList.contains("hidden")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") prevImage();
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggleZoom({ target: lbImg }); }
+  });
+})();
+</script>
+<script src="js/main.js" defer></script>
   </body>
 </html>
 
