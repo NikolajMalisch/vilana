@@ -1,30 +1,31 @@
-/*! Vilana Consent Wall v1.0 — DE/RU, Tailwind-Klassen
- *  Fügt automatisch einen Consent-Wall-Banner + Footer-Link ein,
- *  speichert Einwilligungen in localStorage und lädt optionale Skripte
- *  erst nach Zustimmung (type="text/plain" + data-cookie-category).
- *
+/*! Vilana Consent Wall v1.0 — DE/RU, Tailwind
+ *  - Fügt automatisch einen Consent-Wall-Banner + Footer-Link ein
+ *  - Speichert Einwilligungen (localStorage)
+ *  - Aktiviert optionale Skripte NUR nach Zustimmung:
+ *      <script type="text/plain" data-cookie-category="analytics|marketing|functional">…</script>
  *  Kategorien: necessary (immer true), functional, analytics, marketing
  *  Autor: Vilana Event & Catering
  */
 (function () {
 'use strict';
 
-  // ==== Einstellungen ========================================================
+  // ===================== Einstellungen =====================
 var LS_KEY = 'vilana_cookie_consent';
 var HTML_LANG = (document.documentElement.getAttribute('lang') || 'de').toLowerCase();
 
-  // I18N Texte (DE/RU)
+  // ===================== I18N ==============================
 var I18N = {
     de: {
     title: 'Cookies & Dienste',
-    text: 'Wir verwenden notwendige Cookies für den Betrieb dieser Seite. Optionale Dienste (z.\u00A0B. Analytics, externe Medien) werden nur mit Ihrer Zustimmung geladen.',
+    text: 'Wir verwenden notwendige Cookies für den Betrieb dieser Seite. Optionale Dienste (z. B. Analytics, externe Medien) werden nur mit Ihrer Zustimmung geladen.',
     summary: 'Einstellungen',
     nec: 'Notwendig', necDesc: 'Erforderlich für Grundfunktionen (immer aktiv).',
-    func: 'Funktional', funcDesc: 'Externe Schriften, Karten u.\u00E4.',
+    func: 'Funktional', funcDesc: 'Externe Schriften, Karten u. ä.',
     ana: 'Analytics', anaDesc: 'Anonyme Reichweitenmessung.',
     mkt: 'Marketing', mktDesc: 'Instagram/YouTube-Einbindungen, Pixel.',
     btnEssential: 'Nur notwendige',
     btnSettings: 'Einstellungen',
+    btnSave: 'Auswahl speichern',
     btnAll: 'Alle akzeptieren',
     changeLater: 'Sie können Ihre Auswahl später im Footer unter „Cookie-Einstellungen“ ändern.',
     footerOpen: 'Cookie-Einstellungen'
@@ -39,66 +40,65 @@ var I18N = {
     mkt: 'Маркетинг', mktDesc: 'Встраивания Instagram/YouTube, пиксели.',
     btnEssential: 'Только необходимые',
     btnSettings: 'Настройки',
+    btnSave: 'Сохранить выбор',
     btnAll: 'Принять все',
     changeLater: 'Выбор можно изменить в футере по ссылке «Настройки cookies».',
     footerOpen: 'Настройки cookies'
     }
-}[HTML_LANG] || I18N_deFallback();
-
-function I18N_deFallback() {
+}[HTML_LANG] || (function () {
+    // Fallback DE
     return {
     title: 'Cookies & Dienste',
-    text: 'Wir verwenden notwendige Cookies für den Betrieb dieser Seite. Optionale Dienste (z.\u00A0B. Analytics, externe Medien) werden nur mit Ihrer Zustimmung geladen.',
+    text: 'Wir verwenden notwendige Cookies für den Betrieb dieser Seite. Optionale Dienste (z. B. Analytics, externe Medien) werden nur mit Ihrer Zustimmung geladen.',
     summary: 'Einstellungen',
     nec: 'Notwendig', necDesc: 'Erforderlich für Grundfunktionen (immer aktiv).',
-    func: 'Funktional', funcDesc: 'Externe Schriften, Karten u.\u00E4.',
+    func: 'Funktional', funcDesc: 'Externe Schriften, Karten u. ä.',
     ana: 'Analytics', anaDesc: 'Anonyme Reichweitenmessung.',
     mkt: 'Marketing', mktDesc: 'Instagram/YouTube-Einbindungen, Pixel.',
     btnEssential: 'Nur notwendige',
     btnSettings: 'Einstellungen',
+    btnSave: 'Auswahl speichern',
     btnAll: 'Alle akzeptieren',
     changeLater: 'Sie können Ihre Auswahl später im Footer unter „Cookie-Einstellungen“ ändern.',
     footerOpen: 'Cookie-Einstellungen'
     };
-}
+})();
 
-  // ==== Hilfsfunktionen ======================================================
-
-  /** Scroll sperren/freigeben (für Consent-Wall) */
+  // ===================== Helpers ===========================
 function lockScroll(lock) {
     document.documentElement.classList.toggle('overflow-hidden', lock);
     document.body.classList.toggle('overflow-hidden', lock);
 }
 
-  /** Konsens speichern + anwenden */
+function loadConsent() {
+    try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch (e) { return null; }
+}
+
 function saveConsent(consent) {
     localStorage.setItem(LS_KEY, JSON.stringify(consent));
     applyConsent(consent);
 }
 
-  /** Konsens laden */
-function loadConsent() {
-    try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch (e) { return null; }
-    }
-
-  /** Nach Konsens: alle „wartenden“ Skripte aktivieren */
-    function applyConsent(consent) {
+  // Aktiviert alle wartenden Skripte nach Zustimmung
+function applyConsent(consent) {
     var pending = document.querySelectorAll('script[type="text/plain"][data-cookie-category]');
     pending.forEach(function (node) {
     var cat = node.getAttribute('data-cookie-category');
     if (cat && consent[cat] === true) {
         var s = document.createElement('script');
-        Array.from(node.attributes).forEach(function (attr) {
+        // Attribute übernehmen (außer type)
+        for (var i = 0; i < node.attributes.length; i++) {
+        var attr = node.attributes[i];
         if (attr.name !== 'type') s.setAttribute(attr.name, attr.value);
-        });
+        }
         s.text = node.text || node.textContent || '';
         node.parentNode.replaceChild(s, node);
     }
     });
-    }
+}
 
-  /** HTML-Snippet des Consent-Walls erzeugen (Tailwind-Klassen) */
-    function buildWallHTML() {
+  // ===================== UI (Tailwind) =====================
+function buildWallHTML() {
     return '' +
     '<div id="cookie-wall" class="fixed inset-0 z-[100] hidden">' +
     '  <div class="absolute inset-0 bg-black/50"></div>' +
@@ -131,6 +131,7 @@ function loadConsent() {
     '        <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">' +
     '          <button id="cw-essential" class="rounded-xl px-4 py-2 text-sm font-medium ring-1 ring-gray-300 hover:bg-gray-50"></button>' +
     '          <button id="cw-settings" class="rounded-xl px-4 py-2 text-sm font-medium ring-1 ring-gray-300 hover:bg-gray-50"></button>' +
+    '          <button id="cw-save" class="rounded-xl px-4 py-2 text-sm font-medium ring-1 ring-gray-300 hover:bg-gray-50"></button>' +
     '          <button id="cw-accept" class="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"></button>' +
     '        </div>' +
     '        <p id="cw-change-later" class="text-xs text-gray-500"></p>' +
@@ -138,14 +139,11 @@ function loadConsent() {
     '    </div>' +
     '  </div>' +
     '</div>';
-    }
+}
 
-  /** Footer-Link („Cookie-Einstellungen“) anhängen, wenn fehlt */
-    function ensureFooterLink() {
+function ensureFooterLink() {
     var existing = document.getElementById('cookie-reopen');
     if (existing) return existing;
-
-    // Suche Footer, sonst Body-Ende
     var footer = document.querySelector('footer') || document.body;
     var wrapper = document.createElement('div');
     wrapper.innerHTML =
@@ -154,10 +152,9 @@ function loadConsent() {
     '</div>';
     footer.appendChild(wrapper.firstChild);
     return document.getElementById('cookie-reopen');
-    }
+}
 
-  /** Texte einsetzen */
-    function fillTexts() {
+function fillTexts() {
     document.getElementById('cw-title').textContent = I18N.title;
     document.getElementById('cw-text').textContent = I18N.text;
     document.getElementById('cw-summary').textContent = I18N.summary;
@@ -171,56 +168,86 @@ function loadConsent() {
     document.getElementById('cw-cat-mkt-desc').textContent = I18N.mktDesc;
     document.getElementById('cw-essential').textContent = I18N.btnEssential;
     document.getElementById('cw-settings').textContent = I18N.btnSettings;
+    document.getElementById('cw-save').textContent = I18N.btnSave;
     document.getElementById('cw-accept').textContent = I18N.btnAll;
     document.getElementById('cw-change-later').textContent = I18N.changeLater;
-    }
+}
 
-  // ==== Init =================================================================
-    document.addEventListener('DOMContentLoaded', function () {
-    // Banner einfügen
+  // ===================== Init ==============================
+document.addEventListener('DOMContentLoaded', function () {
+    // UI einfügen
     var container = document.createElement('div');
     container.innerHTML = buildWallHTML();
     document.body.appendChild(container.firstChild);
 
-    // Footer-Link sicherstellen
+    // Footer-Link
     var reopenLink = ensureFooterLink();
 
-    // Texte füllen
+    // Texte
     fillTexts();
 
+    // Refs
     var wall = document.getElementById('cookie-wall');
     var details = document.getElementById('cw-details');
     var btnEssential = document.getElementById('cw-essential');
     var btnSettings = document.getElementById('cw-settings');
+    var btnSave = document.getElementById('cw-save');
     var btnAccept = document.getElementById('cw-accept');
+    var cbFunctional = document.getElementById('cw-functional');
+    var cbAnalytics = document.getElementById('cw-analytics');
+    var cbMarketing = document.getElementById('cw-marketing');
 
-    // Bereits vorhandene Einwilligung?
+    // Vorhandene Einwilligung?
     var existing = loadConsent();
     if (!existing) {
-    wall.classList.remove('hidden');
-    lockScroll(true);
+    wall.classList.remove('hidden'); lockScroll(true);
     } else {
+      // Checkboxen nach bestehender Auswahl setzen
+    cbFunctional.checked = !!existing.functional;
+    cbAnalytics.checked  = !!existing.analytics;
+    cbMarketing.checked  = !!existing.marketing;
     applyConsent(existing);
     }
 
-    // Events
+    // Aktionen
     btnEssential.addEventListener('click', function () {
-    saveConsent({ necessary: true, functional: false, analytics: false, marketing: false });
+    var consent = { necessary: true, functional: false, analytics: false, marketing: false };
+    saveConsent(consent);
     wall.classList.add('hidden'); lockScroll(false);
     });
+
     btnAccept.addEventListener('click', function () {
-    saveConsent({ necessary: true, functional: true, analytics: true, marketing: true });
+    var consent = { necessary: true, functional: true, analytics: true, marketing: true };
+    saveConsent(consent);
     wall.classList.add('hidden'); lockScroll(false);
     });
+
     btnSettings.addEventListener('click', function () {
     if (details && !details.open) details.open = true;
     });
+
+    btnSave.addEventListener('click', function () {
+    var consent = {
+        necessary: true,
+        functional: !!cbFunctional.checked,
+        analytics:  !!cbAnalytics.checked,
+        marketing:  !!cbMarketing.checked
+    };
+    saveConsent(consent);
+    wall.classList.add('hidden'); lockScroll(false);
+    });
+
     reopenLink.addEventListener('click', function (e) {
     e.preventDefault();
+      // Setze Checkboxen aus gespeichertem Zustand
+    var c = loadConsent() || { necessary:true, functional:false, analytics:false, marketing:false };
+    cbFunctional.checked = !!c.functional;
+    cbAnalytics.checked  = !!c.analytics;
+    cbMarketing.checked  = !!c.marketing;
     wall.classList.remove('hidden'); lockScroll(true);
     });
 
-    // Expose einfache API (optional)
+    // Expose einfache API
     window.VilanaCookie = {
     open: function () { wall.classList.remove('hidden'); lockScroll(true); },
     reset: function () { localStorage.removeItem(LS_KEY); wall.classList.remove('hidden'); lockScroll(true); },
