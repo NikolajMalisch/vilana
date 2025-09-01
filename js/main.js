@@ -92,8 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Годы в футере
     const year = new Date().getFullYear();
-    document.getElementById('year-de')?.textContent = year;
-    document.getElementById('year-ru')?.textContent = year;
+    const yearDe = document.getElementById('year-de');
+    const yearRuElem = document.getElementById('year-ru');
+    if (yearRuElem) yearRuElem.textContent = year;
+    const yearRu = document.getElementById('year-ru');
+    if (yearRu) yearRu.textContent = year;
 
     // ВАЖНО: обновить ссылки на Event при смене языка
     setEventLinks();
