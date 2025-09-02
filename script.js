@@ -1,31 +1,69 @@
-// script.js – Sprachumschaltung und Menülogik für Vilana Event & Catering
+// script.js – Sprachumschaltung, Menü & kleine Utilities
+// Vilana Event & Catering
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sprache beim Laden setzen (aus localStorage oder Standard = "de")
+  /* =============================
+    Sprache beim Laden setzen
+     ============================= */
   setLanguage(getSavedLanguage() || "de");
 
-  // Funktion zur Anzeige der gewählten Menü-Kategorie
-  window.showMenuCategory = function (category) {
-    // Alle Kategorien ausblenden
-    document.querySelectorAll(".menu-category").forEach((el) =>
-      el.classList.add("hidden")
+  /* =============================
+    Burger / Mobile Menu (IDs по HTML)
+     ============================= */
+  const menuBtn   = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileNav) {
+    // Clone-Hack: убираем старые слушатели, если файл подключён повторно
+    const btnClone = menuBtn.cloneNode(true);
+    menuBtn.parentNode.replaceChild(btnClone, menuBtn);
+
+    function setMenuOpen(open) {
+      mobileNav.classList.toggle("hidden", !open);
+      btnClone.setAttribute("aria-expanded", String(open));
+    }
+
+    btnClone.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setMenuOpen(mobileNav.classList.contains("hidden"));
+    });
+
+    // Закрывать меню при клике по пункту
+    mobileNav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => setMenuOpen(false))
     );
 
-    // Ausgewählte Kategorie anzeigen
-    const selected = document.querySelector(`#menu-${category}`);
-    if (!selected) {
-      console.warn(`Kategorie "${category}" nicht gefunden.`);
-      return;
-    }
-    selected.classList.remove("hidden");
+    // Клик вне меню — закрыть
+    document.addEventListener("click", (e) => {
+      if (!mobileNav.classList.contains("hidden")) {
+        const inside = mobileNav.contains(e.target) || btnClone.contains(e.target);
+        if (!inside) setMenuOpen(false);
+      }
+    });
 
-    // Alle Tabs zurücksetzen
+    // ESC — закрыть
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    });
+  }
+
+  /* =============================
+    Меню категорий (если есть на странице)
+     ============================= */
+  window.showMenuCategory = function (category) {
+    const cats = document.querySelectorAll(".menu-category");
+    if (!cats.length) return;
+
+    cats.forEach((el) => el.classList.add("hidden"));
+
+    const selected = document.querySelector(`#menu-${category}`);
+    if (selected) selected.classList.remove("hidden");
+
+    // Табы
     document.querySelectorAll(".menu-tab").forEach((tab) => {
       tab.classList.remove("bg-amber-600", "text-white");
       tab.classList.add("bg-gray-300", "text-gray-700");
     });
-
-    // Aktiven Tab hervorheben
     const activeTab = document.querySelector(`#menu-tab-${category}`);
     if (activeTab) {
       activeTab.classList.add("bg-amber-600", "text-white");
@@ -33,109 +71,145 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Funktion zum Umschalten des mobilen Menüs
-  window.toggleMobileMenu = function () {
-    const menu = document.getElementById("mobile-menu");
-    if (menu) menu.classList.toggle("hidden");
-  };
+  // Инициализация категории, если блоки существуют
+  (function initMenuCategory() {
+    const anyCategory = document.querySelector(".menu-category");
+    if (!anyCategory) return;
 
-  // Beim Laden eine Standard-Kategorie anzeigen
-  const initialCategory = document
-    .querySelector(".menu-category:not(.hidden)")
-    ?.id.replace("menu-", "");
-  if (initialCategory) {
+    const initialCategory =
+      document.querySelector(".menu-category:not(.hidden)")?.id?.replace("menu-", "") || "warm";
     showMenuCategory(initialCategory);
-  } else {
-    showMenuCategory("warm"); // Standard: Warme Speisen
-  }
 
-  // Klicks auf Kategorie-Tabs verarbeiten
-  document.querySelectorAll(".menu-tab").forEach((tab) => {
-    tab.addEventListener("click", function () {
-      const category = this.dataset.category || this.id.replace("menu-tab-", "");
-      showMenuCategory(category);
+    document.querySelectorAll(".menu-tab").forEach((tab) => {
+      tab.addEventListener("click", function () {
+        const category = this.dataset.category || this.id.replace("menu-tab-", "");
+        showMenuCategory(category);
+      });
     });
-  });
 
-  // Klicks auf mobile Menüelemente
-  document.querySelectorAll(".mobile-menu-item").forEach((item) => {
-    item.addEventListener("click", function () {
-      const category = this.dataset.category;
-      showMenuCategory(category);
-      toggleMobileMenu(); // Menü danach schließen
+    document.querySelectorAll(".mobile-menu-item").forEach((item) => {
+      item.addEventListener("click", function () {
+        const category = this.dataset.category;
+        showMenuCategory(category);
+        if (mobileNav) mobileNav.classList.add("hidden");
+      });
     });
-  });
+  })();
 
-  // Mobile-Menü schließen, wenn außerhalb geklickt wird
-  document.addEventListener("click", function (event) {
-    const menu = document.getElementById("mobile-menu");
-    const toggle = document.getElementById("mobile-menu-toggle");
-    if (
-      menu &&
-      toggle &&
-      !menu.contains(event.target) &&
-      !toggle.contains(event.target)
-    ) {
-      menu.classList.add("hidden");
-    }
-  });
-
-  // Mobile-Menü schließen bei ESC-Taste
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      const menu = document.getElementById("mobile-menu");
-      if (menu && !menu.classList.contains("hidden")) {
-        menu.classList.add("hidden");
-      }
-    }
-  });
-
-  // Sprachumschalter-Klicks verarbeiten
+  /* =============================
+    Sprachumschalter (если есть элементы .lang-switch)
+     ============================= */
   document.querySelectorAll(".lang-switch").forEach((el) => {
     el.addEventListener("click", function () {
-      const lang = this.dataset.lang;
+      const lang = (this.dataset.lang || "de").toLowerCase();
       setLanguage(lang);
+      updateLangUI();
     });
   });
+
+  /* =============================
+    Галерея (безопасная инициализация)
+     ============================= */
+  (function initGallery() {
+    try {
+      const gallery = document.getElementById("gallery");
+      if (!gallery) return;
+      const images = Array.isArray(window.imagePaths) ? window.imagePaths : [];
+      if (!images.length) return;
+
+      images.forEach((path, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "overflow-hidden rounded-lg shadow-md cursor-pointer";
+        const clickAttr =
+          typeof window.openLightbox === "function" ? `onclick="openLightbox(${index})"` : "";
+        wrapper.innerHTML = `
+          <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
+              class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+              ${clickAttr}>
+        `;
+        gallery.appendChild(wrapper);
+      });
+    } catch (e) {
+      console.warn("Gallery init skipped:", e);
+    }
+  })();
+
+  /* =============================
+    Телефоны: привести оба к одному виду
+     ============================= */
+  unifyPhones();
 });
 
-// Sprache setzen
+/* =========================================
+  Язык — совместимо с твоей HTML-логикой:
+  .lang {display:none}, .lang-de / .lang-ru — видны
+  Ключ localStorage: "vilana_lang"
+========================================= */
 function setLanguage(lang) {
-  // Alle Sprachblöcke ausblenden
-  document.querySelectorAll(".lang").forEach((el) =>
-    el.classList.add("hidden")
-  );
+  lang = (lang || "de").toLowerCase();
 
-  // Elemente der gewählten Sprache anzeigen
-  document.querySelectorAll(`.lang-${lang}`).forEach((el) =>
-    el.classList.remove("hidden")
-  );
+  // Скрыть всё с классом .lang
+  document.querySelectorAll(".lang").forEach((el) => {
+    el.style.display = "none";
+  });
 
-  // Aktiven Sprachbutton hervorheben
-  document.getElementById("lang-de-btn")?.classList.remove("lang-active");
-  document.getElementById("lang-ru-btn")?.classList.remove("lang-active");
-  document.getElementById(`lang-${lang}-btn`)?.classList.add("lang-active");
+  // Показать выбранный язык
+  document.querySelectorAll(`.lang-${lang}`).forEach((el) => {
+    el.style.display = "inline";
+  });
 
-  // HTML-Sprachattribut setzen
-  document.documentElement.lang = lang;
-
-  // Sprache im localStorage speichern
-  localStorage.setItem("vilana-lang", lang);
+  document.documentElement.setAttribute("lang", lang === "ru" ? "ru" : "de");
+  localStorage.setItem("vilana_lang", lang);
+  updateLangUI();
 }
 
-// Gespeicherte Sprache abrufen
 function getSavedLanguage() {
-  return localStorage.getItem("vilana-lang");
+  return (localStorage.getItem("vilana_lang") || "de").toLowerCase();
 }
 
-const gallery = document.getElementById('gallery');
+function updateLangUI() {
+  const l = (localStorage.getItem("vilana_lang") || "de").toUpperCase();
+  const labelD = document.getElementById("langLabel");
+  const btnM   = document.getElementById("langBtnMobile");
+  if (labelD) labelD.textContent = l;
+  if (btnM)   btnM.textContent   = l;
+}
 
-imagePaths.forEach((path, index) => {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'overflow-hidden rounded-lg shadow-md cursor-pointer';
-  wrapper.innerHTML = `
-    <img src="${path}" alt="Event ${index + 1}" title="Event ${index + 1}"
-        class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
-        onclick="openLightbox(${index})">`;
-  gallery.appendChild(wrapper);
-});
+/* =========================================
+  Phones: выравнивание формата для #ev-phone и #ev-phone-2
+  (безопасно — если элемента нет, просто игнор)
+========================================= */
+function unifyPhones() {
+  const p1 = document.getElementById("ev-phone");
+  const p2 = document.getElementById("ev-phone-2");
+  const a1 = document.getElementById("ev-phone-link");
+  const a2 = document.getElementById("ev-phone-link-2");
+
+  if (p1) {
+    const raw = stripSpaces(p1.textContent);
+    p1.textContent = formatPhone(raw);
+    if (a1) a1.href = "tel:" + raw;
+  }
+
+  if (p2) {
+    const raw2 = stripSpaces(p2.textContent);
+    p2.textContent = formatPhone(raw2);
+    if (a2) a2.href = "tel:" + raw2;
+  }
+}
+
+function stripSpaces(s) {
+  return String(s || "").replace(/\s+/g, "");
+}
+
+/* Формат: +49 176 5777 5996 / +49 176 4228 8707 (группы для DE-мобильных) */
+function formatPhone(raw) {
+  const s = stripSpaces(raw);
+  // Попытка разбивки: +CC NNN NNNN NNNN…
+  const m = s.match(/^(\+\d{2})(\d{3})(\d{3,4})(\d{3,4})$/);
+  if (m) {
+    return [m[1], m[2], m[3], m[4]].join(" ");
+  }
+  // fallback: вернуть как есть
+  return raw;
+}
