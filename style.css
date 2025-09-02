@@ -1,42 +1,11 @@
-/* 🎨 Google Fonts: Cinzel Decorative & Cinzel */
-/* Removed duplicate .logo-title definition */
-
-.logo-subtitle {
-font-family: 'Cinzel', serif;
-font-size: 1.2rem;
-font-weight: 400;
-letter-spacing: 0.2px;
-/* Removed duplicate .logo-subtitle definition */
-
-.font-vilana-sub {
-/* 🔤 Allgemeine Schriftarten */
-
-/* 📜 Footer-Text Formatierung */
-.footer-text {
-    display: inline-block;
-    white-space: nowrap; /* Не переносить фразу на 2 строки на больших экранах */
-}
-
-@media (max-width: 500px) {
-    .footer-text {
-        white-space: normal; /* Разрешить перенос на маленьких экранах */
-        text-align: center;   /* Центрирование */
-    }
-}
-
-/* скрывать бургер на экранах от 768px и выше */
-@media (min-width: 768px) {
-    .burger-menu {
-        display: none;
-    }
-}
-
 /* ================================
-🎨 Fonts
-   ================================ */
+🎨 Google Fonts
+================================ */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cinzel&family=Raleway&display=swap');
 
-/* Логотип */
+/* ================================
+🪪 Logo
+================================ */
 .logo-title {
 font-family: 'Cinzel Decorative', serif;
 font-size: 2rem;
@@ -56,17 +25,15 @@ margin-left: 8px;
 color: #4a4a4a;
 }
 
-/* Дополнительные классы */
+/* Шрифтовые утилиты */
 .font-vilana { font-family: 'Cinzel Decorative', serif; }
 .font-vilana-sub { font-family: 'Cinzel', serif; }
 .font-raleway { font-family: 'Raleway', sans-serif; }
 
 /* ================================
-🔤 Links & Buttons
-   ================================ */
-a, button {
-transition: all 0.3s ease;
-}
+🔗 Links & Buttons
+================================ */
+a, button { transition: all 0.3s ease; }
 
 a:hover, a:focus, a:active,
 button:hover, button:focus, button:active {
@@ -76,7 +43,7 @@ opacity: 0.9;
 
 /* ================================
 📜 Footer
-   ================================ */
+================================ */
 footer {
 background: linear-gradient(135deg, #fdfaf6, #f2ede7);
 padding: 2rem 1rem;
@@ -84,25 +51,22 @@ padding: 2rem 1rem;
 
 .footer-text {
 display: inline-block;
-white-space: nowrap;
-font-size: 0.9rem;
-color: #444;
+  white-space: nowrap; /* не переносить на больших экранах */
+font-size: 0.9rem; color: #444;
 }
 
 @media (max-width: 500px) {
 .footer-text {
-    white-space: normal;
+    white-space: normal;  /* разрешить перенос на маленьких */
     text-align: center;
 }
 }
 
 /* ================================
-🍔 Burger Menu
-   ================================ */
+🍔 Burger / Mobile Menu
+================================ */
 @media (min-width: 768px) {
-.burger-menu {
-    display: none;
-}
+.burger-menu { display: none; }
 }
 
 .mobile-menu {
@@ -120,21 +84,43 @@ z-index: 50;
 padding: 2rem 1rem;
 }
 
-.mobile-menu.open {
-transform: translateX(0);
-}
+.mobile-menu.open { transform: translateX(0); }
 
 /* ================================
-✨ Extra Small Effects
-   ================================ */
-img {
-transition: transform 0.4s ease;
+✨ Small FX
+================================ */
+img { transition: transform 0.4s ease; }
+img:hover { transform: scale(1.03); }
+button:active { transform: scale(0.97); }
+
+/* ================================
+📞 Телефоны (оба номера одинаково)
+================================ */
+.ev-phone {
+font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+font-weight: 300;
+letter-spacing: 0.4px;
+font-variant-numeric: lining-nums tabular-nums;
+color: #1f2937;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
 }
 
-img:hover {
-transform: scale(1.03);
-}
+/* ссылки на телефоны */
+#ev-phone-link,
+#ev-phone-link-2 { text-decoration: none; }
 
-button:active {
-transform: scale(0.97);
+/* подчёркивание только у первого по hover (если хочешь убрать — просто удали правило ниже) */
+#ev-phone-link:hover { text-decoration: underline; }
+/* ================================
+📞 Телефоны + реквизиты
+================================ */
+#ev-iban, #ev-bic, #ev-phone, #ev-phone-2 {
+font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Helvetica Neue",sans-serif;
+font-weight: 300;
+letter-spacing: .4px;
+font-variant-numeric: lining-nums tabular-nums;
+color: #1f2937;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
 }
