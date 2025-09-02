@@ -13,6 +13,7 @@ font-weight: 500;
 letter-spacing: 1px;
 background: linear-gradient(90deg, #b08968, #d4a373);
 -webkit-background-clip: text;
+  background-clip: text; /* стандартное свойство для совместимости */
 -webkit-text-fill-color: transparent;
 }
 
