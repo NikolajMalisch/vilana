@@ -1,14 +1,14 @@
 // tailwind.config.js
 module.exports = {
 content: [
-    "./*.html",                     // корневые HTML
-    "./**/*.{html,js,vue}",         // все подпапки с html/js/vue
-    "!./node_modules/**",           // исключить node_modules
-    "!./dist/**",                   // исключить финальный билд
-    "!./build/**",                  // исключить сборки
-    "!./.history/**",               // исключить историю редактора
+    "./*.html",
+    "./**/*.{html,js,vue}",
+    "!./node_modules/**",
+    "!./dist/**",
+    "!./build/**",
+    "!./.history/**",
 ],
-  darkMode: "class",                // если хочешь поддержку тёмной темы
+darkMode: "class",
 theme: {
     extend: {
     fontFamily: {
@@ -16,11 +16,10 @@ theme: {
         cormorant: ["'Cormorant SC'", "serif"],
     },
     },
-},
-plugins: [],
-safelist: [
+    },
+    plugins: [],
+    safelist: [
     // ===== Consent-Wall UI =====
-    // контейнер/оверлей/карточка
     'fixed','inset-0','z-[100]','z-[9999]','absolute','bg-black/50','relative',
     'min-h-full','items-center','justify-center','p-4','w-full','max-w-2xl',
     'rounded-2xl','bg-white','p-6','shadow-2xl','ring-1','ring-black/10',
@@ -39,5 +38,14 @@ safelist: [
     // ===== Дополнительно =====
     'hidden','backdrop-blur-md','bg-white/90','border-t','border-gray-200',
     'text-gray-600','text-gray-700','text-gray-900',
-],
+
+    // --- ADD: на всякий случай для старой версии баннера с индиго-кнопкой ---
+    'bg-indigo-600','hover:bg-indigo-700',      // ADD
+    // --- ADD: класс, который мы переключаем скриптом для запрета скролла ---
+    'overflow-hidden',                          // ADD
+    // --- ADD: курсор для <summary> и label (есть в markup) ---
+    'cursor-pointer',                           // ADD
+    // --- ADD: мелочь из инпутов (есть у чекбоксов) ---
+    'mt-1',                                     // ADD
+    ],
 };
