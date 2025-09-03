@@ -47,7 +47,7 @@
       btnSettings:  'Einstellungen',
       btnSave:      'Auswahl speichern',
       btnAll:       'Alle akzeptieren',
-      changeLater:  'Sie können Ihre Auswahl später im Footer unter „Cookie-Einstellungen“ ändern.',
+      changeLater:  'Sie können Ihre Auswahl später im Footer unter «Cookie-Einstellungen» ändern.',
       footerOpen:   'Cookie-Einstellungen'
     },
     ru: {
@@ -204,7 +204,7 @@
     '</div>';
   }
 
-  // [DE] Footer-Link „Cookie-Einstellungen“ anlegen (falls kein <footer> → body).
+  // [DE] Footer-Link «Cookie-Einstellungen» anlegen (falls kein <footer> → body).
   // [RU] Создаём ссылку «Cookie-Einstellungen» в футере (если его нет — в body).
   function ensureFooterLink() {
     var existing = document.getElementById('cookie-reopen');
