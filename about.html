@@ -9,13 +9,13 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+function gtag(){dataLayer.push(arguments);} 
 gtag('js', new Date());
 gtag('config', 'G-YW71FCW4FJ');
 </script>
 
 <!-- Canonical + Robots (SEO) -->
-<link rel="canonical" href="./about.html">
+<link rel="canonical" href="https://www.vilana-event.de/about.html">
 <meta name="robots" content="index, follow">
 <meta name="description" content="Vilana Event & Catering – Premium-Catering und Eventservice mit Liebe zum Detail. Individuelle Konzepte, präzise Umsetzung, Servicepersonal und Ausstattung.">
 
@@ -23,9 +23,11 @@ gtag('config', 'G-YW71FCW4FJ');
 <meta property="og:type" content="website">
 <meta property="og:title" content="Über uns | Vilana Event & Catering">
 <meta property="og:description" content="Premium-Catering & Eventservice – individuelle Konzepte, Präzision und Service auf höchstem Niveau.">
-<meta property="og:url" content="./about.html">
-<meta property="og:image" content="./images/og/og-cover.webp">
+<meta property="og:url" content="https://www.vilana-event.de/about.html">
+<meta property="og:image" content="https://www.vilana-event.de/images/og/og-cover.webp">
 <meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Vilana Event & Catering">
+<meta name="theme-color" content="#0e0e0e">
 
 <!-- Tailwind -->
 <link rel="stylesheet" href="css/output.css">
@@ -49,232 +51,217 @@ body { font-family: 'Cormorant SC', serif; background-color: #0e0e0e; }
 
 <!-- HEADER -->
 <header class="bg-white shadow-md sticky top-0 z-40">
-<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
     <!-- Logo -->
     <div class="flex items-baseline gap-1">
-    <span class="logo-title">Vilana</span>
-    <span class="logo-subtitle">Event &amp; Catering</span>
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle">Event &amp; Catering</span>
     </div>
 
     <!-- Desktop-Navigation -->
     <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-    <a href="index.html" class="text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="text-gray-700 hover:text-amber-700">Galerie</a>
-    <a href="about.html" aria-current="page" class="text-amber-700 font-semibold underline underline-offset-4">Über uns</a>
-    <a href="bewertung.html" class="text-gray-700 hover:text-amber-700">Bewertung</a>
-    <a href="event.html" class="text-gray-700 hover:text-amber-700">Event</a>
-    <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
+      <a href="index.html" class="text-gray-800 hover:text-amber-700">Startseite</a>
+      <a href="index.html#services" class="text-gray-800 hover:text-amber-700">Leistungen</a>
+      <a href="menu.html" class="text-gray-800 hover:text-amber-700">Menü</a>
+      <a href="galerie.html" class="text-gray-800 hover:text-amber-700">Galerie</a>
+      <a href="about.html" aria-current="page" class="text-amber-700 font-semibold underline underline-offset-4">Über uns</a>
+      <a href="bewertung.html" class="text-gray-800 hover:text-amber-700">Bewertung</a>
+      <a href="event.html" class="text-gray-800 hover:text-amber-700">Event</a>
+      <a href="contact.html" class="text-gray-800 hover:text-amber-700">Kontakt</a>
 
-    <!-- Language -->
-    <div class="relative ml-2">
-        <button id="langToggle" class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100"
-                type="button" aria-haspopup="true" aria-expanded="false">DE ▾</button>
-        <ul id="langMenu"
-            class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50 ring-1 ring-black/5"
-            role="menu">
-        <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
-        <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
+      <!-- Language -->
+      <div class="relative ml-2">
+        <button id="langToggle" class="px-2 py-1 text-gray-800 rounded hover:bg-gray-100" type="button" aria-haspopup="true" aria-expanded="false">DE ▾</button>
+        <ul id="langMenu" class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-28 z-50 ring-1 ring-black/5" role="menu">
+          <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100">Deutsch</button></li>
+          <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100">Русский</button></li>
         </ul>
-    </div>
+      </div>
     </nav>
 
     <!-- Mobile -->
     <div class="flex items-center md:hidden gap-2 relative">
-    <button id="langToggleMobile" type="button"
-            class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800"
-            aria-haspopup="true" aria-expanded="false">DE</button>
-    <ul id="langMenuMobile"
-        class="hidden absolute right-12 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50">
+      <button id="langToggleMobile" type="button" class="inline-flex h-8 w-8 items-center justify-center bg-transparent text-gray-800" aria-haspopup="true" aria-expanded="false">DE</button>
+      <ul id="langMenuMobile" class="hidden absolute right-12 top-10 min-w-[9rem] rounded-md bg-white text-gray-800 shadow-lg ring-1 ring-black/5 z-50">
         <li><button type="button" data-lang="de" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Deutsch</button></li>
         <li><button type="button" data-lang="ru" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Русский</button></li>
-    </ul>
-    <button id="menuToggle" type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200">
+      </ul>
+      <button id="menuToggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
-    </button>
+      </button>
     </div>
-</div>
+  </div>
 
-<!-- Mobile Menü -->
-<div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-gray-700 hover:text-amber-700">Startseite</a>
-    <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
-    <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
-    <a href="galerie.html" class="block text-gray-700 hover:text-amber-700">Galerie</a>
+  <!-- Mobile Menü -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <a href="index.html" class="block text-gray-800 hover:text-amber-700">Startseite</a>
+    <a href="index.html#services" class="block text-gray-800 hover:text-amber-700">Leistungen</a>
+    <a href="menu.html" class="block text-gray-800 hover:text-amber-700">Menü</a>
+    <a href="galerie.html" class="block text-gray-800 hover:text-amber-700">Galerie</a>
     <a href="about.html" class="block text-amber-700 font-semibold underline underline-offset-4">Über uns</a>
-    <a href="bewertung.html" class="block text-gray-700 hover:text-amber-700">Bewertung</a>
-    <a href="event.html" class="block text-gray-700 hover:text-amber-700">Event</a>
-    <a href="contact.html" class="block text-gray-700 hover:text-amber-700">Kontakt</a>
-</div>
+    <a href="bewertung.html" class="block text-gray-800 hover:text-amber-700">Bewertung</a>
+    <a href="event.html" class="block text-gray-800 hover:text-amber-700">Event</a>
+    <a href="contact.html" class="block text-gray-800 hover:text-amber-700">Kontakt</a>
+  </div>
 </header>
 
 <!-- MAIN -->
 <main class="flex-1 pt-6 md:pt-8">
-<div class="max-w-7xl mx-auto px-4 md:px-6">
-<h1 class="sr-only">Über uns – Vilana Event &amp; Catering</h1>
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <h1 class="sr-only">Über uns – Vilana Event &amp; Catering</h1>
 
-<!-- Hero -->
-<section class="text-center mb-8 md:mb-10">
-    <img src="images/vilana_logo_dark.svg" alt="Vilana Logo"
-        class="h-60 sm:h-80 mx-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
-        decoding="async" loading="lazy">
-</section>
+    <!-- Hero -->
+    <section class="text-center mb-8 md:mb-10">
+      <img src="images/vilana_logo_dark.svg" alt="Vilana Logo" class="h-60 sm:h-80 mx-auto drop-shadow-lg transition-transform duration-300 hover:scale-105" decoding="async" loading="lazy">
+    </section>
 
-<!-- ===== Deutsch ===== -->
-<div class="lang lang-de" lang="de">
+    <!-- ===== Deutsch ===== -->
+    <div class="lang lang-de" lang="de">
 
-    <!-- Intro -->
-    <section class="max-w-6xl mx-auto mb-8 md:mb-10">
-    <div class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <h2 class="text-xl sm:text-2xl font-semibold mb-4">Wer wir sind</h2>
-        <p class="copy text-base sm:text-[1.05rem] leading-8 mb-4">
-            Vilana Event &amp; Catering wurde kürzlich gegründet – unsere Geschichte beginnt jedoch früher:
-            Gemeinsam bringen wir über 15 Jahre Erfahrung im Catering mit, die wir in verschiedenen Unternehmen gesammelt haben.
-        </p>
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Wir sind zwei Freundinnen mit unterschiedlichen Stärken, die sich perfekt ergänzen:
-            Kreativität trifft auf Organisation, Sinn für Details auf strukturierte Planung.
-            Diese Mischung macht jedes Event stimmig, ästhetisch und professionell.
-        </p>
+      <!-- Intro (beige) -->
+      <section class="max-w-6xl mx-auto mb-8 md:mb-10">
+        <div class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-amber-900">Wer wir sind</h2>
+            <p class="copy text-base sm:text-[1.05rem] leading-8 mb-4 text-gray-800">
+              Vilana Event &amp; Catering wurde kürzlich gegründet – unsere Geschichte beginnt jedoch früher:
+              Gemeinsam bringen wir über 15 Jahre Erfahrung im Catering mit, die wir in verschiedenen Unternehmen gesammelt haben.
+            </p>
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Wir sind zwei Freundinnen mit unterschiedlichen Stärken, die sich perfekt ergänzen:
+              Kreativität trifft auf Organisation, Sinn für Details auf strukturierte Planung.
+              Diese Mischung macht jedes Event stimmig, ästhetisch und professionell.
+            </p>
+          </div>
         </div>
+      </section>
+
+      <!-- Cards (beige) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Vilana steht für exklusiven Service und kulinarische Erlebnisse auf höchstem Niveau.
+              Unser Ziel ist es, nicht nur Speisen zu servieren, sondern unvergessliche Genussmomente zu schaffen.
+              Wir richten uns an Menschen, die Wert auf erstklassige Qualität, liebevolle Präsentation und persönliche Betreuung legen.
+            </p>
+          </div>
+        </section>
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Ob private Feier, stilvolle Hochzeit oder exklusives Firmenevent – wir entwickeln maßgeschneiderte Konzepte,
+              die perfekt zu Ihrem Anlass passen. Jedes Detail wird sorgfältig geplant, um Ihre Gäste zu begeistern
+              und bleibende Erinnerungen zu schaffen.
+            </p>
+          </div>
+        </section>
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Mit aufrichtiger Liebe und Liebe zum Detail verwandelt unser Team jede Idee in ein einzigartiges Erlebnis.
+              Von der Auswahl feinster Zutaten bis zur stilvollen Dekoration – lassen Sie sich inspirieren von unserer Kombination aus Geschmack, Eleganz und höchstem handwerklichen Können.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
-    </section>
 
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Vilana steht für exklusiven Service und kulinarische Erlebnisse auf höchstem Niveau.
-            Unser Ziel ist es, nicht nur Speisen zu servieren, sondern unvergessliche Genussmomente zu schaffen.
-            Wir richten uns an Menschen, die Wert auf erstklassige Qualität, liebevolle Präsentation und persönliche Betreuung legen.
-        </p>
+    <!-- ===== Русский ===== -->
+    <div class="lang lang-ru hidden" lang="ru">
+
+      <!-- Intro (beige) -->
+      <section class="max-w-6xl mx-auto mb-8 md:mb-10">
+        <div class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-amber-900">Кто мы</h2>
+            <p class="copy text-base sm:text-[1.05rem] leading-8 mb-4 text-gray-800">
+              Vilana Event &amp; Catering открылось совсем недавно, но за нашими плечами —
+              более 15 лет опыта в кейтеринге, полученного в разных компаниях.
+            </p>
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Мы — две подруги с разными сильными сторонами, которые идеально дополняют друг друга:
+              креатив и атмосфера сочетаются с организацией и структурированным подходом.
+              Эта комбинация делает каждое событие продуманным, красивым и профессиональным.
+            </p>
+          </div>
         </div>
-    </section>
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Ob private Feier, stilvolle Hochzeit oder exklusives Firmenevent – wir entwickeln maßgeschneiderte Konzepte,
-            die perfekt zu Ihrem Anlass passen. Jedes Detail wird sorgfältig geplant, um Ihre Gäste zu begeistern
-            und bleibende Erinnerungen zu schaffen.
-        </p>
-        </div>
-    </section>
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Mit aufrichtiger Liebe und Liebe zum Detail verwandelt unser Team jede Idee in ein einzigartiges Erlebnis.
-            Von der Auswahl feinster Zutaten bis zur stilvollen Dekoration – lassen Sie sich inspirieren von unserer Kombination aus Geschmack, Eleganz und höchstem handwerklichen Können.
-        </p>
-        </div>
-    </section>
+      </section>
+
+      <!-- Cards (beige) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Vilana – это эксклюзивный сервис и кулинарные впечатления высочайшего уровня.
+              Мы стремимся не просто подавать блюда, а создавать незабываемые моменты наслаждения.
+              Наши клиенты ценят безупречное качество, элегантную подачу и персональный подход.
+            </p>
+          </div>
+        </section>
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              Частное торжество, изысканная свадьба или корпоратив — мы разрабатываем индивидуальные концепции,
+              идеально соответствующие вашему событию. Каждая деталь продумывается, чтобы впечатлить гостей
+              и оставить приятные воспоминания.
+            </p>
+          </div>
+        </section>
+        <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+          <div class="p-6 sm:p-7 lg:p-8">
+            <p class="copy text-base sm:text-[1.05rem] leading-8 text-gray-800">
+              С искренней любовью и вниманием к деталям наша команда воплощает ваши идеи.
+              От выбора лучших ингредиентов до утончённого декора мы объединяем вкус, эстетику и высокий сервис,
+              чтобы сделать ваше событие по-настоящему незабываемым.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
-</div>
-
-<!-- ===== Русский ===== -->
-<div class="lang lang-ru hidden" lang="ru">
-
-    <!-- Intro -->
-    <section class="max-w-6xl mx-auto mb-8 md:mb-10">
-    <div class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <h2 class="text-xl sm:text-2xl font-semibold mb-4">Кто мы</h2>
-        <p class="copy text-base sm:text-[1.05rem] leading-8 mb-4">
-            Vilana Event &amp; Catering открылось совсем недавно, но за нашими плечами —
-            более 15 лет опыта в кейтеринге, полученного в разных компаниях.
-        </p>
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Мы — две подруги с разными сильными сторонами, которые идеально дополняют друг друга:
-            креатив и атмосфера сочетаются с организацией и структурированным подходом.
-            Эта комбинация делает каждое событие продуманным, красивым и профессиональным.
-        </p>
-        </div>
-    </div>
-    </section>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Vilana – это эксклюзивный сервис и кулинарные впечатления высочайшего уровня.
-            Мы стремимся не просто подавать блюда, а создавать незабываемые моменты наслаждения.
-            Наши клиенты ценят безупречное качество, элегантную подачу и персональный подход.
-        </p>
-        </div>
-    </section>
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            Частное торжество, изысканная свадьба или корпоратив — мы разрабатываем индивидуальные концепции,
-            идеально соответствующие вашему событию. Каждая деталь продумывается, чтобы впечатлить гостей
-            и оставить приятные воспоминания.
-        </p>
-        </div>
-    </section>
-    <section class="rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm">
-        <div class="p-6 sm:p-7 lg:p-8">
-        <p class="copy text-base sm:text-[1.05rem] leading-8">
-            С искренней любовью и вниманием к деталям наша команда воплощает ваши идеи.
-            От выбора лучших ингредиентов до утончённого декора мы объединяем вкус, эстетику и высокий сервис,
-            чтобы сделать ваше событие по-настоящему незабываемым.
-        </p>
-        </div>
-    </section>
-    </div>
-</div>
-</div>
+  </div>
 </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-    <div class="container mx-auto px-4 text-center">
-        <div class="mb-4">
-        <a
-            href="https://www.instagram.com/vilana_catering/"
-            class="hover:text-amber-400"
-            >Instagram</a
-        >
-        </div>
-        <p>
-        <a href="impressum.html" class="hover:underline">Impressum</a> |
-        <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
-        <a href="agb.html" class="hover:underline">AGB</a>
-        </p>
-        <p class="lang lang-de" data-disp="block">
-        &copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.
-        </p>
-        <p class="lang lang-ru" data-disp="block">
-        &copy; 2025 Vilana Event &amp; Catering. Все права защищены.
-        </p>
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-800 text-white py-10 mt-16 relative">
+  <div class="container mx-auto px-4 text-center">
+    <div class="mb-4">
+      <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
     </div>
-    <button
-        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
-        aria-label="Nach oben"
-    >
-        ▲
-    </button>
-    </footer>
+    <p>
+      <a href="impressum.html" class="hover:underline">Impressum</a> |
+      <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
+      <a href="agb.html" class="hover:underline">AGB</a>
+    </p>
+    <p class="lang lang-de" data-disp="block">
+      &copy; <span id="year-de"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
+    </p>
+    <p class="lang lang-ru" data-disp="block">
+      &copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.
+    </p>
+  </div>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full" aria-label="Nach oben">▲</button>
+</footer>
 
 <script>
 // ----- helpers
 function getCurrentLang(){
   try{
-    const v = localStorage.getItem('lang') || localStorage.getItem('siteLang') || 'de';
+    const v = localStorage.getItem('vilana_lang') || localStorage.getItem('lang') || localStorage.getItem('siteLang') || 'de';
     return (v === 'ru' || v === 'de') ? v : 'de';
   }catch(e){ return 'de'; }
 }
 
 function setLanguage(lang){
   const isRu = (lang === 'ru');
-  try{ localStorage.setItem('lang', lang); }catch(e){}
+  try{
+    localStorage.setItem('vilana_lang', lang);
+    localStorage.setItem('lang', lang);
+    localStorage.setItem('siteLang', lang);
+  }catch(e){}
 
   document.documentElement.lang = isRu ? 'ru' : 'de';
 
@@ -291,10 +278,12 @@ function setLanguage(lang){
   if (btnD){
     btnD.textContent = isRu ? 'RU ▾' : 'DE ▾';
     btnD.setAttribute('aria-expanded','false');
+    btnD.setAttribute('aria-label', isRu ? 'Язык: русский' : 'Sprache: Deutsch');
   }
   if (btnM){
     btnM.textContent = isRu ? 'RU' : 'DE';
     btnM.setAttribute('aria-expanded','false');
+    btnM.setAttribute('aria-label', isRu ? 'Язык: русский' : 'Sprache: Deutsch');
   }
   menuD?.classList.add('hidden');
   menuM?.classList.add('hidden');
@@ -318,20 +307,42 @@ function initHeader(){
 
   // burger
   if (menuToggle && mobileMenu){
-    menuToggle.addEventListener('click', () => {
+    menuToggle.setAttribute('aria-controls', 'mobileMenu');
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const hidden = mobileMenu.classList.toggle('hidden');
       menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
     });
+
+    // закрытие по клику на ссылки
     mobileMenu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         menuToggle.setAttribute('aria-expanded','false');
       });
     });
+
+    // закрытие по клику вне
+    document.addEventListener('click', (e) => {
+      const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
+      if (!inside && !mobileMenu.classList.contains('hidden')){
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+
+    // закрытие по ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')){
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
   }
 
   // desktop lang open/close
-  btnD?.addEventListener('click', () => {
+  btnD?.addEventListener('click', (e) => {
+    e.stopPropagation();
     const hidden = menuD.classList.toggle('hidden');
     btnD.setAttribute('aria-expanded', hidden ? 'false' : 'true');
   });
@@ -340,7 +351,8 @@ function initHeader(){
   );
 
   // mobile lang open/close
-  btnM?.addEventListener('click', () => {
+  btnM?.addEventListener('click', (e) => {
+    e.stopPropagation();
     const hidden = menuM.classList.toggle('hidden');
     btnM.setAttribute('aria-expanded', hidden ? 'false' : 'true');
   });
@@ -355,6 +367,14 @@ function initHeader(){
     }
     if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)){
       menuM.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // ESC закрывает меню языков
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape'){
+      menuD?.classList.add('hidden'); btnD?.setAttribute('aria-expanded','false');
+      menuM?.classList.add('hidden'); btnM?.setAttribute('aria-expanded','false');
     }
   });
 }
