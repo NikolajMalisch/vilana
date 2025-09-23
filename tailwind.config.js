@@ -1,22 +1,22 @@
 // tailwind.config.js
 module.exports = {
-    content: [
+content: [
     "./*.html",
     "./**/*.{html,js,vue}",
     "!./node_modules/**",
     "!./dist/**",
     "!./build/**",
     "!./.history/**",
-    ],
-    darkMode: "class",
-    theme: {
+],
+darkMode: "class",
+theme: {
     extend: {
     fontFamily: {
         cinzel: ["'Cinzel Decorative'", "cursive"],
         cormorant: ["'Cormorant SC'", "serif"],
     },
     },
-  },               // ← здесь должен заканчиваться theme
+  }, // ✅ здесь theme заканчивается
 plugins: [],
 safelist: [
     // ===== Consent-Wall UI =====
@@ -42,5 +42,5 @@ safelist: [
     'overflow-hidden',                      // блокировка скролла
     'cursor-pointer',                       // summary/label
     'mt-1',                                 // чекбоксы
-    ],
+],
 };
