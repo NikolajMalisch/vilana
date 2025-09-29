@@ -1,12 +1,12 @@
 # 🌸 Vilana Event & Catering Website
 
-Offizielle Website von **Vilana Event & Catering** – einem deutsch-russischen Catering-Service aus Hameln, spezialisiert auf Hochzeiten, Firmenfeiern, Geburtstage und exklusive Events.  
+Offizielle Website von **Vilana Event & Catering** – einem deutsch-russischen Catering-Service aus Hameln, spezialisiert auf Hochzeiten, Firmenfeiern, Geburtstage und exklusive Events.
 Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit Fokus auf Eleganz und Benutzerfreundlichkeit entwickelt.
 
-![Status](https://img.shields.io/badge/status-live-success) 
-![License](https://img.shields.io/badge/license-MIT-informational) 
-![Last Commit](https://img.shields.io/github/last-commit/NikolajMalisch/vilana) 
-![Repo Size](https://img.shields.io/github/repo-size/NikolajMalisch/vilana) 
+![Status](https://img.shields.io/badge/status-live-success)
+![License](https://img.shields.io/badge/license-MIT-informational)
+![Last Commit](https://img.shields.io/github/last-commit/NikolajMalisch/vilana)
+![Repo Size](https://img.shields.io/github/repo-size/NikolajMalisch/vilana)
 ![Stars](https://img.shields.io/github/stars/NikolajMalisch/vilana?style=social)
 
 🌐 Live-Demo: [vilana-event.de](https://www.vilana-event.de)
@@ -15,7 +15,7 @@ Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit F
 
 ## 📑 Inhaltsverzeichnis
 
-- [� Vilana Event \& Catering Website](#-vilana-event--catering-website)
+- [🌸 Vilana Event \& Catering Website](#-vilana-event--catering-website)
   - [📑 Inhaltsverzeichnis](#-inhaltsverzeichnis)
   - [🌐 Überblick](#-überblick)
   - [🚀 Features](#-features)
@@ -34,18 +34,18 @@ Die Seite ist **zweisprachig (Deutsch & Russisch)**, modern, responsiv und mit F
 
 Die Website dient als zentrale Anlaufstelle für:
 
-- Präsentation von **Menüs, Buffets & Candy Bar**  
-- Vorstellung von **Events** (z. B. Russian Oktoberfest)  
-- Kundenbewertungen & Referenzen  
-- Kontaktformular für **Anfragen & Buchungen**  
-- Rechtliche Seiten (AGB, Datenschutz, Impressum)  
+- Präsentation von **Menüs, Buffets & Candy Bar**
+- Vorstellung von **Events** (z. B. Russian Oktoberfest)
+- Kundenbewertungen & Referenzen
+- Kontaktformular für **Anfragen & Buchungen**
+- Rechtliche Seiten (AGB, Datenschutz, Impressum)
 
 ---
 
 ## 🚀 Features
 
-- Zweisprachige Oberfläche (**DE 🇩🇪 & RU 🇷🇺**)  
-- DSGVO-konformes **Kontaktformular mit EmailJS**  
+- Zweisprachige Oberfläche (**DE 🇩🇪 & RU 🇷🇺**)
+- DSGVO-konformes **Kontaktformular mit EmailJS**
 - **Cookie-Consent-Wall** (Consent Mode v2 kompatibel)  
 - Responsives Menü (Burger & Dropdown)  
 - SEO-optimiert mit **Meta Tags + JSON-LD**  
