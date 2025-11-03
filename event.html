@@ -6,7 +6,7 @@
 
     <!-- ✅ SEO-Basis -->
     <title>Silvesterabend 2025 – Bad Pyrmont | Vilana Event & Catering</title>
-    <meta name="description" content="Silvester 2025 in Bad Pyrmont: Live-Musik, Moderation, Tanz, Buffet und Mitternachts-Countdown. Einlass 18:00, Beginn 19:00, Lindenhof. Tickets: 115,00 € (ohne alkoholische Getränke).">
+    <meta name="description" content="Silvester 2025 in Bad Pyrmont: Live-Musik, Moderation, Tanz, Buffet und Mitternachts-Countdown. Einlass 18:00, Beginn 19:00, Lindenhof. Tickets: 105,00 € (ohne alkoholische Getränke).">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="theme-color" content="#fdfaf6">
 
@@ -54,8 +54,8 @@
     <link rel="stylesheet" href="/css/output.css">
     <link rel="stylesheet" href="/css/custom.css">
 
-    <!-- ✅ Preload Hero-Bild (потом заменишь файл) -->
-    <link rel="preload" as="image" href="images/Exklusiver Silvesterabend.png" type="image/png">
+    <!-- ✅ Preload Hero (синхронизировано) -->
+    <link rel="preload" as="image" href="/images/silvester-hero.webp" type="image/webp">
 
     <!-- ✅ Favicons -->
     <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
@@ -130,7 +130,8 @@
         </div>
       </div>
 
-      <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2" role="navigation" aria-label="Mobiles Menü">
+      <!-- ⬇️ поднят слой для уверенного перекрытия -->
+      <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 z-40" role="navigation" aria-label="Mobiles Menü">
         <a href="index.html#home" class="block text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="index.html#services" class="block text-gray-700 hover:text-amber-700">Leistungen</a>
         <a href="menu.html" class="block text-gray-700 hover:text-amber-700">Menü</a>
@@ -167,7 +168,7 @@
             <div class="mt-4 card p-4">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div class="text-xl">
-                  <strong id="ev-price">115,00 €</strong>
+                  <strong id="ev-price">105,00 €</strong>
                   <span class="text-gray-500 lang lang-de" id="ev-price-note-de"> ohne alkoholische Getränke • Plätze begrenzt</span>
                   <span class="text-gray-500 lang lang-ru" id="ev-price-note-ru"> без алкогольных напитков • количество мест ограничено</span>
                 </div>
@@ -183,7 +184,7 @@
 
           <!-- Hero -->
           <div class="card overflow-hidden">
-            <img id="ev-hero" src="images/silvester-hero.webp" alt="Silvesterabend – Hero" class="w-full h-full object-cover max-h-[420px]" loading="eager">
+            <img id="ev-hero" src="/images/silvester-hero.webp" alt="Silvesterabend – Hero" class="w-full h-full object-cover max-h-[420px]" loading="eager">
           </div>
         </section>
 
@@ -225,7 +226,7 @@ Alkoholische Getränke können vor Ort an der Bar gekauft werden – gib uns ger
 
             <!-- 2 Telefone (всегда видны) -->
             <p class="mb-4">
-              <a href="tel:+4917657775996" class="tel-link"><span id="ev-phone">+49 176 57775996</span></a> <span class="text-sm text-gray-600">– Viktoria</span><br>
+              <a href="tel:+4917657775996" class="tel-link"><span id="ev-phone">+49 176 5777 5996</span></a> <span class="text-sm text-gray-600">– Viktoria</span><br>
               <a href="tel:+4917642288707" class="tel-link"><span id="ev-phone-2">+49 176 4228 8707</span></a> <span class="text-sm text-gray-600">– Svetlana</span>
             </p>
 
@@ -354,7 +355,7 @@ Alkoholische Getränke können vor Ort an der Bar gekauft werden – gib uns ger
           venue: "Lindenhof",
           city: "Bad Pyrmont",
           address: "Lindenhof, 31812 Bad Pyrmont",
-          hero: "images/silvester-hero.webp",
+          hero: "/images/silvester-hero.webp",
           price: "105,00 €",
           price_note: {
             de: "ohne alkoholische Getränke • Plätze begrenzt",
@@ -538,12 +539,12 @@ Alkoholische Getränke können vor Ort an der Bar gekauft werden – gib uns ger
         $("#ev-desc-de").textContent=ev.description.de;
         $("#ev-desc-ru").textContent=ev.description.ru;
 
-        // Hero
+        // Hero (+ PNG fallback)
         const hero=$("#ev-hero");
         if(hero){
           hero.src=ev.hero;
           hero.alt=`${ev.title.de} – Hero`;
-          hero.onerror=()=>{ hero.src="images/fallback.webp"; };
+          hero.onerror=()=>{ hero.src="/images/silvester-hero.png"; };
         }
 
         // Zahlung / Kontakt
@@ -551,7 +552,7 @@ Alkoholische Getränke können vor Ort an der Bar gekauft werden – gib uns ger
         $("#ev-bic").textContent=ev.payment.bic;
         $("#ev-holder").textContent=ev.payment.holder;
 
-        // Telefone (верхняя коробка и в футере уже ссылки)
+        // Telefone
         const p1=formatPhonePretty(ev.contact.phone);
         const p2=formatPhonePretty(ev.contact.phone2||"");
         $("#ev-phone").textContent=p1;
@@ -653,18 +654,25 @@ Alkoholische Getränke können vor Ort an der Bar gekauft werden – gib uns ger
       INIT
       ================================================= */
       document.addEventListener("DOMContentLoaded", ()=>{
-        // Burger: robust
+        // Burger (простая и надёжная версия)
         (function(){
-          const btn=document.getElementById('menuToggle');
-          const menu=document.getElementById('mobileMenu');
-          if(!btn||!menu) return;
-          const btnClone=btn.cloneNode(true);
-          btn.parentNode.replaceChild(btnClone, btn);
-          function setOpen(open){ menu.classList.toggle('hidden', !open); btnClone.setAttribute('aria-expanded', String(open)); }
-          btnClone.addEventListener('click', (e)=>{ e.stopPropagation(); setOpen(menu.classList.contains('hidden')); });
+          const btn = document.getElementById("menuToggle");
+          const menu = document.getElementById("mobileMenu");
+          if(!btn || !menu) return;
+          let isOpen = false;
+          function setOpen(next){
+            isOpen = next;
+            menu.classList.toggle("hidden", !isOpen);
+            btn.setAttribute("aria-expanded", String(isOpen));
+          }
+          btn.addEventListener("click", (e)=>{ e.stopPropagation(); setOpen(!isOpen); });
+          document.addEventListener("click", (e)=>{
+            if(!isOpen) return;
+            const inside = menu.contains(e.target) || btn.contains(e.target);
+            if(!inside) setOpen(false);
+          });
+          document.addEventListener("keydown", (e)=>{ if(e.key==="Escape" && isOpen) setOpen(false); });
           menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>setOpen(false)));
-          document.addEventListener('click', (e)=>{ if(!menu.classList.contains('hidden')){ const inside=menu.contains(e.target)||btnClone.contains(e.target); if(!inside) setOpen(false);} });
-          document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') setOpen(false); });
         })();
 
         // Event-Daten rendern
