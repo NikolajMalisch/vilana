@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vilana Event &amp; Catering | Galerie</title>
+
+    <!-- =========================
+         SEO-Basis
+    ========================== -->
+    <title>Galerie – Vilana Event &amp; Catering in Hameln</title>
+    <meta name="description"
+          content="Galerie von Vilana Event &amp; Catering: Hochzeiten, Familienfeiern und Firmenveranstaltungen mit festlichen Buffets, Desserts und stilvoller Dekoration in Hameln und Umgebung.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.vilana-event.de/galerie.html">
+    <meta name="theme-color" content="#fdfaf6">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Galerie – Vilana Event &amp; Catering">
+    <meta property="og:description"
+          content="Einblicke in Hochzeiten, Familienfeiern und Firmenveranstaltungen mit liebevoll dekorierten Buffets und stilvollen Tischarrangements von Vilana Event &amp; Catering.">
+    <meta property="og:url" content="https://www.vilana-event.de/galerie.html">
+    <meta property="og:site_name" content="Vilana Event &amp; Catering">
+    <meta property="og:image" content="https://www.vilana-event.de/images/social/vilana-gallery-cover.webp">
+    <meta property="og:locale" content="de_DE">
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -47,7 +66,9 @@
       rel="stylesheet">
 
     <style>
-      /* ——— Basis ——— */
+      /* =========================
+         Basis-Typografie & Branding
+      ========================== */
       body {
         font-family: "Cormorant SC", serif;
         background-color: #fdfaf6;
@@ -80,7 +101,9 @@
   </head>
 
   <body class="text-gray-800 antialiased">
-    <!-- ===== HEADER (identisch zu index) ===== -->
+    <!-- =========================
+         HEADER (identisch zur Startseite)
+    ========================== -->
     <header class="bg-white shadow-md sticky top-0 z-40">
       <div
         class="container mx-auto px-4 py-4 flex items-center justify-between"
@@ -129,7 +152,7 @@
           >
           <a id="eventLink" class="text-gray-700 hover:text-amber-700">Event</a>
 
-          <!-- Sprache (Desktop) – Dropdown wie auf der Startseite -->
+          <!-- Sprache (Desktop) – Dropdown -->
           <div class="relative">
             <button
               id="langToggle"
@@ -237,13 +260,11 @@
 
       <!-- Mobile Menü -->
       <div
-  id="mobileMenu"
-  class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-  role="menu"
-  aria-label="Mobiles Menü"
->
-
-
+        id="mobileMenu"
+        class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+        role="menu"
+        aria-label="Mobiles Menü"
+      >
         <a
           href="index.html#home"
           class="block text-gray-700 hover:text-amber-700"
@@ -295,18 +316,37 @@
       </div>
     </header>
 
-    <!-- ===== MAIN ===== -->
+    <!-- =========================
+         MAIN
+    ========================== -->
     <main class="py-16 px-4 max-w-7xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-de"
+      <!-- Hauptüberschrift für SEO -->
+      <h1
+        class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 lang lang-de"
       >
         Galerie unserer Veranstaltungen
-      </h2>
-      <h2
-        class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10 lang lang-ru hidden"
+      </h1>
+      <p
+  class="text-center text-gray-600 mb-10 max-w-3xl mx-auto text-lg lang lang-de"
+>
+  Einblicke in unsere Hochzeiten, Familienfeiern und Firmenveranstaltungen –
+  stilvoll dekorierte Buffets, feine Vorspeisen und festliche Tischarrangements
+  von <span class="whitespace-nowrap">Vilana Event &amp; Catering</span>
+  in Hameln und Umgebung.
+</p>
+
+      <h1
+        class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3 lang lang-ru hidden"
       >
         Галерея наших мероприятий
-      </h2>
+      </h1>
+      <p
+  class="text-center text-gray-600 mb-10 max-w-3xl mx-auto text-lg lang lang-ru hidden"
+>
+  Атмосфера наших свадеб, семейных праздников и корпоративов —
+  красиво оформленные фуршеты, сервировка столов и живые эмоции гостей
+  вместе с <span class="whitespace-nowrap">Vilana Event &amp; Catering</span>.
+</p>
 
       <!-- Grid für Thumbnails -->
       <div
@@ -318,6 +358,8 @@
       <div
         id="lightbox"
         class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
+        aria-modal="true"
+        role="dialog"
       >
         <button
           id="lightbox-close"
@@ -345,7 +387,8 @@
         <img
           id="lightbox-image"
           alt=""
-          class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform">
+          class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform"
+        >
 
         <button
           id="lightbox-next"
@@ -364,7 +407,9 @@
       </div>
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- =========================
+        FOOTER
+    ========================== -->
     <footer class="bg-gray-800 text-white py-10 mt-16 relative w-full">
       <div class="px-6 text-center">
         <p class="mb-2 space-x-2">
@@ -390,100 +435,156 @@
       </button>
     </footer>
 
-    <!-- ===== Seitenskripte (Sprache, Menü, Galerie, Lightbox) ===== -->
+    <!-- =========================
+        JS: Jahr, Galerie, Lightbox
+        (Sprache & Menü: in main.js)
+    ========================== -->
     <script>
-// ===== Jahr im Footer
-(function () {
-  const y = new Date().getFullYear();
-  const d = document.getElementById("year-de");
-  const r = document.getElementById("year-ru");
-  if (d) d.textContent = y;
-  if (r) r.textContent = y;
-})();
+      // Jahr im Footer aktualisieren
+      (function () {
+        const y = new Date().getFullYear();
+        const d = document.getElementById("year-de");
+        const r = document.getElementById("year-ru");
+        if (d) d.textContent = y;
+        if (r) r.textContent = y;
+      })();
 
-// ===== Galerie + Lightbox (без языка/бургера — этим занимается main.js)
-(function () {
-  const gallery = document.getElementById("gallery");
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lightbox-image");
-  const lbClose = document.getElementById("lightbox-close");
-  const lbPrev = document.getElementById("lightbox-prev");
-  const lbNext = document.getElementById("lightbox-next");
+      // Galerie + Lightbox
+      (function () {
+        const gallery = document.getElementById("gallery");
+        const lb = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-image");
+        const lbClose = document.getElementById("lightbox-close");
+        const lbPrev = document.getElementById("lightbox-prev");
+        const lbNext = document.getElementById("lightbox-next");
 
-  const CARD_RATIO = "3 / 2";
-  const IMAGE_FIT = "cover";
-  const DEF_W = 1200, DEF_H = 800;
+        const CARD_RATIO = "3 / 2";
+        const IMAGE_FIT = "cover";
+        const DEF_W = 1200, DEF_H = 800;
 
-  const imagePaths = [
-    "images/event/event-1.webp","images/event/event-2.webp","images/event/event-3.webp",
-    "images/event/event-4.webp","images/event/event-5.webp","images/event/event-6-1.webp",
-    "images/event/event-7.webp","images/event/event-8.webp","images/event/event-9.webp",
-    "images/event/event-10.webp","images/event/event-11.webp","images/event/event-12.webp",
-    "images/event/event-13.webp","images/event/event-14.webp","images/event/event-15.webp",
-    "images/event/event-16.webp","images/event/event-17.webp","images/event/event-18.webp",
-    "images/event/event-19.webp","images/event/event-20.webp","images/event/event-21.webp",
-  ];
+        // Pfade zu deinen Event-Bildern
+        const imagePaths = [
+          "images/event/event-1.webp","images/event/event-2.webp","images/event/event-3.webp",
+          "images/event/event-4.webp","images/event/event-5.webp","images/event/event-6-1.webp",
+          "images/event/event-7.webp","images/event/event-8.webp","images/event/event-9.webp",
+          "images/event/event-10.webp","images/event/event-11.webp","images/event/event-12.webp",
+          "images/event/event-13.webp","images/event/event-14.webp","images/event/event-15.webp",
+          "images/event/event-16.webp","images/event/event-17.webp","images/event/event-18.webp",
+          "images/event/event-19.webp","images/event/event-20.webp","images/event/event-21.webp"
+        ];
 
-  const altTemplates = [
-    "Hochzeit Catering Hameln","Eventservice Niedersachsen","Catering Buffet Hameln",
-    "Hochzeitstorte Niedersachsen","Party Catering Hannover","Catering mit Servicepersonal",
-    "Buffet Hochzeit Niedersachsen","Event Buffet Hameln","Hochzeit in Bad Pyrmont",
-    "Catering für Firmenfeier","Russischer Abend Niedersachsen","Fingerfood Catering Hameln",
-    "Hochzeitstafel Niedersachsen","Eventdekoration Hameln","Candy Bar Hochzeit",
-    "Menü für Firmenfeier","Hochzeit Empfang","Eventservice NRW",
-    "Hochzeit Catering Buffet","Abendveranstaltung Niedersachsen","Hochzeit Catering in Hannover",
-  ];
+        // SEO-freundliche Alt-Texte passend zu aktuellen Bildern (ohne Oktoberfest/Silvester)
+        const altTemplates = [
+          "Hochzeit mit festlich gedeckter Tafel von Vilana Event & Catering",
+          "Brautpaar-Tisch mit Dekoration und Blumenarrangements",
+          "Buffet mit warmen Speisen und Beilagen für Hochzeitsgesellschaft",
+          "Candy Bar und Desserts bei einer Hochzeit in Hameln",
+          "Fingerfood und Canapés für Empfang oder Familienfeier",
+          "Festliche Tischdekoration mit Kerzen und Stoffservietten",
+          "Catering für Firmenfeier mit abwechslungsreichem Buffet",
+          "Familienfeier mit gedeckten Tischen und Buffet von Vilana",
+          "Geburtstagsfeier mit kalten Platten und Snacks",
+          "Dekorierte Tafel für eine private Feier in Niedersachsen",
+          "Buffet mit Salaten, Vorspeisen und Hauptgerichten",
+          "Dessertauswahl und Süßigkeitenbuffet von Vilana Event & Catering",
+          "Sommerliche Feier mit leichten Speisen und Getränken",
+          "Eventdekoration mit Lichterketten und floralen Elementen",
+          "Tafel mit mehreren Gängen für geschlossene Gesellschaft",
+          "Empfang mit Sekt und Fingerfood in Hameln",
+          "Familienfest mit rustikalen Platten und warmen Speisen",
+          "Moderner Buffetaufbau mit warmen und kalten Speisen",
+          "Detailaufnahme einer festlichen Tischdekoration",
+          "Gäste genießen Buffet und Atmosphäre bei Vilana Event & Catering",
+          "Impressionen von Hochzeiten und Feiern mit Vilana Event & Catering"
+        ];
 
-  let currentIndex = 0;
+        let currentIndex = 0;
 
-  imagePaths.forEach((src, i) => {
-    const fig = document.createElement("figure");
-    fig.className = "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
-    fig.style.aspectRatio = CARD_RATIO;
+        imagePaths.forEach((src, i) => {
+          const fig = document.createElement("figure");
+          fig.className = "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
+          fig.style.aspectRatio = CARD_RATIO;
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `Vilana Event & Catering – ${altTemplates[i] || "Event Catering Niedersachsen"}`;
-    img.width = DEF_W; img.height = DEF_H;
-    img.decoding = "async";
-    img.loading = i === 0 ? "eager" : "lazy";
-    if (i === 0) img.fetchPriority = "high";
-    img.className = "w-full h-full object-" + IMAGE_FIT + " bg-gray-100 transition-transform duration-300 group-hover:scale-105";
-    img.addEventListener("click", () => openLightbox(i));
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = altTemplates[i] || "Vilana Event & Catering – Event Catering in Niedersachsen";
+          img.width = DEF_W;
+          img.height = DEF_H;
+          img.decoding = "async";
+          img.loading = i === 0 ? "eager" : "lazy";
+          if (i === 0) img.fetchPriority = "high";
+          img.className = "w-full h-full object-" + IMAGE_FIT + " bg-gray-100 transition-transform duration-300 group-hover:scale-105";
+          img.addEventListener("click", () => openLightbox(i));
 
-    fig.appendChild(img);
-    gallery.appendChild(fig);
-  });
+          fig.appendChild(img);
+          gallery.appendChild(fig);
+        });
 
-  document.addEventListener("error", (e) => {
-    const t = e.target;
-    if (t.tagName === "IMG") console.error("Bild nicht gefunden:", t.src);
-  }, true);
+        // Fehler-Logging, falls Bildpfad nicht stimmt
+        document.addEventListener(
+          "error",
+          (e) => {
+            const t = e.target;
+            if (t.tagName === "IMG") {
+              console.error("Bild nicht gefunden:", t.src);
+            }
+          },
+          true
+        );
 
-  function openLightbox(i) { currentIndex = i; update(); lb.classList.remove("hidden"); lbImg.classList.remove("zoomed"); }
-  function closeLightbox() { lb.classList.add("hidden"); lbImg.src = ""; lbImg.classList.remove("zoomed"); }
-  function prevImage() { currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length; update(); }
-  function nextImage() { currentIndex = (currentIndex + 1) % imagePaths.length; update(); }
-  function update() { lbImg.src = imagePaths[currentIndex]; }
-  function toggleZoom(e) { e.target.classList.toggle("zoomed"); }
+        function openLightbox(i) {
+          currentIndex = i;
+          update();
+          lb.classList.remove("hidden");
+          lbImg.classList.remove("zoomed");
+        }
 
-  lbClose?.addEventListener("click", closeLightbox);
-  lbPrev?.addEventListener("click", prevImage);
-  lbNext?.addEventListener("click", nextImage);
-  lbImg?.addEventListener("click", toggleZoom);
+        function closeLightbox() {
+          lb.classList.add("hidden");
+          lbImg.src = "";
+          lbImg.classList.remove("zoomed");
+        }
 
-  document.addEventListener("keydown", (e) => {
-    if (lb.classList.contains("hidden")) return;
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowLeft") prevImage();
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggleZoom({ target: lbImg }); }
-  });
-})();
-</script>
-<script src="js/main.js" defer></script>
-<!-- Cookie Consent Wall -->
-<script src="js/vilana-cookiewall.js" defer></script>
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
+          update();
+        }
+
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % imagePaths.length;
+          update();
+        }
+
+        function update() {
+          lbImg.src = imagePaths[currentIndex];
+          lbImg.alt = altTemplates[currentIndex] || "Vilana Event & Catering – Eventimpressionen";
+        }
+
+        function toggleZoom(e) {
+          e.target.classList.toggle("zoomed");
+        }
+
+        lbClose?.addEventListener("click", closeLightbox);
+        lbPrev?.addEventListener("click", prevImage);
+        lbNext?.addEventListener("click", nextImage);
+        lbImg?.addEventListener("click", toggleZoom);
+
+        document.addEventListener("keydown", (e) => {
+          if (lb.classList.contains("hidden")) return;
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowLeft") prevImage();
+          if (e.key === "ArrowRight") nextImage();
+          if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+            toggleZoom({ target: lbImg });
+          }
+        });
+      })();
+    </script>
+
+    <!-- Globale Logik: Sprache, Menü, Event-Link -->
+    <script src="js/main.js" defer></script>
+    <!-- Cookie Consent Wall -->
+    <script src="js/vilana-cookiewall.js" defer></script>
   </body>
 </html>
-
