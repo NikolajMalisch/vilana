@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="css/output.css">
   </noscript>
 
+  <!-- Wichtiger Hero-Content: Logo als LCP-Bild vorladen -->
+  <link
+    rel="preload"
+    as="image"
+    href="images/vilana_logo.webp"
+    type="image/webp"
+  >
+
   <!-- Google Fonts: Preconnect + verzögerte Ladeweise zur Performance-Verbesserung -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,12 +146,12 @@
 
   <!-- Hinweis: Analytics idealerweise erst nach Cookie-Einwilligung triggern -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-YW71FCW4FJ');
-  </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-YW71FCW4FJ');
+</script>
 </head>
 
 <body class="text-gray-800 antialiased">
@@ -154,8 +162,8 @@
   >Zum Inhalt springen</a>
 
   <!-- =========================================
-       HEADER: Logo, Navigation, Sprachumschalter
-       ========================================= -->
+      HEADER: Logo, Navigation, Sprachumschalter
+      ========================================= -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <!-- Logo-Block mit Wortmarke -->
@@ -333,15 +341,15 @@
   <div class="container mx-auto px-4">
 
     <!-- ЛОГО -->
-    <img
-      src="images/vilana_logo.png"
-      alt="Vilana Event &amp; Catering – Logo"
-      loading="lazy"
-      decoding="async"
-      class="mx-auto w-auto max-w-[220px] sm:max-w-[260px] md:max-w-[220px] lg:max-w-[220px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
-      width="220"
-      height="260"
-    >
+  <img
+  src="images/vilana_logo.webp"
+  alt="Vilana Event & Catering – Logo"
+  decoding="async"
+  fetchpriority="high"
+  class="mx-auto w-auto max-w-[220px] sm:max-w-[260px] md:max-w-[220px] lg:max-w-[220px] h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+  width="220"
+  height="260"
+/>
 
     <!-- Подзаголовок / Kicker -->
     <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">
@@ -818,8 +826,8 @@
   </main>
 
   <!-- =========================================
-       FOOTER: Rechtliches, Social, Scroll-to-top
-       ========================================= -->
+  FOOTER: Rechtliches, Social, Scroll-to-top
+    ========================================= -->
   <footer class="bg-gray-800 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
       <!-- Instagram-Link als Social-Proof -->
