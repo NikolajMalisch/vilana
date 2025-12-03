@@ -1,14 +1,21 @@
-/* Убираем стрелку у переключателя языка */
+/* Entfernt den Pfeil des Sprach-Dropdowns */
 #lang-button::after,
 #lang-button::before {
-content: none !important;
-display: none !important;
-border: 0 !important;
+    content: none !important;
+    display: none !important;
+    border: 0 !important;
 }
 
-/* показываем только активный язык */
-.lang-de .lang.lang-ru { display: none; }
-.lang-ru .lang.lang-de { display: none; }
+/* Zeigt nur die aktuell ausgewählte Sprache an */
+.lang-de .lang.lang-ru {
+    display: none;
+}
+.lang-ru .lang.lang-de {
+    display: none;
+}
 
-/* на всякий случай: убираем любые каретки, если плагин их добавляет */
-#langToggle::after, #langToggle::before { content: none !important; }
+/* Sicherheitshalber: Entfernt jegliche Carets, falls ein Plugin diese hinzufügt */
+#langToggle::after,
+#langToggle::before {
+    content: none !important;
+}
