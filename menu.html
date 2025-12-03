@@ -52,7 +52,7 @@
       gtag("config", "G-YW71FCW4FJ");
     </script>
 
-    <!-- Tailwind CSS (в прод лучше собирать локально) -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/custom.css">
 
@@ -108,7 +108,69 @@
         white-space: nowrap;
         border: 0;
       }
-    </style>
+
+  /* ========================================================================== 
+     Card-Style für jedes Menü-Item (Glassmorphism)
+     ========================================================================== */
+
+  .menu-item {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+    transition: transform .18s, box-shadow .18s, background .18s;
+  }
+
+  .menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.16);
+    background: rgba(255, 255, 255, .7);
+  }
+
+  .menu-item h4 {
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+  }
+
+  .menu-item p {
+    font-size: .98rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 640px) {
+    .menu-item {
+      padding: 1.25rem 1.3rem;
+      border-radius: 16px;
+    }
+  }
+
+  /* ==========================================================================
+Glassmorphism FAQ Cards
+   ========================================================================== */
+
+.faq-card {
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+
+.faq-card:hover {
+  background: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+</style>
 
     <!-- Tailwind (локальная сборка, если есть) -->
     <link rel="stylesheet" href="css/output.css">
@@ -457,303 +519,315 @@
 
         <!-- Warme Speisen -->
         <div class="menu-category" data-category="warm">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Schaschlik</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Шашлык</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Pute, Schwein oder Lamm – mariniert und gegrillt.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Индейка, свинина или баранина – маринованное и жареное мясо.
-              </p>
-            </div>
+          <div class="glass-box">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Schaschlik</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Шашлык</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Pute, Schwein oder Lamm – mariniert und gegrillt.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Индейка, свинина или баранина – маринованное и жареное мясо.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Gefüllte Paprika</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Фаршированный перец
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Hackfleisch oder vegetarisch gefüllt.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С мясной или вегетарианской начинкой.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Gefüllte Paprika</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Фаршированный перец
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Hackfleisch oder vegetarisch gefüllt.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С мясной или вегетарианской начинкой.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Rinderbraten</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Жаркое из говядины</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Zart geschmort mit klassischer Bratensoße.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежное тушеное мясо с классическим соусом.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Rinderbraten</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жаркое из говядины
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Zart geschmort mit klassischer Bratensoße.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежное тушеное мясо с классическим соусом.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Lammkoteletts</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Бараньи отбивные</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Rosmarinkartoffeln und Bohnen im Speckmantel.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С картофелем с розмарином и фасолью в беконе.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Lammkoteletts</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Бараньи отбивные
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Rosmarinkartoffeln und Bohnen im Speckmantel.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С картофелем с розмарином и фасолью в беконе.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Kohlrouladen (Golubzi)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Голубцы</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Fleisch-Reis-Füllung in Tomatensoße.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С мясо-рисовой начинкой в томатном соусе.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Kohlrouladen (Golubzi)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">Голубцы</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Fleisch-Reis-Füllung in Tomatensoße.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С мясо-рисовой начинкой в томатном соусе.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Knusprige Hähnchenschnitzel
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Хрустящие куриные шницели
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Klassisch paniert und goldbraun gebraten.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Классическая панировка, обжарены до золотистой корочки.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Knusprige Hähnchenschnitzel
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Хрустящие куриные шницели
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Klassisch paniert und goldbraun gebraten.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Классическая панировка, обжарены до золотистой корочки.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Hähnchenbrust in Champignonrahmsauce
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Куриная грудка в грибном сливочном соусе
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Cremige Pilzsoße auf zarter Hähnchenbrust.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежная куриная грудка под кремовым грибным соусом.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Hähnchenbrust in Champignonrahmsauce
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Куриная грудка в грибном сливочном соусе
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Cremige Pilzsoße auf zarter Hähnchenbrust.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежная куриная грудка под кремовым грибным соусом.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Köfte / Frikadellen
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Кёфте / Котлеты</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Orientalisch oder klassisch gewürzt.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Приправлены по восточному или классическому рецепту.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Köfte / Frikadellen
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">Кёфте / Котлеты</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Orientalisch oder klassisch gewürzt.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Приправлены по восточному или классическому рецепту.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Plov</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Плов</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Reispfanne mit Möhren und Fleisch.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Рис с морковью и мясом, приготовленный на сковороде.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Plov</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Плов</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Reispfanne mit Möhren und Fleisch.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Рис с морковью и мясом, приготовленный на сковороде.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Kassler mit Sauerkraut
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Касселер с квашеной капустой
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Deftig und traditionell.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Сытное и традиционное блюдо.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Kassler mit Sauerkraut
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Касселер с квашеной капустой
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Deftig und traditionell.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Сытное и традиционное блюдо.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Hähnchenrouladen mit Spinat in Béarnaise
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Куриные рулетики со шпинатом в соусе Беарнез
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Herzhaft gefüllt mit feiner Sauce.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Сытная начинка и утончённый соус.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Hähnchenrouladen mit Spinat in Béarnaise
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Куриные рулетики со шпинатом в соусе Беарнез
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Herzhaft gefüllt mit feiner Sauce.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Сытная начинка и утончённый соус.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Entenbrust mit Orangensauce
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Утиная грудка с апельсиновым соусом
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Fruchtig und edel – perfekt für besondere Anlässe.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Фруктовое и изысканное блюдо для особых случаев.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Entenbrust mit Orangensauce
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Утиная грудка с апельсиновым соусом
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Fruchtig und edel – perfekt für besondere Anlässe.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Фруктовое и изысканное блюдо для особых случаев.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Kartoffelgratin / Püree
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Картофельный гратен / пюре
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Cremige Klassiker als Beilage.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежные классические гарниры.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Kartoffelgratin / Püree
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Картофельный гратен / пюре
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Cremige Klassiker als Beilage.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежные классические гарниры.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Chinanudeln (Vegan)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Китайская лапша (веганская)
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Leicht gewürzt mit Gemüse.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Легко приправленная с овощами.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Chinanudeln (Vegan)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Китайская лапша (веганская)
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Leicht gewürzt mit Gemüse.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Легко приправленная с овощами.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Frittierte Calamari
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Жареные кальмары</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Knusprig und zart mit Dip.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Хрустящие и нежные с соусом.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Frittierte Calamari
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жареные кальмары
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Knusprig und zart mit Dip.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Хрустящие и нежные с соусом.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Gegrillte Garnelen</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Жареные креветки</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Aromatisch mariniert, leicht gegrillt.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Ароматный маринад, слегка обжарены.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Gegrillte Garnelen
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жареные креветки
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Aromatisch mariniert, leicht gegrillt.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Ароматный маринад, слегка обжарены.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Zanderfilet in Dillsauce
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Филе судака в укропном соусе
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Fein und mild mit Kräuteraroma.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежное филе с травяным ароматом.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Zanderfilet in Dillsauce
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Филе судака в укропном соусе
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Fein und mild mit Kräuteraroma.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежное филе с травяным ароматом.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Reis oder Spätzle</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Рис или шпецле</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Als Beilage zu Fleisch- oder Fischgerichten.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – В качестве гарнира к мясным или рыбным блюдам.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Reis oder Spätzle</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Рис или шпецле</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Als Beilage zu Fleisch- oder Fischgerichten.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – В качестве гарнира к мясным или рыбным блюдам.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Mediterranes Gemüse
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Средиземноморские овощи
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Gegrillt mit Olivenöl und Kräutern.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Запечённые с оливковым маслом и травами.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Mediterranes Gemüse
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Средиземноморские овощи
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Gegrillt mit Olivenöl und Kräutern.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Запечённые с оливковым маслом и травами.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Gemüse in Sauce Hollandaise
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Овощи в соусе голландез
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Gedämpft mit cremiger Sauce Hollandaise.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Приготовлены на пару с нежным сливочным соусом.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Gemüse in Sauce Hollandaise
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Овощи в соусе голландез
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Gedämpft mit cremiger Sauce Hollandaise.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Приготовлены на пару с нежным сливочным соусом.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Lachs in einer Kräuterrahmsauce
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Лосось в сливочно-травяном соусе
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Zartes Filet in cremiger Kräutersauce.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежное филе в сливочно-травяном соусе.
-              </p>
-            </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Lachs in einer Kräuterrahmsauce
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Лосось в сливочно-травяном соусе
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Zartes Filet in cremiger Kräutersauce.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежное филе в сливочно-травяном соусе.
+                </p>
+              </div>
 
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Zanderfilet in einer Dillsauce
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Филе судака в сливочно-укропном соусе
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mild gegart in feiner Dillsahnesauce.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежно приготовлено в изысканном укропном соусе.
-              </p>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Zanderfilet in einer Dillsauce
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Филе судака в сливочно-укропном соусе
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mild gegart in feiner Dillsahnesauce.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежно приготовлено в изысканном укропном соусе.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -764,183 +838,197 @@
           data-category="cold"
           aria-labelledby="cold-heading"
         >
-          <h2 id="cold-heading" class="sr-only">Kalte Platten</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Auberginen mit Tomaten geschichtet
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Баклажаны с помидорами слоями
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – In Schichten, aromatisch mariniert.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Слоисто уложены и ароматно замаринованы.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Tomate-Mozzarella</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Томаты с моцареллой
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Klassiker mit Basilikum und Balsamico.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Классика с базиликом и бальзамиком.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Surimi</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Сурими</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Frisch oder als Häppchen serviert.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Подаётся свежим или в виде закуски.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Frittierte Surimi im Knuspermantel
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Жареные сурими в хрустящей панировке
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Knusprig ummantelte Meeresfrüchte.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Морепродукты в хрустящей корочке.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Gefüllte Eier</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Фаршированные яйца</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Hausgemacht mit feiner Creme.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Домашнего приготовления с нежным кремом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Garnelen im Kartoffelfadenmantel
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Креветки в картофельной нити
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Knusprig, elegant, ein Hingucker.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Хрустящие, элегантные и эффектные.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Antipasti in verschiedenen Variationen
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Антипасти в различных вариациях
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mediterraner Mix aus Gemüse & Käse.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Средиземноморская смесь овощей и сыра.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Sarma (gefüllte Weinblätter)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Сарма (фаршированные виноградные листья)
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mild gewürzt, auf Wunsch vegan.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Легко приправленные, по желанию веганские.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Sushi in verschiedenen Variationen
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Суши в различных вариациях
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Frisch und kreativ serviert.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Подаются свежими и креативно оформленными.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Baguette mit Lachs</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Багет с лососем</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Frisch belegt mit Dill und Creme.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Свежий с укропом и сливочным соусом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Avocadocreme / Hummus
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Авокадо-крем / Хумус
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Cremige Dips, perfekt als Vorspeise.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежные дипы — идеально в качестве закуски.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Garnelencreme</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Креветочный крем</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Fein abgeschmeckt als Brotaufstrich oder Dip.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Тонко приправлен для намазки или дипа.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Kanapee [Häppchen]</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Канапе [мини-закуски]
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Elegant belegte Appetizer auf Mini-Brot.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Элегантные мини-бутерброды с разнообразной начинкой.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Çiğköfte (vegane Frikadellen)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Чигкёфте (веганские котлетки)
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Würzig, proteinreich und vegan.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Пряные, с высоким содержанием белка, полностью веганские.
-              </p>
+          <div class="glass-box">
+            <h2 id="cold-heading" class="sr-only">Kalte Platten</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Auberginen mit Tomaten geschichtet
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Баклажаны с помидорами слоями
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – In Schichten, aromatisch mariniert.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Слоисто уложены и ароматно замаринованы.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Tomate-Mozzarella
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Томаты с моцареллой
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Klassiker mit Basilikum und Balsamico.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Классика с базиликом и бальзамиком.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Surimi</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Сурими</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Frisch oder als Häppchen serviert.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Подаётся свежим или в виде закуски.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Frittierte Surimi im Knuspermantel
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жареные сурими в хрустящей панировке
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Knusprig ummantelte Meeresfrüchte.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Морепродукты в хрустящей корочке.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Gefüllte Eier</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Фаршированные яйца
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Hausgemacht mit feiner Creme.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Домашнего приготовления с нежным кремом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Garnelen im Kartoffelfadenmantel
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Креветки в картофельной нити
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Knusprig, elegant, ein Hingucker.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Хрустящие, элегантные и эффектные.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Antipasti in verschiedenen Variationen
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Антипасти в различных вариациях
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mediterraner Mix aus Gemüse & Käse.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Средиземноморская смесь овощей и сыра.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Sarma (gefüllte Weinblätter)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Сарма (фаршированные виноградные листья)
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mild gewürzt, auf Wunsch vegan.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Легко приправленные, по желанию веганские.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Sushi in verschiedenen Variationen
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Суши в различных вариациях
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Frisch und kreativ serviert.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Подаются свежими и креативно оформленными.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Baguette mit Lachs
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Багет с лососем
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Frisch belegt mit Dill und Creme.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Свежий с укропом и сливочным соусом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Avocadocreme / Hummus
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Авокадо-крем / Хумус
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Cremige Dips, perfekt als Vorspeise.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежные дипы — идеально в качестве закуски.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Garnelencreme</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Креветочный крем
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Fein abgeschmeckt als Brotaufstrich oder Dip.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Тонко приправлен для намазки или дипа.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Kanapee [Häppchen]
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Канапе [мини-закуски]
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Elegant belegte Appetizer auf Mini-Brot.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Элегантные мини-бутерброды с разнообразной начинкой.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Çiğköfte (vegane Frikadellen)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Чигкёфте (веганские котлетки)
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Würzig, proteinreich und vegan.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Пряные, с высоким содержанием белка, полностью веганские.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -951,151 +1039,169 @@
           data-category="salad"
           aria-labelledby="salad-heading"
         >
-          <h2 id="salad-heading" class="sr-only">Salate</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Pilzsalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Грибной салат</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit marinierten Champignons und Zwiebeln.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С маринованными шампиньонами и луком.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Möhrensalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Салат из моркови</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Frisch geraspelt mit Apfel oder Knoblauch.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Свежая натёртая морковь с яблоком или чесноком.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Krabbensalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Салат с крабами</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Mayonnaise und Gemüsewürfeln.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С майонезом и овощными кубиками.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Sommersalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Летний салат</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Leicht und frisch mit Gurke, Tomate, Paprika.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Лёгкий и свежий с огурцом, томатом и перцем.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Rucola-Salat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Салат с рукколой</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Parmesan und Balsamico.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С пармезаном и бальзамическим уксусом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Chinakohlsalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Салат из китайской капусты
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Knackig, leicht süßlich, mit Joghurt oder Essig.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Хрустящий, слегка сладковатый, с йогуртом или уксусом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Spitzkohlsalat mit Pistazien
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Салат из остролистной капусты с фисташками
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Fein geschnitten mit nussigem Topping.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Тонко нарезанный с ореховой посыпкой.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Griechischer Salat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Греческий салат</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Feta, Gurken, Tomaten, Oliven.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С фетой, огурцами, помидорами и оливками.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Tomaten-Oliven-Salat
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Салат из помидоров и оливок
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit roten Zwiebeln und frischen Kräutern.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С красным луком и свежей зеленью.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Granatapfelsalat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Салат с гранатом</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit knackigem Gemüse und fruchtiger Note.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С хрустящими овощами и фруктовым акцентом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Heringssalat (Pod Schuboj)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Селёдка под шубой</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Traditionell mit Roter Bete und Mayonnaise.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Традиционно с буряком и майонезом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Kartoffelsalat (Olivje)
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Оливье</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Klassiker mit Erbsen, Ei und Mayo.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Классический салат с горошком, яйцом и майонезом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Vinegret</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Винегрет</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Russische Rote-Bete-Gemüsemischung.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Русский салат из свеклы и овощей.
-              </p>
+          <div class="glass-box">
+            <h2 id="salad-heading" class="sr-only">Salate</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Pilzsalat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Грибной салат</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit marinierten Champignons und Zwiebeln.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С маринованными шампиньонами и луком.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Möhrensalat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат из моркови
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Frisch geraspelt mit Apfel oder Knoblauch.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Свежая натёртая морковь с яблоком или чесноком.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Krabbensalat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат с крабами
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Mayonnaise und Gemüsewürfeln.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С майонезом и овощными кубиками.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Sommersalat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Летний салат</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Leicht und frisch mit Gurke, Tomate, Paprika.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Лёгкий и свежий с огурцом, томатом и перцем.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Rucola-Salat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат с рукколой
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Parmesan und Balsamico.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С пармезаном и бальзамическим уксусом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Chinakohlsalat</h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат из китайской капусты
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Knackig, leicht süßlich, mit Joghurt oder Essig.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Хрустящий, слегка сладковатый, с йогуртом или уксусом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Spitzkohlsalat mit Pistazien
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат из остролистной капусты с фисташками
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Fein geschnitten mit nussigem Topping.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Тонко нарезанный с ореховой посыпкой.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Griechischer Salat
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Греческий салат
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Feta, Gurken, Tomaten, Oliven.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С фетой, огурцами, помидорами и оливками.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Tomaten-Oliven-Salat
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат из помидоров и оливок
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit roten Zwiebeln und frischen Kräutern.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С красным луком и свежей зеленью.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Granatapfelsalat
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Салат с гранатом
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit knackigem Gemüse und fruchtiger Note.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С хрустящими овощами и фруктовым акцентом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Heringssalat (Pod Schuboj)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Селёдка под шубой
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Traditionell mit Roter Bete und Mayonnaise.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Традиционно с буряком и майонезом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Kartoffelsalat (Olivje)
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">Оливье</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Klassiker mit Erbsen, Ei und Mayo.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Классический салат с горошком, яйцом и майонезом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Vinegret</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Винегрет</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Russische Rote-Bete-Gemüsemischung.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Русский салат из свеклы и овощей.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1106,89 +1212,99 @@
           data-category="dessert"
           aria-labelledby="dessert-heading"
         >
-          <h2 id="dessert-heading" class="sr-only">Nachspeisen</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Windbeutel-Dessert</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Десерт из профитролей
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Gefüllt mit Vanillecreme und Sahne.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С ванильным кремом и взбитыми сливками.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Lotus-Keks-Dessert</h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Десерт с печеньем Lotus
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Cremiger Nachtisch mit karamellisierten Keksen.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Нежный десерт с карамелизированным печеньем.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Mousse au Chocolat</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Шоколадный мусс</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Luftige Schokocreme mit feiner Note.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Лёгкий шоколадный крем с утончённым вкусом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Panna Cotta</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Панна Котта</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Klassischer italienischer Pudding mit Fruchtsauce.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Классический итальянский пудинг с фруктовым соусом.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Tiramisu</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Тирамису</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit Mascarpone, Kaffee und Kakaopulver.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С маскарпоне, кофе и какао-порошком.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Früchte mit Schokoladenüberzug
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Фрукты в шоколадной глазури
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Frisches Obst, dekorativ mit Schokolade überzogen.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Свежие фрукты, покрытые шоколадной глазурью.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Cookiedessert mit Weintrauben
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Десерт с печеньем и виноградом
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Knusprig und cremig mit fruchtigem Akzent.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Хрустящий и кремовый с фруктовой ноткой.
-              </p>
+          <div class="glass-box">
+            <h2 id="dessert-heading" class="sr-only">Nachspeisen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Windbeutel-Dessert
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Десерт из профитролей
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Gefüllt mit Vanillecreme und Sahne.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С ванильным кремом и взбитыми сливками.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Lotus-Keks-Dessert
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Десерт с печеньем Lotus
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Cremiger Nachtisch mit karamellisierten Keksen.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Нежный десерт с карамелизированным печеньем.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Mousse au Chocolat
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Шоколадный мусс
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Luftige Schokocreme mit feiner Note.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Лёгкий шоколадный крем с утончённым вкусом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Panna Cotta</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Панна Котта</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Klassischer italienischer Pudding mit Fruchtsauce.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Классический итальянский пудинг с фруктовым соусом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Tiramisu</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Тирамису</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit Mascarpone, Kaffee und Kakaopulver.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С маскарпоне, кофе и какао-порошком.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Früchte mit Schokoladenüberzug
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Фрукты в шоколадной глазури
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Frisches Obst, dekorativ mit Schokolade überzogen.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Свежие фрукты, покрытые шоколадной глазурью.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Cookiedessert mit Weintrauben
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Десерт с печеньем и виноградом
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Knusprig und cremig mit fruchtigem Akzent.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Хрустящий и кремовый с фруктовой ноткой.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1199,184 +1315,190 @@
           data-category="candy"
           aria-labelledby="candy-heading"
         >
-          <h2 id="candy-heading" class="sr-only">Candy Bar</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Donuts</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Пончики</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Bunt dekoriert mit Zuckerguss und Toppings.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Ярко украшенные глазурью и топпингами.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Cake Pops</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Кейк попсы</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Kleine Kuchen am Stiel – süß und handlich.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Мини-тортики на палочке — удобно и вкусно.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">CupCakes</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Капкейки</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Mit cremigem Topping in verschiedenen Sorten.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – С кремовым топпингом в разных вариантах.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">Popcorn</h4>
-              <h4 class="text-lg font-bold lang lang-ru">Попкорн</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Klassisch, süß oder salzig – immer ein Hit.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Классический, сладкий или солёный – всегда в моде.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Fruchtgummi Bärenköpfe
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Жевательные мишки</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Für kleine und große Gäste ein Highlight.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Любимцы и детей, и взрослых гостей.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Fruchtgummi Schnüre
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">Жевательные шнурки</h4>
-              <p class="text-gray-600 lang lang-de">
-                – Bunte Vielfalt, perfekt zum Naschen.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Яркие, вкусные, отлично подходят для сладкого стола.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Fruchtgummi Schnuckies
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Жевательные конфетки
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Fruchtige Überraschung in jeder Form.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Фруктовые сюрпризы в разных формах.
-              </p>
-            </div>
-            <div class="menu-item">
-              <h4 class="text-lg font-bold lang lang-de">
-                Schokolade in Variationen
-              </h4>
-              <h4 class="text-lg font-bold lang lang-ru">
-                Шоколад в ассортименте
-              </h4>
-              <p class="text-gray-600 lang lang-de">
-                – Weiße, Vollmilch und Zartbitter – gemischt serviert.
-              </p>
-              <p class="text-gray-600 lang lang-ru">
-                – Белый, молочный и горький – ассорти на выбор.
-              </p>
+          <div class="glass-box">
+            <h2 id="candy-heading" class="sr-only">Candy Bar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Donuts</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Пончики</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Bunt dekoriert mit Zuckerguss und Toppings.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Ярко украшенные глазурью и топпингами.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Cake Pops</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Кейк попсы</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Kleine Kuchen am Stiel – süß und handlich.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Мини-тортики на палочке — удобно и вкусно.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">CupCakes</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Капкейки</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Mit cremigem Topping in verschiedenen Sorten.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – С кремовым топпингом в разных вариантах.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">Popcorn</h4>
+                <h4 class="text-lg font-bold lang lang-ru">Попкорн</h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Klassisch, süß oder salzig – immer ein Hit.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Классический, сладкий или солёный – всегда в моде.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Fruchtgummi Bärenköpfe
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жевательные мишки
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Für kleine und große Gäste ein Highlight.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Любимцы и детей, и взрослых гостей.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Fruchtgummi Schnüre
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жевательные шнурки
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Bunte Vielfalt, perfekt zum Naschen.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Яркие, вкусные, отлично подходят для сладкого стола.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Fruchtgummi Schnuckies
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Жевательные конфетки
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Fruchtige Überraschung in jeder Form.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Фруктовые сюрпризы в разных формах.
+                </p>
+              </div>
+              <div class="menu-item">
+                <h4 class="text-lg font-bold lang lang-de">
+                  Schokolade in Variationen
+                </h4>
+                <h4 class="text-lg font-bold lang lang-ru">
+                  Шоколад в ассортименте
+                </h4>
+                <p class="text-gray-600 lang lang-de">
+                  – Weiße, Vollmilch und Zartbitter – gemischt serviert.
+                </p>
+                <p class="text-gray-600 lang lang-ru">
+                  – Белый, молочный и горький – ассорти на выбор.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- FAQ Block für Rich Snippets -->
-<section class="container mx-auto px-0 mt-12 max-w-3xl">
-  <h2 class="text-2xl font-semibold mb-4">
-    <span class="lang lang-de active">FAQ zum Menü</span>
-    <span class="lang lang-ru">Частые вопросы о меню</span>
-  </h2>
+        <section class="container mx-auto px-0 mt-12 max-w-3xl">
+          <h2 class="text-2xl font-semibold mb-4">
+            <span class="lang lang-de active">FAQ zum Menü</span>
+            <span class="lang lang-ru">Частые вопросы о меню</span>
+          </h2>
 
-  <!-- Frage 1 -->
-  <details class="mb-3">
-    <summary class="font-medium">
-      <span class="lang lang-de active">
-        Können wir zusätzliche Speisen ins Menü aufnehmen?
-      </span>
-      <span class="lang lang-ru">
-        Можно ли добавить в меню блюда, которых нет в списке?
-      </span>
-    </summary>
-    <div class="faq-body">
-      <p class="mt-2 text-gray-700 lang lang-de active">
-        Ja, selbstverständlich. Wenn Sie bestimmte Speisen wünschen, die nicht im
-        Standardmenü stehen, können wir diese für Ihr Fest gern ergänzen.
-        Teilen Sie uns einfach Ihre Vorstellungen mit – wir passen das Menü
-        individuell an Ihren Anlass an.
-      </p>
-      <p class="mt-2 text-gray-700 lang lang-ru">
-        Да, конечно. Если вы хотите включить в меню что-то особенное, чего нет
-        в стандартном списке, мы можем это обсудить и добавить. Расскажите о
-        своих пожеланиях — мы адаптируем меню под ваш праздник и гостей.
-      </p>
-    </div>
-  </details>
+          <!-- Frage 1 -->
+          <details class="mb-3 glass-box faq-card">
+            <summary class="font-medium cursor-pointer">
+              <span class="lang lang-de active">
+                Können wir zusätzliche Speisen ins Menü aufnehmen?
+              </span>
+              <span class="lang lang-ru">
+                Можно ли добавить в меню блюда, которых нет в списке?
+              </span>
+            </summary>
+            <div class="faq-body">
+              <p class="mt-2 text-gray-700 lang lang-de active">
+                Ja, selbstverständlich. Wenn Sie bestimmte Speisen wünschen, die nicht im
+                Standardmenü stehen, können wir diese für Ihr Fest gern ergänzen.
+                Teilen Sie uns einfach Ihre Vorstellungen mit – wir passen das Menü
+                individuell an Ihren Anlass an.
+              </p>
+              <p class="mt-2 text-gray-700 lang lang-ru">
+                Да, конечно. Если вы хотите включить в меню что-то особенное, чего нет
+                в стандартном списке, мы можем это обсудить и добавить. Расскажите о
+                своих пожеланиях — мы адаптируем меню под ваш праздник и гостей.
+              </p>
+            </div>
+          </details>
 
-  <!-- Frage 2 -->
-  <details class="mb-3">
-    <summary class="font-medium">
-      <span class="lang lang-de active">
-        Bieten Sie auch ein exklusives Premium-Menü (z. B. Kaviar, Hummer, Meeresfrüchte)?
-      </span>
-      <span class="lang lang-ru">
-        Делаете ли вы эксклюзивное премиум-меню (например, с чёрной икрой, лобстером, морепродуктами)?
-      </span>
-    </summary>
-    <div class="faq-body">
-      <p class="mt-2 text-gray-700 lang lang-de active">
-        Ja, auf Wunsch erstellen wir auch exklusive Premium-Menüs mit
-        hochwertigen Zutaten wie schwarzem Kaviar, Hummer, Garnelen, frischen
-        Meeresfrüchten oder besonderen Fleischspezialitäten. Ideal für
-        Hochzeiten, Jubiläen und elegante Events – die genaue Zusammenstellung
-        und Preise besprechen wir individuell mit Ihnen.
-      </p>
-      <p class="mt-2 text-gray-700 lang lang-ru">
-        Да, по запросу мы готовим эксклюзивные премиум-меню с такими продуктами,
-        как чёрная икра, лобстеры, креветки, свежие морепродукты и особые
-        мясные деликатесы. Это идеальный вариант для свадеб, юбилеев и
-        торжественных вечеров — состав и стоимость мы обсуждаем индивидуально.
-      </p>
-    </div>
-  </details>
+          <!-- Frage 2 -->
+          <details class="mb-3 glass-box faq-card">
+            <summary class="font-medium cursor-pointer">
+              <span class="lang lang-de active">
+                Bieten Sie auch ein exklusives Premium-Menü (z. B. Kaviar, Hummer, Meeresfrüchte)?
+              </span>
+              <span class="lang lang-ru">
+                Делаете ли вы эксклюзивное премиум-меню (например, с чёрной икрой, лобстером, морепродуктами)?
+              </span>
+            </summary>
+            <div class="faq-body">
+              <p class="mt-2 text-gray-700 lang lang-de active">
+                Ja, auf Wunsch erstellen wir auch exklusive Premium-Menüs mit
+                hochwertigen Zutaten wie schwarzem Kaviar, Hummer, Garnelen, frischen
+                Meeresfrüchten oder besonderen Fleischspezialitäten. Ideal für
+                Hochzeiten, Jubiläen und elegante Events – die genaue Zusammenstellung
+                und Preise besprechen wir individuell mit Ihnen.
+              </p>
+              <p class="mt-2 text-gray-700 lang lang-ru">
+                Да, по запросу мы готовим эксклюзивные премиум-меню с такими продуктами,
+                как чёрная икра, лобстеры, креветки, свежие морепродукты и особые
+                мясные деликатесы. Это идеальный вариант для свадеб, юбилеев и
+                торжественных вечеров — состав и стоимость мы обсуждаем индивидуально.
+              </p>
+            </div>
+          </details>
 
-  <!-- CTA unter dem FAQ -->
-  <div class="mt-8 text-center border-t border-gray-200 pt-6">
-    <p class="mb-3 text-gray-700 lang lang-de active">
-  Sie planen ein besonderes Event und wünschen sich ein individuelles
-  oder exklusives Menü? Kontaktieren Sie uns gern für eine
-  persönliche Beratung.
-</p>
+          <!-- CTA unter dem FAQ -->
+          <div class="mt-8 text-center border-t border-gray-200 pt-6">
+            <p class="mb-3 text-gray-700 lang lang-de active">
+              Sie planen ein besonderes Event und wünschen sich ein individuelles
+              oder exklusives Menü? Kontaktieren Sie uns gern für eine
+              persönliche Beratung.
+            </p>
 
-<p class="mb-3 text-gray-700 lang lang-ru">
-  Планируете особенное мероприятие и хотите индивидуальное
-  или премиум-меню? Напишите нам — мы подготовим персональное предложение.
-</p>
+            <p class="mb-3 text-gray-700 lang lang-ru">
+              Планируете особенное мероприятие и хотите индивидуальное
+              или премиум-меню? Напишите нам — мы подготовим персональное предложение.
+            </p>
 
-    <a
-      href="contact.html"
-      class="inline-block px-5 py-2.5 rounded-full bg-amber-600 text-white font-medium hover:bg-amber-700 transition"
-    >
-    </a>
-  </div>
-</section>
-
-        </script>
+            <a
+              href="contact.html"
+              class="inline-block px-5 py-2.5 rounded-full bg-amber-600 text-white font-medium hover:bg-amber-700 transition"
+            >
+              <span class="lang lang-de active">Jetzt Menü anfragen</span>
+              <span class="lang lang-ru">Отправить запрос по меню</span>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
 
@@ -1626,4 +1748,3 @@
     <script src="js/vilana-cookiewall.js" defer></script>
   </body>
 </html>
-
