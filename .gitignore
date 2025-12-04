@@ -10,4 +10,5 @@ build/
 .copy
 .txt
 .history/
-.prettierignoreimages/vilana_icon/GitKrakenSetup.exe
+.prettierignore
+images/vilana_icon/GitKrakenSetup.exe
