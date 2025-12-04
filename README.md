@@ -46,25 +46,25 @@ Die Website dient als zentrale Anlaufstelle für:
 
 - Zweisprachige Oberfläche (**DE 🇩🇪 & RU 🇷🇺**)
 - DSGVO-konformes **Kontaktformular mit EmailJS**
-- **Cookie-Consent-Wall** (Consent Mode v2 kompatibel)  
-- Responsives Menü (Burger & Dropdown)  
-- SEO-optimiert mit **Meta Tags + JSON-LD**  
-- Lightbox Galerie für Bilder  
-- Mobile-First entwickelt  
+- **Cookie-Consent-Wall** (Consent Mode v2 kompatibel)
+- Responsives Menü (Burger & Dropdown)
+- SEO-optimiert mit **Meta Tags + JSON-LD**
+- Lightbox Galerie für Bilder
+- Mobile-First entwickelt
 
 ---
 
 ## 🔒 Datenschutz & Cookies
 
-- DSGVO-konformer **Cookie-Consent-Wall**  
-- Speicherung der Einwilligungen im `localStorage`  
-- Dienste werden **erst nach Zustimmung** geladen (Analytics, Marketing, externe Medien)  
-- Jederzeit widerrufbar über **Cookie-Einstellungen im Footer**  
-- Kategorien:  
-  - **Notwendig** (immer aktiv)  
-  - **Funktional**  
-  - **Analytics**  
-  - **Marketing**  
+- DSGVO-konformer **Cookie-Consent-Wall**
+- Speicherung der Einwilligungen im `localStorage`
+- Dienste werden **erst nach Zustimmung** geladen (Analytics, Marketing, externe Medien)
+- Jederzeit widerrufbar über **Cookie-Einstellungen im Footer**
+- Kategorien:
+  - **Notwendig** (immer aktiv)
+  - **Funktional**
+  - **Analytics**
+  - **Marketing**
 
 👉 Implementierung basiert auf **Consent Mode v2**.
 
@@ -72,16 +72,15 @@ Die Website dient als zentrale Anlaufstelle für:
 
 ## 🗂 Website-Struktur
 
-- **index.html** – Startseite mit Logo, Navigation & Intro  
-- **about.html** – Über uns: Geschichte & Philosophie  
-- **menu.html** – Menü: warme Speisen, kalte Platten, Salate, Desserts & Candy Bar  
-- **galerie.html** – Galerie mit Lightbox  
-- **event.html** – Besondere Events (z. B. Oktoberfest)  
-- **bewertung.html** – Kundenbewertungen (Google Reviews + eigene)  
-- **contact.html** – Kontaktformular mit E-Mail-Versand  
-- **agb.html** – Allgemeine Geschäftsbedingungen  
-- **datenschutz.html** – Datenschutzerklärung (DSGVO)  
-- **impressum.html** – Impressum  
+- **index.html** – Startseite mit Logo, Navigation & Intro
+- **about.html** – Über uns: Geschichte & Philosophie
+- **menu.html** – Menü: warme Speisen, kalte Platten, Salate, Desserts & Candy Bar
+- **event.html** – Besondere Events (z. B. Oktoberfest)
+- **bewertung.html** – Kundenbewertungen (Google Reviews + eigene)
+- **contact.html** – Kontaktformular mit E-Mail-Versand
+- **agb.html** – Allgemeine Geschäftsbedingungen
+- **datenschutz.html** – Datenschutzerklärung (DSGVO)
+- **impressum.html** – Impressum
 
 👉 [Alle HTML-Dateien im Repository durchsuchen](https://github.com/NikolajMalisch/vilana/search?q=html&type=code)
 
@@ -89,34 +88,34 @@ Die Website dient als zentrale Anlaufstelle für:
 
 ## ⚙ Technologien
 
-- **HTML5** + **Tailwind CSS** (modernes & responsives Design)  
-- **JavaScript (ES6)** für Interaktionen (Sprache, Menü, Formulare)  
-- **EmailJS** für Kontaktformular (mit DSGVO-Checkbox & Spam-Schutz)  
-- **Google Fonts**:  
-  - `Cinzel Decorative` – Logo  
-  - `Cormorant SC` – Fließtext  
-- **Google Maps JavaScript API** (Standortkarte)  
-- **Responsive Navigation** (Desktop & Mobil)  
+- **HTML5** + **Tailwind CSS** (modernes & responsives Design)
+- **JavaScript (ES6)** für Interaktionen (Sprache, Menü, Formulare)
+- **EmailJS** für Kontaktformular (mit DSGVO-Checkbox & Spam-Schutz)
+- **Google Fonts**:
+  - `Cinzel Decorative` – Logo
+  - `Cormorant SC` – Fließtext
+- **Google Maps JavaScript API** (Standortkarte)
+- **Responsive Navigation** (Desktop & Mobil)
 
 ---
 
 ## 🎨 Design-Merkmale
 
-- Eleganter Stil mit **Beigetönen & klarer Typografie**  
-- Fokus auf **Benutzerfreundlichkeit**  
-- **Mobile First** entwickelt  
-- Sanfte Animationen & strukturierte Inhalte  
-- **Bilinguale UI**: Sprachumschalter Desktop & Mobile  
+- Eleganter Stil mit **Beigetönen & klarer Typografie**
+- Fokus auf **Benutzerfreundlichkeit**
+- **Mobile First** entwickelt
+- Sanfte Animationen & strukturierte Inhalte
+- **Bilinguale UI**: Sprachumschalter Desktop & Mobile
 
 ---
 
 ## 📸 Screenshots
 
 ### 🖥 Desktop
-![Desktop Screenshot](img/readme-desktop.webp)
+![Desktop Screenshot](images\skrinschot\Screenshot 2025-12-04 231329.webp)
 
 ### 📱 Mobile
-![Mobile Screenshot](img/readme-mobile.webp)
+![Mobile Screenshot](images\skrinschot\Screenshot 2025-12-04 231349.webp)
 
 ---
 
