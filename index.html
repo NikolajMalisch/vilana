@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO-Titel mit Keywords für lokale Suchanfragen -->
-  <title>Catering, Partyservice &amp; Eventservice in Hameln &amp; Umgebung | Vilana Event &amp; Catering</title>
+  <title>Catering &amp; Partyservice in Hameln | Vilana Event &amp; Catering</title>
 
   <!-- Canonical-URL und Robots-Anweisungen für Suchmaschinen -->
   <link rel="canonical" href="https://www.vilana-event.de/">
@@ -43,11 +43,11 @@
 
   <!-- Meta Description für Suchergebnisse -->
   <meta name="description"
-        content="Catering, Partyservice &amp; Eventservice in Niedersachsen &amp; NRW – Hochzeiten, Firmenfeiern, Geburtstage und Privatfeste. Vilana Event &amp; Catering: frische Küche, Fingerfood, Buffets, Servicepersonal &amp; Ausstattung in Hameln, Hannover, Bad Pyrmont, Bielefeld, Paderborn, Minden, Detmold.">
+        content="Catering &amp; Partyservice in Hameln, Bad Pyrmont &amp; Umgebung. Hochzeiten, Firmenfeiern, Geburtstage und Privatfeste in Niedersachsen &amp; NRW. Vilana Event &amp; Catering: frische Buffets, kalte Platten, warme Speisen, Fingerfood, Servicepersonal &amp; komplette Eventplanung.">
 
   <!-- Open Graph für Social Media Vorschauen -->
   <meta property="og:title"
-        content="Catering, Partyservice &amp; Eventservice in Hameln &amp; Umgebung | Vilana Event &amp; Catering">
+        content="Catering &amp; Partyservice in Hameln | Vilana Event &amp; Catering">
   <meta property="og:description"
         content="Catering, Partyservice &amp; Eventservice für Hochzeiten, Firmen- und Privatfeiern in Niedersachsen &amp; NRW.">
   <meta property="og:type" content="website">
@@ -59,7 +59,7 @@
   <!-- Twitter Card-Daten -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title"
-        content="Catering, Partyservice &amp; Eventservice in Hameln &amp; Umgebung | Vilana Event &amp; Catering">
+        content="Catering &amp; Partyservice in Hameln | Vilana Event &amp; Catering">
   <meta name="twitter:description"
         content="Catering, Partyservice &amp; Eventservice für Hochzeiten, Firmenfeiern und Privatfeiern in Niedersachsen &amp; NRW.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
@@ -71,10 +71,10 @@
     body { background-color: #fdfaf6; }
 
     :where(h1) {
-    font-size: 2rem;       /* или любой размер, который тебе нравится */
-    line-height: 1.2;
-    margin-block: 0.67em;  /* как у классического h1 */
-  }
+      font-size: 2rem;       /* oder beliebiger h1-Style */
+      line-height: 1.2;
+      margin-block: 0.67em;
+    }
 
     .logo-container {
       display: flex;
@@ -130,40 +130,64 @@
     <style>.lang-ru { display: none !important; }</style>
   </noscript>
 
-  <!-- Strukturierte Daten für Google (CateringService) -->
+  <!-- Strukturierte Daten: lokales FoodEstablishment + Catering + Eventservice -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CateringService",
-      "name": "Vilana Event & Catering",
-      "url": "https://www.vilana-event.de/",
-      "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
-      "telephone": "+49 176 57775996",
-      "priceRange": "€€",
-      "servesCuisine": ["Deutsch", "Europäisch", "International"],
-      "areaServed": [
-        "Niedersachsen","Nordrhein-Westfalen","Hameln","Hannover",
-        "Bad Pyrmont","Wunstorf","Braunschweig","Bielefeld",
-        "Paderborn","Minden","Detmold","Münster"
-      ],
-      "address": { "@type": "PostalAddress", "addressCountry": "DE" },
-      "serviceType": ["Catering", "Partyservice", "Eventservice"]
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Vilana Event & Catering",
+    "url": "https://www.vilana-event.de/",
+    "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
+    "telephone": "+49 176 57775996",
+    "priceRange": "€€",
+    "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hameln",
+      "addressRegion": "Niedersachsen",
+      "postalCode": "31785",
+      "addressCountry": "DE"
+    },
+    "areaServed": [
+      "Hameln",
+      "Bad Pyrmont",
+      "Hannover",
+      "Niedersachsen",
+      "Nordrhein-Westfalen",
+      "Bielefeld",
+      "Paderborn",
+      "Minden",
+      "Detmold"
+    ],
+    "serviceType": ["Catering", "Partyservice", "Eventservice", "Mobiler Caterer"],
+    "department": [
+      {
+        "@type": "Caterer",
+        "name": "Vilana Catering",
+        "serviceType": ["Catering", "Buffets", "Kalte Platten", "Warme Speisen"]
+      },
+      {
+        "@type": "EventService",
+        "name": "Vilana Eventplanung",
+        "serviceType": ["Eventplanung", "Dekoration", "Servicepersonal", "Buffetaufbau"]
+      }
+    ]
+  }
   </script>
 
-<!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
-<script
-  type="text/plain"
-  data-cookie-category="analytics"
-  src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
-></script>
+  <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
+  <script
+    type="text/plain"
+    data-cookie-category="analytics"
+    src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
+  ></script>
 
-<script type="text/plain" data-cookie-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-YW71FCW4FJ');
-</script>
+  <script type="text/plain" data-cookie-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YW71FCW4FJ');
+  </script>
 
 </head>
 
@@ -178,24 +202,24 @@
       HEADER: Logo, Navigation, Sprachumschalter
       ========================================= -->
   <header class="bg-white shadow-md">
-  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-  <!-- Logo-Block -->
-  <a
-    href="index.html"
-    class="logo-container flex items-center gap-1 whitespace-nowrap"
-    style="min-height: 38px;"
-  >
-    <h1 class="logo-title text-2xl font-bold leading-none">
-      Vilana
-    </h1>
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo-Block -->
+      <a
+        href="index.html"
+        class="logo-container flex items-center gap-1 whitespace-nowrap"
+        style="min-height: 38px;"
+      >
+        <h1 class="logo-title text-2xl font-bold leading-none">
+          Vilana
+        </h1>
 
-    <span
-      class="logo-subtitle text-xs sm:text-sm tracking-wide leading-none"
-      style="padding-top: 1px;"
-    >
-      Event &amp; Catering
-    </span>
-  </a>
+        <span
+          class="logo-subtitle text-xs sm:text-sm tracking-wide leading-none"
+          style="padding-top: 1px;"
+        >
+          Event &amp; Catering
+        </span>
+      </a>
 
       <!-- Rechte Seite: Navigation + Sprach-Buttons + Burger -->
       <div class="flex items-center gap-3">
@@ -347,65 +371,63 @@
       ========================================= -->
   <main>
     <section
-  id="home"
-  class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center"
->
-  <!-- Скрытый H1 (SEO), не ломает дизайн -->
-  <h1 class="sr-only lang lang-de">
-    Catering, Partyservice &amp; Eventservice in Hameln, Niedersachsen &amp; NRW
-  </h1>
-  <h1 class="sr-only lang lang-ru hidden">
-    Кейтеринг и организация мероприятий в Хамельне, Нижней Саксонии и Северном Рейне — Вестфалии
-  </h1>
+      id="home"
+      class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center min-h-[100vh]"
+    >
+      <!-- Скрытый H1 (SEO), не ломает дизайн -->
+      <h1 class="sr-only lang lang-de">
+        Catering, Partyservice &amp; Eventservice in Hameln, Niedersachsen &amp; NRW
+      </h1>
+      <h1 class="sr-only lang lang-ru hidden">
+        Кейтеринг и организация мероприятий в Хамельне, Нижней Саксонии и Северном Рейне — Вестфалии
+      </h1>
 
-  <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4">
 
-    <!-- ЛОГО -->
-  <img
-  src="images/vilana_logo.webp"
-  alt="Vilana Event & Catering – Logo"
-  decoding="async"
-  fetchpriority="high"
-  class="mx-auto block h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
-  width="220"
-  height="260"
-  style="max-width: 220px;"
-/>
+        <!-- ЛОГО -->
+        <img
+          src="images/vilana_logo.webp"
+          alt="Vilana Event &amp; Catering – Logo"
+          decoding="async"
+          fetchpriority="high"
+          class="mx-auto block h-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+          width="220"
+          height="260"
+          style="max-width: 220px;"
+        />
 
+        <!-- Подзаголовок / Kicker -->
+        <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">
+          Liebe zum Detail
+        </p>
+        <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru hidden">
+          Любовь к деталям
+        </p>
 
-    <!-- Подзаголовок / Kicker -->
-    <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-de">
-      Liebe zum Detail
-    </p>
-    <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto lang lang-ru hidden">
-      Любовь к деталям
-    </p>
+        <!-- Видимый маркетинговый текст (без географии) -->
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-de">
+          Erleben Sie Catering neu – mit Liebe, Geschmack und Stil.
+        </p>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-ru hidden">
+          Откройте для себя кейтеринг заново – с любовью, вкусом и стилем.
+        </p>
 
-    <!-- Видимый маркетинговый текст (без географии) -->
-    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-de">
-      Erleben Sie Catering neu – mit Liebe, Geschmack und Stil.
-    </p>
-    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto lang lang-ru hidden">
-      Откройте для себя кейтеринг заново – с любовью, вкусом и стилем.
-    </p>
+        <!-- CTA кнопка -->
+        <a
+          href="contact.html"
+          class="lang lang-de inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs"
+        >Kontaktieren Sie uns</a>
 
-    <!-- CTA кнопка -->
-    <a
-      href="contact.html"
-      class="lang lang-de inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs"
-    >Kontaktieren Sie uns</a>
+        <a
+          href="contact.html"
+          class="lang lang-ru inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs hidden"
+        >Связаться с нами</a>
 
-    <a
-      href="contact.html"
-      class="lang lang-ru inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs hidden"
-    >Связаться с нами</a>
-
-    <div class="mt-12 text-3xl animate-bounce text-white" aria-hidden="true">
-      ↓
-    </div>
-  </div>
-</section>
-
+        <div class="mt-12 text-3xl animate-bounce text-white" aria-hidden="true">
+          ↓
+        </div>
+      </div>
+    </section>
 
     <!-- Leistungsübersicht (Kernangebote) -->
     <section id="services" class="py-16 bg-white">
