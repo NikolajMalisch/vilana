@@ -32,7 +32,7 @@
     content="Live-Musik, DJ, Tanz, Buffet & Mitternachts-Countdown im Lindenhof Bad Pyrmont. Tickets 105 €. Dresscode: Black & White.">
   <meta property="og:url" content="https://www.vilana-event.de/event.html?id=silvester-2025">
 
-  <!-- 🔁 ЗДЕСЬ МЕНЯЕМ КАРТИНКУ ДЛЯ SOCIAL -->
+  <!-- Social Hero -->
   <meta property="og:image" content="https://www.vilana-event.de/images/FILE_01.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -42,14 +42,12 @@
   <meta name="twitter:title" content="Silvester 2025 – Black & White Abend im Lindenhof Bad Pyrmont">
   <meta name="twitter:description"
     content="Exklusives Silvester-Event mit Live-Musik, DJ, Saxophon, Buffet & Countdown. Tickets 105 €.">
-
-  <!-- 🔁 И ТУТ ТОЖЕ НОВОЕ ИЗОБРАЖЕНИЕ -->
   <meta name="twitter:image" content="https://www.vilana-event.de/images/FILE_01.webp">
 
   <!-- JSON-LD wird dynamisch per JS eingefügt -->
   <script id="event-jsonld" type="application/ld+json"></script>
 
-  <!-- Google Analytics (ggf. später über Cookie-Wall steuern) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -71,7 +69,7 @@
   <link rel="stylesheet" href="/css/output.css">
   <link rel="stylesheet" href="/css/custom.css">
 
-  <!-- 🔁 Hero-Bild für schnelleren LCP – ТОЖЕ МЕНЯЕМ -->
+  <!-- Hero-Bild für schnelleren LCP -->
   <link rel="preload" as="image" href="/images/FILE_01.webp" type="image/webp">
 
   <!-- Favicons -->
@@ -79,7 +77,6 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/images/favicon/site.webmanifest">
-
 
   <!-- Basis-Typografie und kleine Layout-Helfer -->
   <style>
@@ -117,7 +114,6 @@
       color: #1f2937;
     }
 
-    /* sprachabhängige Chips / Badges */
     .chip {
       border-radius: 9999px;
       padding: 0.35rem 0.85rem;
@@ -128,14 +124,12 @@
       gap: 0.4rem;
     }
 
-    /* Karten / Boxen */
     .card {
       background: #ffffff;
       border-radius: 1.25rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     }
 
-    /* Lightbox für Galerie */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -156,7 +150,6 @@
       border-radius: 1rem;
     }
 
-    /* IBAN / BIC optisch neutral (Lesbarkeit) */
     #ev-iban,
     #ev-bic,
     #ev-phone,
@@ -182,17 +175,15 @@
 
 <body>
   <!-- =========================================
-        HEADER: Logo, Navigation, Sprache
+        HEADER
         ========================================= -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo / Brand -->
       <div class="logo-container">
         <span class="logo-title">Vilana</span>
         <span class="logo-subtitle">Event &amp; Catering</span>
       </div>
 
-      <!-- Desktop-Hauptnavigation -->
       <nav class="hidden md:flex space-x-8" aria-label="Hauptnavigation">
         <a href="index.html#home" class="text-gray-700 hover:text-amber-700">Startseite</a>
         <a href="index.html#services" class="text-gray-700 hover:text-amber-700">Leistungen</a>
@@ -277,9 +268,8 @@
   <main class="py-12">
     <div class="mx-auto px-4 max-w-6xl">
 
-      <!-- Hero-Bereich: Titel, Eckdaten, Preis -->
+      <!-- Hero-Bereich -->
       <section class="grid md:grid-cols-2 gap-6 items-stretch">
-        <!-- Linke Event-Card -->
         <div class="card p-6 flex flex-col gap-4">
           <h1 class="text-3xl md:text-4xl font-bold">
             <span class="lang lang-de" id="ev-title-de">Silvesterabend 2025</span>
@@ -297,7 +287,7 @@
             <span class="chip">🏙️ <span id="ev-city">Bad Pyrmont</span></span>
           </div>
 
-          <!-- Preisbox mit Call-to-Action -->
+          <!-- Preisbox -->
           <div class="mt-4 card p-4">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div class="text-xl">
@@ -331,14 +321,14 @@
           </div>
         </div>
 
-        <!-- Rechte Hero-Card (Bild) -->
+        <!-- Hero-Bild -->
         <div class="card overflow-hidden">
           <img id="ev-hero" src="/images/FILE_01.webp" alt="Silvesterabend – Hero"
             class="w-full h-full object-cover max-h-[420px]" loading="eager">
         </div>
       </section>
 
-      <!-- Beschreibung / Event-Text -->
+      <!-- Beschreibung -->
       <section class="mt-10 card p-6">
         <h2 class="text-2xl font-semibold mb-3">
           <span class="lang lang-de">Über das Event</span>
@@ -358,19 +348,16 @@
             Алкогольные напитки можно приобрести на баре — цены будут доступными. Пожелания по напиткам можно сообщить
             заранее.
           </span>
-
         </p>
       </section>
 
-      <!-- Programm + Tickets / Zahlung -->
+      <!-- Programm + Tickets -->
       <section class="mt-10 grid md:grid-cols-2 gap-6">
-        <!-- Programm / Highlights -->
         <div class="card p-6">
           <h3 class="text-xl font-semibold mb-3">Programm / Highlights</h3>
           <ul class="list-disc pl-6 space-y-2" id="ev-highlights"></ul>
         </div>
 
-        <!-- Tickets & Zahlung -->
         <div id="tickets" class="card p-6">
           <h3 class="text-xl font-semibold mb-3">
             <span class="lang lang-de">Tickets &amp; Zahlung</span>
@@ -383,21 +370,14 @@
               оплатой.</span>
           </p>
 
-          <!-- Telefonkontakt (2 Nummern möglich) -->
           <p class="mb-4">
             <a href="tel:+4917657775996" class="tel-link">
               <span id="ev-phone">+49 176 5777 5996</span>
             </a>
             <span class="text-sm text-gray-600">– Viktoria</span><br>
-            <!-- Optional zweite Nummer:
-              <a href="tel:+49..." class="tel-link">
-                <span id="ev-phone-2">+49 ...</span>
-              </a>
-              <span class="text-sm text-gray-600">– ...</span>
-              -->
           </p>
 
-          <!-- Bankdaten-Block mit Anzeige/Verbergen -->
+          <!-- Bankdaten -->
           <button id="show-bank-btn" class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 text-sm mb-3">
             <span class="lang lang-de">Bankdaten anzeigen</span>
             <span class="lang lang-ru">Показать реквизиты</span>
@@ -420,7 +400,6 @@
               <span id="ev-holder">Vilana Event &amp; Catering</span>
             </p>
 
-            <!-- Verwendungszweck -->
             <p>
               <strong class="lang lang-de">Verwendungszweck:</strong>
               <strong class="lang lang-ru">Назначение платежа:</strong>
@@ -469,7 +448,49 @@
         </div>
       </section>
 
-      <!-- Galerie / Eindrücke -->
+<!-- HWS SECURITY Shuttle-Service (компактнее на Desktop) -->
+<section
+  class="mt-10 rounded-xl overflow-hidden border border-gray-900 bg-black text-white shadow-xl
+        max-w-3xl md:max-w-4xl mx-auto">
+  <!-- Фото -->
+  <div class="w-full">
+    <img
+      src="/images/hws.webp"
+      alt="HWS SECURITY Shuttle-Service – Transport zum Silvesterabend im Lindenhof Bad Pyrmont"
+      class="w-full h-auto md:max-h-[320px] object-cover"
+      loading="lazy"
+      decoding="async"
+      width="1600"
+      height="900">
+  </div>
+
+  <!-- Текст -->
+  <div class="px-5 md:px-8 py-8 md:py-8 text-center">
+    <h3 class="text-2xl md:text-[26px] font-semibold mb-5 tracking-wide">
+      <span class="lang lang-de">Shuttle-Service von HWS SECURITY</span>
+      <span class="lang lang-ru">Шаттл-сервис HWS SECURITY</span>
+    </h3>
+
+    <p class="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-5 text-gray-100">
+      <span class="lang lang-de">
+        Die HWS SECURITY Flotte sorgt nicht nur für Sicherheit – sie bringt unsere Gäste auf Wunsch auch zum Event
+        und wieder zurück. Dieser Service ist kostenpflichtig. Alle Informationen erhalten Sie telefonisch:
+      </span>
+      <span class="lang lang-ru">
+        Флот HWS SECURITY обеспечивает не только безопасность, но и по желанию доставляет гостей на мероприятие и
+        обратно. Услуга является платной. Подробная информация и бронирование по телефону:
+      </span>
+    </p>
+
+    <p class="text-xl md:text-2xl font-semibold tracking-wide mb-1">
+      <a href="tel:+491785793174" class="hover:underline">+49 178 5793174</a>
+    </p>
+  </div>
+</section>
+
+
+
+      <!-- Galerie -->
       <section class="mt-10">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-semibold">
@@ -484,7 +505,7 @@
         <div id="ev-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
       </section>
 
-      <!-- FAQ-Bereich -->
+      <!-- FAQ -->
       <section class="mt-10 card p-6" id="ev-faq-wrap">
         <h3 class="text-xl font-semibold mb-4">FAQ</h3>
         <div id="ev-faq"></div>
@@ -517,18 +538,15 @@
     </button>
   </footer>
 
-  <!-- Lightbox-Overlay für Galerie -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <img id="lightbox-img" src="" alt="Preview">
   </div>
 
   <!-- =========================================
-        SCRIPTS: Event-Daten, Sprache, Galerie, Bank
+        SCRIPTS
         ========================================= -->
   <script>
-    /* ================================================
-      EVENTS-DATEN (Silvester 2025)
-       ================================================ */
     const EVENTS = {
       "silvester-2025": {
         title: { de: "Silvesterabend 2025", ru: "Новогодний вечер 2025" },
@@ -549,19 +567,16 @@
           ru: "без алкогольных напитков • количество мест ограничено"
         },
         ticket_url: "",
-
         description: {
-        de: "Ein exklusiver Silvesterabend mit Live-Musik und Moderation durch das Music-Team-Spirit, stimmungsvollen Tanzeinlagen, einem großzügigen festlichen Buffet und einem unvergesslichen Mitternachts-Countdown. Alkoholische Getränke können an der Bar zu fairen Preisen erworben werden – teilen Sie uns Ihre Getränkewünsche gern vorab mit.",
-        ru: "Эксклюзивный новогодний вечер с живой музыкой и ведущими от Music Team Spirit, танцами, большим праздничным буфетом и атмосферным обратным отсчётом до полуночи. Алкогольные напитки можно приобрести на баре по доступным ценам — пожелания по напиткам можно отправить заранее."
+          de: "Ein exklusiver Silvesterabend mit Live-Musik und Moderation durch das Music-Team-Spirit, stimmungsvollen Tanzeinlagen, einem großzügigen festlichen Buffet und einem unvergesslichen Mitternachts-Countdown. Alkoholische Getränke können an der Bar zu fairen Preisen erworben werden – teilen Sie uns Ihre Getränkewünsche gern vorab mit.",
+          ru: "Эксклюзивный новогодний вечер с живой музыкой и ведущими от Music Team Spirit, танцами, большим праздничным буфетом и атмосферным обратным отсчётом до полуночи. Алкогольные напитки можно приобрести на баре по доступным ценам — пожелания по напиткам можно отправить заранее."
         },
-
-highlights: [
-  { de: "Live-Musik & Moderation durch Music Team Spirit", ru: "Живая музыка и ведущие от Music Team Spirit" },
-  { de: "Festliches Buffet + köstliche Vorspeisen", ru: "Праздничный буфет + закуски" },
-  { de: "Mitternachts-Countdown & festliche Stimmung", ru: "Обратный отсчёт в полночь и праздничная атмосфера" },
-  { de: "Fotoecke", ru: "Фотозона" }
-],
-
+        highlights: [
+          { de: "Live-Musik & Moderation durch Music Team Spirit", ru: "Живая музыка и ведущие от Music Team Spirit" },
+          { de: "Festliches Buffet + köstliche Vorspeisen", ru: "Праздничный буфет + закуски" },
+          { de: "Mitternachts-Countdown & festliche Stimmung", ru: "Обратный отсчёт в полночь и праздничная атмосфера" },
+          { de: "Fotoecke", ru: "Фотозона" }
+        ],
         ticket_note: {
           de: "Reservierung erforderlich. Zahlung per Überweisung möglich.",
           ru: "Требуется бронирование. Оплата банковским переводом."
@@ -626,9 +641,6 @@ highlights: [
       }
     };
 
-    /* ================================================
-      UTILS / HILFSFUNKTIONEN
-       ================================================ */
     const $ = (s) => document.querySelector(s);
     const getParam = (n) => new URL(location.href).searchParams.get(n);
     const currentId = getParam("id") || "silvester-2025";
@@ -654,27 +666,18 @@ highlights: [
       return m ? `${m[1]} ${m[2]} ${m[3]} ${m[4]}` : raw;
     }
 
-    /* ================================================
-      SPRACHE / LANGUAGE-SWITCH
-       ================================================ */
     function setLanguage(lang) {
-      // alle Sprach-Container zuerst ausblenden
       document.querySelectorAll(".lang").forEach(el => el.style.display = "none");
-      // aktive Sprache einblenden
       document.querySelectorAll(".lang-" + lang).forEach(el => el.style.display = "inline");
-      // HTML-lang-Attribut setzen
       document.documentElement.setAttribute("lang", lang === "ru" ? "ru" : "de");
-      // Sprache im LocalStorage merken
       localStorage.setItem("vilana_lang", lang);
 
-      // URL-Parameter aktualisieren (für Sharing)
       const url = new URL(location.href);
       url.searchParams.set("lang", lang);
       history.replaceState(null, "", url.toString());
 
       updateLangUI();
 
-      // Verwendungszweck an Sprache anpassen
       const ev = EVENTS[currentId];
       const p = document.getElementById("ev-purpose");
       if (ev?.purpose && p) {
@@ -746,17 +749,12 @@ highlights: [
       });
     }
 
-    /* ================================================
-      RENDER-FUNKTION: Event-Daten ins DOM schreiben
-       ================================================ */
     function renderEvent(ev) {
-      // Titel & Untertitel
       $("#ev-title-de").textContent = ev.title.de;
       $("#ev-title-ru").textContent = ev.title.ru;
       $("#ev-subtitle-de").textContent = ev.subtitle.de;
       $("#ev-subtitle-ru").textContent = ev.subtitle.ru;
 
-      // Eckdaten
       $("#ev-date").textContent = formatDate(ev.date, currentLang);
       $("#ev-time").textContent = "Beginn " + ev.time;
       $("#ev-door").textContent = "Einlass " + (ev.door || "18:00");
@@ -766,16 +764,13 @@ highlights: [
       $("#ev-city-2").textContent = ev.city;
       $("#ev-address").textContent = ev.address || "";
 
-      // Preis
       $("#ev-price").textContent = ev.price || "";
       $("#ev-price-note-de").textContent = ev.price_note?.de ? " " + ev.price_note.de : "";
       $("#ev-price-note-ru").textContent = ev.price_note?.ru ? " " + ev.price_note.ru : "";
 
-      // Beschreibung
       $("#ev-desc-de").textContent = ev.description.de;
       $("#ev-desc-ru").textContent = ev.description.ru;
 
-      // Hero-Bild (+ Fallback)
       const hero = $("#ev-hero");
       if (hero) {
         hero.src = ev.hero;
@@ -783,26 +778,21 @@ highlights: [
         hero.onerror = () => { hero.src = "/images/FILE_01.webp"; };
       }
 
-      // Zahlung / Bankdaten
       $("#ev-iban").textContent = formatIBAN(ev.payment.iban);
       $("#ev-bic").textContent = ev.payment.bic;
       $("#ev-holder").textContent = ev.payment.holder;
 
-      // Telefon(e)
       const p1 = formatPhonePretty(ev.contact.phone);
       const p2 = formatPhonePretty(ev.contact.phone2 || "");
       $("#ev-phone").textContent = p1;
       if (p2 && $("#ev-phone-2")) $("#ev-phone-2").textContent = p2;
 
-      // Verwendungszweck
       const p = document.getElementById("ev-purpose");
       if (p) p.textContent = currentLang === "ru" ? ev.purpose.ru : ev.purpose.de;
 
-      // Ticket-Hinweise
       $("#ev-ticket-note-de").textContent = ev.ticket_note.de;
       $("#ev-ticket-note-ru").textContent = ev.ticket_note.ru;
 
-      // Ticket-Buttons URL (falls verwendet)
       const t1 = $("#ev-ticket-url");
       const t2 = $("#ev-ticket-url-ru");
       if (ev.ticket_url) {
@@ -810,10 +800,8 @@ highlights: [
         if (t2) t2.href = ev.ticket_url;
       }
 
-      // Karte / Anfahrt
       $("#ev-map").href = ev.map;
 
-      // Highlights
       const hl = $("#ev-highlights");
       hl.innerHTML = "";
       ev.highlights.forEach(item => {
@@ -825,7 +813,6 @@ highlights: [
         hl.appendChild(li);
       });
 
-      // Galerie
       const g = $("#ev-gallery");
       g.innerHTML = "";
       ev.gallery.forEach(img => {
@@ -842,7 +829,6 @@ highlights: [
         g.appendChild(fig);
       });
 
-      // FAQ
       const wrap = $("#ev-faq-wrap");
       const root = $("#ev-faq");
       root.innerHTML = "";
@@ -867,7 +853,6 @@ highlights: [
         wrap.hidden = true;
       }
 
-      // JSON-LD für Rich Snippets
       const imgsAbs = [ev.hero, ...ev.gallery.map(i => i.src)].map(u => new URL(u, location.origin).href);
       const urlObj = new URL(location.origin + location.pathname);
       urlObj.searchParams.set("id", currentId);
@@ -909,11 +894,7 @@ highlights: [
       document.getElementById("event-jsonld").textContent = JSON.stringify(jsonLd);
     }
 
-    /* ================================================
-      INIT (DOM Ready)
-       ================================================ */
     document.addEventListener("DOMContentLoaded", () => {
-      // Burger-Menü (mobil)
       (function () {
         const btn = document.getElementById("menuToggle");
         const menu = document.getElementById("mobileMenu");
@@ -939,20 +920,15 @@ highlights: [
         menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
       })();
 
-      // Event-Daten ins DOM schreiben
       const ev = EVENTS[currentId] || Object.values(EVENTS)[0];
       renderEvent(ev);
 
-      // Sprache initial setzen und UI-Hooks aktivieren
       setLanguage(currentLang);
       setupLangDropdown();
       setupLangDropdownMobile();
       updateLangUI();
     });
 
-    /* ================================================
-      BANK-DATEN: Maskierung + Copy-Funktionen
-       ================================================ */
     document.addEventListener("DOMContentLoaded", () => {
       const fullIban = "DE48254621600665648001";
       const ibanSpan = $("#ev-iban");
@@ -1017,10 +993,7 @@ highlights: [
         }
       });
     });
-  </script>
 
-  <!-- Lightbox-Logik (Schließen bei Klick auf Overlay) -->
-  <script>
     document.addEventListener("DOMContentLoaded", () => {
       const lb = document.getElementById("lightbox");
       const img = document.getElementById("lightbox-img");
@@ -1032,7 +1005,7 @@ highlights: [
     });
   </script>
 
-  <!-- Cookie Consent Wall (gleiche Logik wie Startseite) -->
+  <!-- Cookie Consent Wall -->
   <script src="js/vilana-cookiewall.js" defer></script>
 </body>
 
