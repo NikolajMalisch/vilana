@@ -75,12 +75,23 @@
   function safeGet(key){ try{ return JSON.parse(localStorage.getItem(key)); } catch(_){ return __MEM; } }
   function safeSet(key, obj){ try{ localStorage.setItem(key, JSON.stringify(obj)); __MEM = obj; } catch(_){ __MEM = obj; } }
 
-  // [DE] Scroll sperren/freigeben, wenn Banner offen/zu.
-  // [RU] Блокировка/разблокировка прокрутки при открытии/закрытии баннера.
-  function lockScroll(lock) {
-    document.documentElement.classList.toggle('overflow-hidden', lock);
-    document.body.classList.toggle('overflow-hidden', lock);
+ // [DE] Scroll sperren/freigeben, wenn Banner offen/zu.
+// [RU] Блокировка/разблокировка прокрутки при открытии/закрытии баннера.
+function lockScroll(lock) {
+  // ширина скроллбара (на десктопе > 0, на мобиле обычно 0)
+  var sbw = window.innerWidth - document.documentElement.clientWidth;
+
+  document.documentElement.classList.toggle('overflow-hidden', lock);
+  document.body.classList.toggle('overflow-hidden', lock);
+
+  // ✅ компенсация, чтобы страница не "дергалась" по ширине
+  if (lock && sbw > 0) {
+    document.body.style.paddingRight = sbw + 'px';
+  } else {
+    document.body.style.paddingRight = '';
   }
+}
+
 
   // [DE] Zeit-/Ablauf-Helfer.
   // [RU] Вспомогательные функции времени/срока.

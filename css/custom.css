@@ -1,21 +1,26 @@
+/* Stabilisiert Layout: verhindert "Springen" durch Scrollbar (CLS) */
+html {
+  scrollbar-gutter: stable;
+}
+
 /* Entfernt den Pfeil des Sprach-Dropdowns */
 #lang-button::after,
 #lang-button::before {
-    content: none !important;
-    display: none !important;
-    border: 0 !important;
+content: none !important;
+display: none !important;
+border: 0 !important;
 }
 
 /* Zeigt nur die aktuell ausgewählte Sprache an */
 .lang-de .lang.lang-ru {
-    display: none;
+display: none;
 }
 .lang-ru .lang.lang-de {
-    display: none;
+display: none;
 }
 
 /* Sicherheitshalber: Entfernt jegliche Carets, falls ein Plugin diese hinzufügt */
 #langToggle::after,
 #langToggle::before {
-    content: none !important;
+content: none !important;
 }
