@@ -12,15 +12,12 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0e0e0e">
 
-  <!-- Optimierte Einbindung von Tailwind-CSS (weniger render-blocking) -->
-  <link rel="preload" href="css/output.css" as="style">
-  <link rel="stylesheet"
-        href="css/output.css"
-        media="print"
-        onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="css/output.css">
-  </noscript>
+<!-- Optimierte Einbindung von Tailwind-CSS (stabil: kein Layout-Shift) -->
+<link rel="preload" href="css/output.css" as="style">
+<link rel="stylesheet" href="css/output.css">
+<noscript>
+  <link rel="stylesheet" href="css/output.css">
+</noscript>
 
   <!-- Wichtiger Hero-Content: Logo als LCP-Bild vorladen -->
   <link
