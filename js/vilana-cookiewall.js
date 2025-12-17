@@ -77,9 +77,34 @@
 
  // [DE] Scroll sperren/freigeben, wenn Banner offen/zu.
 // [RU] Блокировка/разблокировка прокрутки при открытии/закрытии баннера.
+// ===== Scrollbar width cache (avoids forced reflow on open) =====
+// [DE] Scrollbar-Breite einmal messen und bei Bedarf aktualisieren.
+// [RU] Кешируем ширину скроллбара и обновляем при необходимости.
+var __SBW = 0;
+function updateScrollbarWidth() {
+  // READ: может вызвать layout, поэтому вызываем ДО изменений DOM (см. openWall()).
+  var w = window.innerWidth - document.documentElement.clientWidth;
+  __SBW = (w > 0 ? w : 0);
+}
+
+// [DE] Öffnen ohne "WRITE -> READ".
+// [RU] Открытие без "запись в DOM -> чтение геометрии".
+var __OPEN_WALL_RAF = 0;
+function openWall(wallEl) {
+  // [DE] In den nächsten Frame verschieben, damit keine "forced reflow" Kette entsteht.
+  // [RU] Переносим в следующий кадр, чтобы не было "принудительной компоновки".
+  if (__OPEN_WALL_RAF) return;
+  __OPEN_WALL_RAF = requestAnimationFrame(function () {
+    __OPEN_WALL_RAF = 0;
+    updateScrollbarWidth();            // READ (layout ok)
+    wallEl.classList.remove('hidden'); // WRITE
+    lockScroll(true);                  // WRITE (без чтений)
+  });
+}
+
 function lockScroll(lock) {
-  // ширина скроллбара (на десктопе > 0, на мобиле обычно 0)
-  var sbw = window.innerWidth - document.documentElement.clientWidth;
+  // ширина скроллбара (кеш) — без чтения геометрии здесь
+  var sbw = __SBW;
 
   document.documentElement.classList.toggle('overflow-hidden', lock);
   document.body.classList.toggle('overflow-hidden', lock);
@@ -288,7 +313,7 @@ function lockScroll(lock) {
       saveConsent({ functional:false, analytics:false, marketing:false, dnt:true });
       // [DE] Kein Banner anzeigen / [RU] Баннер не показываем
     } else if (needPrompt) {
-      wall.classList.remove('hidden'); lockScroll(true);
+      openWall(wall);
     } else {
       // [DE] Checkboxen aus gespeicherter Auswahl setzen + Ressourcen anwenden
       // [RU] Устанавливаем чекбоксы по сохранённому выбору + применяем ресурсы
@@ -337,14 +362,14 @@ function lockScroll(lock) {
         cbFunctional.checked = !!c.functional;
         cbAnalytics.checked  = !!c.analytics;
         cbMarketing.checked  = !!c.marketing;
-        wall.classList.remove('hidden'); lockScroll(true);
+        openWall(wall);
       });
     }
 
     // [DE] Öffentliche API / [RU] Публичный API
     window.VilanaCookie = {
-      open:  function () { wall.classList.remove('hidden'); lockScroll(true); },
-      reset: function () { try{ localStorage.removeItem(LS_KEY); }catch(_){ __MEM=null; } wall.classList.remove('hidden'); lockScroll(true); },
+      open:  function () { openWall(wall); },
+      reset: function () { try{ localStorage.removeItem(LS_KEY); }catch(_){ __MEM=null; } openWall(wall); },
       get:   loadConsent
     };
   });
