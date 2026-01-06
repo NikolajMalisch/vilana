@@ -6,46 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- =========================
-        SEO – ABGESAGT / ОТМЕНЕНО
+        SEO – EVENTS (Coming Soon)
   ========================= -->
-  <title>ABGESAGT: Silvester 2025 in Bad Pyrmont – Black & White Abend | Vilana Event & Catering</title>
+  <title>Events – Vilana Event &amp; Catering | Neue Events in Kürze</title>
 
   <meta name="description"
-    content="ABGESAGT: Silvester 2025 in Bad Pyrmont – Black & White Abend im Lindenhof. Infos zur Absage und Rückerstattung. Kontakt: Vilana Event & Catering.">
+    content="Vilana Event & Catering: Neue Events sind in Planung. Bald finden Sie hier aktuelle Termine, Tickets und Infos. Hameln, Bad Pyrmont & Umgebung.">
 
-  <!-- Wichtig: abgesagte Event-Seite лучше не индексировать -->
-  <meta name="robots" content="noindex, nofollow, max-image-preview:large">
-  <meta name="theme-color" content="#000000">
+  <!-- Indexierung wieder erlauben (это не отмена события) -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b0b0b">
 
   <!-- Canonical & Sprachversionen -->
-  <link rel="canonical" href="https://www.vilana-event.de/event.html?id=silvester-2025-cancelled">
-  <link rel="alternate" href="https://www.vilana-event.de/event.html?id=silvester-2025-cancelled&lang=de" hreflang="de">
-  <link rel="alternate" href="https://www.vilana-event.de/event.html?id=silvester-2025-cancelled&lang=ru" hreflang="ru">
-  <link rel="alternate" href="https://www.vilana-event.de/event.html?id=silvester-2025-cancelled" hreflang="x-default">
+  <link rel="canonical" href="https://www.vilana-event.de/events.html">
+  <link rel="alternate" href="https://www.vilana-event.de/events.html?lang=de" hreflang="de">
+  <link rel="alternate" href="https://www.vilana-event.de/events.html?lang=ru" hreflang="ru">
+  <link rel="alternate" href="https://www.vilana-event.de/events.html" hreflang="x-default">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="event">
+  <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:site_name" content="Vilana Event & Catering">
-  <meta property="og:title" content="ABGESAGT: Silvesterabend 2025 – Black & White Party">
-  <meta property="og:description"
-    content="Dieses Event wurde abgesagt. Informationen zur Rückerstattung und Kontakt.">
-  <meta property="og:url" content="https://www.vilana-event.de/event.html?id=silvester-2025-cancelled">
-
-  <meta property="og:image" content="https://www.vilana-event.de/images/FILE_01.webp">
+  <meta property="og:site_name" content="Vilana Event &amp; Catering">
+  <meta property="og:title" content="Events – Vilana Event &amp; Catering">
+  <meta property="og:description" content="Neue Events sind in Planung. Informationen folgen in Kürze.">
+  <meta property="og:url" content="https://www.vilana-event.de/events.html">
+  <meta property="og:image" content="https://www.vilana-event.de/images/event-new.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ABGESAGT: Silvester 2025 – Black & White Abend (Lindenhof Bad Pyrmont)">
-  <meta name="twitter:description" content="Dieses Event wurde abgesagt. Rückerstattung & Kontakt.">
-  <meta name="twitter:image" content="https://www.vilana-event.de/images/FILE_01.webp">
+  <meta name="twitter:title" content="Events – Vilana Event &amp; Catering">
+  <meta name="twitter:description" content="Neue Events sind in Planung. Informationen folgen in Kürze.">
+  <meta name="twitter:image" content="https://www.vilana-event.de/images/event-new.webp">
 
-  <!-- JSON-LD -->
-  <script id="event-jsonld" type="application/ld+json"></script>
-
-  <!-- Google Analytics (можешь оставить) -->
+  <!-- Google Analytics (оставил как было) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -67,8 +62,8 @@
   <link rel="stylesheet" href="/css/output.css">
   <link rel="stylesheet" href="/css/custom.css">
 
-  <!-- Hero-Bild preload -->
-  <link rel="preload" as="image" href="/images/FILE_01.webp" type="image/webp">
+  <!-- Hero image preload (поменяй на свой нейтральный hero) -->
+  <link rel="preload" as="image" href="/images/event-new.webp" type="image/webp">
 
   <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
@@ -127,28 +122,20 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     }
 
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      display: none;
+    /* Аккуратный бейдж вместо "cancelled" */
+    .soon-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 50;
+      gap: .5rem;
+      padding: .5rem 1rem;
+      border-radius: 9999px;
+      background: #111827;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+      font-size: .9rem;
+      letter-spacing: .3px;
     }
 
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 85vh;
-      border-radius: 1rem;
-    }
-
-    #ev-iban,
-    #ev-bic,
     #ev-phone,
     #ev-phone-2 {
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
@@ -166,19 +153,6 @@
 
     .tel-link:hover {
       text-decoration: underline;
-    }
-
-    .cancel-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .5rem 1rem;
-      border-radius: 9999px;
-      background: #111827;
-      color: #fff;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
-      font-size: .9rem;
-      letter-spacing: .3px;
     }
   </style>
 </head>
@@ -271,87 +245,140 @@
   </header>
 
   <!-- =========================================
-        MAIN: CANCELLED
+        MAIN: EVENTS (Coming Soon)
         ========================================= -->
   <main class="py-12">
     <div class="mx-auto px-4 max-w-6xl">
 
+      <!-- HERO -->
       <section class="grid md:grid-cols-2 gap-6 items-stretch">
         <div class="card p-6 flex flex-col gap-4">
           <div class="flex flex-wrap items-center gap-3">
-            <span class="cancel-badge">⛔ <span class="lang lang-de">ABGESAGT</span><span class="lang lang-ru">ОТМЕНЕНО</span></span>
-            <span class="chip">📅 <span id="ev-date">31. Dezember 2025</span></span>
-            <span class="chip">📍 <span id="ev-venue">Lindenhof</span>, <span id="ev-city">Bad Pyrmont</span></span>
+            <span class="soon-badge">✨
+              <span class="lang lang-de">EVENTS</span>
+              <span class="lang lang-ru">МЕРОПРИЯТИЯ</span>
+            </span>
+
+            <span class="chip">🗓️
+              <span class="lang lang-de">Neue Termine bald</span>
+              <span class="lang lang-ru">Новые даты скоро</span>
+            </span>
+
+            <span class="chip">📍
+              <span class="lang lang-de">Hameln &amp; Umgebung</span>
+              <span class="lang lang-ru">Хамельн и регион</span>
+            </span>
+
+            <span class="chip">🍽️
+              <span class="lang lang-de">Catering &amp; Eventservice</span>
+              <span class="lang lang-ru">Кейтеринг и сервис</span>
+            </span>
           </div>
 
           <h1 class="text-3xl md:text-4xl font-bold">
-            <span class="lang lang-de" id="ev-title-de">Silvesterabend 2025</span>
-            <span class="lang lang-ru" id="ev-title-ru">Новогодний вечер 2025</span>
+            <span class="lang lang-de">Neue Events sind in Planung</span>
+            <span class="lang lang-ru">Новые мероприятия уже в планировании</span>
           </h1>
 
           <p class="text-lg leading-relaxed">
-            <span class="lang lang-de" id="ev-subtitle-de">
-              Dieses Event findet leider nicht statt. Wir danken für Ihr Verständnis.
+            <span class="lang lang-de">
+              Wir bereiten gerade neue Veranstaltungen vor. In Kürze finden Sie hier aktuelle Termine, Ticket-Infos und
+              Details.
+              Folgen Sie uns gerne auf Instagram oder schreiben Sie uns – dann informieren wir Sie sofort.
             </span>
-            <span class="lang lang-ru" id="ev-subtitle-ru">
-              К сожалению, мероприятие не состоится. Спасибо за понимание.
+            <span class="lang lang-ru">
+              Мы готовим новые события. Скоро здесь появятся даты, информация по билетам и подробности.
+              Подпишитесь на Instagram или напишите нам — и мы сообщим вам первыми.
             </span>
           </p>
 
-          <!-- Wichtige Info Box -->
+          <!-- INFO BOX -->
           <div class="mt-2 card p-5 border border-gray-200">
             <h2 class="text-xl font-semibold mb-2">
-              <span class="lang lang-de">Information zur Absage & Rückerstattung</span>
-              <span class="lang lang-ru">Информация об отмене и возврате</span>
+              <span class="lang lang-de">So bleiben Sie informiert</span>
+              <span class="lang lang-ru">Как быть в курсе</span>
             </h2>
 
-            <p class="text-lg leading-7 whitespace-pre-line">
-              <span class="lang lang-de" id="ev-cancel-de">
-                Wenn Sie bereits bezahlt haben, erhalten Sie die Rückerstattung auf das ursprünglich verwendete Konto.
-                Bitte senden Sie uns kurz: Name, Anzahl Tickets und Zahlungsdatum (oder Screenshot/Beleg).
-                Wir bestätigen den Eingang und informieren Sie über die Rückzahlung.
-              </span>
-
-              <span class="lang lang-ru" id="ev-cancel-ru">
-                Если вы уже оплатили, возврат будет сделан на тот же счёт, с которого была оплата.
-                Пожалуйста, пришлите: имя, количество билетов и дату оплаты (или скрин/квитанцию).
-                Мы подтвердим получение и сообщим о возврате.
-              </span>
-            </p>
+            <ul class="text-lg leading-7 list-disc pl-6">
+              <li>
+                <span class="lang lang-de">Instagram: neue Ankündigungen, Bilder, Stories</span>
+                <span class="lang lang-ru">Instagram: анонсы, фото, сторис</span>
+              </li>
+              <li>
+                <span class="lang lang-de">Kontakt: Fragen, Reservierungen, Privat- &amp; Firmenevents</span>
+                <span class="lang lang-ru">Контакт: вопросы, бронирование, частные и корпоративные события</span>
+              </li>
+            </ul>
 
             <div class="mt-4 flex flex-wrap gap-3">
-              <a href="contact.html"
+              <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
                 class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90">
-                <span class="lang lang-de">Kontakt aufnehmen</span>
-                <span class="lang lang-ru">Связаться с нами</span>
+                <span class="lang lang-de">Instagram öffnen</span>
+                <span class="lang lang-ru">Открыть Instagram</span>
               </a>
-              <a href="index.html"
+
+              <a href="contact.html"
                 class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white">
-                <span class="lang lang-de">Zur Startseite</span>
-                <span class="lang lang-ru">На главную</span>
+                <span class="lang lang-de">Kontakt</span>
+                <span class="lang lang-ru">Связаться</span>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Hero-Bild -->
+        <!-- Hero image -->
         <div class="card overflow-hidden">
-          <img id="ev-hero" src="/images/FILE_01.webp" alt="Silvesterabend – Hero"
-            class="w-full h-full object-cover max-h-[420px]" loading="eager">
+          <img id="ev-hero" src="/images/event-new.webp" alt="Vilana Events – Hero"
+            class="w-full h-full object-cover max-h-[520px]" loading="eager" decoding="async">
         </div>
       </section>
 
-      <!-- Kontaktblock (statt Tickets) -->
-      <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <!-- WAS KOMMT -->
+      <section class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="card p-6 md:col-span-2">
+          <h3 class="text-2xl font-semibold mb-3">
+            <span class="lang lang-de">Was kommt als Nächstes?</span>
+            <span class="lang lang-ru">Что будет дальше?</span>
+          </h3>
+
+          <div class="text-lg leading-7">
+            <p class="mb-3">
+              <span class="lang lang-de">
+                Geplant sind verschiedene Formate – von stilvollen Dinner-Abenden bis zu saisonalen Events.
+                Inhalte werden laufend aktualisiert.
+              </span>
+              <span class="lang lang-ru">
+                Планируем разные форматы — от стильных ужинов до сезонных вечеров.
+                Страница будет регулярно обновляться.
+              </span>
+            </p>
+
+            <ul class="list-disc pl-6">
+              <li>
+                <span class="lang lang-de">Private Feiern: Geburtstag, Jubiläum, Hochzeit</span>
+                <span class="lang lang-ru">Частные праздники: день рождения, юбилей, свадьба</span>
+              </li>
+              <li>
+                <span class="lang lang-de">Firmenevents: Buffet, Service, Ausstattung</span>
+                <span class="lang lang-ru">Корпоративы: фуршет, сервис, оформление</span>
+              </li>
+              <li>
+                <span class="lang lang-de">Saisonale Abende: Themenbuffets &amp; Specials</span>
+                <span class="lang lang-ru">Сезонные вечера: тематические буфеты и special</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div class="card p-6">
           <h3 class="text-xl font-semibold mb-3">
-            <span class="lang lang-de">Kontakt</span>
-            <span class="lang lang-ru">Контакты</span>
+            <span class="lang lang-de">Schnellkontakt</span>
+            <span class="lang lang-ru">Быстрый контакт</span>
           </h3>
 
           <p class="mb-3 text-lg">
-            <span class="lang lang-de">Für Fragen zur Rückerstattung erreichen Sie uns telefonisch:</span>
-            <span class="lang lang-ru">По вопросам возврата вы можете связаться с нами по телефону:</span>
+            <span class="lang lang-de">Telefon:</span>
+            <span class="lang lang-ru">Телефон:</span>
           </p>
 
           <p class="mb-4">
@@ -369,52 +396,16 @@
           </p>
 
           <p class="text-sm text-gray-500">
-            <span class="lang lang-de">
-              Tipp: Bitte nennen Sie bei Kontaktaufnahme Ihren Namen + Zahlungsdatum (oder Beleg), damit wir es schnell zuordnen können.
-            </span>
-            <span class="lang lang-ru">
-              Совет: укажите ваше имя + дату оплаты (или чек), чтобы мы быстро нашли платёж.
-            </span>
+            <span class="lang lang-de">Oder schreiben Sie uns über das Kontaktformular.</span>
+            <span class="lang lang-ru">Или напишите через форму контакта.</span>
           </p>
-        </div>
 
-        <div class="card p-6">
-          <h3 class="text-xl font-semibold mb-3">
-            <span class="lang lang-de">Lage (Info)</span>
-            <span class="lang lang-ru">Локация (инфо)</span>
-          </h3>
-          <p class="text-lg">
-            <span id="ev-venue-2">Lindenhof</span> — <span id="ev-city-2">Bad Pyrmont</span>
-          </p>
-          <p class="text-gray-600" id="ev-address">Lindenhof, 31812 Bad Pyrmont</p>
-          <a id="ev-map" href="https://maps.google.com/?q=Lindenhof%20Bad%20Pyrmont" target="_blank"
-            rel="noopener noreferrer"
-            class="mt-4 inline-flex px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white">
-            <span class="lang lang-de">Karte öffnen</span>
-            <span class="lang lang-ru">Открыть карту</span>
+          <a href="contact.html"
+            class="mt-4 inline-flex px-5 py-2 rounded-full bg-amber-700 text-white hover:opacity-90">
+            <span class="lang lang-de">Kontaktformular</span>
+            <span class="lang lang-ru">Форма контакта</span>
           </a>
         </div>
-      </section>
-
-      <!-- Galerie (можешь оставить как архив) -->
-      <section class="mt-10">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-2xl font-semibold">
-            <span class="lang lang-de">Galerie (Archiv)</span>
-            <span class="lang lang-ru">Галерея (архив)</span>
-          </h2>
-          <div class="text-sm text-gray-500">
-            <span class="lang lang-de">Klicken zum Vergrößern</span>
-            <span class="lang lang-ru">Нажмите, чтобы увеличить</span>
-          </div>
-        </div>
-        <div id="ev-gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
-      </section>
-
-      <!-- FAQ (коротко про возврат) -->
-      <section class="mt-10 card p-6" id="ev-faq-wrap">
-        <h3 class="text-xl font-semibold mb-4">FAQ</h3>
-        <div id="ev-faq"></div>
       </section>
     </div>
   </main>
@@ -434,8 +425,8 @@
         <a href="datenschutz.html" class="hover:underline">Datenschutz</a> |
         <a href="agb.html" class="hover:underline">AGB</a>
       </p>
-      <p class="lang lang-de mt-2">&copy; 2025 Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
-      <p class="lang lang-ru mt-2">&copy; 2025 Vilana Event &amp; Catering. Все права защищены.</p>
+      <p class="lang lang-de mt-2">&copy; <span id="year"></span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.</p>
+      <p class="lang lang-ru mt-2">&copy; <span id="year2"></span> Vilana Event &amp; Catering. Все права защищены.</p>
     </div>
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
@@ -444,93 +435,12 @@
     </button>
   </footer>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <img id="lightbox-img" src="" alt="Preview">
-  </div>
-
   <!-- =========================================
         SCRIPTS
         ========================================= -->
   <script>
-    // ВАЖНО: новый ID для отменённого евента
-    const EVENTS = {
-      "silvester-2025-cancelled": {
-        status: "cancelled", // используем для JSON-LD
-        title: { de: "Silvesterabend 2025", ru: "Новогодний вечер 2025" },
-        subtitle: {
-      de: "Dieses Event findet leider nicht statt. Es tut uns sehr leid – die Absage erfolgte nicht aus unserem Verschulden. Wir danken für Ihr Verständnis.",
-      ru: "К сожалению, мероприятие не состоится. Нам очень жаль — отмена произошла не по нашей вине. Спасибо за понимание."
-    },
-        date: "2025-12-31",
-        venue: "Lindenhof",
-        city: "Bad Pyrmont",
-        address: "Lindenhof, 31812 Bad Pyrmont",
-        hero: "/images/FILE_01.webp",
-        cancel_info: {
-          de:
-            "Wenn Sie bereits bezahlt haben, erhalten Sie die Rückerstattung auf das ursprünglich verwendete Konto.\n" +
-            "Bitte senden Sie uns kurz: Name, Anzahl Tickets und Zahlungsdatum (oder Screenshot/Beleg).\n" +
-            "Wir bestätigen den Eingang und informieren Sie über die Rückzahlung.",
-          ru:
-            "Если вы уже оплатили, возврат будет сделан на тот же счёт, с которого была оплата.\n" +
-            "Пожалуйста, пришлите: имя, количество билетов и дату оплаты (или скрин/квитанцию).\n" +
-            "Мы подтвердим получение и сообщим о возврате."
-        },
-        contact: {
-          phone: "+4917657775996",
-          phone_2: "+4917642288707",
-          email: "vilana-event@outlook.de",
-          email_2: "v.s@vilana.info"
-        },
-        map: "https://maps.google.com/?q=Lindenhof%20Bad%20Pyrmont",
-        gallery: [
-          { src: "images/silvester_blackandwhite.webp", alt: "Black & White Party" },
-          { src: "images/silvester-table.webp", alt: "Festlich gedeckte Tische – Silvester" },
-          { src: "images/silvester-dance.webp", alt: "Tanz und Stimmung" },
-          { src: "images/silvester-cheers.webp", alt: "Feierliche Atmosphäre" }
-        ],
-        faq: [
-          {
-            q: { de: "Wie bekomme ich meine Rückerstattung?", ru: "Как получить возврат?" },
-            a: {
-              de: "Bitte senden Sie Ihren Namen, Zahlungsdatum und Anzahl Tickets (oder Zahlungsbeleg). Die Rückzahlung erfolgt auf das ursprünglich verwendete Konto.",
-              ru: "Пришлите имя, дату оплаты и количество билетов (или чек). Возврат будет на тот же счёт, с которого была оплата."
-            }
-          },
-          {
-            q: { de: "Wohin kann ich mich wenden?", ru: "Куда обращаться?" },
-            a: {
-              de: "Rufen Sie uns an: +49 176 5777 5996 (Viktoria) oder +49 176 4228 8707 (Svetlana).",
-              ru: "Позвоните: +49 176 5777 5996 (Viktoria) или +49 176 4228 8707 (Svetlana)."
-            }
-          }
-        ]
-      }
-    };
-
     const $ = (s) => document.querySelector(s);
     const getParam = (n) => new URL(location.href).searchParams.get(n);
-
-    const currentId = getParam("id") || "silvester-2025-cancelled";
-    const currentLang = (getParam("lang") || localStorage.getItem("vilana_lang") || "de").toLowerCase();
-
-    function formatDate(iso, lang) {
-      try {
-        return new Date(iso + "T00:00:00").toLocaleDateString(
-          lang === "ru" ? "ru-RU" : "de-DE",
-          { year: "numeric", month: "long", day: "numeric" }
-        );
-      } catch {
-        return iso;
-      }
-    }
-
-    function formatPhonePretty(raw) {
-      const s = String(raw).replace(/\s+/g, "");
-      const m = s.match(/^(\+\d{2})(\d{3})(\d{4})(\d{3,4})$/);
-      return m ? `${m[1]} ${m[2]} ${m[3]} ${m[4]}` : raw;
-    }
 
     function setLanguage(lang) {
       document.querySelectorAll(".lang").forEach(el => el.style.display = "none");
@@ -595,121 +505,8 @@
       });
     }
 
-    function openLightbox(src, alt) {
-      const lb = $("#lightbox");
-      const img = $("#lightbox-img");
-      img.src = src;
-      img.alt = alt || "Preview";
-      lb.classList.add("open");
-    }
-    function closeLightbox() { $("#lightbox").classList.remove("open"); }
-    window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
-
-    function renderEvent(ev) {
-      $("#ev-title-de").textContent = ev.title.de;
-      $("#ev-title-ru").textContent = ev.title.ru;
-      $("#ev-subtitle-de").textContent = ev.subtitle.de;
-      $("#ev-subtitle-ru").textContent = ev.subtitle.ru;
-
-      $("#ev-date").textContent = formatDate(ev.date, currentLang);
-      $("#ev-venue").textContent = ev.venue;
-      $("#ev-city").textContent = ev.city;
-      $("#ev-venue-2").textContent = ev.venue;
-      $("#ev-city-2").textContent = ev.city;
-      $("#ev-address").textContent = ev.address || "";
-
-      const hero = $("#ev-hero");
-      if (hero) {
-        hero.src = ev.hero;
-        hero.alt = `${ev.title.de} – Hero`;
-        hero.onerror = () => { hero.src = "/images/FILE_01.webp"; };
-      }
-
-      // Контакты
-      $("#ev-phone").textContent = formatPhonePretty(ev.contact.phone);
-      if ($("#ev-phone-2")) $("#ev-phone-2").textContent = formatPhonePretty(ev.contact.phone_2);
-
-      $("#ev-map").href = ev.map;
-
-      // Galerie
-      const g = $("#ev-gallery");
-      g.innerHTML = "";
-      ev.gallery.forEach(img => {
-        const fig = document.createElement("figure");
-        fig.className = "relative card overflow-hidden cursor-zoom-in";
-        fig.innerHTML = `
-          <img src="${img.src}" alt="${img.alt || "Event Foto"}"
-              class="w-full h-44 md:h-52 object-cover" loading="lazy" decoding="async">
-          <figcaption class="absolute bottom-0 left-0 w-full bg-black bg-opacity-40 text-white text-sm p-2">
-            ${img.alt || ""}
-          </figcaption>
-        `;
-        fig.addEventListener("click", () => openLightbox(img.src, img.alt));
-        g.appendChild(fig);
-      });
-
-      // FAQ
-      const wrap = $("#ev-faq-wrap");
-      const root = $("#ev-faq");
-      root.innerHTML = "";
-      if (ev.faq && ev.faq.length) {
-        wrap.hidden = false;
-        ev.faq.forEach(qa => {
-          const d = document.createElement("details");
-          d.className = "border-b last:border-b-0 py-3";
-          d.innerHTML = `
-            <summary class="font-semibold cursor-pointer">
-              <span class="lang lang-de">${qa.q.de}</span>
-              <span class="lang lang-ru">${qa.q.ru}</span>
-            </summary>
-            <p class="mt-2 text-lg">
-              <span class="lang lang-de">${qa.a.de}</span>
-              <span class="lang lang-ru">${qa.a.ru}</span>
-            </p>
-          `;
-          root.appendChild(d);
-        });
-      } else {
-        wrap.hidden = true;
-      }
-
-      // JSON-LD: EventCancelled
-      const imgsAbs = [ev.hero, ...ev.gallery.map(i => i.src)].map(u => new URL(u, location.origin).href);
-      const urlObj = new URL(location.origin + location.pathname);
-      urlObj.searchParams.set("id", currentId);
-      urlObj.searchParams.set("lang", currentLang);
-
-      const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        name: ev.title.de,
-        description: (currentLang === "ru" ? ev.cancel_info.ru : ev.cancel_info.de),
-        startDate: ev.date + "T19:00:00",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        eventStatus: "https://schema.org/EventCancelled",
-        location: {
-          "@type": "Place",
-          name: ev.venue,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: ev.city,
-            streetAddress: ev.address || "",
-            addressCountry: "DE"
-          }
-        },
-        image: imgsAbs,
-        organizer: {
-          "@type": "Organization",
-          name: "Vilana Event & Catering",
-          telephone: ev.contact.phone || ""
-        },
-        url: urlObj.toString()
-      };
-
-      document.getElementById("event-jsonld").textContent = JSON.stringify(jsonLd);
-    }
-
     document.addEventListener("DOMContentLoaded", () => {
+      // Mobile menu
       (function () {
         const btn = document.getElementById("menuToggle");
         const menu = document.getElementById("mobileMenu");
@@ -735,21 +532,19 @@
         menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
       })();
 
-      const ev = EVENTS[currentId] || Object.values(EVENTS)[0];
-      renderEvent(ev);
+      // Year in footer
+      const y = String(new Date().getFullYear());
+      const year = document.getElementById("year");
+      const year2 = document.getElementById("year2");
+      if (year) year.textContent = y;
+      if (year2) year2.textContent = y;
 
+      // Language init
+      const currentLang = (getParam("lang") || localStorage.getItem("vilana_lang") || "de").toLowerCase();
       setLanguage(currentLang);
       setupLangDropdown();
       setupLangDropdownMobile();
       updateLangUI();
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const lb = document.getElementById("lightbox");
-      const img = document.getElementById("lightbox-img");
-      if (!lb || !img) return;
-      lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
-      img.addEventListener("click", (e) => e.stopPropagation());
     });
   </script>
 
