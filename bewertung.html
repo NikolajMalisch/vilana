@@ -306,19 +306,23 @@
 
       <!-- ===== Deutsch ===== -->
       <div class="lang lang-de" lang="de">
-        <!-- Rezension 1 -->
+
+        <!-- Rezension NEW 1 (Dina Vassilenko) -->
         <article
           itemscope
           itemtype="https://schema.org/Review"
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
-          <h2 class="font-semibold text-lg" itemprop="author">Kevin Siya</h2>
-          <p class="text-sm text-gray-500 mb-3">
-            <time itemprop="datePublished" datetime="2025-07"
-              >vor einem Monat</time
-            >
-            · 7 Rezensionen
-          </p>
+          <!-- itemReviewed (fix for Search Console) -->
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="Vilana Event &amp; Catering">
+            <meta itemprop="url" content="https://www.vilana-event.de/">
+          </div>
+
+          <h2 class="font-semibold text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Dina Vassilenko</span>
+          </h2>
+
           <div
             itemprop="reviewRating"
             itemscope
@@ -326,10 +330,77 @@
             class="mb-2"
           >
             <meta itemprop="ratingValue" content="5">
-            <span class="stars-gold" aria-label="Bewertung: 5 von 5"
-              >★★★★★</span
-            >
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
           </div>
+
+          <p class="leading-relaxed" itemprop="reviewBody">
+            „Das Catering war einfach hervorragend! Das Essen war super lecker 😋, die Auswahl war vielfältig und der Service war unglaublich freundlich 🤗🤗. Absolute Empfehlung!“ 😊
+          </p>
+        </article>
+
+        <!-- Rezension NEW 2 (Denis) -->
+        <article
+          itemscope
+          itemtype="https://schema.org/Review"
+          class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
+        >
+          <!-- itemReviewed (fix for Search Console) -->
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="Vilana Event &amp; Catering">
+            <meta itemprop="url" content="https://www.vilana-event.de/">
+          </div>
+
+          <h2 class="font-semibold text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Denis</span>
+          </h2>
+
+          <div
+            itemprop="reviewRating"
+            itemscope
+            itemtype="https://schema.org/Rating"
+            class="mb-2"
+          >
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
+          </div>
+
+          <p class="leading-relaxed" itemprop="reviewBody">
+            Super leckeres Essen, toller Service. Nur zu empfehlen!
+          </p>
+        </article>
+
+        <!-- Rezension 1 -->
+        <article
+          itemscope
+          itemtype="https://schema.org/Review"
+          class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
+        >
+          <!-- itemReviewed (fix for Search Console) -->
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="Vilana Event &amp; Catering">
+            <meta itemprop="url" content="https://www.vilana-event.de/">
+          </div>
+
+          <h2 class="font-semibold text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Kevin Siya</span>
+          </h2>
+
+          <div
+            itemprop="reviewRating"
+            itemscope
+            itemtype="https://schema.org/Rating"
+            class="mb-2"
+          >
+            <meta itemprop="ratingValue" content="5">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
+          </div>
+
           <p class="leading-relaxed" itemprop="reviewBody">
             Wir möchten uns von ganzem Herzen bei dem gesamten Catering-Team
             bedanken, das unsere Hochzeit zu einem unvergesslichen Fest gemacht
@@ -347,15 +418,16 @@
           itemtype="https://schema.org/Review"
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
-          <h2 class="font-semibold text-lg" itemprop="author">
-            Arnold Tararin
+          <!-- itemReviewed (fix for Search Console) -->
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="Vilana Event &amp; Catering">
+            <meta itemprop="url" content="https://www.vilana-event.de/">
+          </div>
+
+          <h2 class="font-semibold text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Arnold Tararin</span>
           </h2>
-          <p class="text-sm text-gray-500 mb-3">
-            <time itemprop="datePublished" datetime="2025-03"
-              >vor 5 Monaten</time
-            >
-            · Local Guide · 17 Rezensionen
-          </p>
+
           <div
             itemprop="reviewRating"
             itemscope
@@ -363,10 +435,11 @@
             class="mb-2"
           >
             <meta itemprop="ratingValue" content="5">
-            <span class="stars-gold" aria-label="Bewertung: 5 von 5"
-              >★★★★★</span
-            >
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
           </div>
+
           <p class="leading-relaxed" itemprop="reviewBody">
             Super netter und professioneller Service! Der Kontakt war total
             angenehm, und alle Antworten kamen schnell und freundlich. Auch wenn
@@ -381,13 +454,16 @@
           itemtype="https://schema.org/Review"
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
-          <h2 class="font-semibold text-lg" itemprop="author">Hilda Werens</h2>
-          <p class="text-sm text-gray-500 mb-3">
-            <time itemprop="datePublished" datetime="2025-08-18"
-              >vor 1 Tag</time
-            >
-            · 4 Rezensionen
-          </p>
+          <!-- itemReviewed (fix for Search Console) -->
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness">
+            <meta itemprop="name" content="Vilana Event &amp; Catering">
+            <meta itemprop="url" content="https://www.vilana-event.de/">
+          </div>
+
+          <h2 class="font-semibold text-lg" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Hilda Werens</span>
+          </h2>
+
           <div
             itemprop="reviewRating"
             itemscope
@@ -395,10 +471,11 @@
             class="mb-2"
           >
             <meta itemprop="ratingValue" content="5">
-            <span class="stars-gold" aria-label="Bewertung: 5 von 5"
-              >★★★★★</span
-            >
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+            <span class="stars-gold" aria-label="Bewertung: 5 von 5">★★★★★</span>
           </div>
+
           <p class="leading-relaxed" itemprop="reviewBody">
             „Das Catering war einfach großartig! Das Essen war frisch,
             vielfältig und geschmacklich hervorragend. Der Service war herzlich,
@@ -410,15 +487,38 @@
 
       <!-- ===== Russisch ===== -->
       <div class="lang lang-ru hidden" lang="ru">
+
+        <!-- RU NEW 1 (Dina Vassilenko) -->
+        <article
+          class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
+        >
+          <h2 class="font-semibold text-lg">Dina Vassilenko</h2>
+          <div class="mb-2">
+            <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
+          </div>
+          <p class="leading-relaxed">
+            «Кейтеринг был просто превосходным! Еда очень вкусная 😋, выбор разнообразный, а сервис невероятно дружелюбный 🤗🤗. Однозначно рекомендую!» 😊
+          </p>
+        </article>
+
+        <!-- RU NEW 2 (Denis) -->
+        <article
+          class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
+        >
+          <h2 class="font-semibold text-lg">Denis</h2>
+          <div class="mb-2">
+            <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
+          </div>
+          <p class="leading-relaxed">
+            «Очень вкусная еда, отличный сервис. Рекомендую!»
+          </p>
+        </article>
+
         <!-- RU 1 -->
         <article
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
           <h2 class="font-semibold text-lg">Кевин Сия</h2>
-          <p class="text-sm text-gray-500 mb-3">
-            Около месяца назад · 7 отзывов
-          </p>
-          <!-- RU: те же золотые звёзды для визуальной консистентности -->
           <div class="mb-2">
             <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
           </div>
@@ -434,9 +534,6 @@
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
           <h2 class="font-semibold text-lg">Арнольд Тарарин</h2>
-          <p class="text-sm text-gray-500 mb-3">
-            5 месяцев назад · Local Guide · 17 отзывов
-          </p>
           <div class="mb-2">
             <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
           </div>
@@ -451,7 +548,6 @@
           class="mb-8 rounded-xl border border-black/10 bg-white/70 backdrop-blur-sm shadow-sm p-6"
         >
           <h2 class="font-semibold text-lg">Хильда Веренс</h2>
-          <p class="text-sm text-gray-500 mb-3">1 день назад · 4 отзыва</p>
           <div class="mb-2">
             <span class="stars-gold" aria-label="Оценка: 5 из 5">★★★★★</span>
           </div>
@@ -616,4 +712,3 @@
     <script src="js/vilana-cookiewall.js" defer></script>
   </body>
 </html>
-
