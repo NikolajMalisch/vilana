@@ -1,20 +1,47 @@
 // js/main.js
-// Версия: без optional chaining, с безопасной работой со storage и автозакрытием меню по клику на ссылку
+// Версия: без optional chaining, safe storage, корректный язык для /de/ и /ru/,
+//         + исправление event URL (всегда /event.html)
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ==== ХЕЛПЕРЫ ХРАНИЛИЩА + ВАЛИДАЦИЯ ЯЗЫКА (DE: sichere Storage-Helper + Sprachvalidierung) ====
+  // ===== Helpers: language validation + safe storage =====
   function validLang(x) { return (x === 'ru' || x === 'de') ? x : 'de'; }
-  function getLang() {
+
+  function getStoredLang() {
     try { return validLang((localStorage.getItem('siteLang') || 'de').toLowerCase()); }
     catch (e) { return 'de'; }
   }
-  function setLang(lang) {
+
+  function setStoredLang(lang) {
     try { localStorage.setItem('siteLang', validLang((lang || 'de').toLowerCase())); } catch (e) {}
   }
 
-  // ===== БУРГЕР-МЕНЮ =====
-  var menuBtn    = document.getElementById('menuToggle');
+  // ===== Detect language from path (/ru/..., /de/...) =====
+  function langFromPathname(pathname) {
+    // pathname: "/de/", "/ru/", "/de/index.html", ...
+    if (typeof pathname !== 'string') return null;
+    if (pathname.indexOf('/ru/') === 0) return 'ru';
+    if (pathname.indexOf('/de/') === 0) return 'de';
+    return null;
+  }
+
+  function getEffectiveLang() {
+    var url = new URL(location.href);
+
+    // 1) Если мы на /de/ или /ru/ — язык фиксируем по пути (это важно для SEO и стабильности)
+    var byPath = langFromPathname(url.pathname);
+    if (byPath) return byPath;
+
+    // 2) На остальных страницах: ?lang= приоритетнее localStorage
+    var langParam = url.searchParams.get('lang');
+    if (langParam) return validLang(String(langParam).toLowerCase());
+
+    // 3) Fallback
+    return getStoredLang();
+  }
+
+  // ===== Burger menu =====
+  var menuBtn = document.getElementById('menuToggle');
   var mobileMenu = document.getElementById('mobileMenu');
 
   function closeMobileMenu() {
@@ -29,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
     });
 
-    // Клик вне меню — закрыть
+    // Click outside
     document.addEventListener('click', function (e) {
       if (!mobileMenu.classList.contains('hidden')) {
         var inside = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
@@ -37,30 +64,30 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Esc — закрыть
+    // Esc
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMobileMenu();
     });
 
-    // При ресайзе на desktop — закрыть
+    // Resize to desktop
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 768) closeMobileMenu();
     });
 
-    // Закрывать при клике на любую ссылку внутри мобильного меню
+    // Close on any link click
     var menuLinks = mobileMenu.querySelectorAll('a');
     for (var i = 0; i < menuLinks.length; i++) {
       menuLinks[i].addEventListener('click', closeMobileMenu);
     }
   }
 
-  // ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА =====
-  var btnDesk  = document.getElementById('langToggle');
+  // ===== Language toggle elements (may be absent on /de/ /ru/ pages) =====
+  var btnDesk = document.getElementById('langToggle');
   var menuDesk = document.getElementById('langMenu');
-  var btnMob   = document.getElementById('langToggleMobile');
-  var menuMob  = document.getElementById('langMenuMobile');
+  var btnMob = document.getElementById('langToggleMobile');
+  var menuMob = document.getElementById('langMenuMobile');
 
-  // ===== ССЫЛКИ НА СТРАНИЦУ СОБЫТИЯ =====
+  // ===== Event links =====
   var EVENT_ID = 'russian-oktoberfest-2025';
 
   function copyTrackingParams(fromURL, toURL) {
@@ -74,13 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function buildEventURL() {
     var url = new URL(location.href);
-    // Язык из URL (?lang=) приоритетнее сохранённого; всё валидируем
-    var langParam = url.searchParams.get('lang');
-    var lang = validLang((langParam ? langParam : getLang()).toLowerCase());
 
-    var ev = new URL('event.html', url);
+    // Язык берём из логики "path > ?lang > storage"
+    var lang = getEffectiveLang();
+
+    // ВАЖНО: абсолютный путь, чтобы /de/ не превращалось в /de/event.html
+    var ev = new URL('/event.html', url);
+
     ev.searchParams.set('id', EVENT_ID);
     ev.searchParams.set('lang', lang);
+
     copyTrackingParams(url, ev);
     return ev.href;
   }
@@ -95,24 +125,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function setLanguage(lang) {
-    // Сохраняем и нормализуем язык
-    setLang(lang);
-    var safeLang = getLang();
+    var safeLang = validLang((lang || 'de').toLowerCase());
 
-    // Устанавливаем атрибут lang на html
+    // сохраняем
+    setStoredLang(safeLang);
+
+    // html lang
     document.documentElement.lang = (safeLang === 'ru') ? 'ru' : 'de';
 
-    // Переключаем видимость блоков с языками
+    // если на странице есть языковые блоки (.lang / .lang-de / .lang-ru) — переключаем
     var allLang = document.querySelectorAll('.lang');
-    for (var i = 0; i < allLang.length; i++) {
-      allLang[i].classList.add('hidden');
-    }
-    var currentLangEls = document.querySelectorAll('.lang-' + safeLang);
-    for (var j = 0; j < currentLangEls.length; j++) {
-      currentLangEls[j].classList.remove('hidden');
-    }
+    for (var i = 0; i < allLang.length; i++) allLang[i].classList.add('hidden');
 
-    // Обновляем надписи на кнопках языка
+    var currentLangEls = document.querySelectorAll('.lang-' + safeLang);
+    for (var j = 0; j < currentLangEls.length; j++) currentLangEls[j].classList.remove('hidden');
+
+    // обновляем подписи кнопок (если есть)
     if (btnDesk) {
       btnDesk.textContent = (safeLang === 'ru') ? 'RU ▾' : 'DE ▾';
       btnDesk.setAttribute('aria-label', 'Sprache wählen – ' + (safeLang === 'ru' ? 'Russisch' : 'Deutsch'));
@@ -124,20 +152,21 @@ document.addEventListener('DOMContentLoaded', function () {
       btnMob.setAttribute('aria-label', 'Sprache wählen – Mobil, ' + (safeLang === 'ru' ? 'Russisch' : 'Deutsch'));
     }
 
-    // Закрываем выпадающие меню языков
+    // закрываем языковые меню (если есть)
     if (menuDesk) menuDesk.classList.add('hidden');
-    if (btnDesk)  btnDesk.setAttribute('aria-expanded', 'false');
-    if (menuMob)  menuMob.classList.add('hidden');
-    if (btnMob)   btnMob.setAttribute('aria-expanded', 'false');
+    if (btnDesk) btnDesk.setAttribute('aria-expanded', 'false');
+    if (menuMob) menuMob.classList.add('hidden');
+    if (btnMob) btnMob.setAttribute('aria-expanded', 'false');
   }
 
-  // Обработчики для десктопного переключателя
+  // Desktop language dropdown handlers (if exists)
   if (btnDesk && menuDesk) {
     btnDesk.addEventListener('click', function (e) {
       e.stopPropagation();
       menuDesk.classList.toggle('hidden');
       btnDesk.setAttribute('aria-expanded', String(!menuDesk.classList.contains('hidden')));
     });
+
     var deskItems = menuDesk.querySelectorAll('[data-lang]');
     for (var i = 0; i < deskItems.length; i++) {
       (function (el) {
@@ -149,13 +178,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Обработчики для мобильного переключателя
+  // Mobile language dropdown handlers (if exists)
   if (btnMob && menuMob) {
     btnMob.addEventListener('click', function (e) {
       e.stopPropagation();
       menuMob.classList.toggle('hidden');
       btnMob.setAttribute('aria-expanded', String(!menuMob.classList.contains('hidden')));
     });
+
     var mobItems = menuMob.querySelectorAll('[data-lang]');
     for (var i = 0; i < mobItems.length; i++) {
       (function (el) {
@@ -167,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Клик снаружи — закрыть оба меню выбора языка
+  // Click outside — close language menus
   document.addEventListener('click', function (e) {
     if (menuDesk && !menuDesk.contains(e.target) && !(btnDesk && btnDesk.contains(e.target))) {
       menuDesk.classList.add('hidden');
@@ -179,16 +209,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ===== ГОД В ФУТЕРЕ (DE: Jahr im Footer) =====
+  // ===== Year in footer =====
   (function () {
     var year = new Date().getFullYear();
     var yearEls = document.querySelectorAll('.year, #year-de, #year-ru');
-    for (var i = 0; i < yearEls.length; i++) {
-      yearEls[i].textContent = String(year);
-    }
+    for (var i = 0; i < yearEls.length; i++) yearEls[i].textContent = String(year);
   })();
 
   // ===== INIT =====
-  setLanguage(getLang());
+  var initialLang = getEffectiveLang();
+  setLanguage(initialLang);
   setEventLinks();
 });
