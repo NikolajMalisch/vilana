@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru-RU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,6 @@
   <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/">
 
-
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
@@ -30,12 +29,14 @@
   <meta property="og:description" content="Кейтеринг, фуршеты и организация мероприятий для свадеб, корпоративов и частных праздников в Нижней Саксонии и NRW.">
   <meta property="og:url" content="https://www.vilana-event.de/ru/">
   <meta property="og:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
+  <meta property="og:image:alt" content="Vilana Event &amp; Catering – логотип">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Кейтеринг и организация мероприятий в Хамельне | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Кейтеринг и организация мероприятий для свадеб, корпоративов и частных праздников в Нижней Саксонии и NRW.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
+  <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – логотип">
 
   <!-- Performance: CSS -->
   <link rel="preload" href="/css/output.css" as="style">
@@ -48,14 +49,14 @@
   <!-- Fonts (perf) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
+  <link rel="preload" as="style" crossorigin
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
         media="print"
         onload="this.media='all'">
 
-  <!-- Favicons (falls vorhanden) -->
+  <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
@@ -114,7 +115,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Caterer","FoodEstablishment"],
+    "@type": ["LocalBusiness","Caterer"],
     "@id": "https://www.vilana-event.de/#vilana",
     "name": "Vilana Event & Catering",
     "url": "https://www.vilana-event.de/ru/",
@@ -122,16 +123,25 @@
     "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
     "priceRange": "€€",
     "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
+
     "telephone": "+49 176 5777 5996",
-    "sameAs": ["https://www.instagram.com/vilana_catering/"],
+    "email": "v.s@vilana.info",
+
+    "sameAs": [
+      "https://www.instagram.com/vilana_catering/",
+      "https://share.google/0EVU2kV33A5CjhvlU"
+    ],
+    "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
+
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Osterstr. 28",
+      "streetAddress": "Osterstraße 28",
       "addressLocality": "Aerzen",
       "addressRegion": "Niedersachsen",
       "postalCode": "31855",
       "addressCountry": "DE"
     },
+
     "areaServed": [
       "Hameln",
       "Bad Pyrmont",
@@ -143,7 +153,9 @@
       "Minden",
       "Detmold"
     ],
+
     "serviceType": ["Кейтеринг", "Пати-сервис", "Организация мероприятий", "Выездной кейтеринг"],
+
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -180,7 +192,7 @@
 <body class="text-gray-800 antialiased">
   <!-- Skip-Link -->
   <a href="#home"
-     class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
     Перейти к содержанию
   </a>
 
@@ -189,34 +201,35 @@
   ========================================= -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;">
-        <h1 class="logo-title">Vilana</h1>
+      <!-- Logo (без H1 в шапке) -->
+      <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+         aria-label="Vilana Event &amp; Catering – Главная">
+        <span class="logo-title">Vilana</span>
         <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
           Event &amp; Catering
         </span>
       </a>
 
       <div class="flex items-center gap-3">
-        <!-- Desktop Nav -->
+        <!-- Desktop Nav (RU меню ведёт на существующие DE-страницы, чтобы не было 404) -->
         <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Основная навигация">
           <a href="#home" class="text-gray-800 hover:text-amber-800">Главная</a>
           <a href="#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
           <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
           <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
           <a href="/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
-          <a id="eventLink" href="/event.html?id=russian-oktoberfest-2025&amp;lang=ru" class="text-gray-800 hover:text-amber-800">Событие</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Событие</a>
           <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
         </nav>
 
-        <!-- Language switch (links, SEO-friendly) -->
+        <!-- Language switch -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
           <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/">DE</a>
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
         </div>
 
-        <!-- Mobile: DE link + Burger -->
+        <!-- Mobile -->
         <div class="flex items-center gap-2 md:hidden">
           <a
             href="/"
@@ -252,7 +265,7 @@
       <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
       <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
       <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
-      <a id="eventLinkMobile" href="/event.html?id=russian-oktoberfest-2025&amp;lang=ru" class="block text-gray-700 hover:text-amber-700" role="menuitem">Событие</a>
+      <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Событие</a>
       <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
       <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
     </div>
@@ -268,7 +281,7 @@
       class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center min-h-[100vh]"
     >
       <h1 class="sr-only">
-        Кейтеринг и организация мероприятий в Хамельне, Нижняя Саксония и NRW – Vilana Event &amp; Catering
+        Кейтеринг и организация мероприятий в Хамельне, Нижняя Саксония и Северный Рейн — Вестфалия – Vilana Event &amp; Catering
       </h1>
 
       <div class="container mx-auto px-4">
@@ -304,85 +317,45 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Наши услуги</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Кейтеринг -->
           <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-            <img
-              src="/images/vilana_icon/2.webp"
-              alt="Кейтеринг"
-              class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="500"
-              height="500"
-            >
+            <img src="/images/vilana_icon/2.webp" alt="Кейтеринг" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
+                loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Кейтеринг</h3>
             <p class="text-gray-700 text-center leading-relaxed font-medium">
               От семейных праздников до крупных корпоративов – предлагаем решения под ключ.
             </p>
           </div>
 
-          <!-- Планирование -->
           <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-            <img
-              src="/images/vilana_icon/3.webp"
-              alt="Планирование мероприятий"
-              class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="500"
-              height="500"
-            >
+            <img src="/images/vilana_icon/3.webp" alt="Планирование мероприятий" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
+                loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Планирование мероприятий</h3>
             <p class="text-gray-700 text-center leading-relaxed font-medium">
               Берём на себя организацию вашего мероприятия – от локации до оформления.
             </p>
           </div>
 
-          <!-- Персонал -->
           <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-            <img
-              src="/images/vilana_icon/4.webp"
-              alt="Персонал и сопровождение"
-              class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="500"
-              height="500"
-            >
+            <img src="/images/vilana_icon/4.webp" alt="Персонал и сопровождение" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
+                loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Персонал и сопровождение</h3>
             <p class="text-gray-700 text-center leading-relaxed font-medium">
               Профессиональная команда обеспечит безупречное проведение мероприятия.
             </p>
           </div>
 
-          <!-- Оборудование -->
           <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-            <img
-              src="/images/vilana_icon/1.webp"
-              alt="Мобильный буфет и оборудование"
-              class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="500"
-              height="500"
-            >
+            <img src="/images/vilana_icon/1.webp" alt="Мобильный буфет и оборудование" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
+                loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Мобильный буфет и оборудование</h3>
             <p class="text-gray-700 text-center leading-relaxed font-medium">
               Всё под ключ – привезём посуду, приборы и буфет на место проведения.
             </p>
           </div>
 
-          <!-- Тематические -->
           <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-            <img
-              src="/images/vilana_icon/5.webp"
-              alt="Тематические мероприятия"
-              class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="500"
-              height="500"
-            >
+            <img src="/images/vilana_icon/5.webp" alt="Тематические мероприятия" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
+                loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Тематические мероприятия</h3>
             <p class="text-gray-700 text-center leading-relaxed font-medium">
               Октоберфест, свадьба или бизнес-бранч – создадим концепцию и атмосферу.
@@ -467,17 +440,11 @@
         </h2>
 
         <div class="grid md:grid-cols-3 gap-6">
-          <!-- Hameln -->
           <article id="hameln" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-            <img
-              src="/images/stadte/Event&amp;Catering.webp"
-              alt="Кейтеринг в Хамельне – буфет и сервис на месте"
-              loading="lazy"
-              decoding="async"
-              width="1200"
-              height="800"
-              class="w-full h-48 object-cover"
-            >
+            <img src="/images/stadte/Event&amp;Catering.webp"
+                 alt="Кейтеринг в Хамельне – буфет и сервис на месте"
+                 loading="lazy" decoding="async" width="1200" height="800"
+                 class="w-full h-48 object-cover">
             <div class="p-5">
               <h3 class="text-xl font-semibold mb-2">Хамельн</h3>
               <p class="text-gray-700">
@@ -487,17 +454,11 @@
             </div>
           </article>
 
-          <!-- Hannover -->
           <article id="hannover" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-            <img
-              src="/images/stadte/Hannover.webp"
-              alt="Кейтеринг в Ганновере – бизнес, выставки и свадьбы"
-              loading="lazy"
-              decoding="async"
-              width="1200"
-              height="800"
-              class="w-full h-48 object-cover"
-            >
+            <img src="/images/stadte/Hannover.webp"
+                 alt="Кейтеринг в Ганновере – бизнес, выставки и свадьбы"
+                 loading="lazy" decoding="async" width="1200" height="800"
+                 class="w-full h-48 object-cover">
             <div class="p-5">
               <h3 class="text-xl font-semibold mb-2">Ганновер</h3>
               <p class="text-gray-700">
@@ -507,17 +468,11 @@
             </div>
           </article>
 
-          <!-- Bielefeld -->
           <article id="bielefeld" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-            <img
-              src="/images/stadte/Bielefeld-catering.webp"
-              alt="Кейтеринг в Билефельде – фингерфуд, буфеты и персонал"
-              loading="lazy"
-              decoding="async"
-              width="1200"
-              height="800"
-              class="w-full h-48 object-cover"
-            >
+            <img src="/images/stadte/Bielefeld-catering.webp"
+                 alt="Кейтеринг в Билефельде – фингерфуд, буфеты и персонал"
+                 loading="lazy" decoding="async" width="1200" height="800"
+                 class="w-full h-48 object-cover">
             <div class="p-5">
               <h3 class="text-xl font-semibold mb-2">Билефельд</h3>
               <p class="text-gray-700">
@@ -542,6 +497,8 @@
   ========================================= -->
   <footer class="bg-gray-800 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
+
+      <!-- Instagram (добавлено) -->
       <div class="mb-4">
         <a
           href="https://www.instagram.com/vilana_catering/"

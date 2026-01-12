@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-DE">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +15,11 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
-<!-- Canonical & Hreflang (DE = Root, RU = /ru/) -->
-<link rel="canonical" href="https://www.vilana-event.de/">
-<link rel="alternate" hreflang="de" href="https://www.vilana-event.de/">
-<link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/">
-<link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/">
-
+  <!-- Canonical & Hreflang (DE = Root, RU = /ru/) -->
+  <link rel="canonical" href="https://www.vilana-event.de/">
+  <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/">
+  <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -30,12 +29,14 @@
   <meta property="og:description" content="Catering, Partyservice &amp; Eventservice für Hochzeiten, Firmen- und Privatfeiern in Niedersachsen &amp; NRW.">
   <meta property="og:url" content="https://www.vilana-event.de/">
   <meta property="og:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
+  <meta property="og:image:alt" content="Vilana Event &amp; Catering – Logo">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Catering &amp; Partyservice in Hameln | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Catering, Partyservice &amp; Eventservice für Hochzeiten, Firmenfeiern und Privatfeiern in Niedersachsen &amp; NRW.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
+  <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – Logo">
 
   <!-- Performance: CSS -->
   <link rel="preload" href="/css/output.css" as="style">
@@ -48,7 +49,7 @@
   <!-- Fonts (perf) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
+  <link rel="preload" as="style" crossorigin
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
@@ -114,7 +115,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Caterer","FoodEstablishment"],
+    "@type": ["LocalBusiness","Caterer"],
     "@id": "https://www.vilana-event.de/#vilana",
     "name": "Vilana Event & Catering",
     "url": "https://www.vilana-event.de/",
@@ -122,16 +123,25 @@
     "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
     "priceRange": "€€",
     "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
+
     "telephone": "+49 176 5777 5996",
-    "sameAs": ["https://www.instagram.com/vilana_catering/"],
+    "email": "v.s@vilana.info",
+
+    "sameAs": [
+      "https://www.instagram.com/vilana_catering/",
+      "https://share.google/0EVU2kV33A5CjhvlU"
+    ],
+    "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
+
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Osterstr. 28",
+      "streetAddress": "Osterstraße 28",
       "addressLocality": "Aerzen",
       "addressRegion": "Niedersachsen",
       "postalCode": "31855",
       "addressCountry": "DE"
     },
+
     "areaServed": [
       "Hameln",
       "Bad Pyrmont",
@@ -143,7 +153,9 @@
       "Minden",
       "Detmold"
     ],
+
     "serviceType": ["Catering", "Partyservice", "Eventservice", "Mobiler Caterer"],
+
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -189,9 +201,10 @@
   ========================================= -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;">
-        <h1 class="logo-title">Vilana</h1>
+      <!-- Logo (H1 entfernt: nur 1 H1 pro Seite) -->
+      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+         aria-label="Vilana Event &amp; Catering – Startseite">
+        <span class="logo-title">Vilana</span>
         <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
           Event &amp; Catering
         </span>
@@ -205,7 +218,7 @@
           <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
           <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
           <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a id="eventLink" href="/event.html?id=russian-oktoberfest-2025&amp;lang=de" class="text-gray-800 hover:text-amber-800">Event</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
           <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
@@ -252,7 +265,7 @@
       <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
       <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
       <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-      <a id="eventLinkMobile" href="/event.html?id=russian-oktoberfest-2025&amp;lang=de" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+      <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
       <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
       <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
     </div>
