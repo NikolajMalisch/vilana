@@ -15,9 +15,9 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
-  <!-- Canonical & Hreflang -->
+  <!-- Canonical & Hreflang (DE = Root, RU = /ru/) -->
   <link rel="canonical" href="https://www.vilana-event.de/ru/">
-  <link rel="alternate" href="https://www.vilana-event.de/de/" hreflang="de">
+  <link rel="alternate" href="https://www.vilana-event.de/" hreflang="de">
   <link rel="alternate" href="https://www.vilana-event.de/ru/" hreflang="ru">
   <link rel="alternate" href="https://www.vilana-event.de/" hreflang="x-default">
 
@@ -101,7 +101,7 @@
       width: 1px;
       height: 1px;
       padding: 0;
-      margin: 0;
+      margin: -1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
@@ -209,16 +209,16 @@
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
         </nav>
 
-        <!-- Language switch (links) -->
+        <!-- Language switch (links, SEO-friendly) -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/de/">DE</a>
+          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/">DE</a>
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
         </div>
 
         <!-- Mobile: DE link + Burger -->
         <div class="flex items-center gap-2 md:hidden">
           <a
-            href="/de/"
+            href="/"
             class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
             aria-label="Deutsche Version"
           >DE</a>
