@@ -217,7 +217,14 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   // ===== INIT =====
-  var initialLang = getEffectiveLang();
-  setLanguage(initialLang);
-  setEventLinks();
-});
+(function () {
+  var path = window.location.pathname;
+
+  // Язык ТОЛЬКО по URL
+  if (path.indexOf('/ru/') === 0) {
+    setLanguage('ru');
+  } else {
+    setLanguage('de');
+  }
+})();
+
