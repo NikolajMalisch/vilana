@@ -273,36 +273,26 @@
         <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
       </nav>
 
-      <!-- Language switch (wie index: links, SEO-friendly) -->
-    <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-      <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100" aria-current="true">DE</span>
-      <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/menu.html">RU</a>
-    </div>
+<!-- Language switch (wie index: links, SEO-friendly) -->
+<div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
+  <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100" aria-current="true">DE</span>
+  <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/menu.html">RU</a>
+</div>
 
+<!-- Mobile: RU link + Burger (outside mobile menu) -->
+<div class="flex items-center gap-2 md:hidden">
+  <a href="/ru/menu.html"
+    class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+    aria-label="Русская версия">RU</a>
 
-      <!-- Mobile: RU link + Burger (outside mobile menu) -->
-      <div class="flex items-center gap-2 md:hidden">
-        <a
-          href="/ru/"
-          class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-          aria-label="Русская версия"
-        >RU</a>
+  <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
+    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</div>
 
-        <button
-          id="menuToggle"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
-        >
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- Mobile menu -->
   <div
