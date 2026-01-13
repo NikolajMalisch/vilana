@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>О нас | Vilana Event &amp; Catering</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YW71FCW4FJ');
+    </script>
+
+    <!-- Canonical + Hreflang -->
+    <link rel="canonical" href="https://www.vilana-event.de/ru/about.html" />
+    <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/about.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/about.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/about.html" />
+
+    <!-- Robots + Description -->
+    <meta name="robots" content="index, follow" />
+    <meta name="description"
+        content="Vilana Event &amp; Catering — премиальный кейтеринг и организация мероприятий в Германии. Индивидуальные концепции, внимание к деталям, сервис и эстетика." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="О нас | Vilana Event &amp; Catering" />
+    <meta property="og:description"
+        content="Премиальный кейтеринг и Eventservice — индивидуальные концепции, точная организация и сервис высокого уровня." />
+    <meta property="og:url" content="https://www.vilana-event.de/ru/about.html" />
+    <meta property="og:image" content="https://www.vilana-event.de/images/og/og-cover.webp" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Vilana Event &amp; Catering" />
+    <meta name="theme-color" content="#0e0e0e" />
+
+    <!-- Tailwind (из /ru/ нужен ../) -->
+    <link rel="stylesheet" href="../css/output.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Cormorant SC', serif;
+            background-color: #0e0e0e;
+        }
+
+        .logo-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: .5px;
+            color: #1f2937;
+        }
+
+        .logo-subtitle {
+            font-size: 1rem;
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+<!-- HEADER -->
+<header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+
+        <!-- Logo (link) -->
+        <a href="/ru/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering – Главная">
+            <span class="logo-title">Vilana</span>
+            <span class="logo-subtitle">Event &amp; Catering</span>
+        </a>
+
+        <div class="flex items-center gap-3">
+
+            <!-- Desktop-Navigation -->
+            <nav class="hidden md:flex items-center space-x-8" aria-label="Навигация">
+                <a href="/ru/" class="text-gray-800 hover:text-amber-700">Главная</a>
+                <a href="/ru/#services" class="text-gray-800 hover:text-amber-700">Услуги</a>
+                <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-700">Меню</a>
+                <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-700">Галерея</a>
+                <a href="/ru/about.html" aria-current="page"
+                    class="text-amber-700 font-semibold underline underline-offset-4">О нас</a>
+                <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-700">Отзывы</a>
+                <a href="/ru/event.html" class="text-gray-800 hover:text-amber-700">События</a>
+                <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-700">Контакт</a>
+            </nav>
+
+            <!-- Language switch (links, SEO-friendly) -->
+            <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+                <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/about.html">DE</a>
+                <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+            </div>
+
+            <!-- Mobile: DE link + Burger -->
+            <div class="flex items-center md:hidden gap-2">
+                <a href="/about.html"
+                    class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+                    aria-label="Deutsche Version">DE</a>
+
+                <button id="menuToggle" type="button" aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menü -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+        <a href="/ru/" class="block text-gray-800 hover:text-amber-700">Главная</a>
+        <a href="/ru/#services" class="block text-gray-800 hover:text-amber-700">Услуги</a>
+        <a href="/ru/menu.html" class="block text-gray-800 hover:text-amber-700">Меню</a>
+        <a href="/ru/galerie.html" class="block text-gray-800 hover:text-amber-700">Галерея</a>
+        <a href="/ru/about.html" class="block text-amber-700 font-semibold underline underline-offset-4">О нас</a>
+        <a href="/ru/bewertung.html" class="block text-gray-800 hover:text-amber-700">Отзывы</a>
+        <a href="/ru/event.html" class="block text-gray-800 hover:text-amber-700">События</a>
+        <a href="/ru/contact.html" class="block text-gray-800 hover:text-amber-700">Контакт</a>
+    </div>
+</header>
+
+    <!-- MAIN -->
+    <main class="flex-1 pt-6 md:pt-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <h1 class="sr-only">О нас — Vilana Event &amp; Catering</h1>
+
+            <!-- Hero -->
+            <section class="text-center mb-8 md:mb-10">
+                <img src="../images/vilana_logo_dark.svg" alt="Логотип Vilana"
+                    class="h-60 sm:h-80 mx-auto drop-shadow-lg transition-transform duration-300 hover:scale-105"
+                    decoding="async" loading="lazy">
+            </section>
+
+            <!-- Intro -->
+            <section class="max-w-6xl mx-auto mb-8 md:mb-10">
+                <div class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+                    <div class="p-6 sm:p-7 lg:p-8">
+                        <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-amber-900">Кто мы</h2>
+                        <p class="text-base sm:text-[1.05rem] leading-8 mb-4 text-gray-800">
+                            Vilana Event &amp; Catering была основана совсем недавно, однако за нашими плечами —
+                            более 15 лет опыта в сфере кейтеринга, полученного в различных компаниях
+                            и на мероприятиях самого разного формата.
+                        </p>
+                        <p class="text-base sm:text-[1.05rem] leading-8 text-gray-800">
+                            Мы — две подруги с разными сильными сторонами, которые идеально дополняют друг друга:
+                            креатив и атмосфера сочетаются с чёткой организацией и структурированным подходом.
+                            Такое сочетание делает каждое событие продуманным, эстетичным и профессиональным.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+                    <div class="p-6 sm:p-7 lg:p-8">
+                        <p class="text-base sm:text-[1.05rem] leading-8 text-gray-800">
+                            Vilana — это эксклюзивный сервис и кулинарные впечатления высочайшего уровня.
+                            Мы стремимся не просто подавать блюда, а создавать незабываемые моменты наслаждения.
+                            Наши клиенты ценят безупречное качество, элегантную подачу и персональный подход.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+                    <div class="p-6 sm:p-7 lg:p-8">
+                        <p class="text-base sm:text-[1.05rem] leading-8 text-gray-800">
+                            Частное торжество, изысканная свадьба или корпоратив — мы разрабатываем индивидуальные
+                            концепции, идеально соответствующие вашему событию. Каждая деталь продумывается, чтобы впечатлить
+                            гостей и оставить приятные воспоминания.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="rounded-xl border border-amber-200 bg-amber-50 shadow-sm">
+                    <div class="p-6 sm:p-7 lg:p-8">
+                        <p class="text-base sm:text-[1.05rem] leading-8 text-gray-800">
+                            С искренней любовью и вниманием к деталям наша команда воплощает ваши идеи.
+                            От выбора лучших ингредиентов до утончённого декора мы объединяем вкус, эстетику и высокий
+                            сервис, чтобы сделать ваше событие по-настоящему незабываемым.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400">Instagram</a>
+            </div>
+            <p>
+                <a href="../impressum.html" class="hover:underline">Impressum</a> |
+                <a href="../datenschutz.html" class="hover:underline">Datenschutz</a> |
+                <a href="../agb.html" class="hover:underline">AGB</a>
+            </p>
+            <p>&copy; <span id="year"></span> Vilana Event &amp; Catering. Все права защищены.</p>
+        </div>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+            aria-label="Наверх">▲</button>
+    </footer>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile burger
+        (function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!menuToggle || !mobileMenu) return;
+
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const hidden = mobileMenu.classList.toggle('hidden');
+                menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+            });
+
+            document.addEventListener('click', (e) => {
+                const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
+                if (!inside && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+
+        // Lang menus
+        (function () {
+            const btnD = document.getElementById('langToggle');
+            const menuD = document.getElementById('langMenu');
+            const btnM = document.getElementById('langToggleMobile');
+            const menuM = document.getElementById('langMenuMobile');
+
+            btnD?.addEventListener('click', (e) => { e.stopPropagation(); menuD?.classList.toggle('hidden'); });
+            btnM?.addEventListener('click', (e) => { e.stopPropagation(); menuM?.classList.toggle('hidden'); });
+
+            document.addEventListener('click', (e) => {
+                if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)) menuD.classList.add('hidden');
+                if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)) menuM.classList.add('hidden');
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') { menuD?.classList.add('hidden'); menuM?.classList.add('hidden'); }
+            });
+        })();
+    </script>
+
+    <!-- Cookie Consent Wall -->
+    <script src="../js/vilana-cookiewall.js" defer></script>
+</body>
+
+</html>
