@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- =========================
+        SEO-Basis – Vilana Galerie (RU)
+    ========================== -->
+    <title>Галерея – Vilana Event &amp; Catering | Свадьбы, фуршеты и мероприятия в Хамельне</title>
+
+    <meta name="description"
+        content="Галерея Vilana Event & Catering в Хамельне: впечатления со свадеб, корпоративов и частных мероприятий. Стильные фуршеты, праздничный декор, десертные столы и event-дизайн — качество для Hameln, Bad Pyrmont и Нижней Саксонии." />
+
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Canonical & Hreflang -->
+    <link rel="canonical" href="https://www.vilana-event.de/ru/galerie.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/galerie.html" />
+    <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/galerie.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/galerie.html" />
+
+    <meta name="theme-color" content="#fdfaf6" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Галерея – Vilana Event &amp; Catering" />
+    <meta property="og:description"
+        content="Впечатления со свадеб, корпоративов и частных мероприятий: праздничные фуршеты, салаты, десерты и стильная сервировка от Vilana Event &amp; Catering." />
+    <meta property="og:url" content="https://www.vilana-event.de/ru/galerie.html" />
+    <meta property="og:site_name" content="Vilana Event &amp; Catering" />
+    <meta property="og:image" content="https://www.vilana-event.de/images/social/vilana-gallery-cover.webp" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-YW71FCW4FJ");
+    </script>
+
+    <!-- Tailwind CSS (lokal kompiliert) -->
+    <link rel="stylesheet" href="/css/output.css" />
+
+    <!-- Fallback: wenn lokales CSS nicht greift — CDN laden -->
+    <script>
+        (function () {
+            try {
+                const probe = document.createElement("div");
+                probe.className = "hidden";
+                document.documentElement.appendChild(probe);
+                const ok = getComputedStyle(probe).display === "none";
+                probe.remove();
+                if (!ok) {
+                    const s = document.createElement("script");
+                    s.src = "https://cdn.tailwindcss.com";
+                    document.head.appendChild(s);
+                    console.warn("Tailwind CDN Fallback aktiviert");
+                }
+            } catch (e) { }
+        })();
+    </script>
+
+    <!-- =========================
+        Google Fonts (non render-blocking)
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" />
+    </noscript>
+
+    <style>
+        /* =========================
+        Basis-Typografie & Branding
+      ========================== */
+        body {
+            font-family: "Cormorant SC", serif;
+            background-color: #fdfaf6;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+            margin-top: 4px;
+        }
+
+        .logo-title {
+            font-family: "Cinzel Decorative", cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #1f2937;
+        }
+
+        .logo-subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #1f2937;
+        }
+
+        /* Zoom-Zustand im Lightbox-Bild */
+        .zoomed {
+            transform: scale(1.6);
+            transition: transform 0.25s ease;
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+    <!-- =========================
+        HEADER
+        (адаптировано на RU-пути)
+    ========================== -->
+        <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- Logo (RU) -->
+    <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+    aria-label="Vilana Event &amp; Catering – Главная (RU)">
+    <span class="logo-title">Vilana</span>
+    <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+        Event &amp; Catering
+    </span>
+    </a>
+
+    <div class="flex items-center gap-3">
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
+        <a href="/ru/#home" class="text-gray-700 hover:text-amber-700">Главная</a>
+        <a href="/ru/#services" class="text-gray-700 hover:text-amber-700">Услуги</a>
+        <a href="/ru/menu.html" class="text-gray-700 hover:text-amber-700">Меню</a>
+        <a href="/ru/galerie.html" class="text-gray-700 hover:text-amber-700 underline font-semibold">Галерея</a>
+        <a href="/ru/about.html" class="text-gray-700 hover:text-amber-700">О нас</a>
+        <a href="/ru/bewertung.html" class="text-gray-700 hover:text-amber-700">Отзывы</a>
+        <a href="/ru/contact.html" class="text-gray-700 hover:text-amber-700">Контакты</a>
+
+        <!-- Event: оставляем id для main.js -->
+        <a id="eventLink" href="/ru/event.html" class="text-gray-700 hover:text-amber-700">Event</a>
+    </nav>
+
+    <!-- Language switch (Desktop) -->
+    <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+        <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/galerie.html">DE</a>
+        <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+    </div>
+
+    <!-- Mobile: DE link + Burger -->
+    <div class="flex items-center gap-2 md:hidden">
+        <a
+        href="/galerie.html"
+        class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+        aria-label="Deutsche Version"
+        >DE</a>
+
+        <button
+        id="menuToggle"
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
+        aria-label="Меню открыть"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        </button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Mobile Menü -->
+    <div
+    id="mobileMenu"
+    class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+    role="menu"
+    aria-label="Мобильное меню"
+>
+    <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
+    <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
+    <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
+    <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700 underline font-semibold" role="menuitem">Галерея</a>
+    <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
+    <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
+    <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
+
+    <a id="eventLinkMobile" href="/ru/event.html" class="block text-amber-700 font-semibold" role="menuitem">Event</a>
+    </div>
+</header>
+
+
+    <!-- =========================
+            MAIN (RU)
+    ========================== -->
+    <main class="py-16 px-4 max-w-7xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3">
+            Галерея наших мероприятий
+        </h1>
+        <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto text-lg">
+            Атмосфера наших свадеб, семейных праздников и корпоративов —
+            красиво оформленные фуршеты, сервировка столов и живые эмоции гостей вместе с
+            <span class="whitespace-nowrap">Vilana Event &amp; Catering</span> в Хамельне.
+        </p>
+
+        <!-- Grid für Thumbnails -->
+        <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <!-- Lightbox -->
+        <div id="lightbox"
+            class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
+            aria-modal="true" role="dialog">
+            <button id="lightbox-close"
+                class="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+                aria-label="Закрыть">
+                ✕
+            </button>
+
+            <button id="lightbox-prev"
+                class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+                aria-label="Назад">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <img id="lightbox-image" alt=""
+                class="max-h-[90vh] max-w-[90vw] object-contain transition-all duration-300 will-change-transform" />
+
+            <button id="lightbox-next"
+                class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition"
+                aria-label="Вперёд">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <!-- =========================
+        FOOTER (RU paths)
+    ========================== -->
+    <footer class="bg-gray-800 text-white py-10 mt-16 relative w-full">
+        <div class="px-6 text-center">
+            <p class="mb-2 space-x-2">
+                <a href="/impressum.html" class="hover:underline">Impressum</a> |
+                <a href="/datenschutz.html" class="hover:underline">Datenschutz</a> |
+                <a href="/agb.html" class="hover:underline">AGB</a>
+            </p>
+            <p class="footer-text">
+                &copy; <span id="year-ru"></span> Vilana Event &amp; Catering. Все права защищены.
+            </p>
+        </div>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+            aria-label="Наверх">
+            ▲
+        </button>
+    </footer>
+
+    <!-- =========================
+        JS: Jahr, Galerie, Lightbox
+        (Sprache & Menü: in main.js)
+    ========================== -->
+    <script>
+        // Jahr im Footer aktualisieren
+        (function () {
+            const y = new Date().getFullYear();
+            const r = document.getElementById("year-ru");
+            if (r) r.textContent = y;
+        })();
+
+        // Galerie + Lightbox (Responsive Thumbnails + Original im Lightbox)
+        (function () {
+            const gallery = document.getElementById("gallery");
+            const lb = document.getElementById("lightbox");
+            const lbImg = document.getElementById("lightbox-image");
+            const lbClose = document.getElementById("lightbox-close");
+            const lbPrev = document.getElementById("lightbox-prev");
+            const lbNext = document.getElementById("lightbox-next");
+
+            const CARD_RATIO = "3 / 2";
+            const IMAGE_FIT = "cover";
+
+            const imageOriginal = [
+                "/images/event/event-1.webp", "/images/event/event-2.webp", "/images/event/event-3.webp",
+                "/images/event/event-4.webp", "/images/event/event-5.webp", "/images/event/event-6.webp",
+                "/images/event/event-7.webp", "/images/event/event-8.webp", "/images/event/event-9.webp",
+                "/images/event/event-10.webp", "/images/event/event-11.webp", "/images/event/event-12.webp",
+                "/images/event/event-13.webp", "/images/event/event-14.webp", "/images/event/event-15.webp",
+                "/images/event/event-16.webp", "/images/event/event-17.webp", "/images/event/event-18.webp",
+                "/images/event/event-19.webp", "/images/event/event-20.webp", "/images/event/event-21.webp",
+                "/images/event/event-22.webp", "/images/event/event-23.webp"
+            ];
+
+            // RU Alt-тексты (SEO friendly)
+            const altTemplates = [
+                "Свадебный стол и сервировка от Vilana Event & Catering",
+                "Стол молодожёнов с декором и цветочными композициями",
+                "Фуршет с горячими блюдами для свадебного торжества",
+                "Candy Bar и десерты на свадьбе в Хамельне",
+                "Фингерфуд и канапе для welcome-зоны или семейного праздника",
+                "Праздничная сервировка с свечами и тканевыми салфетками",
+                "Кейтеринг для корпоративного мероприятия с разнообразным меню",
+                "Семейный праздник с накрытыми столами и фуршетом Vilana",
+                "День рождения с холодными закусками и сетами",
+                "Частное мероприятие в Нижней Саксонии с праздничной сервировкой",
+                "Фуршет: салаты, закуски и основные блюда",
+                "Десертный стол и сладости от Vilana Event & Catering",
+                "Летнее мероприятие с лёгкими блюдами и напитками",
+                "Декор мероприятия: гирлянды и флористические элементы",
+                "Банкетный стол на несколько подач для закрытого события",
+                "Welcome-зона с игристым и фингерфудом в Хамельне",
+                "Семейный праздник с тёплыми блюдами и закусками",
+                "Современная подача фуршета: горячее и холодное",
+                "Деталь праздничного декора стола",
+                "Гости наслаждаются атмосферой и фуршетом Vilana",
+                "Впечатления со свадеб и мероприятий с Vilana Event & Catering"
+            ];
+
+            const THUMB_480 = 480;
+            const THUMB_800 = 800;
+            const SIZES_GRID = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
+
+            function withSize(src, w) {
+                return src.replace(/\.webp$/i, "-" + w + ".webp");
+            }
+
+            let currentIndex = 0;
+
+            imageOriginal.forEach((srcOriginal, i) => {
+                const fig = document.createElement("figure");
+                fig.className =
+                    "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
+                fig.style.aspectRatio = CARD_RATIO;
+
+                const img = document.createElement("img");
+
+                const src800 = withSize(srcOriginal, THUMB_800);
+                const src480 = withSize(srcOriginal, THUMB_480);
+
+                img.src = src800;
+                img.srcset = `${src480} ${THUMB_480}w, ${src800} ${THUMB_800}w`;
+                img.sizes = SIZES_GRID;
+
+                img.alt = altTemplates[i] || "Vilana Event & Catering – кейтеринг и мероприятия в Niedersachsen";
+
+                img.width = 1200;
+                img.height = 800;
+
+                img.decoding = "async";
+                img.loading = i === 0 ? "eager" : "lazy";
+                if (i === 0) img.fetchPriority = "high";
+
+                img.className =
+                    "w-full h-full object-" +
+                    IMAGE_FIT +
+                    " bg-gray-100 transition-transform duration-300 group-hover:scale-105";
+
+                img.addEventListener("click", () => openLightbox(i));
+
+                img.addEventListener("error", () => {
+                    if (img.src.includes("-" + THUMB_800 + ".webp") || img.src.includes("-" + THUMB_480 + ".webp")) {
+                        img.srcset = "";
+                        img.sizes = "";
+                        img.src = srcOriginal;
+                    }
+                });
+
+                fig.appendChild(img);
+                gallery.appendChild(fig);
+            });
+
+            function openLightbox(i) {
+                currentIndex = i;
+                update();
+                lb.classList.remove("hidden");
+                lbImg.classList.remove("zoomed");
+            }
+
+            function closeLightbox() {
+                lb.classList.add("hidden");
+                lbImg.src = "";
+                lbImg.classList.remove("zoomed");
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + imageOriginal.length) % imageOriginal.length;
+                update();
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % imageOriginal.length;
+                update();
+            }
+
+            function update() {
+                lbImg.src = imageOriginal[currentIndex];
+                lbImg.alt = altTemplates[currentIndex] || "Vilana Event & Catering – впечатления с мероприятий";
+            }
+
+            function toggleZoom(e) {
+                e.target.classList.toggle("zoomed");
+            }
+
+            lbClose?.addEventListener("click", closeLightbox);
+            lbPrev?.addEventListener("click", prevImage);
+            lbNext?.addEventListener("click", nextImage);
+            lbImg?.addEventListener("click", toggleZoom);
+
+            document.addEventListener("keydown", (e) => {
+                if (lb.classList.contains("hidden")) return;
+                if (e.key === "Escape") closeLightbox();
+                if (e.key === "ArrowLeft") prevImage();
+                if (e.key === "ArrowRight") nextImage();
+                if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    toggleZoom({ target: lbImg });
+                }
+            });
+        })();
+    </script>
+
+    <!-- Globale Logik: Sprache, Menü, Event-Link -->
+    <script src="/js/main.js" defer></script>
+    <!-- Cookie Consent Wall -->
+    <script src="/js/vilana-cookiewall.js" defer></script>
+</body>
+
+</html>
