@@ -3,6 +3,17 @@ name: Build & Deploy (GitHub Pages)
 on:
   push:
     branches: [ main ]
+    # Запускать только когда реально меняется сайт/стили
+    paths:
+      - "**/*.html"
+      - "ru/**"
+      - "css/**"
+      - "src/**"
+      - "js/**"
+      - "tailwind.config.*"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 concurrency:
@@ -21,13 +32,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node (with npm cache)
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "npm"
 
+      # Важно: только npm ci (быстро и воспроизводимо)
       - name: Install deps
-        run: npm ci || npm i
+        run: npm ci
 
       - name: Build Tailwind
         run: npx tailwindcss -i ./src/input.css -o ./css/output.css --minify
