@@ -41,16 +41,17 @@
     <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
     <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – Logo">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag("js", new Date());
-        gtag("config", "G-YW71FCW4FJ");
+    <!-- Google Analytics — загружается только после согласия (как в index/DE) -->
+    <script type="text/plain" data-cookie-category="analytics"
+        src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+    <script type="text/plain" data-cookie-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YW71FCW4FJ');
     </script>
 
-    <!-- Performance: CSS (wie index.html) -->
+    <!-- Performance: CSS -->
     <link rel="preload" href="/css/output.css" as="style">
     <link rel="stylesheet" href="/css/output.css">
     <noscript>
@@ -132,73 +133,14 @@
             white-space: nowrap;
             border: 0;
         }
-
-        /* ======================================================================
-       Card-Style für jedes Menü-Item (Glassmorphism)
-    ====================================================================== */
-        .menu-item {
-            background: rgba(255, 255, 255, 0.45);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 1.5rem 1.75rem;
-            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
-            transition: transform .18s, box-shadow .18s, background .18s;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 22px 55px rgba(15, 23, 42, 0.16);
-            background: rgba(255, 255, 255, .7);
-        }
-
-        .menu-item h4 {
-            letter-spacing: 0.03em;
-            text-transform: none;
-            font-size: 1.05rem;
-        }
-
-        .menu-item p {
-            font-size: .98rem;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 640px) {
-            .menu-item {
-                padding: 1.25rem 1.3rem;
-                border-radius: 16px;
-            }
-        }
-
-        /* ======================================================================
-       Glassmorphism FAQ Cards
-    ====================================================================== */
-        .faq-card {
-            background: rgba(255, 255, 255, 0.32);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.45);
-            padding: 1.25rem 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1rem;
-            transition: background .2s, transform .2s, box-shadow .2s;
-        }
-
-        .faq-card:hover {
-            background: rgba(255, 255, 255, 0.55);
-            transform: translateY(-2px);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-        }
     </style>
 
     <!-- JSON-LD (RU) + Breadcrumbs -->
     <script type="application/ld+json">
-        {
+    {
     "@context": "https://schema.org",
     "@graph": [
-        {
+    {
         "@type": ["LocalBusiness","Caterer"],
         "@id": "https://www.vilana-event.de/#vilana",
         "name": "Vilana Event & Catering",
@@ -231,35 +173,42 @@
         {
         "@type": "BreadcrumbList",
         "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.vilana-event.de/ru/" },
+         { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.vilana-event.de/ru/" },
         { "@type": "ListItem", "position": 2, "name": "Меню", "item": "https://www.vilana-event.de/ru/menu.html" }
         ]
-    }
+      }
     ]
-    }
-    </script>
+  }
+  </script>
 </head>
 
-<body>
+<body class="text-gray-800 antialiased">
+    <!-- Skip-Link -->
+    <a href="#content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+        Перейти к содержанию
+    </a>
+
     <!-- HEADER -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md relative">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- Logo (H1 entfernt: nur 1 H1 pro Seite) -->
-            <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-                aria-label="Vilana Event &amp; Catering – Startseite">
+            <!-- Logo -->
+            <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+                aria-label="Vilana Event &amp; Catering – Главная">
                 <span class="logo-title">Vilana</span>
                 <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
                     Event &amp; Catering
                 </span>
             </a>
 
-            <!-- Right: nav + language + burger -->
             <div class="flex items-center gap-3">
                 <!-- DESKTOP NAV -->
-                <nav class="hidden md:flex items-center gap-6 mr-2">
+                <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
                     <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
                     <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
-                    <a href="/ru/menu.html" class="text-amber-700 font-semibold">Меню</a>
+                    <a href="/ru/menu.html" class="text-amber-700 font-semibold" aria-current="page">Меню</a>
+
+                    <!-- остальные страницы пока DE (как у тебя) -->
                     <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
                     <a href="/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
                     <a href="/event.html" class="text-gray-800 hover:text-amber-800">События</a>
@@ -267,38 +216,19 @@
                     <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
                 </nav>
 
-                <!-- Language dropdown (Design bleibt, Logik = URL-Wechsel) -->
-                <div class="relative">
-                    <button id="langToggle" type="button"
-                        class="text-gray-700 border border-gray-400 px-3 py-1 rounded text-sm" aria-haspopup="true"
-                        aria-expanded="false" aria-controls="langMenu" aria-label="Выбор языка">
-                        <span id="langLabel">RU</span>
-                    </button>
-
-                    <ul id="langMenu"
-                        class="hidden absolute right-0 mt-2 bg-white text-gray-800 shadow-lg rounded w-32 z-50"
-                        role="menu" aria-label="Выбор языка">
-                        <li>
-                            <button type="button" data-lang="ru" class="w-full text-left px-4 py-2 hover:bg-gray-100"
-                                role="menuitem">
-                                Русский
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" data-lang="de" class="w-full text-left px-4 py-2 hover:bg-gray-100"
-                                role="menuitem">
-                                Deutsch
-                            </button>
-                        </li>
-                    </ul>
+                <!-- Language switch (wie index: links) -->
+                <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+                    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100" aria-current="true">RU</span>
+                    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/menu.html">DE</a>
                 </div>
 
                 <!-- BURGER (mobile) -->
-                <button id="menuToggle" type="button" aria-label="Открыть меню"
+                <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu"
+                    aria-expanded="false"
                     class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
@@ -306,32 +236,42 @@
 
         <!-- MOBILE MENU -->
         <div id="mobileMenu"
-            class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40" role="menu"
-            aria-label="Мобильное меню">
+            class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+            role="menu" aria-label="Мобильное меню">
             <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
             <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
-            <a href="/ru/menu.html" class="block text-amber-700 font-semibold" role="menuitem">Меню</a>
+            <a href="/ru/menu.html" class="block text-amber-700 font-semibold" role="menuitem"
+                aria-current="page">Меню</a>
+
             <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
             <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
             <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
             <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
             <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
 
-            <!-- Mobile Language quick links -->
+            <!-- Mobile language quick links -->
             <div class="pt-2 border-t border-gray-200">
-                <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700">Русский</a>
+                <span class="block text-gray-700 font-semibold" aria-current="true">Русский</span>
                 <a href="/menu.html" class="block text-gray-700 hover:text-amber-700">Deutsch</a>
             </div>
         </div>
     </header>
 
     <!-- MAIN -->
-    <main class="py-16 bg-amber-50">
+    <main id="content" class="py-16 bg-amber-50">
         <div class="container mx-auto px-4">
-            <p class="max-w-3xl mx-auto text-center text-gray-700 mb-10">
-                Меню можно комбинировать индивидуально для свадеб, корпоративов и частных мероприятий.
-                Напишите нам — мы подготовим предложение под ваш вкус и формат события.
-            </p>
+
+            <!-- H1 (SEO: 1x на страницу) -->
+            <header class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
+                    Меню кейтеринга и обслуживания мероприятий в Хамельне
+                </h1>
+                <p class="mt-3 max-w-3xl mx-auto text-gray-700">
+                    Меню можно комбинировать индивидуально для свадеб, корпоративов и частных мероприятий
+                    в Нижней Саксонии и Северном Рейне — Вестфалии. Напишите нам — подготовим предложение под ваш вкус и формат события.
+                </p>
+            </header>
+
 
             <!-- Kategorie Tabs -->
             <div class="flex justify-center mb-8 flex-wrap gap-2">
