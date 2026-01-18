@@ -1,7 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  content: [
+    "./*.html",        // все HTML в корне
+    "./ru/*.html",     // RU-версия
+    "./**/*.js",       // site.js, script.js, cookie-wall и т.д.
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
