@@ -1,29 +1,227 @@
 <!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="de-DE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Impressum | Vilana Event & Catering</title>
-    <meta
-      name="description"
-      content="Impressum von Vilana Event & Catering – Pflichtangaben nach § 5 DDG sowie ggf. Verantwortliche nach § 18 Abs. 2 MStV.">
-    <link rel="canonical" href="https://www.vilana-event.de/impressum.html">
+  <title>Impressum | Vilana Event &amp; Catering</title>
+  <meta name="description" content="Impressum von Vilana Event &amp; Catering – Angaben gemäß § 5 DDG sowie ggf. Verantwortliche nach § 18 Abs. 2 MStV." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0e0e0e" />
+  <link rel="canonical" href="https://www.vilana-event.de/impressum.html" />
 
-    <!-- Tailwind CSS Output -->
-    <link href="dist/output.css" rel="stylesheet">
-  </head>
-  <body class="bg-white text-gray-800">
-    <div class="container mx-auto px-4 py-12 max-w-3xl">
-      <h1 class="text-3xl font-bold mb-6">Impressum</h1>
+  <!-- Performance: CSS -->
+  <link rel="preload" href="/css/output.css" as="style" />
+  <link rel="stylesheet" href="/css/output.css" />
+  <noscript><link rel="stylesheet" href="/css/output.css" /></noscript>
 
-      <!-- Hinweis auf Rechtsgrundlage aktualisiert: § 5 DDG -->
-      <p class="mb-4">Angaben gemäß <strong>§ 5 DDG</strong>
-        <span class="text-gray-500">(vormals § 5 TMG)</span>
-        und – sofern einschlägig – <strong>§ 18 Abs. 2 MStV</strong>:
-      </p>
+  <!-- Hero/Logo preload -->
+  <link rel="preload" as="image" href="/images/vilana_logo.webp" type="image/webp" fetchpriority="high" />
 
-      <p class="mb-4">
+  <!-- Fonts (perf) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" crossorigin
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        media="print"
+        onload="this.media='all'" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+  <!-- Minimal base (НЕ задаём Cormorant на весь текст страницы) -->
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #fdfaf6; }
+
+  /* ===== Logo (header) ===== */
+  .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+
+  .logo-title {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    color: #1f2937;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .logo-subtitle {
+    font-family: "Cormorant SC", serif;
+    font-size: 1rem;
+    font-weight: 350;
+    color: #1f2937;
+    line-height: 1;
+  }
+
+  /* ===== Accessibility ===== */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
+     - neutral UI font, readable line-height
+     - headings bold + separated
+  ========================================================= */
+  .legal {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    letter-spacing: normal;
+    color: #1f2937;
+  }
+
+  .legal h1 {
+    font-weight: 800;
+    font-size: 1.875rem; /* ~30px */
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    color: #111827;
+    letter-spacing: normal;
+  }
+
+  .legal h2 {
+    font-weight: 800;
+    font-size: 1.25rem; /* ~20px */
+    line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+    color: #111827;
+    letter-spacing: normal;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .legal h3 {
+    font-weight: 700;
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.3;
+    margin: 1.5rem 0 0.5rem;
+    color: #111827;
+    letter-spacing: normal;
+  }
+
+  .legal p {
+    margin: 0 0 0.9rem;
+    line-height: 1.75;
+    color: #1f2937;
+  }
+
+  .legal ul, .legal ol {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .legal li {
+    margin: 0.35rem 0;
+    line-height: 1.75;
+    color: #1f2937;
+  }
+
+  .legal a {
+    color: #4338ca;
+    text-decoration: underline;
+  }
+</style>
+
+
+  <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
+  <script
+    type="text/plain"
+    data-cookie-category="analytics"
+    src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
+  ></script>
+  <script type="text/plain" data-cookie-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YW71FCW4FJ');
+  </script>
+</head>
+
+<body class="text-gray-800 antialiased">
+  <!-- Skip-Link -->
+  <a href="#content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- =========================================
+      HEADER (wie index, nur Anker als /#... )
+  ========================================= -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+        aria-label="Vilana Event &amp; Catering – Startseite">
+        <span class="logo-title">Vilana</span>
+        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+          Event &amp; Catering
+        </span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+          <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+          <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+          <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+          <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
+          <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
+          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
+        </div>
+
+
+          <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobileMenu"
+        class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+        role="menu" aria-label="Mobiles Menü">
+      <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+      <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+      <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+      <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+      <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+      <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+      <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
+      <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+    </div>
+  </header>
+
+  <!-- =========================================
+    MAIN
+  ========================================= -->
+  <main id="content" class="container mx-auto px-4 py-12 max-w-3xl">
+    <article class="legal prose prose-gray max-w-none">
+      <h1>Impressum</h1>
+
+      <p>Angaben gemäß <strong>§ 5 DDG</strong> (vormals § 5 TMG) und – sofern einschlägig – <strong>§ 18 Abs. 2 MStV</strong>:</p>
+
+      <p>
         <strong>Vilana Event &amp; Catering – Einzelunternehmen</strong><br>
         Inhaberin: Viktoria Ruf<br>
         Osterstraße 28<br>
@@ -31,76 +229,119 @@
         Deutschland
       </p>
 
-      <p class="mb-4">
+      <p>
         <strong>Kontakt:</strong><br>
         Telefon: 0176&nbsp;57775996<br>
-        E-Mail:
-        <a href="mailto:v.s@vilana.info" class="text-blue-600 hover:underline">
-          v.s@vilana.info
-        </a>
+        E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>
       </p>
 
-      <!-- Verantwortliche nach MStV nur nötig bei journalistisch-redaktionellen Inhalten (Blog/News) -->
-      <p class="mb-4">
+      <p>
         <strong>Verantwortlich i. S. d. § 18 Abs. 2 MStV (falls redaktionelle Inhalte):</strong><br>
         Viktoria Ruf, Osterstraße 28, 31855 Aerzen
       </p>
 
-      <!-- Umsatzsteuer -->
-      <p class="mb-4">
+      <p>
         <strong>Umsatzsteuer-Information:</strong><br>
         Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer ausgewiesen.
       </p>
 
-      <!-- Haftungstexte ohne veraltete TMG-Verweise -->
-      <h2 class="text-xl font-semibold mt-8 mb-2">Haftung für Inhalte</h2>
-      <p class="mb-4">
+      <h2>Haftung für Inhalte</h2>
+      <p>
         Wir sind für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-        Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen
-        besteht nicht. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
-        nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+        Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht nicht.
+        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
       </p>
 
-      <h2 class="text-xl font-semibold mt-8 mb-2">Haftung für Links</h2>
-      <p class="mb-4">
-        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
-        Einfluss haben. Für diese Inhalte übernehmen wir keine Gewähr; verantwortlich ist jeweils
-        der Anbieter oder Betreiber der Seiten. Verlinkte Seiten wurden zum Zeitpunkt der Verlinkung
-        auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar.
+      <h2>Haftung für Links</h2>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+        Für diese Inhalte übernehmen wir keine Gewähr; verantwortlich ist jeweils der Anbieter oder Betreiber der Seiten.
+        Verlinkte Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft; rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar.
       </p>
 
-      <h2 class="text-xl font-semibold mt-8 mb-2">Urheberrecht</h2>
-      <p class="mb-4">
-        Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
-        Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
-        außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen Zustimmung der
-        Rechteinhaber.
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+        Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts
+        bedürfen der vorherigen Zustimmung der Rechteinhaber.
       </p>
 
-      <!-- EU-Streitschlichtung -->
-      <h2 class="text-xl font-semibold mt-8 mb-2">EU-Streitschlichtung</h2>
-      <p class="mb-4">
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+      <h2>Verbraucherstreitbeilegung (VSBG)</h2>
+      <p>
+        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
+      </p>
+    </article>
+  </main>
+
+  <!-- =========================================
+    FOOTER (wie index + Cookie-Einstellungen)
+  ========================================= -->
+  <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+    <div class="container mx-auto px-4 text-center">
+      <div class="mb-4">
         <a
-          href="https://ec.europa.eu/consumers/odr/"
+          href="https://www.instagram.com/vilana_catering/"
           target="_blank"
-          rel="noopener"
-          class="text-blue-600 hover:underline">
-          https://ec.europa.eu/consumers/odr/
-        </a>.<br>
-        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
-        Verbraucherschlichtungsstelle teilzunehmen (§&nbsp;36 VSBG).
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 hover:text-amber-400 transition"
+          aria-label="Instagram – vilana_catering"
+        >
+          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Instagram Icon">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
+          </svg>
+          Instagram
+        </a>
+      </div>
+
+      <p class="mb-2">
+        <a href="/impressum.html" class="hover:underline">Impressum</a> |
+        <a href="/datenschutz.html" class="hover:underline">Datenschutz</a> |
+        <a href="/agb.html" class="hover:underline">AGB</a>
       </p>
 
-      <!-- RU-Version als Hinweis -->
-      <p class="mt-2 text-xs text-gray-500 italic">
-        RU: Информация об онлайн-платформе ЕС по урегулированию споров указана выше.
-        Юридически обязательной считается только немецкая версия.
+      <p class="footer-text">
+        © <span class="year">2025</span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
       </p>
-
-      <footer class="mt-12 text-center text-sm text-gray-500">
-        © 2025 Vilana Event &amp; Catering – Alle Rechte vorbehalten.
-      </footer>
     </div>
-  </body>
+
+    <button
+      type="button"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
+      title="Nach oben"
+      aria-label="Nach oben"
+    >
+      ▲
+    </button>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/vilana-cookiewall.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // year auto
+      var el = document.querySelector('.year');
+      if (el) {
+        var start = 2025;
+        var now = new Date().getFullYear();
+        el.textContent = (now > start) ? (start + '–' + now) : String(start);
+      }
+
+      // cookie settings open (best effort)
+      var link = document.getElementById('cookieSettingsLink');
+      if (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          try {
+            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.open === 'function') return window.VilanaCookieWall.open();
+            if (window.VilanaCookie && typeof window.VilanaCookie.open === 'function') return window.VilanaCookie.open();
+            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.show === 'function') return window.VilanaCookieWall.show();
+            if (window.VilanaCookie && typeof window.VilanaCookie.show === 'function') return window.VilanaCookie.show();
+          } catch (err) {}
+        });
+      }
+    });
+  </script>
+</body>
 </html>

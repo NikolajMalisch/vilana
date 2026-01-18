@@ -1,27 +1,213 @@
 <!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutz | Vilana Event & Catering</title>
-    <link href="dist/output.css" rel="stylesheet">
-    <style>
-      /* RU-Hinweis nur bei russischer Version */
-      html[lang="de"] .ru-only { display: none; }
-      html[lang="ru"] .ru-only { display: block; }
-    </style>
-    <meta name="robots" content="index,follow">
-  </head>
-  <body class="bg-white text-gray-800">
-    <div class="container mx-auto px-4 py-12 max-w-3xl prose prose-gray">
+<html lang="de-DE">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Datenschutz | Vilana Event &amp; Catering</title>
+  <meta name="description" content="Datenschutzerklärung von Vilana Event &amp; Catering: Hosting (GitHub Pages), Domain (IONOS), Kontaktformular (EmailJS) und Analytik (Google – nur mit Einwilligung)." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0e0e0e" />
+  <link rel="canonical" href="https://www.vilana-event.de/datenschutz.html" />
+
+  <link rel="preload" href="/css/output.css" as="style" />
+  <link rel="stylesheet" href="/css/output.css" />
+  <noscript><link rel="stylesheet" href="/css/output.css" /></noscript>
+
+  <link rel="preload" as="image" href="/images/vilana_logo.webp" type="image/webp" fetchpriority="high" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" crossorigin
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        media="print"
+        onload="this.media='all'" />
+
+  <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #fdfaf6; }
+
+  /* ===== Logo (header) ===== */
+  .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+
+  .logo-title {
+    font-family: "Cinzel Decorative", cursive;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    color: #1f2937;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .logo-subtitle {
+    font-family: "Cormorant SC", serif;
+    font-size: 1rem;
+    font-weight: 350;
+    color: #1f2937;
+    line-height: 1;
+  }
+
+  /* ===== Accessibility ===== */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* =========================================================
+     LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
+     - neutral UI font, readable line-height
+     - headings bold + separated
+  ========================================================= */
+  .legal {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    letter-spacing: normal;
+    color: #1f2937;
+  }
+
+  .legal h1 {
+    font-weight: 800;
+    font-size: 1.875rem; /* ~30px */
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    color: #111827;
+    letter-spacing: normal;
+  }
+
+  .legal h2 {
+    font-weight: 800;
+    font-size: 1.25rem; /* ~20px */
+    line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+    color: #111827;
+    letter-spacing: normal;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+  }
+
+  .legal h3 {
+    font-weight: 700;
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.3;
+    margin: 1.5rem 0 0.5rem;
+    color: #111827;
+    letter-spacing: normal;
+  }
+
+  .legal p {
+    margin: 0 0 0.9rem;
+    line-height: 1.75;
+    color: #1f2937;
+  }
+
+  .legal ul, .legal ol {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .legal li {
+    margin: 0.35rem 0;
+    line-height: 1.75;
+    color: #1f2937;
+  }
+
+  .legal a {
+    color: #4338ca;
+    text-decoration: underline;
+  }
+</style>
+
+
+  <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
+  <script
+    type="text/plain"
+    data-cookie-category="analytics"
+    src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
+  ></script>
+  <script type="text/plain" data-cookie-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YW71FCW4FJ');
+  </script>
+</head>
+
+<body class="text-gray-800 antialiased">
+  <a href="#content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+        aria-label="Vilana Event &amp; Catering – Startseite">
+        <span class="logo-title">Vilana</span>
+        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+          Event &amp; Catering
+        </span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+          <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+          <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+          <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+          <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
+          <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+        </nav>
+
+          <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobileMenu"
+        class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+        role="menu" aria-label="Mobiles Menü">
+      <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+      <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+      <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+      <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+      <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+      <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+      <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
+      <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+    </div>
+  </header>
+
+  <main id="content" class="container mx-auto px-4 py-12 max-w-3xl">
+    <article class="legal prose prose-gray max-w-none">
       <h1>Datenschutzerklärung</h1>
+      <p class="text-sm text-gray-600">Stand: 18.01.2026</p>
 
       <p>
-        Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten Ihre Daten
-        ausschließlich auf Grundlage der <strong>DSGVO</strong> sowie des
-        <strong>TTDSG (§&nbsp;25)</strong> für den Zugriff auf Endgeräteinformationen
-        (z.&nbsp;B. Cookies). Hinweise nach DDG (vormals TMG) finden Sie im
-        <a href="impressum.html" class="text-indigo-700 hover:underline">Impressum</a>.
+        Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der
+        <strong>DSGVO</strong> sowie des <strong>TDDDG (§&nbsp;25)</strong> (Zugriff auf Endgeräteinformationen, z.&nbsp;B. Cookies/LocalStorage).
+        Hinweise nach dem DDG finden Sie im <a href="/impressum.html">Impressum</a>.
       </p>
 
       <h2>1. Verantwortliche Stelle</h2>
@@ -32,203 +218,149 @@
         E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>
       </p>
 
-      <h2>2. Hosting & Server-Logs</h2>
+      <h2>2. Hosting (GitHub Pages) &amp; Server-Logs</h2>
       <p>
-        Beim Aufruf dieser Website werden durch den Webserver automatisch Protokolle erfasst
-        (IP-Adresse, Datum/Uhrzeit, URL, Referrer, User-Agent). Rechtsgrundlage:
-        Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an technischer
-        Bereitstellung und Sicherheit). Logfiles werden in der Regel maximal 7–14 Tage
-        gespeichert und anschließend gelöscht, sofern keine sicherheitsrelevante Auswertung
-        erforderlich ist.
+        Diese Website wird technisch über <strong>GitHub Pages</strong> bereitgestellt. Beim Aufruf werden durch den Webserver
+        automatisch Protokolle erfasst (z.&nbsp;B. IP-Adresse, Datum/Uhrzeit, URL, Referrer, User-Agent), um die Website
+        technisch auszuliefern und zu schützen.
+      </p>
+      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an Sicherheit und Stabilität).</p>
+
+      <h2>3. Domain / DNS (IONOS)</h2>
+      <p>
+        Die Domain wird über <strong>IONOS</strong> verwaltet (Domain- und ggf. DNS-Services). Dabei kann es im Rahmen der
+        Vertrags- und Registrierungsabwicklung zur Verarbeitung personenbezogener Daten kommen.
       </p>
 
-      <h2>3. Kontaktaufnahme / Anfrageformular</h2>
+      <h2>4. Kontaktaufnahme / Anfrageformular</h2>
       <p>
-        Bei Kontakt per Formular oder E-Mail verarbeiten wir die von Ihnen angegebenen Daten
-        (z.&nbsp;B. Name, E-Mail, Telefonnummer, Nachricht) zur Bearbeitung Ihrer Anfrage.
-        Rechtsgrundlage: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertraglich/vertraglich)
-        bzw. lit.&nbsp;f (berechtigtes Interesse an effizienter Kommunikation).
+        Bei Kontakt per Formular oder E-Mail verarbeiten wir die von Ihnen angegebenen Daten (z.&nbsp;B. Name, E-Mail, Telefonnummer, Nachricht)
+        zur Bearbeitung Ihrer Anfrage.
       </p>
-      <p>
-        <strong>Speicherdauer:</strong> Anfragen werden nach Abschluss der Bearbeitung,
-        spätestens nach 6 Monaten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten
-        oder berechtigten Interessen entgegenstehen.
-      </p>
+      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertraglich/vertraglich) und Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (Kommunikation).</p>
+      <p><strong>Speicherdauer:</strong> Nach Abschluss der Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten bestehen, in der Regel spätestens nach 6 Monaten.</p>
 
-      <h3>3.1 Versand über EmailJS (optional)</h3>
+      <h3>4.1 Versand über EmailJS</h3>
       <p>
-        Wenn aktiviert, nutzen wir zum Versand des Formulars den Dienst „EmailJS“
-        (EmailJS PTE. LTD., Sitz außerhalb der EU). Die Übermittlung erfolgt nur durch Ihre
-        aktive Nutzung des Formulars. Rechtsgrundlage:
-        Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO (Einwilligung) bzw. lit.&nbsp;b (Anfrageabwicklung).
-        Es kann eine Übermittlung in Drittländer stattfinden; in diesem Fall werden geeignete
-        Garantien (z.&nbsp;B. EU-Standardvertragsklauseln) eingesetzt.
+        Für den Versand von Formularnachrichten nutzen wir <strong>EmailJS</strong>. Dabei werden die von Ihnen im Formular
+        eingegebenen Inhalte verarbeitet und zur Zustellung übermittelt.
       </p>
+      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Anfrageabwicklung).</p>
 
-      <h2>4. Cookies & Einwilligungsmanagement</h2>
+      <h2>5. Cookies &amp; Einwilligungsmanagement</h2>
       <p>
-        Technisch erforderliche Cookies (z.&nbsp;B. für die Sprachauswahl DE/RU) setzen wir auf
-        Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO.
-        Für optionale Dienste (functional/analytics/marketing) fragen wir vorab Ihre
-        Einwilligung gem. Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.V.m. §&nbsp;25 TTDSG.
-        Ihre Auswahl können Sie jederzeit über den Footer-Link
+        Wir verwenden notwendige Speichertechnologien für den Betrieb der Website. Optionale Dienste (z.&nbsp;B. Analytik)
+        werden nur nach Ihrer vorherigen Einwilligung geladen. Sie können Ihre Auswahl jederzeit über den Footer-Link
         „Cookie-Einstellungen“ ändern.
       </p>
-      <p class="text-sm text-gray-600">
-        <strong>Consent-Version:</strong>
-        <span id="consent-version">–</span> &nbsp;•&nbsp;
-        <strong>Speicherdauer der Einwilligung:</strong> 6 Monate &nbsp;•&nbsp;
-        <strong>DNT:</strong> Bei aktivem „Do Not Track“ laden wir nur notwendige Dienste.
-      </p>
-
-      <h2>5. Analytik / Google Tag Manager &amp; Google Analytics (optional)</h2>
       <p>
-        Wenn aktiviert, nutzen wir Google Tag Manager zur Verwaltung von Tags sowie Google
-        Analytics zur Reichweitenmessung (Anbieter: Google Ireland Limited; ggf. Übermittlung in
-        die USA an Google LLC). Rechtsgrundlage ist Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1
-        lit.&nbsp;a DSGVO). Consent Mode (v2) ist implementiert. Widerruf jederzeit über die
-        Cookie-Einstellungen möglich.
+        <strong>Rechtsgrundlagen:</strong><br>
+        Notwendig: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;2 TDDDG.<br>
+        Optional (Analytik): Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
       </p>
 
-      <h2>6. Externe Inhalte & Dateien</h2>
+      <h2>6. Analytik (Google Analytics)</h2>
       <p>
-        Statische Dateien (Bilder, CSS/JS) liefern wir bevorzugt lokal aus.
-        Externe CDNs/Fonts setzen wir nur, wenn erforderlich (Art.&nbsp;6 Abs.&nbsp;1
-        lit.&nbsp;f DSGVO – Interesse an schneller Auslieferung/einheitlicher Darstellung).
-        Wo möglich, verwenden wir lokale Webfonts.
+        Sofern Sie eingewilligt haben, nutzen wir <strong>Google Analytics</strong> zur Reichweitenmessung
+        (Anbieter: Google Ireland Limited). Die Einbindung erfolgt erst nach Einwilligung über unsere Cookie-Einstellungen.
       </p>
-
-      <h2>7. Empfänger & Drittlandübermittlung</h2>
+      <p><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG).</p>
       <p>
-        Empfänger Ihrer Daten sind die für Betrieb/Bearbeitung erforderlichen Dienstleister
-        (z.&nbsp;B. Hoster, ggf. EmailJS, ggf. Google bei aktivierter Analytik) im Rahmen einer
-        Auftragsverarbeitung. Eine Drittlandübermittlung erfolgt nur, wenn erforderlich und mit
-        geeigneten Garantien (Art.&nbsp;44&nbsp;ff. DSGVO, z.&nbsp;B. EU-SCC).
+        <strong>Drittlandübermittlung:</strong> Eine Übermittlung von Daten in Drittländer (z.&nbsp;B. USA) kann nicht ausgeschlossen werden.
+        Geeignete Garantien (z.&nbsp;B. EU-Standardvertragsklauseln) können eingesetzt werden.
       </p>
 
-      <!-- Provider-Tabelle: nur Beispiele, nutze tatsächlich aktivierte Dienste -->
-      <h3>7.1 Eingesetzte Dienste (Überblick)</h3>
-      <div class="not-prose overflow-x-auto">
-        <table class="w-full border border-gray-200 text-sm">
-          <thead class="bg-gray-50">
-            <tr>
-              <th class="p-2 text-left">Dienst</th>
-              <th class="p-2 text-left">Zweck / Kategorie</th>
-              <th class="p-2 text-left">Rechtsgrundlage</th>
-              <th class="p-2 text-left">Speicherdauer</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t">
-              <td class="p-2">EmailJS (optional)</td>
-              <td class="p-2">Formularversand / <em>functional</em></td>
-              <td class="p-2">Art. 6 Abs. 1 lit. a/b DSGVO</td>
-              <td class="p-2">bis Anfrageabschluss</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-2">Google Tag Manager (optional)</td>
-              <td class="p-2">Tag-Verwaltung / <em>analytics</em></td>
-              <td class="p-2">Art. 6 Abs. 1 lit. a DSGVO</td>
-              <td class="p-2">laut Google; bis Widerruf</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-2">Google Analytics (optional)</td>
-              <td class="p-2">Reichweitenmessung / <em>analytics</em></td>
-              <td class="p-2">Art. 6 Abs. 1 lit. a DSGVO</td>
-              <td class="p-2">bis Widerruf; ggf. 14 Monate (Standard)</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-2">Instagram/YouTube Embeds (optional)</td>
-              <td class="p-2">Medien / <em>marketing</em></td>
-              <td class="p-2">Art. 6 Abs. 1 lit. a DSGVO</td>
-              <td class="p-2">bis Widerruf</td>
-            </tr>
-            <tr class="border-t">
-              <td class="p-2">Fonts CDN (optional)</td>
-              <td class="p-2">Schriften / <em>functional</em></td>
-              <td class="p-2">Art. 6 Abs. 1 lit. f DSGVO</td>
-              <td class="p-2">Session</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>8. Speicherdauer</h2>
-      <p>
-        Wir speichern personenbezogene Daten nur, solange es für die jeweiligen Zwecke
-        erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Danach werden die
-        Daten gelöscht oder anonymisiert.
-      </p>
-
-      <h2>9. Ihre Rechte</h2>
+      <h2>7. Ihre Rechte</h2>
       <ul>
         <li>Auskunft (Art. 15 DSGVO)</li>
         <li>Berichtigung (Art. 16 DSGVO)</li>
         <li>Löschung (Art. 17 DSGVO)</li>
-        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Einschränkung (Art. 18 DSGVO)</li>
         <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-        <li>Widerspruch gegen Verarbeitung auf Basis berechtigter Interessen (Art. 21 DSGVO)</li>
-        <li>Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+        <li>Widerspruch (Art. 21 DSGVO)</li>
+        <li>Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
       </ul>
+      <p>Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.</p>
+
+      <h2>8. Beschwerderecht</h2>
       <p>
-        Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an
-        <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
+        Zuständig für Niedersachsen: <em>Der Landesbeauftragte für den Datenschutz Niedersachsen</em>.
       </p>
 
-      <h2>10. Beschwerderecht</h2>
-      <p>
-        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren,
-        insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des
-        Orts des mutmaßlichen Verstoßes. Zuständig für Niedersachsen:
-        <em>Die Landesbeauftragte für den Datenschutz Niedersachsen (LfD Niedersachsen)</em>.
+      <h2>9. Datensicherheit</h2>
+      <p>Wir treffen angemessene technische und organisatorische Maßnahmen (z.&nbsp;B. TLS/HTTPS), um Ihre Daten zu schützen.</p>
+
+      <h2>10. Änderungen dieser Erklärung</h2>
+      <p>Wir passen diese Datenschutzerklärung an, sobald dies erforderlich ist. Es gilt die auf dieser Seite veröffentlichte Fassung.</p>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+    <div class="container mx-auto px-4 text-center">
+      <div class="mb-4">
+        <a
+          href="https://www.instagram.com/vilana_catering/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 hover:text-amber-400 transition"
+          aria-label="Instagram – vilana_catering"
+        >
+          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Instagram Icon">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
+          </svg>
+          Instagram
+        </a>
+      </div>
+
+      <p class="mb-2">
+        <a href="/impressum.html" class="hover:underline">Impressum</a> |
+        <a href="/datenschutz.html" class="hover:underline">Datenschutz</a> |
+        <a href="/agb.html" class="hover:underline">AGB</a>
       </p>
 
-      <h2>11. Datensicherheit</h2>
-      <p>
-        Wir treffen angemessene technische und organisatorische Maßnahmen (z.&nbsp;B. TLS/HTTPS),
-        um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.
+      <p class="footer-text">
+        © <span class="year">2025</span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
       </p>
-
-      <h2>12. Änderungen dieser Erklärung</h2>
-      <p>
-        Wir passen diese Datenschutzerklärung an, sobald dies erforderlich ist (z.&nbsp;B. bei
-        neuen Funktionen/Tools). Es gilt die auf dieser Seite veröffentlichte Fassung.
-        <br>
-        <span class="text-sm text-gray-600">Stand: <time id="policy-date">02.09.2025</time></span>
-      </p>
-
-      <!-- EU-Streitschlichtung -->
-      <section class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-4 shadow-sm">
-        <h2 class="text-xl font-semibold mb-3 text-gray-800">EU-Streitschlichtung</h2>
-        <p class="text-sm text-gray-700 mb-2">
-          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-indigo-700 hover:underline">
-            https://ec.europa.eu/consumers/odr/
-          </a>.
-        </p>
-        <p class="text-sm text-gray-700">
-          Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
-          Verbraucherschlichtungsstelle teilzunehmen (§&nbsp;36 VSBG).
-        </p>
-        <p class="ru-only mt-3 text-xs italic text-gray-500">
-          RU: Информация об онлайн-платформе ЕС по урегулированию споров указана выше.
-          Юридически обязательной считается только немецкая версия.
-        </p>
-      </section>
-
-      <footer class="mt-12 text-center text-sm text-gray-500">
-        © 2025 Vilana Event &amp; Catering – Alle Rechte vorbehalten.
-      </footer>
     </div>
 
-    <!-- Синхронизируем версию consent из VilanaCookie (если скрипт подключен) -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        try {
-          var c = window.VilanaCookie && window.VilanaCookie.get && window.VilanaCookie.get();
-          if (c && c.version) document.getElementById('consent-version').textContent = c.version;
-        } catch (e) {}
-      });
-    </script>
-  </body>
+    <button
+      type="button"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
+      title="Nach oben"
+      aria-label="Nach oben"
+    >
+      ▲
+    </button>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/vilana-cookiewall.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var el = document.querySelector('.year');
+      if (el) {
+        var start = 2025;
+        var now = new Date().getFullYear();
+        el.textContent = (now > start) ? (start + '–' + now) : String(start);
+      }
+
+      var link = document.getElementById('cookieSettingsLink');
+      if (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          try {
+            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.open === 'function') return window.VilanaCookieWall.open();
+            if (window.VilanaCookie && typeof window.VilanaCookie.open === 'function') return window.VilanaCookie.open();
+            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.show === 'function') return window.VilanaCookieWall.show();
+            if (window.VilanaCookie && typeof window.VilanaCookie.show === 'function') return window.VilanaCookie.show();
+          } catch (err) {}
+        });
+      }
+    });
+  </script>
+</body>
 </html>
