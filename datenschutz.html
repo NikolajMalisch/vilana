@@ -10,12 +10,15 @@
   <meta name="theme-color" content="#0e0e0e" />
   <link rel="canonical" href="https://www.vilana-event.de/datenschutz.html" />
 
+  <!-- Performance: CSS -->
   <link rel="preload" href="/css/output.css" as="style" />
   <link rel="stylesheet" href="/css/output.css" />
   <noscript><link rel="stylesheet" href="/css/output.css" /></noscript>
 
+  <!-- Hero/Logo preload -->
   <link rel="preload" as="image" href="/images/vilana_logo.webp" type="image/webp" fetchpriority="high" />
 
+  <!-- Fonts (perf) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" crossorigin
@@ -25,112 +28,91 @@
         media="print"
         onload="this.media='all'" />
 
+  <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
-<style>
-  html { scroll-behavior: smooth; }
-  body { background-color: #fdfaf6; }
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #fdfaf6; }
 
-  /* ===== Logo (header) ===== */
-  .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+    /* ===== Logo (header) ===== */
+    .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+    .logo-title {
+      font-family: "Cinzel Decorative", cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: .5px;
+      color: #1f2937;
+      line-height: 1;
+      margin: 0;
+    }
+    .logo-subtitle {
+      font-family: "Cormorant SC", serif;
+      font-size: 1rem;
+      font-weight: 350;
+      color: #1f2937;
+      line-height: 1;
+    }
 
-  .logo-title {
-    font-family: "Cinzel Decorative", cursive;
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: .5px;
-    color: #1f2937;
-    line-height: 1;
-    margin: 0;
-  }
+    /* ===== Accessibility ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
 
-  .logo-subtitle {
-    font-family: "Cormorant SC", serif;
-    font-size: 1rem;
-    font-weight: 350;
-    color: #1f2937;
-    line-height: 1;
-  }
-
-  /* ===== Accessibility ===== */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  /* =========================================================
-     LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
-     - neutral UI font, readable line-height
-     - headings bold + separated
-  ========================================================= */
-  .legal {
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    letter-spacing: normal;
-    color: #1f2937;
-  }
-
-  .legal h1 {
-    font-weight: 800;
-    font-size: 1.875rem; /* ~30px */
-    line-height: 1.2;
-    margin: 0 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
-
-  .legal h2 {
-    font-weight: 800;
-    font-size: 1.25rem; /* ~20px */
-    line-height: 1.25;
-    margin: 2rem 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-  }
-
-  .legal h3 {
-    font-weight: 700;
-    font-size: 1.125rem; /* ~18px */
-    line-height: 1.3;
-    margin: 1.5rem 0 0.5rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
-
-  .legal p {
-    margin: 0 0 0.9rem;
-    line-height: 1.75;
-    color: #1f2937;
-  }
-
-  .legal ul, .legal ol {
-    margin: 0 0 1rem;
-    padding-left: 1.25rem;
-  }
-
-  .legal li {
-    margin: 0.35rem 0;
-    line-height: 1.75;
-    color: #1f2937;
-  }
-
-  .legal a {
-    color: #4338ca;
-    text-decoration: underline;
-  }
-</style>
-
+    /* =========================================================
+       LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
+       - visually structured, NOT heavy
+    ========================================================= */
+    .legal {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      color: #1f2937;
+    }
+    .legal h1 {
+      font-weight: 600;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      margin: 0 0 1rem;
+      color: #111827;
+      letter-spacing: 0.02em;
+    }
+    .legal h2 {
+      font-weight: 600;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      margin: 2.2rem 0 0.75rem;
+      color: #111827;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+    .legal h3 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin: 1.6rem 0 0.4rem;
+      color: #111827;
+    }
+    .legal p,
+    .legal li {
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+    .legal p { margin: 0 0 0.9rem; }
+    .legal ul, .legal ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+    .legal li { margin: 0.35rem 0; }
+    .legal a { color: #4338ca; text-decoration: underline; }
+  </style>
 
   <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
   <script
@@ -147,8 +129,9 @@
 </head>
 
 <body class="text-gray-800 antialiased">
+  <!-- Skip-Link -->
   <a href="#content"
-    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+     class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
     Zum Inhalt springen
   </a>
 
@@ -156,7 +139,7 @@
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-        aria-label="Vilana Event &amp; Catering – Startseite">
+         aria-label="Vilana Event &amp; Catering – Startseite">
         <span class="logo-title">Vilana</span>
         <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
           Event &amp; Catering
@@ -175,19 +158,18 @@
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
 
-          <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
 
     <div id="mobileMenu"
-        class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-        role="menu" aria-label="Mobiles Menü">
+         class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+         role="menu" aria-label="Mobiles Menü">
       <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
       <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
       <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
@@ -199,15 +181,19 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main id="content" class="container mx-auto px-4 py-12 max-w-3xl">
     <article class="legal prose prose-gray max-w-none">
       <h1>Datenschutzerklärung</h1>
       <p class="text-sm text-gray-600">Stand: 18.01.2026</p>
 
       <p>
-        Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der
-        <strong>DSGVO</strong> sowie des <strong>TDDDG (§&nbsp;25)</strong> (Zugriff auf Endgeräteinformationen, z.&nbsp;B. Cookies/LocalStorage).
-        Hinweise nach dem DDG finden Sie im <a href="/impressum.html">Impressum</a>.
+        Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten personenbezogene Daten ausschließlich nach den Vorgaben der
+        <strong>Datenschutz-Grundverordnung (DSGVO)</strong> sowie des <strong>TDDDG</strong> (insbesondere §&nbsp;25 TDDDG bei Zugriff auf Informationen
+        in Endgeräten bzw. beim Setzen/Auslesen von Cookies oder vergleichbaren Speichertechnologien).
+      </p>
+      <p>
+        Anbieterkennzeichnung nach dem <strong>DDG</strong> finden Sie im <a href="/impressum.html">Impressum</a>.
       </p>
 
       <h2>1. Verantwortliche Stelle</h2>
@@ -218,81 +204,152 @@
         E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>
       </p>
 
-      <h2>2. Hosting (GitHub Pages) &amp; Server-Logs</h2>
+      <h2>2. Zugriffsdaten / Server-Logfiles</h2>
       <p>
-        Diese Website wird technisch über <strong>GitHub Pages</strong> bereitgestellt. Beim Aufruf werden durch den Webserver
-        automatisch Protokolle erfasst (z.&nbsp;B. IP-Adresse, Datum/Uhrzeit, URL, Referrer, User-Agent), um die Website
-        technisch auszuliefern und zu schützen.
+        Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Logfiles erhoben und gespeichert.
+        Dies kann insbesondere folgende Daten umfassen: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite/URL, Referrer-URL, Browser/Device,
+        Betriebssystem sowie Statuscodes.
       </p>
-      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an Sicherheit und Stabilität).</p>
-
-      <h2>3. Domain / DNS (IONOS)</h2>
       <p>
-        Die Domain wird über <strong>IONOS</strong> verwaltet (Domain- und ggf. DNS-Services). Dabei kann es im Rahmen der
-        Vertrags- und Registrierungsabwicklung zur Verarbeitung personenbezogener Daten kommen.
+        Die Verarbeitung erfolgt zur technischen Bereitstellung der Website, zur Gewährleistung von Stabilität und Sicherheit sowie zur Abwehr
+        von Missbrauch (z. B. Angriffe).
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an sicherem und störungsfreiem Betrieb).
       </p>
 
-      <h2>4. Kontaktaufnahme / Anfrageformular</h2>
+      <h2>3. Hosting (GitHub Pages)</h2>
       <p>
-        Bei Kontakt per Formular oder E-Mail verarbeiten wir die von Ihnen angegebenen Daten (z.&nbsp;B. Name, E-Mail, Telefonnummer, Nachricht)
-        zur Bearbeitung Ihrer Anfrage.
+        Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt (Dienstanbieter: GitHub, Inc.). Im Rahmen der Bereitstellung können die unter
+        Ziffer 2 genannten Zugriffsdaten verarbeitet werden.
       </p>
-      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertraglich/vertraglich) und Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (Kommunikation).</p>
-      <p><strong>Speicherdauer:</strong> Nach Abschluss der Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten bestehen, in der Regel spätestens nach 6 Monaten.</p>
-
-      <h3>4.1 Versand über EmailJS</h3>
       <p>
-        Für den Versand von Formularnachrichten nutzen wir <strong>EmailJS</strong>. Dabei werden die von Ihnen im Formular
-        eingegebenen Inhalte verarbeitet und zur Zustellung übermittelt.
+        <strong>Drittlandübermittlung:</strong> GitHub ist ein Anbieter mit Sitz in den USA. Eine Verarbeitung personenbezogener Daten in einem Drittland
+        (insbesondere USA) kann daher nicht ausgeschlossen werden. Es kommen – soweit erforderlich – geeignete Garantien (z. B. EU-Standardvertragsklauseln)
+        in Betracht.
       </p>
-      <p><strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Anfrageabwicklung).</p>
-
-      <h2>5. Cookies &amp; Einwilligungsmanagement</h2>
       <p>
-        Wir verwenden notwendige Speichertechnologien für den Betrieb der Website. Optionale Dienste (z.&nbsp;B. Analytik)
-        werden nur nach Ihrer vorherigen Einwilligung geladen. Sie können Ihre Auswahl jederzeit über den Footer-Link
-        „Cookie-Einstellungen“ ändern.
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO.
+      </p>
+      <p>
+        Weitere Informationen: Datenschutzhinweise des Anbieters (GitHub).
+      </p>
+
+      <h2>4. Domain / DNS (IONOS)</h2>
+      <p>
+        Die Domain dieser Website wird über <strong>IONOS SE</strong> verwaltet. Im Rahmen der Domain-Registrierung und Verwaltung können personenbezogene
+        Daten verarbeitet werden (z. B. Kontaktdaten des Vertragsinhabers, technische Daten zur Domainverwaltung).
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (betriebsnotwendige Administration) sowie – soweit einschlägig –
+        Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragsabwicklung).
+      </p>
+      <p>
+        Weitere Informationen: Datenschutzhinweise des Anbieters (IONOS).
+      </p>
+
+      <h2>5. Kontaktaufnahme</h2>
+      <p>
+        Wenn Sie uns per E-Mail kontaktieren oder das Kontaktformular nutzen, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse,
+        Inhalt Ihrer Nachricht sowie ggf. Telefonnummer), um Ihre Anfrage zu bearbeiten und zu beantworten.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertragliche/vertragliche Kommunikation) sowie Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        (allgemeine Kommunikation und organisatorische Abwicklung).
+      </p>
+      <p>
+        <strong>Speicherdauer:</strong> Wir löschen Anfragen grundsätzlich nach Abschluss der Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten
+        entgegenstehen. In der Regel erfolgt die Löschung spätestens nach <strong>6 Monaten</strong>.
+      </p>
+
+      <h3>5.1 Versand über EmailJS</h3>
+      <p>
+        Für die technische Übermittlung von Formularnachrichten nutzen wir <strong>EmailJS</strong> als Dienstleister. Dabei werden die im Formular
+        eingegebenen Inhalte (Name, E-Mail-Adresse, Nachricht sowie technische Metadaten) zur Zustellung verarbeitet.
+      </p>
+      <p>
+        <strong>Drittlandübermittlung:</strong> Je nach Infrastruktur des Dienstleisters kann eine Verarbeitung in Drittländern nicht ausgeschlossen werden.
+        Soweit erforderlich, werden geeignete Garantien (z. B. EU-Standardvertragsklauseln) eingesetzt.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO.
+      </p>
+      <p>
+        Weitere Informationen: Datenschutzhinweise des Dienstleisters (EmailJS).
+      </p>
+
+      <h2>6. Cookies &amp; Einwilligungsmanagement</h2>
+      <p>
+        Wir verwenden Cookies und vergleichbare Speichertechnologien. <strong>Notwendige</strong> Technologien sind erforderlich, um die Website zu betreiben
+        und grundlegende Funktionen bereitzustellen. <strong>Optionale</strong> Technologien (z. B. Analyse) setzen wir nur ein, wenn Sie zuvor eingewilligt haben.
+      </p>
+      <p>
+        Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen bzw. ändern – über die Funktion
+        <strong>„Cookie-Einstellungen“</strong> (Footer).
       </p>
       <p>
         <strong>Rechtsgrundlagen:</strong><br>
         Notwendig: Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;2 TDDDG.<br>
-        Optional (Analytik): Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
+        Optional (z. B. Analytik): Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
       </p>
 
-      <h2>6. Analytik (Google Analytics)</h2>
+      <h2>7. Webanalyse (Google Analytics)</h2>
       <p>
-        Sofern Sie eingewilligt haben, nutzen wir <strong>Google Analytics</strong> zur Reichweitenmessung
-        (Anbieter: Google Ireland Limited). Die Einbindung erfolgt erst nach Einwilligung über unsere Cookie-Einstellungen.
+        Sofern Sie eingewilligt haben, verwenden wir <strong>Google Analytics</strong> zur Reichweitenmessung und Analyse der Nutzung dieser Website
+        (Anbieter: Google Ireland Limited). Die Einbindung erfolgt erst nach Ihrer Einwilligung über unsere Cookie-Einstellungen.
       </p>
-      <p><strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG).</p>
       <p>
-        <strong>Drittlandübermittlung:</strong> Eine Übermittlung von Daten in Drittländer (z.&nbsp;B. USA) kann nicht ausgeschlossen werden.
-        Geeignete Garantien (z.&nbsp;B. EU-Standardvertragsklauseln) können eingesetzt werden.
+        Dabei können insbesondere Nutzungsdaten (z. B. Seitenaufrufe, Interaktionen, ungefähre Standortdaten, technische Informationen zum Browser/Device)
+        verarbeitet werden.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG).
+      </p>
+      <p>
+        <strong>Drittlandübermittlung:</strong> Eine Übermittlung von Daten in Drittländer (z. B. USA) kann nicht ausgeschlossen werden. Soweit erforderlich,
+        kommen geeignete Garantien (z. B. EU-Standardvertragsklauseln) zum Einsatz.
+      </p>
+      <p>
+        Weitere Informationen: Datenschutzhinweise von Google.
       </p>
 
-      <h2>7. Ihre Rechte</h2>
+      <h2>8. Empfänger / Kategorien von Empfängern</h2>
+      <p>
+        Wir setzen Dienstleister ein, die personenbezogene Daten in unserem Auftrag verarbeiten (z. B. Hosting/Domain, technische Versanddienste für Formulare,
+        Analytik). Empfänger können insbesondere sein: GitHub (GitHub Pages), IONOS, EmailJS sowie – nach Einwilligung – Google (Analytics).
+      </p>
+
+      <h2>9. Ihre Rechte</h2>
       <ul>
-        <li>Auskunft (Art. 15 DSGVO)</li>
-        <li>Berichtigung (Art. 16 DSGVO)</li>
-        <li>Löschung (Art. 17 DSGVO)</li>
-        <li>Einschränkung (Art. 18 DSGVO)</li>
-        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-        <li>Widerspruch (Art. 21 DSGVO)</li>
-        <li>Widerruf von Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
+        <li>Auskunft (Art.&nbsp;15 DSGVO)</li>
+        <li>Berichtigung (Art.&nbsp;16 DSGVO)</li>
+        <li>Löschung (Art.&nbsp;17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art.&nbsp;18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art.&nbsp;20 DSGVO)</li>
+        <li>Widerspruch (Art.&nbsp;21 DSGVO)</li>
+        <li>Widerruf von Einwilligungen (Art.&nbsp;7 Abs.&nbsp;3 DSGVO)</li>
       </ul>
-      <p>Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.</p>
-
-      <h2>8. Beschwerderecht</h2>
       <p>
-        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-        Zuständig für Niedersachsen: <em>Der Landesbeauftragte für den Datenschutz Niedersachsen</em>.
+        Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.
       </p>
 
-      <h2>9. Datensicherheit</h2>
-      <p>Wir treffen angemessene technische und organisatorische Maßnahmen (z.&nbsp;B. TLS/HTTPS), um Ihre Daten zu schützen.</p>
+      <h2>10. Beschwerderecht</h2>
+      <p>
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig für Niedersachsen ist der
+        <em>Landesbeauftragte für den Datenschutz Niedersachsen</em>.
+      </p>
 
-      <h2>10. Änderungen dieser Erklärung</h2>
-      <p>Wir passen diese Datenschutzerklärung an, sobald dies erforderlich ist. Es gilt die auf dieser Seite veröffentlichte Fassung.</p>
+      <h2>11. Datensicherheit</h2>
+      <p>
+        Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten zu schützen (z. B. TLS/HTTPS).
+        Bitte beachten Sie, dass eine vollständige Sicherheit bei Datenübertragungen im Internet nicht garantiert werden kann.
+      </p>
+
+      <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+      <p>
+        Wir passen diese Datenschutzerklärung an, sobald dies aufgrund technischer Änderungen, neuer Dienste oder geänderter Rechtslage erforderlich ist.
+        Es gilt die jeweils aktuelle, auf dieser Seite veröffentlichte Fassung.
+      </p>
     </article>
   </main>
 
@@ -341,6 +398,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // year auto
       var el = document.querySelector('.year');
       if (el) {
         var start = 2025;
@@ -348,6 +406,7 @@
         el.textContent = (now > start) ? (start + '–' + now) : String(start);
       }
 
+      // cookie settings open (best effort)
       var link = document.getElementById('cookieSettingsLink');
       if (link) {
         link.addEventListener('click', function (e) {

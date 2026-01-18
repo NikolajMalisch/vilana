@@ -10,12 +10,15 @@
   <meta name="theme-color" content="#0e0e0e" />
   <link rel="canonical" href="https://www.vilana-event.de/agb.html" />
 
+  <!-- Performance: CSS -->
   <link rel="preload" href="/css/output.css" as="style" />
   <link rel="stylesheet" href="/css/output.css" />
   <noscript><link rel="stylesheet" href="/css/output.css" /></noscript>
 
+  <!-- Hero/Logo preload -->
   <link rel="preload" as="image" href="/images/vilana_logo.webp" type="image/webp" fetchpriority="high" />
 
+  <!-- Fonts (perf) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" crossorigin
@@ -25,112 +28,91 @@
         media="print"
         onload="this.media='all'" />
 
+  <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
-<style>
-  html { scroll-behavior: smooth; }
-  body { background-color: #fdfaf6; }
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #fdfaf6; }
 
-  /* ===== Logo (header) ===== */
-  .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+    /* ===== Logo (header) ===== */
+    .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
+    .logo-title {
+      font-family: "Cinzel Decorative", cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: .5px;
+      color: #1f2937;
+      line-height: 1;
+      margin: 0;
+    }
+    .logo-subtitle {
+      font-family: "Cormorant SC", serif;
+      font-size: 1rem;
+      font-weight: 350;
+      color: #1f2937;
+      line-height: 1;
+    }
 
-  .logo-title {
-    font-family: "Cinzel Decorative", cursive;
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: .5px;
-    color: #1f2937;
-    line-height: 1;
-    margin: 0;
-  }
+    /* ===== Accessibility ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
 
-  .logo-subtitle {
-    font-family: "Cormorant SC", serif;
-    font-size: 1rem;
-    font-weight: 350;
-    color: #1f2937;
-    line-height: 1;
-  }
-
-  /* ===== Accessibility ===== */
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  /* =========================================================
-     LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
-     - neutral UI font, readable line-height
-     - headings bold + separated
-  ========================================================= */
-  .legal {
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    letter-spacing: normal;
-    color: #1f2937;
-  }
-
-  .legal h1 {
-    font-weight: 800;
-    font-size: 1.875rem; /* ~30px */
-    line-height: 1.2;
-    margin: 0 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
-
-  .legal h2 {
-    font-weight: 800;
-    font-size: 1.25rem; /* ~20px */
-    line-height: 1.25;
-    margin: 2rem 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-  }
-
-  .legal h3 {
-    font-weight: 700;
-    font-size: 1.125rem; /* ~18px */
-    line-height: 1.3;
-    margin: 1.5rem 0 0.5rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
-
-  .legal p {
-    margin: 0 0 0.9rem;
-    line-height: 1.75;
-    color: #1f2937;
-  }
-
-  .legal ul, .legal ol {
-    margin: 0 0 1rem;
-    padding-left: 1.25rem;
-  }
-
-  .legal li {
-    margin: 0.35rem 0;
-    line-height: 1.75;
-    color: #1f2937;
-  }
-
-  .legal a {
-    color: #4338ca;
-    text-decoration: underline;
-  }
-</style>
-
+    /* =========================================================
+       LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
+       - visually structured, NOT heavy (as requested)
+    ========================================================= */
+    .legal {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      color: #1f2937;
+    }
+    .legal h1 {
+      font-weight: 600;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      margin: 0 0 1rem;
+      color: #111827;
+      letter-spacing: 0.02em;
+    }
+    .legal h2 {
+      font-weight: 600;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      margin: 2.2rem 0 0.75rem;
+      color: #111827;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+    .legal h3 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin: 1.6rem 0 0.4rem;
+      color: #111827;
+    }
+    .legal p,
+    .legal li {
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+    .legal p { margin: 0 0 0.9rem; }
+    .legal ul, .legal ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+    .legal li { margin: 0.35rem 0; }
+    .legal a { color: #4338ca; text-decoration: underline; }
+  </style>
 
   <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
   <script
@@ -147,6 +129,7 @@
 </head>
 
 <body class="text-gray-800 antialiased">
+  <!-- Skip-Link -->
   <a href="#content"
     class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
     Zum Inhalt springen
@@ -175,19 +158,12 @@
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
 
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/">RU</a>
-        </div>
-
-
-          <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
 
@@ -205,85 +181,213 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main id="content" class="container mx-auto px-4 py-12 max-w-3xl">
     <article class="legal prose prose-gray max-w-none">
       <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
       <p class="text-sm text-gray-600">Stand: 18.01.2026</p>
 
       <h2>1. Geltungsbereich</h2>
-      <p>Diese AGB gelten für alle Verträge zwischen <strong>Vilana Event &amp; Catering</strong>, Inhaberin: Viktoria Ruf, und Kund:innen über Catering-, Event-, Miet- und Zusatzleistungen. Abweichende Bedingungen gelten nur bei ausdrücklicher Textform-Bestätigung.</p>
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen <strong>Vilana Event &amp; Catering</strong>,
+        Inhaberin: Viktoria Ruf (nachfolgend „Anbieter“) und Kund:innen (nachfolgend „Kunde“) über Catering-, Event-, Miet- und Zusatzleistungen
+        sowie – soweit angeboten – den Ticketverkauf für Veranstaltungen.
+        Abweichende Bedingungen des Kunden gelten nur, wenn der Anbieter diese ausdrücklich in Textform bestätigt.
+      </p>
 
       <h2>2. Angebot, Vertragsschluss, Anzahlung/Kaution</h2>
-      <p>Angebote sind freibleibend. Der Vertrag kommt durch unsere schriftliche Bestätigung (E-Mail genügt) zustande. Sofern nicht anders vereinbart: <strong>Anzahlung 30–50&nbsp;%</strong> bei Vertragsschluss; Restzahlung spätestens <strong>5 Kalendertage</strong> vor dem Event. Bei Miet-/Leihgut kann eine <strong>Kaution</strong> verlangt werden.</p>
+      <p>
+        Angebote sind freibleibend. Ein Vertrag kommt durch schriftliche Bestätigung des Anbieters (E-Mail genügt) zustande.
+        Sofern nicht anders vereinbart, ist bei Vertragsschluss eine <strong>Anzahlung von 30–50&nbsp;%</strong> zu leisten; der Restbetrag ist
+        spätestens <strong>5 Kalendertage</strong> vor dem Veranstaltungstermin fällig.
+        Bei Miet-/Leihgut kann eine <strong>Kaution</strong> verlangt werden.
+      </p>
 
       <h2>3. Leistungsumfang &amp; Qualitätsvorbehalt</h2>
-      <p>Leistungsumfang ergibt sich aus Angebot/Auftragsbestätigung (Menüs, Personen, Zeiten, Personal, Logistik, Equipment). Saisonale/marktbedingte gleichwertige Anpassungen bleiben vorbehalten (z.&nbsp;B. Warentausch gleicher Güte und Preisklasse).</p>
+      <p>
+        Art und Umfang der Leistung ergeben sich aus Angebot/Auftragsbestätigung (z.&nbsp;B. Menüauswahl, Personenzahl, Zeiten, Personal, Logistik,
+        Equipment). Saisonale oder marktbedingte Änderungen bleiben vorbehalten, sofern eine gleichwertige Leistung erbracht wird (z.&nbsp;B. Warentausch
+        gleicher Güte und Preisklasse).
+      </p>
 
       <h2>4. Preise, Zahlungsarten, Kleinunternehmerregelung</h2>
-      <p>Preise sind Endpreise nach §&nbsp;19 UStG (Kleinunternehmerregelung; kein USt-Ausweis). Zahlbar per Überweisung; Bar-/Kartenzahlungen (z.&nbsp;B. SumUp) nach Vereinbarung. Offene Beträge sind spätestens am Liefertag vor Leistungsbeginn vollständig fällig.</p>
+      <p>
+        Sämtliche Preise sind Endpreise gemäß §&nbsp;19 UStG (Kleinunternehmerregelung; kein Umsatzsteuerausweis).
+        Zahlung per Überweisung; Bar- oder Kartenzahlung (z.&nbsp;B. SumUp) nur nach Vereinbarung.
+        Offene Beträge sind spätestens am Liefertag bzw. vor Leistungsbeginn vollständig fällig.
+      </p>
 
-      <h2>5. Stornierungen (Kund:in)</h2>
+      <h2>5. Stornierung / Rücktritt durch den Kunden</h2>
+      <p>
+        Eine Stornierung des bestätigten Auftrags ist ausschließlich in Textform (z.&nbsp;B. per E-Mail) möglich.
+        Maßgeblich für die Fristwahrung ist der Zeitpunkt des Eingangs der Stornierung beim Anbieter.
+      </p>
+      <p>Es gelten folgende Stornobedingungen:</p>
       <ul>
-        <li>bis 30 Tage vor Termin: kostenfrei oder 10&nbsp;% Bearbeitung (abhängig vom Einkaufsvorlauf),</li>
-        <li>29–14 Tage: 30&nbsp;% des Auftragswerts,</li>
-        <li>13–7 Tage: 60&nbsp;% des Auftragswerts,</li>
-        <li>ab 6 Tage/No-Show: 90–100&nbsp;% des Auftragswerts.</li>
+        <li><strong>bis 30 Kalendertage</strong> vor dem Veranstaltungstermin: <strong>kostenfrei</strong></li>
+        <li><strong>29 bis 14 Kalendertage</strong> vor dem Veranstaltungstermin: <strong>30&nbsp;%</strong> des vereinbarten Gesamtpreises</li>
+        <li><strong>13 bis 7 Kalendertage</strong> vor dem Veranstaltungstermin: <strong>60&nbsp;%</strong> des vereinbarten Gesamtpreises</li>
+        <li><strong>ab 6 Kalendertagen</strong> vor dem Veranstaltungstermin oder bei <strong>Nichterscheinen (No-Show)</strong>:
+          <strong>bis zu 100&nbsp;%</strong> des vereinbarten Gesamtpreises</li>
       </ul>
-      <p class="text-sm text-gray-600">Der Nachweis eines geringeren Schadens bleibt unbenommen.</p>
+      <p>
+        Die Höhe der Stornokosten richtet sich nach dem zum Zeitpunkt der Stornierung bereits entstandenen Aufwand, insbesondere für Wareneinkauf,
+        Personalplanung, Logistik und Vorbereitungsleistungen.
+        Dem Kunden bleibt ausdrücklich der Nachweis vorbehalten, dass dem Anbieter kein oder ein wesentlich geringerer Schaden entstanden ist.
+      </p>
 
       <h2>6. Personenzahl &amp; Änderungen</h2>
-      <p>Verbindliche Personenzahl spätestens <strong>7 Tage</strong> vor Termin. Erhöhungen werden nachberechnet; Reduzierungen nach Frist mindern den Preis nicht. Menü-/Zeitänderungen nach Frist nur nach Verfügbarkeit und ggf. mit Mehrkosten.</p>
+      <p>
+        Die verbindliche Personenzahl ist spätestens <strong>7 Tage</strong> vor dem Termin mitzuteilen. Erhöhungen werden nachberechnet.
+        Reduzierungen nach Ablauf der Frist mindern den Preis nicht.
+        Menü-/Zeitänderungen nach Frist sind nur nach Verfügbarkeit möglich und können Mehrkosten verursachen.
+      </p>
 
       <h2>7. Lieferung, Auf- &amp; Abbau, Wartezeiten, Zufahrt</h2>
-      <p>Liefer-/Abholzeiten werden vereinbart. Kund:in stellt geeignete Stellflächen, Zufahrt, Parkmöglichkeiten sowie Strom/Wasser gemäß Angebot bereit. <strong>Wartezeiten</strong> durch bauliche/gewerbliche Einschränkungen vor Ort können als Personal-/Fahrtzeit berechnet werden.</p>
+      <p>
+        Liefer-/Abholzeiten werden vereinbart. Der Kunde stellt geeignete Stellflächen, eine erreichbare Zufahrt/Be- und Entlademöglichkeiten,
+        Parkmöglichkeiten sowie Strom/Wasser gemäß Angebot bereit.
+        Wartezeiten oder Mehraufwand aufgrund örtlicher Gegebenheiten können als Personal-/Fahrtzeit berechnet werden.
+      </p>
 
       <h2>8. Hygiene, LMIV, Allergene/Unverträglichkeiten</h2>
-      <p>Wir arbeiten nach geltenden Hygienevorschriften (LFGB/HACCP). Informationen zu Allergenen/Zusatzstoffen (LMIV) stellen wir auf Anfrage bereit; <strong>Kund:in informiert uns rechtzeitig</strong> über Unverträglichkeiten der Gäste. Bei Buffet-Offenhaltung durch Kund:in nach Übergabe obliegt die Verkehrssicherungspflicht Kund:in.</p>
+      <p>
+        Der Anbieter arbeitet nach den geltenden Hygienevorschriften (insb. LFGB/HACCP). Informationen zu Allergenen/Zusatzstoffen (LMIV) stellen wir
+        auf Anfrage bereit. Der Kunde informiert den Anbieter rechtzeitig über bekannte Unverträglichkeiten/Allergien.
+        Nach Übergabe/Anlieferung und insbesondere bei offener Buffetbereitstellung obliegt die Einhaltung geeigneter Lager-/Temperaturbedingungen
+        sowie die Verkehrssicherungspflicht am Buffet dem Kunden, soweit dies in seinem Einflussbereich liegt.
+      </p>
 
       <h2>9. Miet- und Leihgut (Equipment), Pfand &amp; Bruch</h2>
-      <p>Für überlassenes Equipment (Geschirr, Besteck, Gläser, Chafing Dishes, Deko, Technik) haftet Kund:in ab Übergabe bis Rücknahme. Fehl- und Bruchmengen werden zum Wiederbeschaffungswert berechnet. Rückgabe gereinigt, sofern nicht anders vereinbart; andernfalls berechnen wir eine Reinigungspauschale.</p>
+      <p>
+        Für überlassenes Equipment (z.&nbsp;B. Geschirr, Besteck, Gläser, Chafing Dishes, Deko, Technik) haftet der Kunde ab Übergabe bis Rücknahme.
+        Fehl- und Bruchmengen werden zum Wiederbeschaffungswert berechnet.
+        Rückgabe gereinigt, sofern nicht anders vereinbart; andernfalls kann eine Reinigungspauschale berechnet werden.
+      </p>
 
       <h2>10. Entsorgung, Reinigung, Abfall</h2>
-      <p>Abfallentsorgung erfolgt – soweit nicht ausdrücklich beauftragt – durch Kund:in. Entsorgungs-, Reinigungs- und Wiederaufbereitungsleistungen können gesondert berechnet werden.</p>
+      <p>
+        Die Abfallentsorgung erfolgt – soweit nicht ausdrücklich beauftragt – durch den Kunden.
+        Entsorgungs-, Reinigungs- und Wiederaufbereitungsleistungen können gesondert berechnet werden.
+      </p>
 
       <h2>11. Personal, Zuschläge &amp; Zeiten</h2>
-      <p>Service-/Küchenpersonal wird nach vereinbarten Stundensätzen abgerechnet. <strong>Nacht-</strong> (22:00–6:00 Uhr), <strong>Sonn-/Feiertags-</strong>zuschläge sowie Mehrstunden können anfallen. Wegezeiten am Veranstaltungsort gelten als Arbeitszeit.</p>
+      <p>
+        Service-/Küchenpersonal wird nach vereinbarten Stundensätzen abgerechnet.
+        Zuschläge für Nachtarbeit (22:00–6:00 Uhr) sowie Sonn-/Feiertage können anfallen. Wegezeiten am Veranstaltungsort gelten als Arbeitszeit.
+      </p>
 
       <h2>12. Höhere Gewalt / Behördliche Auflagen / Verlegung</h2>
-      <p>Ereignisse außerhalb unseres Einflusses (z.&nbsp;B. Unwetter, Krankheit, Lieferengpässe, Sperrungen, behördliche Auflagen) berechtigen zu Leistungsanpassung, gleichwertiger Ersatzleistung, Terminverlegung oder Rücktritt. Bereits erhaltene Zahlungen werden – abzüglich nachweisbarer entstandener Kosten – erstattet. Gesetzliche Ansprüche bleiben unberührt.</p>
+      <p>
+        Ereignisse außerhalb des Einflussbereichs des Anbieters (z.&nbsp;B. Unwetter, Krankheit, erhebliche Lieferengpässe, Sperrungen, behördliche Auflagen)
+        berechtigen den Anbieter zu angemessener Anpassung der Leistung, gleichwertiger Ersatzleistung, Terminverlegung oder – soweit unzumutbar –
+        zum Rücktritt. Bereits erhaltene Zahlungen werden – abzüglich nachweislich entstandener Kosten – erstattet. Gesetzliche Ansprüche bleiben unberührt.
+      </p>
 
       <h2>13. Verantwortlichkeiten am Veranstaltungsort</h2>
-      <p>Kund:in hat erforderliche <strong>Genehmigungen</strong> (z.&nbsp;B. Sondernutzung), <strong>Brandschutz</strong>, <strong>Lärmschutz</strong>, <strong>Jugendschutz</strong> und Hausordnung sicherzustellen. Benötigte Anschlüsse/Leistungen (Strom, Wasser) werden gem. Angebot bereitgestellt.</p>
+      <p>
+        Der Kunde stellt erforderliche Genehmigungen (z.&nbsp;B. Sondernutzung), Brandschutz, Lärmschutz, Jugendschutz und die Einhaltung der Hausordnung sicher.
+        Benötigte Anschlüsse/Leistungen (z.&nbsp;B. Strom, Wasser) werden gemäß Angebot bereitgestellt.
+      </p>
 
       <h2>14. Haftung</h2>
-      <p>Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit. Bei einfacher Fahrlässigkeit nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und begrenzt auf den vertragstypischen, vorhersehbaren Schaden. Haftung für mittelbare Schäden/Folgeschäden ist – soweit gesetzlich zulässig – ausgeschlossen. Gesetzliche Haftung, insbesondere für Schäden aus Verletzung von Leben, Körper oder Gesundheit, bleibt unberührt.</p>
+      <p>
+        Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit. Bei einfacher Fahrlässigkeit haftet der Anbieter nur bei Verletzung
+        wesentlicher Vertragspflichten (Kardinalpflichten) und begrenzt auf den vertragstypischen, vorhersehbaren Schaden.
+        Die Haftung für mittelbare Schäden/Folgeschäden ist – soweit gesetzlich zulässig – ausgeschlossen.
+        Die gesetzliche Haftung, insbesondere bei Verletzung von Leben, Körper oder Gesundheit, bleibt unberührt.
+      </p>
 
       <h2>15. Widerruf (Fernabsatz)</h2>
-      <p>Für <strong>dienstleistungsbezogene Events mit festem Termin</strong> besteht <strong>kein Widerrufsrecht</strong> nach §&nbsp;312g Abs.&nbsp;2 Nr.&nbsp;9 BGB. Für verderbliche Ware (frisch zubereitete Speisen) ebenfalls kein Widerruf (§&nbsp;312g Abs.&nbsp;2 Nr.&nbsp;2 BGB). Im Übrigen gilt das gesetzliche Widerrufsrecht nur für Verbraucher:innen im Fernabsatz.</p>
+      <p>
+        Für Dienstleistungen im Zusammenhang mit Freizeitbetätigungen, wenn für die Leistung ein spezifischer Termin oder Zeitraum vorgesehen ist,
+        besteht <strong>kein Widerrufsrecht</strong> (§&nbsp;312g Abs.&nbsp;2 Nr.&nbsp;9 BGB).
+        Für Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde (z.&nbsp;B. frisch zubereitete Speisen),
+        besteht ebenfalls kein Widerrufsrecht (§&nbsp;312g Abs.&nbsp;2 Nr.&nbsp;2 BGB).
+        Im Übrigen gilt das gesetzliche Widerrufsrecht nur für Verbraucher:innen im Fernabsatz.
+      </p>
 
       <h2>16. Bild-/Tonaufnahmen (Referenzen)</h2>
-      <p>Sofern vereinbart, dürfen wir Foto-/Videomaterial der Veranstaltung für Referenzen/Marketing nutzen. Kund:in stellt sicher, dass Rechte Dritter (Gäste) gewahrt sind; ein Widerruf ist jederzeit mit Wirkung für die Zukunft möglich.</p>
+      <p>
+        Sofern vereinbart, darf der Anbieter Foto-/Videomaterial der Veranstaltung für Referenzen/Marketing nutzen.
+        Der Kunde stellt sicher, dass Rechte Dritter (z.&nbsp;B. Gäste) gewahrt sind. Ein Widerruf ist jederzeit mit Wirkung für die Zukunft möglich.
+      </p>
 
       <h2>17. Datenschutz</h2>
-      <p>Es gilt unsere <a href="/datenschutz.html">Datenschutzerklärung</a>. Analyse/Marketing-Dienste werden nur nach Einwilligung über die Cookie-Einstellungen geladen.</p>
+      <p>
+        Es gilt unsere <a href="/datenschutz.html">Datenschutzerklärung</a>. Analyse-/Marketing-Dienste werden nur nach Einwilligung über die
+        Cookie-Einstellungen geladen.
+      </p>
 
       <h2>18. Rechtswahl, Gerichtsstand, Verbraucherhinweise</h2>
-      <p>Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts. Für <strong>Kaufleute (B2B)</strong> ist Gerichtsstand – soweit zulässig – unser Sitz. <strong>Für Verbraucher:innen</strong> gelten die gesetzlichen Gerichtsstände. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§&nbsp;36 VSBG).</p>
+      <p>
+        Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts.
+        Für Kaufleute (B2B) ist Gerichtsstand – soweit zulässig – der Sitz des Anbieters.
+        Für Verbraucher:innen gelten die gesetzlichen Gerichtsstände.
+        Der Anbieter ist nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§&nbsp;36 VSBG).
+      </p>
 
       <h2>19. Salvatorische Klausel</h2>
-      <p>Sollte eine Bestimmung unwirksam sein/werden, bleibt die Wirksamkeit der übrigen unberührt. Anstelle der unwirksamen Regelung gilt die gesetzliche Regelung (§&nbsp;306 BGB).</p>
+      <p>
+        Sollte eine Bestimmung dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+        Anstelle der unwirksamen Regelung tritt die gesetzliche Regelung (§&nbsp;306 BGB).
+      </p>
 
       <h2>20. Besondere Bedingungen für Ticketverkauf/Einlass</h2>
-      <ol>
-        <li><strong>Geltungsbereich:</strong> Gilt zusätzlich für den Erwerb/Nutzung von Tickets unserer Veranstaltungen.</li>
-        <li><strong>Einlass &amp; Hausrecht:</strong> Einlass nur mit gültigem Ticket. Zutritt kann aus wichtigem Grund verweigert werden.</li>
-        <li><strong>Jugendschutz:</strong> Es gelten die Bestimmungen des JuSchG.</li>
-        <li><strong>Platz-/Programmänderungen:</strong> Zumutbare Änderungen bleiben vorbehalten.</li>
-        <li><strong>Verlegung/Absage:</strong> Bei Verlegung behalten Tickets ihre Gültigkeit; bei Absage Erstattung des Ticketpreises, soweit gesetzlich zulässig.</li>
-        <li><strong>Weiterverkauf:</strong> Gewerblicher/überhöhter Weiterverkauf ist untersagt.</li>
-        <li><strong>Ton-/Bildaufnahmen durch Gäste:</strong> Private Aufnahmen zulässig, kommerzielle Nutzung nur mit Zustimmung.</li>
-        <li><strong>Garderobe/Wertsachen:</strong> Haftung ist – soweit gesetzlich zulässig – ausgeschlossen.</li>
-      </ol>
+      <p>
+        Die folgenden Bestimmungen gelten ergänzend, sofern der Anbieter Tickets für eigene Veranstaltungen anbietet bzw. verkauft.
+      </p>
+
+      <h3>20.1 Vertragspartner, Ticketbereitstellung</h3>
+      <p>
+        Vertragspartner ist – sofern auf der jeweiligen Verkaufsseite nicht abweichend benannt – <strong>Vilana Event &amp; Catering</strong>.
+        Tickets werden in der Regel elektronisch bereitgestellt (z.&nbsp;B. per E-Mail). Der Kunde ist verpflichtet, Tickets vor unbefugtem Zugriff zu schützen.
+      </p>
+
+      <h3>20.2 Kein Widerruf bei Tickets mit festem Termin</h3>
+      <p>
+        Für Tickets zu Veranstaltungen mit festem Termin besteht kein Widerrufsrecht (§&nbsp;312g Abs.&nbsp;2 Nr.&nbsp;9 BGB).
+      </p>
+
+      <h3>20.3 Einlass &amp; Hausrecht</h3>
+      <p>
+        Einlass nur mit gültigem Ticket. Der Anbieter/Veranstalter übt das Hausrecht aus. Der Zutritt kann aus wichtigem Grund verweigert werden
+        (z.&nbsp;B. bei erheblicher Störung, Verstoß gegen Sicherheitsvorgaben, erkennbarer Gefährdung).
+      </p>
+
+      <h3>20.4 Jugendschutz</h3>
+      <p>
+        Es gelten die Bestimmungen des Jugendschutzgesetzes (JuSchG).
+      </p>
+
+      <h3>20.5 Programm-/Platzänderungen</h3>
+      <p>
+        Zumutbare Änderungen im Programmablauf oder der Platzierung bleiben vorbehalten, soweit der Gesamtcharakter der Veranstaltung erhalten bleibt.
+      </p>
+
+      <h3>20.6 Verlegung / Absage</h3>
+      <p>
+        Bei einer <strong>Terminverlegung</strong> behalten Tickets grundsätzlich ihre Gültigkeit für den Ersatztermin, sofern dies dem Kunden zumutbar ist.
+        Bei einer <strong>Absage</strong> erfolgt eine Erstattung des Ticketpreises (ohne etwaige Fremdgebühren externer Zahlungs-/Ticketdienste),
+        soweit und sobald dies gesetzlich erforderlich bzw. geschuldet ist.
+        Weitergehende Ansprüche sind – soweit gesetzlich zulässig – ausgeschlossen.
+      </p>
+
+      <h3>20.7 Weiterverkauf</h3>
+      <p>
+        Der gewerbliche Weiterverkauf sowie der Weiterverkauf zu einem erheblich überhöhten Preis sind untersagt.
+      </p>
+
+      <h3>20.8 Ton-/Bildaufnahmen durch Gäste</h3>
+      <p>
+        Private Aufnahmen sind zulässig, soweit nicht vor Ort anders ausgewiesen. Eine kommerzielle Nutzung ist nur mit vorheriger Zustimmung gestattet.
+      </p>
+
+      <h3>20.9 Garderobe / Wertsachen</h3>
+      <p>
+        Für Garderobe und Wertsachen besteht eine Haftung nur nach den gesetzlichen Vorschriften; eine darüberhinausgehende Haftung ist – soweit zulässig –
+        ausgeschlossen.
+      </p>
     </article>
   </main>
 
@@ -332,6 +436,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // year auto
       var el = document.querySelector('.year');
       if (el) {
         var start = 2025;
@@ -339,6 +444,7 @@
         el.textContent = (now > start) ? (start + '–' + now) : String(start);
       }
 
+      // cookie settings open (best effort)
       var link = document.getElementById('cookieSettingsLink');
       if (link) {
         link.addEventListener('click', function (e) {

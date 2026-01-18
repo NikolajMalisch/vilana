@@ -78,62 +78,54 @@
      - neutral UI font, readable line-height
      - headings bold + separated
   ========================================================= */
-  .legal {
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    letter-spacing: normal;
-    color: #1f2937;
-  }
+  /* =========================================================
+   LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
+   - visually structured, NOT heavy
+========================================================= */
+.legal {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+  color: #1f2937;
+}
 
-  .legal h1 {
-    font-weight: 800;
-    font-size: 1.875rem; /* ~30px */
-    line-height: 1.2;
-    margin: 0 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
+.legal h1 {
+  font-weight: 600;              /* было 800 */
+  font-size: 1.75rem;            /* ~28px */
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
 
-  .legal h2 {
-    font-weight: 800;
-    font-size: 1.25rem; /* ~20px */
-    line-height: 1.25;
-    margin: 2rem 0 0.75rem;
-    color: #111827;
-    letter-spacing: normal;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 0.5rem;
-  }
+.legal h2 {
+  font-weight: 600;              /* было 800 */
+  font-size: 1.15rem;            /* ~18–19px */
+  line-height: 1.3;
+  margin: 2.2rem 0 0.75rem;
+  color: #111827;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.4rem;
+  text-transform: uppercase;     /* визуальное выделение без жирности */
+}
 
-  .legal h3 {
-    font-weight: 700;
-    font-size: 1.125rem; /* ~18px */
-    line-height: 1.3;
-    margin: 1.5rem 0 0.5rem;
-    color: #111827;
-    letter-spacing: normal;
-  }
+.legal h3 {
+  font-weight: 500;              /* было 700 */
+  font-size: 1.05rem;
+  margin: 1.6rem 0 0.4rem;
+  color: #111827;
+}
 
-  .legal p {
-    margin: 0 0 0.9rem;
-    line-height: 1.75;
-    color: #1f2937;
-  }
+.legal p,
+.legal li {
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
 
-  .legal ul, .legal ol {
-    margin: 0 0 1rem;
-    padding-left: 1.25rem;
-  }
+.legal a {
+  color: #4338ca;
+  text-decoration: underline;
+}
 
-  .legal li {
-    margin: 0.35rem 0;
-    line-height: 1.75;
-    color: #1f2937;
-  }
-
-  .legal a {
-    color: #4338ca;
-    text-decoration: underline;
-  }
 </style>
 
 
@@ -183,9 +175,6 @@
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
 
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-        </div>
 
 
           <button id="menuToggle" type="button" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
@@ -229,11 +218,14 @@
         Deutschland
       </p>
 
-      <p>
-        <strong>Kontakt:</strong><br>
-        Telefon: 0176&nbsp;57775996<br>
-        E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>
-      </p>
+    <p>
+      <strong>Kontakt:</strong><br>
+      Telefon: +49&nbsp;176&nbsp;57775996<br>
+      E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a><br>
+      Weitere Kontaktmöglichkeiten (z. B. WhatsApp oder zusätzliche E-Mail-Adressen)
+      finden Sie auf der Kontaktseite dieser Website.
+    </p>
+
 
       <p>
         <strong>Verantwortlich i. S. d. § 18 Abs. 2 MStV (falls redaktionelle Inhalte):</strong><br>
