@@ -122,18 +122,16 @@
     "name": "Vilana Event & Catering",
     "url": "https://www.vilana-event.de/",
     "inLanguage": "de-DE",
+
     "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
+    "logo": "https://www.vilana-event.de/images/vilana-web-logo.png",
+
+    "description": "Premium Catering & Partyservice in Aerzen/Hameln: Buffets, kalte Platten, warme Speisen, Fingerfood sowie Servicepersonal und Eventplanung für Hochzeiten, Firmenfeiern und private Events.",
     "priceRange": "€€",
     "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
 
     "telephone": "+49 176 5777 5996",
     "email": "v.s@vilana.info",
-
-    "sameAs": [
-      "https://www.instagram.com/vilana_catering/",
-      "https://share.google/0EVU2kV33A5CjhvlU"
-    ],
-    "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
 
     "address": {
       "@type": "PostalAddress",
@@ -144,19 +142,52 @@
       "addressCountry": "DE"
     },
 
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.047893,
+      "longitude": 9.263491
+    },
+
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=52.047893,9.263491",
+
     "areaServed": [
-      "Hameln",
-      "Bad Pyrmont",
-      "Hannover",
-      "Niedersachsen",
-      "Nordrhein-Westfalen",
-      "Bielefeld",
-      "Paderborn",
-      "Minden",
-      "Detmold"
+      { "@type": "City", "name": "Hameln" },
+      { "@type": "City", "name": "Bad Pyrmont" },
+      { "@type": "City", "name": "Hannover" },
+      { "@type": "AdministrativeArea", "name": "Niedersachsen" },
+      { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" },
+      { "@type": "City", "name": "Bielefeld" },
+      { "@type": "City", "name": "Paderborn" },
+      { "@type": "City", "name": "Minden" },
+      { "@type": "City", "name": "Detmold" }
     ],
 
     "serviceType": ["Catering", "Partyservice", "Eventservice", "Mobiler Caterer"],
+
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catering & Event-Services",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Catering & Buffets",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Buffet Catering (warm/kalt)" },
+            { "@type": "Offer", "name": "Kalte Platten & Fingerfood" },
+            { "@type": "Offer", "name": "Desserts & Candy Bar" }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Service & Eventplanung",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Servicepersonal" },
+            { "@type": "Offer", "name": "Eventplanung & Ablaufkoordination" },
+            { "@type": "Offer", "name": "Lieferung & Aufbau" }
+          ]
+        }
+      ]
+    },
 
     "contactPoint": [
       {
@@ -173,9 +204,14 @@
         "areaServed": "DE",
         "availableLanguage": ["de","ru"]
       }
+    ],
+
+    "sameAs": [
+      "https://www.instagram.com/vilana_catering/"
     ]
   }
   </script>
+
 
   <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
   <script
