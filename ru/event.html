@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>События | Vilana Event &amp; Catering — Новые даты скоро</title>
+    <!-- =========================
+        SEO – EVENT (RU)
+    ========================= -->
+    <title>Ladies First — вечеринка к Международному женскому дню в Хамельне (14.03.2026) | Билеты 55€ | Vilana Event
+        &amp; Catering</title>
 
     <meta name="description"
-        content="Vilana Event &amp; Catering: новые мероприятия в планировании. Скоро здесь появятся даты, билеты и подробности. Хамельн, Бад-Пирмонт и регион.">
+        content="Ladies First — отмечаем Международный женский день 14.03.2026 в Forum Hameln, Hastenbecker Weg 86c, 31785 Hameln. Вход с 19:00: DJ и профессиональная ведущая/модерация, секто-аперитив, премиальный кейтеринг, безалкогольные напитки включены. Билет 55 €. Бронирование: 0176 5777 5996 / 0176 4228 8707.">
 
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0e0e0e">
@@ -23,8 +27,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Vilana Event &amp; Catering">
-    <meta property="og:title" content="События | Vilana Event &amp; Catering">
-    <meta property="og:description" content="Новые мероприятия в планировании. Информация скоро появится на странице.">
+    <meta property="og:title" content="Ladies First — вечеринка к Международному женскому дню в Хамельне (14.03.2026)">
+    <meta property="og:description"
+        content="DJ и профессиональная модерация, секто-аперитив, премиальный кейтеринг, безалкогольные напитки включены. Билет 55 €. Forum Hameln — вход с 19:00.">
     <meta property="og:url" content="https://www.vilana-event.de/ru/event.html">
     <meta property="og:image" content="https://www.vilana-event.de/images/event-new.webp">
     <meta property="og:image:width" content="1200">
@@ -32,33 +37,61 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="События | Vilana Event &amp; Catering">
-    <meta name="twitter:description" content="Новые мероприятия в планировании. Информация скоро появится на странице.">
+    <meta name="twitter:title" content="Ladies First — вечеринка к Международному женскому дню в Хамельне (14.03.2026)">
+    <meta name="twitter:description"
+        content="DJ и профессиональная модерация, секто-аперитив, премиальный кейтеринг, безалкогольные напитки включены. Билет 55 €. Forum Hameln — вход с 19:00.">
     <meta name="twitter:image" content="https://www.vilana-event.de/images/event-new.webp">
 
-    <!-- Fonts -->
+    <!-- Performance: Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS (из /ru/ → ../) -->
-    <link rel="stylesheet" href="../css/output.css">
-    <link rel="stylesheet" href="../css/custom.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/custom.css">
 
+    <!-- Hero image preload -->
     <link rel="preload" as="image" href="/images/event-new.webp" type="image/webp">
 
+    <!-- Favicons -->
     <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/images/favicon/site.webmanifest">
 
+    <!-- =========================
+        Premium Styles
+    ========================= -->
     <style>
+        :root {
+            --cream: #fbf7f1;
+            --ink: #0f172a;
+            --muted: rgba(15, 23, 42, .72);
+            --line: rgba(15, 23, 42, .10);
+            --card: rgba(255, 255, 255, .88);
+
+            --shadow: 0 18px 50px rgba(15, 23, 42, .10);
+            --shadow-sm: 0 10px 26px rgba(15, 23, 42, .08);
+
+            --radius: 22px;
+            --radius-sm: 16px;
+        }
+
         body {
             font-family: "Cormorant SC", serif;
-            background-color: #fdfaf6;
-            color: #353c45;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 700px at 20% 10%, rgba(255, 255, 255, .90) 0%, rgba(255, 255, 255, 0) 60%),
+                radial-gradient(900px 520px at 90% 15%, rgba(255, 235, 205, .35) 0%, rgba(255, 255, 255, 0) 55%),
+                radial-gradient(1000px 600px at 35% 95%, rgba(226, 232, 240, .55) 0%, rgba(255, 255, 255, 0) 62%),
+                var(--cream);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         h1,
@@ -71,57 +104,124 @@
 
         .logo-title {
             font-family: "Cinzel Decorative", cursive;
-            font-size: 1.8rem;
+            font-size: 1.85rem;
             font-weight: 400;
-            letter-spacing: .5px;
-            color: #1f2937;
+            letter-spacing: .6px;
+            color: var(--ink);
             line-height: 1;
         }
 
         .logo-subtitle {
             font-size: 1rem;
-            color: #1f2937;
+            color: rgba(15, 23, 42, .88);
             line-height: 1;
         }
 
-        .chip {
-            border-radius: 9999px;
-            padding: .35rem .85rem;
-            background: #f3f4f6;
-            font-size: .95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: .4rem;
-        }
-
+        /* Premium cards */
         .card {
-            background: #ffffff;
-            border-radius: 1.25rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
         }
 
+        /* Badge */
         .soon-badge {
             display: inline-flex;
             align-items: center;
-            gap: .5rem;
-            padding: .5rem 1rem;
+            gap: .55rem;
+            padding: .55rem 1.05rem;
             border-radius: 9999px;
-            background: #111827;
+            background: linear-gradient(180deg, rgba(17, 24, 39, .98), rgba(2, 6, 23, .92));
             color: #fff;
             font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
-            font-size: .9rem;
-            letter-spacing: .3px;
+            font-size: .88rem;
+            letter-spacing: .35px;
+            box-shadow: 0 12px 30px rgba(2, 6, 23, .20);
+            border: 1px solid rgba(255, 255, 255, .12);
         }
 
+        /* Chips */
+        .chip {
+            border-radius: 9999px;
+            padding: .42rem .95rem;
+            background: rgba(255, 255, 255, .72);
+            border: 1px solid rgba(15, 23, 42, .10);
+            font-size: .95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+            color: rgba(15, 23, 42, .86);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Buttons */
+        .btn-pill {
+            border-radius: 9999px;
+            padding: .65rem 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+            font-weight: 600;
+            letter-spacing: .2px;
+            transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease, background-color .15s ease, color .15s ease;
+            will-change: transform;
+            text-decoration: none;
+        }
+
+        .btn-pill:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, .25), var(--shadow-sm);
+        }
+
+        .btn-pill:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 42px rgba(15, 23, 42, .14);
+        }
+
+        .btn-dark {
+            background: #0b1220;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .btn-dark:hover {
+            opacity: .95;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, .72);
+            color: #0b1220;
+            border: 1px solid rgba(15, 23, 42, .18);
+        }
+
+        .btn-outline:hover {
+            background: #0b1220;
+            color: #fff;
+        }
+
+        .btn-amber {
+            background: #b45309;
+            color: #fff;
+            border: 1px solid rgba(0, 0, 0, .06);
+        }
+
+        .btn-amber:hover {
+            opacity: .92;
+        }
+
+        /* Телефоны */
         #ev-phone,
         #ev-phone-2 {
             font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
-            font-weight: 300;
-            letter-spacing: .4px;
+            font-weight: 500;
+            letter-spacing: .2px;
             font-variant-numeric: lining-nums tabular-nums;
-            color: #1f2937;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
+            color: rgba(15, 23, 42, .92);
         }
 
         .tel-link {
@@ -131,9 +231,169 @@
         .tel-link:hover {
             text-decoration: underline;
         }
+
+        /* FAQ premium accordion */
+        .faq-wrap {
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            background: rgba(255, 255, 255, .78);
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--line);
+        }
+
+        .faq-item:first-child {
+            border-top: 0;
+        }
+
+        .faq-q {
+            cursor: pointer;
+            padding: 1.05rem 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-q h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .faq-a {
+            padding: 0 1.15rem 1.05rem 1.15rem;
+            color: rgba(15, 23, 42, .82);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .chev {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            transition: transform .18s ease;
+            opacity: .75;
+        }
+
+        details[open] .chev {
+            transform: rotate(180deg);
+        }
+
+        /* Hero image polish */
+        .hero-img {
+            transform: translateZ(0);
+        }
+
+        .hero-img img {
+            transition: transform .35s ease;
+        }
+
+        .hero-img:hover img {
+            transform: scale(1.02);
+        }
     </style>
 
-    <!-- GA nur nach Consent -->
+    <!-- =========================
+        Structured Data (SEO)
+    ========================= -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Ladies First — отмечаем Международный женский день",
+    "description": "Стиль. Сила. Женственность. Вечер только для вас — музыка, танцы и особая атмосфера. Секто-аперитив, DJ и профессиональная модерация, премиальный кейтеринг. Безалкогольные напитки включены.",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "startDate": "2026-03-14T19:00:00+01:00",
+    "location": {
+    "@type": "Place",
+    "name": "Forum Hameln",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hastenbecker Weg 86c",
+        "postalCode": "31785",
+        "addressLocality": "Hameln",
+        "addressRegion": "Niedersachsen",
+        "addressCountry": "DE"
+    }
+    },
+    "image": [
+    "https://www.vilana-event.de/images/event-new.webp"
+    ],
+    "offers": {
+    "@type": "Offer",
+    "url": "https://www.vilana-event.de/ru/event.html#tickets",
+    "price": "55",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-01-26T00:00:00+01:00"
+    },
+    "organizer": {
+    "@type": "Organization",
+    "name": "Vilana Event & Catering",
+    "url": "https://www.vilana-event.de/"
+    }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+    {
+    "@type":"Question",
+    "name":"Что входит в стоимость билета?",
+    "acceptedAnswer":{
+    "@type":"Answer",
+    "text":"В билет (55 €) входят секто-аперитив, премиальный кейтеринг и безалкогольные напитки. Также будут DJ и профессиональная модерация."
+    }
+    },
+    {
+    "@type":"Question",
+    "name":"Во сколько открывается вход?",
+    "acceptedAnswer":{
+    "@type":"Answer",
+    "text":"Вход открыт с 19:00 14.03.2026."
+    }
+    },
+    {
+        "@type":"Question",
+        "name":"Где проходит мероприятие?",
+        "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Forum Hameln, Hastenbecker Weg 86c, 31785 Hameln."
+        }
+    },
+    {
+        "@type":"Question",
+        "name":"Как забронировать билеты?",
+        "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"По телефону: 0176 5777 5996 или 0176 4228 8707. Также можно через контактную форму."
+        }
+    },
+    {
+        "@type":"Question",
+        "name":"Есть ли дресс-код?",
+        "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Рекомендуем стильный вечерний образ. Главное — чтобы вам было комфортно."
+        }
+    }
+    ]
+    }
+    </script>
+
+    <!-- Google Analytics — nur nach Analytics-Einwilligung -->
     <script type="text/plain" data-cookie-category="analytics"
         src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
     <script type="text/plain" data-cookie-category="analytics">
@@ -147,9 +407,10 @@
 <body class="text-gray-800 antialiased">
 
     <!-- HEADER -->
-    <header class="bg-white shadow-md sticky top-0 z-40">
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-40 border-b border-black/5">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
+            <!-- Logo -->
             <a href="/ru/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering — Главная">
                 <span class="logo-title">Vilana</span>
                 <span class="logo-subtitle">Event &amp; Catering</span>
@@ -157,31 +418,34 @@
 
             <div class="flex items-center gap-3">
 
-                <nav class="hidden md:flex items-center space-x-8" aria-label="Навигация">
+                <!-- Desktop-Navigation -->
+                <nav class="hidden md:flex items-center space-x-8" aria-label="Главная навигация">
                     <a href="/ru/" class="text-gray-700 hover:text-amber-700">Главная</a>
                     <a href="/ru/#services" class="text-gray-700 hover:text-amber-700">Услуги</a>
                     <a href="/ru/menu.html" class="text-gray-700 hover:text-amber-700">Меню</a>
                     <a href="/ru/galerie.html" class="text-gray-700 hover:text-amber-700">Галерея</a>
                     <a href="/ru/about.html" class="text-gray-700 hover:text-amber-700">О нас</a>
                     <a href="/ru/event.html" aria-current="page"
-                        class="text-amber-700 font-semibold underline underline-offset-4">События</a>
+                        class="text-amber-700 font-semibold underline underline-offset-4">Событие</a>
                     <a href="/ru/bewertung.html" class="text-gray-700 hover:text-amber-700">Отзывы</a>
-                    <a href="/ru/contact.html" class="text-gray-700 hover:text-amber-700">Контакт</a>
+                    <a href="/ru/contact.html" class="text-gray-700 hover:text-amber-700">Контакты</a>
                 </nav>
 
-                <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+                <!-- Language switch -->
+                <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
                     <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/event.html">DE</a>
                     <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
                 </div>
 
+                <!-- Mobile: DE link + Burger -->
                 <div class="flex items-center md:hidden gap-2">
                     <a href="/event.html"
                         class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-                        aria-label="Deutsche Version">DE</a>
+                        aria-label="Немецкая версия">DE</a>
 
                     <button id="menuToggle" type="button"
                         class="h-10 w-10 inline-flex items-center justify-center rounded-md border border-gray-400 bg-black/40 text-white"
-                        aria-label="Меню" aria-controls="mobileMenu" aria-expanded="false">
+                        aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -191,6 +455,7 @@
             </div>
         </div>
 
+        <!-- Mobile menu -->
         <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-2 bg-white/95 backdrop-blur-sm" role="navigation"
             aria-label="Мобильное меню">
             <a href="/ru/" class="block text-gray-700 hover:text-amber-700">Главная</a>
@@ -199,9 +464,9 @@
             <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700">Галерея</a>
             <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700">О нас</a>
             <a href="/ru/event.html" aria-current="page"
-                class="block text-amber-700 font-semibold underline underline-offset-4">События</a>
+                class="block text-amber-700 font-semibold underline underline-offset-4">Событие</a>
             <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700">Отзывы</a>
-            <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700">Контакт</a>
+            <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700">Контакты</a>
         </div>
     </header>
 
@@ -209,95 +474,197 @@
     <main class="py-12">
         <div class="mx-auto px-4 max-w-6xl">
 
+            <!-- HERO -->
             <section class="grid md:grid-cols-2 gap-6 items-stretch">
                 <div class="card p-6 flex flex-col gap-4">
 
                     <div class="flex flex-wrap items-center gap-3">
-                        <span class="soon-badge">✨ МЕРОПРИЯТИЯ</span>
-                        <span class="chip">🗓️ Новые даты скоро</span>
-                        <span class="chip">📍 Хамельн и регион</span>
-                        <span class="chip">🍽️ Кейтеринг и сервис</span>
+                        <span class="soon-badge">✨ LADIES FIRST</span>
+                        <span class="chip">📅 14 марта 2026</span>
+                        <span class="chip">🕖 Вход с 19:00</span>
+                        <a class="chip underline-offset-2 hover:underline"
+                            href="https://www.google.com/maps?q=Forum+Hameln,+Hastenbecker+Weg+86c,+31785+Hameln"
+                            target="_blank" rel="noopener noreferrer" aria-label="Открыть Forum Hameln в Google Maps">
+                            📍 Forum Hameln</a>
+                        <span class="chip">🎟 55 €</span>
                     </div>
 
-                    <h1 class="text-3xl md:text-4xl font-bold">
-                        Новые мероприятия уже в планировании
+                    <h1 class="text-3xl md:text-4xl font-medium leading-tight mt-2">
+                        Отмечаем Международный женский день
                     </h1>
 
                     <p class="text-lg leading-relaxed">
-                        Мы готовим новые события. Скоро здесь появятся даты, информация по билетам и подробности.
-                        Подпишитесь на Instagram или напишите нам — и мы сообщим вам первыми.
+                        Стиль. Женственность. Элегантность. Вечер только для вас — музыка, танцы и особая атмосфера.
+                        Позвольте себе праздник: красивый зал, качественный кейтеринг и настроение на весь вечер.
                     </p>
 
-                    <div class="mt-2 card p-5 border border-gray-200">
-                        <h2 class="text-xl font-semibold mb-2">Как быть в курсе</h2>
+                    <!-- INFO BOX -->
+                    <div class="mt-2 card p-5">
+                        <h2 class="text-xl font-semibold mb-2">Включено в билет</h2>
 
                         <ul class="text-lg leading-7 list-disc pl-6">
-                            <li>Instagram: анонсы, фото, сторис</li>
-                            <li>Контакт: вопросы, бронирование, частные и корпоративные события</li>
+                            <li>🍸 Секто-аперитив (Sektempfang)</li>
+                            <li>🎧 DJ &amp; профессиональная модерация</li>
+                            <li>🍽 Премиальный кейтеринг</li>
+                            <li>🥤 Безалкогольные напитки включены</li>
                         </ul>
 
-                        <div class="mt-4 flex flex-wrap gap-3">
-                            <a href="https://www.instagram.com/vilana_catering/" target="_blank"
-                                rel="noopener noreferrer"
-                                class="px-5 py-2 rounded-full bg-gray-900 text-white hover:opacity-90">
-                                Открыть Instagram
-                            </a>
+                        <p class="mt-3 text-sm text-gray-500">
+                            Важно: бронирование билетов — по телефону или через контактную форму. Условия согласно
+                            <a class="underline hover:text-amber-700" href="/agb.html">AGB</a> (на немецком).
+                        </p>
+                    </div>
+                </div>
 
-                            <a href="/ru/contact.html"
-                                class="px-5 py-2 rounded-full border border-gray-900 hover:bg-gray-900 hover:text-white">
-                                Связаться
+                <!-- Hero image -->
+            <div class="card overflow-hidden hero-img relative aspect-[4/5] sm:aspect-[16/10] md:aspect-auto md:h-full">
+                <img src="../images/event1.webp" alt="Ladies First – Weltfrauentag Party in Hameln"
+                    class="absolute inset-0 w-full h-full object-cover" loading="eager" decoding="async">
+            </div>
+            </section>
+
+            <!-- DETAILS + TICKETS -->
+            <section id="tickets" class="mt-10 grid md:grid-cols-3 gap-6 scroll-mt-24">
+                <div class="card p-6 md:col-span-2">
+                    <h2 class="text-2xl font-semibold mb-3">Детали мероприятия</h2>
+
+                    <div class="text-lg leading-7 space-y-3">
+                        <p><span class="font-semibold">Событие:</span> Ladies First — отмечаем Международный женский
+                            день</p>
+                        <p><span class="font-semibold">Дата:</span> 14 марта 2026</p>
+                        <p><span class="font-semibold">Вход:</span> с 19:00</p>
+                        <p>
+                            <span class="font-semibold">Локация:</span>
+                            <a class="underline hover:text-amber-700"
+                                href="https://www.google.com/maps?q=Forum+Hameln,+Hastenbecker+Weg+86c,+31785+Hameln"
+                                target="_blank" rel="noopener noreferrer">
+                                Forum Hameln, Hastenbecker Weg 86c, 31785 Hameln
                             </a>
+                        </p>
+
+                        <div class="mt-4 card p-5">
+                            <h3 class="text-xl font-semibold mb-2">Что вас ждёт</h3>
+                            <ul class="list-disc pl-6">
+                                <li>Музыка, танцы и атмосфера в стильном формате</li>
+                                <li>DJ-сет и профессиональная модерация на протяжении вечера</li>
+                                <li>Секто-аперитив и премиальный кейтеринг от Vilana</li>
+                                <li>Безалкогольные напитки включены в билет</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="card overflow-hidden">
-                    <img src="/images/event-new.webp" alt="Vilana Events — Hero"
-                        class="w-full h-full object-cover max-h-[520px]" loading="eager" decoding="async">
-                </div>
+                <aside class="card p-6">
+                    <h3 class="text-xl font-semibold mb-3">Билеты</h3>
+
+                    <p class="mb-2 text-lg"><span class="font-semibold">Цена:</span> 55 €</p>
+                    <p class="mb-4 text-sm text-gray-600">Секто-аперитив, кейтеринг и безалкогольные напитки включены.
+                    </p>
+
+                    <p class="mb-3 text-lg">Бронирование:</p>
+
+                    <p class="mb-4">
+                        <a href="tel:+4917657775996" class="tel-link">
+                            <span id="ev-phone">+49 176 5777 5996</span>
+                        </a>
+                        <span class="text-sm text-gray-600">— Viktoria</span><br>
+                    </p>
+
+                    <p class="mb-4">
+                        <a href="tel:+4917642288707" class="tel-link">
+                            <span id="ev-phone-2">+49 176 4228 8707</span>
+                        </a>
+                        <span class="text-sm text-gray-600">— Svetlana</span><br>
+                    </p>
+
+                    <div class="flex flex-col gap-3 mt-4">
+                        <a href="/ru/contact.html" class="btn-pill btn-amber">Контактная форма</a>
+
+                        <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+                            class="btn-pill btn-outline">Открыть Instagram</a>
+                    </div>
+                </aside>
             </section>
 
-            <section class="mt-10 grid md:grid-cols-3 gap-6">
-                <div class="card p-6 md:col-span-2">
-                    <h3 class="text-2xl font-semibold mb-3">Что будет дальше?</h3>
+            <!-- FAQ (Premium Accordion) -->
+            <section class="mt-10">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-semibold mb-4">FAQ</h2>
 
-                    <div class="text-lg leading-7">
-                        <p class="mb-3">
-                            Планируем разные форматы — от стильных ужинов до сезонных вечеров.
-                            Страница будет регулярно обновляться.
-                        </p>
+                    <div class="faq-wrap">
+                        <details class="faq-item" open>
+                            <summary class="faq-q">
+                                <h3>Что входит в стоимость билета?</h3>
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </summary>
+                            <div class="faq-a">
+                                В билет (55 €) входят секто-аперитив, премиальный кейтеринг и безалкогольные напитки.
+                                Также будут DJ и профессиональная модерация.
+                            </div>
+                        </details>
 
-                        <ul class="list-disc pl-6">
-                            <li>Частные праздники: день рождения, юбилей, свадьба</li>
-                            <li>Корпоративы: фуршет, сервис, оформление</li>
-                            <li>Сезонные вечера: тематические буфеты и special</li>
-                        </ul>
+                        <details class="faq-item">
+                            <summary class="faq-q">
+                                <h3>Во сколько открывается вход?</h3>
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </summary>
+                            <div class="faq-a">
+                                Вход открыт с 19:00 14.03.2026.
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-q">
+                                <h3>Где проходит мероприятие?</h3>
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </summary>
+                            <div class="faq-a">
+                                <a class="underline hover:text-amber-700"
+                                    href="https://www.google.com/maps?q=Forum+Hameln,+Hastenbecker+Weg+86c,+31785+Hameln"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Forum Hameln, Hastenbecker Weg 86c, 31785 Hameln
+                                </a>.
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-q">
+                                <h3>Как забронировать билеты?</h3>
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </summary>
+                            <div class="faq-a">
+                                По телефону: 0176 5777 5996 или 0176 4228 8707. Также можно через контактную форму.
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-q">
+                                <h3>Есть ли дресс-код?</h3>
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </summary>
+                            <div class="faq-a">
+                                Рекомендуем стильный вечерний образ. Главное — чтобы вам было комфортно.
+                            </div>
+                        </details>
                     </div>
                 </div>
-
-                <div class="card p-6">
-                    <h3 class="text-xl font-semibold mb-3">Быстрый контакт</h3>
-
-                    <p class="mb-3 text-lg">Телефон:</p>
-
-                    <p class="mb-4">
-                        <a href="tel:+4917657775996" class="tel-link"><span id="ev-phone">+49 176 5777 5996</span></a>
-                        <span class="text-sm text-gray-600">– Viktoria</span><br>
-                    </p>
-
-                    <p class="mb-4">
-                        <a href="tel:+4917642288707" class="tel-link"><span id="ev-phone-2">+49 176 4228 8707</span></a>
-                        <span class="text-sm text-gray-600">– Svetlana</span><br>
-                    </p>
-
-                    <p class="text-sm text-gray-500">Или напишите через форму контакта.</p>
-
-                    <a href="/ru/contact.html"
-                        class="mt-4 inline-flex px-5 py-2 rounded-full bg-amber-700 text-white hover:opacity-90">
-                        Форма контакта
-                    </a>
-                </div>
             </section>
+
         </div>
     </main>
 
@@ -313,6 +680,9 @@
                 <a href="/datenschutz.html" class="hover:underline">Datenschutz</a> |
                 <a href="/agb.html" class="hover:underline">AGB</a>
             </p>
+            <p class="text-xs text-white/70 mb-2">
+                Правовые документы доступны на немецком языке.
+            </p>
             <p class="mt-2">&copy; <span id="year"></span> Vilana Event &amp; Catering. Все права защищены.</p>
         </div>
 
@@ -323,9 +693,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // год
             const year = document.getElementById("year");
             if (year) year.textContent = new Date().getFullYear();
 
+            // бургер
             const menuToggle = document.getElementById("menuToggle");
             const mobileMenu = document.getElementById("mobileMenu");
             if (!menuToggle || !mobileMenu) return;
@@ -361,7 +733,7 @@
     </script>
 
     <!-- Cookie Consent Wall -->
-    <script src="../js/vilana-cookiewall.js" defer></script>
+    <script src="/js/vilana-cookiewall.js" defer></script>
 </body>
 
 </html>
