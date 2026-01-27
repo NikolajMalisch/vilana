@@ -12,3 +12,5 @@ build/
 .history/
 .prettierignore
 images/vilana_icon/GitKrakenSetup.exe
+.venv/
+venv/
