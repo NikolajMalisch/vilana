@@ -111,65 +111,153 @@
     }
   </style>
 
-  <!-- JSON-LD (RU) -->
+  <!-- JSON-LD (RU) — улучшенный -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness","Caterer"],
-    "@id": "https://www.vilana-event.de/#vilana",
-    "name": "Vilana Event & Catering",
-    "url": "https://www.vilana-event.de/ru/",
-    "inLanguage": "ru-RU",
-    "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
-    "priceRange": "€€",
-    "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
-
-    "telephone": "+49 176 5777 5996",
-    "email": "v.s@vilana.info",
-
-    "sameAs": [
-      "https://www.instagram.com/vilana_catering/",
-      "https://share.google/0EVU2kV33A5CjhvlU"
-    ],
-    "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
-
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Osterstraße 28",
-      "addressLocality": "Aerzen",
-      "addressRegion": "Niedersachsen",
-      "postalCode": "31855",
-      "addressCountry": "DE"
-    },
-
-    "areaServed": [
-      "Hameln",
-      "Bad Pyrmont",
-      "Hannover",
-      "Niedersachsen",
-      "Nordrhein-Westfalen",
-      "Bielefeld",
-      "Paderborn",
-      "Minden",
-      "Detmold"
-    ],
-
-    "serviceType": ["Кейтеринг", "Пати-сервис", "Организация мероприятий", "Выездной кейтеринг"],
-
-    "contactPoint": [
+    "@graph": [
       {
-        "@type": "ContactPoint",
+        "@type": ["LocalBusiness","Caterer"],
+        "@id": "https://www.vilana-event.de/#vilana",
+        "name": "Vilana Event & Catering",
+        "url": "https://www.vilana-event.de/ru/",
+        "inLanguage": "ru-RU",
+        "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
+        "priceRange": "€€",
         "telephone": "+49 176 5777 5996",
-        "contactType": "Клиентская поддержка",
-        "areaServed": "DE",
-        "availableLanguage": ["ru","de"]
+        "email": "v.s@vilana.info",
+        "description": "Премиальный кейтеринг и организация мероприятий: русские свадьбы, юбилеи, вечеринки, корпоративы в Нижней Саксонии и NRW.",
+        "servesCuisine": ["Russian", "European", "German", "International"],
+        "sameAs": [
+          "https://www.instagram.com/vilana_catering/",
+          "https://share.google/0EVU2kV33A5CjhvlU"
+        ],
+        "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Osterstraße 28",
+          "addressLocality": "Aerzen",
+          "addressRegion": "Niedersachsen",
+          "postalCode": "31855",
+          "addressCountry": "DE"
+        },
+        "areaServed": [
+          { "@type":"City", "name":"Hameln" },
+          { "@type":"City", "name":"Bad Pyrmont" },
+          { "@type":"City", "name":"Hannover" },
+          { "@type":"AdministrativeArea", "name":"Niedersachsen" },
+          { "@type":"AdministrativeArea", "name":"Nordrhein-Westfalen" },
+          { "@type":"City", "name":"Bielefeld" },
+          { "@type":"City", "name":"Paderborn" },
+          { "@type":"City", "name":"Minden" },
+          { "@type":"City", "name":"Detmold" }
+        ],
+        "serviceType": ["Кейтеринг", "Пати-сервис", "Организация мероприятий", "Выездной кейтеринг"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+49 176 5777 5996",
+            "contactType": "customer support",
+            "areaServed": "DE",
+            "availableLanguage": ["ru","de"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+49 176 4228 8707",
+            "contactType": "customer support",
+            "areaServed": "DE",
+            "availableLanguage": ["ru","de"]
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "@id": "https://www.vilana-event.de/ru/#services",
+          "name": "Услуги",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Кейтеринг на русскую свадьбу",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://www.vilana-event.de/ru/#service-russian-wedding",
+                "name": "Кейтеринг на русскую свадьбу",
+                "serviceType": "Wedding Catering",
+                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+                "inLanguage": "ru-RU"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Русские вечеринки и юбилеи",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://www.vilana-event.de/ru/#service-russian-party",
+                "name": "Русские вечеринки и юбилеи",
+                "serviceType": "Event Catering",
+                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+                "inLanguage": "ru-RU"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Корпоративы и бизнес-ивенты",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://www.vilana-event.de/ru/#service-corporate",
+                "name": "Корпоративный кейтеринг",
+                "serviceType": "Corporate Catering",
+                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+                "inLanguage": "ru-RU"
+              }
+            }
+          ]
+        }
       },
+
       {
-        "@type": "ContactPoint",
-        "telephone": "+49 176 4228 8707",
-        "contactType": "Клиентская поддержка",
-        "areaServed": "DE",
-        "availableLanguage": ["ru","de"]
+        "@type": "WebSite",
+        "@id": "https://www.vilana-event.de/ru/#website",
+        "url": "https://www.vilana-event.de/ru/",
+        "name": "Vilana Event & Catering (RU)",
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
+      },
+
+      {
+        "@type": "WebPage",
+        "@id": "https://www.vilana-event.de/ru/#webpage",
+        "url": "https://www.vilana-event.de/ru/",
+        "name": "Кейтеринг и организация мероприятий в Хамельне",
+        "inLanguage": "ru-RU",
+        "isPartOf": { "@id": "https://www.vilana-event.de/ru/#website" },
+        "about": { "@id": "https://www.vilana-event.de/#vilana" }
+      },
+
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.vilana-event.de/ru/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Вы работаете по всей Нижней Саксонии и NRW?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Да. Мы работаем в радиусе примерно 200 км от нашей локации." }
+          },
+          {
+            "@type": "Question",
+            "name": "Есть вегетарианские/веганские варианты?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Конечно. Мы адаптируем меню под диеты и аллергии." }
+          },
+          {
+            "@type": "Question",
+            "name": "Предоставляете ли вы посуду/бокалы/текстиль?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Да, по запросу предоставляем оборудование и персонал." }
+          },
+          {
+            "@type": "Question",
+            "name": "За сколько времени лучше делать запрос?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Идеально за 2–6 недель, для свадеб — лучше раньше." }
+          }
+        ]
       }
     ]
   }
@@ -199,7 +287,7 @@
   <!-- =========================================
       HEADER
   ========================================= -->
-  <header class="bg-white shadow-md">
+  <header class="relative bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Logo (без H1 в шапке) -->
       <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
@@ -256,7 +344,7 @@
     <!-- Mobile menu -->
     <div
       id="mobileMenu"
-      class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+      class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
       role="menu"
       aria-label="Мобильное меню"
     >
@@ -280,9 +368,6 @@
       id="home"
       class="bg-[#0e0e0e] text-white py-20 flex items-center justify-center text-center min-h-[100vh]"
     >
-      <h1 class="sr-only">
-        Кейтеринг и организация мероприятий в Хамельне, Нижняя Саксония и Северный Рейн — Вестфалия – Vilana Event &amp; Catering
-      </h1>
 
       <div class="container mx-auto px-4">
         <img
@@ -298,13 +383,13 @@
 
         <p class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto">Любовь к деталям</p>
 
-        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl mb-4 max-w-2xl mx-auto">
           Откройте для себя кейтеринг заново –<br class="md:hidden"> с любовью, вкусом и стилем.
         </p>
 
         <a
           href="/contact.html"
-          class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs"
+          class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 mx-auto max-w-xs mt-8"
         >Связаться с нами</a>
 
         <div class="mt-12 text-3xl animate-bounce text-white" aria-hidden="true">↓</div>
@@ -314,17 +399,16 @@
     <!-- Услуги -->
     <section id="services" class="py-16 bg-white">
       <div class="container mx-auto px-4">
+        <!-- Был второй H1 — заменено на обычный текст (H1 остаётся только один на странице) -->
+        <p class="mt-2 mx-auto max-w-2xl text-center text-base md:text-lg font-medium tracking-wide text-gray-600">
+          Выездной кейтеринг · русские свадьбы · юбилеи · корпоративы
+        </p>
 
-        <h1 class="mt-2 mx-auto max-w-2xl text-center
-          text-lg md:text-xl
-          font-medium tracking-wide
-        text-white/80">
-          Выездной кейтеринг и русские мероприятия
-        </h1>
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Наши услуги</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
+          <!-- Якорь для JSON-LD: service-russian-party (можно использовать как «вечеринки/юбилеи») -->
+          <div id="service-russian-party" class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
             <img src="/images/vilana_icon/2.webp" alt="Кейтеринг" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
                 loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Кейтеринг</h3>
@@ -360,7 +444,8 @@
             </p>
           </div>
 
-          <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
+          <!-- Якорь для JSON-LD: service-russian-wedding -->
+          <div id="service-russian-wedding" class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
             <img src="/images/vilana_icon/5.webp" alt="Тематические мероприятия" class="w-25 h-25 mb-4 mx-auto drop-shadow-lg"
                 loading="lazy" decoding="async" width="500" height="500">
             <h3 class="text-2xl font-semibold text-center text-gray-800 mb-3">Тематические мероприятия</h3>
@@ -505,7 +590,7 @@
   <footer class="bg-gray-800 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
 
-      <!-- Instagram (добавлено) -->
+      <!-- Instagram -->
       <div class="mb-4">
         <a
           href="https://www.instagram.com/vilana_catering/"

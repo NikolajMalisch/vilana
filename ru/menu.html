@@ -27,8 +27,7 @@
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Vilana Event &amp; Catering">
     <meta property="og:title" content="Меню | Vilana Event &amp; Catering">
-    <meta property="og:description"
-        content="Горячие блюда, холодные закуски, салаты, десерты и Candy Bar — ознакомьтесь с нашим меню.">
+    <meta property="og:description" content="Горячие блюда, холодные закуски, салаты, десерты и Candy Bar — ознакомьтесь с нашим меню.">
     <meta property="og:url" content="https://www.vilana-event.de/ru/menu.html">
     <meta property="og:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
     <meta property="og:image:alt" content="Vilana Event &amp; Catering – Logo">
@@ -36,8 +35,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Меню | Vilana Event &amp; Catering">
-    <meta name="twitter:description"
-        content="Горячие блюда, холодные закуски, салаты, десерты и Candy Bar — ознакомьтесь с нашим меню.">
+    <meta name="twitter:description" content="Горячие блюда, холодные закуски, салаты, десерты и Candy Bar — ознакомьтесь с нашим меню.">
     <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
     <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – Logo">
 
@@ -194,48 +192,129 @@
         }
     </style>
 
-    <!-- JSON-LD (RU) + Breadcrumbs -->
-    <script type="application/ld+json">
+<!-- JSON-LD (RU) -->
+<script type="application/ld+json">
     {
     "@context": "https://schema.org",
     "@graph": [
     {
-        "@type": ["LocalBusiness","Caterer"],
-        "@id": "https://www.vilana-event.de/#vilana",
-        "name": "Vilana Event & Catering",
-        "url": "https://www.vilana-event.de/",
-        "inLanguage": "ru-RU",
-        "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
-        "priceRange": "€€",
-        "servesCuisine": ["Немецкая", "Европейская", "Русская", "Интернациональная"],
-        "telephone": "+49 176 5777 5996",
-        "email": "v.s@vilana.info",
-        "sameAs": [
-        "https://www.instagram.com/vilana_catering/",
-        "https://share.google/0EVU2kV33A5CjhvlU"
-        ],
-        "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
-        "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Osterstraße 28",
-        "addressLocality": "Aerzen",
-        "addressRegion": "Niedersachsen",
-        "postalCode": "31855",
-        "addressCountry": "DE"
-        },
-        "areaServed": [
-        "Хамельн","Бад-Пирмонт","Ганновер","Нижняя Саксония","Северный Рейн-Вестфалия",
-        "Билефельд","Падерборн","Минден","Детмольд"
-        ],
-        "serviceType": ["Кейтеринг","Partyservice","Eventservice","Выездной кейтеринг"]
+    "@type": ["LocalBusiness", "Caterer"],
+    "@id": "https://www.vilana-event.de/#vilana",
+    "name": "Vilana Event & Catering",
+    "url": "https://www.vilana-event.de/ru/",
+    "inLanguage": "ru-RU",
+    "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
+    "priceRange": "€€",
+    "telephone": "+49 176 5777 5996",
+    "email": "v.s@vilana.info",
+    "description": "Премиальный кейтеринг и организация мероприятий в Нижней Саксонии и NRW: свадьбы, корпоративы, дни рождения, тематические вечеринки. Русская и европейская кухня.",
+    "servesCuisine": ["Russian", "European", "German", "International"],
+    "knowsLanguage": ["ru", "de"],
+    "sameAs": [
+        "https://www.instagram.com/vilana_catering/"
+    ],
+    "hasMap": "PASTE_GOOGLE_MAPS_URL_HERE",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Osterstraße 28",
+    "addressLocality": "Aerzen",
+    "addressRegion": "Niedersachsen",
+    "postalCode": "31855",
+    "addressCountry": "DE"
+    },
+    "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.0,
+    "longitude": 9.2
+    },
+    "areaServed": [
+        { "@type": "City", "name": "Hameln" },
+        { "@type": "City", "name": "Bad Pyrmont" },
+        { "@type": "City", "name": "Hannover" },
+        { "@type": "AdministrativeArea", "name": "Niedersachsen" },
+        { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" },
+        { "@type": "City", "name": "Bielefeld" },
+        { "@type": "City", "name": "Paderborn" },
+        { "@type": "City", "name": "Minden" },
+        { "@type": "City", "name": "Detmold" }
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://www.vilana-event.de/ru/menu.html#catalog",
+        "name": "Услуги кейтеринга и мероприятия",
+        "itemListElement": [
+        {
+            "@type": "Offer",
+            "name": "Кейтеринг на русскую свадьбу",
+            "itemOffered": {
+            "@type": "Service",
+            "@id": "https://www.vilana-event.de/ru/#service-russian-wedding",
+            "name": "Кейтеринг на русскую свадьбу",
+            "serviceType": "Wedding Catering",
+            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+            "areaServed": { "@type": "AdministrativeArea", "name": "Niedersachsen" },
+            "inLanguage": "ru-RU"
+            }
         },
         {
+            "@type": "Offer",
+            "name": "Русские вечеринки и юбилеи (тамада/банкет/фуршет)",
+            "itemOffered": {
+            "@type": "Service",
+            "@id": "https://www.vilana-event.de/ru/#service-russian-party",
+            "name": "Русские вечеринки и юбилеи",
+            "serviceType": "Event Catering",
+            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+            "areaServed": [
+                { "@type": "AdministrativeArea", "name": "Niedersachsen" },
+                { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" }
+            ],
+            "inLanguage": "ru-RU"
+            }
+        },
+        {
+            "@type": "Offer",
+            "name": "Выездной кейтеринг / Partyservice",
+            "itemOffered": {
+            "@type": "Service",
+            "@id": "https://www.vilana-event.de/ru/#service-partyservice",
+            "name": "Выездной кейтеринг / Partyservice",
+            "serviceType": "Catering",
+            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
+            "inLanguage": "ru-RU"
+            }
+        }
+        ]
+    }
+    },
+
+    {
+        "@type": "WebSite",
+        "@id": "https://www.vilana-event.de/ru/#website",
+        "url": "https://www.vilana-event.de/ru/",
+        "name": "Vilana Event & Catering (RU)",
+        "inLanguage": "ru-RU",
+        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
+    },
+
+    {
+        "@type": "WebPage",
+        "@id": "https://www.vilana-event.de/ru/menu.html#webpage",
+        "url": "https://www.vilana-event.de/ru/menu.html",
+        "name": "Меню — Vilana Event & Catering",
+        "inLanguage": "ru-RU",
+        "isPartOf": { "@id": "https://www.vilana-event.de/ru/#website" },
+        "about": { "@id": "https://www.vilana-event.de/#vilana" }
+    },
+
+    {
         "@type": "BreadcrumbList",
+        "@id": "https://www.vilana-event.de/ru/menu.html#breadcrumbs",
         "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.vilana-event.de/ru/" },
         { "@type": "ListItem", "position": 2, "name": "Меню", "item": "https://www.vilana-event.de/ru/menu.html" }
         ]
-        }
+    }
     ]
 }
 </script>
