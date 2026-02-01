@@ -1,0 +1,508 @@
+/* =========================================================
+   Vilana Contact – Premium Champagne / Pearl
+   - warm light background, soft gold/brass accents
+   - category colors stay (muted luxury tones)
+========================================================= */
+
+:root {
+    /* Base */
+    --bg: #fbf7f1;
+    /* warm pearl */
+    --paper: rgba(255, 255, 255, .92);
+    --paper2: rgba(255, 255, 255, .78);
+
+    /* Text */
+    --text: #1f2937;
+    --muted: rgba(31, 41, 55, .72);
+    --muted2: rgba(31, 41, 55, .56);
+
+    /* Lines */
+    --line: rgba(52, 58, 64, .14);
+    /* champagne line */
+    --line2: rgba(52, 58, 64, .22);
+
+    /* Luxury accent (bronze) */
+    --accent: #b07a2a;
+    /* bronze */
+    --accent2: #caa25a;
+    /* champagne gold */
+    --accentSoft: rgba(176, 122, 42, .14);
+
+    /* Soft shadow */
+    --shadow: 0 20px 70px -55px rgba(15, 23, 42, .42);
+    --shadow2: 0 14px 45px -38px rgba(15, 23, 42, .32);
+
+    /* Category accents (muted premium, not neon) */
+    --warm: #b65a3d;
+    /* terracotta */
+    --cold: #2f6ea8;
+    /* steel blue */
+    --salad: #2f7d4f;
+    /* forest */
+    --dessert: #7a4aa8;
+    /* plum */
+    --candy: #b23a7f;
+    /* berry */
+}
+
+/* page background (если надо перетянуть из inline) */
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* =========================================================
+   Panels (cards)
+========================================================= */
+.panel-base,
+.panel-quick,
+.panel-event,
+.panel-menu,
+.panel-options,
+.panel-basket {
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: linear-gradient(180deg, var(--paper), var(--paper2));
+    box-shadow: var(--shadow2);
+    backdrop-filter: blur(10px);
+}
+
+.panel-quick {
+    border-color: rgba(176, 122, 42, .18);
+    box-shadow: var(--shadow);
+}
+
+/* Basket — слегка “дороже” рамка, но НЕ жёлтая */
+.panel-basket {
+    border-color: rgba(176, 122, 42, .22);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(252, 248, 241, .86));
+}
+
+/* Hint box */
+.panel-basket .border-amber-200 {
+    border-color: rgba(176, 122, 42, .22) !important;
+}
+
+.panel-basket .bg-amber-50\/40 {
+    background: rgba(176, 122, 42, .06) !important;
+}
+
+/* =========================================================
+   Inputs (premium feel)
+========================================================= */
+input,
+textarea,
+select {
+    border-color: rgba(52, 58, 64, .18) !important;
+    background: rgba(255, 255, 255, .86);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: rgba(176, 122, 42, .55) !important;
+    box-shadow: 0 0 0 4px rgba(176, 122, 42, .14) !important;
+}
+
+/* =========================================================
+   Buttons – Premium Bronze (instead of amber)
+========================================================= */
+.btn-cta,
+#btnQuickSend,
+#btnWizardSend,
+#btnNext {
+    border-radius: 999px !important;
+    border: 1px solid rgba(176, 122, 42, .35) !important;
+    background: linear-gradient(180deg, #caa25a, #a56a1f) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    letter-spacing: .2px;
+    box-shadow: 0 18px 60px -45px rgba(15, 23, 42, .55);
+    transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+}
+
+#btnQuickSend:hover,
+#btnWizardSend:hover,
+#btnNext:hover {
+    filter: brightness(1.03);
+    box-shadow: 0 22px 70px -48px rgba(15, 23, 42, .62);
+}
+
+#btnQuickSend:active,
+#btnWizardSend:active,
+#btnNext:active {
+    transform: translateY(1px);
+}
+
+#btnBack {
+    border-radius: 999px !important;
+    border: 1px solid var(--line2) !important;
+    background: rgba(255, 255, 255, .78) !important;
+    color: var(--text) !important;
+}
+
+#btnBack:hover {
+    background: rgba(255, 255, 255, .92) !important;
+}
+
+#btnToggleWizard,
+#btnToggleAdvancedMenu,
+#menuReset {
+    border-radius: 999px !important;
+    border: 1px solid var(--line2) !important;
+    background: rgba(255, 255, 255, .70) !important;
+}
+
+#btnToggleWizard:hover,
+#btnToggleAdvancedMenu:hover,
+#menuReset:hover {
+    background: rgba(255, 255, 255, .92) !important;
+}
+
+/* =========================================================
+   Stepper dots (bronze)
+========================================================= */
+.step-dot-done,
+.step-dot-active {
+    background: linear-gradient(180deg, #caa25a, #a56a1f) !important;
+    border-color: rgba(176, 122, 42, .65) !important;
+    color: #fff !important;
+}
+
+/* =========================================================
+   Menu categories – accordion category colors (CSS-driven)
+   Works with JS classes:
+   cat-rail cat-warm, cat-chip cat-warm, cat-dot cat-warm, cat-head cat-warm etc.
+========================================================= */
+.cat-rail {
+    border-left: 4px solid rgba(52, 58, 64, .18);
+}
+
+.cat-dot {
+    background: rgba(52, 58, 64, .22);
+}
+
+.cat-head {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(252, 248, 241, .84));
+}
+
+.cat-chip {
+    border: 1px solid rgba(52, 58, 64, .18);
+    background: rgba(52, 58, 64, .04);
+    color: rgba(31, 41, 55, .78);
+}
+
+/* warm */
+.cat-warm.cat-rail {
+    border-left-color: var(--warm);
+}
+
+.cat-warm.cat-dot {
+    background: var(--warm);
+}
+
+.cat-warm.cat-chip {
+    border-color: color-mix(in srgb, var(--warm) 22%, #fff 0%);
+    background: color-mix(in srgb, var(--warm) 8%, #fff 92%);
+    color: color-mix(in srgb, var(--warm) 74%, #111 26%);
+}
+
+/* cold */
+.cat-cold.cat-rail {
+    border-left-color: var(--cold);
+}
+
+.cat-cold.cat-dot {
+    background: var(--cold);
+}
+
+.cat-cold.cat-chip {
+    border-color: color-mix(in srgb, var(--cold) 22%, #fff 0%);
+    background: color-mix(in srgb, var(--cold) 8%, #fff 92%);
+    color: color-mix(in srgb, var(--cold) 74%, #111 26%);
+}
+
+/* salad */
+.cat-salad.cat-rail {
+    border-left-color: var(--salad);
+}
+
+.cat-salad.cat-dot {
+    background: var(--salad);
+}
+
+.cat-salad.cat-chip {
+    border-color: color-mix(in srgb, var(--salad) 22%, #fff 0%);
+    background: color-mix(in srgb, var(--salad) 8%, #fff 92%);
+    color: color-mix(in srgb, var(--salad) 74%, #111 26%);
+}
+
+/* dessert */
+.cat-dessert.cat-rail {
+    border-left-color: var(--dessert);
+}
+
+.cat-dessert.cat-dot {
+    background: var(--dessert);
+}
+
+.cat-dessert.cat-chip {
+    border-color: color-mix(in srgb, var(--dessert) 22%, #fff 0%);
+    background: color-mix(in srgb, var(--dessert) 8%, #fff 92%);
+    color: color-mix(in srgb, var(--dessert) 74%, #111 26%);
+}
+
+/* candy */
+.cat-candy.cat-rail {
+    border-left-color: var(--candy);
+}
+
+.cat-candy.cat-dot {
+    background: var(--candy);
+}
+
+.cat-candy.cat-chip {
+    border-color: color-mix(in srgb, var(--candy) 22%, #fff 0%);
+    background: color-mix(in srgb, var(--candy) 8%, #fff 92%);
+    color: color-mix(in srgb, var(--candy) 74%, #111 26%);
+}
+
+/* =========================================================
+   Add buttons in menu list (premium + selected highlight)
+========================================================= */
+.btn-add-base {
+    border-radius: 12px !important;
+    border: 1px solid var(--line) !important;
+    background: rgba(255, 255, 255, .84) !important;
+    color: rgba(31, 41, 55, .92) !important;
+}
+
+.btn-add:hover {
+    background: rgba(255, 255, 255, .96) !important;
+    border-color: rgba(176, 122, 42, .35) !important;
+}
+
+.btn-added {
+    border-color: rgba(176, 122, 42, .55) !important;
+    background: linear-gradient(180deg, rgba(202, 162, 90, .92), rgba(165, 106, 31, .92)) !important;
+    color: #fff !important;
+}
+
+/* Selected cards border – subtle bronze */
+#menuSelected .border-amber-200 {
+    border-color: rgba(176, 122, 42, .22) !important;
+}
+
+/* Accordion arrow rotation helper (как у тебя) */
+.acc-open svg {
+    transform: rotate(180deg);
+}
+
+/* Toast stays premium */
+#toast {
+    background: rgba(17, 24, 39, 0.92);
+    color: #fff;
+}
+
+/* =========================================================
+   FIX: kill amber/yellow chips in Menü-Kategorien
+   Put at END of contact.css
+========================================================= */
+
+/* общий чип (кол-во блюд) — всегда pearl/bronze, без yellow */
+#menuCategories .cat-chip {
+    border-color: rgba(52, 58, 64, .18) !important;
+    background: rgba(255, 255, 255, .86) !important;
+    color: rgba(31, 41, 55, .78) !important;
+}
+
+/* warm — терракота (НЕ жёлтый) */
+#menuCategories .cat-warm.cat-chip {
+    border-color: color-mix(in srgb, var(--warm) 22%, #fff 0%) !important;
+    background: color-mix(in srgb, var(--warm) 10%, #fff 90%) !important;
+    color: color-mix(in srgb, var(--warm) 78%, #111 22%) !important;
+}
+
+/* cold */
+#menuCategories .cat-cold.cat-chip {
+    border-color: color-mix(in srgb, var(--cold) 22%, #fff 0%) !important;
+    background: color-mix(in srgb, var(--cold) 10%, #fff 90%) !important;
+    color: color-mix(in srgb, var(--cold) 78%, #111 22%) !important;
+}
+
+/* salad */
+#menuCategories .cat-salad.cat-chip {
+    border-color: color-mix(in srgb, var(--salad) 22%, #fff 0%) !important;
+    background: color-mix(in srgb, var(--salad) 10%, #fff 90%) !important;
+    color: color-mix(in srgb, var(--salad) 78%, #111 22%) !important;
+}
+
+/* dessert */
+#menuCategories .cat-dessert.cat-chip {
+    border-color: color-mix(in srgb, var(--dessert) 22%, #fff 0%) !important;
+    background: color-mix(in srgb, var(--dessert) 10%, #fff 90%) !important;
+    color: color-mix(in srgb, var(--dessert) 78%, #111 22%) !important;
+}
+
+/* candy */
+#menuCategories .cat-candy.cat-chip {
+    border-color: color-mix(in srgb, var(--candy) 22%, #fff 0%) !important;
+    background: color-mix(in srgb, var(--candy) 10%, #fff 90%) !important;
+    color: color-mix(in srgb, var(--candy) 78%, #111 22%) !important;
+}
+
+/* чип сделать аккуратнее (премиум типографика/размер) */
+#menuCategories .cat-chip {
+    font-size: 11px !important;
+    letter-spacing: .25px;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
+    line-height: 1.1 !important;
+}
+/* =========================================================
+   PREMIUM RESET (no bronze) + UI typography
+   Paste at END of /css/contact.css
+========================================================= */
+
+/* 1) Новая премиум-палитра: Ivory + Midnight Navy */
+:root{
+  --bg: #fbf7f1;                 /* можно оставить */
+  --paper: rgba(255,255,255,.94);
+  --paper2: rgba(255,255,255,.84);
+
+  --text: #0f172a;               /* slate-900 */
+  --muted: rgba(15,23,42,.72);
+  --muted2: rgba(15,23,42,.55);
+
+  --line: rgba(15,23,42,.14);
+  --line2: rgba(15,23,42,.22);
+
+  /* НОВЫЙ акцент (премиум, без золота) */
+  --accent: #0b1f3b;             /* midnight navy */
+  --accent2: #102a52;            /* чуть светлее */
+  --accentSoft: rgba(11,31,59,.16);
+
+  --shadow: 0 22px 80px -60px rgba(2,6,23,.45);
+  --shadow2: 0 16px 55px -45px rgba(2,6,23,.34);
+
+  /* Категории оставляем цветными, но благородными */
+  --warm: #a44a3f;     /* terracotta muted */
+  --cold: #2a6aa0;     /* steel blue */
+  --salad: #2b7a53;    /* forest */
+  --dessert: #6b46a2;  /* plum */
+  --candy: #a12f74;    /* berry */
+}
+
+/* 2) Типографика: кнопки/инпуты = modern sans (перебьёт твой inline "всё Cormorant") */
+button,
+input,
+textarea,
+select{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif !important;
+  letter-spacing: .2px;
+}
+
+/* Заголовки можно оставить на Cormorant (если хочешь) */
+h1,h2,h3{
+  font-family: "Cormorant SC", serif;
+}
+
+/* 3) Кнопки: премиум “navy” (вместо bronze/amber) */
+#btnQuickSend,
+#btnWizardSend,
+#btnNext{
+  border-radius: 999px !important;
+  border: 1px solid rgba(11,31,59,.28) !important;
+  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 18px 65px -52px rgba(2,6,23,.65) !important;
+  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+}
+#btnQuickSend:hover,
+#btnWizardSend:hover,
+#btnNext:hover{
+  filter: brightness(1.04);
+  box-shadow: 0 22px 80px -58px rgba(2,6,23,.72) !important;
+}
+#btnQuickSend:active,
+#btnWizardSend:active,
+#btnNext:active{
+  transform: translateY(1px);
+}
+
+/* Secondary buttons */
+#btnBack,
+#btnToggleWizard,
+#btnToggleAdvancedMenu,
+#menuReset{
+  border-radius: 999px !important;
+  border: 1px solid var(--line2) !important;
+  background: rgba(255,255,255,.82) !important;
+  color: var(--text) !important;
+}
+#btnBack:hover,
+#btnToggleWizard:hover,
+#btnToggleAdvancedMenu:hover,
+#menuReset:hover{
+  background: rgba(255,255,255,.96) !important;
+}
+
+/* 4) Focus ring: navy (премиально) */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus-visible{
+  outline: none !important;
+  border-color: rgba(11,31,59,.55) !important;
+  box-shadow: 0 0 0 4px var(--accentSoft) !important;
+}
+
+/* 5) Stepper dots тоже navy */
+.step-dot-done,
+.step-dot-active{
+  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+  border-color: rgba(11,31,59,.55) !important;
+  color: #fff !important;
+}
+
+/* 6) Убрать остатки amber/yellow в меню-блоке (жёстко) */
+#menuSelectBox [class*="bg-amber-"]{
+  background: rgba(255,255,255,.92) !important;
+}
+#menuSelectBox [class*="border-amber-"]{
+  border-color: var(--line2) !important;
+}
+#menuSelectBox [class*="text-amber-"]{
+  color: var(--text) !important;
+}
+
+/* 7) Чип “xx Gerichte” сделать премиум нейтральным */
+#menuCategories .cat-chip{
+  border-color: var(--line2) !important;
+  background: rgba(255,255,255,.88) !important;
+  color: rgba(15,23,42,.76) !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: .22px;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+}
+
+/* 8) “Hinzugefügt” (выбрано) — navy (вместо bronze) */
+#menuSelectBox button[disabled],
+#menuSelectBox button[aria-disabled="true"],
+.btn-added{
+  border-color: rgba(11,31,59,.40) !important;
+  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+  color: #fff !important;
+}
+
+/* 9) Ссылки (AGB/Datenschutz) — тоже navy */
+a.text-amber-700{
+  color: rgba(11,31,59,.92) !important;
+}
+a.text-amber-700:hover{
+  color: rgba(16,42,82,.95) !important;
+}

@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- =========================
-        SEO – Kontakt (DE)
-  ========================= -->
-  <title>Kontakt | Vilana Event &amp; Catering – Catering &amp; Events in Hameln</title>
+  <!-- =========================================================
+       SEO – Kontakt (DE)
+  ========================================================== -->
+  <title>Kontakt | Vilana Event &amp; Catering – Catering &amp; Partyservice in Hameln-Pyrmont</title>
   <meta name="description"
-        content="Kontakt zu Vilana Event &amp; Catering in Aerzen/Hameln: Anfrage für Hochzeiten, Familienfeiern und Firmen-Events per E-Mail, Telefon oder WhatsApp." />
+        content="Catering- & Partyservice-Anfrage in Hameln-Pyrmont: ab 20 Personen. Lieferung & Buffet-Aufbau inklusive. Anfrage schnell senden oder erweitert strukturieren." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0e0e0e" />
 
@@ -25,7 +25,7 @@
   <meta property="og:site_name" content="Vilana Event &amp; Catering" />
   <meta property="og:title" content="Kontakt | Vilana Event &amp; Catering" />
   <meta property="og:description"
-        content="Jetzt Kontakt zu Vilana Event &amp; Catering aufnehmen – individuelle Angebote für Hochzeiten, Familienfeiern und Firmenveranstaltungen in Hameln &amp; Umgebung." />
+        content="Schnelle Anfrage oder strukturiertes Catering-Angebot ab 20 Personen. Lieferung & Buffet-Aufbau inklusive." />
   <meta property="og:url" content="https://www.vilana-event.de/contact.html" />
   <meta property="og:image" content="https://www.vilana-event.de/images/event/event-1.webp" />
 
@@ -33,21 +33,20 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kontakt | Vilana Event &amp; Catering" />
   <meta name="twitter:description"
-        content="Kontakt für Catering &amp; Eventplanung in Hameln &amp; Umgebung – schreiben oder anrufen und persönliches Angebot erhalten." />
+        content="Catering- & Partyservice-Anfrage ab 20 Personen. Lieferung & Buffet-Aufbau inklusive." />
   <meta name="twitter:image" content="https://www.vilana-event.de/images/event/event-1.webp" />
 
   <!-- Performance: CSS -->
   <link rel="preload" href="/css/output.css" as="style" />
   <link rel="stylesheet" href="/css/output.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
   <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        rel="stylesheet" />
 
   <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
@@ -56,26 +55,35 @@
   <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
   <style>
-    body { font-family: "Cormorant SC", serif; background: #fdfaf6; color: #1f2937; }
-    h1,h2,h3,p,span { font-family: "Cormorant SC", serif; }
+    /* Минимум inline: только шрифты + утилиты */
+    body { font-family: "Cormorant SC", serif; background: #fdfaf6; color: #111827; }
+    h1,h2,h3,p,span,label,input,textarea,select,button { font-family: "Cormorant SC", serif; }
 
     .logo-title{
       font-family:"Cinzel Decorative", cursive;
       font-size:1.8rem;
       font-weight:500;
       letter-spacing:.5px;
-      color:#1f2937;
+      color:#111827;
       line-height:1;
     }
-    .logo-subtitle{ font-size:1rem; color:#1f2937; line-height:1; }
+    .logo-subtitle{ font-size:1rem; color:#111827; line-height:1; }
 
-    .hidden-field{ display:none; }
+    .hidden-field{ display:none !important; }
 
-    /* Simple error styling hook (optional) */
-    .field-error { border-color: #dc2626 !important; }
+    /* Validation helper (JS setzt .field-error) */
+    .field-error {
+      border-color: #dc2626 !important;
+      box-shadow: 0 0 0 4px rgba(220,38,38,.10) !important;
+    }
+
+    /* Accordion helper (used by JS) */
+    .acc-open svg { transform: rotate(180deg); }
   </style>
 
-  <!-- JSON-LD -->
+  <!-- =========================================================
+        JSON-LD
+  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -92,7 +100,10 @@
         "@id":"https://www.vilana-event.de/#vilana",
         "name":"Vilana Event & Catering",
         "url":"https://www.vilana-event.de/",
-        "telephone":"+49 176 57775996",
+        "telephone":[
+          "+49 176 57775996",
+          "+49 176 42288707"
+        ],
         "image":"https://www.vilana-event.de/images/event/event-1.webp",
         "address":{
           "@type":"PostalAddress",
@@ -102,7 +113,8 @@
           "addressCountry":"DE"
         },
         "areaServed":["Hameln-Pyrmont","Niedersachsen","Nordrhein-Westfalen"],
-        "servesCuisine":["International","Russisch","Mediterran"]
+        "servesCuisine":["International","Russisch","Mediterran","Europäisch"],
+        "priceRange":"€€"
       },
       {
         "@type":"ContactPage",
@@ -115,11 +127,8 @@
   </script>
 
   <!-- Google Analytics — nur nach Analytics-Einwilligung -->
-  <script
-    type="text/plain"
-    data-cookie-category="analytics"
-    src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"
-  ></script>
+  <script type="text/plain" data-cookie-category="analytics"
+          src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script type="text/plain" data-cookie-category="analytics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -128,10 +137,12 @@
   </script>
 </head>
 
-<body class="text-gray-800 antialiased">
+<body class="text-gray-800 antialiased contact-wrap">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-md sticky top-0 z-40">
+  <!-- =========================================================
+        HEADER
+  ========================================================== -->
+  <header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-black/10">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering – Startseite">
         <span class="logo-title">Vilana</span>
@@ -142,14 +153,14 @@
 
         <!-- Desktop nav -->
         <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-          <a href="/" class="hover:text-amber-700">Startseite</a>
-          <a href="/#services" class="hover:text-amber-700">Leistungen</a>
-          <a href="/menu.html" class="hover:text-amber-700">Menü</a>
-          <a href="/galerie.html" class="hover:text-amber-700">Galerie</a>
-          <a href="/about.html" class="hover:text-amber-700">Über uns</a>
-          <a href="/event.html" class="hover:text-amber-700">Event</a>
-          <a href="/bewertung.html" class="hover:text-amber-700">Bewertung</a>
-          <a href="/contact.html" aria-current="page" class="text-amber-700 font-semibold">Kontakt</a>
+          <a href="/" class="hover:opacity-80">Startseite</a>
+          <a href="/#services" class="hover:opacity-80">Leistungen</a>
+          <a href="/menu.html" class="hover:opacity-80">Menü</a>
+          <a href="/galerie.html" class="hover:opacity-80">Galerie</a>
+          <a href="/about.html" class="hover:opacity-80">Über uns</a>
+          <a href="/event.html" class="hover:opacity-80">Event</a>
+          <a href="/bewertung.html" class="hover:opacity-80">Bewertung</a>
+          <a href="/contact.html" aria-current="page" class="font-semibold">Kontakt</a>
         </nav>
 
         <!-- Language switch -->
@@ -166,7 +177,7 @@
 
           <button id="menuToggle" type="button"
             aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200">
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-gray-900">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -179,23 +190,30 @@
     <div id="mobileMenu"
       class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
       role="navigation" aria-label="Mobiles Menü">
-      <a href="/" class="block hover:text-amber-700">Startseite</a>
-      <a href="/#services" class="block hover:text-amber-700">Leistungen</a>
-      <a href="/menu.html" class="block hover:text-amber-700">Menü</a>
-      <a href="/galerie.html" class="block hover:text-amber-700">Galerie</a>
-      <a href="/about.html" class="block hover:text-amber-700">Über uns</a>
-      <a href="/event.html" class="block hover:text-amber-700">Event</a>
-      <a href="/bewertung.html" class="block hover:text-amber-700">Bewertung</a>
-      <a href="/contact.html" class="block text-amber-700 font-semibold">Kontakt</a>
+      <a href="/" class="block hover:opacity-80">Startseite</a>
+      <a href="/#services" class="block hover:opacity-80">Leistungen</a>
+      <a href="/menu.html" class="block hover:opacity-80">Menü</a>
+      <a href="/galerie.html" class="block hover:opacity-80">Galerie</a>
+      <a href="/about.html" class="block hover:opacity-80">Über uns</a>
+      <a href="/event.html" class="block hover:opacity-80">Event</a>
+      <a href="/bewertung.html" class="block hover:opacity-80">Bewertung</a>
+      <a href="/contact.html" class="block font-semibold">Kontakt</a>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="py-16">
-    <div class="mx-auto px-4 max-w-3xl text-center">
-      <h1 class="text-4xl font-bold mb-6">Kontaktieren Sie uns für Ihr Event</h1>
+  <!-- Toast -->
+  <div id="toast" role="status" aria-live="polite"></div>
 
-      <div class="text-center mb-12 space-y-2">
+  <!-- =========================================================
+        MAIN
+  ========================================================== -->
+  <main class="py-16">
+    <div class="mx-auto px-4 max-w-3xl">
+
+      <h1 class="text-4xl font-bold mb-6 text-center">Anfrage für Ihr Event – Catering &amp; Service</h1>
+
+      <!-- Kontaktdaten -->
+      <div class="text-center mb-10 space-y-2">
         <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:v.s@vilana.info" class="text-amber-700">v.s@vilana.info</a></p>
         <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:vilana-event@outlook.de" class="text-amber-700">vilana-event@outlook.de</a></p>
         <p class="text-lg"><strong>Telefon:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176 5777 5996</a></p>
@@ -207,51 +225,510 @@
         <p class="text-lg"><strong>Adresse:</strong> 31855 Aerzen / Osterstraße 28</p>
       </div>
 
-      <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
-        <!-- Honeypot -->
-        <input type="text" name="honeypot" class="hidden-field" autocomplete="off" />
+      <!-- =========================================================
+            FORM (ein Formular = Schnell + Erweitert)
+      ========================================================== -->
+      <form id="contactForm" class="p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto" novalidate>
 
-        <div class="mb-4 text-left">
-          <label for="name" class="block text-gray-700 mb-2">Ihr Name</label>
-          <input class="w-full border border-gray-300 rounded px-4 py-2" type="text" id="name" name="name" required />
-        </div>
+        <!-- Anti-Spam -->
+        <input type="text" name="honeypot" class="hidden-field" autocomplete="off" tabindex="-1" />
+        <input type="text" name="cf_started_at" id="cf_started_at" class="hidden-field" autocomplete="off" tabindex="-1" />
 
-        <div class="mb-4 text-left">
-          <label for="email" class="block text-gray-700 mb-2">Ihre E-Mail</label>
-          <input class="w-full border border-gray-300 rounded px-4 py-2" type="email" id="email" name="email" required />
-        </div>
+        <!-- EmailJS hidden Template-Felder -->
+        <input type="text" name="from_name" id="from_name_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
+        <input type="text" name="reply_to" id="reply_to_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
+        <input type="text" name="subject" id="subject_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
+        <textarea name="message" id="cf-message-hidden" class="hidden-field" aria-hidden="true"></textarea>
 
-        <div class="mb-4 text-left">
-          <label for="message" class="block text-gray-700 mb-2">Ihre Nachricht</label>
-          <textarea class="w-full border border-gray-300 rounded px-4 py-2" id="message" name="message" rows="5" required></textarea>
-        </div>
+        <!-- =========================================================
+              SCHNELL (immer sichtbar): Nachricht zuerst
+        ========================================================== -->
+        <section class="panel-quick p-5 sm:p-6 space-y-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900">Schnelle Anfrage</h2>
+              <p class="text-sm text-gray-600 mt-1">
+                Für Fragen, Tickets (z.B. Event) oder kurze Catering-Anfragen.
+              </p>
+            </div>
 
-        <div class="mb-4 text-left">
-          <label class="inline-flex items-center">
-            <input type="checkbox" id="cf-privacy" required class="mr-2" />
-            <span class="text-sm">
-              Ich akzeptiere die <a href="/agb.html" class="text-amber-700 underline">AGB</a> &amp;
-              <a href="/datenschutz.html" class="text-amber-700 underline">Datenschutz</a>
-            </span>
-          </label>
-        </div>
+            <!-- Toggle erweitert -->
+            <button type="button" id="btnToggleWizard"
+              class="shrink-0 rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
+              Erweitert (optional)
+            </button>
+          </div>
 
-        <div id="formMsg" class="text-center text-green-600 font-semibold hidden mb-4">
-          Nachricht erfolgreich gesendet! Wir melden uns so schnell wie möglich.
-        </div>
+          <!-- Nachricht -->
+          <div>
+            <label for="cf_message" class="block text-gray-700 mb-2 font-semibold">Nachricht *</label>
+            <textarea
+              id="cf_message"
+              name="quick_message"
+              rows="6"
+              required
+              class="w-full border border-gray-300 rounded-xl px-4 py-3"
+              placeholder="Schreiben Sie kurz, was Sie benötigen… (Catering / Buffet / Fragen / Tickets / Termin)"
+            ></textarea>
+            <p class="mt-2 text-xs text-gray-500">
+              Tipp: Datum/Ort/Gästezahl (falls bekannt) helfen uns, schneller zu antworten.
+            </p>
+          </div>
 
-        <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full">
-          Senden
-        </button>
+          <!-- Kontakt: E-Mail Pflicht, Telefon optional -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-gray-700 mb-2">Ihr Name (optional)</label>
+              <input id="name" name="name" type="text"
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+            </div>
+
+            <div>
+              <label for="email" class="block text-gray-700 mb-2 font-semibold">E-Mail *</label>
+              <input id="email" name="email" type="email" inputmode="email" required
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                    placeholder="name@email.de" />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="cf-phone" class="block text-gray-700 mb-2">Telefon (optional)</label>
+              <input id="cf-phone" name="phone" type="tel"
+                    class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                    placeholder="+49 …" />
+            </div>
+          </div>
+
+          <!-- Datenschutz -->
+          <div>
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="cf-privacy" required class="mr-2" />
+              <span class="text-sm">
+                Ich akzeptiere die <a href="/agb.html" class="underline">AGB</a> &amp;
+                <a href="/datenschutz.html" class="underline">Datenschutz</a>
+              </span>
+            </label>
+          </div>
+
+          <!-- Schnell senden -->
+          <div class="flex justify-center pt-2">
+            <button type="submit" id="btnQuickSend" class="btn-graphite py-2 px-10">
+              Senden
+            </button>
+          </div>
+
+          <div id="formMsg" class="text-center text-green-600 font-semibold hidden">
+            Nachricht erfolgreich gesendet! Wir melden uns so schnell wie möglich.
+          </div>
+        </section>
+
+        <!-- =========================================================
+             ERWEITERT (Wizard / Stepper)
+        ========================================================== -->
+        <section id="wizardWrap" class="hidden mt-8">
+
+          <!-- Wizard Header -->
+          <div class="mb-5 text-center">
+            <h2 class="text-2xl font-bold text-gray-900">Erweiterte Catering-Anfrage</h2>
+            <p class="text-sm text-gray-600 mt-1">
+              Für ein strukturiertes Angebot (Mindestbestellung: ab <strong>20 Personen</strong>).
+              <br/>Lieferung &amp; Buffet-Aufbau inklusive.
+            </p>
+          </div>
+
+          <!-- Stepper -->
+          <ol class="flex items-center justify-between gap-2 mb-6" aria-label="Schritte">
+            <li class="flex-1">
+              <div class="flex items-center gap-2">
+                <span id="stepDot1" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">1</span>
+                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Event</span>
+              </div>
+            </li>
+            <li class="flex-1">
+              <div class="flex items-center gap-2">
+                <span id="stepDot2" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">2</span>
+                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Menü</span>
+              </div>
+            </li>
+            <li class="flex-1">
+              <div class="flex items-center gap-2">
+                <span id="stepDot3" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">3</span>
+                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Optionen</span>
+              </div>
+            </li>
+            <li class="flex-1">
+              <div class="flex items-center gap-2">
+                <span id="stepDot4" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">4</span>
+                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Kontakt</span>
+              </div>
+            </li>
+            <li class="flex-1">
+              <div class="flex items-center gap-2">
+                <span id="stepDot5" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">5</span>
+                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Übersicht</span>
+              </div>
+            </li>
+          </ol>
+
+          <!-- Hidden: Menü Auswahl (für Mail) -->
+          <textarea name="menu_selected_text" id="menuSelectedText" class="hidden-field" aria-hidden="true"></textarea>
+          <input type="hidden" name="menu_mode" id="menuModeHidden" value="Keine Auswahl (Vilana schlägt vor)" />
+
+          <!-- =========================
+               STEP 1: EVENT
+          ========================== -->
+          <section data-step="1" class="panel-event p-5 sm:p-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-gray-700 mb-2 font-semibold" for="cf-eventType">Eventtyp *</label>
+                <select id="cf-eventType" name="event_type" required
+                        class="w-full border border-gray-300 rounded-xl px-4 py-2">
+                  <option value="" selected disabled>Bitte wählen…</option>
+                  <option>Geburtstag</option>
+                  <option>Hochzeit</option>
+                  <option>Firmenfeier</option>
+                  <option>Jubiläum</option>
+                  <option>Private Feier</option>
+                  <option>Sonstiges</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 mb-2 font-semibold" for="cf-guests">Gästezahl (ab 20) *</label>
+                <input id="cf-guests" name="guests" type="number" min="20" inputmode="numeric" required
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="mind. 20" />
+                <p class="mt-1 text-xs text-gray-500">Mindestbestellung: ab 20 Personen.</p>
+              </div>
+
+              <div>
+                <label class="block text-gray-700 mb-2 font-semibold" for="cf-date">Datum *</label>
+                <input id="cf-date" name="event_date" type="date" required
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+              </div>
+
+              <div>
+                <label class="block text-gray-700 mb-2 font-semibold" for="cf-time">Uhrzeit (optional)</label>
+                <input id="cf-time" name="event_time" type="time"
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 mb-2 font-semibold" for="cf-location">Ort / Adresse *</label>
+              <textarea id="cf-location" name="location" rows="2" required
+                        class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                        placeholder="PLZ, Stadt, Straße / Location"></textarea>
+            </div>
+
+            <div class="rounded-2xl border border-amber-200 bg-amber-50/40 p-4">
+              <div class="font-semibold text-gray-900">Inklusive</div>
+              <ul class="mt-2 text-sm text-gray-700 list-disc pl-5 space-y-1">
+                <li>Lieferung</li>
+                <li>Buffet-Aufbau</li>
+              </ul>
+              <p class="mt-2 text-xs text-gray-500">
+                Abbau / Reinigung / Spülservice optional nach Absprache.
+              </p>
+            </div>
+          </section>
+
+          <!-- =========================
+               STEP 2: MENÜ (optional)
+          ========================== -->
+          <section data-step="2" class="panel-menu p-5 sm:p-6 space-y-4 hidden">
+
+            <div class="panel-base p-4">
+              <div class="font-semibold text-gray-900">Menü (optional)</div>
+              <p class="text-sm text-gray-600 mt-1">
+                Standard: Sie wählen nichts aus – wir stellen Vorschläge passend zur Gästezahl zusammen.
+                <br/>Wenn Sie möchten, öffnen Sie „Erweitert“ und wählen Gerichte (ohne Mengenangaben).
+              </p>
+
+              <div class="mt-4">
+                <label class="block text-gray-700 mb-2 font-semibold">Präferenzen (optional)</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pref_meat2" value="Ja" /> Fleisch</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pref_fish2" value="Ja" /> Fisch</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pref_veg2" value="Ja" /> Vegetarisch</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pref_kids2" value="Ja" /> Kinder</label>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <label class="block text-gray-700 mb-2 font-semibold" for="cf-allergies">Allergene / Wünsche (optional)</label>
+                <textarea id="cf-allergies" name="allergies" rows="3"
+                          class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                          placeholder="z.B. glutenfrei, ohne Nüsse, halal, kein Schweinefleisch…"></textarea>
+              </div>
+            </div>
+
+            <!-- Toggle: Erweitert -->
+            <button type="button" id="btnToggleAdvancedMenu"
+              class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm font-semibold hover:bg-gray-50 transition">
+              Erweitert: Gerichte auswählen (optional)
+            </button>
+
+            <!-- Erweitert-Menü Auswahl -->
+            <div id="menuSelectBox" class="panel-base p-4 hidden">
+
+              <!-- Suchleiste -->
+              <div class="flex flex-col sm:flex-row gap-3">
+                <div class="flex-1">
+                  <label class="block text-gray-700 mb-2 text-sm font-semibold">Gerichte suchen</label>
+                  <input id="menuSearch" type="text"
+                        class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                        placeholder="z.B. Schaschlik, Lachs, Tiramisu…" />
+                </div>
+                <div class="sm:w-[180px]">
+                  <label class="block text-gray-700 mb-2 text-sm font-semibold">Aktionen</label>
+                  <button type="button" id="menuReset"
+                          class="w-full rounded-xl border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
+                    Reset
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2 Spalten: Kategorien / Auswahl -->
+              <div class="mt-4 grid grid-cols-1 lg:grid-cols-5 gap-4">
+
+                <!-- Links: Kategorien -->
+                <div class="lg:col-span-3 rounded-2xl border border-gray-200 bg-white p-4">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="text-sm font-semibold text-gray-900">Menü-Kategorien</div>
+                    <div class="text-xs text-gray-500">Klick: Anzeigen / Verbergen</div>
+                  </div>
+                  <div class="space-y-3" id="menuCategories"></div>
+                </div>
+
+                <!-- Rechts: Auswahl -->
+                <div class="lg:col-span-2 panel-basket p-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="text-sm font-semibold text-gray-900">Auswahl</div>
+                      <div class="text-xs text-gray-600">Mengen berechnen wir passend zur Gästezahl.</div>
+                    </div>
+
+                    <button type="button" id="btnClearSel"
+                            class="text-xs font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-2">
+                      Leeren
+                    </button>
+                  </div>
+
+                  <div id="menuSelected" class="mt-4 space-y-3"></div>
+
+                  <div class="mt-4 rounded-xl border border-amber-200 bg-white p-3">
+                    <div class="text-xs font-semibold text-gray-900">Hinweis</div>
+                    <div class="text-xs text-gray-600 mt-1">
+                      Bitte nur Gerichte auswählen – die Mengen kalkulieren wir passend zur Gästezahl.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================
+               STEP 3: OPTIONEN
+          ========================== -->
+          <section data-step="3" class="panel-options p-5 sm:p-6 space-y-4 hidden">
+
+            <div class="panel-base p-4">
+              <div class="font-semibold text-gray-900">Ausstattung (optional)</div>
+              <p class="text-sm text-gray-600 mt-1">
+                Falls benötigt, können wir Geschirr / Besteck / Gläser bereitstellen (Preis nach Aufwand).
+              </p>
+
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
+                  <input type="checkbox" name="opt_geschirr" value="Ja" />
+                  <span>Geschirr anbieten</span>
+                </label>
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
+                  <input type="checkbox" name="opt_besteck" value="Ja" />
+                  <span>Besteck anbieten</span>
+                </label>
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
+                  <input type="checkbox" name="opt_glaeser" value="Ja" />
+                  <span>Gläser anbieten</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="panel-base p-4">
+              <div class="font-semibold text-gray-900">Service Personal (optional)</div>
+              <p class="text-sm text-gray-600 mt-1">
+                Optional nach Absprache (Preis nach Aufwand).
+              </p>
+
+              <div class="mt-3">
+                <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
+                  <input type="checkbox" id="opt_service" name="opt_service" value="Ja" />
+                  <span>Service Personal anfragen</span>
+                </label>
+              </div>
+
+              <div id="serviceDetails" class="mt-4 hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="cf-service-count">Anzahl (optional)</label>
+                    <input id="cf-service-count" name="service_count" type="number" min="1" inputmode="numeric"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="z.B. 2" />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="cf-service-from">Von (optional)</label>
+                    <input id="cf-service-from" name="service_from" type="time"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="cf-service-to">Bis (optional)</label>
+                    <input id="cf-service-to" name="service_to" type="time"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-gray-700 mb-2">Aufgaben (optional)</label>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                    <label class="flex items-center gap-2"><input type="checkbox" name="service_buffet" value="Ja" /> Buffet betreuen / nachlegen</label>
+                    <label class="flex items-center gap-2"><input type="checkbox" name="service_table" value="Ja" /> Tischservice</label>
+                    <label class="flex items-center gap-2"><input type="checkbox" name="service_bar" value="Ja" /> Bar / Getränke</label>
+                    <label class="flex items-center gap-2"><input type="checkbox" name="service_cleanup" value="Ja" /> Abräumen / Ordnung</label>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-gray-700 mb-2" for="cf-service-note">Hinweis (optional)</label>
+                  <textarea id="cf-service-note" name="service_note" rows="2"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                            placeholder="z.B. Sektempfang, viele Gäste draußen, kurze Wege…"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-base p-4">
+              <div class="font-semibold text-gray-900">Nach dem Event (optional)</div>
+              <p class="text-sm text-gray-600 mt-1">
+                Abbau / Reinigung / Spülservice optional nach Absprache (Preis nach Aufwand).
+              </p>
+
+              <label class="mt-3 flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
+                <input type="checkbox" id="opt_cleanup" name="cleanup_offer" value="Ja" />
+                <span>Abbau / Reinigung / Spülservice anfragen</span>
+              </label>
+
+              <div id="cleanupDetails" class="mt-4 hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="cf-kitchen">Küche/Spülmöglichkeit vor Ort?</label>
+                    <select id="cf-kitchen" name="kitchen_available"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-2">
+                      <option value="" selected>—</option>
+                      <option>Ja</option>
+                      <option>Nein</option>
+                      <option>Unklar</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="cf-deadline">Bis wann fertig? (optional)</label>
+                    <input id="cf-deadline" name="cleanup_deadline" type="time"
+                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="block text-gray-700 mb-2" for="cf-cleanupNote">Details (optional)</label>
+                  <textarea id="cf-cleanupNote" name="cleanup_note" rows="2"
+                            class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                            placeholder="z.B. kleine Spüle, kein warmes Wasser, lange Wege…"></textarea>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =========================
+               STEP 4: KONTAKT (optional)
+          ========================== -->
+          <section data-step="4" class="panel-base p-5 sm:p-6 space-y-4 hidden">
+            <div class="font-semibold text-gray-900">Kontakt (optional)</div>
+            <p class="text-sm text-gray-600 -mt-1">
+              E-Mail ist oben bereits Pflicht. Hier können Sie zusätzliche Kontaktdaten ergänzen.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name2" class="block text-gray-700 mb-2">Name (optional)</label>
+                <input id="name2" name="name2" type="text"
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+              </div>
+              <div>
+                <label for="email2" class="block text-gray-700 mb-2">E-Mail (optional)</label>
+                <input id="email2" name="email2" type="email" inputmode="email"
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="phone2" class="block text-gray-700 mb-2">Telefon (optional)</label>
+                <input id="phone2" name="phone2" type="tel"
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+              </div>
+            </div>
+
+            <div>
+              <label for="cf-comment" class="block text-gray-700 mb-2">Zusätzliche Hinweise (optional)</label>
+              <textarea id="cf-comment" name="comment" rows="3"
+                        class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                        placeholder="Zeitplan, Besonderheiten der Location, wichtige Wünsche…"></textarea>
+            </div>
+          </section>
+
+          <!-- =========================
+                STEP 5: ÜBERSICHT
+          ========================== -->
+          <section data-step="5" class="panel-base p-5 sm:p-6 space-y-3 hidden">
+            <div class="font-semibold text-gray-900">Übersicht</div>
+            <pre id="summaryBox" class="text-sm whitespace-pre-wrap text-gray-700"></pre>
+            <p class="text-xs text-gray-500">
+              Mit „Senden“ schicken Sie eine unverbindliche Anfrage. Wir melden uns schnellstmöglich.
+            </p>
+
+            <div class="text-center pt-2">
+              <button type="submit" id="btnQuickSend" class="btn-cta py-2 px-8">Senden</button>
+            </div>
+          </section>
+
+          <!-- Wizard Navigation -->
+          <div class="mt-6 flex items-center justify-between gap-3">
+            <button type="button" id="btnBack"
+              class="rounded-full border border-gray-300 px-6 py-2 font-semibold hover:bg-gray-50 transition">
+              Zurück
+            </button>
+
+            <div class="flex items-center gap-3">
+              <button type="button" id="btnNext" class="btn-graphite py-2 px-8">
+                Weiter
+              </button>
+            </div>
+          </div>
+
+          <!-- Wizard schließen -->
+          <div class="mt-4 text-center">
+            <button type="button" id="btnCloseWizard"
+              class="text-sm font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-2">
+              Erweitert schließen
+            </button>
+          </div>
+
+        </section>
       </form>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-800 text-white py-10 mt-16 relative">
+  <!-- =========================================================
+         FOOTER
+  ========================================================== -->
+  <footer class="bg-gray-900 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
       <div class="mb-4">
-        <a href="https://www.instagram.com/vilana_catering/" class="hover:text-amber-400"
+        <a href="https://www.instagram.com/vilana_catering/" class="hover:opacity-80"
           target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
       <p>
@@ -264,61 +741,15 @@
 
     <button type="button"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full"
+      class="absolute right-4 bottom-4 text-white p-2 rounded-full transition"
       aria-label="Nach oben">▲</button>
   </footer>
 
-  <!-- EmailJS SDK -->
+  <!-- EmailJS SDK (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Year
-      const y = document.getElementById("year");
-      if (y) y.textContent = new Date().getFullYear();
-
-      // Burger
-      const btn = document.getElementById("menuToggle");
-      const menu = document.getElementById("mobileMenu");
-      if (btn && menu) {
-        const setOpen = (open) => {
-          menu.classList.toggle("hidden", !open);
-          btn.setAttribute("aria-expanded", String(open));
-        };
-        btn.addEventListener("click", (e) => { e.stopPropagation(); setOpen(menu.classList.contains("hidden")); });
-        document.addEventListener("click", (e) => {
-          if (!menu.classList.contains("hidden")) {
-            const inside = menu.contains(e.target) || btn.contains(e.target);
-            if (!inside) setOpen(false);
-          }
-        });
-        document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-        menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
-      }
-
-      // EmailJS
-      if (window.emailjs) {
-        try { emailjs.init("vfmomNKrMxrf2xqDW"); } catch (e) {}
-        const form = document.getElementById("contactForm");
-        if (form) {
-          form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (form.honeypot && form.honeypot.value) return;
-
-            emailjs.sendForm("service_75biswm", "template_fuxgrlb", form)
-              .then(() => {
-                const msg = document.getElementById("formMsg");
-                if (msg) msg.classList.remove("hidden");
-                form.reset();
-              })
-              .catch((err) => {
-                alert("Fehler beim Senden: " + (err && err.text ? err.text : err));
-              });
-          });
-        }
-      }
-    });
-  </script>
+  <!-- Kontakt-Logik -->
+  <script src="/js/contact.js" defer></script>
 
   <!-- Cookie Consent Wall -->
   <script src="/js/vilana-cookiewall.js" defer></script>
