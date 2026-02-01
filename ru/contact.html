@@ -281,12 +281,12 @@
                     tabindex="-1" />
                 <textarea name="message" id="cf-message-hidden" class="hidden-field" aria-hidden="true"></textarea>
 
-                <!-- =========================================================
-              SCHNELL (immer sichtbar): Nachricht zuerst
-        ========================================================== -->
+                    <!-- =========================================================
+                            SCHNELL (immer sichtbar): Nachricht zuerst
+                    ========================================================== -->
                 <section class="panel-quick p-5 sm:p-6 space-y-5">
-                    <div class="flex items-start justify-between gap-4">
-                        <div>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+                        <div class="flex-1 min-w-0">
                             <h2 class="text-2xl font-bold text-gray-900">Быстрый запрос</h2>
                             <p class="text-sm text-gray-600 mt-1">
                                 Для вопросов, билетов (например, Event) или коротких запросов по кейтерингу.
@@ -295,7 +295,7 @@
 
                         <!-- Toggle erweitert -->
                         <button type="button" id="btnToggleWizard"
-                            class="shrink-0 rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
+                            class="relative z-10 shrink-0 self-start rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
                             Расширенно (опционально)
                         </button>
                     </div>

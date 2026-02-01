@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- =========================================================
-       SEO – Kontakt (DE)
+          SEO – Kontakt (DE)
   ========================================================== -->
   <title>Kontakt | Vilana Event &amp; Catering – Catering &amp; Partyservice in Hameln-Pyrmont</title>
   <meta name="description"
@@ -244,17 +244,16 @@
               SCHNELL (immer sichtbar): Nachricht zuerst
         ========================================================== -->
         <section class="panel-quick p-5 sm:p-6 space-y-5">
-          <div class="flex items-start justify-between gap-4">
-            <div>
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+            <div class="flex-1 min-w-0">
               <h2 class="text-2xl font-bold text-gray-900">Schnelle Anfrage</h2>
               <p class="text-sm text-gray-600 mt-1">
                 Für Fragen, Tickets (z.B. Event) oder kurze Catering-Anfragen.
               </p>
             </div>
 
-            <!-- Toggle erweitert -->
             <button type="button" id="btnToggleWizard"
-              class="shrink-0 rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
+              class="relative z-10 shrink-0 self-start rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
               Erweitert (optional)
             </button>
           </div>
@@ -322,7 +321,7 @@
         </section>
 
         <!-- =========================================================
-             ERWEITERT (Wizard / Stepper)
+              ERWEITERT (Wizard / Stepper)
         ========================================================== -->
         <section id="wizardWrap" class="hidden mt-8">
 
@@ -374,7 +373,7 @@
           <input type="hidden" name="menu_mode" id="menuModeHidden" value="Keine Auswahl (Vilana schlägt vor)" />
 
           <!-- =========================
-               STEP 1: EVENT
+                STEP 1: EVENT
           ========================== -->
           <section data-step="1" class="panel-event p-5 sm:p-6 space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -395,20 +394,20 @@
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-guests">Gästezahl (ab 20) *</label>
                 <input id="cf-guests" name="guests" type="number" min="20" inputmode="numeric" required
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="mind. 20" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="mind. 20" />
                 <p class="mt-1 text-xs text-gray-500">Mindestbestellung: ab 20 Personen.</p>
               </div>
 
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-date">Datum *</label>
                 <input id="cf-date" name="event_date" type="date" required
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
 
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-time">Uhrzeit (optional)</label>
                 <input id="cf-time" name="event_time" type="time"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
             </div>
 
@@ -432,7 +431,7 @@
           </section>
 
           <!-- =========================
-               STEP 2: MENÜ (optional)
+                STEP 2: MENÜ (optional)
           ========================== -->
           <section data-step="2" class="panel-menu p-5 sm:p-6 space-y-4 hidden">
 
@@ -528,7 +527,7 @@
           </section>
 
           <!-- =========================
-               STEP 3: OPTIONEN
+                STEP 3: OPTIONEN
           ========================== -->
           <section data-step="3" class="panel-options p-5 sm:p-6 space-y-4 hidden">
 
@@ -572,17 +571,17 @@
                   <div>
                     <label class="block text-gray-700 mb-2" for="cf-service-count">Anzahl (optional)</label>
                     <input id="cf-service-count" name="service_count" type="number" min="1" inputmode="numeric"
-                           class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="z.B. 2" />
+                          class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="z.B. 2" />
                   </div>
                   <div>
                     <label class="block text-gray-700 mb-2" for="cf-service-from">Von (optional)</label>
                     <input id="cf-service-from" name="service_from" type="time"
-                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                          class="w-full border border-gray-300 rounded-xl px-4 py-2" />
                   </div>
                   <div>
                     <label class="block text-gray-700 mb-2" for="cf-service-to">Bis (optional)</label>
                     <input id="cf-service-to" name="service_to" type="time"
-                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                          class="w-full border border-gray-300 rounded-xl px-4 py-2" />
                   </div>
                 </div>
 
@@ -631,7 +630,7 @@
                   <div>
                     <label class="block text-gray-700 mb-2" for="cf-deadline">Bis wann fertig? (optional)</label>
                     <input id="cf-deadline" name="cleanup_deadline" type="time"
-                           class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                          class="w-full border border-gray-300 rounded-xl px-4 py-2" />
                   </div>
                 </div>
 
@@ -646,7 +645,7 @@
           </section>
 
           <!-- =========================
-               STEP 4: KONTAKT (optional)
+                STEP 4: KONTAKT (optional)
           ========================== -->
           <section data-step="4" class="panel-base p-5 sm:p-6 space-y-4 hidden">
             <div class="font-semibold text-gray-900">Kontakt (optional)</div>
@@ -658,17 +657,17 @@
               <div>
                 <label for="name2" class="block text-gray-700 mb-2">Name (optional)</label>
                 <input id="name2" name="name2" type="text"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
               <div>
                 <label for="email2" class="block text-gray-700 mb-2">E-Mail (optional)</label>
                 <input id="email2" name="email2" type="email" inputmode="email"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
               <div class="sm:col-span-2">
                 <label for="phone2" class="block text-gray-700 mb-2">Telefon (optional)</label>
                 <input id="phone2" name="phone2" type="tel"
-                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
             </div>
 
