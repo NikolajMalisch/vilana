@@ -168,24 +168,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const MENU = [
         {
             key: "warm", title: "Горячие блюда", items: [
-                { id: "warm_01", name: "Шашлык (Schaschlik)", desc: "Индейка, свинина или ягнёнок — маринованный и на гриле." },
+                { id: "warm_01", name: "Шашлык", desc: "Индейка, свинина или ягнёнок — маринованный и на гриле." },
                 { id: "warm_02", name: "Фаршированный перец", desc: "С мясной начинкой или вегетарианский вариант." },
-                { id: "warm_03", name: "Говяжий ростбиф/жаркое (Rinderbraten)", desc: "Томлёная говядина с классическим соусом." },
-                { id: "warm_04", name: "Котлеты из ягнёнка (Lammkoteletts)", desc: "С розмариновым картофелем и фасолью в беконе." },
-                { id: "warm_05", name: "Голубцы (Kohlrouladen / Golubzi)", desc: "Капуста с начинкой мясо+рис в томатном соусе." },
+                { id: "warm_03", name: "Говяжий ростбиф/жаркое", desc: "Томлёная говядина с классическим соусом." },
+                { id: "warm_04", name: "Котлеты из ягнёнка", desc: "С розмариновым картофелем и фасолью в беконе." },
+                { id: "warm_05", name: "Голубцы", desc: "Капуста с начинкой мясо+рис в томатном соусе." },
                 { id: "warm_06", name: "Куриный шницель (хрустящий)", desc: "Классическая панировка, золотистая корочка." },
                 { id: "warm_07", name: "Куриная грудка в грибном соусе", desc: "Нежная грудка в сливочном шампиньонном соусе." },
-                { id: "warm_08", name: "Кёфте / фрикадельки (Köfte / Frikadellen)", desc: "Ориентальные или классические специи." },
-                { id: "warm_09", name: "Плов (Plov)", desc: "Рис с морковью и мясом." },
-                { id: "warm_10", name: "Касселер с квашеной капустой (Kassler)", desc: "Сытно и по-традиционному." },
+                { id: "warm_08", name: "Кёфте / фрикадельки", desc: "Ориентальные или классические специи." },
+                { id: "warm_09", name: "Плов", desc: "Рис с морковью и мясом." },
+                { id: "warm_10", name: "Касселер с квашеной капустой", desc: "Сытно и по-традиционному." },
                 { id: "warm_11", name: "Куриные рулетики со шпинатом под беарнез", desc: "Сытная начинка + нежный соус." },
                 { id: "warm_12", name: "Утиная грудка с апельсиновым соусом", desc: "Фруктово-ароматная классика для особых случаев." },
                 { id: "warm_13", name: "Картофельный гратен / пюре", desc: "Сливочные гарниры-классики." },
-                { id: "warm_14", name: "Китайская лапша с овощами (vegan)", desc: "Лёгкая, ароматная, свежая." },
-                { id: "warm_15", name: "Кальмары фри (Calamari)", desc: "Хрустящие, нежные, с дип-соусом." },
+                { id: "warm_14", name: "Китайская лапша с овощами", desc: "Лёгкая, ароматная, свежая." },
+                { id: "warm_15", name: "Кальмары фри", desc: "Хрустящие, нежные, с дип-соусом." },
                 { id: "warm_16", name: "Креветки на гриле", desc: "Ароматный маринад, лёгкий гриль." },
                 { id: "warm_17", name: "Фасоль в беконе", desc: "Обжаренная фасоль в беконе — яркий гарнир." },
-                { id: "warm_18", name: "Рис или шпецле (Spätzle)", desc: "Гарнир к мясу или рыбе." },
+                { id: "warm_18", name: "Рис или шпецле", desc: "Гарнир к мясу или рыбе." },
                 { id: "warm_19", name: "Овощи по-средиземноморски", desc: "Гриль, оливковое масло, травы." },
                 { id: "warm_20", name: "Овощи под соусом голландез", desc: "Тушёные/на пару с кремовым соусом." },
                 { id: "warm_21", name: "Лосось в сливочно-травяном соусе", desc: "Нежное филе в кремовом соусе с травами." },
@@ -195,18 +195,18 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             key: "cold", title: "Холодные закуски / плато", items: [
                 { id: "cold_01", name: "Баклажаны слоями с томатами", desc: "Слоёная подача, ароматный маринад." },
-                { id: "cold_02", name: "Томат–моцарелла (Caprese)", desc: "Классика с базиликом и бальзамиком." },
+                { id: "cold_02", name: "Томат–моцарелла", desc: "Классика с базиликом и бальзамиком." },
                 { id: "cold_03", name: "Сурими", desc: "Подача в свежем виде или как канапе." },
                 { id: "cold_04", name: "Сурими фри в хрустящей панировке", desc: "Хрустящая закуска из морепродуктов." },
                 { id: "cold_05", name: "Фаршированные яйца", desc: "Домашняя нежная начинка." },
                 { id: "cold_06", name: "Креветки в картофельной «нить-панировке»", desc: "Хрустяще, эффектно, красиво на столе." },
                 { id: "cold_07", name: "Антипасти (вариации)", desc: "Средиземноморский микс овощей и сыров." },
-                { id: "cold_08", name: "Долма (Sarma) — виноградные листья", desc: "Мягкая специя, по желанию vegan." },
+                { id: "cold_08", name: "Долма — виноградные листья", desc: "Мягкая специя, по желанию vegan." },
                 { id: "cold_09", name: "Суши (ассорти)", desc: "Свежая, креативная подача." },
                 { id: "cold_10", name: "Багет с лососем", desc: "Свежая намазка, укроп, лосось." },
                 { id: "cold_11", name: "Авокадо-крем / хумус", desc: "Кремовые дипы, идеальны как старт." },
                 { id: "cold_12", name: "Креветочный крем", desc: "Нежный дип/намазка с морским вкусом." },
-                { id: "cold_13", name: "Канапе (Kanapee / Häppchen)", desc: "Элегантные мини-закуски." },
+                { id: "cold_13", name: "Канапе", desc: "Элегантные мини-закуски." },
                 { id: "cold_14", name: "Рыбное плато", desc: "Масляная рыба, копчёный лосось, сельдь, скумбрия." },
                 { id: "cold_15", name: "Сырно-мясная тарелка", desc: "Подборка сыров и ветчинных деликатесов." }
             ]
@@ -230,8 +230,8 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             key: "dessert", title: "Десерты", items: [
-                { id: "dessert_01", name: "Десерт с профитролями (Windbeutel)", desc: "С ванильным кремом и сливками." },
-                { id: "dessert_02", name: "Десерт с печеньем Lotus", desc: "Кремовый десерт с карамельными нотами." },
+                { id: "dessert_01", name: "Десерт с профитролями", desc: "С ванильным кремом и сливками." },
+                { id: "dessert_02", name: "Десерт с печеньем", desc: "Кремовый десерт с карамельными нотами." },
                 { id: "dessert_03", name: "Мусс из шоколада", desc: "Воздушный шоколадный крем." },
                 { id: "dessert_04", name: "Панна-котта", desc: "Классика с фруктовым соусом." },
                 { id: "dessert_05", name: "Тирамису", desc: "Маскарпоне, кофе, какао." },
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 { id: "candy_05", name: "Мармеладные мишки (Bärenköpfe)", desc: "Для детей и взрослых." },
                 { id: "candy_06", name: "Мармеладные шнурки", desc: "Разноцветный микс." },
                 { id: "candy_07", name: "Мармелад (Schnuckies)", desc: "Фруктовый сюрприз." },
-                { id: "candy_08", name: "Шоколад (вариации)", desc: "Белый, молочный, тёмный." }
+                { id: "candy_08", name: "Фрукты в шоколаде (вариации)", desc: "Белый, молочный, тёмный." }
             ]
         }
     ];
@@ -318,21 +318,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
             wrap.innerHTML = `
         <button type="button"
-          class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition ${shouldOpen ? "acc-open" : ""}"
-          aria-expanded="${shouldOpen ? "true" : "false"}" data-acc="${esc(cat.key)}">
-          <div class="flex items-center gap-3">
+        class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition ${shouldOpen ? "acc-open" : ""}"
+        aria-expanded="${shouldOpen ? "true" : "false"}" data-acc="${esc(cat.key)}">
+        <div class="flex items-center gap-3">
             <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
             <span class="text-sm font-semibold text-gray-900">${esc(cat.title)}</span>
             <span class="text-[11px] px-2 py-0.5 rounded-full border ${ui.chip}">
-              ${items.length} позиций
+            ${items.length} позиций
             </span>
-          </div>
-          <div class="flex items-center gap-2">
+            </div>
+            <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-gray-700" data-acc-label>${shouldOpen ? "Скрыть" : "Показать"}</span>
             <svg class="h-4 w-4 text-gray-600 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
-          </div>
+            </div>
         </button>
         <div class="p-4 space-y-2 ${shouldOpen ? "" : "hidden"} bg-white" data-panel="${esc(cat.key)}"></div>
       `;
@@ -347,20 +347,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
 
                 row.innerHTML = `
-          <div class="min-w-0">
+            <div class="min-w-0">
             <div class="text-sm font-medium text-gray-900 leading-snug break-words">
-              ${esc(item.name)}
+            ${esc(item.name)}
             </div>
             ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
-          </div>
-          <button type="button"
+            </div>
+            <button type="button"
             class="shrink-0 grid place-items-center h-9 w-9 rounded-full border transition
-              btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
+            btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
             data-toggle="${esc(item.id)}"
             aria-label="${isAdded ? "Убрать из выбора" : "Добавить в выбор"}"
             title="${isAdded ? "Убрать" : "Добавить"}">
             <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
-          </button>
+            </button>
         `;
                 panel.appendChild(row);
             });
@@ -449,12 +449,12 @@ document.addEventListener("DOMContentLoaded", () => {
             groupWrap.className = "rounded-2xl border border-gray-200 bg-white/90 overflow-hidden";
 
             groupWrap.innerHTML = `
-        <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
-          <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
-          <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
-        </div>
-        <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
-      `;
+            <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
+            <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
+            <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
+            </div>
+            <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
+        `;
 
             const body = groupWrap.querySelector(`[data-group="${cat.key}"]`);
 
@@ -463,16 +463,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.className = "rounded-xl border border-gray-200 bg-white p-3 shadow-sm";
 
                 card.innerHTML = `
-          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start justify-between gap-2">
             <div class="min-w-0">
-              <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
+            <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
             </div>
             <button type="button"
-              class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
-              data-remove="${esc(x.id)}">
-              Убрать
+            class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
+            data-remove="${esc(x.id)}">
+            Убрать
             </button>
-          </div>
+            </div>
         `;
 
                 body.appendChild(card);
@@ -518,7 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSelected();
 
     /* =========================================================
-          Wizard Stepper Logic (4 шага)
+            Wizard Stepper Logic (4 шага)
     ========================================================== */
     let current = 1;
     const LAST_STEP = 4;
@@ -590,7 +590,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* =========================================================
-          Базовая валидация (всегда):
+            Базовая валидация (всегда):
             - Сообщение обязательно
             - E-mail обязательно
             - AGB/Datenschutz обязательно
@@ -636,7 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Email Body Builder (Сообщение всегда первым!)
+            Email Body Builder (Сообщение всегда первым!)
     ========================================================== */
     function getVal(id) {
         const el = document.getElementById(id);
@@ -744,14 +744,14 @@ ${selectedText || "—"}
     }
 
     /* =========================================================
-          EmailJS Init
+            EmailJS Init
     ========================================================== */
     if (window.emailjs && EMAILJS_PUBLIC_KEY) {
         try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (e) { /* ignore */ }
     }
 
     /* =========================================================
-          Submit (Quick + Wizard одно форма)
+            Submit (Quick + Wizard одно форма)
     ========================================================== */
     let sending = false;
 

@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 { id: "candy_05", name: "Fruchtgummi Bärenköpfe", desc: "Für kleine und große Gäste." },
                 { id: "candy_06", name: "Fruchtgummi Schnüre", desc: "Bunte Vielfalt." },
                 { id: "candy_07", name: "Fruchtgummi Schnuckies", desc: "Fruchtige Überraschung." },
-                { id: "candy_08", name: "Schokolade in Variationen", desc: "Weiße, Vollmilch, Zartbitter." }
+                { id: "candy_08", name: "Früchte in Schokolade", desc: "Weiße, Vollmilch, Zartbitter." }
             ]
         }
     ];
@@ -370,21 +370,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
             wrap.innerHTML = `
         <button type="button"
-          class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition"
-          aria-expanded="${isOpen ? "true" : "false"}" data-acc="${esc(cat.key)}">
-          <div class="flex items-center gap-3">
+        class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition"
+        aria-expanded="${isOpen ? "true" : "false"}" data-acc="${esc(cat.key)}">
+        <div class="flex items-center gap-3">
             <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
             <span class="text-sm font-semibold text-gray-900">${esc(cat.title)}</span>
             <span class="text-[11px] px-2 py-0.5 rounded-full border ${ui.chip}">
-              ${items.length} Gerichte
+            ${items.length} Gerichte
             </span>
-          </div>
-          <div class="flex items-center gap-2">
+        </div>
+        <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-gray-700" data-acc-label>${isOpen ? "Verbergen" : "Anzeigen"}</span>
             <svg class="h-4 w-4 text-gray-600 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
-          </div>
+        </div>
         </button>
         <div class="p-4 space-y-2 ${isOpen ? "" : "hidden"} bg-white" data-panel="${esc(cat.key)}"></div>
       `;
@@ -398,18 +398,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 row.className = "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
 
                 row.innerHTML = `
-          <div class="min-w-0">
+        <div class="min-w-0">
             <div class="text-sm font-medium text-gray-900 leading-snug break-words">${esc(item.name)}</div>
             ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
-          </div>
+        </div>
 
-          <button type="button"
+        <button type="button"
             class="shrink-0 grid place-items-center h-9 w-9 rounded-full border transition btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
             data-toggle="${esc(item.id)}"
             aria-label="${isAdded ? "Auswahl entfernen" : "Zur Auswahl hinzufügen"}"
             title="${isAdded ? "Entfernen" : "Hinzufügen"}">
             <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
-          </button>
+        </button>
         `;
                 panel.appendChild(row);
             });
