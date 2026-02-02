@@ -768,7 +768,7 @@ ${comment || "—"}
             EmailJS Init
     ========================================================== */
     if (window.emailjs) {
-        try { emailjs.init("vfmomNKrMxrf2xDW"); } catch (e) { /* ignore */ }
+        try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (e) { /* ignore */ }
     }
 
     /* =========================================================
@@ -826,7 +826,12 @@ ${comment || "—"}
         const submitBtns = form.querySelectorAll('button[type="submit"], #btnQuickSend');
         submitBtns.forEach(b => { try { b.disabled = true; } catch (_) { } });
 
-        emailjs.sendForm("service_75biswm", "template_fuxgrlb", form)
+        emailjs.sendForm(
+            "service_75biswm",
+            "template_fuxgrlb",
+            form,
+            { publicKey: "vfmomNKrMxrf2xqDW" }
+        )
             .then(() => {
                 const ok = document.getElementById("formMsg");
                 if (ok) ok.classList.remove("hidden");

@@ -764,82 +764,83 @@ ${comment || "—"}
         return { preview, emailBody };
     }
 
-    /* =========================================================
-            EmailJS Init
-    ========================================================== */
-    if (window.emailjs) {
-        try { emailjs.init("vfmomNKrMxrf2xDW"); } catch (e) { /* ignore */ }
+/* =========================================================
+        EmailJS Init
+========================================================== */
+if (window.emailjs) {
+    try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (e) { /* ignore */ }
+}
+
+/* =========================================================
+        Submit (Quick + Wizard über ein Formular)
+========================================================== */
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Honeypot
+    if (form.honeypot && form.honeypot.value) return;
+
+    // Minimal timing check (3 sec)
+    const t0 = Number(document.getElementById("cf_started_at")?.value || "0");
+    if (t0 && (Date.now() - t0) < 3000) return;
+
+    // Basis-Checks (Nachricht + E-Mail + Datenschutz)
+    if (!validateBase()) return;
+
+    // Wenn Wizard offen: Event Step 1 muss ok sein
+    if (wizardOpen) {
+        if (!validateWizardStep(1)) return;
     }
 
-    /* =========================================================
-            Submit (Quick + Wizard über ein Formular)
-    ========================================================== */
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    const { emailBody } = buildStructuredEmail();
 
-        // Honeypot
-        if (form.honeypot && form.honeypot.value) return;
+    // final values for template
+    const finalName = (getVal("name2") || getVal("name") || "Website Anfrage").trim();
+    const finalEmail = (getVal("email2") || getVal("email") || "").trim();
 
-        // Minimal timing check (3 sec)
-        const t0 = Number(document.getElementById("cf_started_at")?.value || "0");
-        if (t0 && (Date.now() - t0) < 3000) return;
+    const subj =
+        wizardOpen
+            ? `Vilana Anfrage: ${getVal("cf-eventType") || "Event"} (${getVal("cf-date") || "Datum"})`
+            : `Vilana Anfrage: Nachricht / Info`;
 
-        // Basis-Checks (Nachricht + E-Mail + Datenschutz)
-        if (!validateBase()) return;
+    if (fromNameHidden) fromNameHidden.value = finalName;
+    if (replyToHidden) replyToHidden.value = finalEmail;
+    if (subjectHidden) subjectHidden.value = subj;
+    if (msgHidden) msgHidden.value = emailBody;
 
-        // Wenn Wizard offen: Event Step 1 muss ok sein
-        if (wizardOpen) {
-            if (!validateWizardStep(1)) return;
-        }
+    if (!window.emailjs || !emailjs.sendForm) {
+        alert("EmailJS ist nicht geladen. Bitte prüfen: Internet/Script-Blocker.");
+        return;
+    }
 
-        const { emailBody } = buildStructuredEmail();
+    emailjs.sendForm(
+        "service_75biswm",
+        "template_fuxgrlb",
+        form,
+        { publicKey: "vfmomNKrMxrf2xqDW" }
+    )
+        .then(() => {
+            const ok = document.getElementById("formMsg");
+            if (ok) ok.classList.remove("hidden");
+            toast("Gesendet ✓");
 
-        // final values for template
-        const finalName = (getVal("name2") || getVal("name") || "Website Anfrage").trim();
-        const finalEmail = (getVal("email2") || getVal("email") || "").trim();
+            form.reset();
+            if (startedAt) startedAt.value = String(Date.now());
 
-        const subj =
-            wizardOpen
-                ? `Vilana Anfrage: ${getVal("cf-eventType") || "Event"} (${getVal("cf-date") || "Datum"})`
-                : `Vilana Anfrage: Nachricht / Info`;
+            Object.keys(selected).forEach(k => delete selected[k]);
+            renderSelected();
+            renderCategories("");
+            setAdvancedMenu(false);
 
-        if (fromNameHidden) fromNameHidden.value = finalName;
-        if (replyToHidden) replyToHidden.value = finalEmail;
-        if (subjectHidden) subjectHidden.value = subj;
-        if (msgHidden) msgHidden.value = emailBody;
-
-        if (!window.emailjs || !emailjs.sendForm) {
-            alert("EmailJS ist nicht geladen. Bitte prüfen: Internet/Script-Blocker.");
-            return;
-        }
-
-        emailjs.sendForm("service_75biswm", "template_fuxgrlb", form)
-            .then(() => {
-                const ok = document.getElementById("formMsg");
-                if (ok) ok.classList.remove("hidden");
-                toast("Gesendet ✓");
-
-                form.reset();
-                if (startedAt) startedAt.value = String(Date.now());
-
-                Object.keys(selected).forEach(k => delete selected[k]);
-                renderSelected();
-                renderCategories("");
-                setAdvancedMenu(false);
-
-                syncService();
-                syncCleanup();
-                setWizard(false);
-            })
-            .catch((err) => {
-                alert("Fehler beim Senden: " + (err && err.text ? err.text : err));
-            });
-    });
-
-    if (wizardWrap) {
-        wizardWrap.addEventListener("change", () => {
-            if (current === 5 && summaryBox) summaryBox.textContent = buildStructuredEmail().preview;
+            syncService();
+            syncCleanup();
+            setWizard(false);
+        })
+        .catch((err) => {
+            alert("Fehler beim Senden: " + (err && err.text ? err.text : err));
         });
-    }
-
+});
+    /* =========================================================
+            Ende Script
+    ========================================================== */
 });
