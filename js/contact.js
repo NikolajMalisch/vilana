@@ -387,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         </button>
         <div class="p-4 space-y-2 ${isOpen ? "" : "hidden"} bg-white" data-panel="${esc(cat.key)}"></div>
-      `;
+        `;
 
             const panel = wrap.querySelector(`[data-panel="${cat.key}"]`);
 
@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSelected();
 
     /* =========================================================
-          Wizard Validation
+            Wizard Validation
     ========================================================== */
     function validateWizardStep(n) {
         const block = steps.find(s => String(s.getAttribute("data-step")) === String(n));
@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Base Validation (immer)
+            Base Validation (immer)
     ========================================================== */
     function validateBase() {
         // Nachricht Pflicht
@@ -647,7 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Email Body Builder (Nachricht immer zuerst!)
+            Email Body Builder (Nachricht immer zuerst!)
     ========================================================== */
     function getVal(id) {
         const el = document.getElementById(id);
@@ -760,14 +760,14 @@ ${comment || "—"}
     }
 
     /* =========================================================
-          EmailJS Init
+            EmailJS Init
     ========================================================== */
     if (window.emailjs) {
         try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (e) { /* ignore */ }
     }
 
     /* =========================================================
-          Submit (Quick + Wizard)
+            Submit (Quick + Wizard)
     ========================================================== */
     let sending = false;
 
