@@ -1,18 +1,19 @@
 "use strict";
 
 /**
- * Vilana Contact Form (RU)
+ * Vilana Contact Form (RU) — v2 (без шага "Контакт")
  * - Быстрая заявка (Сообщение + E-mail обязательно)
  * - Wizard (Расширенно) со Stepper + выбором меню
+ * - 4 шага: 1 Event → 2 Menü → 3 Optionen → 4 Итог
  * - EmailJS отправка (sendForm)
  * - Anti-Spam: Honeypot + timing
- * - Menu: toggle item (клик добавить/убрать)
+ * - Menu: toggle item (клик добавить/убрать) + сохранение состояния аккордеона
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================================
-            Мелкие helpers
+          Мелкие helpers
     ========================================================== */
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-            Burger Menu
+          Burger Menu
     ========================================================== */
     const btn = document.getElementById("menuToggle");
     const menu = document.getElementById("mobileMenu");
@@ -56,13 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-            Anti-bot timing start
+          Anti-bot timing start
     ========================================================== */
     const startedAt = document.getElementById("cf_started_at");
     if (startedAt) startedAt.value = String(Date.now());
 
     /* =========================================================
-            Form refs
+          Form refs
     ========================================================== */
     const form = document.getElementById("contactForm");
     if (!form) return;
@@ -75,20 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email");      // обязательный
     const phone = document.getElementById("cf-phone");   // optional
 
-    // Wizard contact (Step 4, optional – используется, если заполнено)
-    const name2 = document.getElementById("name2");
-    const email2 = document.getElementById("email2");
-    const phone2 = document.getElementById("phone2");
-
     // Wizard toggle
     const btnToggleWizard = document.getElementById("btnToggleWizard");
     const wizardWrap = document.getElementById("wizardWrap");
-    const btnQuickSend = document.getElementById("btnQuickSend");
+    const btnSubmitQuick = document.getElementById("btnSubmitQuick");
     const btnCloseWizard = document.getElementById("btnCloseWizard");
 
     // Wizard steps
     const steps = wizardWrap ? Array.from(wizardWrap.querySelectorAll("[data-step]")) : [];
-    const dots = [1, 2, 3, 4, 5].map(n => document.getElementById("stepDot" + n));
+    const dots = [1, 2, 3, 4].map(n => document.getElementById("stepDot" + n));
     const btnBack = document.getElementById("btnBack");
     const btnNext = document.getElementById("btnNext");
     const summaryBox = document.getElementById("summaryBox");
@@ -121,14 +117,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const cleanupDetails = document.getElementById("cleanupDetails");
 
     /* =========================================================
-            Wizard open/close
+          EmailJS config (из data-атрибутов формы)
+    ========================================================== */
+    const EMAILJS_PUBLIC_KEY = (form.dataset.emailjsPublicKey || "").trim();
+    const EMAILJS_TEMPLATE_ID = (form.dataset.emailjsTemplateId || "").trim();
+    const EMAILJS_SERVICE_ID = (form.dataset.emailjsServiceId || "").trim();
+
+    /* =========================================================
+          Wizard open/close
     ========================================================== */
     let wizardOpen = false;
 
     function setWizard(open) {
         wizardOpen = open;
         if (wizardWrap) wizardWrap.classList.toggle("hidden", !open);
-        if (btnQuickSend) btnQuickSend.classList.toggle("hidden", open);
+        if (btnSubmitQuick) btnSubmitQuick.classList.toggle("hidden", open);
 
         if (btnToggleWizard) {
             btnToggleWizard.textContent = open ? "Расширенно открыто" : "Расширенно (опционально)";
@@ -143,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnCloseWizard) btnCloseWizard.addEventListener("click", () => setWizard(false));
 
     /* =========================================================
-            Опции Details (Service/Cleanup) – show/hide
+          Опции Details (Service/Cleanup) – show/hide
     ========================================================== */
     function syncService() {
         if (!serviceDetails) return;
@@ -160,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     syncCleanup();
 
     /* =========================================================
-            MENU DATA (RU, полное меню)
+          MENU DATA (RU, полное меню)
     ========================================================== */
     const MENU = [
         {
@@ -251,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     /* =========================================================
-            Category UI (Tailwind classes)
+          Category UI (Tailwind classes)
     ========================================================== */
     const CAT_UI = {
         warm: { chip: "bg-amber-50 text-amber-900 border-amber-200", rail: "border-amber-400", head: "from-amber-50/80 to-white", dot: "bg-amber-400" },
@@ -265,9 +268,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-            Меню — состояние выбора (без количеств/ID)
+          Меню — состояние выбора (без количеств/ID)
     ========================================================== */
-    const selected = {}; // id -> { name, catKey }
+    const selected = {};       // id -> { name, catKey }
+    const openState = {};      // catKey -> boolean (сохраняем состояние аккордеона)
     let advancedMenuOpen = false;
 
     function setAdvancedMenu(open) {
@@ -288,8 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-            Render категорий (Accordion) + выбор
-            - click on button[data-toggle] => add/remove
+          Render категорий (Accordion) + выбор
+          - сохраняем open/close состояние категорий в openState
     ========================================================== */
     function renderCategories(query = "") {
         if (!menuCategoriesEl) return;
@@ -304,29 +308,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const ui = catUI(cat.key);
 
+            // если есть поиск — можно раскрывать категории по умолчанию (чтобы результат был виден)
+            const shouldOpen = (typeof openState[cat.key] === "boolean")
+                ? openState[cat.key]
+                : (q ? true : false);
+
             const wrap = document.createElement("div");
             wrap.className = `rounded-2xl border border-gray-200 overflow-hidden bg-white border-l-4 ${ui.rail} shadow-soft`;
 
             wrap.innerHTML = `
-            <button type="button"
-            class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition"
-            aria-expanded="false" data-acc="${esc(cat.key)}">
-            <div class="flex items-center gap-3">
+        <button type="button"
+          class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition ${shouldOpen ? "acc-open" : ""}"
+          aria-expanded="${shouldOpen ? "true" : "false"}" data-acc="${esc(cat.key)}">
+          <div class="flex items-center gap-3">
             <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
             <span class="text-sm font-semibold text-gray-900">${esc(cat.title)}</span>
             <span class="text-[11px] px-2 py-0.5 rounded-full border ${ui.chip}">
-            ${items.length} позиций
+              ${items.length} позиций
             </span>
-            </div>
-            <div class="flex items-center gap-2">
-            <span class="text-xs font-semibold text-gray-700" data-acc-label>Показать</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-gray-700" data-acc-label>${shouldOpen ? "Скрыть" : "Показать"}</span>
             <svg class="h-4 w-4 text-gray-600 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
-            </div>
-            </button>
-            <div class="p-4 space-y-2 hidden bg-white" data-panel="${esc(cat.key)}"></div>
-        `;
+          </div>
+        </button>
+        <div class="p-4 space-y-2 ${shouldOpen ? "" : "hidden"} bg-white" data-panel="${esc(cat.key)}"></div>
+      `;
 
             const panel = wrap.querySelector(`[data-panel="${cat.key}"]`);
 
@@ -338,22 +347,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
 
                 row.innerHTML = `
-                <div class="min-w-0">
-                <div class="text-sm font-medium text-gray-900 leading-snug break-words">
-                ${esc(item.name)}
-                </div>
-                ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
-                </div>
-                <button type="button"
-                class="shrink-0 grid place-items-center
-                h-9 w-9 rounded-full border transition
-                btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
-                data-toggle="${esc(item.id)}"
-                aria-label="${isAdded ? "Убрать из выбора" : "Добавить в выбор"}"
-                title="${isAdded ? "Убрать" : "Добавить"}">
-                <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
-                </button>
-            `;
+          <div class="min-w-0">
+            <div class="text-sm font-medium text-gray-900 leading-snug break-words">
+              ${esc(item.name)}
+            </div>
+            ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
+          </div>
+          <button type="button"
+            class="shrink-0 grid place-items-center h-9 w-9 rounded-full border transition
+              btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
+            data-toggle="${esc(item.id)}"
+            aria-label="${isAdded ? "Убрать из выбора" : "Добавить в выбор"}"
+            title="${isAdded ? "Убрать" : "Добавить"}">
+            <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
+          </button>
+        `;
                 panel.appendChild(row);
             });
 
@@ -372,6 +380,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     const label = accBtn.querySelector("[data-acc-label]");
                     if (label) label.textContent = isOpen ? "Показать" : "Скрыть";
                     accBtn.classList.toggle("acc-open", !isOpen);
+
+                    openState[key] = !isOpen;
                     return;
                 }
 
@@ -381,7 +391,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     const id = tglBtn.getAttribute("data-toggle");
                     if (!id) return;
 
-                    // remove if exists
                     if (selected[id]) {
                         delete selected[id];
                         renderSelected();
@@ -390,7 +399,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         return;
                     }
 
-                    // add if not exists
                     let found = null, foundCatKey = null;
                     for (const c of MENU) {
                         const x = c.items.find(it => it.id === id);
@@ -441,12 +449,12 @@ document.addEventListener("DOMContentLoaded", () => {
             groupWrap.className = "rounded-2xl border border-gray-200 bg-white/90 overflow-hidden";
 
             groupWrap.innerHTML = `
-            <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
-            <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
-            <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
-            </div>
-            <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
-        `;
+        <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
+          <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
+          <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
+        </div>
+        <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
+      `;
 
             const body = groupWrap.querySelector(`[data-group="${cat.key}"]`);
 
@@ -455,16 +463,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.className = "rounded-xl border border-gray-200 bg-white p-3 shadow-sm";
 
                 card.innerHTML = `
-            <div class="flex items-start justify-between gap-2">
+          <div class="flex items-start justify-between gap-2">
             <div class="min-w-0">
-            <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
+              <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
             </div>
             <button type="button"
-            class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
-            data-remove="${esc(x.id)}">
-            Убрать
+              class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
+              data-remove="${esc(x.id)}">
+              Убрать
             </button>
-        </div>
+          </div>
         `;
 
                 body.appendChild(card);
@@ -510,9 +518,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSelected();
 
     /* =========================================================
-            Wizard Stepper Logic
+          Wizard Stepper Logic (4 шага)
     ========================================================== */
     let current = 1;
+    const LAST_STEP = 4;
 
     function setDots(n) {
         dots.forEach((d, i) => {
@@ -534,11 +543,12 @@ document.addEventListener("DOMContentLoaded", () => {
             btnBack.classList.toggle("opacity-50", isFirst);
             btnBack.classList.toggle("cursor-not-allowed", isFirst);
         }
-        if (btnNext) btnNext.classList.toggle("hidden", n === 5);
+
+        if (btnNext) btnNext.classList.toggle("hidden", n === LAST_STEP);
 
         setDots(n);
 
-        if (n === 5 && summaryBox) {
+        if (n === LAST_STEP && summaryBox) {
             summaryBox.textContent = buildStructuredEmail().preview;
         }
     }
@@ -575,17 +585,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnBack) btnBack.addEventListener("click", () => { if (current > 1) showStep(current - 1); });
     if (btnNext) btnNext.addEventListener("click", () => {
         if (!validateWizardStep(current)) return;
-        showStep(current + 1);
+        const next = Math.min(current + 1, LAST_STEP);
+        showStep(next);
     });
 
     /* =========================================================
-            Базовая валидация (всегда):
-                - Сообщение обязательно
-                - E-mail обязательно (независимо от Wizard)
-                - Datenschutz/AGB обязательно
+          Базовая валидация (всегда):
+            - Сообщение обязательно
+            - E-mail обязательно
+            - AGB/Datenschutz обязательно
     ========================================================== */
     function validateBase() {
-        // Сообщение
         if (!quickMessage || !quickMessage.value.trim()) {
             if (quickMessage) {
                 quickMessage.classList.add("field-error");
@@ -597,42 +607,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         quickMessage.classList.remove("field-error");
 
-        // E-mail: либо email2, либо email
-        const e2 = (email2 && email2.value) ? email2.value.trim() : "";
-        const e1 = (email && email.value) ? email.value.trim() : "";
-        const finalEmail = e2 || e1;
-
+        const finalEmail = (email && email.value ? email.value.trim() : "");
         if (!finalEmail) {
-            const target = (wizardOpen && email2) ? email2 : email;
-            if (target) {
-                target.classList.add("field-error");
-                target.focus();
-                target.reportValidity?.();
+            if (email) {
+                email.classList.add("field-error");
+                email.focus();
+                email.reportValidity?.();
             }
             toast("Пожалуйста, укажите e-mail.");
             return false;
         }
 
-        // Validierung Quick
-        if (!e2 && email && !email.checkValidity()) {
+        if (email && !email.checkValidity()) {
             email.classList.add("field-error");
             email.focus();
             email.reportValidity();
             return false;
         }
-
-        // Validierung Wizard email2
-        if (e2 && email2 && !email2.checkValidity()) {
-            email2.classList.add("field-error");
-            email2.focus();
-            email2.reportValidity();
-            return false;
-        }
-
         if (email) email.classList.remove("field-error");
-        if (email2) email2.classList.remove("field-error");
 
-        // Datenschutz Pflicht
         if (privacy && !privacy.checked) {
             toast("Пожалуйста, примите AGB и Datenschutz.");
             privacy.focus();
@@ -643,7 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-            Email Body Builder (Сообщение всегда первым!)
+          Email Body Builder (Сообщение всегда первым!)
     ========================================================== */
     function getVal(id) {
         const el = document.getElementById(id);
@@ -653,17 +646,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function buildStructuredEmail() {
         const message = getVal("cf_message");
 
-        const qName = getVal("name");
-        const qEmail = getVal("email");
-        const qPhone = getVal("cf-phone");
-
-        const wName = getVal("name2");
-        const wEmail = getVal("email2");
-        const wPhone = getVal("phone2");
-
-        const finalName = wName || qName || "—";
-        const finalEmail = wEmail || qEmail || "—";
-        const finalPhone = wPhone || qPhone || "—";
+        const finalName = getVal("name") || "—";
+        const finalEmail = getVal("email") || "—";
+        const finalPhone = getVal("cf-phone") || "—";
 
         const eventType = getVal("cf-eventType");
         const guests = getVal("cf-guests");
@@ -674,7 +659,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuMode = (menuModeHidden?.value || "").trim();
         const allergies = getVal("cf-allergies");
 
-        // предпочтения (name-ы оставлены как в DE, чтобы не менять HTML)
         const pref = [];
         if (form.querySelector('input[name="pref_meat2"]')?.checked) pref.push("Мясо");
         if (form.querySelector('input[name="pref_fish2"]')?.checked) pref.push("Рыба");
@@ -687,9 +671,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const optBesteck = form.querySelector('input[name="opt_besteck"]')?.checked ? "Да" : "Нет";
         const optGlaeser = form.querySelector('input[name="opt_glaeser"]')?.checked ? "Да" : "Нет";
         const optServiceVal = (optService && optService.checked) ? "Да" : "Нет";
-
         const cleanupVal = (optCleanup && optCleanup.checked) ? "Да" : "Нет";
-        const comment = getVal("cf-comment");
 
         const preview =
             `СООБЩЕНИЕ
@@ -756,23 +738,20 @@ ${selectedText || "—"}
 Персонал: ${optServiceVal}
 Уборка/мойка/сервис: ${cleanupVal}
 
-[ДОПОЛНИТЕЛЬНО]
-${comment || "—"}
-
 === КОНЕЦ ===
 `;
         return { preview, emailBody };
     }
 
     /* =========================================================
-            EmailJS Init
+          EmailJS Init
     ========================================================== */
-    if (window.emailjs) {
-        try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (e) { /* ignore */ }
+    if (window.emailjs && EMAILJS_PUBLIC_KEY) {
+        try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (e) { /* ignore */ }
     }
 
     /* =========================================================
-            Submit (Quick + Wizard одно форма)
+          Submit (Quick + Wizard одно форма)
     ========================================================== */
     let sending = false;
 
@@ -804,8 +783,8 @@ ${comment || "—"}
         const { emailBody } = buildStructuredEmail();
 
         // final values for template
-        const finalName = (getVal("name2") || getVal("name") || "Заявка с сайта").trim();
-        const finalEmail = (getVal("email2") || getVal("email") || "").trim();
+        const finalName = (getVal("name") || "Заявка с сайта").trim();
+        const finalEmail = (getVal("email") || "").trim();
 
         const subj =
             wizardOpen
@@ -822,15 +801,20 @@ ${comment || "—"}
             return;
         }
 
+        if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+            alert("EmailJS не настроен в HTML. Проверь data-emailjs-public-key / data-emailjs-service-id / data-emailjs-template-id на <form>.");
+            return;
+        }
+
         sending = true;
-        const submitBtns = form.querySelectorAll('button[type="submit"], #btnQuickSend');
+        const submitBtns = form.querySelectorAll('button[type="submit"], #btnSubmitQuick, #btnSubmitWizard');
         submitBtns.forEach(b => { try { b.disabled = true; } catch (_) { } });
 
         emailjs.sendForm(
-            "service_75biswm",
-            "template_fuxgrlb",
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
             form,
-            { publicKey: "vfmomNKrMxrf2xqDW" }
+            { publicKey: EMAILJS_PUBLIC_KEY }
         )
             .then(() => {
                 const ok = document.getElementById("formMsg");
@@ -860,7 +844,7 @@ ${comment || "—"}
 
     if (wizardWrap) {
         wizardWrap.addEventListener("change", () => {
-            if (current === 5 && summaryBox) summaryBox.textContent = buildStructuredEmail().preview;
+            if (current === LAST_STEP && summaryBox) summaryBox.textContent = buildStructuredEmail().preview;
         });
     }
 
