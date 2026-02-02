@@ -249,9 +249,11 @@
                 <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:vilana-event@outlook.de"
                         class="text-amber-700">vilana-event@outlook.de</a></p>
                 <p class="text-lg"><strong>Телефон:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176
-                        5777 5996</a></p>
+                        5777
+                        5996</a></p>
                 <p class="text-lg"><strong>Телефон:</strong> <a href="tel:+4917642288707" class="text-amber-700">+49 176
-                        4228 8707</a></p>
+                        4228
+                        8707</a></p>
                 <p class="text-lg">
                     <strong>WhatsApp:</strong>
                     <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank"
@@ -281,9 +283,9 @@
                     tabindex="-1" />
                 <textarea name="message" id="cf-message-hidden" class="hidden-field" aria-hidden="true"></textarea>
 
-                    <!-- =========================================================
-                            SCHNELL (immer sichtbar): Nachricht zuerst
-                    ========================================================== -->
+                <!-- =========================================================
+              SCHNELL (immer sichtbar): Nachricht zuerst
+        ========================================================== -->
                 <section class="panel-quick p-5 sm:p-6 space-y-5">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
                         <div class="flex-1 min-w-0">
@@ -330,6 +332,7 @@
                             <label for="cf-phone" class="block text-gray-700 mb-2">Телефон (опционально)</label>
                             <input id="cf-phone" name="phone" type="tel"
                                 class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="+49 …" />
+                            ów
                         </div>
                     </div>
 
@@ -346,7 +349,8 @@
 
                     <!-- Schnell senden -->
                     <div class="flex justify-center pt-2">
-                        <button type="submit" id="btnSubmitQuick" class="btn-graphite py-2 px-10">
+                        <!-- важно: ID как в DE -->
+                        <button type="submit" id="btnQuickSend" class="btn-graphite py-2 px-10">
                             Отправить
                         </button>
                     </div>
@@ -357,7 +361,7 @@
                 </section>
 
                 <!-- =========================================================
-             ERWEITERT (Wizard / Stepper)
+              ERWEITERT (Wizard / Stepper)
         ========================================================== -->
                 <section id="wizardWrap" class="hidden mt-8">
 
@@ -370,7 +374,7 @@
                         </p>
                     </div>
 
-                    <!-- Stepper -->
+                    <!-- Stepper (4 Steps) — как в DE -->
                     <ol class="flex items-center justify-between gap-2 mb-6" aria-label="Шаги">
                         <li class="flex-1">
                             <div class="flex items-center gap-2">
@@ -397,13 +401,6 @@
                             <div class="flex items-center gap-2">
                                 <span id="stepDot4"
                                     class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">4</span>
-                                <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Контакт</span>
-                            </div>
-                        </li>
-                        <li class="flex-1">
-                            <div class="flex items-center gap-2">
-                                <span id="stepDot5"
-                                    class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">5</span>
                                 <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Итог</span>
                             </div>
                         </li>
@@ -412,11 +409,10 @@
                     <!-- Hidden: Menü Auswahl (für Mail) -->
                     <textarea name="menu_selected_text" id="menuSelectedText" class="hidden-field"
                         aria-hidden="true"></textarea>
-                    <input type="hidden" name="menu_mode" id="menuModeHidden"
-                        value="Нет выбора (Vilana предложит оптимально)" />
+                    <input type="hidden" name="menu_mode" id="menuModeHidden" value="Без выбора (Vilana предложит)" />
 
                     <!-- =========================
-               STEP 1: EVENT
+                STEP 1: EVENT
           ========================== -->
                     <section data-step="1" class="panel-event p-5 sm:p-6 space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -478,7 +474,7 @@
                     </section>
 
                     <!-- =========================
-               STEP 2: MENÜ (optional)
+                STEP 2: MENÜ (optional)
           ========================== -->
                     <section data-step="2" class="panel-menu p-5 sm:p-6 space-y-4 hidden">
 
@@ -493,14 +489,15 @@
                             <div class="mt-4">
                                 <label class="block text-gray-700 mb-2 font-semibold">Предпочтения (опционально)</label>
                                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+                                    <!-- value как в DE: Ja -->
                                     <label class="flex items-center gap-2"><input type="checkbox" name="pref_meat2"
-                                            value="Да" /> Мясо</label>
+                                            value="Ja" /> Мясо</label>
                                     <label class="flex items-center gap-2"><input type="checkbox" name="pref_fish2"
-                                            value="Да" /> Рыба</label>
+                                            value="Ja" /> Рыба</label>
                                     <label class="flex items-center gap-2"><input type="checkbox" name="pref_veg2"
-                                            value="Да" /> Вегетарианское</label>
+                                            value="Ja" /> Вегетарианское</label>
                                     <label class="flex items-center gap-2"><input type="checkbox" name="pref_kids2"
-                                            value="Да" /> Детям</label>
+                                            value="Ja" /> Детям</label>
                                 </div>
                             </div>
 
@@ -519,8 +516,8 @@
                             Расширенно: выбрать блюда (опционально)
                         </button>
 
-                        <!-- Erweitert-Menü Auswahl -->
-                        <div id="menuSelectBox" class="panel-base p-4 hidden">
+                        <!-- Erweitert-Menü Auswahl (структура как в DE) -->
+                        <div id="menuSelectBox" class="mt-4 hidden">
 
                             <!-- Suchleiste -->
                             <div class="flex flex-col sm:flex-row gap-3">
@@ -581,7 +578,7 @@
                     </section>
 
                     <!-- =========================
-               STEP 3: OPTIONEN
+                STEP 3: OPTIONEN
           ========================== -->
                     <section data-step="3" class="panel-options p-5 sm:p-6 space-y-4 hidden">
 
@@ -592,19 +589,20 @@
                             </p>
 
                             <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                                <!-- value как в DE: Ja -->
                                 <label
                                     class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                                    <input type="checkbox" name="opt_geschirr" value="Да" />
+                                    <input type="checkbox" name="opt_geschirr" value="Ja" />
                                     <span>Посуду</span>
                                 </label>
                                 <label
                                     class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                                    <input type="checkbox" name="opt_besteck" value="Да" />
+                                    <input type="checkbox" name="opt_besteck" value="Ja" />
                                     <span>Приборы</span>
                                 </label>
                                 <label
                                     class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                                    <input type="checkbox" name="opt_glaeser" value="Да" />
+                                    <input type="checkbox" name="opt_glaeser" value="Ja" />
                                     <span>Бокалы</span>
                                 </label>
                             </div>
@@ -619,7 +617,8 @@
                             <div class="mt-3">
                                 <label
                                     class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
-                                    <input type="checkbox" id="opt_service" name="opt_service" value="Да" />
+                                    <!-- value как в DE: Ja -->
+                                    <input type="checkbox" id="opt_service" name="opt_service" value="Ja" />
                                     <span>Запросить персонал</span>
                                 </label>
                             </div>
@@ -649,14 +648,15 @@
                                 <div class="mt-4">
                                     <label class="block text-gray-700 mb-2">Задачи (опционально)</label>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+                                        <!-- value как в DE: Ja -->
                                         <label class="flex items-center gap-2"><input type="checkbox"
-                                                name="service_buffet" value="Да" /> Следить/пополнять буфет</label>
+                                                name="service_buffet" value="Ja" /> Следить/пополнять буфет</label>
                                         <label class="flex items-center gap-2"><input type="checkbox"
-                                                name="service_table" value="Да" /> Сервис за столами</label>
+                                                name="service_table" value="Ja" /> Сервис за столами</label>
                                         <label class="flex items-center gap-2"><input type="checkbox" name="service_bar"
-                                                value="Да" /> Бар / напитки</label>
+                                                value="Ja" /> Бар / напитки</label>
                                         <label class="flex items-center gap-2"><input type="checkbox"
-                                                name="service_cleanup" value="Да" /> Уборка/порядок</label>
+                                                name="service_cleanup" value="Ja" /> Уборка/порядок</label>
                                     </div>
                                 </div>
 
@@ -678,7 +678,8 @@
 
                             <label
                                 class="mt-3 flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
-                                <input type="checkbox" id="opt_cleanup" name="cleanup_offer" value="Да" />
+                                <!-- value как в DE: Ja -->
+                                <input type="checkbox" id="opt_cleanup" name="cleanup_offer" value="Ja" />
                                 <span>Запросить уборку / разбор / посуду</span>
                             </label>
 
@@ -690,9 +691,9 @@
                                         <select id="cf-kitchen" name="kitchen_available"
                                             class="w-full border border-gray-300 rounded-xl px-4 py-2">
                                             <option value="" selected>—</option>
-                                            <option>Да</option>
-                                            <option>Нет</option>
-                                            <option>Не ясно</option>
+                                            <option>Ja</option>
+                                            <option>Nein</option>
+                                            <option>Unklar</option>
                                         </select>
                                     </div>
                                     <div>
@@ -714,10 +715,9 @@
                         </div>
                     </section>
 
-
                     <!-- =========================
-                        STEP 4: ÜBERSICHT
-                    ========================== -->
+                STEP 4: ÜBERSICHT
+          ========================== -->
                     <section data-step="4" class="panel-base p-5 sm:p-6 space-y-3 hidden">
                         <div class="font-semibold text-gray-900">Итог</div>
                         <pre id="summaryBox" class="text-sm whitespace-pre-wrap text-gray-700"></pre>
@@ -726,7 +726,8 @@
                         </p>
 
                         <div class="text-center pt-2">
-                            <button type="submit" id="btnSubmitWizard" class="btn-cta py-2 px-8">Отправить</button>
+                            <!-- важно: ID как в DE -->
+                            <button type="submit" id="btnWizardSend" class="btn-cta py-2 px-8">Отправить</button>
                         </div>
                     </section>
 
