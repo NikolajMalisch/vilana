@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 { id: "candy_05", name: "Мармеладные мишки (Bärenköpfe)", desc: "Для детей и взрослых." },
                 { id: "candy_06", name: "Мармеладные шнурки", desc: "Разноцветный микс." },
                 { id: "candy_07", name: "Мармелад (Schnuckies)", desc: "Фруктовый сюрприз." },
-                { id: "candy_08", name: "Фрукты в шоколаде (вариации)", desc: "Белый, молочный, тёмный." }
+                { id: "candy_08", name: "Шоколад (вариации)", desc: "Белый, молочный, тёмный." }
             ]
         }
     ];

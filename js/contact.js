@@ -21,7 +21,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================================
-          Helpers
+            Helpers
     ========================================================== */
     const $ = (sel, root = document) => root.querySelector(sel);
     const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Burger Menu
+            Burger Menu
     ========================================================== */
     const btnBurger = $("#menuToggle");
     const mobileMenu = $("#mobileMenu");
@@ -70,13 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Anti-bot timing start
+            Anti-bot timing start
     ========================================================== */
     const startedAt = $("#cf_started_at");
     if (startedAt) startedAt.value = String(Date.now());
 
     /* =========================================================
-          Form refs
+            Form refs
     ========================================================== */
     const form = $("#contactForm");
     if (!form) return;
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // form.honeypot доступен, если name="honeypot"
 
     /* =========================================================
-          Wizard Setup (4 Schritte)
+            Wizard Setup (4 Schritte)
     ========================================================== */
     const TOTAL_STEPS = 4;
     const steps = wizardWrap ? $$("[data-step]", wizardWrap) : [];
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-          Optionen (Service/Cleanup) – show/hide
+            Optionen (Service/Cleanup) – show/hide
     ========================================================== */
     const optService = $("#opt_service");
     const serviceDetails = $("#serviceDetails");
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     syncCleanup();
 
     /* =========================================================
-          Menü (Erweitert)
+            Menü (Erweitert)
     ========================================================== */
     const btnToggleAdvancedMenu = $("#btnToggleAdvancedMenu");
     const menuSelectBox = $("#menuSelectBox");
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 { id: "candy_05", name: "Fruchtgummi Bärenköpfe", desc: "Für kleine und große Gäste." },
                 { id: "candy_06", name: "Fruchtgummi Schnüre", desc: "Bunte Vielfalt." },
                 { id: "candy_07", name: "Fruchtgummi Schnuckies", desc: "Fruchtige Überraschung." },
-                { id: "candy_08", name: "Früchte in Schokolade", desc: "Weiße, Vollmilch, Zartbitter." }
+                { id: "candy_08", name: "Schokolade", desc: "Weiße, Vollmilch, Zartbitter." }
             ]
         }
     ];
