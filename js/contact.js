@@ -339,16 +339,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
 
                 row.innerHTML = `
-          <div class="min-w-0">
-            <div class="text-sm font-medium text-gray-900 truncate">${esc(item.name)}</div>
+        <div class="min-w-0">
+            <div class="text-sm font-medium text-gray-900 leading-snug break-words">
+            ${esc(item.name)}
+        </div>
+
             ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
-          </div>
-          <button type="button"
-            class="shrink-0 rounded-lg px-3 py-2 text-xs font-semibold border transition btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
-            data-toggle="${esc(item.id)}">
-            ${isAdded ? "Entfernen" : "Hinzufügen"}
-          </button>
+        </div>
+
+        <button type="button"
+        class="shrink-0 grid place-items-center
+        h-9 w-9 rounded-full border transition
+        btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
+        data-toggle="${esc(item.id)}"
+        aria-label="${isAdded ? "Auswahl entfernen" : "Zur Auswahl hinzufügen"}"
+        title="${isAdded ? "Entfernen" : "Hinzufügen"}">
+        <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
+        </button>
         `;
+
                 panel.appendChild(row);
             });
 
@@ -450,16 +459,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.className = "rounded-xl border border-gray-200 bg-white p-3 shadow-sm";
 
                 card.innerHTML = `
-          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start justify-between gap-2">
             <div class="min-w-0">
-              <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
+            <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
             </div>
             <button type="button"
-              class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
-              data-remove="${esc(x.id)}">
-              Entfernen
+            class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
+            data-remove="${esc(x.id)}">
+            Entfernen
             </button>
-          </div>
+            </div>
         `;
 
                 body.appendChild(card);

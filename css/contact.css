@@ -161,8 +161,8 @@ select:focus {
 }
 
 /* =========================================================
-   Stepper dots (bronze)
-========================================================= */
+       Stepper dots (bronze)
+    ========================================================= */
 .step-dot-done,
 .step-dot-active {
     background: linear-gradient(180deg, #caa25a, #a56a1f) !important;
@@ -171,10 +171,10 @@ select:focus {
 }
 
 /* =========================================================
-   Menu categories – accordion category colors (CSS-driven)
-   Works with JS classes:
-   cat-rail cat-warm, cat-chip cat-warm, cat-dot cat-warm, cat-head cat-warm etc.
-========================================================= */
+       Menu categories – accordion category colors (CSS-driven)
+       Works with JS classes:
+       cat-rail cat-warm, cat-chip cat-warm, cat-dot cat-warm, cat-head cat-warm etc.
+    ========================================================= */
 .cat-rail {
     border-left: 4px solid rgba(52, 58, 64, .18);
 }
@@ -218,9 +218,9 @@ select:focus {
 }
 
 .cat-cold.cat-chip {
-    border-color: color-mix(in srgb, var(--cold) 22%, #fff 0%);
+border-color: color-mix(in srgb, var(--cold) 22%, #fff 0%);
     background: color-mix(in srgb, var(--cold) 8%, #fff 92%);
-    color: color-mix(in srgb, var(--cold) 74%, #111 26%);
+color: color-mix(in srgb, var(--cold) 74%, #111 26%);
 }
 
 /* salad */
@@ -269,8 +269,8 @@ select:focus {
 }
 
 /* =========================================================
-   Add buttons in menu list (premium + selected highlight)
-========================================================= */
+       Add buttons in menu list (premium + selected highlight)
+    ========================================================= */
 .btn-add-base {
     border-radius: 12px !important;
     border: 1px solid var(--line) !important;
@@ -306,9 +306,9 @@ select:focus {
 }
 
 /* =========================================================
-   FIX: kill amber/yellow chips in Menü-Kategorien
-   Put at END of contact.css
-========================================================= */
+       FIX: kill amber/yellow chips in Menü-Kategorien
+       Put at END of contact.css
+    ========================================================= */
 
 /* общий чип (кол-во блюд) — всегда pearl/bronze, без yellow */
 #menuCategories .cat-chip {
@@ -360,149 +360,179 @@ select:focus {
     border-radius: 999px !important;
     line-height: 1.1 !important;
 }
+
 /* =========================================================
-   PREMIUM RESET (no bronze) + UI typography
-   Paste at END of /css/contact.css
-========================================================= */
+       PREMIUM RESET (no bronze) + UI typography
+       Paste at END of /css/contact.css
+    ========================================================= */
 
 /* 1) Новая премиум-палитра: Ivory + Midnight Navy */
-:root{
-  --bg: #fbf7f1;                 /* можно оставить */
-  --paper: rgba(255,255,255,.94);
-  --paper2: rgba(255,255,255,.84);
+:root {
+    --bg: #fbf7f1;
+    /* можно оставить */
+    --paper: rgba(255, 255, 255, .94);
+    --paper2: rgba(255, 255, 255, .84);
 
-  --text: #0f172a;               /* slate-900 */
-  --muted: rgba(15,23,42,.72);
-  --muted2: rgba(15,23,42,.55);
+    --text: #0f172a;
+    /* slate-900 */
+    --muted: rgba(15, 23, 42, .72);
+    --muted2: rgba(15, 23, 42, .55);
 
-  --line: rgba(15,23,42,.14);
-  --line2: rgba(15,23,42,.22);
+    --line: rgba(15, 23, 42, .14);
+    --line2: rgba(15, 23, 42, .22);
 
-  /* НОВЫЙ акцент (премиум, без золота) */
-  --accent: #0b1f3b;             /* midnight navy */
-  --accent2: #102a52;            /* чуть светлее */
-  --accentSoft: rgba(11,31,59,.16);
+    /* НОВЫЙ акцент (премиум, без золота) */
+    --accent: #0b1f3b;
+    /* midnight navy */
+    --accent2: #102a52;
+    /* чуть светлее */
+    --accentSoft: rgba(11, 31, 59, .16);
 
-  --shadow: 0 22px 80px -60px rgba(2,6,23,.45);
-  --shadow2: 0 16px 55px -45px rgba(2,6,23,.34);
+    --shadow: 0 22px 80px -60px rgba(2, 6, 23, .45);
+    --shadow2: 0 16px 55px -45px rgba(2, 6, 23, .34);
 
-  /* Категории оставляем цветными, но благородными */
-  --warm: #a44a3f;     /* terracotta muted */
-  --cold: #2a6aa0;     /* steel blue */
-  --salad: #2b7a53;    /* forest */
-  --dessert: #6b46a2;  /* plum */
-  --candy: #a12f74;    /* berry */
+    /* Категории оставляем цветными, но благородными */
+    --warm: #a44a3f;
+    /* terracotta muted */
+    --cold: #2a6aa0;
+    /* steel blue */
+    --salad: #2b7a53;
+    /* forest */
+    --dessert: #6b46a2;
+    /* plum */
+    --candy: #a12f74;
+    /* berry */
 }
 
 /* 2) Типографика: кнопки/инпуты = modern sans (перебьёт твой inline "всё Cormorant") */
 button,
 input,
 textarea,
-select{
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif !important;
-  letter-spacing: .2px;
+select {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif !important;
+    letter-spacing: .2px;
 }
 
 /* Заголовки можно оставить на Cormorant (если хочешь) */
-h1,h2,h3{
-  font-family: "Cormorant SC", serif;
+h1,
+h2,
+h3 {
+    font-family: "Cormorant SC", serif;
 }
 
 /* 3) Кнопки: премиум “navy” (вместо bronze/amber) */
 #btnQuickSend,
 #btnWizardSend,
-#btnNext{
-  border-radius: 999px !important;
-  border: 1px solid rgba(11,31,59,.28) !important;
-  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
-  color: #fff !important;
-  font-weight: 800 !important;
-  box-shadow: 0 18px 65px -52px rgba(2,6,23,.65) !important;
-  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+#btnNext {
+    border-radius: 999px !important;
+    border: 1px solid rgba(11, 31, 59, .28) !important;
+    background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    box-shadow: 0 18px 65px -52px rgba(2, 6, 23, .65) !important;
+    transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
 }
+
 #btnQuickSend:hover,
 #btnWizardSend:hover,
-#btnNext:hover{
-  filter: brightness(1.04);
-  box-shadow: 0 22px 80px -58px rgba(2,6,23,.72) !important;
+#btnNext:hover {
+    filter: brightness(1.04);
+    box-shadow: 0 22px 80px -58px rgba(2, 6, 23, .72) !important;
 }
+
 #btnQuickSend:active,
 #btnWizardSend:active,
-#btnNext:active{
-  transform: translateY(1px);
+#btnNext:active {
+    transform: translateY(1px);
 }
 
 /* Secondary buttons */
 #btnBack,
 #btnToggleWizard,
 #btnToggleAdvancedMenu,
-#menuReset{
-  border-radius: 999px !important;
-  border: 1px solid var(--line2) !important;
-  background: rgba(255,255,255,.82) !important;
-  color: var(--text) !important;
+#menuReset {
+    border-radius: 999px !important;
+    border: 1px solid var(--line2) !important;
+    background: rgba(255, 255, 255, .82) !important;
+    color: var(--text) !important;
 }
+
 #btnBack:hover,
 #btnToggleWizard:hover,
 #btnToggleAdvancedMenu:hover,
-#menuReset:hover{
-  background: rgba(255,255,255,.96) !important;
+#menuReset:hover {
+    background: rgba(255, 255, 255, .96) !important;
 }
 
 /* 4) Focus ring: navy (премиально) */
 input:focus,
 textarea:focus,
 select:focus,
-button:focus-visible{
-  outline: none !important;
-  border-color: rgba(11,31,59,.55) !important;
-  box-shadow: 0 0 0 4px var(--accentSoft) !important;
+button:focus-visible {
+    outline: none !important;
+    border-color: rgba(11, 31, 59, .55) !important;
+    box-shadow: 0 0 0 4px var(--accentSoft) !important;
 }
 
 /* 5) Stepper dots тоже navy */
 .step-dot-done,
-.step-dot-active{
-  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
-  border-color: rgba(11,31,59,.55) !important;
-  color: #fff !important;
+.step-dot-active {
+    background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+    border-color: rgba(11, 31, 59, .55) !important;
+    color: #fff !important;
 }
 
 /* 6) Убрать остатки amber/yellow в меню-блоке (жёстко) */
-#menuSelectBox [class*="bg-amber-"]{
-  background: rgba(255,255,255,.92) !important;
+#menuSelectBox [class*="bg-amber-"] {
+    background: rgba(255, 255, 255, .92) !important;
 }
-#menuSelectBox [class*="border-amber-"]{
-  border-color: var(--line2) !important;
+
+#menuSelectBox [class*="border-amber-"] {
+    border-color: var(--line2) !important;
 }
-#menuSelectBox [class*="text-amber-"]{
-  color: var(--text) !important;
+
+#menuSelectBox [class*="text-amber-"] {
+    color: var(--text) !important;
 }
 
 /* 7) Чип “xx Gerichte” сделать премиум нейтральным */
-#menuCategories .cat-chip{
-  border-color: var(--line2) !important;
-  background: rgba(255,255,255,.88) !important;
-  color: rgba(15,23,42,.76) !important;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  font-size: 11px !important;
-  letter-spacing: .22px;
-  padding: 4px 10px !important;
-  border-radius: 999px !important;
+#menuCategories .cat-chip {
+    border-color: var(--line2) !important;
+    background: rgba(255, 255, 255, .88) !important;
+    color: rgba(15, 23, 42, .76) !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: .22px;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
 }
 
 /* 8) “Hinzugefügt” (выбрано) — navy (вместо bronze) */
 #menuSelectBox button[disabled],
 #menuSelectBox button[aria-disabled="true"],
-.btn-added{
-  border-color: rgba(11,31,59,.40) !important;
-  background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
-  color: #fff !important;
+.btn-added {
+    border-color: rgba(11, 31, 59, .40) !important;
+    background: linear-gradient(180deg, var(--accent2), var(--accent)) !important;
+    color: #fff !important;
 }
 
 /* 9) Ссылки (AGB/Datenschutz) — тоже navy */
-a.text-amber-700{
-  color: rgba(11,31,59,.92) !important;
+a.text-amber-700 {
+    color: rgba(11, 31, 59, .92) !important;
 }
-a.text-amber-700:hover{
-  color: rgba(16,42,82,.95) !important;
+
+a.text-amber-700:hover {
+    color: rgba(16, 42, 82, .95) !important;
+}
+
+/* MOBILE: меню-категории на всю ширину экрана */
+#menuSelectBox,
+#menuCategories {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* сами аккордеоны (каждая категория) тоже на 100% */
+#menuCategories>div {
+    width: 100% !important;
 }

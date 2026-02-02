@@ -308,25 +308,25 @@ document.addEventListener("DOMContentLoaded", () => {
             wrap.className = `rounded-2xl border border-gray-200 overflow-hidden bg-white border-l-4 ${ui.rail} shadow-soft`;
 
             wrap.innerHTML = `
-        <button type="button"
-          class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition"
-          aria-expanded="false" data-acc="${esc(cat.key)}">
-          <div class="flex items-center gap-3">
+            <button type="button"
+            class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-b ${ui.head} hover:bg-black/5 transition"
+            aria-expanded="false" data-acc="${esc(cat.key)}">
+            <div class="flex items-center gap-3">
             <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
             <span class="text-sm font-semibold text-gray-900">${esc(cat.title)}</span>
             <span class="text-[11px] px-2 py-0.5 rounded-full border ${ui.chip}">
-              ${items.length} позиций
+            ${items.length} позиций
             </span>
-          </div>
-          <div class="flex items-center gap-2">
+            </div>
+            <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-gray-700" data-acc-label>Показать</span>
             <svg class="h-4 w-4 text-gray-600 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
-          </div>
-        </button>
-        <div class="p-4 space-y-2 hidden bg-white" data-panel="${esc(cat.key)}"></div>
-      `;
+            </div>
+            </button>
+            <div class="p-4 space-y-2 hidden bg-white" data-panel="${esc(cat.key)}"></div>
+        `;
 
             const panel = wrap.querySelector(`[data-panel="${cat.key}"]`);
 
@@ -338,16 +338,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
 
                 row.innerHTML = `
-          <div class="min-w-0">
-            <div class="text-sm font-medium text-gray-900 truncate">${esc(item.name)}</div>
-            ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
-          </div>
-          <button type="button"
-            class="shrink-0 rounded-lg px-3 py-2 text-xs font-semibold border transition btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
-            data-toggle="${esc(item.id)}">
-            ${isAdded ? "Убрать" : "Добавить"}
-          </button>
-        `;
+                <div class="min-w-0">
+                <div class="text-sm font-medium text-gray-900 leading-snug break-words">
+                ${esc(item.name)}
+                </div>
+                ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
+                </div>
+                <button type="button"
+                class="shrink-0 grid place-items-center
+                h-9 w-9 rounded-full border transition
+                btn-add-base ${isAdded ? "btn-added" : "btn-add"}"
+                data-toggle="${esc(item.id)}"
+                aria-label="${isAdded ? "Убрать из выбора" : "Добавить в выбор"}"
+                title="${isAdded ? "Убрать" : "Добавить"}">
+                <span class="text-base leading-none">${isAdded ? "✓" : "+"}</span>
+                </button>
+            `;
                 panel.appendChild(row);
             });
 
@@ -435,12 +441,12 @@ document.addEventListener("DOMContentLoaded", () => {
             groupWrap.className = "rounded-2xl border border-gray-200 bg-white/90 overflow-hidden";
 
             groupWrap.innerHTML = `
-        <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
-          <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
-          <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
-        </div>
-        <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
-      `;
+            <div class="px-3 py-2 bg-gradient-to-b ${ui.head} border-b border-gray-200 flex items-center gap-2">
+            <span class="inline-flex h-2 w-2 rounded-full ${ui.dot}"></span>
+            <div class="text-xs font-semibold text-gray-900">${esc(cat.title)}</div>
+            </div>
+            <div class="p-3 space-y-2" data-group="${esc(cat.key)}"></div>
+        `;
 
             const body = groupWrap.querySelector(`[data-group="${cat.key}"]`);
 
@@ -449,16 +455,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.className = "rounded-xl border border-gray-200 bg-white p-3 shadow-sm";
 
                 card.innerHTML = `
-          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start justify-between gap-2">
             <div class="min-w-0">
-              <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
+            <div class="text-sm font-medium text-gray-900 truncate">${esc(x.name)}</div>
             </div>
             <button type="button"
-              class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
-              data-remove="${esc(x.id)}">
-              Убрать
+            class="text-xs font-semibold text-gray-600 hover:text-gray-900 underline underline-offset-2"
+            data-remove="${esc(x.id)}">
+            Убрать
             </button>
-          </div>
+        </div>
         `;
 
                 body.appendChild(card);
