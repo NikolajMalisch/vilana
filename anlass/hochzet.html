@@ -9,7 +9,7 @@
   ========================= -->
   <title>Hochzeit Catering in Hameln | Vilana Event &amp; Catering</title>
   <meta name="description"
-        content="Hochzeit Catering in Hameln, Hannover & Umgebung. Sektempfang, Fingerfood, Buffet, Servicepersonal und Ausstattung. Vilana Event & Catering – stilvoll, zuverlässig, mit Liebe zum Detail.">
+        content="Hochzeit Catering in Hameln, Hannover &amp; Umgebung. Sektempfang, Fingerfood, Buffet, Servicepersonal und Ausstattung. Vilana Event &amp; Catering – stilvoll, zuverlässig, mit Liebe zum Detail.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
@@ -40,10 +40,11 @@
   <!-- CSS -->
   <link rel="preload" href="/css/output.css" as="style">
   <link rel="stylesheet" href="/css/output.css">
+  <link rel="stylesheet" href="/css/anlass.css">
   <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
   <!-- Hero preload -->
-  <link rel="preload" as="image" href="/images/hochzeit-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/anlass/hochzeit-hero1.webp" type="image/webp" fetchpriority="high">
 
   <!-- Fonts (perf) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,190 +62,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/images/favicon/site.webmanifest">
-
-  <!-- Base typography (как у тебя) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    body, h1, h2, h3, p, span { font-family: "Cormorant SC", serif; }
-    body { background-color: #fdfaf6; }
-
-    .logo-container { display:flex; align-items:baseline; gap:.3rem; margin-top:4px; }
-    .logo-title {
-      font-family:"Cinzel Decorative", cursive;
-      font-size:1.8rem; font-weight:400; letter-spacing:.5px;
-      color:#1f2937; line-height:1; margin:0;
-    }
-    .logo-subtitle { font-size:1rem; font-weight:350; color:#1f2937; line-height:1; }
-
-    .btn { display:inline-block; padding:.65rem 1.1rem; border-radius:9999px; border:1px solid #c9b192; }
-    .btn:hover { box-shadow:0 8px 24px rgba(0,0,0,.08); }
-
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-
-    /* =========================
-       HERO (картинка + H1)
-    ========================= */
-    .hero {
-      position: relative;
-      min-height: 72vh;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background: #0e0e0e;
-    }
-    .hero-media {
-      position:absolute; inset:0;
-    }
-    .hero-media img{
-      width:100%; height:100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(.95) contrast(1.05);
-      transform: scale(1.02);
-    }
-    .hero-media::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 520px at 50% 20%, rgba(255,255,255,.10), rgba(0,0,0,0) 60%),
-        linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.80));
-    }
-    .hero-inner{
-      position:relative;
-      z-index: 1;
-      color:#fff;
-      text-align:center;
-      padding: 5rem 1rem;
-    }
-    .hero-kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:.5rem;
-      padding:.45rem .9rem;
-      border-radius:9999px;
-      border:1px solid rgba(255,255,255,.25);
-      background: rgba(0,0,0,.25);
-      font-size:.95rem;
-      margin-bottom: 1.25rem;
-    }
-    .hero-title{
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      font-weight: 700;
-      letter-spacing: .2px;
-      margin: 0 auto .9rem;
-      max-width: 20ch;
-      text-shadow: 0 14px 40px rgba(0,0,0,.45);
-    }
-    .hero-subtitle{
-      font-size: clamp(1.15rem, 2vw, 1.5rem);
-      max-width: 60ch;
-      margin: 0 auto 1.8rem;
-      opacity: .95;
-      text-shadow: 0 10px 26px rgba(0,0,0,.35);
-    }
-
-    /* =========================
-       SERVICES (стиль как в твоём примере)
-    ========================= */
-    .services{
-      padding: 4rem 0;
-      background: #fff;
-    }
-    .section-title{
-      text-align:center;
-      font-size: 1.9rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      margin: 0 0 .4rem;
-      color:#111827;
-    }
-    .section-subtitle{
-      text-align:center;
-      margin: 0 0 2rem;
-      color:#6b7280;
-      font-size: 1.1rem;
-    }
-
-    .services-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    @media (min-width: 768px){
-      .services-grid{ grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    }
-
-    .service-card{
-      position: relative;
-      border-radius: 22px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid rgba(17,24,39,.10);
-      box-shadow: 0 18px 50px rgba(0,0,0,.08);
-      transition: transform .25s ease, box-shadow .25s ease;
-      min-height: 100%;
-    }
-    .service-card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 26px 70px rgba(0,0,0,.12);
-    }
-
-    .service-media{
-      position: relative;
-      aspect-ratio: 16/10;
-      overflow:hidden;
-      background: #0e0e0e;
-    }
-    .service-media img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      object-position: center;
-      transform: scale(1.01);
-    }
-    .service-media::after{
-      content:"";
-      position:absolute; inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(800px 380px at 70% 20%, rgba(245,158,11,.18), rgba(0,0,0,0) 60%),
-        linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.28) 100%);
-    }
-
-    .service-icon{
-      position:absolute;
-      top: 14px;
-      left: 14px;
-      width: 42px; height: 42px;
-      border-radius: 9999px;
-      display:grid; place-items:center;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(17,24,39,.10);
-      box-shadow: 0 10px 30px rgba(0,0,0,.12);
-      font-size: 18px;
-      color: #92400e;
-    }
-
-    .service-body{
-      padding: 1.1rem 1.2rem 1.3rem;
-    }
-    .service-name{
-      font-size: 1.55rem;
-      font-weight: 700;
-      margin: .2rem 0 .55rem;
-      color:#111827;
-    }
-    .service-description{
-      color:#374151;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* reveal fallback (если у тебя уже есть — не мешает) */
-    .reveal { opacity: 1; transform: none; }
-  </style>
 </head>
 
 <body class="text-gray-800 antialiased">
@@ -255,7 +72,7 @@
   </a>
 
   <!-- =========================================
-      HEADER (ТВОЙ, 1:1) + FIX relative
+      HEADER (ТВОЙ, 1:1)
   ========================================= -->
   <header class="bg-white shadow-md relative">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -325,33 +142,55 @@
   <!-- =========================================
     MAIN
   ========================================= -->
-  <main id="main">
-    <!-- HERO (картинка + H1 + 1 CTA) -->
-    <section class="hero" aria-label="Hochzeit Catering Hero">
-      <div class="hero-media" aria-hidden="true">
-        <!-- ты заменишь картинку сам -->
-        <img src="images/anlass/hochzeit-hero.webp" alt="" loading="eager" decoding="async" fetchpriority="high">
-      </div>
+<main id="main">
+  <!-- HERO (mobile img + desktop img) -->
+  <section class="hero" aria-label="Hochzeit Catering Hero">
+    <div class="hero-media" aria-hidden="true">
+      <picture>
+        <!-- Mobile -->
+        <source
+          media="(max-width: 640px)"
+          srcset="/images/anlass/hochzeit-hero.webp"
+          type="image/webp"
+        />
 
-      <div class="hero-inner container mx-auto px-4">
-        <div class="hero-kicker">✦ Hochzeit · Catering · Service</div>
+        <!-- Desktop / Tablet -->
+        <source
+          srcset="/images/anlass/hochzeit-hero1.webp"
+          type="image/webp"
+        />
 
-        <h1 class="hero-title">
-          Hochzeit Catering in Hameln &amp; Hannover
-        </h1>
+        <!-- Fallback -->
+        <img
+          src="/images/anlass/hochzeit-hero1.webp"
+          alt=""
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </picture>
+    </div>
 
-        <p class="hero-subtitle">
-          Stilvoller Sektempfang, Fingerfood &amp; Buffets – mit Liebe zum Detail und zuverlässiger Organisation.
-        </p>
+    <div class="hero-inner container mx-auto px-4">
+      <div class="hero-kicker">✦ Hochzeit · Catering · Service</div>
 
-        <a href="/contact.html"
-           class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
-          Jetzt anfragen
-        </a>
-      </div>
-    </section>
+      <h1 class="hero-title">Hochzeit Catering in Hameln &amp; Hannover</h1>
 
-    <!-- SERVICES (3 карточки как в твоём примере) -->
+      <p class="hero-subtitle">
+        Stilvoller Sektempfang, Fingerfood &amp; Buffets – mit Liebe zum Detail und zuverlässiger Organisation.
+      </p>
+
+      <a
+        href="/contact.html"
+        class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+      >
+        Jetzt anfragen
+      </a>
+    </div>
+  </section>
+
+
+    <!-- SERVICES (3 карточки) -->
     <section class="services" id="services">
       <div class="container mx-auto px-4">
         <h2 class="section-title">UNSERE LEISTUNGEN</h2>
@@ -361,8 +200,7 @@
           <!-- Card 1 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <!-- ты заменишь фото сам -->
-              <img src="images/anlass/hochzeit-fingerfood (1).webp" alt="Fingerfood & Sektempfang" loading="lazy" decoding="async">
+              <img src="/images/anlass/hochzeit-fingerfood%20(1).webp" alt="Fingerfood &amp; Sektempfang" loading="lazy" decoding="async">
             </div>
             <div class="service-icon">✦</div>
             <div class="service-body">
@@ -377,8 +215,7 @@
           <!-- Card 2 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <!-- ты заменишь фото сам -->
-              <img src="images/anlass/hochzeit buffet.webp" alt="Hochzeitsbuffet" loading="lazy" decoding="async">
+              <img src="/images/anlass/hochzeit%20buffet.webp" alt="Hochzeitsbuffet" loading="lazy" decoding="async">
             </div>
             <div class="service-icon">✦</div>
             <div class="service-body">
@@ -393,8 +230,7 @@
           <!-- Card 3 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <!-- ты заменишь фото сам -->
-              <img src="images/anlass/hochzeit-table.webp" alt="Service & Ausstattung" loading="lazy" decoding="async">
+              <img src="/images/anlass/hochzeit-table.webp" alt="Service &amp; Ausstattung" loading="lazy" decoding="async">
             </div>
             <div class="service-icon">✦</div>
             <div class="service-body">

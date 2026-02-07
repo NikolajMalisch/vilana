@@ -1,0 +1,222 @@
+/* ============================================================================
+   Vilana — Anlass Pages (anlass.css)
+   Works with your current markup:
+   .hero / .hero-media / .hero-inner
+   .services / .services-grid / .service-card ...
+============================================================================ */
+
+:root{
+  --header-h: 72px; /* если шапка выше/ниже — поменяй */
+  --hero-img: url("/images/anlass/hochzeit-hero1.webp"); /* fallback */
+}
+
+/* base */
+html{ scroll-behavior:smooth; }
+body{ background:#fdfaf6; }
+body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
+
+.btn{
+  display:inline-block;
+  padding:.65rem 1.1rem;
+  border-radius:9999px;
+  border:1px solid #c9b192;
+}
+.btn:hover{ box-shadow:0 8px 24px rgba(0,0,0,.08); }
+
+/* ============================================================================
+   HERO — FULL IMAGE VISIBLE (NO CROP)
+   Uses:
+   1) style="--hero-img:url('/images/anlass/xxx.webp')" on <section class="hero">
+   2) otherwise uses :root fallback
+============================================================================ */
+
+.hero{
+  position:relative;
+  min-height: calc(100vh - var(--header-h));
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:#0e0e0e;
+}
+
+.hero-media{ position:absolute; inset:0; }
+
+/* blurred premium background from same image */
+.hero-media::before{
+  content:"";
+  position:absolute;
+  inset:-28px;
+  background: var(--hero-img) center/cover no-repeat;
+  filter: blur(28px) saturate(.95) brightness(.60);
+  transform: scale(1.10);
+  opacity:.95;
+}
+
+/* main image fully visible */
+.hero-media img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit: contain;   /* <-- главное */
+  object-position:center;
+  transform:none;
+  filter:saturate(.98) contrast(1.02);
+}
+
+/* overlay gradients */
+.hero-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:
+    radial-gradient(900px 520px at 50% 20%, rgba(255,255,255,.12), rgba(0,0,0,0) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.78));
+}
+
+.hero-inner{
+  position:relative;
+  z-index:3;
+  color:#fff;
+  text-align:center;
+  padding: clamp(3.5rem, 6vw, 5rem) 1rem;
+}
+
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.45rem .9rem;
+  border-radius:9999px;
+  border:1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.25);
+  font-size:.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title{
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight:700;
+  letter-spacing:.2px;
+  margin:0 auto .9rem;
+  max-width:22ch;
+  text-shadow:0 14px 40px rgba(0,0,0,.45);
+}
+
+.hero-subtitle{
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  max-width:60ch;
+  margin:0 auto 1.8rem;
+  opacity:.95;
+  text-shadow:0 10px 26px rgba(0,0,0,.35);
+}
+
+/* ============================================================================
+   SERVICES — your sample style
+============================================================================ */
+
+.services{
+  padding: 4rem 0;
+  background:#fff;
+}
+
+.section-title{
+  text-align:center;
+  font-size:1.9rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  margin:0 0 .4rem;
+  color:#111827;
+}
+
+.section-subtitle{
+  text-align:center;
+  margin:0 0 2rem;
+  color:#6b7280;
+  font-size:1.1rem;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.25rem;
+  margin-top:1.25rem;
+}
+@media (min-width:768px){
+  .services-grid{ grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+}
+
+.service-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(17,24,39,.10);
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  min-height:100%;
+}
+.service-card:hover{
+  transform: translateY(-4px);
+  box-shadow:0 26px 70px rgba(0,0,0,.12);
+}
+
+.service-media{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#0e0e0e;
+}
+.service-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1.01);
+}
+.service-media::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(800px 380px at 70% 20%, rgba(245,158,11,.18), rgba(0,0,0,0) 60%),
+    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.28) 100%);
+}
+
+.service-icon{
+  position:absolute;
+  top:14px; left:14px;
+  width:42px; height:42px;
+  border-radius:9999px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.92);
+  border:1px solid rgba(17,24,39,.10);
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  font-size:18px;
+  color:#92400e;
+}
+
+.service-body{ padding: 1.1rem 1.2rem 1.3rem; }
+.service-name{
+  font-size:1.55rem;
+  font-weight:700;
+  margin:.2rem 0 .55rem;
+  color:#111827;
+}
+.service-description{
+  color:#374151;
+  font-size:1.05rem;
+  line-height:1.6;
+  margin:0;
+}
+/* MOBILE: hero на всю ширину/высоту (без серых полей) */
+@media (max-width: 640px){
+  .hero{
+    min-height: calc(100svh - var(--header-h, 72px));
+  }
+  .hero-media img{
+    object-fit: cover;              /* <- заполняет */
+    object-position: center 35%;    /* <- чуть выше центр, чтобы лицо/сцена были видны */
+  }
+}
