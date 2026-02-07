@@ -58,57 +58,68 @@
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
-    <style>
-        /* Минимум inline: только шрифты + утилиты */
-        body {
-            font-family: "Cormorant SC", serif;
-            background: #fdfaf6;
-            color: #111827;
-        }
+<style>
+  /* =========================================================
+     Минимум inline: шрифты + базовые утилиты
+  ========================================================== */
+  body{
+    font-family:"Cormorant SC", serif;
+    background:#fdfaf6;
+    color:#111827;
+  }
 
-        h1,
-        h2,
-        h3,
-        p,
-        span,
-        label,
-        input,
-        textarea,
-        select,
-        button {
-            font-family: "Cormorant SC", serif;
-        }
+  h1,h2,h3,p,span,label,input,textarea,select,button{
+    font-family:"Cormorant SC", serif;
+  }
 
-        .logo-title {
-            font-family: "Cinzel Decorative", cursive;
-            font-size: 1.8rem;
-            font-weight: 500;
-            letter-spacing: .5px;
-            color: #111827;
-            line-height: 1;
-        }
+  .logo-title{
+    font-family:"Cinzel Decorative", cursive;
+    font-size:1.8rem;
+    font-weight:500;
+    letter-spacing:.5px;
+    color:#111827;
+    line-height:1;
+  }
 
-        .logo-subtitle {
-            font-size: 1rem;
-            color: #111827;
-            line-height: 1;
-        }
+  .logo-subtitle{
+    font-size:1rem;
+    color:#111827;
+    line-height:1;
+  }
 
-        .hidden-field {
-            display: none !important;
-        }
+  .hidden-field{ display:none !important; }
 
-        /* Validation helper (JS setzt .field-error) */
-        .field-error {
-            border-color: #dc2626 !important;
-            box-shadow: 0 0 0 4px rgba(220, 38, 38, .10) !important;
-        }
+  /* Validation helper (JS setzt .field-error) */
+  .field-error{
+    border-color:#dc2626 !important;
+    box-shadow:0 0 0 4px rgba(220,38,38,.10) !important;
+  }
 
-        /* Accordion helper (used by JS) */
-        .acc-open svg {
-            transform: rotate(180deg);
-        }
-    </style>
+  /* Accordion helper (used by JS) */
+  .acc-open svg{ transform:rotate(180deg); }
+
+  /* =========================================================
+     HEADER NAV — Hard fallback (НЕ зависит от Tailwind md:*)
+     Решает проблему "в шапке нет меню" если output.css не загрузился
+  ========================================================== */
+
+  /* По умолчанию (мобилка): показываем бургер, скрываем desktop nav */
+  .nav-desktop,
+  .lang-desktop{ display:none !important; }
+
+  .nav-mobile{ display:flex !important; }
+
+  /* Десктоп ≥768px: показываем desktop nav, скрываем бургер */
+  @media (min-width: 768px){
+    .nav-desktop{ display:flex !important; }
+    .lang-desktop{ display:flex !important; }
+    .nav-mobile{ display:none !important; }
+  }
+
+  /* На всякий случай: чтобы ссылки в шапке были кликабельны */
+  header a{ text-decoration:none; }
+</style>
+
 
     <!-- =========================================================
         JSON-LD
@@ -168,68 +179,68 @@
 
 <body class="text-gray-800 antialiased contact-wrap">
 
-    <!-- =========================================================
-        HEADER
-  ========================================================== -->
-    <header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-black/10">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/ru/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering — Главная">
-                <span class="logo-title">Vilana</span>
-                <span class="logo-subtitle">Event &amp; Catering</span>
-            </a>
+<!-- =========================================================
+    HEADER (RU) — Desktop/Mobile nav with hard fallback
+========================================================== -->
+<header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-black/10">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/ru/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering — Главная">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle">Event &amp; Catering</span>
+    </a>
 
-            <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3">
 
-                <!-- Desktop nav -->
-                <nav class="hidden md:flex items-center space-x-8" aria-label="Главная навигация">
-                    <a href="/ru/" class="hover:opacity-80">Главная</a>
-                    <a href="/ru/#services" class="hover:opacity-80">Услуги</a>
-                    <a href="/ru/menu.html" class="hover:opacity-80">Меню</a>
-                    <a href="/ru/galerie.html" class="hover:opacity-80">Галерея</a>
-                    <a href="/ru/about.html" class="hover:opacity-80">О нас</a>
-                    <a href="/ru/event.html" class="hover:opacity-80">Событие</a>
-                    <a href="/ru/bewertung.html" class="hover:opacity-80">Отзывы</a>
-                    <a href="/ru/contact.html" aria-current="page" class="font-semibold">Контакты</a>
-                </nav>
+      <!-- Desktop nav (НЕ используем hidden/md:flex чтобы не зависеть от tailwind) -->
+      <nav class="nav-desktop items-center space-x-8" aria-label="Главная навигация">
+        <a href="/ru/" class="hover:opacity-80">Главная</a>
+        <a href="/ru/#services" class="hover:opacity-80">Услуги</a>
+        <a href="/ru/menu.html" class="hover:opacity-80">Меню</a>
+        <a href="/ru/galerie.html" class="hover:opacity-80">Галерея</a>
+        <a href="/ru/about.html" class="hover:opacity-80">О нас</a>
+        <a href="/ru/event.html" class="hover:opacity-80">Событие</a>
+        <a href="/ru/bewertung.html" class="hover:opacity-80">Отзывы</a>
+        <a href="/ru/contact.html" aria-current="page" class="font-semibold">Контакты</a>
+      </nav>
 
-                <!-- Language switch -->
-                <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
-                    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/contact.html">DE</a>
-                    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
-                </div>
+      <!-- Language switch (desktop) -->
+      <div class="lang-desktop items-center gap-2 text-sm" aria-label="Переключатель языка">
+        <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/contact.html">DE</a>
+        <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+      </div>
 
-                <!-- Mobile: DE + burger -->
-                <div class="flex items-center md:hidden gap-2">
-                    <a href="/contact.html"
-                        class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-                        aria-label="Deutsche Version">DE</a>
+      <!-- Mobile: DE + burger -->
+      <div class="nav-mobile items-center gap-2">
+        <a href="/contact.html"
+           class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+           aria-label="Deutsche Version">DE</a>
 
-                    <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu"
-                        aria-expanded="false"
-                        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-gray-900">
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <button id="menuToggle" type="button"
+                aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-gray-900">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
-        <!-- Mobile menu -->
-        <div id="mobileMenu"
-            class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-            role="navigation" aria-label="Мобильное меню">
-            <a href="/ru/" class="block hover:opacity-80">Главная</a>
-            <a href="/ru/#services" class="block hover:opacity-80">Услуги</a>
-            <a href="/ru/menu.html" class="block hover:opacity-80">Меню</a>
-            <a href="/ru/galerie.html" class="block hover:opacity-80">Галерея</a>
-            <a href="/ru/about.html" class="block hover:opacity-80">О нас</a>
-            <a href="/ru/event.html" class="block hover:opacity-80">Событие</a>
-            <a href="/ru/bewertung.html" class="block hover:opacity-80">Отзывы</a>
-            <a href="/ru/contact.html" class="block font-semibold">Контакты</a>
-        </div>
-    </header>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu"
+       class="hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40 border-t border-black/10"
+       role="navigation" aria-label="Мобильное меню">
+    <a href="/ru/" class="block hover:opacity-80">Главная</a>
+    <a href="/ru/#services" class="block hover:opacity-80">Услуги</a>
+    <a href="/ru/menu.html" class="block hover:opacity-80">Меню</a>
+    <a href="/ru/galerie.html" class="block hover:opacity-80">Галерея</a>
+    <a href="/ru/about.html" class="block hover:opacity-80">О нас</a>
+    <a href="/ru/event.html" class="block hover:opacity-80">Событие</a>
+    <a href="/ru/bewertung.html" class="block hover:opacity-80">Отзывы</a>
+    <a href="/ru/contact.html" class="block font-semibold">Контакты</a>
+  </div>
+</header>
 
     <!-- Toast -->
     <div id="toast" role="status" aria-live="polite"></div>
