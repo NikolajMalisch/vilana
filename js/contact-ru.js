@@ -1,13 +1,14 @@
 "use strict";
 
 /**
- * Vilana Contact Form (RU) — v2 FIXED
+ * Vilana Contact Form (RU) — v2 УЛУЧШЕННЫЙ
  * - Быстрая заявка (Сообщение + E-mail обязательно)
  * - Wizard (Расширенно) со Stepper + выбором меню
  * - 4 шага: 1 Event → 2 Menü → 3 Optionen → 4 Итог
  * - EmailJS отправка (sendForm)
  * - Anti-Spam: Honeypot + timing
- * - Menu: toggle item (клик добавить/убрать) + сохранение состояния аккордеона
+ * - ✅ УЛУЧШЕНИЕ: Клик на весь item для выбора блюда
+ * - ✅ Зелёная подсветка выбранных
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -79,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Wizard toggle
   const btnToggleWizard = document.getElementById("btnToggleWizard");
   const wizardWrap = document.getElementById("wizardWrap");
-  const btnQuickSend = document.getElementById("btnQuickSend");     // ✅ правильный ID
-  const btnWizardSend = document.getElementById("btnWizardSend");   // ✅ правильный ID
+  const btnQuickSend = document.getElementById("btnQuickSend");     
+  const btnWizardSend = document.getElementById("btnWizardSend");   
   const btnCloseWizard = document.getElementById("btnCloseWizard");
 
   // Wizard steps
@@ -133,8 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     wizardOpen = open;
     if (wizardWrap) wizardWrap.classList.toggle("hidden", !open);
 
-    // ✅ при открытом wizard прячем кнопку быстрого отправления,
-    // чтобы не путать пользователя (у wizard есть своя Send на шаге 4)
     if (btnQuickSend) btnQuickSend.classList.toggle("hidden", open);
 
     if (btnToggleWizard) {
@@ -339,7 +338,10 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach(item => {
         const isAdded = !!selected[item.id];
         const row = document.createElement("div");
-        row.className = "flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition";
+        
+        // ✅ Добавляем data-item-id для клика на весь row
+        row.setAttribute("data-item-id", item.id);
+        row.className = `flex items-center justify-between gap-3 rounded-xl border border-gray-200 px-3 py-2 bg-white hover:border-gray-300 hover:shadow-sm transition ${isAdded ? "has-selected" : ""}`;
 
         row.innerHTML = `
           <div class="min-w-0">
@@ -347,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${item.desc ? `<div class="text-xs text-gray-500 mt-0.5 hidden sm:block">${esc(item.desc)}</div>` : ``}
           </div>
           <button type="button"
-            class="shrink-0 grid place-items-center h-9 w-9 rounded-full border transition ${isAdded ? "bg-gray-900 text-white" : "bg-white text-gray-900"}"
+            class="shrink-0 grid place-items-center h-9 w-9 rounded-full border transition ${isAdded ? "is-selected" : ""}"
             data-toggle="${esc(item.id)}"
             aria-label="${isAdded ? "Убрать из выбора" : "Добавить в выбор"}"
             title="${isAdded ? "Убрать" : "Добавить"}">
@@ -357,7 +359,9 @@ document.addEventListener("DOMContentLoaded", () => {
         panel.appendChild(row);
       });
 
+      // ✅ УЛУЧШЕННЫЙ event listener: клик на accordion И на items
       wrap.addEventListener("click", (e) => {
+        // Accordion toggle
         const accBtn = e.target.closest("[data-acc]");
         if (accBtn) {
           const key = accBtn.getAttribute("data-acc");
@@ -375,11 +379,13 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        const tglBtn = e.target.closest("[data-toggle]");
-        if (tglBtn) {
-          const id = tglBtn.getAttribute("data-toggle");
+        // ✅ Клик на весь item (не только на кнопку!)
+        const itemRow = e.target.closest("[data-item-id]");
+        if (itemRow) {
+          const id = itemRow.getAttribute("data-item-id");
           if (!id) return;
 
+          // Toggle selection
           if (selected[id]) {
             delete selected[id];
             renderSelected();
@@ -388,6 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
+          // Find item in menu
           let found = null, foundCatKey = null;
           for (const c of MENU) {
             const x = c.items.find(it => it.id === id);
@@ -780,7 +787,6 @@ ${selectedText || "—"}
 
     sending = true;
 
-    // ✅ дисейблим все submit-кнопки корректно
     const submitBtns = form.querySelectorAll('button[type="submit"]');
     submitBtns.forEach(b => { try { b.disabled = true; } catch (_) { } });
 
@@ -808,7 +814,6 @@ ${selectedText || "—"}
         setWizard(false);
       })
       .catch((err) => {
-        // ✅ покажем нормальную ошибку
         console.error("EmailJS error:", err);
         alert("Ошибка отправки: " + (err && (err.text || err.message) ? (err.text || err.message) : String(err)));
       })
@@ -822,28 +827,6 @@ ${selectedText || "—"}
     wizardWrap.addEventListener("change", () => {
       if (current === LAST_STEP && summaryBox) summaryBox.textContent = buildStructuredEmail().preview;
     });
-  }
-
-  /* =========================================================
-        Старт Wizard Step 1 при открытии
-  ========================================================== */
-  function showStep(n) {
-    current = n;
-    steps.forEach(s => s.classList.toggle("hidden", String(s.getAttribute("data-step")) !== String(n)));
-
-    const isFirst = n === 1;
-    if (btnBack) {
-      btnBack.disabled = isFirst;
-      btnBack.classList.toggle("opacity-50", isFirst);
-      btnBack.classList.toggle("cursor-not-allowed", isFirst);
-    }
-
-    if (btnNext) btnNext.classList.toggle("hidden", n === LAST_STEP);
-    setDots(n);
-
-    if (n === LAST_STEP && summaryBox) {
-      summaryBox.textContent = buildStructuredEmail().preview;
-    }
   }
 
 });
