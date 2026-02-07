@@ -72,7 +72,7 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* Basket — слегка “дороже” рамка, но НЕ жёлтая */
+/* Basket — слегка "дороже" рамка, но НЕ жёлтая */
 .panel-basket {
     border-color: rgba(176, 122, 42, .22);
     background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(252, 248, 241, .86));
@@ -420,7 +420,7 @@ h3 {
     font-family: "Cormorant SC", serif;
 }
 
-/* 3) Кнопки: премиум “navy” (вместо bronze/amber) */
+/* 3) Кнопки: премиум "navy" (вместо bronze/amber) */
 #btnQuickSend,
 #btnWizardSend,
 #btnNext {
@@ -495,7 +495,7 @@ button:focus-visible {
     color: var(--text) !important;
 }
 
-/* 7) Чип “xx Gerichte” сделать премиум нейтральным */
+/* 7) Чип "xx Gerichte" сделать премиум нейтральным */
 #menuCategories .cat-chip {
     border-color: var(--line2) !important;
     background: rgba(255, 255, 255, .88) !important;
@@ -507,7 +507,7 @@ button:focus-visible {
     border-radius: 999px !important;
 }
 
-/* 8) “Hinzugefügt” (выбрано) — navy (вместо bronze) */
+/* 8) "Hinzugefügt" (выбрано) — navy (вместо bronze) */
 #menuSelectBox button[disabled],
 #menuSelectBox button[aria-disabled="true"],
 .btn-added {
@@ -940,4 +940,145 @@ html.is-locked, body.is-locked { overflow: hidden !important; }
     align-items: center !important;
     gap: .5rem !important;
   }
+}
+
+/* =========================================================
+   MENU SHEET — Улучшенные toggle кнопки (✓ vs +)
+   КЛИК НА ВЕСЬ БЛОК
+========================================================= */
+
+/* Клик на весь item */
+.v-sheet__item {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.v-sheet__item:active {
+  transform: scale(0.98);
+}
+
+/* Базовая кнопка toggle (невыбрано = "+") */
+.v-sheet__toggle {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .08);
+  color: rgba(255, 255, 255, .65);
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  pointer-events: none; /* не блокирует клик на item */
+}
+
+/* Выбранное состояние (✓) — яркий акцент! */
+.v-sheet__toggle.is-on {
+  border: 1.5px solid rgba(76, 175, 80, .65) !important;
+  background: linear-gradient(135deg, 
+    rgba(76, 175, 80, .85), 
+    rgba(56, 142, 60, .75)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 12px rgba(76, 175, 80, .35),
+    inset 0 1px 2px rgba(255, 255, 255, .25);
+}
+
+/* Hover эффект на весь item */
+.v-sheet__item:hover .v-sheet__toggle {
+  background: rgba(255, 255, 255, .14);
+  border-color: rgba(255, 255, 255, .25);
+  transform: scale(1.05);
+}
+
+.v-sheet__item:hover .v-sheet__toggle.is-on {
+  background: linear-gradient(135deg, 
+    rgba(76, 175, 80, .95), 
+    rgba(56, 142, 60, .85)) !important;
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 16px rgba(76, 175, 80, .45),
+    inset 0 1px 2px rgba(255, 255, 255, .35);
+}
+
+/* Подсветка выбранного элемента целиком */
+.v-sheet__item:has(.v-sheet__toggle.is-on) {
+  background: rgba(76, 175, 80, .12) !important;
+  border-color: rgba(76, 175, 80, .25) !important;
+}
+
+.v-sheet__item:has(.v-sheet__toggle.is-on):hover {
+  background: rgba(76, 175, 80, .16) !important;
+}
+
+/* Счётчик выбранных блюд */
+#menuCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, 
+    rgba(76, 175, 80, .90), 
+    rgba(56, 142, 60, .80));
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(76, 175, 80, .3);
+}
+
+/* Hint текст с акцентом */
+#menuRowHint {
+  font-weight: 700;
+  color: rgba(76, 175, 80, .92) !important;
+}
+
+/* Кнопка "Übernehmen" с зелёным акцентом */
+.v-sheet__apply {
+  border: 1.5px solid rgba(76, 175, 80, .45) !important;
+  background: linear-gradient(135deg, 
+    rgba(76, 175, 80, .25), 
+    rgba(56, 142, 60, .20)) !important;
+  color: #fff !important;
+}
+
+.v-sheet__apply:hover {
+  background: linear-gradient(135deg, 
+    rgba(76, 175, 80, .35), 
+    rgba(56, 142, 60, .30)) !important;
+  border-color: rgba(76, 175, 80, .55) !important;
+}
+
+/* Стилизация текста в item */
+.v-sheet__itemText {
+  flex: 1;
+}
+
+.v-sheet__itemName {
+  font-weight: 900;
+  color: rgba(255, 255, 255, .92);
+  margin-bottom: 4px;
+}
+
+.v-sheet__itemDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .68);
+  line-height: 1.35;
+}
+
+/* Cat button улучшения */
+.v-sheet__catTitle {
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.v-sheet__catMeta {
+  font-size: 11px;
+  opacity: .7;
+  font-weight: 800;
 }

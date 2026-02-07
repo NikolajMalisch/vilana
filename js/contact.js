@@ -7,6 +7,7 @@
  * - Step 2 Menü: opens Sheet/Modal (#menuModal)
  * - EmailJS sendForm: from_name, reply_to, subject, message
  * - Anti-Spam: Honeypot + 3s timing
+ * - УЛУЧШЕНИЕ: Клик на весь item для выбора блюда
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -396,6 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const row = document.createElement("div");
       row.className = "v-sheet__item";
+      row.setAttribute("data-item-id", item.id); // для клика
       row.innerHTML = `
         <div class="v-sheet__itemText">
           <div class="v-sheet__itemName">${esc(item.name)}</div>
@@ -445,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // cats click + toggle items
+  // cats click
   if (menuCats) {
     menuCats.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-cat]");
@@ -456,15 +458,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ✅ УЛУЧШЕНИЕ: клик на весь item (не только на кнопку!)
   if (menuItems) {
     menuItems.addEventListener("click", (e) => {
-      const t = e.target.closest("[data-toggle]");
-      if (!t) return;
+      // Клик на весь item
+      const item = e.target.closest(".v-sheet__item");
+      if (!item) return;
 
-      const id = t.getAttribute("data-toggle");
+      const id = item.getAttribute("data-item-id");
       if (!id) return;
 
-      // if exists -> remove
+      // toggle выбора
       if (selected[id]) {
         delete selected[id];
         renderItems(menuModalSearch?.value || "");
