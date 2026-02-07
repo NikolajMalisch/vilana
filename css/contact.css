@@ -925,3 +925,19 @@ html.is-locked, body.is-locked { overflow: hidden !important; }
   padding: 12px 16px;
   font-weight: 900;
 }
+/* CONTACT — force desktop header nav visible (safety fix) */
+@media (min-width: 768px) {
+  body.contact-wrap header nav[aria-label="Hauptnavigation"] {
+    display: flex !important;
+    gap: 2rem !important;
+    align-items: center !important;
+  }
+  body.contact-wrap header nav[aria-label="Hauptnavigation"] a {
+    display: inline-block !important;
+  }
+  body.contact-wrap header [aria-label="Sprachumschalter"] {
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+  }
+}

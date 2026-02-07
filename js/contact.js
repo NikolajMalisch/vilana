@@ -1,17 +1,18 @@
 "use strict";
 
 /**
- * Vilana Contact Form (DE)
+ * Vilana Contact Form (DE) — v2 (Sheet Menu)
  * - Quick Anfrage (Nachricht + E-Mail Pflicht)
- * - Wizard (Erweitert) mit Stepper + Menüauswahl (Sheet)
- * - EmailJS Versand (sendForm) + publicKey
- * - Anti-Spam: Honeypot + Timing (3s)
+ * - Wizard (Erweitert) 4 Steps
+ * - Step 2 Menü: opens Sheet/Modal (#menuModal)
+ * - EmailJS sendForm: from_name, reply_to, subject, message
+ * - Anti-Spam: Honeypot + 3s timing
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
-          Helpers
+      Helpers
   ========================================================== */
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -35,8 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }[m]));
   }
 
+  function bodyLock(lock) {
+    document.documentElement.classList.toggle("v-noscroll", !!lock);
+    document.body.classList.toggle("v-noscroll", !!lock);
+  }
+
   /* =========================================================
-          Burger Menu
+      Burger Menu
   ========================================================== */
   const btnBurger = $("#menuToggle");
   const mobileMenu = $("#mobileMenu");
@@ -60,13 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-          Anti-bot timing start
+      Anti-bot timing start
   ========================================================== */
   const startedAt = $("#cf_started_at");
   if (startedAt) startedAt.value = String(Date.now());
 
   /* =========================================================
-          Form refs
+      Form refs
   ========================================================== */
   const form = $("#contactForm");
   if (!form) return;
@@ -75,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const quickMessage = $("#cf_message");
   const email = $("#email");
   const privacy = $("#cf-privacy");
-
-  // Optional
   const name = $("#name");
   const phone = $("#cf-phone");
 
@@ -97,8 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const subjectHidden = $("#subject_hidden");
   const msgHidden = $("#cf-message-hidden");
 
+  // Menu hidden for email
+  const menuSelectedText = $("#menuSelectedText");
+  const menuModeHidden = $("#menuModeHidden");
+
   /* =========================================================
-          Wizard Setup (4 Schritte)
+      Wizard Setup (4 Schritte)
   ========================================================== */
   const TOTAL_STEPS = 4;
   const steps = wizardWrap ? $$("[data-step]", wizardWrap) : [];
@@ -172,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-          Optionen (Service/Cleanup) – show/hide
+      Optionen (Service/Cleanup) – show/hide
   ========================================================== */
   const optService = $("#opt_service");
   const serviceDetails = $("#serviceDetails");
@@ -194,24 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
   syncCleanup();
 
   /* =========================================================
-          Menü (Sheet) — MOBILE FIT FIX
+      MENÜ SHEET — Data
   ========================================================== */
-  const menuModeHidden = $("#menuModeHidden");
-  const menuSelectedText = $("#menuSelectedText");
-
-  const menuRow = $("#menuRow");
-  const menuRowHint = $("#menuRowHint");
-
-  const sheet = $("#menuModal");
-  const sheetClose = $("#menuClose");
-  const sheetApply = $("#menuApply");
-  const sheetSearch = $("#menuModalSearch");
-  const sheetReset = $("#menuModalReset");
-  const catsEl = $("#menuCats");
-  const itemsEl = $("#menuItems");
-  const countEl = $("#menuCount");
-
-  // DATA
   const MENU = [
     {
       key: "warm", title: "Warme Speisen", items: [
@@ -300,186 +292,233 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  const picked = new Set();         // item.id
+  /* =========================================================
+      MENÜ SHEET — Elements
+  ========================================================== */
+  const menuRow = $("#menuRow");
+  const menuRowHint = $("#menuRowHint");
+
+  const menuModal = $("#menuModal");
+  const menuClose = $("#menuClose");
+  const menuApply = $("#menuApply");
+  const menuCount = $("#menuCount");
+
+  const menuCats = $("#menuCats");
+  const menuItems = $("#menuItems");
+
+  const menuModalSearch = $("#menuModalSearch");
+  const menuModalReset = $("#menuModalReset");
+
+  // state
+  const selected = {}; // id -> { name, catKey }
   let activeCatKey = MENU[0]?.key || "warm";
 
-  function setBodyLock(lock) {
-    document.documentElement.classList.toggle("is-locked", lock);
-    document.body.classList.toggle("is-locked", lock);
+  function getCatByKey(key) {
+    return MENU.find(c => c.key === key) || MENU[0];
   }
 
-  function openSheet() {
-    if (!sheet) return;
-    sheet.classList.remove("hidden");
-    sheet.setAttribute("aria-hidden", "false");
-    setBodyLock(true);
-    if (sheetSearch) {
-      sheetSearch.value = "";
-      setTimeout(() => sheetSearch.focus(), 30);
+  function updateMenuHiddenFields() {
+    const entries = Object.entries(selected).map(([id, v]) => ({ id, ...v }));
+
+    if (!entries.length) {
+      if (menuModeHidden) menuModeHidden.value = "Keine Auswahl (Vilana schlägt vor)";
+      if (menuSelectedText) menuSelectedText.value = "—";
+      if (menuRowHint) menuRowHint.textContent = "Keine Auswahl – Vilana schlägt vor";
+      if (menuCount) menuCount.textContent = "0";
+      return;
     }
-    renderCats();
-    renderItems("");
-    syncCount();
+
+    // build lines grouped by category in original order
+    const groups = {};
+    entries.forEach(it => {
+      const k = it.catKey || "other";
+      if (!groups[k]) groups[k] = [];
+      groups[k].push(it);
+    });
+
+    const lines = [];
+    MENU.forEach(cat => {
+      const list = groups[cat.key] || [];
+      list.forEach(x => lines.push(`• ${cat.title}: ${x.name}`));
+    });
+
+    if (menuModeHidden) menuModeHidden.value = "Gerichte ausgewählt";
+    if (menuSelectedText) menuSelectedText.value = lines.join("\n");
+    if (menuRowHint) menuRowHint.textContent = `${entries.length} ausgewählt`;
+    if (menuCount) menuCount.textContent = String(entries.length);
   }
 
-  function closeSheet() {
-    if (!sheet) return;
-    sheet.classList.add("hidden");
-    sheet.setAttribute("aria-hidden", "true");
-    setBodyLock(false);
+  function renderCats(query = "") {
+    if (!menuCats) return;
+    const q = query.trim().toLowerCase();
+
+    menuCats.innerHTML = "";
+
+    MENU.forEach(cat => {
+      // if query, keep cats that have at least one match
+      const hasMatch = !q ? true : cat.items.some(i =>
+        i.name.toLowerCase().includes(q) || (i.desc || "").toLowerCase().includes(q)
+      );
+      if (!hasMatch) return;
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "v-sheet__cat" + (cat.key === activeCatKey ? " is-active" : "");
+      btn.setAttribute("data-cat", cat.key);
+      btn.innerHTML = `
+        <div class="v-sheet__catTitle">${esc(cat.title)}</div>
+        <div class="v-sheet__catMeta">${cat.items.length} Gerichte</div>
+      `;
+      menuCats.appendChild(btn);
+    });
   }
 
-  function syncCount() {
-    if (countEl) countEl.textContent = String(picked.size);
-  }
+  function renderItems(query = "") {
+    if (!menuItems) return;
+    const q = query.trim().toLowerCase();
 
-  function countCat(catKey) {
-    const cat = MENU.find(c => c.key === catKey);
-    if (!cat) return 0;
-    let n = 0;
-    for (const it of cat.items) if (picked.has(it.id)) n++;
-    return n;
-  }
+    const cat = getCatByKey(activeCatKey);
+    const items = !q
+      ? cat.items
+      : cat.items.filter(i =>
+          i.name.toLowerCase().includes(q) || (i.desc || "").toLowerCase().includes(q)
+        );
 
-  function renderCats() {
-    if (!catsEl) return;
-    catsEl.innerHTML = MENU.map(c => {
-      const isActive = c.key === activeCatKey ? " is-active" : "";
-      const cnt = countCat(c.key);
-      return `
-        <button type="button" class="v-cat${isActive}" data-cat="${esc(c.key)}">
-          <span class="v-cat__name">${esc(c.title)}</span>
-          <span class="v-cat__count">${cnt ? cnt : ""}</span>
+    menuItems.innerHTML = "";
+
+    if (!items.length) {
+      menuItems.innerHTML = `<div class="v-sheet__empty">Keine Treffer.</div>`;
+      return;
+    }
+
+    items.forEach(item => {
+      const isAdded = !!selected[item.id];
+
+      const row = document.createElement("div");
+      row.className = "v-sheet__item";
+      row.innerHTML = `
+        <div class="v-sheet__itemText">
+          <div class="v-sheet__itemName">${esc(item.name)}</div>
+          ${item.desc ? `<div class="v-sheet__itemDesc">${esc(item.desc)}</div>` : ``}
+        </div>
+        <button type="button"
+          class="v-sheet__toggle ${isAdded ? "is-on" : ""}"
+          data-toggle="${esc(item.id)}"
+          aria-label="${isAdded ? "Entfernen" : "Hinzufügen"}">
+          <span>${isAdded ? "✓" : "+"}</span>
         </button>
       `;
-    }).join("");
-
-    $$("[data-cat]", catsEl).forEach(btn => {
-      btn.addEventListener("click", () => {
-        activeCatKey = btn.getAttribute("data-cat") || activeCatKey;
-        if (sheetSearch) sheetSearch.value = "";
-        renderCats();
-        renderItems("");
-      });
+      menuItems.appendChild(row);
     });
   }
 
-  function renderItems(query) {
-    if (!itemsEl) return;
-    const cat = MENU.find(c => c.key === activeCatKey) || MENU[0];
-    if (!cat) return;
+  function openMenuSheet() {
+    if (!menuModal) return;
+    menuModal.classList.remove("hidden");
+    menuModal.setAttribute("aria-hidden", "false");
+    bodyLock(true);
 
-    const q = (query || "").trim().toLowerCase();
-    const list = !q ? cat.items : cat.items.filter(i =>
-      i.name.toLowerCase().includes(q) || (i.desc || "").toLowerCase().includes(q)
-    );
+    // default render
+    renderCats(menuModalSearch?.value || "");
+    renderItems(menuModalSearch?.value || "");
+    updateMenuHiddenFields();
+  }
 
-    if (!list.length) {
-      itemsEl.innerHTML = `<div class="v-empty">Keine Treffer.</div>`;
-      return;
-    }
+  function closeMenuSheet() {
+    if (!menuModal) return;
+    menuModal.classList.add("hidden");
+    menuModal.setAttribute("aria-hidden", "true");
+    bodyLock(false);
+  }
 
-    itemsEl.innerHTML = list.map(it => {
-      const checked = picked.has(it.id) ? "checked" : "";
-      return `
-        <label class="v-item">
-          <input class="v-item__chk" type="checkbox" data-id="${esc(it.id)}" ${checked} />
-          <div class="v-item__body">
-            <div class="v-item__name">${esc(it.name)}</div>
-            ${it.desc ? `<div class="v-item__desc">${esc(it.desc)}</div>` : ""}
-          </div>
-        </label>
-      `;
-    }).join("");
+  // open sheet from row
+  if (menuRow) menuRow.addEventListener("click", openMenuSheet);
 
-    $$("[data-id]", itemsEl).forEach(cb => {
-      cb.addEventListener("change", () => {
-        const id = cb.getAttribute("data-id");
-        if (!id) return;
-        if (cb.checked) picked.add(id); else picked.delete(id);
-        renderCats();
-        syncCount();
-      });
+  // close sheet
+  if (menuClose) menuClose.addEventListener("click", closeMenuSheet);
+  if (menuModal) {
+    menuModal.addEventListener("click", (e) => {
+      if (e.target && (e.target.matches("[data-sheet-close]"))) closeMenuSheet();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menuModal.classList.contains("hidden")) closeMenuSheet();
     });
   }
 
-  function buildSelectedText() {
-    if (!picked.size) return "—";
-    const lines = [];
-    for (const cat of MENU) {
-      const arr = cat.items.filter(it => picked.has(it.id));
-      if (!arr.length) continue;
-      lines.push(`• ${cat.title}:`);
-      for (const it of arr) lines.push(`  - ${it.name}`);
-      lines.push("");
-    }
-    return lines.join("\n").trim();
-  }
-
-  function applySelectionToForm() {
-    if (!picked.size) {
-      if (menuSelectedText) menuSelectedText.value = "—";
-      if (menuModeHidden) menuModeHidden.value = "Keine Auswahl (Vilana schlägt vor)";
-      if (menuRowHint) menuRowHint.textContent = "Keine Auswahl – Vilana schlägt vor";
-      return;
-    }
-
-    const txt = buildSelectedText();
-    if (menuSelectedText) menuSelectedText.value = txt;
-    if (menuModeHidden) menuModeHidden.value = `Auswahl getroffen (${picked.size} Gerichte)`;
-    if (menuRowHint) menuRowHint.textContent = `Ausgewählt: ${picked.size} Gerichte`;
-  }
-
-  function resetSelection() {
-    picked.clear();
-    if (sheetSearch) sheetSearch.value = "";
-    renderCats();
-    renderItems("");
-    syncCount();
-    applySelectionToForm();
-    toast("Auswahl geleert");
-  }
-
-  if (menuRow) menuRow.addEventListener("click", openSheet);
-  if (sheetClose) sheetClose.addEventListener("click", closeSheet);
-
-  // backdrop close
-  if (sheet) {
-    sheet.addEventListener("click", (e) => {
-      const closeHit = e.target.closest("[data-sheet-close]");
-      if (closeHit) closeSheet();
+  // cats click + toggle items
+  if (menuCats) {
+    menuCats.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-cat]");
+      if (!btn) return;
+      activeCatKey = btn.getAttribute("data-cat") || activeCatKey;
+      renderCats(menuModalSearch?.value || "");
+      renderItems(menuModalSearch?.value || "");
     });
   }
 
-  // ESC
-  document.addEventListener("keydown", (e) => {
-    if (!sheet || sheet.classList.contains("hidden")) return;
-    if (e.key === "Escape") closeSheet();
-  });
+  if (menuItems) {
+    menuItems.addEventListener("click", (e) => {
+      const t = e.target.closest("[data-toggle]");
+      if (!t) return;
 
-  if (sheetSearch) {
-    sheetSearch.addEventListener("input", () => renderItems(sheetSearch.value));
-  }
-  if (sheetReset) sheetReset.addEventListener("click", resetSelection);
+      const id = t.getAttribute("data-toggle");
+      if (!id) return;
 
-  if (sheetApply) {
-    sheetApply.addEventListener("click", () => {
-      applySelectionToForm();
-      closeSheet();
-      toast("Übernommen ✓");
-      // если мы на шаге 4 — обновим summary
-      if (current === TOTAL_STEPS && summaryBox) {
-        summaryBox.textContent = buildStructuredEmail().preview;
+      // if exists -> remove
+      if (selected[id]) {
+        delete selected[id];
+        renderItems(menuModalSearch?.value || "");
+        updateMenuHiddenFields();
+        toast("Entfernt");
+        return;
       }
+
+      // find item in all cats
+      let found = null, foundCatKey = null;
+      for (const c of MENU) {
+        const x = c.items.find(it => it.id === id);
+        if (x) { found = x; foundCatKey = c.key; break; }
+      }
+      if (!found) return;
+
+      selected[id] = { name: found.name, catKey: foundCatKey };
+      renderItems(menuModalSearch?.value || "");
+      updateMenuHiddenFields();
+      toast("Hinzugefügt ✓");
     });
   }
 
-  // init
-  applySelectionToForm();
-  syncCount();
+  // search + reset
+  if (menuModalSearch) {
+    menuModalSearch.addEventListener("input", () => {
+      const q = menuModalSearch.value || "";
+      // keep cat list filtered + items filtered
+      renderCats(q);
+      renderItems(q);
+    });
+  }
+  if (menuModalReset) {
+    menuModalReset.addEventListener("click", () => {
+      if (menuModalSearch) menuModalSearch.value = "";
+      renderCats("");
+      renderItems("");
+    });
+  }
+
+  // apply: only closes (selected already stored)
+  if (menuApply) {
+    menuApply.addEventListener("click", () => {
+      updateMenuHiddenFields();
+      closeMenuSheet();
+      toast("Übernommen ✓");
+    });
+  }
+
+  // initial hidden fields
+  updateMenuHiddenFields();
 
   /* =========================================================
-          Wizard Validation
+      Wizard Validation
   ========================================================== */
   function validateWizardStep(n) {
     const block = steps.find(s => String(s.getAttribute("data-step")) === String(n));
@@ -510,26 +549,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-          Base Validation (immer)
+      Base Validation (immer)
   ========================================================== */
   function validateBase() {
+    // Nachricht Pflicht
     if (!quickMessage || !quickMessage.value.trim()) {
       if (quickMessage) {
         quickMessage.classList.add("field-error");
         quickMessage.focus();
-        quickMessage.reportValidity?.();
       }
       toast("Bitte Nachricht ausfüllen.");
       return false;
     }
     quickMessage.classList.remove("field-error");
 
+    // E-Mail Pflicht
     const e1 = (email && email.value) ? email.value.trim() : "";
     if (!e1) {
       if (email) {
         email.classList.add("field-error");
         email.focus();
-        email.reportValidity?.();
       }
       toast("Bitte E-Mail angeben.");
       return false;
@@ -542,17 +581,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (email) email.classList.remove("field-error");
 
+    // Datenschutz Pflicht
     if (privacy && !privacy.checked) {
       toast("Bitte AGB & Datenschutz akzeptieren.");
       privacy.focus();
       return false;
     }
-
     return true;
   }
 
   /* =========================================================
-          Email Body Builder (Nachricht immer zuerst!)
+      Email Body Builder (Nachricht immer zuerst!)
   ========================================================== */
   function getVal(id) {
     const el = document.getElementById(id);
@@ -588,8 +627,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const optGlaeser = form.querySelector('input[name="opt_glaeser"]')?.checked ? "Ja" : "Nein";
     const optServiceVal = (optService && optService.checked) ? "Ja" : "Nein";
     const cleanupVal = (optCleanup && optCleanup.checked) ? "Ja" : "Nein";
-
-    const comment = getVal("cf-comment");
 
     const preview =
 `NACHRICHT
@@ -656,23 +693,20 @@ Gläser anbieten: ${optGlaeser}
 Service Personal anfragen: ${optServiceVal}
 Abbau/Reinigung/Spülservice anfragen: ${cleanupVal}
 
-[ZUSATZ]
-${comment || "—"}
-
 === ENDE ===
 `;
     return { preview, emailBody };
   }
 
   /* =========================================================
-          EmailJS Init
+      EmailJS Init
   ========================================================== */
   if (window.emailjs) {
-    try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (e) { /* ignore */ }
+    try { emailjs.init({ publicKey: "vfmomNKrMxrf2xqDW" }); } catch (_) {}
   }
 
   /* =========================================================
-          Submit (Quick + Wizard)
+      Submit (Quick + Wizard)
   ========================================================== */
   let sending = false;
 
@@ -690,7 +724,7 @@ ${comment || "—"}
     // Base checks
     if (!validateBase()) return;
 
-    // Wenn Wizard offen: Step 1 muss ok sein
+    // Wenn Wizard offen: Step 1 muss ok sein (Minimum)
     if (wizardOpen) {
       if (!validateWizardStep(1)) return;
     }
@@ -716,42 +750,42 @@ ${comment || "—"}
 
     sending = true;
     const submitBtns = $$('button[type="submit"]', form);
-    submitBtns.forEach(b => { try { b.disabled = true; } catch (_) { } });
+    submitBtns.forEach(b => { try { b.disabled = true; } catch (_) {} });
 
     emailjs.sendForm(
       "service_75biswm",
       "template_fuxgrlb",
       form,
-      { publicKey: "vfmomNKrMxrf2xDW" }
+      { publicKey: "vfmomNKrMxrf2xqDW" }
     )
-      .then(() => {
-        const ok = $("#formMsg");
-        if (ok) ok.classList.remove("hidden");
-        toast("Gesendet ✓");
+    .then(() => {
+      const ok = $("#formMsg");
+      if (ok) ok.classList.remove("hidden");
+      toast("Gesendet ✓");
 
-        form.reset();
-        if (startedAt) startedAt.value = String(Date.now());
+      form.reset();
+      if (startedAt) startedAt.value = String(Date.now());
 
-        // reset menu
-        picked.clear();
-        applySelectionToForm();
-        syncCount();
+      // reset menu state
+      Object.keys(selected).forEach(k => delete selected[k]);
+      activeCatKey = MENU[0]?.key || "warm";
+      updateMenuHiddenFields();
 
-        // reset wizard
-        syncService();
-        syncCleanup();
-        setWizard(false);
+      // close sheet if open
+      if (menuModal && !menuModal.classList.contains("hidden")) closeMenuSheet();
 
-        // close sheet if open
-        closeSheet();
-      })
-      .catch((err) => {
-        alert("Fehler beim Senden: " + (err && err.text ? err.text : err));
-      })
-      .finally(() => {
-        sending = false;
-        submitBtns.forEach(b => { try { b.disabled = false; } catch (_) { } });
-      });
+      // reset wizard
+      syncService();
+      syncCleanup();
+      setWizard(false);
+    })
+    .catch((err) => {
+      alert("Fehler beim Senden: " + (err && err.text ? err.text : String(err)));
+    })
+    .finally(() => {
+      sending = false;
+      submitBtns.forEach(b => { try { b.disabled = false; } catch (_) {} });
+    });
   });
 
 });
