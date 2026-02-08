@@ -1082,3 +1082,278 @@ html.is-locked, body.is-locked { overflow: hidden !important; }
   opacity: .7;
   font-weight: 800;
 }
+/* =========================================================
+   PREMIUM FORM INPUTS (Date, Time, Number, Select)
+========================================================= */
+
+/* Все инпуты - базовый premium стиль */
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  border-radius: 14px !important;
+  border: 1px solid rgba(15, 23, 42, .18) !important;
+  background: rgba(255, 255, 255, .94) !important;
+  color: var(--text) !important;
+  padding: 12px 16px !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Focus - премиум navy glow */
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: rgba(11, 31, 59, .45) !important;
+  background: rgba(255, 255, 255, 1) !important;
+  box-shadow: 
+    0 0 0 3px rgba(11, 31, 59, .12),
+    0 4px 12px rgba(11, 31, 59, .08) !important;
+}
+
+/* Hover */
+input[type="date"]:hover,
+input[type="time"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="text"]:hover,
+select:hover,
+textarea:hover {
+  border-color: rgba(15, 23, 42, .28) !important;
+  background: rgba(255, 255, 255, .98) !important;
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(15, 23, 42, .45) !important;
+  font-weight: 400 !important;
+}
+
+/* Select - убрать стандартную стрелку и добавить кастомную */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230f172a' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  padding-right: 40px !important;
+}
+
+/* Number input - убрать стрелки (spinner) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Date & Time inputs - premium календарь иконка */
+input[type="date"],
+input[type="time"] {
+  position: relative;
+}
+
+/* Стиль для calendar/clock picker (браузерный) */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Checkbox & Radio - premium стиль */
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+  border: 1.5px solid rgba(15, 23, 42, .25) !important;
+  background: rgba(255, 255, 255, .95) !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  accent-color: var(--accent) !important;
+}
+
+input[type="radio"] {
+  border-radius: 50% !important;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background: linear-gradient(135deg, var(--accent2), var(--accent)) !important;
+  border-color: var(--accent) !important;
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  border-color: rgba(15, 23, 42, .35) !important;
+}
+
+/* Labels - premium typography */
+label {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 600 !important;
+  color: rgba(15, 23, 42, .88) !important;
+  letter-spacing: 0.2px;
+}
+
+/* Disabled state */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background: rgba(15, 23, 42, .04) !important;
+}
+
+/* Error state (если нужно) */
+input.field-error,
+select.field-error,
+textarea.field-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, .1) !important;
+}
+/* =========================================================
+   FIX: Категории на всю ширину (как блюда слева)
+========================================================= */
+
+/* Контейнер категорий */
+#menuCats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch !important; /* убирает центрирование */
+}
+
+/* Каждая категория - кнопка на всю ширину */
+.v-cat {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: left !important;
+  padding: 12px 14px !important;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.v-cat:hover {
+  background: rgba(255,255,255,.10);
+}
+
+.v-cat.is-active {
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.18) !important;
+}
+
+/* Текст категории */
+.v-cat > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left !important;
+}
+
+.v-sheet__catTitle {
+  font-weight: 900;
+  font-size: 14px;
+  text-align: left !important;
+}
+
+.v-sheet__catMeta {
+  font-size: 11px;
+  opacity: 0.7;
+  font-weight: 800;
+  text-align: left !important;
+}
+
+/* Убрать любое центрирование */
+.v-sheet__list {
+  text-align: left !important;
+}
+/* =========================================================
+   FIX: Яркая подсветка активной категории
+========================================================= */
+
+.v-cat.is-active {
+  background: rgba(76, 175, 80, 0.18) !important;
+  border-color: rgba(76, 175, 80, 0.45) !important;
+  border-left: 3px solid #4CAF50 !important;
+}
+
+.v-cat.is-active .v-sheet__catTitle {
+  color: rgba(76, 175, 80, 0.95) !important;
+}
+
+.v-cat.is-active .v-sheet__catMeta {
+  color: rgba(76, 175, 80, 0.75) !important;
+}
+
+/* Hover на активной категории */
+.v-cat.is-active:hover {
+  background: rgba(76, 175, 80, 0.22) !important;
+}
+/* =========================================================
+   ПОДСВЕТКА АКТИВНОЙ КАТЕГОРИИ (усиленная)
+========================================================= */
+
+/* Базовая категория */
+.v-cat {
+  width: 100%;
+  padding: 14px 16px;
+  text-align: left;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 800;
+}
+
+.v-cat:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.20);
+}
+
+/* АКТИВНАЯ категория - яркая зелёная подсветка */
+.v-cat.is-active {
+  background: rgba(76, 175, 80, 0.25) !important;
+  border: 2px solid #4CAF50 !important;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15) !important;
+}
+
+.v-cat.is-active:hover {
+  background: rgba(76, 175, 80, 0.30) !important;
+}
+
+/* Текст в активной категории */
+.v-cat.is-active .v-sheet__catTitle,
+.v-cat.is-active .v-sheet__catMeta {
+  color: #4CAF50 !important;
+}

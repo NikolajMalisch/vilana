@@ -350,11 +350,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuCount) menuCount.textContent = String(entries.length);
   }
 
+
   function renderCats(query = "") {
     if (!menuCats) return;
     const q = query.trim().toLowerCase();
 
     menuCats.innerHTML = "";
+
 
     MENU.forEach(cat => {
       // if query, keep cats that have at least one match
@@ -447,16 +449,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // cats click
-  if (menuCats) {
-    menuCats.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-cat]");
-      if (!btn) return;
-      activeCatKey = btn.getAttribute("data-cat") || activeCatKey;
-      renderCats(menuModalSearch?.value || "");
-      renderItems(menuModalSearch?.value || "");
-    });
-  }
+// cats click
+if (menuCats) {
+  menuCats.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-cat]");
+    if (!btn) return;
+    
+    activeCatKey = btn.getAttribute("data-cat") || activeCatKey;
+    
+    renderCats(menuModalSearch?.value || "");
+    renderItems(menuModalSearch?.value || "");
+    
+    // ✅ ПРОКРУТКА НАВЕРХ при смене категории
+    if (menuItems) {
+      menuItems.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
 
   // click on whole item -> toggle selection
   if (menuItems) {
