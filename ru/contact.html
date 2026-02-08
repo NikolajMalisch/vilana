@@ -769,40 +769,74 @@
 
 <!-- =========================================================
   MENU SHEET / MODAL — v2 (обязательно для JS v2)
+  RU VERSION — FULL BLOCK (с нижней кнопкой "Применить")
 ========================================================== -->
 <div id="menuModal" class="v-sheet hidden" aria-hidden="true">
   <div class="v-sheet__overlay" data-sheet-close></div>
 
   <div class="v-sheet__panel" role="dialog" aria-modal="true" aria-label="Выбор блюд">
+    <!-- HEAD -->
     <div class="v-sheet__head">
       <div class="v-sheet__headLeft">
         <div class="v-sheet__title">Выбор блюд</div>
         <div class="v-sheet__sub">Опционально — без количества (мы рассчитаем под гостей).</div>
       </div>
-      <button type="button" id="menuClose" class="v-sheet__close" aria-label="Закрыть" data-sheet-close>✕</button>
+
+      <button type="button"
+              id="menuClose"
+              class="v-sheet__close"
+              aria-label="Закрыть"
+              data-sheet-close>✕</button>
     </div>
 
+    <!-- TOOLS (SEARCH + RESET) -->
     <div class="v-sheet__tools">
       <div class="v-sheet__searchWrap">
         <label class="v-sheet__label" for="menuModalSearch">Поиск</label>
-        <input id="menuModalSearch" type="text" class="v-sheet__search" placeholder="Поиск: шашлык, лосось, тирамису..." />
+        <input id="menuModalSearch"
+               type="text"
+               class="v-sheet__search"
+               placeholder="Поиск: шашлык, лосось, тирамису..." />
       </div>
+
       <button type="button" id="menuModalReset" class="v-sheet__reset">Сброс</button>
     </div>
 
+    <!-- BODY (scroll area) -->
     <div class="v-sheet__body">
+      <!-- CATEGORIES -->
       <div class="v-sheet__cats" id="menuCats"></div>
 
+      <!-- ITEMS -->
       <div class="v-sheet__items">
         <div class="v-sheet__itemsHead">
           <div class="v-sheet__itemsTitle">Блюда</div>
+          <!-- счетчик в шапке списка (опционально) -->
           <div class="v-sheet__itemsMeta">Выбрано: <span data-menu-count>0</span></div>
         </div>
+
         <div id="menuItems"></div>
       </div>
     </div>
+
+    <!-- FOOT (sticky bottom bar) -->
+    <div class="v-sheet__foot">
+      <div class="v-sheet__footLeft">
+        <span class="v-sheet__footLabel">Выбрано:</span>
+        <span class="v-sheet__badge" data-menu-count>0</span>
+      </div>
+
+      <!-- IMPORTANT:
+           id должен совпадать с тем, что ожидает JS v2.
+           Если в DE другой id — замени тут на него один-в-один.
+      -->
+      <button type="button" id="menuApply" class="v-sheet__apply">
+        Применить
+      </button>
+    </div>
   </div>
 </div>
+
 
 <!-- EmailJS SDK (CDN) -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
