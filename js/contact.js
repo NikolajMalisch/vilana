@@ -7,7 +7,8 @@
  * - Step 2 Menü: opens Sheet/Modal (#menuModal)
  * - EmailJS sendForm: from_name, reply_to, subject, message
  * - Anti-Spam: Honeypot + 3s timing
- * - УЛУЧШЕНИЕ: Клик на весь item для выбора блюда
+ * - UX: click on whole menu item toggles selection
+ * - FIX: Reset clears search + selection + active category + hidden fields
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -397,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const row = document.createElement("div");
       row.className = "v-sheet__item";
-      row.setAttribute("data-item-id", item.id); // для клика
+      row.setAttribute("data-item-id", item.id);
       row.innerHTML = `
         <div class="v-sheet__itemText">
           <div class="v-sheet__itemName">${esc(item.name)}</div>
@@ -420,7 +421,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuModal.setAttribute("aria-hidden", "false");
     bodyLock(true);
 
-    // default render
     renderCats(menuModalSearch?.value || "");
     renderItems(menuModalSearch?.value || "");
     updateMenuHiddenFields();
@@ -440,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuClose) menuClose.addEventListener("click", closeMenuSheet);
   if (menuModal) {
     menuModal.addEventListener("click", (e) => {
-      if (e.target && (e.target.matches("[data-sheet-close]"))) closeMenuSheet();
+      if (e.target && e.target.matches("[data-sheet-close]")) closeMenuSheet();
     });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && !menuModal.classList.contains("hidden")) closeMenuSheet();
@@ -458,17 +458,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ УЛУЧШЕНИЕ: клик на весь item (не только на кнопку!)
+  // click on whole item -> toggle selection
   if (menuItems) {
     menuItems.addEventListener("click", (e) => {
-      // Клик на весь item
       const item = e.target.closest(".v-sheet__item");
       if (!item) return;
 
       const id = item.getAttribute("data-item-id");
       if (!id) return;
 
-      // toggle выбора
       if (selected[id]) {
         delete selected[id];
         renderItems(menuModalSearch?.value || "");
@@ -477,7 +475,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // find item in all cats
       let found = null, foundCatKey = null;
       for (const c of MENU) {
         const x = c.items.find(it => it.id === id);
@@ -496,16 +493,27 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuModalSearch) {
     menuModalSearch.addEventListener("input", () => {
       const q = menuModalSearch.value || "";
-      // keep cat list filtered + items filtered
       renderCats(q);
       renderItems(q);
     });
   }
+
+  // ✅ FIX: Reset must clear selection + search + active category + hidden fields
   if (menuModalReset) {
-    menuModalReset.addEventListener("click", () => {
+    menuModalReset.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      for (const k of Object.keys(selected)) delete selected[k];
+      activeCatKey = MENU[0]?.key || "warm";
+
       if (menuModalSearch) menuModalSearch.value = "";
+
       renderCats("");
       renderItems("");
+      updateMenuHiddenFields();
+
+      toast("Reset ✓");
     });
   }
 
@@ -556,7 +564,6 @@ document.addEventListener("DOMContentLoaded", () => {
       Base Validation (immer)
   ========================================================== */
   function validateBase() {
-    // Nachricht Pflicht
     if (!quickMessage || !quickMessage.value.trim()) {
       if (quickMessage) {
         quickMessage.classList.add("field-error");
@@ -567,7 +574,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     quickMessage.classList.remove("field-error");
 
-    // E-Mail Pflicht
     const e1 = (email && email.value) ? email.value.trim() : "";
     if (!e1) {
       if (email) {
@@ -585,7 +591,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (email) email.classList.remove("field-error");
 
-    // Datenschutz Pflicht
     if (privacy && !privacy.checked) {
       toast("Bitte AGB & Datenschutz akzeptieren.");
       privacy.focus();
@@ -771,7 +776,7 @@ Abbau/Reinigung/Spülservice anfragen: ${cleanupVal}
       if (startedAt) startedAt.value = String(Date.now());
 
       // reset menu state
-      Object.keys(selected).forEach(k => delete selected[k]);
+      for (const k of Object.keys(selected)) delete selected[k];
       activeCatKey = MENU[0]?.key || "warm";
       updateMenuHiddenFields();
 
