@@ -4,49 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- =========================
-        SEO – Hochzeit Catering
-  ========================= -->
-  <title>Hochzeit Catering in Hameln | Vilana Event &amp; Catering</title>
+  <!-- SEO – Grill Catering -->
+  <title>Grill Catering Hannover & Hameln | BBQ Catering | Vilana Event</title>
   <meta name="description"
-        content="Hochzeit Catering in Hameln, Hannover &amp; Umgebung. Sektempfang, Fingerfood, Buffet, Servicepersonal und Ausstattung. Vilana Event &amp; Catering – stilvoll, zuverlässig, mit Liebe zum Detail.">
+        content="Professionelles Grill Catering in Hannover & Hameln. BBQ-Buffet, Live-Cooking am Grill, Outdoor Catering. Vilana Event & Catering – frisch vom Grill für Ihr Event.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
   <!-- Canonical & Hreflang -->
-  <link rel="canonical" href="https://www.vilana-event.de/anlass/hochzeit.html">
-  <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/anlass/hochzeit.html">
-  <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/anlass/hochzeit.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/hochzeit.html">
+  <link rel="canonical" href="https://www.vilana-event.de/anlass/grill-catering.html">
+  <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/anlass/grill-catering.html">
+  <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/anlass/grill-catering.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/grill-catering.html">
 
   <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:site_name" content="Vilana Event &amp; Catering">
-  <meta property="og:title" content="Hochzeit Catering in Hameln | Vilana Event &amp; Catering">
-  <meta property="og:description" content="Sektempfang, Fingerfood, Buffet, Servicepersonal und Ausstattung – stilvoll für Ihre Hochzeit.">
-  <meta property="og:url" content="https://www.vilana-event.de/anlass/hochzeit.html">
-  <meta property="og:image" content="https://www.vilana-event.de/images/anlass/hochzeit-hero.webp">
-  <meta property="og:image:alt" content="Vilana Event &amp; Catering – Hochzeit Catering">
+  <meta property="og:site_name" content="Vilana Event & Catering">
+  <meta property="og:title" content="Grill Catering Hannover | BBQ Catering | Vilana Event">
+  <meta property="og:description" content="BBQ-Buffet, Live-Cooking am Grill, Outdoor Catering – frisch vom Grill.">
+  <meta property="og:url" content="https://www.vilana-event.de/anlass/grill-catering.html">
+  <meta property="og:image" content="https://www.vilana-event.de/images/grill-hero.webp">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hochzeit Catering in Hameln | Vilana Event &amp; Catering" />
-  <meta name="twitter:description" content="Sektempfang, Fingerfood, Buffet, Servicepersonal und Ausstattung – stilvoll für Ihre Hochzeit." />
-  <meta name="twitter:image" content="https://www.vilana-event.de/images/anlass/hochzeit-hero.webp" />
-  <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – Hochzeit Catering" />
-  <meta name="twitter:url" content="https://www.vilana-event.de/anlass/hochzeit.html" />
+  <meta name="twitter:title" content="Grill Catering Hannover | BBQ Catering | Vilana Event" />
+  <meta name="twitter:description" content="BBQ-Buffet, Live-Cooking am Grill, Outdoor Catering – frisch vom Grill." />
+  <meta name="twitter:image" content="https://www.vilana-event.de/images/grill-hero.webp" />
 
   <!-- CSS -->
   <link rel="preload" href="/css/output.css" as="style">
   <link rel="stylesheet" href="/css/output.css">
   <link rel="stylesheet" href="/css/anlass.css">
+  <link rel="stylesheet" href="/css/animations.css">
   <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
   <!-- Hero preload -->
-  <link rel="preload" as="image" href="/images/anlass/hochzeit-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/anlass/grill-hero.webp" type="image/webp" fetchpriority="high">
 
-  <!-- Fonts (perf) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" crossorigin
@@ -65,48 +61,57 @@
 </head>
 
 <body class="text-gray-800 antialiased">
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">Vilana</div>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Cursor Trail -->
+  <canvas id="cursorCanvas"></canvas>
+
   <!-- Skip-Link -->
   <a href="#main"
      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
     Zum Inhalt springen
   </a>
 
-  <!-- =========================================
-      HEADER (ТВОЙ, 1:1)
-  ========================================= -->
+  <!-- HEADER -->
   <header class="bg-white shadow-md relative">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Logo  -->
       <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-        aria-label="Vilana Event &amp; Catering – Startseite">
+        aria-label="Vilana Event & Catering – Startseite">
         <span class="logo-title">Vilana</span>
         <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
-          Event &amp; Catering
+          Event & Catering
         </span>
       </a>
 
       <div class="flex items-center gap-3">
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
-          <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
-          <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-          <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
-          <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
-          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
-          <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+          <a href="/#home" class="text-gray-800 hover:text-amber-800 nav-link">Startseite</a>
+          <a href="/#services" class="text-gray-800 hover:text-amber-800 nav-link">Leistungen</a>
+          <a href="/menu.html" class="text-gray-800 hover:text-amber-800 nav-link">Menü</a>
+          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800 nav-link">Galerie</a>
+          <a href="/about.html" class="text-gray-800 hover:text-amber-800 nav-link">Über uns</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800 nav-link">Event</a>
+          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800 nav-link">Bewertung</a>
+          <a href="/contact.html" class="text-gray-800 hover:text-amber-800 nav-link">Kontakt</a>
         </nav>
 
-        <!-- Language switch (links, SEO-friendly) -->
+        <!-- Language switch -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/anlass/hochzeit.html">RU</a>
+          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100 transition" href="/ru/anlass/grill-catering.html">RU</a>
         </div>
 
         <!-- Mobile: RU link + Burger -->
         <div class="flex items-center gap-2 md:hidden">
-          <a href="/ru/anlass/hochzeit.html"
+          <a href="/ru/anlass/grill-catering.html"
             class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
             aria-label="Русская версия">RU</a>
 
@@ -139,75 +144,70 @@
     </div>
   </header>
 
-  <!-- =========================================
-    MAIN
-  ========================================= -->
-<main id="main">
-  <!-- HERO (mobile img + desktop img) -->
-  <section class="hero" aria-label="Hochzeit Catering Hero">
-    <div class="hero-media" aria-hidden="true">
-      <picture>
-        <!-- Mobile -->
-        <source
-          media="(max-width: 640px)"
-          srcset="/images/anlass/hochzeit-hero.webp"
-          type="image/webp"
-        />
+  <!-- MAIN -->
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Grill Catering Hero">
+      <div class="hero-media" aria-hidden="true">
+        <picture>
+          <!-- Mobile -->
+          <source
+            media="(max-width: 640px)"
+            srcset="/images/anlass/grill-hero-mobile.webp"
+            type="image/webp"
+          />
+          <!-- Desktop -->
+          <source
+            srcset="/images/anlass/grill-hero.webp"
+            type="image/webp"
+          />
+          <!-- Fallback -->
+          <img
+            src="/images/anlass/grill-hero.webp"
+            alt=""
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
 
-        <!-- Desktop / Tablet -->
-        <source
-          srcset="/images/anlass/hochzeit-hero.webp"
-          type="image/webp"
-        />
+      <div class="hero-inner container mx-auto px-4">
+        <div class="hero-kicker">✦ Grill · BBQ · Outdoor</div>
 
-        <!-- Fallback -->
-        <img
-          src="/images/anlass/hochzeit-hero.webp"
-          alt=""
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
-      </picture>
-    </div>
+        <h1 class="hero-title">Grill Catering in Hannover &amp; Hameln</h1>
 
-    <div class="hero-inner container mx-auto px-4">
-      <div class="hero-kicker">✦ Hochzeit · Catering · Service</div>
+        <p class="hero-subtitle">
+          BBQ-Buffet, Live-Cooking &amp; Outdoor Catering – frisch vom Grill für Sommerfeste, Firmenevents und Feiern.
+        </p>
 
-      <h1 class="hero-title">Hochzeit Catering in Hameln &amp; Hannover</h1>
+        <a
+          href="/contact.html"
+          class="btn-premium inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+        >
+          Jetzt anfragen
+        </a>
+      </div>
+    </section>
 
-      <p class="hero-subtitle">
-        Stilvoller Sektempfang, Fingerfood &amp; Buffets – mit Liebe zum Detail und zuverlässiger Organisation.
-      </p>
-
-      <a
-        href="/contact.html"
-        class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-      >
-        Jetzt anfragen
-      </a>
-    </div>
-  </section>
-
-
-    <!-- SERVICES (3 карточки) -->
+    <!-- SERVICES -->
     <section class="services" id="services">
       <div class="container mx-auto px-4">
         <h2 class="section-title">UNSERE LEISTUNGEN</h2>
-        <p class="section-subtitle">Premium Betreuung für Ihre Hochzeit – planbar, elegant, stressfrei</p>
+        <p class="section-subtitle">Professionelles Grill Catering – saftig, rauchig, unvergesslich</p>
 
         <div class="services-grid">
           <!-- Card 1 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <img src="/images/anlass/hochzeit-fingerfood.webp" alt="Fingerfood &amp; Sektempfang" loading="lazy" decoding="async">
+              <img src="/images/anlass/grill-buffet.webp" alt="Grill-Buffet & BBQ-Station" loading="lazy" decoding="async">
             </div>
-            <div class="service-icon">✦</div>
+            <div class="service-icon">🔥</div>
             <div class="service-body">
-              <h3 class="service-name">Sektempfang &amp; Fingerfood</h3>
+              <h3 class="service-name">Grill-Buffet &amp; BBQ-Station</h3>
               <p class="service-description">
-                Canapés, Häppchen und elegante Mini-Variationen für Empfang, Fotos und die ersten Stunden.
-                Präsentation stilvoll – ideal mit Sekt/Champagner.
+                Klassisches Grillbuffet mit Würstchen, Steaks, Spießen und Grillgemüse.
+                Oder Premium BBQ mit Pulled Pork, Spare Ribs und Burger – je nach Wunsch.
               </p>
             </div>
           </article>
@@ -215,14 +215,14 @@
           <!-- Card 2 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <img src="/images/anlass/hochzeit-buffet.webp" alt="Hochzeitsbuffet" loading="lazy" decoding="async">
+              <img src="/images/anlass/live-cooking.webp" alt="Live-Cooking am Grill" loading="lazy" decoding="async">
             </div>
-            <div class="service-icon">✦</div>
+            <div class="service-icon">🥩</div>
             <div class="service-body">
-              <h3 class="service-name">Buffet &amp; Menü-Konzept</h3>
+              <h3 class="service-name">Live-Cooking am Grill</h3>
               <p class="service-description">
-                Warme und kalte Speisen, abgestimmt auf Stil, Gästezahl und Ablauf.
-                Wir planen Mengen, Timing und Aufbau – damit alles perfekt passt.
+                Unsere Grillmeister bereiten alles frisch vor Ihren Augen zu.
+                Live-Erlebnis, frischer Duft und perfekt gegrillte Köstlichkeiten – Ihre Gäste werden begeistert sein.
               </p>
             </div>
           </article>
@@ -230,30 +230,28 @@
           <!-- Card 3 -->
           <article class="service-card reveal">
             <div class="service-media">
-              <img src="/images/anlass/hochzeit-table.webp" alt="Service &amp; Ausstattung" loading="lazy" decoding="async">
+              <img src="/images/anlass/beilagen-salate.webp" alt="Beilagen, Salate & Saucen" loading="lazy" decoding="async">
             </div>
-            <div class="service-icon">✦</div>
+            <div class="service-icon">🌽</div>
             <div class="service-body">
-              <h3 class="service-name">Service &amp; Ausstattung</h3>
+              <h3 class="service-name">Beilagen, Salate &amp; Saucen</h3>
               <p class="service-description">
-                Auf Wunsch mit Servicepersonal, Geschirr, Gläsern und Buffet-Equipment.
-                Lieferung, Aufbau und reibungsloser Ablauf – Sie feiern, wir kümmern uns.
+                Kartoffelsalat, Coleslaw, gegrilltes Gemüse, Baguette und hausgemachte Saucen.
+                Frisch und abwechslungsreich – für das perfekte BBQ-Erlebnis.
               </p>
             </div>
           </article>
         </div>
 
         <div class="text-center mt-10">
-          <a href="/contact.html" class="btn">Unverbindlich anfragen</a>
-          <a href="tel:+4917657775996" class="btn ml-2">📞 +49 176 5777 5996</a>
+          <a href="/contact.html" class="btn btn-premium">Unverbindlich anfragen</a>
+          <a href="tel:+4917657775996" class="btn btn-premium ml-2">📞 +49 176 5777 5996</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- =========================================
-    FOOTER (ТВОЙ, 1:1)
-  ========================================= -->
+  <!-- FOOTER -->
   <footer class="bg-gray-800 text-white py-10 mt-16 relative">
     <div class="container mx-auto px-4 text-center">
       <div class="mb-4">
@@ -285,7 +283,7 @@
     <button
       type="button"
       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
+      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition btn-premium"
       title="Nach oben"
       aria-label="Nach oben"
     >
@@ -295,6 +293,7 @@
 
   <!-- Scripts -->
   <script src="/js/main.js" defer></script>
+  <script src="/js/animations.js" defer></script>
   <script src="/js/vilana-cookiewall.js" defer></script>
 </body>
 </html>
