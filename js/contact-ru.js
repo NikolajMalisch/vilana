@@ -1,14 +1,14 @@
 "use strict";
 
 /**
- * Vilana Contact Form (RU) — v2 (Sheet Menu like DE)
- * - Быстрая заявка (Сообщение + E-mail обязательно)
+ * Vilana Contact Form (RU) — v2 (Sheet Menu)
+ * - Quick Anfrage (Сообщение + E-Mail обязательны)
  * - Wizard (Расширенно) 4 шага
- * - Шаг 2 Меню: Sheet/Modal (#menuModal) — категории слева, блюда справа
- * - EmailJS sendForm
- * - Anti-Spam: Honeypot + timing (3s)
- * - UX: клик по всей строке блюда = toggle
- * - FIX: Reset сбрасывает поиск + выбор + активную категорию + скрытые поля
+ * - Step 2 Меню: opens Sheet/Modal (#menuModal)
+ * - EmailJS sendForm: from_name, reply_to, subject, message
+ * - Anti-Spam: Honeypot + 3s timing
+ * - UX: click on whole menu item toggles selection
+ * - FIX: Reset clears search + selection + active category + hidden fields
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  // footer year
   const y = $("#year");
   if (y) y.textContent = new Date().getFullYear();
 
+  // toast
   const toastEl = $("#toast");
   let toastTimer = null;
   function toast(text) {
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toastEl.textContent = text;
     toastEl.style.display = "block";
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => { toastEl.style.display = "none"; }, 1700);
+    toastTimer = setTimeout(() => { toastEl.style.display = "none"; }, 1600);
   }
 
   function esc(s) {
@@ -41,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function bodyLock(lock) {
     document.documentElement.classList.toggle("v-noscroll", !!lock);
     document.body.classList.toggle("v-noscroll", !!lock);
+  }
+
+  function setCountEverywhere(n) {
+    $$("[data-menu-count]").forEach(el => el.textContent = String(n));
   }
 
   /* =========================================================
@@ -107,15 +113,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuSelectedText = $("#menuSelectedText");
   const menuModeHidden = $("#menuModeHidden");
 
-  /* =========================================================
-      EmailJS config (из data-атрибутов формы)
-  ========================================================== */
-  const EMAILJS_PUBLIC_KEY = (form.dataset.emailjsPublicKey || "").trim();
-  const EMAILJS_TEMPLATE_ID = (form.dataset.emailjsTemplateId || "").trim();
-  const EMAILJS_SERVICE_ID = (form.dataset.emailjsServiceId || "").trim();
+  // EmailJS config from dataset (лучше чем хардкод)
+  const EMAILJS_PUBLIC_KEY = form.dataset.emailjsPublicKey || "vfmomNKrMxrf2xqDW";
+  const EMAILJS_TEMPLATE_ID = form.dataset.emailjsTemplateId || "template_fuxgrlb";
+  const EMAILJS_SERVICE_ID = form.dataset.emailjsServiceId || "service_75biswm";
 
   /* =========================================================
-      Wizard Setup (4 шага)
+      Wizard Setup (4 Steps)
   ========================================================== */
   const TOTAL_STEPS = 4;
   const steps = wizardWrap ? $$("[data-step]", wizardWrap) : [];
@@ -211,108 +215,105 @@ document.addEventListener("DOMContentLoaded", () => {
   syncCleanup();
 
   /* =========================================================
-      MENU DATA (RU)
+      MENU SHEET — Data (RU)
+      (ID сохраняем как в DE, чтобы всё совпадало)
   ========================================================== */
   const MENU = [
     {
       key: "warm", title: "Горячие блюда", items: [
-        { id: "warm_01", name: "Шашлык", desc: "Индейка, свинина или ягнёнок — маринованный и на гриле." },
+        { id: "warm_01", name: "Шашлык", desc: "Индейка, свинина или баранина — маринованный и на гриле." },
         { id: "warm_02", name: "Фаршированный перец", desc: "С мясной начинкой или вегетарианский вариант." },
-        { id: "warm_03", name: "Говяжий ростбиф/жаркое", desc: "Томлёная говядина с классическим соусом." },
-        { id: "warm_04", name: "Котлеты из ягнёнка", desc: "С розмариновым картофелем и фасолью в беконе." },
-        { id: "warm_05", name: "Голубцы", desc: "Капуста с начинкой мясо+рис в томатном соусе." },
-        { id: "warm_06", name: "Куриный шницель (хрустящий)", desc: "Классическая панировка, золотистая корочка." },
-        { id: "warm_07", name: "Куриная грудка в грибном соусе", desc: "Нежная грудка в сливочном шампиньонном соусе." },
-        { id: "warm_08", name: "Кёфте / фрикадельки", desc: "Ориентальные или классические специи." },
+        { id: "warm_03", name: "Говяжий ростбиф (томлёный)", desc: "Нежно тушёное мясо с классическим соусом." },
+        { id: "warm_04", name: "Бараньи котлетки", desc: "С розмариновым картофелем и фасолью в беконе." },
+        { id: "warm_05", name: "Голубцы", desc: "Мясо-рисовая начинка в томатном соусе." },
+        { id: "warm_06", name: "Куриные шницели (хрустящие)", desc: "Классическая панировка, золотистая корочка." },
+        { id: "warm_07", name: "Куриная грудка в грибном соусе", desc: "Нежное филе в сливочно-шампиньонном соусе." },
+        { id: "warm_08", name: "Кёфте / фрикадельки", desc: "Восточная или классическая версия специй." },
         { id: "warm_09", name: "Плов", desc: "Рис с морковью и мясом." },
-        { id: "warm_10", name: "Касселер с квашеной капустой", desc: "Сытно и по-традиционному." },
-        { id: "warm_11", name: "Куриные рулетики со шпинатом под беарнез", desc: "Сытная начинка + нежный соус." },
-        { id: "warm_12", name: "Утиная грудка с апельсиновым соусом", desc: "Фруктово-ароматная классика для особых случаев." },
-        { id: "warm_13", name: "Картофельный гратен / пюре", desc: "Сливочные гарниры-классики." },
-        { id: "warm_14", name: "Китайская лапша с овощами", desc: "Лёгкая, ароматная, свежая." },
-        { id: "warm_15", name: "Кальмары фри", desc: "Хрустящие, нежные, с дип-соусом." },
-        { id: "warm_16", name: "Креветки на гриле", desc: "Ароматный маринад, лёгкий гриль." },
-        { id: "warm_17", name: "Фасоль в беконе", desc: "Обжаренная фасоль в беконе — яркий гарнир." },
-        { id: "warm_18", name: "Рис или шпецле", desc: "Гарнир к мясу или рыбе." },
-        { id: "warm_19", name: "Овощи по-средиземноморски", desc: "Гриль, оливковое масло, травы." },
-        { id: "warm_20", name: "Овощи под соусом голландез", desc: "Тушёные/на пару с кремовым соусом." },
-        { id: "warm_21", name: "Лосось в сливочно-травяном соусе", desc: "Нежное филе в кремовом соусе с травами." },
+        { id: "warm_10", name: "Касселер с квашеной капустой", desc: "Сытно и традиционно." },
+        { id: "warm_11", name: "Куриные рулетики со шпинатом", desc: "С соусом беарнез — сытно и изысканно." },
+        { id: "warm_12", name: "Утиная грудка с апельсиновым соусом", desc: "Фруктово-изысканный вариант для особых случаев." },
+        { id: "warm_13", name: "Картофельный гратен / пюре", desc: "Классические гарниры." },
+        { id: "warm_14", name: "Лапша с овощами (веган)", desc: "Лёгкая обжарка, свежо и ароматно." },
+        { id: "warm_15", name: "Кальмары фритюр", desc: "Хрустящие и нежные, с соусом." },
+        { id: "warm_16", name: "Креветки на гриле", desc: "Ароматный маринад, лёгкая прожарка." },
+        { id: "warm_17", name: "Фасоль в беконе", desc: "Сытно и ароматно." },
+        { id: "warm_18", name: "Рис или шпецле", desc: "Гарнир к мясу/рыбе." },
+        { id: "warm_19", name: "Овощи гриль (средиземноморские)", desc: "Оливковое масло, травы." },
+        { id: "warm_20", name: "Овощи под соусом голландез", desc: "Нежно и кремово." },
+        { id: "warm_21", name: "Лосось в сливочно-травяном соусе", desc: "Нежное филе в кремовом соусе." },
         { id: "warm_22", name: "Филе судака в укропном соусе", desc: "Мягкая подача в укропно-сливочном соусе." }
       ]
     },
     {
-      key: "cold", title: "Холодные закуски / плато", items: [
-        { id: "cold_01", name: "Баклажаны слоями с томатами", desc: "Слоёная подача, ароматный маринад." },
-        { id: "cold_02", name: "Томат–моцарелла", desc: "Классика с базиликом и бальзамиком." },
-        { id: "cold_03", name: "Сурими", desc: "Подача в свежем виде или как канапе." },
-        { id: "cold_04", name: "Сурими фри в хрустящей панировке", desc: "Хрустящая закуска из морепродуктов." },
-        { id: "cold_05", name: "Фаршированные яйца", desc: "Домашняя нежная начинка." },
-        { id: "cold_06", name: "Креветки в картофельной «нить-панировке»", desc: "Хрустяще, эффектно, красиво на столе." },
-        { id: "cold_07", name: "Антипасти (вариации)", desc: "Средиземноморский микс овощей и сыров." },
-        { id: "cold_08", name: "Долма — виноградные листья", desc: "Мягкая специя, по желанию vegan." },
-        { id: "cold_09", name: "Суши (ассорти)", desc: "Свежая, креативная подача." },
-        { id: "cold_10", name: "Багет с лососем", desc: "Свежая намазка, укроп, лосось." },
-        { id: "cold_11", name: "Авокадо-крем / хумус", desc: "Кремовые дипы, идеальны как старт." },
-        { id: "cold_12", name: "Креветочный крем", desc: "Нежный дип/намазка с морским вкусом." },
-        { id: "cold_13", name: "Канапе", desc: "Элегантные мини-закуски." },
-        { id: "cold_14", name: "Рыбное плато", desc: "Масляная рыба, копчёный лосось, сельдь, скумбрия." },
+      key: "cold", title: "Холодные блюда / ассорти", items: [
+        { id: "cold_01", name: "Баклажаны слоями с томатами", desc: "Ароматная маринадная подача слоями." },
+        { id: "cold_02", name: "Томаты–моцарелла", desc: "Классика с базиликом и бальзамиком." },
+        { id: "cold_03", name: "Сурими", desc: "Свежая подача или в виде закусок." },
+        { id: "cold_04", name: "Сурими в хрустящей панировке", desc: "Хрустящая оболочка, нежная начинка." },
+        { id: "cold_05", name: "Фаршированные яйца", desc: "Домашняя начинка, нежный вкус." },
+        { id: "cold_06", name: "Креветки в картофельной «паутинке»", desc: "Хрустящая, эффектная подача." },
+        { id: "cold_07", name: "Антипасти (вариации)", desc: "Средиземноморский микс овощей и сыра." },
+        { id: "cold_08", name: "Сарма (долма в виноградных листьях)", desc: "Мягкие специи, по желанию — веган." },
+        { id: "cold_09", name: "Суши (вариации)", desc: "Свежая и креативная подача." },
+        { id: "cold_10", name: "Багет с лососем", desc: "С укропом и кремом." },
+        { id: "cold_11", name: "Авокадо-крем / хумус", desc: "Нежные дипы, идеально для старта." },
+        { id: "cold_12", name: "Креветочный крем", desc: "Как намазка или дип." },
+        { id: "cold_13", name: "Канапе (закуски)", desc: "Элегантные мини-закуски." },
+        { id: "cold_14", name: "Рыбная тарелка", desc: "Масляная рыба, лосось, сельдь, скумбрия." },
         { id: "cold_15", name: "Сырно-мясная тарелка", desc: "Подборка сыров и ветчинных деликатесов." }
       ]
     },
     {
       key: "salad", title: "Салаты", items: [
-        { id: "salad_01", name: "Грибной салат", desc: "Маринованные шампиньоны с луком." },
-        { id: "salad_02", name: "Морковный салат", desc: "Свежая морковь, яблоко/чеснок по желанию." },
-        { id: "salad_03", name: "Салат с крабовыми палочками", desc: "С майонезом и овощной нарезкой." },
-        { id: "salad_04", name: "Летний салат", desc: "Огурец, томаты, перец — свежо и легко." },
-        { id: "salad_05", name: "Руккола-салат", desc: "С пармезаном и бальзамическим соусом." },
-        { id: "salad_06", name: "Салат из китайской капусты", desc: "Хрустящий, лёгкий, йогурт/уксусная заправка." },
-        { id: "salad_07", name: "Салат из капусты с фисташками", desc: "Тонкая нарезка + ореховый акцент." },
+        { id: "salad_01", name: "Грибной салат", desc: "Маринованные шампиньоны и лук." },
+        { id: "salad_02", name: "Морковный салат", desc: "Свежая морковь, яблоко или чеснок." },
+        { id: "salad_03", name: "Крабовый салат", desc: "С майонезом и овощами." },
+        { id: "salad_04", name: "Летний салат", desc: "Огурец, томат, перец — легко и свежо." },
+        { id: "salad_05", name: "Руккола", desc: "С пармезаном и бальзамиком." },
+        { id: "salad_06", name: "Салат из китайской капусты", desc: "Хрустящий, лёгкий, йогурт/уксус." },
+        { id: "salad_07", name: "Салат из молодой капусты с фисташками", desc: "Тонкая нарезка, ореховый акцент." },
         { id: "salad_08", name: "Греческий салат", desc: "Фета, огурцы, томаты, оливки." },
-        { id: "salad_09", name: "Томатно-оливковый салат", desc: "Красный лук, свежие травы." },
-        { id: "salad_10", name: "Салат с гранатом", desc: "Овощи + фруктовая нотка." },
-        { id: "salad_11", name: "Селёдка под шубой", desc: "Классический слоёный салат." },
-        { id: "salad_12", name: "Оливье", desc: "Картофель, горошек, яйцо, майонез." },
-        { id: "salad_13", name: "Винегрет", desc: "Свекольный овощной микс." }
+        { id: "salad_09", name: "Томаты с оливками", desc: "С красным луком и зеленью." },
+        { id: "salad_10", name: "Салат с гранатом", desc: "Овощи с фруктовой нотой." },
+        { id: "salad_11", name: "Селёдка под шубой", desc: "Традиционный салат." },
+        { id: "salad_12", name: "Оливье", desc: "Классика: горошек, яйцо, майонез." },
+        { id: "salad_13", name: "Винегрет", desc: "Свёкла и овощной микс." }
       ]
     },
     {
       key: "dessert", title: "Десерты", items: [
         { id: "dessert_01", name: "Десерт с профитролями", desc: "С ванильным кремом и сливками." },
-        { id: "dessert_02", name: "Десерт с печеньем", desc: "Кремовый десерт с карамельными нотами." },
-        { id: "dessert_03", name: "Мусс из шоколада", desc: "Воздушный шоколадный крем." },
+        { id: "dessert_02", name: "Десерт Lotus", desc: "Нежный крем с карамельным печеньем." },
+        { id: "dessert_03", name: "Мусс шоколадный", desc: "Воздушный шоколадный крем." },
         { id: "dessert_04", name: "Панна-котта", desc: "Классика с фруктовым соусом." },
         { id: "dessert_05", name: "Тирамису", desc: "Маскарпоне, кофе, какао." },
-        { id: "dessert_06", name: "Фрукты в шоколаде", desc: "Свежие фрукты с шоколадным покрытием." },
-        { id: "dessert_07", name: "Печенье-десерт с виноградом", desc: "Хрустяще и кремово." }
+        { id: "dessert_06", name: "Фрукты в шоколаде", desc: "Свежие фрукты с шоколадом." },
+        { id: "dessert_07", name: "Печенье-десерт с виноградом", desc: "Хруст и крем — сбалансированно." }
       ]
     },
     {
-      key: "candy", title: "Candy Bar / Сладкий стол", items: [
-        { id: "candy_01", name: "Донаты", desc: "Яркий декор." },
-        { id: "candy_02", name: "Cake Pops", desc: "Мини-пирожные на палочке." },
-        { id: "candy_03", name: "Капкейки", desc: "С нежным крем-топпингом." },
-        { id: "candy_04", name: "Попкорн", desc: "Классика: сладкий или солёный." },
-        { id: "candy_05", name: "Мармеладные мишки", desc: "Для детей и взрослых." },
-        { id: "candy_06", name: "Мармеладные шнурки", desc: "Разноцветный микс." },
-        { id: "candy_07", name: "Мармелад (Schnuckies)", desc: "Фруктовый сюрприз." },
-        { id: "candy_08", name: "Шоколад (вариации)", desc: "Белый, молочный, тёмный." }
+      key: "candy", title: "Сладкий стол", items: [
+        { id: "candy_01", name: "Донатсы", desc: "Яркий декор." },
+        { id: "candy_02", name: "Кейк-попсы", desc: "Мини-кейк на палочке." },
+        { id: "candy_03", name: "Капкейки", desc: "С кремовой шапкой." },
+        { id: "candy_04", name: "Попкорн", desc: "Сладкий или солёный." },
+        { id: "candy_05", name: "Мармелад (мишки)", desc: "Для маленьких и взрослых." },
+        { id: "candy_06", name: "Мармеладные шнуры", desc: "Разноцветная классика." },
+        { id: "candy_07", name: "Жевательный мармелад", desc: "Фруктовый микс." },
+        { id: "candy_08", name: "Шоколад", desc: "Белый, молочный, тёмный." }
       ]
     }
   ];
 
   /* =========================================================
-      MENÜ SHEET — Elements (как DE!)
-      ВАЖНО: эти ID должны быть в RU HTML
+      MENU SHEET — Elements
   ========================================================== */
   const menuRow = $("#menuRow");
   const menuRowHint = $("#menuRowHint");
 
   const menuModal = $("#menuModal");
   const menuClose = $("#menuClose");
-  const menuApply = $("#menuApply");
-  const menuCount = $("#menuCount");
-
   const menuCats = $("#menuCats");
   const menuItems = $("#menuItems");
 
@@ -331,13 +332,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const entries = Object.entries(selected).map(([id, v]) => ({ id, ...v }));
 
     if (!entries.length) {
-      if (menuModeHidden) menuModeHidden.value = "Нет выбора (Vilana предложит меню)";
+      if (menuModeHidden) menuModeHidden.value = "Без выбора (Vilana предложит)";
       if (menuSelectedText) menuSelectedText.value = "—";
-      if (menuRowHint) menuRowHint.textContent = "Нет выбора — Vilana предложит";
-      if (menuCount) menuCount.textContent = "0";
+      if (menuRowHint) menuRowHint.textContent = "Без выбора — Vilana предложит";
+      setCountEverywhere(0);
       return;
     }
 
+    // group by category
     const groups = {};
     entries.forEach(it => {
       const k = it.catKey || "other";
@@ -345,6 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
       groups[k].push(it);
     });
 
+    // build lines in category order
     const lines = [];
     MENU.forEach(cat => {
       const list = groups[cat.key] || [];
@@ -354,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuModeHidden) menuModeHidden.value = "Блюда выбраны";
     if (menuSelectedText) menuSelectedText.value = lines.join("\n");
     if (menuRowHint) menuRowHint.textContent = `${entries.length} выбрано`;
-    if (menuCount) menuCount.textContent = String(entries.length);
+    setCountEverywhere(entries.length);
   }
 
   function renderCats(query = "") {
@@ -504,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ FIX Reset: чистит всё
+  // Reset clears selection + search + active category + hidden fields
   if (menuModalReset) {
     menuModalReset.addEventListener("click", (e) => {
       e.preventDefault();
@@ -519,20 +522,11 @@ document.addEventListener("DOMContentLoaded", () => {
       renderItems("");
       updateMenuHiddenFields();
 
-      toast("Сброшено ✓");
+      toast("Сброс ✓");
     });
   }
 
-  // apply: only closes (selected already stored)
-  if (menuApply) {
-    menuApply.addEventListener("click", () => {
-      updateMenuHiddenFields();
-      closeMenuSheet();
-      toast("Применено ✓");
-    });
-  }
-
-  // init
+  // initial hidden fields
   updateMenuHiddenFields();
 
   /* =========================================================
@@ -547,8 +541,8 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const el of els) {
       if (el.id === "cf-guests" || el.name === "guests") {
         const v = Number(el.value || 0);
-        if (!v) el.setCustomValidity("Укажите количество гостей (мин. 20).");
-        else if (v < 20) el.setCustomValidity("Минимальный заказ: от 20 персон.");
+        if (!v) el.setCustomValidity("Пожалуйста, укажите количество гостей (мин. 20).");
+        else if (v < 20) el.setCustomValidity("Минимальный заказ: от 20 человек.");
         else el.setCustomValidity("");
       } else {
         el.setCustomValidity("");
@@ -567,7 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-      Base Validation (всегда)
+      Base Validation (always)
   ========================================================== */
   function validateBase() {
     if (!quickMessage || !quickMessage.value.trim()) {
@@ -575,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
         quickMessage.classList.add("field-error");
         quickMessage.focus();
       }
-      toast("Пожалуйста, заполните сообщение.");
+      toast("Заполните сообщение.");
       return false;
     }
     quickMessage.classList.remove("field-error");
@@ -586,7 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
         email.classList.add("field-error");
         email.focus();
       }
-      toast("Пожалуйста, укажите e-mail.");
+      toast("Укажите E-Mail.");
       return false;
     }
     if (email && !email.checkValidity()) {
@@ -606,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================================================
-      Email Body Builder (Сообщение первым)
+      Email Body Builder (Message first)
   ========================================================== */
   function getVal(id) {
     const el = document.getElementById(id);
@@ -616,7 +610,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildStructuredEmail() {
     const message = getVal("cf_message");
 
-    const finalName = (name && name.value) ? name.value.trim() : "Заявка с сайта";
+    const finalName = (name && name.value) ? name.value.trim() : "Запрос с сайта";
     const finalEmail = (email && email.value) ? email.value.trim() : "—";
     const finalPhone = (phone && phone.value) ? phone.value.trim() : "—";
 
@@ -633,30 +627,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (form.querySelector('input[name="pref_meat2"]')?.checked) pref.push("Мясо");
     if (form.querySelector('input[name="pref_fish2"]')?.checked) pref.push("Рыба");
     if (form.querySelector('input[name="pref_veg2"]')?.checked) pref.push("Вегетарианское");
-    if (form.querySelector('input[name="pref_kids2"]')?.checked) pref.push("Детское");
+    if (form.querySelector('input[name="pref_kids2"]')?.checked) pref.push("Детям");
 
     const selectedText = (menuSelectedText?.value || "—").trim();
 
     const optGeschirr = form.querySelector('input[name="opt_geschirr"]')?.checked ? "Да" : "Нет";
     const optBesteck = form.querySelector('input[name="opt_besteck"]')?.checked ? "Да" : "Нет";
     const optGlaeser = form.querySelector('input[name="opt_glaeser"]')?.checked ? "Да" : "Нет";
-    const optServiceVal = form.querySelector('input[name="opt_service"]')?.checked ? "Да" : "Нет";
-    const cleanupVal = form.querySelector('input[name="opt_cleanup"]')?.checked ? "Да" : "Нет";
+    const optServiceVal = (optService && optService.checked) ? "Да" : "Нет";
+    const cleanupVal = (optCleanup && optCleanup.checked) ? "Да" : "Нет";
 
     const preview =
 `СООБЩЕНИЕ
 • ${message}
 
-КОНТАКТЫ
+КОНТАКТ
 • Имя: ${finalName || "—"}
-• E-mail: ${finalEmail || "—"}
+• E-Mail: ${finalEmail || "—"}
 • Телефон: ${finalPhone || "—"}
 
 СОБЫТИЕ (опционально)
 • Тип: ${eventType || "—"}
 • Гостей: ${guests || "—"}
 • Дата: ${date ? (date + (time ? " " + time : "")) : "—"}
-• Адрес: ${location || "—"}
+• Место: ${location || "—"}
 
 МЕНЮ (опционально)
 • Режим: ${menuMode || "—"}
@@ -670,24 +664,24 @@ ${selectedText || "—"}
 • Приборы: ${optBesteck}
 • Бокалы: ${optGlaeser}
 • Персонал: ${optServiceVal}
-• Уборка/мойка/сервис: ${cleanupVal}`.trim();
+• Разбор/уборка/посудомойка: ${cleanupVal}`.trim();
 
     const emailBody =
-`=== VILANA ЗАЯВКА (СТРУКТУРИРОВАНО) ===
+`=== VILANA ЗАПРОС (СТРУКТУРИРОВАНО) ===
 
 [СООБЩЕНИЕ]
 ${message}
 
-[КОНТАКТЫ]
+[КОНТАКТ]
 Имя: ${finalName || "—"}
-E-mail: ${finalEmail || "—"}
+E-Mail: ${finalEmail || "—"}
 Телефон: ${finalPhone || "—"}
 
 [СОБЫТИЕ] (опционально)
 Тип: ${eventType || "—"}
 Гостей: ${guests || "—"}
 Дата: ${date ? (date + (time ? " " + time : "")) : "—"}
-Адрес: ${location || "—"}
+Место/адрес: ${location || "—"}
 
 [ВКЛЮЧЕНО]
 - Доставка
@@ -698,7 +692,7 @@ E-mail: ${finalEmail || "—"}
 Предпочтения: ${pref.length ? pref.join(", ") : "—"}
 Аллергены/пожелания: ${allergies || "—"}
 
-Выбор (без количеств — мы рассчитаем оптимально):
+Выбор (без количества — мы рассчитаем под гостей):
 ${selectedText || "—"}
 
 [ОПЦИИ] (опционально)
@@ -706,7 +700,7 @@ ${selectedText || "—"}
 Приборы: ${optBesteck}
 Бокалы: ${optGlaeser}
 Персонал: ${optServiceVal}
-Уборка/мойка/сервис: ${cleanupVal}
+Разбор/уборка/посудомойка: ${cleanupVal}
 
 === КОНЕЦ ===
 `;
@@ -716,7 +710,7 @@ ${selectedText || "—"}
   /* =========================================================
       EmailJS Init
   ========================================================== */
-  if (window.emailjs && EMAILJS_PUBLIC_KEY) {
+  if (window.emailjs) {
     try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (_) {}
   }
 
@@ -736,20 +730,22 @@ ${selectedText || "—"}
     const t0 = Number($("#cf_started_at")?.value || "0");
     if (t0 && (Date.now() - t0) < 3000) return;
 
+    // Base checks
     if (!validateBase()) return;
 
+    // If wizard open: step 1 must be ok
     if (wizardOpen) {
       if (!validateWizardStep(1)) return;
     }
 
     const { emailBody } = buildStructuredEmail();
 
-    const finalName = (name && name.value) ? name.value.trim() : "Заявка с сайта";
+    const finalName = (name && name.value) ? name.value.trim() : "Запрос с сайта";
     const finalEmail = (email && email.value) ? email.value.trim() : "";
 
     const subj = wizardOpen
-      ? `Vilana: заявка — ${getVal("cf-eventType") || "Событие"} (${getVal("cf-date") || "дата"})`
-      : `Vilana: сообщение / вопрос`;
+      ? `Vilana: ${getVal("cf-eventType") || "Событие"} (${getVal("cf-date") || "дата"})`
+      : `Vilana: Сообщение / Инфо`;
 
     if (fromNameHidden) fromNameHidden.value = finalName;
     if (replyToHidden) replyToHidden.value = finalEmail;
@@ -758,11 +754,6 @@ ${selectedText || "—"}
 
     if (!window.emailjs || !emailjs.sendForm) {
       alert("EmailJS не загружен. Проверь: интернет / блокировщик скриптов.");
-      return;
-    }
-
-    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
-      alert("EmailJS не настроен. Проверь data-emailjs-public-key / data-emailjs-service-id / data-emailjs-template-id на <form>.");
       return;
     }
 
@@ -787,16 +778,19 @@ ${selectedText || "—"}
       // reset menu state
       for (const k of Object.keys(selected)) delete selected[k];
       activeCatKey = MENU[0]?.key || "warm";
+      if (menuModalSearch) menuModalSearch.value = "";
       updateMenuHiddenFields();
 
+      // close sheet if open
       if (menuModal && !menuModal.classList.contains("hidden")) closeMenuSheet();
 
+      // reset wizard
       syncService();
       syncCleanup();
       setWizard(false);
     })
     .catch((err) => {
-      alert("Ошибка отправки: " + (err && (err.text || err.message) ? (err.text || err.message) : String(err)));
+      alert("Ошибка отправки: " + (err && err.text ? err.text : String(err)));
     })
     .finally(() => {
       sending = false;
