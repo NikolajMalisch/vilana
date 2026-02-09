@@ -1,157 +1,248 @@
 /* ============================================================================
-   Vilana — Anlass Pages (anlass.css)
-   Works with your current markup:
-   .hero / .hero-media / .hero-inner
-   .services / .services-grid / .service-card ...
+   Vilana — Anlass Pages (anlass.css) — FULL (CLEAN, STABLE)
 ============================================================================ */
 
 /* ============================================================================
-   ROOT VARS
+   ROOT VARS (single source of truth)
 ============================================================================ */
 :root{
-  /* fallback: если JS не выставил реальную высоту шапки */
   --header-h: 72px;
 
-  /* fallback hero image (лучше переопределять inline на секции hero):
-     <section class="hero" style="--hero-img:url('/images/anlass/hochzeit-hero.webp')"> */
-  --hero-img: url("/images/anlass/hochzeit-hero1.webp");
+  /* Hero image (override per page if needed on .hero inline style) */
+  --hero-img: url("/images/anlass/hochzeit-hero.webp");
+
+  --text: #111827;
+  --muted: rgba(17,24,39,.75);
+
+  /* Hero frame */
+  --hero-wrap-max: 1280px;
+  --hero-center-max: 1240px;
+  --hero-side-pad: clamp(14px, 4.5vw, 56px);
+
+  --radius-hero: 28px;
+  --radius-hero-img: 22px;
+
+  --hero-h-desktop: min(56vh, 640px);
+  --hero-h-mobile: 54vh;
+  --hero-minh: 340px;
+
+  --badge-top: clamp(18px, 3.2vh, 34px);
+  --badge-bg: rgba(17,24,39,.30);
+  --badge-stroke: rgba(255,255,255,.22);
+  --badge-text: rgba(255,255,255,.92);
+
+  --hero-blur: 22px;
+  --hero-blur-opacity: .62;
+
+  /* Services tokens (explicitly set) */
+  --section-bg: #f8f6f2;
+  --card-bg: #ffffff;
+  --radius-card: 22px;
+  --stroke: rgba(15,23,42,.12);
+  --shadow1: 0 10px 28px rgba(15,23,42,.08);
+  --shadow2: 0 16px 36px rgba(15,23,42,.14);
 }
 
 /* ============================================================================
    BASE
 ============================================================================ */
 html{ scroll-behavior:smooth; }
-body{ background:#fdfaf6; }
-body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
 
+body{
+  margin: 0;
+  background: #fdfaf6;
+}
+
+body, h1, h2, h3, p, span, label, input, textarea, select, button{
+  font-family: "Cormorant SC", serif;
+}
+
+/* Button */
 .btn{
-  display:inline-block;
-  padding:.65rem 1.1rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.78rem 1.25rem;
   border-radius:9999px;
   border:1px solid #c9b192;
+  color: var(--text);
+  text-decoration:none;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:.9rem;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.10);
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
 }
-.btn:hover{ box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 18px 54px rgba(0,0,0,.14);
+}
+.btn:active{
+  transform: translateY(0);
+  opacity:.92;
+}
 
 /* ============================================================================
-   HERO — IMAGE + TEXT LOWER (DESKTOP + MOBILE)
-   - Text is lower (not centered)
-   - Masks removed
-   - Background blur layer optional (enabled by default)
+   HERO
 ============================================================================ */
-
 .hero{
-  position:relative;
-  min-height: calc(100vh - var(--header-h));
-  display:grid;
-  align-items:end;                 /* text goes to bottom */
-  justify-items:center;
-  overflow:hidden;
-  background:#0e0e0e;
-
-  /* how low the content sits */
-  padding-bottom: clamp(2.5rem, 6vh, 5rem);
+  background: #fdfaf6;
+  padding-left: clamp(12px, 2vw, 24px);
+  padding-right: clamp(12px, 2vw, 24px);
 }
 
 .hero-media{
-  position:absolute;
-  inset:0;
+  width: min(100%, var(--hero-wrap-max));
+  margin-left:auto;
+  margin-right:auto;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-hero);
+
+  /* desktop side fields */
+  padding-left: var(--hero-side-pad);
+  padding-right: var(--hero-side-pad);
+
+  background: #f3eee6;
 }
 
-/* blurred premium background from same image (NOT a mask on the main image)
-   if you don't want it — set display:none below */
+/* blurred premium fields inside hero */
 .hero-media::before{
   content:"";
   position:absolute;
   inset:-28px;
   background: var(--hero-img) center/cover no-repeat;
-  filter: blur(28px) saturate(.95) brightness(.60);
-  transform: scale(1.10);
-  opacity:.95;
+  filter: blur(var(--hero-blur)) saturate(.98) contrast(1.02) brightness(1.10);
+  transform: scale(1.08);
+  opacity: var(--hero-blur-opacity);
+  z-index: 0;
 }
 
-/* main hero image */
-.hero-media img{
-  position:relative;
-  z-index:1;
-  width:100%;
-  height:100%;
-  object-fit: contain;            /* desktop: show full image */
-  object-position:center;
-  transform:none;
-  filter:saturate(.98) contrast(1.02);
-}
-
-/* HERO MASK REMOVED (was overlay gradients) */
+/* subtle depth */
 .hero-media::after{
-  display:none !important;
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 420px at 50% 0%, rgba(0,0,0,.10), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,0) 42%);
+  opacity:.22;
 }
 
-.hero-inner{
-  position:relative;
-  z-index:3;
-  color:#fff;
+.hero-media picture,
+.hero-media img{
+  position: relative;
+  z-index: 2;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.hero-media img{
+  width: min(100%, var(--hero-center-max));
+  height: var(--hero-h-desktop);
+  min-height: var(--hero-minh);
+
+  object-fit: cover;
+  object-position: center 35%;
+
+  border-radius: var(--radius-hero-img);
+  box-shadow: 0 22px 70px rgba(0,0,0,.16);
+  filter: saturate(.98) contrast(1.02);
+}
+
+/* below image copy */
+.hero-below{
   text-align:center;
-
-  /* remove "centering padding" from previous version */
-  padding: 0 1rem;
-
-  /* offset from bottom */
-  margin-bottom: clamp(1rem, 4vh, 2.5rem);
-}
-
-.hero-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.45rem .9rem;
-  border-radius:9999px;
-  border:1px solid rgba(255,255,255,.25);
-  background: rgba(0,0,0,.25);
-  font-size:.95rem;
-  margin-bottom: 1.25rem;
+  padding-top: clamp(1.2rem, 2.2vw, 1.9rem);
+  padding-bottom: clamp(2rem, 3.6vw, 3.2rem);
 }
 
 .hero-title{
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  color:#111827;
+  font-size: clamp(2.05rem, 3.9vw, 3.35rem);
   font-weight:700;
   letter-spacing:.2px;
-  margin:0 auto .9rem;
-  max-width:22ch;
-  text-shadow:0 14px 40px rgba(0,0,0,.45);
+  line-height:1.06;
+  margin: 0 auto .75rem;
+  max-width: 26ch;
 }
 
 .hero-subtitle{
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
-  max-width:60ch;
-  margin:0 auto 1.8rem;
-  opacity:.95;
-  text-shadow:0 10px 26px rgba(0,0,0,.35);
+  color: rgba(17,24,39,.75);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height:1.55;
+  max-width:62ch;
+  margin:0 auto 1.25rem;
+}
+
+.hero-cta{ margin-top:.25rem; }
+
+/* MOBILE: no side fields */
+@media (max-width: 640px){
+  .hero{
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .hero-media{
+    width:100%;
+    border-radius:0;
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .hero-media::before{ opacity:.20; }
+  .hero-media::after{ opacity:.18; }
+
+  .hero-media img{
+    width:100% !important;
+    max-width:none !important;
+    height: var(--hero-h-mobile);
+    min-height: 360px;
+    border-radius:0;
+    box-shadow:none;
+    object-position:center 32%;
+  }
+
+  .hero-below{
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .hero-title{ max-width:20ch; }
 }
 
 /* ============================================================================
-   SERVICES — 3 cards
-   - Masks removed
+   SERVICES
 ============================================================================ */
-
 .services{
-  padding: 4rem 0;
-  background:#fff;
+  padding: clamp(3rem, 2.2rem + 2vw, 5rem) 0;
+  background: var(--section-bg);
 }
 
 .section-title{
   text-align:center;
-  font-size:1.9rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
   font-weight:700;
-  letter-spacing:.06em;
-  margin:0 0 .4rem;
-  color:#111827;
+  letter-spacing:.05em;
+  line-height:1.2;
+  margin:0 0 .5rem;
+  color: var(--text);
 }
 
 .section-subtitle{
   text-align:center;
   margin:0 0 2rem;
   color:#6b7280;
-  font-size:1.1rem;
+  font-size: clamp(1rem, .95rem + .25vw, 1.12rem);
+  line-height:1.5;
 }
 
 .services-grid{
@@ -160,23 +251,31 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   gap:1.25rem;
   margin-top:1.25rem;
 }
+
 @media (min-width:768px){
-  .services-grid{ grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .services-grid{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:1.5rem;
+  }
 }
 
 .service-card{
   position:relative;
-  border-radius:22px;
+  background: var(--card-bg);
+  border:1px solid var(--stroke);
+  border-radius: var(--radius-card);
   overflow:hidden;
-  background:#fff;
-  border:1px solid rgba(17,24,39,.10);
-  box-shadow:0 18px 50px rgba(0,0,0,.08);
+  box-shadow: var(--shadow1);
   transition: transform .25s ease, box-shadow .25s ease;
   min-height:100%;
+  display:flex;
+  flex-direction:column;
+  isolation:isolate;
 }
+
 .service-card:hover{
   transform: translateY(-4px);
-  box-shadow:0 26px 70px rgba(0,0,0,.12);
+  box-shadow: var(--shadow2);
 }
 
 .service-media{
@@ -185,74 +284,75 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   overflow:hidden;
   background:#0e0e0e;
 }
+
 .service-media img{
   width:100%;
   height:100%;
+  display:block;
   object-fit:cover;
   object-position:center;
   transform:scale(1.01);
 }
 
-/* SERVICES MASK REMOVED (was gradients) */
+/* disable old masks */
 .service-media::after{
+  content:none !important;
   display:none !important;
 }
 
 .service-icon{
   position:absolute;
-  top:14px; left:14px;
-  width:42px; height:42px;
+  top:14px;
+  left:14px;
+  width:42px;
+  height:42px;
   border-radius:9999px;
-  display:grid; place-items:center;
+  display:grid;
+  place-items:center;
   background: rgba(255,255,255,.92);
   border:1px solid rgba(17,24,39,.10);
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
   font-size:18px;
   color:#92400e;
+  z-index:2;
 }
 
-.service-body{ padding: 1.1rem 1.2rem 1.3rem; }
+.service-body{
+  padding:1.1rem 1.2rem 1.3rem;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  flex:1 1 auto;
+}
+
 .service-name{
-  font-size:1.55rem;
-  font-weight:700;
   margin:.2rem 0 .55rem;
-  color:#111827;
+  font-size: clamp(1.2rem, 1.05rem + .65vw, 1.58rem);
+  line-height:1.2;
+  font-weight:700;
+  color: var(--text);
 }
+
 .service-description{
-  color:#374151;
-  font-size:1.05rem;
-  line-height:1.6;
   margin:0;
+  color: var(--muted);
+  font-size: clamp(1rem, .96rem + .22vw, 1.08rem);
+  line-height:1.6;
 }
 
-/* ============================================================================
-   MOBILE TUNING
-   - hero fills screen (no gray bars)
-   - image becomes cover on mobile for premium look
-   - text still sits low
-============================================================================ */
-@media (max-width: 640px){
-  .hero{
-    min-height: calc(100svh - var(--header-h, 72px));
-    padding-bottom: clamp(2rem, 7vh, 4rem);
-  }
-
-  .hero-media img{
-    object-fit: cover;              /* fill */
-    object-position: center 35%;    /* slightly higher center */
-  }
-
-  .hero-inner{
-    margin-bottom: clamp(.75rem, 4vh, 2rem);
-  }
+.services .btn{
+  display:inline-block;
+  margin-top: clamp(1.2rem, 1rem + .8vw, 2rem);
 }
 
-/* ============================================================================
-   OPTIONAL: If you want to remove blurred background behind hero completely
-   (uncomment)
-============================================================================ */
-/*
-.hero-media::before{
-  display:none !important;
+/* safety override if any old rule conflicts */
+.services .service-card{
+  border-radius: var(--radius-card) !important;
+  overflow:hidden !important;
 }
-*/
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .service-card{ transition:none; }
+  .service-card:hover{ transform:none; }
+}
