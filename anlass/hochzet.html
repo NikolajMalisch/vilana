@@ -64,6 +64,54 @@
   <link rel="manifest" href="/images/favicon/site.webmanifest">
 </head>
 
+  <style>
+    html { scroll-behavior: smooth; }
+    body, h1, h2, h3, p, span { font-family: "Cormorant SC", serif; }
+    body { background-color: #fdfaf6; }
+
+    .logo-container {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      margin-top: 4px;
+    }
+    .logo-title {
+      font-family: "Cinzel Decorative", cursive;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #1f2937;
+      line-height: 1;
+      margin: 0;
+    }
+    .logo-subtitle {
+      font-size: 1rem;
+      font-weight: 350;
+      color: #1f2937;
+      line-height: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.1rem;
+      border-radius: 9999px;
+      border: 1px solid #c9b192;
+    }
+    .btn:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
 <body class="text-gray-800 antialiased">
   <!-- Skip-Link -->
   <a href="#main"
@@ -172,20 +220,17 @@
     </div>
 
     <div class="hero-inner container mx-auto px-4">
-      <div class="hero-kicker">✦ Hochzeit · Catering · Service</div>
+      <div class="hero-kicker"> Hochzeit · Catering · Service</div>
 
       <h1 class="hero-title">Hochzeit Catering in Hameln &amp; Hannover</h1>
 
       <p class="hero-subtitle">
         Stilvoller Sektempfang, Fingerfood &amp; Buffets – mit Liebe zum Detail und zuverlässiger Organisation.
       </p>
-
-      <a
-        href="/contact.html"
-        class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
-      >
-        Jetzt anfragen
-      </a>
+      <div class="hero-cta mt-6">
+        <div class="text-center mt-10">
+          <a href="/contact.html" class="btn">Unverbindlich anfragen</a>
+        </div>
     </div>
   </section>
 
