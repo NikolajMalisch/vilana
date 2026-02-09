@@ -283,50 +283,48 @@
         </span>
       </a>
 
-      <div class="flex items-center gap-3">
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
-          <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
-          <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-          <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
-          <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
-          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
-          <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
-        </nav>
+     <div class="flex items-center gap-3">
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+    <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+    <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+    <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+    <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+    <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+    <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+    <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
+    <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+  </nav>
 
-<!-- Language switch -->
-<div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-  <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-  <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
-     href="/ru/anlass/hochzeit.html"
-     rel="alternate"
-     hreflang="ru-RU">RU</a>
+  <!-- Language switch (Desktop) -->
+  <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
+    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
+    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
+       href="/ru/anlass/hochzeit.html"
+       rel="alternate"
+       hreflang="ru-RU">RU</a>
+  </div>
+
+  <!-- Mobile controls -->
+  <div class="flex items-center gap-2 md:hidden">
+    <a href="/ru/anlass/hochzeit.html"
+       class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+       rel="alternate"
+       hreflang="ru-RU"
+       aria-label="Русская версия">RU</a>
+
+    <button id="menuToggle" type="button"
+      aria-label="Menü öffnen"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
 </div>
 
-<!-- Mobile -->
-<div class="flex items-center gap-2 md:hidden">
-  <a href="/ru/anlass/hochzeit.html"
-     class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-     rel="alternate"
-     hreflang="ru-RU"
-     aria-label="Русская версия">RU</a>
-</div>
-
-<!-- Mobile Menu Button -->
-<div class="md:hidden">
-  <button id="menuToggle" type="button"
-    aria-label="Menü öffnen"
-    aria-controls="mobileMenu"
-    aria-expanded="false"
-    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
-</div>
-      </div>
 
     <!-- Mobile menu -->
     <div id="mobileMenu"
