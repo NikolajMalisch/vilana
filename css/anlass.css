@@ -5,12 +5,21 @@
    .services / .services-grid / .service-card ...
 ============================================================================ */
 
+/* ============================================================================
+   ROOT VARS
+============================================================================ */
 :root{
-  --header-h: 72px; /* если шапка выше/ниже — поменяй */
-  --hero-img: url("/images/anlass/hochzeit-hero1.webp"); /* fallback */
+  /* fallback: если JS не выставил реальную высоту шапки */
+  --header-h: 72px;
+
+  /* fallback hero image (лучше переопределять inline на секции hero):
+     <section class="hero" style="--hero-img:url('/images/anlass/hochzeit-hero.webp')"> */
+  --hero-img: url("/images/anlass/hochzeit-hero1.webp");
 }
 
-/* base */
+/* ============================================================================
+   BASE
+============================================================================ */
 html{ scroll-behavior:smooth; }
 body{ background:#fdfaf6; }
 body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
@@ -24,24 +33,32 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
 .btn:hover{ box-shadow:0 8px 24px rgba(0,0,0,.08); }
 
 /* ============================================================================
-   HERO — FULL IMAGE VISIBLE (NO CROP)
-   Uses:
-   1) style="--hero-img:url('/images/anlass/xxx.webp')" on <section class="hero">
-   2) otherwise uses :root fallback
+   HERO — IMAGE + TEXT LOWER (DESKTOP + MOBILE)
+   - Text is lower (not centered)
+   - Masks removed
+   - Background blur layer optional (enabled by default)
 ============================================================================ */
 
 .hero{
   position:relative;
   min-height: calc(100vh - var(--header-h));
   display:grid;
-  place-items:center;
+  align-items:end;                 /* text goes to bottom */
+  justify-items:center;
   overflow:hidden;
   background:#0e0e0e;
+
+  /* how low the content sits */
+  padding-bottom: clamp(2.5rem, 6vh, 5rem);
 }
 
-.hero-media{ position:absolute; inset:0; }
+.hero-media{
+  position:absolute;
+  inset:0;
+}
 
-/* blurred premium background from same image */
+/* blurred premium background from same image (NOT a mask on the main image)
+   if you don't want it — set display:none below */
 .hero-media::before{
   content:"";
   position:absolute;
@@ -52,27 +69,21 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   opacity:.95;
 }
 
-/* main image fully visible */
+/* main hero image */
 .hero-media img{
   position:relative;
   z-index:1;
   width:100%;
   height:100%;
-  object-fit: contain;   /* <-- главное */
+  object-fit: contain;            /* desktop: show full image */
   object-position:center;
   transform:none;
   filter:saturate(.98) contrast(1.02);
 }
 
-/* overlay gradients */
+/* HERO MASK REMOVED (was overlay gradients) */
 .hero-media::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:2;
-  background:
-    radial-gradient(900px 520px at 50% 20%, rgba(255,255,255,.12), rgba(0,0,0,0) 60%),
-    linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.78));
+  display:none !important;
 }
 
 .hero-inner{
@@ -80,7 +91,12 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   z-index:3;
   color:#fff;
   text-align:center;
-  padding: clamp(3.5rem, 6vw, 5rem) 1rem;
+
+  /* remove "centering padding" from previous version */
+  padding: 0 1rem;
+
+  /* offset from bottom */
+  margin-bottom: clamp(1rem, 4vh, 2.5rem);
 }
 
 .hero-kicker{
@@ -113,7 +129,8 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
 }
 
 /* ============================================================================
-   SERVICES — your sample style
+   SERVICES — 3 cards
+   - Masks removed
 ============================================================================ */
 
 .services{
@@ -175,13 +192,10 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   object-position:center;
   transform:scale(1.01);
 }
+
+/* SERVICES MASK REMOVED (was gradients) */
 .service-media::after{
-  content:"";
-  position:absolute; inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(800px 380px at 70% 20%, rgba(245,158,11,.18), rgba(0,0,0,0) 60%),
-    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.28) 100%);
+  display:none !important;
 }
 
 .service-icon{
@@ -210,13 +224,35 @@ body, h1, h2, h3, p, span{ font-family:"Cormorant SC", serif; }
   line-height:1.6;
   margin:0;
 }
-/* MOBILE: hero на всю ширину/высоту (без серых полей) */
+
+/* ============================================================================
+   MOBILE TUNING
+   - hero fills screen (no gray bars)
+   - image becomes cover on mobile for premium look
+   - text still sits low
+============================================================================ */
 @media (max-width: 640px){
   .hero{
     min-height: calc(100svh - var(--header-h, 72px));
+    padding-bottom: clamp(2rem, 7vh, 4rem);
   }
+
   .hero-media img{
-    object-fit: cover;              /* <- заполняет */
-    object-position: center 35%;    /* <- чуть выше центр, чтобы лицо/сцена были видны */
+    object-fit: cover;              /* fill */
+    object-position: center 35%;    /* slightly higher center */
+  }
+
+  .hero-inner{
+    margin-bottom: clamp(.75rem, 4vh, 2rem);
   }
 }
+
+/* ============================================================================
+   OPTIONAL: If you want to remove blurred background behind hero completely
+   (uncomment)
+============================================================================ */
+/*
+.hero-media::before{
+  display:none !important;
+}
+*/
