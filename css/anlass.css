@@ -57,6 +57,16 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
   font-family: "Cormorant SC", serif;
 }
 
+/* один-единственный отступ от шапки */
+#main{
+  padding-top: calc(var(--header-h) + 10px);
+}
+
+/* важно: не добавляем второй отступ */
+.hero{
+  margin-top: 0 !important;
+}
+
 /* Button */
 .btn{
   display:inline-flex;
