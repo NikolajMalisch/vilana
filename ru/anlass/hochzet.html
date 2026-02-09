@@ -296,18 +296,22 @@
           <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
         </nav>
 
-        <!-- Language switch -->
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="anlass/hochzet.html">DE</a>
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
-        </div>
+    <!-- Language switch -->
+    <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
+    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/anlass/hochzeit.html" rel="alternate"
+        hreflang="de-DE">DE</a>
+    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+    </div>
 
-        <!-- Mobile -->
-        <div class="flex items-center gap-2 md:hidden">
-          <a href="/anlass/hochzeit.html"
-             class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-             aria-label="Deutsche Version">DE</a>
-
+    <!-- Mobile -->
+    <div class="flex items-center gap-2 md:hidden">
+    <a href="/anlass/hochzeit.html"
+        class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+        rel="alternate" hreflang="de-DE" aria-label="Deutsche Version">DE</a>
+    ...
+    </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
           <button id="menuToggle" type="button"
             aria-label="Открыть меню"
             aria-controls="mobileMenu"
