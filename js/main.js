@@ -229,3 +229,20 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 
 });
+// Mobile submenu toggles (Partyservice)
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-submenu-toggle]").forEach((btn) => {
+    const id = btn.getAttribute("data-submenu-toggle");
+    const panel = document.getElementById(id);
+    if (!panel) return;
+
+    btn.addEventListener("click", () => {
+      const isOpen = !panel.classList.contains("hidden");
+      panel.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", String(!isOpen));
+
+      const icon = btn.querySelector("[data-submenu-icon]");
+      if (icon) icon.style.transform = !isOpen ? "rotate(180deg)" : "rotate(0deg)";
+    });
+  });
+});
