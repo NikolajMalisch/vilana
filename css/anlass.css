@@ -199,7 +199,11 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
 .hero-cta{ margin-top:.25rem; }
 
 /* MOBILE: фото полностью, без обрезки */
-@media (max-width: 640px){
+  @media (max-width: 640px){
+  #main {
+    padding-top: 0; /* ← шапка не fixed, отступ не нужен */
+  }
+
   .hero{
     padding-left:0;
     padding-right:0;
