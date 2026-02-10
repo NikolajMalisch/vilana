@@ -198,10 +198,10 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
 
 .hero-cta{ margin-top:.25rem; }
 
-/* MOBILE: фото полностью, без обрезки */
-  @media (max-width: 640px){
-  #main {
-    padding-top: 0; /* ← шапка не fixed, отступ не нужен */
+@media (max-width: 640px){
+  /* НЕ обнуляем отступ — держим буфер под шапку */
+  #main{
+    padding-top: calc(var(--header-h) + 10px);
   }
 
   .hero{

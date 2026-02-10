@@ -1,0 +1,67 @@
+<header class="bg-white shadow-md relative">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+         aria-label="Vilana Event &amp; Catering — Главная">
+        <span class="logo-title">Vilana</span>
+        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+          Event &amp; Catering
+        </span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Основная навигация">
+          <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
+          <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
+          <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
+          <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
+          <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
+          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800">События</a>
+          <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
+          <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
+        </nav>
+
+    <!-- Language switch -->
+    <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
+    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/anlass/hochzeit.html" rel="alternate"
+        hreflang="de-DE">DE</a>
+    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+    </div>
+
+    <!-- Mobile -->
+    <div class="flex items-center gap-2 md:hidden">
+    <a href="/anlass/hochzeit.html"
+        class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+        rel="alternate" hreflang="de-DE" aria-label="Deutsche Version">DE</a>
+    </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menuToggle" type="button"
+            aria-label="Открыть меню"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu"
+      class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-50"
+      role="menu"
+      aria-label="Мобильное меню">
+      <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
+      <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
+      <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
+      <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
+      <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
+      <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
+      <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
+      <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
+    </div>
+  </header>
