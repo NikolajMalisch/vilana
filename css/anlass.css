@@ -1,5 +1,5 @@
 /* ============================================================================
-   Vilana — Anlass Pages (anlass.css) — FULL (CLEAN, STABLE)
+   Vilana — Anlass Pages (anlass.css) — FULL (UNIVERSAL, CLEAN, STABLE)
 ============================================================================ */
 
 /* ============================================================================
@@ -8,8 +8,9 @@
 :root{
   --header-h: 72px;
 
-  /* Hero image (override per page if needed on .hero inline style) */
-  --hero-img: url("/images/anlass/hochzeit-hero.webp");
+  /* Hero image: set per page via:
+     <section class="hero" style="--hero-img: url('/images/...')"> ... */
+  --hero-img: none;
 
   --text: #111827;
   --muted: rgba(17,24,39,.75);
@@ -26,15 +27,10 @@
   --hero-h-mobile: 54vh;
   --hero-minh: 340px;
 
-  --badge-top: clamp(18px, 3.2vh, 34px);
-  --badge-bg: rgba(17,24,39,.30);
-  --badge-stroke: rgba(255,255,255,.22);
-  --badge-text: rgba(255,255,255,.92);
-
   --hero-blur: 22px;
   --hero-blur-opacity: .62;
 
-  /* Services tokens (explicitly set) */
+  /* Services tokens */
   --section-bg: #f8f6f2;
   --card-bg: #ffffff;
   --radius-card: 22px;
@@ -96,7 +92,7 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
 }
 
 /* ============================================================================
-   HERO
+   HERO (UNIVERSAL)
 ============================================================================ */
 .hero{
   background: #fdfaf6;
@@ -120,12 +116,22 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
   background: #f3eee6;
 }
 
-/* blurred premium fields inside hero */
+/* blurred premium fields inside hero
+   Works even when --hero-img is not set (fallback gradients stay). */
 .hero-media::before{
   content:"";
   position:absolute;
   inset:-28px;
-  background: var(--hero-img) center/cover no-repeat;
+
+  background:
+    radial-gradient(900px 520px at 50% 0%, rgba(17,24,39,.10), rgba(17,24,39,0) 62%),
+    linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,0) 52%),
+    var(--hero-img);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   filter: blur(var(--hero-blur)) saturate(.98) contrast(1.02) brightness(1.10);
   transform: scale(1.08);
   opacity: var(--hero-blur-opacity);
@@ -230,7 +236,7 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
 }
 
 /* ============================================================================
-   SERVICES
+   SERVICES (UNIVERSAL)
 ============================================================================ */
 .services{
   padding: clamp(3rem, 2.2rem + 2vw, 5rem) 0;
@@ -288,11 +294,12 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
   box-shadow: var(--shadow2);
 }
 
+/* Universal media crop for cards */
 .service-media{
   position:relative;
   aspect-ratio:16/10;
   overflow:hidden;
-  background:#0e0e0e;
+  background: #0e0e0e;
 }
 
 .service-media img{
@@ -304,27 +311,10 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
   transform:scale(1.01);
 }
 
-/* disable old masks */
+/* no masks */
 .service-media::after{
   content:none !important;
   display:none !important;
-}
-
-.service-icon{
-  position:absolute;
-  top:14px;
-  left:14px;
-  width:42px;
-  height:42px;
-  border-radius:9999px;
-  display:grid;
-  place-items:center;
-  background: rgba(255,255,255,.92);
-  border:1px solid rgba(17,24,39,.10);
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  font-size:18px;
-  color:#92400e;
-  z-index:2;
 }
 
 .service-body{
@@ -355,7 +345,7 @@ body, h1, h2, h3, p, span, label, input, textarea, select, button{
   margin-top: clamp(1.2rem, 1rem + .8vw, 2rem);
 }
 
-/* safety override if any old rule conflicts */
+/* safety override */
 .services .service-card{
   border-radius: var(--radius-card) !important;
   overflow:hidden !important;

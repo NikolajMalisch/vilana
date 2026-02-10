@@ -41,6 +41,7 @@
 
   <link rel="preload" as="image" href="/images/anlass/geburtstag-hero.webp" type="image/webp" fetchpriority="high">
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" crossorigin
@@ -309,75 +310,94 @@
   <!-- MAIN -->
   <main id="main">
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Geburtstagsparty Hero">
-      <div class="hero-media">
-        <picture>
-          <source media="(max-width: 640px)" srcset="images/anlass/geburtstag-hero.webp" type="image/webp" />
-          <source srcset="images/anlass/geburtstag-hero.webp" type="image/webp" />
-          <img src="images/anlass/geburtstag-hero.webp" alt="" loading="eager" decoding="async" fetchpriority="high" />
-        </picture>
-      </div>
+<!-- HERO -->
+<section class="hero"
+         style="--hero-img: url('/images/anlass/geburtstag-hero.webp');"
+         aria-label="Geburtstagsparty Hero">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width: 640px)"
+              srcset="/images/anlass/geburtstag-hero.webp"
+              type="image/webp" />
+      <source srcset="/images/anlass/geburtstag-hero.webp"
+              type="image/webp" />
+      <img src="/images/anlass/geburtstag-hero.webp"
+           alt=""
+           loading="eager"
+           decoding="async"
+           fetchpriority="high" />
+    </picture>
+  </div>
 
-      <div class="hero-below container mx-auto px-4">
-        <h1 class="hero-title">Geburtstagsparty in Hameln &amp; Niedersachsen</h1>
-        <p class="hero-subtitle">
-          Party-Buffet, Fingerfood &amp; Sweet Table – damit Sie feiern und wir den Rest zuverlässig übernehmen.
-        </p>
-        <div class="hero-cta">
-          <a href="/contact.html" class="btn">Unverbindlich anfragen</a>
+  <div class="hero-below container mx-auto px-4">
+    <h1 class="hero-title">Geburtstagsparty in Hameln &amp; Niedersachsen</h1>
+    <p class="hero-subtitle">
+      Party-Buffet, Fingerfood &amp; Sweet Table – damit Sie feiern und wir den Rest zuverlässig übernehmen.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact.html" class="btn">Unverbindlich anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title">UNSERE LEISTUNGEN</h2>
+    <p class="section-subtitle">Geburtstagsfeier mit Stil – unkompliziert, hochwertig, gut organisiert</p>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <article class="service-card reveal">
+        <div class="service-media">
+          <img src="/images/anlass/geburtstag-food.webp"
+               alt="Empfang &amp; Häppchen"
+               loading="lazy"
+               decoding="async">
         </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title">UNSERE LEISTUNGEN</h2>
-        <p class="section-subtitle">Geburtstagsfeier mit Stil – unkompliziert, hochwertig, gut organisiert</p>
-
-        <div class="services-grid">
-          <!-- Card 1 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="images/anlass/geburtstag-food.webp" alt="Fingerfood &amp; Drinks zum Empfang" loading="lazy" decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Empfang &amp; Fingerfood</h3>
-              <p class="service-description">
-                Perfekt zum Start: Canapés, Mini-Snacks und elegante Häppchen – ideal zu Sekt, Wein oder Cocktails.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="images/anlass/geburtstag-buffet.webp" alt="Party-Buffet warm &amp; kalt" loading="lazy" decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Party-Buffet (warm &amp; kalt)</h3>
-              <p class="service-description">
-                Herzhaft, modern und sättigend: warme Klassiker + kalte Platten, passend zu Gästen, Uhrzeit und Party-Stil.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="images/anlass/geburtstag-sweettable.webp" alt="Sweet Table, Service &amp; Ausstattung" loading="lazy" decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Sweet Table, Service &amp; Ausstattung</h3>
-              <p class="service-description">
-                Desserts im Glas, Candy Bar oder Sweet Table. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Buffet-Equipment.
-              </p>
-            </div>
-          </article>
+        <div class="service-body">
+          <h3 class="service-name">Empfang &amp; Häppchen</h3>
+          <p class="service-description">
+            Perfekt zum Start: Canapés, Mini-Snacks und elegante Variationen – ideal zu Drinks und zum Ankommen.
+          </p>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card reveal">
+        <div class="service-media">
+          <img src="/images/anlass/geburtstag-buffet.webp"
+               alt="Party-Buffet warm &amp; kalt"
+               loading="lazy"
+               decoding="async">
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Party-Buffet (warm &amp; kalt)</h3>
+          <p class="service-description">
+            Herzhaft, modern und sättigend: warme Speisen + kalte Platten, abgestimmt auf Gäste, Uhrzeit und Party-Stil.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card reveal">
+        <div class="service-media">
+          <img src="/images/anlass/geburtstag-sweettable.webp"
+               alt="Sweet Table &amp; Service"
+               loading="lazy"
+               decoding="async">
+        </div>
+        <div class="service-body">
+          <h3 class="service-name">Sweet Table, Service &amp; Ausstattung</h3>
+          <p class="service-description">
+            Desserts im Glas, Candy Bar oder Sweet Table. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Equipment.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
     <!-- FAQ -->
     <section id="faq" class="py-14">
@@ -465,3 +485,4 @@
   <script src="/js/vilana-cookiewall.js" defer></script>
 </body>
 </html>
+
