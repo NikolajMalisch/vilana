@@ -322,57 +322,79 @@
 </footer>
 
 <script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Year (safe)
+  (function () {
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
 
-  // Mobile burger
-  (function(){
+  // Mobile burger (safe)
+  (function () {
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     if (!menuToggle || !mobileMenu) return;
 
+    function closeMobile() {
+      mobileMenu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
     menuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      const hidden = mobileMenu.classList.toggle('hidden');
-      menuToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMobile();
+      }
     });
 
     document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('hidden')) return;
       const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
-      if (!inside && !mobileMenu.classList.contains('hidden')){
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded','false');
-      }
+      if (!inside) closeMobile();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')){
-        mobileMenu.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded','false');
-      }
+      if (e.key === 'Escape') closeMobile();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMobile();
     });
   })();
 
-  // Lang menus
-  (function(){
+  // Lang menus (safe) — работает только если элементы реально есть
+  (function () {
     const btnD = document.getElementById('langToggle');
     const menuD = document.getElementById('langMenu');
     const btnM = document.getElementById('langToggleMobile');
     const menuM = document.getElementById('langMenuMobile');
 
-    btnD?.addEventListener('click', (e) => { e.stopPropagation(); menuD?.classList.toggle('hidden'); });
-    btnM?.addEventListener('click', (e) => { e.stopPropagation(); menuM?.classList.toggle('hidden'); });
+    function toggle(el) { el && el.classList.toggle('hidden'); }
+    function hide(el) { el && el.classList.add('hidden'); }
+
+    if (btnD && menuD) {
+      btnD.addEventListener('click', (e) => { e.stopPropagation(); toggle(menuD); });
+    }
+    if (btnM && menuM) {
+      btnM.addEventListener('click', (e) => { e.stopPropagation(); toggle(menuM); });
+    }
 
     document.addEventListener('click', (e) => {
-      if (menuD && !menuD.contains(e.target) && !btnD?.contains(e.target)) menuD.classList.add('hidden');
-      if (menuM && !menuM.contains(e.target) && !btnM?.contains(e.target)) menuM.classList.add('hidden');
+      if (menuD && btnD && !menuD.contains(e.target) && !btnD.contains(e.target)) hide(menuD);
+      if (menuM && btnM && !menuM.contains(e.target) && !btnM.contains(e.target)) hide(menuM);
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape'){ menuD?.classList.add('hidden'); menuM?.classList.add('hidden'); }
+      if (e.key === 'Escape') { hide(menuD); hide(menuM); }
     });
   })();
 </script>
+
 
 <!-- Cookie Consent Wall -->
 <script src="js/vilana-cookiewall.js" defer></script>
