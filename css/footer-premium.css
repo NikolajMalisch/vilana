@@ -1,0 +1,483 @@
+/* =========================================
+   FOOTER PREMIUM – Vilana Event & Catering
+   footer-premium.css
+   Подключить: <link rel="stylesheet" href="/css/footer-premium.css">
+========================================= */
+
+/* ── CSS переменные ── */
+:root {
+  --f-bg:         #141822;   /* бархатный тёмно-фиолетово-коричневый */
+  --f-bg2:        #06070B;   /* чуть темнее внизу */
+  --f-gold:       #c9a96e;
+  --f-text:       #e8e2d9;   /* основной текст — светлый */
+  --f-text-muted: #b0a898;   /* второстепенный — виден, но тихий */
+  --f-text-dim:   #7a7068;   /* совсем приглушённый */
+}
+
+.footer-premium {
+  background: linear-gradient(180deg, var(--f-bg) 0%, var(--f-bg2) 100%);
+  color: var(--f-text);
+  padding: 48px 0 0;          /* ↓ было 70px */
+  margin-top: 4rem;
+  position: relative;
+  font-family: 'Cormorant SC', serif;
+  overflow: hidden;
+}
+
+/* Бархатная текстура — мягкий шум */
+.footer-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ── Inner wrapper ── */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* ── Top decorative line ── */
+.footer-deco-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--f-gold) 30%, var(--f-gold) 70%, transparent);
+  margin-bottom: 36px;        /* ↓ было 60px */
+}
+
+/* ── Brand centerpiece ── */
+.footer-brand {
+  text-align: center;
+  margin-bottom: 36px;        /* ↓ было 56px */
+}
+
+.footer-brand-name {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.footer-brand-sub {
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: var(--f-gold);
+  text-transform: uppercase;
+}
+
+/* ── Ornament ── */
+.footer-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;             /* ↓ было 16px */
+  color: var(--f-gold);
+  opacity: 0.6;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+}
+
+.footer-ornament::before,
+.footer-ornament::after {
+  content: '';
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--f-gold));
+}
+
+.footer-ornament::after {
+  background: linear-gradient(90deg, var(--f-gold), transparent);
+}
+
+/* ── 3-column grid ── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+  margin-bottom: 36px;        /* ↓ было 60px */
+}
+
+.footer-divider-v {
+  background: linear-gradient(180deg, transparent, #c9a96e35 30%, #c9a96e35 70%, transparent);
+  width: 1px;
+}
+
+.footer-col {
+  padding: 0 36px;
+  text-align: left;
+}
+
+.footer-col:first-child { padding-left: 0; }
+.footer-col:last-child  { padding-right: 0; }
+
+/* ── Column titles ── */
+.footer-col-title {
+  font-family: 'Cormorant SC', serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--f-gold);
+  margin-bottom: 18px;        /* ↓ было 24px */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-col-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #c9a96e40, transparent);
+}
+
+/* ── NAP / Address ── */
+.footer-address {
+  font-style: normal;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--f-text-muted);
+  font-weight: 300;
+}
+
+.footer-address-name {
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.footer-address-street {
+  margin-bottom: 14px;
+  color: var(--f-text-muted);
+}
+
+.footer-address a {
+  color: var(--f-text);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-address a:hover { color: var(--f-gold); }
+
+.footer-address .contact-icon {
+  color: var(--f-gold);
+  font-size: 0.75rem;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Navigation ── */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 8px;         /* ↓ было 10px */
+}
+
+.footer-nav a {
+  font-size: 0.92rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--f-text);
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.footer-nav a::before {
+  content: '–';
+  color: var(--f-gold);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.2s;
+  font-size: 0.75rem;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+.footer-nav a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Regions ── */
+.footer-regions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;              /* ↓ было 8px */
+}
+
+.footer-regions li {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--f-text);       /* ← светлый */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-regions li::before {
+  content: '·';
+  color: var(--f-gold);
+}
+
+.footer-regions-label {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--f-text-dim);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer-regions-note {
+  margin-top: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--f-text-dim);
+  text-transform: uppercase;
+}
+
+/* ── Instagram button ── */
+.footer-instagram {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: var(--f-text);       /* ← светлый */
+  text-decoration: none;
+  border: 1px solid #c9a96e40;
+  padding: 7px 14px;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+
+.footer-instagram:hover {
+  color: #fff;
+  border-color: var(--f-gold);
+  background: #c9a96e15;
+}
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  border-top: 1px solid #ffffff0d;
+  padding: 20px 0;            /* ↓ было 24px */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-copyright {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--f-text-muted); /* ← виден */
+  text-transform: uppercase;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+}
+
+.footer-legal a {
+  color: var(--f-text-muted); /* ← виден */
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--f-gold); }
+
+.footer-legal span { color: #c9a96e30; }
+
+/* ── Scroll to top ── */
+.footer-scroll-top {
+  position: absolute;
+  right: 2rem;
+  bottom: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c9a96e50;
+  color: var(--f-gold);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.25s;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.footer-scroll-top:hover {
+  background: var(--f-gold);
+  color: var(--f-bg);
+  border-color: var(--f-gold);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-divider-v { display: none; }
+
+  .footer-col {
+    padding: 0 0 28px 0;
+    border-bottom: 1px solid #c9a96e15;
+  }
+
+  .footer-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-premium { padding-top: 40px; }
+
+  .footer-brand-name { font-size: 1.2rem; }
+
+  /* Бренд-блок — влево, чтоб ◆ был под "Vilana" */
+  .footer-brand {
+    text-align: left;
+  }
+
+  .footer-ornament {
+    justify-content: flex-start;
+  }
+
+  .footer-ornament::before {
+    display: none;            /* убираем левую линию */
+  }
+
+  .footer-ornament::after {
+    max-width: 50px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .footer-scroll-top { right: 1rem; }
+}
+/* ============================================================================
+   FOOTER PREMIUM — compact + wider (desktop) — CLEAN PATCH
+   Вставь в КОНЕЦ footer-premium.css (и удали предыдущий FIX-блок)
+============================================================================ */
+
+.footer-premium{
+  padding: 36px 0 0;
+  margin-top: 3rem;
+}
+.footer-premium::before{ opacity: .45; }
+
+.footer-inner{
+  max-width: 1360px;
+  padding: 0 clamp(16px, 3vw, 44px);
+}
+
+.footer-deco-line,
+.footer-brand,
+.footer-grid{ margin-bottom: 26px; }
+
+.footer-address{ line-height: 1.55; }
+.footer-address-name{ margin-bottom: 6px; }
+.footer-address-street{ margin-bottom: 10px; }
+.footer-nav li{ margin-bottom: 6px; }
+
+@media (min-width: 1024px){
+  .footer-grid{
+    grid-template-columns: 1.25fr 1px 0.9fr 1px 1.25fr;
+  }
+  .footer-col{ padding: 0 44px; }
+  .footer-col:first-child{ padding-left: 0; }
+  .footer-col:last-child{ padding-right: 0; }
+
+  /* Servicegebiet как было (left) */
+  .footer-col:last-child{ text-align: left; }
+  .footer-col:last-child .footer-regions{ justify-items: start; }
+  .footer-col:last-child .footer-regions li{ justify-content: flex-start; }
+}
+
+.footer-bottom{
+  padding: 16px 0;
+  gap: 10px;
+}
+.footer-copyright{
+  margin: 0;
+  line-height: 1.25;
+}
+
+@media (max-width: 600px){
+  .footer-premium{ padding-top: 34px; }
+}
+/* =========================
+   Servicegebiet: правее + крупнее (desktop)
+========================= */
+@media (min-width: 1024px){
+  /* делаем правую колонку шире + сдвигаем вправо */
+  .footer-grid{
+    grid-template-columns: 1.15fr 1px 0.85fr 1px 1.55fr;
+  }
+
+  /* больше отступ слева у Servicegebiet */
+  .footer-col:last-child{
+    padding-left: 64px;   /* было ~44px или 36px */
+  }
+
+  /* чуть крупнее типографика только справа */
+  .footer-col:last-child .footer-regions-label{
+    font-size: 0.78rem;   /* было 0.72 */
+    letter-spacing: 2.2px;
+  }
+
+  .footer-col:last-child .footer-regions li{
+    font-size: 0.92rem;   /* было 0.85 */
+    letter-spacing: 0.6px;
+  }
+
+  .footer-col:last-child .footer-regions-note{
+    font-size: 0.78rem;   /* было 0.72 */
+    letter-spacing: 2.2px;
+  }
+}
