@@ -392,45 +392,139 @@
     </article>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-800 text-white py-10 mt-16 relative">
-    <div class="container mx-auto px-4 text-center">
-      <div class="mb-4">
-        <a
-          href="https://www.instagram.com/vilana_catering/"
+<!-- =========================================
+  FOOTER – Premium Version
+========================================= -->
+<footer class="footer-premium"
+  itemscope itemtype="https://schema.org/LocalBusiness">
+  <meta itemprop="name" content="Vilana Event & Catering">
+  <meta itemprop="telephone" content="+49 176 5777 5996">
+  <meta itemprop="email" content="v.s@vilana.info">
+  <meta itemprop="url" content="https://www.vilana-event.de/">
+  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+    <meta itemprop="streetAddress" content="Osterstraße 28">
+    <meta itemprop="addressLocality" content="Aerzen">
+    <meta itemprop="postalCode" content="31855">
+    <meta itemprop="addressRegion" content="Niedersachsen">
+    <meta itemprop="addressCountry" content="DE">
+  </div>
+
+  <div class="footer-inner">
+
+    <div class="footer-deco-line"></div>
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <p class="footer-brand-name">Vilana</p>
+      <div class="footer-ornament">◆</div>
+      <p class="footer-brand-sub">Event &amp; Catering</p>
+    </div>
+
+    <!-- 3-spalten Grid -->
+    <div class="footer-grid">
+
+      <!-- Kontakt -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Kontakt</h3>
+        <address class="footer-address">
+          <p class="footer-address-name">Vilana Event &amp; Catering</p>
+          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
+          <a href="tel:+4917657775996">
+            <span class="contact-icon">☎</span> +49 176 5777 5996
+          </a>
+          <a href="tel:+4917642288707">
+            <span class="contact-icon">☎</span> +49 176 4228 8707
+          </a>
+          <a href="mailto:v.s@vilana.info">
+            <span class="contact-icon">✉</span> v.s@vilana.info
+          </a>
+          <a href="mailto:vilana-event@outlook.de">
+            <span class="contact-icon">✉</span> vilana-event@outlook.de
+          </a>
+        </address>
+
+        <a href="https://www.instagram.com/vilana_catering/"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 hover:text-amber-400 transition"
-          aria-label="Instagram – vilana_catering"
-        >
-          <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Instagram Icon">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
+          class="footer-instagram"
+          aria-label="Instagram – vilana_catering">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
           </svg>
-          Instagram
+          @vilana_catering
         </a>
       </div>
 
-      <p class="mb-2">
-        <a href="/impressum.html" class="hover:underline">Impressum</a> |
-        <a href="/datenschutz.html" class="hover:underline">Datenschutz</a> |
-        <a href="/agb.html" class="hover:underline">AGB</a>
-      </p>
+      <div class="footer-divider-v"></div>
 
-      <p class="footer-text">
-        © <span class="year">2025</span> Vilana Event &amp; Catering. Alle Rechte vorbehalten.
-      </p>
+      <!-- Navigation -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Navigation</h3>
+        <nav aria-label="Footer-Navigation">
+          <ul class="footer-nav">
+            <li><a href="/">Startseite</a></li>
+            <li><a href="/#services">Leistungen</a></li>
+            <li><a href="/partyservice.html">Partyservice</a></li>
+            <li><a href="/menu.html">Menü</a></li>
+            <li><a href="/galerie.html">Galerie</a></li>
+            <li><a href="/about.html">Über uns</a></li>
+            <li><a href="/event.html">Event</a></li>
+            <li><a href="/contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-divider-v"></div>
+
+      <!-- Servicegebiet -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Servicegebiet</h3>
+        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+        <ul class="footer-regions">
+          <li>Hameln</li>
+          <li>Hannover</li>
+          <li>Bad Pyrmont</li>
+          <li>Bielefeld</li>
+          <li>Paderborn</li>
+          <li>Minden</li>
+          <li>Detmold</li>
+          <li>Münster</li>
+          <li>Braunschweig</li>
+          <li>Wunstorf</li>
+        </ul>
+        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+      </div>
+
     </div>
 
-    <button
-      type="button"
-      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-      class="absolute right-4 bottom-4 bg-amber-500 hover:bg-amber-600 text-white p-2 rounded-full shadow-lg transition"
-      title="Nach oben"
-      aria-label="Nach oben"
-    >
-      ▲
-    </button>
-  </footer>
+    <!-- Bottom bar -->
+<div class="footer-bottom">
+  <p class="footer-copyright">
+    © 2026 Vilana Event &amp; Catering.
+    <br class="br-mobile" />
+    Alle Rechte vorbehalten.
+  </p>
+
+  <nav class="footer-legal" aria-label="Rechtliches">
+    <a href="/impressum.html">Impressum</a>
+    <span aria-hidden="true">|</span>
+    <a href="/datenschutz.html">Datenschutz</a>
+    <span aria-hidden="true">|</span>
+    <a href="/agb.html">AGB</a>
+  </nav>
+</div>
+
+  </div>
+
+  <button
+    type="button"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="footer-scroll-top"
+    aria-label="Nach oben scrollen"
+    title="Nach oben">
+    ▲
+  </button>
+</footer>
 
   <script src="/js/main.js" defer></script>
   <script src="/js/vilana-cookiewall.js" defer></script>
