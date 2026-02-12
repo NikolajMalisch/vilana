@@ -23,9 +23,10 @@
   --radius-hero: 28px;
   --radius-hero-img: 22px;
 
-  --hero-h-desktop: min(56vh, 640px);
-  --hero-h-mobile: 54vh;
-  --hero-minh: 340px;
+  --hero-h-desktop: auto;
+  --hero-h-mobile: auto;
+  --hero-minh: 0;
+
 
   --hero-blur: 22px;
   --hero-blur-opacity: .62;
