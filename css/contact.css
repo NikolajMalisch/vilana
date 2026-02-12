@@ -1357,3 +1357,146 @@ textarea.field-error {
 .v-cat.is-active .v-sheet__catMeta {
   color: #4CAF50 !important;
 }
+/* =========================================
+   TOP CONTACT BLOCK — Premium
+========================================= */
+.top-contact {
+  --tc-bg: #f8f5ef;
+  --tc-surface: #ffffff;
+  --tc-border: #e9dfd0;
+  --tc-text: #1f2937;
+  --tc-muted: #6b7280;
+  --tc-accent: #b8945c;
+  --tc-accent-2: #8f6a3a;
+
+  position: relative;
+  padding: clamp(32px, 6vw, 64px) 16px clamp(20px, 4vw, 36px);
+  background:
+    radial-gradient(1100px 300px at 50% -80px, rgba(184, 148, 92, 0.13), transparent 70%),
+    var(--tc-bg);
+}
+
+.top-contact__inner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-contact__title {
+  margin: 0;
+  font-family:"Cormorant SC", serif;
+  font-size: clamp(1.65rem, 3vw, 2.55rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--tc-text);
+  text-wrap: balance;
+}
+
+.top-contact__lead {
+  margin: 12px auto 0;
+  max-width: 760px;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: var(--tc-muted);
+}
+
+/* Grid */
+.top-contact__grid {
+  margin-top: clamp(20px, 3.2vw, 30px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+@media (max-width: 820px) {
+  .top-contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.info-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px auto;
+  grid-template-areas:
+    "icon label"
+    "icon value";
+  gap: 2px 10px;
+  align-items: center;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--tc-border);
+  background: linear-gradient(180deg, #fff, #fffcf8);
+  color: var(--tc-text);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.info-card:hover {
+  transform: translateY(-1px);
+  border-color: #d8c5a8;
+  box-shadow:
+    0 12px 28px rgba(31, 41, 55, 0.08),
+    0 2px 8px rgba(31, 41, 55, 0.05);
+}
+
+.info-card:focus-visible {
+  outline: 2px solid #caa772;
+  outline-offset: 2px;
+}
+
+.info-card__icon {
+  grid-area: icon;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 14px;
+  background: #f3ece2;
+  color: #6f5532;
+}
+
+.info-card__label {
+  grid-area: label;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tc-muted);
+}
+
+.info-card__value {
+  grid-area: value;
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.35;
+  color: var(--tc-text);
+  overflow-wrap: anywhere;
+}
+
+/* Accent card (WhatsApp) */
+.info-card--accent {
+  border-color: #d7c29f;
+  background:
+    linear-gradient(180deg, #fffefc, #fff7eb);
+}
+
+.info-card--accent .info-card__icon {
+  background: #f8e7ce;
+  color: #7a572a;
+}
+
+/* Static card (non-link) */
+.info-card--static {
+  cursor: default;
+}
+
+.info-card--static:hover {
+  transform: none;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  border-color: var(--tc-border);
+}

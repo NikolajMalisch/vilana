@@ -380,19 +380,68 @@
 <!-- Toast -->
 <div id="toast" role="status" aria-live="polite"></div>
 
-<main class="py-16">
-  <div class="mx-auto px-4 max-w-3xl">
+<!-- =========================================
+  TOP CONTACT BLOCK (RU)
+========================================= -->
+<section class="top-contact" aria-label="Контактная информация">
+  <div class="top-contact__inner">
+    <h1 class="top-contact__title">Заявка на ваше событие — кейтеринг и сервис</h1>
 
-    <h1 class="text-4xl font-bold mb-6 text-center">Запрос для вашего мероприятия — кейтеринг &amp; сервис</h1>
+    <p class="top-contact__lead">
+      Быстрая связь по кейтерингу, билетам на мероприятия и согласованию даты.
+    </p>
 
-    <div class="text-center mb-10 space-y-2">
-      <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:v.s@vilana.info" class="text-amber-700">v.s@vilana.info</a></p>
-      <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:vilana-event@outlook.de" class="text-amber-700">vilana-event@outlook.de</a></p>
-      <p class="text-lg"><strong>Телефон:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176 5777 5996</a></p>
-      <p class="text-lg"><strong>Телефон:</strong> <a href="tel:+4917642288707" class="text-amber-700">+49 176 4228 8707</a></p>
-      <p class="text-lg"><strong>WhatsApp:</strong> <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank" rel="noopener noreferrer">Написать</a></p>
-      <p class="text-lg"><strong>Адрес:</strong> 31855 Aerzen / Osterstraße 28</p>
+    <div class="top-contact__grid">
+      <!-- E-Mail -->
+      <a class="info-card" href="mailto:v.s@vilana.info" aria-label="Написать на v.s@vilana.info">
+        <span class="info-card__icon" aria-hidden="true">✉</span>
+        <span class="info-card__label">E-Mail</span>
+        <span class="info-card__value">v.s@vilana.info</span>
+      </a>
+
+      <a class="info-card" href="mailto:vilana-event@outlook.de" aria-label="Написать на vilana-event@outlook.de">
+        <span class="info-card__icon" aria-hidden="true">✉</span>
+        <span class="info-card__label">E-Mail</span>
+        <span class="info-card__value">vilana-event@outlook.de</span>
+      </a>
+
+      <!-- Telefon -->
+      <a class="info-card" href="tel:+4917657775996" aria-label="Позвонить +49 176 5777 5996">
+        <span class="info-card__icon" aria-hidden="true">☎</span>
+        <span class="info-card__label">Телефон</span>
+        <span class="info-card__value">+49 176 5777 5996</span>
+      </a>
+
+      <a class="info-card" href="tel:+4917642288707" aria-label="Позвонить +49 176 4228 8707">
+        <span class="info-card__icon" aria-hidden="true">☎</span>
+        <span class="info-card__label">Телефон</span>
+        <span class="info-card__value">+49 176 4228 8707</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a class="info-card info-card--accent"
+         href="https://wa.me/4917657775996?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20Vilana%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D1%83."
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Написать в WhatsApp">
+        <span class="info-card__icon" aria-hidden="true">💬</span>
+        <span class="info-card__label">WhatsApp</span>
+        <span class="info-card__value">Написать сейчас</span>
+      </a>
+
+      <!-- Adresse -->
+      <a class="info-card"
+         href="https://www.google.com/maps/search/?api=1&query=Osterstra%C3%9Fe+28%2C+31855+Aerzen"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Открыть адрес в Google Maps">
+        <span class="info-card__icon" aria-hidden="true">📍</span>
+        <span class="info-card__label">Адрес</span>
+        <span class="info-card__value">Osterstraße 28, 31855 Aerzen</span>
+      </a>
     </div>
+  </div>
+</section>
+
 
     <form id="contactForm"
           class="p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto"

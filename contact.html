@@ -225,26 +225,65 @@
   <!-- Toast -->
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- =========================================================
-        MAIN
-  ========================================================== -->
-  <main class="py-16">
-    <div class="mx-auto px-4 max-w-3xl">
+<!-- =========================================
+  TOP CONTACT BLOCK (Premium)
+========================================= -->
+<section class="top-contact" aria-label="Kontaktinformationen">
+  <div class="top-contact__inner">
+    <h1 class="top-contact__title">Anfrage für Ihr Event – Catering &amp; Service</h1>
 
-      <h1 class="text-4xl font-bold mb-6 text-center">Anfrage für Ihr Event – Catering &amp; Service</h1>
+    <p class="top-contact__lead">
+      Schnell erreichbar für Catering-Anfragen, Event-Tickets und Terminabstimmung.
+    </p>
 
-      <!-- Kontaktdaten -->
-      <div class="text-center mb-10 space-y-2">
-        <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:v.s@vilana.info" class="text-amber-700">v.s@vilana.info</a></p>
-        <p class="text-lg"><strong>E-Mail:</strong> <a href="mailto:vilana-event@outlook.de" class="text-amber-700">vilana-event@outlook.de</a></p>
-        <p class="text-lg"><strong>Telefon:</strong> <a href="tel:+4917657775996" class="text-amber-700">+49 176 5777 5996</a></p>
-        <p class="text-lg"><strong>Telefon:</strong> <a href="tel:+4917642288707" class="text-amber-700">+49 176 4228 8707</a></p>
-        <p class="text-lg">
-          <strong>WhatsApp:</strong>
-          <a href="https://wa.me/4917657775996" class="text-amber-700" target="_blank" rel="noopener noreferrer">Jetzt schreiben</a>
-        </p>
-        <p class="text-lg"><strong>Adresse:</strong> 31855 Aerzen / Osterstraße 28</p>
+    <div class="top-contact__grid">
+      <!-- E-Mail -->
+      <a class="info-card" href="mailto:v.s@vilana.info" aria-label="E-Mail an v.s@vilana.info">
+        <span class="info-card__icon" aria-hidden="true">✉</span>
+        <span class="info-card__label">E-Mail</span>
+        <span class="info-card__value">v.s@vilana.info</span>
+      </a>
+
+      <a class="info-card" href="mailto:vilana-event@outlook.de" aria-label="E-Mail an vilana-event@outlook.de">
+        <span class="info-card__icon" aria-hidden="true">✉</span>
+        <span class="info-card__label">E-Mail</span>
+        <span class="info-card__value">vilana-event@outlook.de</span>
+      </a>
+
+      <!-- Telefon -->
+      <a class="info-card" href="tel:+4917657775996" aria-label="Anrufen +49 176 5777 5996">
+        <span class="info-card__icon" aria-hidden="true">☎</span>
+        <span class="info-card__label">Telefon</span>
+        <span class="info-card__value">+49 176 5777 5996</span>
+      </a>
+
+      <a class="info-card" href="tel:+4917642288707" aria-label="Anrufen +49 176 4228 8707">
+        <span class="info-card__icon" aria-hidden="true">☎</span>
+        <span class="info-card__label">Telefon</span>
+        <span class="info-card__value">+49 176 4228 8707</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a class="info-card info-card--accent"
+         href="https://wa.me/4917657775996?text=Hallo%20Vilana%2C%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
+         target="_blank" rel="noopener noreferrer"
+         aria-label="WhatsApp Nachricht senden">
+        <span class="info-card__icon" aria-hidden="true">💬</span>
+        <span class="info-card__label">WhatsApp</span>
+        <span class="info-card__value">Jetzt schreiben</span>
+      </a>
+
+      <!-- Adresse -->
+      <a class="info-card" href="https://www.google.com/maps/search/?api=1&query=Osterstra%C3%9Fe+28%2C+31855+Aerzen"
+        target="_blank" rel="noopener noreferrer" aria-label="Adresse in Google Maps öffnen">
+        <span class="info-card__icon" aria-hidden="true">📍</span>
+        <span class="info-card__label">Adresse</span>
+        <span class="info-card__value">Osterstraße 28, 31855 Aerzen</span>
+      </a>
       </div>
+  </div>
+</section>
+
 
       <!-- =========================================================
             FORM (ein Formular = Schnell + Erweitert)
