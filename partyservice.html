@@ -538,33 +538,6 @@
     </button>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-      if (!menuToggle || !mobileMenu) return;
-
-      const closeMenu = () => {
-        mobileMenu.classList.add("hidden");
-        menuToggle.setAttribute("aria-expanded", "false");
-      };
-
-      menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isHidden = mobileMenu.classList.toggle("hidden");
-        menuToggle.setAttribute("aria-expanded", isHidden ? "false" : "true");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-    });
-  </script>
 
   <script src="/js/main.js" defer></script>
   <script src="/js/vilana-cookiewall.js" defer></script>
