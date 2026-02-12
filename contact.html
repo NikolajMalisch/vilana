@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- =========================================================
-          SEO – Kontakt (DE)
+        SEO – Kontakt (DE)
   ========================================================== -->
   <title>Kontakt | Vilana Event &amp; Catering – Catering &amp; Partyservice in Hameln-Pyrmont</title>
   <meta name="description"
@@ -40,8 +40,8 @@
   <link rel="preload" href="/css/output.css" as="style" />
   <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/contact.css" />
+  <link rel="stylesheet" href="/css/footer-premium.css" />
   <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
-  <link rel="stylesheet" href="/css/footer-premium.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,9 +54,11 @@
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
+  <!-- Minimal inline (safe) -->
   <style>
     body { font-family: "Cormorant SC", serif; background: #fdfaf6; color: #111827; }
     h1,h2,h3,p,span,label,input,textarea,select,button { font-family: "Cormorant SC", serif; }
+    header a{ text-decoration:none; }
 
     .logo-title{
       font-family:"Cinzel Decorative", cursive;
@@ -69,12 +71,12 @@
     .logo-subtitle{ font-size:1rem; color:#111827; line-height:1; }
 
     .hidden-field{ display:none !important; }
-
     .field-error {
       border-color: #dc2626 !important;
       box-shadow: 0 0 0 4px rgba(220,38,38,.10) !important;
     }
 
+    /* For accordion arrow (if used in contact.css) */
     .acc-open svg { transform: rotate(180deg); }
   </style>
 
@@ -136,69 +138,89 @@
 
 <body class="text-gray-800 antialiased contact-wrap">
 
-  <!-- =========================================================
-        HEADER
-  ========================================================== -->
-  <header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-black/10">
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering – Startseite">
-        <span class="logo-title">Vilana</span>
-        <span class="logo-subtitle">Event &amp; Catering</span>
-      </a>
+<!-- =========================================
+     HEADER (Contact)
+========================================= -->
+<header class="bg-white shadow-md relative">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo  -->
+    <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+      aria-label="Vilana Event &amp; Catering – Startseite">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+        Event &amp; Catering
+      </span>
+    </a>
 
-      <div class="flex items-center gap-3">
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">
-          <a href="/" class="hover:opacity-80">Startseite</a>
-          <a href="/#services" class="hover:opacity-80">Leistungen</a>
-          <a href="/partyservice.html" class="hover:opacity-80">Partyservice</a>
-          <a href="/menu.html" class="hover:opacity-80">Menü</a>
-          <a href="/galerie.html" class="hover:opacity-80">Galerie</a>
-          <a href="/about.html" class="hover:opacity-80">Über uns</a>
-          <a href="/event.html" class="hover:opacity-80">Event</a>
-          <a href="/bewertung.html" class="hover:opacity-80">Bewertung</a>
-          <a href="/contact.html" aria-current="page" class="font-semibold">Kontakt</a>
-        </nav>
+    <div class="flex items-center gap-3">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+        <a href="/" class="text-gray-800 hover:text-amber-800">Startseite</a>
+        <a href="/partyservice.html" class="text-gray-800 hover:text-amber-800">Leistungen</a>
 
-        <!-- Language switch (Desktop) -->
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/contact.html">RU</a>
-        </div>
+        <a href="/partyservice.html" class="text-gray-800 hover:text-amber-800">Partyservice</a>
+        <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+        <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+        <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+        <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
 
-        <!-- Mobile: RU + Menu + burger -->
-        <div class="flex items-center md:hidden gap-2">
-          <a href="/ru/contact.html"
-            class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-            aria-label="Русская версия">RU</a>
+        <!-- Контакт — активный -->
+        <a href="/contact.html" class="text-amber-800 font-semibold" aria-current="page">Kontakt</a>
+      </nav>
 
+      <!-- Language switch (links, SEO-friendly) -->
+      <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
+        <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
+        <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/contact.html">RU</a>
+      </div>
 
-          <button id="menuToggle" type="button"
-            aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-gray-900">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+      <!-- Mobile: RU link + Burger -->
+      <div class="flex items-center gap-2 md:hidden">
+        <a
+          href="/ru/contact.html"
+          class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+          aria-label="Русская версия"
+        >RU</a>
+
+        <button
+          id="menuToggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu"
-      class="md:hidden hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-      role="navigation" aria-label="Mobiles Menü">
-      <a href="/" class="block hover:opacity-80">Startseite</a>
-      <a href="/#services" class="block hover:opacity-80">Leistungen</a>
-      <a href="/partyservice.html" class="block hover:opacity-80">Partyservice</a>
-      <a href="/menu.html" class="block hover:opacity-80">Menü</a>
-      <a href="/galerie.html" class="block hover:opacity-80">Galerie</a>
-      <a href="/about.html" class="block hover:opacity-80">Über uns</a>
-      <a href="/event.html" class="block hover:opacity-80">Event</a>
-      <a href="/bewertung.html" class="block hover:opacity-80">Bewertung</a>
-      <a href="/contact.html" class="block font-semibold">Kontakt</a>
-    </div>
-  </header>
+  <!-- Mobile menu -->
+  <div
+    id="mobileMenu"
+    class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+    role="menu"
+    aria-label="Mobiles Menü"
+  >
+    <a href="/" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+    <a href="/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+
+    <a href="/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Partyservice</a>
+    <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+    <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+    <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+    <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+    <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
+
+    <!-- Контакт — активный -->
+    <a href="/contact.html" class="block text-amber-800 font-semibold" role="menuitem" aria-current="page">Kontakt</a>
+  </div>
+</header>
+
 
   <!-- Toast -->
   <div id="toast" role="status" aria-live="polite"></div>
@@ -227,7 +249,9 @@
       <!-- =========================================================
             FORM (ein Formular = Schnell + Erweitert)
       ========================================================== -->
-      <form id="contactForm" class="p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto" novalidate>
+      <form id="contactForm"
+            class="p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto"
+            novalidate>
 
         <!-- Anti-Spam -->
         <input type="text" name="honeypot" class="hidden-field" autocomplete="off" tabindex="-1" />
@@ -252,7 +276,7 @@
             </div>
 
             <button type="button" id="btnToggleWizard"
-              class="relative z-10 shrink-0 self-start rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
+                    class="relative z-10 shrink-0 self-start rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
               Erweitert (optional)
             </button>
           </div>
@@ -278,21 +302,21 @@
             <div>
               <label for="name" class="block text-gray-700 mb-2">Ihr Name (optional)</label>
               <input id="name" name="name" type="text"
-                    class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                     class="w-full border border-gray-300 rounded-xl px-4 py-2" />
             </div>
 
             <div>
               <label for="email" class="block text-gray-700 mb-2 font-semibold">E-Mail *</label>
               <input id="email" name="email" type="email" inputmode="email" required
-                    class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                    placeholder="name@email.de" />
+                     class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                     placeholder="name@email.de" />
             </div>
 
             <div class="sm:col-span-2">
               <label for="cf-phone" class="block text-gray-700 mb-2">Telefon (optional)</label>
               <input id="cf-phone" name="phone" type="tel"
-                    class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                    placeholder="+49 …" />
+                     class="w-full border border-gray-300 rounded-xl px-4 py-2"
+                     placeholder="+49 …" />
             </div>
           </div>
 
@@ -319,12 +343,11 @@
           </div>
         </section>
 
-<!-- =========================================================
+        <!-- =========================================================
               ERWEITERT (Wizard / Stepper)
         ========================================================== -->
         <section id="wizardWrap" class="hidden mt-8">
 
-          <!-- Wizard Header -->
           <div class="mb-5 text-center">
             <h2 class="text-2xl font-bold text-gray-900">Erweiterte Catering-Anfrage</h2>
             <p class="text-sm text-gray-600 mt-1">
@@ -365,9 +388,7 @@
           <textarea name="menu_selected_text" id="menuSelectedText" class="hidden-field" aria-hidden="true"></textarea>
           <input type="hidden" name="menu_mode" id="menuModeHidden" value="Keine Auswahl (Vilana schlägt vor)" />
 
-          <!-- =========================
-                STEP 1: EVENT
-          ========================== -->
+          <!-- STEP 1 -->
           <section data-step="1" class="panel-event p-5 sm:p-6 space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -387,20 +408,20 @@
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-guests">Gästezahl (ab 20) *</label>
                 <input id="cf-guests" name="guests" type="number" min="20" inputmode="numeric" required
-                      class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="mind. 20" />
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="mind. 20" />
                 <p class="mt-1 text-xs text-gray-500">Mindestbestellung: ab 20 Personen.</p>
               </div>
 
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-date">Datum *</label>
                 <input id="cf-date" name="event_date" type="date" required
-                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
 
               <div>
                 <label class="block text-gray-700 mb-2 font-semibold" for="cf-time">Uhrzeit (optional)</label>
                 <input id="cf-time" name="event_time" type="time"
-                      class="w-full border border-gray-300 rounded-xl px-4 py-2" />
+                       class="w-full border border-gray-300 rounded-xl px-4 py-2" />
               </div>
             </div>
 
@@ -423,11 +444,8 @@
             </div>
           </section>
 
-          <!-- =========================
-                STEP 2: MENÜ (Sheet)
-          ========================== -->
+          <!-- STEP 2 -->
           <section data-step="2" class="panel-menu p-5 sm:p-6 space-y-4 hidden">
-
             <div class="panel-base p-4">
               <div class="font-semibold text-gray-900">Menü (optional)</div>
               <p class="text-sm text-gray-600 mt-1">
@@ -453,9 +471,9 @@
               </div>
             </div>
 
-            <!-- App-Row -> öffnet Sheet -->
+            <!-- Row -> öffnet Sheet -->
             <button type="button" id="menuRow"
-              class="w-full text-left rounded-2xl border border-gray-200 bg-white/90 px-4 py-4 shadow-sm hover:shadow transition">
+                    class="w-full text-left rounded-2xl border border-gray-200 bg-white/90 px-4 py-4 shadow-sm hover:shadow transition">
               <div class="flex items-center justify-between gap-3">
                 <div>
                   <div class="text-sm font-semibold text-gray-900">Gerichte auswählen (optional)</div>
@@ -466,12 +484,8 @@
             </button>
           </section>
 
-          <!-- =========================
-               STEP 3: OPTIONEN
-          ========================== -->
+          <!-- STEP 3 -->
           <section data-step="3" class="panel-options p-5 sm:p-6 space-y-4 hidden">
-
-            <!-- Inventar -->
             <div class="panel-base p-4">
               <div class="font-semibold text-gray-900">Inventar (optional)</div>
               <p class="text-sm text-gray-600 mt-1">
@@ -483,12 +497,10 @@
                   <input type="checkbox" name="opt_geschirr" value="Ja" />
                   <span>Geschirr</span>
                 </label>
-
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
                   <input type="checkbox" name="opt_besteck" value="Ja" />
                   <span>Besteck</span>
                 </label>
-
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
                   <input type="checkbox" name="opt_glaeser" value="Ja" />
                   <span>Gläser</span>
@@ -496,12 +508,9 @@
               </div>
             </div>
 
-            <!-- Service Personal -->
             <div class="panel-base p-4">
               <div class="font-semibold text-gray-900">Service Personal (optional)</div>
-              <p class="text-sm text-gray-600 mt-1">
-                Nach Absprache (Preis je Umfang).
-              </p>
+              <p class="text-sm text-gray-600 mt-1">Nach Absprache (Preis je Umfang).</p>
 
               <div class="mt-3">
                 <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
@@ -548,12 +557,9 @@
               </div>
             </div>
 
-            <!-- Abbau / Reinigung -->
             <div class="panel-base p-4">
               <div class="font-semibold text-gray-900">Nach dem Event (optional)</div>
-              <p class="text-sm text-gray-600 mt-1">
-                Abbau / Reinigung / Spülservice – optional nach Absprache (Preis je Umfang).
-              </p>
+              <p class="text-sm text-gray-600 mt-1">Abbau / Reinigung / Spülservice – optional nach Absprache (Preis je Umfang).</p>
 
               <label class="mt-3 flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
                 <input type="checkbox" id="opt_cleanup" name="cleanup_offer" value="Ja" />
@@ -587,12 +593,9 @@
                 </div>
               </div>
             </div>
-
           </section>
 
-          <!-- =========================
-                STEP 4: ÜBERSICHT
-          ========================== -->
+          <!-- STEP 4 -->
           <section data-step="4" class="panel-base p-5 sm:p-6 space-y-3 hidden">
             <div class="font-semibold text-gray-900">Übersicht</div>
             <pre id="summaryBox" class="text-sm whitespace-pre-wrap text-gray-700"></pre>
@@ -608,7 +611,7 @@
           <!-- Wizard Navigation -->
           <div class="mt-6 flex items-center justify-between gap-3">
             <button type="button" id="btnBack"
-              class="rounded-full border border-gray-300 px-6 py-2 font-semibold hover:bg-gray-50 transition">
+                    class="rounded-full border border-gray-300 px-6 py-2 font-semibold hover:bg-gray-50 transition">
               Zurück
             </button>
 
@@ -622,213 +625,117 @@
           <!-- Wizard schließen -->
           <div class="mt-4 text-center">
             <button type="button" id="btnCloseWizard"
-              class="text-sm font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-2">
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-2">
               Erweitert schließen
             </button>
           </div>
 
         </section>
-
-        <!-- =========================================================
-             MENU SHEET MODAL (NEW PREMIUM VERSION)
-        ========================================================= -->
-        <div id="menuModal" class="v-sheet hidden" aria-hidden="true">
-          <!-- Backdrop -->
-          <div class="v-sheet__backdrop" data-sheet-close></div>
-          
-          <!-- Panel -->
-          <div class="v-sheet__panel">
-            
-            <!-- Header -->
-            <div class="v-sheet__head">
-              <div>
-                <div class="v-sheet__title">Gerichte auswählen</div>
-                <div class="v-sheet__sub">Optional – ohne Mengenangaben</div>
-              </div>
-              <button type="button" id="menuClose" class="v-sheet__close">×</button>
-            </div>
-            
-            <!-- Search & Reset -->
-            <div class="v-sheet__tools">
-              <input type="search" 
-                     id="menuModalSearch" 
-                     class="v-sheet__search" 
-                     placeholder="Suche: z.B. Lachs, Tiramisu, Schaschlik..." />
-              <button type="button" id="menuModalReset" class="v-sheet__reset">Reset</button>
-            </div>
-            
-            <!-- Body (Categories + Items) -->
-            <div class="v-sheet__body">
-              <div class="v-sheet__cols">
-                
-                <!-- Kategorien (на всю ширину слева) -->
-                <div class="v-sheet__col">
-                  <div class="v-sheet__coltitle">Kategorien</div>
-                  <div id="menuCats" class="v-sheet__list">
-                    <!-- JS renders categories here -->
-                  </div>
-                </div>
-                
-                <!-- Блюда -->
-                <div class="v-sheet__col">
-                  <div class="v-sheet__coltitle">Gerichte</div>
-                  <div id="menuItems" class="v-sheet__items">
-                    <!-- JS renders items here -->
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            
-            <!-- Footer -->
-            <div class="v-sheet__foot">
-              <div>
-                <span style="opacity: 0.8;">Ausgewählt: </span>
-                <span id="menuCount" style="font-weight: 900;">0</span>
-              </div>
-              <button type="button" id="menuApply" class="v-sheet__apply">
-                Übernehmen
-              </button>
-            </div>
-            
-          </div>
-        </div>
-
       </form>
     </div>
   </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
-  <meta itemprop="name" content="Vilana Event & Catering">
-  <meta itemprop="telephone" content="+49 176 5777 5996">
-  <meta itemprop="email" content="v.s@vilana.info">
-  <meta itemprop="url" content="https://www.vilana-event.de/">
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-    <meta itemprop="streetAddress" content="Osterstraße 28">
-    <meta itemprop="addressLocality" content="Aerzen">
-    <meta itemprop="postalCode" content="31855">
-    <meta itemprop="addressRegion" content="Niedersachsen">
-    <meta itemprop="addressCountry" content="DE">
-  </div>
-
-  <div class="footer-inner">
-
-    <div class="footer-deco-line"></div>
-
-
-    <!-- 3-spalten Grid -->
-    <div class="footer-grid">
-
-      <!-- Kontakt -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <address class="footer-address">
-          <p class="footer-address-name">Vilana Event &amp; Catering</p>
-          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
-          </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
-        </address>
-
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-          </svg>
-          @vilana_catering
-        </a>
-      </div>
-
-      <div class="footer-divider-v"></div>
-
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Navigation</h3>
-        <nav aria-label="Footer-Navigation">
-          <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
-            <li><a href="/#services">Leistungen</a></li>
-            <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
-            <li><a href="/galerie.html">Galerie</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="footer-divider-v"></div>
-
-      <!-- Servicegebiet -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Servicegebiet</h3>
-        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
-        <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
-        </ul>
-        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
-      </div>
-
+  <!-- =========================================
+    FOOTER – Premium Version
+  ========================================= -->
+  <footer class="footer-premium"
+          itemscope itemtype="https://schema.org/LocalBusiness">
+    <meta itemprop="name" content="Vilana Event & Catering">
+    <meta itemprop="telephone" content="+49 176 5777 5996">
+    <meta itemprop="email" content="v.s@vilana.info">
+    <meta itemprop="url" content="https://www.vilana-event.de/">
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+      <meta itemprop="streetAddress" content="Osterstraße 28">
+      <meta itemprop="addressLocality" content="Aerzen">
+      <meta itemprop="postalCode" content="31855">
+      <meta itemprop="addressRegion" content="Niedersachsen">
+      <meta itemprop="addressCountry" content="DE">
     </div>
 
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
+    <div class="footer-inner">
+      <div class="footer-deco-line"></div>
 
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Kontakt</h3>
+          <address class="footer-address">
+            <p class="footer-address-name">Vilana Event &amp; Catering</p>
+            <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
+            <a href="tel:+4917657775996"><span class="contact-icon">☎</span> +49 176 5777 5996</a>
+            <a href="tel:+4917642288707"><span class="contact-icon">☎</span> +49 176 4228 8707</a>
+            <a href="mailto:v.s@vilana.info"><span class="contact-icon">✉</span> v.s@vilana.info</a>
+            <a href="mailto:vilana-event@outlook.de"><span class="contact-icon">✉</span> vilana-event@outlook.de</a>
+          </address>
 
-  </div>
+          <a href="https://www.instagram.com/vilana_catering/"
+             target="_blank" rel="noopener noreferrer"
+             class="footer-instagram" aria-label="Instagram – vilana_catering">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+            @vilana_catering
+          </a>
+        </div>
 
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
-</footer>
+        <div class="footer-divider-v"></div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigation</h3>
+          <nav aria-label="Footer-Navigation">
+            <ul class="footer-nav">
+              <li><a href="/">Startseite</a></li>
+              <li><a href="/#services">Leistungen</a></li>
+              <li><a href="/partyservice.html">Partyservice</a></li>
+              <li><a href="/menu.html">Menü</a></li>
+              <li><a href="/galerie.html">Galerie</a></li>
+              <li><a href="/about.html">Über uns</a></li>
+              <li><a href="/event.html">Event</a></li>
+              <li><a href="/contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-divider-v"></div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Servicegebiet</h3>
+          <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+          <ul class="footer-regions">
+            <li>Hameln</li><li>Hannover</li><li>Bad Pyrmont</li><li>Bielefeld</li><li>Paderborn</li>
+            <li>Minden</li><li>Detmold</li><li>Münster</li><li>Braunschweig</li><li>Wunstorf</li>
+          </ul>
+          <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2026 Vilana Event &amp; Catering.<br class="br-mobile" />
+          Alle Rechte vorbehalten.
+        </p>
+
+        <nav class="footer-legal" aria-label="Rechtliches">
+          <a href="/impressum.html">Impressum</a>
+          <span aria-hidden="true">|</span>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <span aria-hidden="true">|</span>
+          <a href="/agb.html">AGB</a>
+        </nav>
+      </div>
+    </div>
+
+    <button type="button"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="footer-scroll-top"
+            aria-label="Nach oben scrollen"
+            title="Nach oben">
+      ▲
+    </button>
+  </footer>
 
   <!-- =========================================================
-      MENÜ SHEET (Full-screen mobile, dialog desktop)
-      IMPORTANT: JS must use these IDs
+    MENÜ SHEET (DE) — ONLY ONCE!
+    IDs here MUST be unique on the page.
   ========================================================== -->
   <div id="menuModal" class="v-sheet hidden" aria-hidden="true">
     <div class="v-sheet__backdrop" data-sheet-close></div>
@@ -839,8 +746,7 @@
           <div id="menuModalTitle">Gerichte auswählen</div>
           <div id="menuModalSub" class="v-sheet__sub">Optional — ohne Mengenangaben</div>
         </div>
-
-        <button type="button" id="menuClose" class="v-sheet__close" aria-label="Schließen">✕</button>
+        <button type="button" id="menuClose" class="v-sheet__close" aria-label="Schließen" data-sheet-close>✕</button>
       </div>
 
       <div class="v-sheet__tools">
@@ -864,9 +770,7 @@
       </div>
 
       <div class="v-sheet__foot">
-        <div class="v-sheet__count">
-          Ausgewählt: <strong id="menuCount">0</strong>
-        </div>
+        <div class="v-sheet__count">Ausgewählt: <strong id="menuCount">0</strong></div>
         <button type="button" id="menuApply" class="v-sheet__apply">Übernehmen</button>
       </div>
     </div>
@@ -875,7 +779,7 @@
   <!-- EmailJS SDK (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- Kontakt-Logik -->
+  <!-- Kontakt-Logik (DE) -->
   <script src="/js/contact.js" defer></script>
 
   <!-- Cookie Consent Wall -->
