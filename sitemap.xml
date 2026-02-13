@@ -8,7 +8,7 @@
   ========================= -->
   <url>
     <loc>https://www.vilana-event.de/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/"/>
@@ -26,7 +26,7 @@
   <!-- Menü -->
   <url>
     <loc>https://www.vilana-event.de/menu.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/menu.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/menu.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/menu.html"/>
@@ -35,7 +35,7 @@
   <!-- Galerie -->
   <url>
     <loc>https://www.vilana-event.de/galerie.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/galerie.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/galerie.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/galerie.html"/>
@@ -44,7 +44,7 @@
   <!-- Über uns -->
   <url>
     <loc>https://www.vilana-event.de/about.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/about.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/about.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/about.html"/>
@@ -53,7 +53,7 @@
   <!-- Event -->
   <url>
     <loc>https://www.vilana-event.de/event.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/event.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html"/>
@@ -62,7 +62,7 @@
   <!-- Bewertung -->
   <url>
     <loc>https://www.vilana-event.de/bewertung.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/bewertung.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/bewertung.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/bewertung.html"/>
@@ -71,16 +71,16 @@
   <!-- Kontakt -->
   <url>
     <loc>https://www.vilana-event.de/contact.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/contact.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/contact.html"/>
   </url>
 
-  <!-- Anlass DE/RU -->
+  <!-- Anlass -->
   <url>
     <loc>https://www.vilana-event.de/anlass/hochzeit-catering.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/hochzeit-catering.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/hochzeit-catering.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/hochzeit-catering.html"/>
@@ -88,7 +88,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/anlass/geburtstag-catering.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/geburtstag-catering.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/geburtstag-catering.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/geburtstag-catering.html"/>
@@ -96,32 +96,10 @@
 
   <url>
     <loc>https://www.vilana-event.de/anlass/firmenfeier-catering.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/firmenfeier-catering.html"/>
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/firmenfeier-catering.html"/>
-  </url>
-
-  <!-- Legal DE/RU (если хочешь индексировать) -->
-  <url>
-    <loc>https://www.vilana-event.de/impressum.html</loc>
-    <lastmod>2026-02-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/impressum.html"/>
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/impressum.html"/>
-  </url>
-
-  <url>
-    <loc>https://www.vilana-event.de/datenschutz.html</loc>
-    <lastmod>2026-02-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/datenschutz.html"/>
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/datenschutz.html"/>
-  </url>
-
-  <url>
-    <loc>https://www.vilana-event.de/agb.html</loc>
-    <lastmod>2026-02-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/agb.html"/>
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/agb.html"/>
   </url>
 
 </urlset>
