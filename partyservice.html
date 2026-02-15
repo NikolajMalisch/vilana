@@ -361,25 +361,30 @@
   </header>
 
   <main id="main">
-    <!-- =========================================================
-          HERO (SEO text improved, design unchanged)
-    ========================================================== -->
-    <section class="hero" aria-label="Partyservice &amp; Catering">
-      <div class="hero-media" aria-hidden="true">
-        <img src="/images/anlass/partyservice-hero.webp" alt="" loading="eager" decoding="async" fetchpriority="high">
-      </div>
+<!-- HERO -->
+<section class="hero" aria-label="Partyservice &amp; Catering">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width: 640px)" srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
+      <source srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
+      <img src="/images/anlass/partyservice-hero.webp"
+        alt="Partyservice &amp; Catering – Buffet und Fingerfood von Vilana Event &amp; Catering" width="1600"
+        height="900" loading="eager" decoding="async" fetchpriority="high" style="width:100%;height:auto;" />
+    </picture>
+  </div>
 
-      <div class="hero-below container mx-auto px-4">
-        <h1 class="hero-title">Partyservice &amp; Catering in Hameln</h1>
-        <p class="hero-subtitle">
-          Für Events in Hannover, Bielefeld &amp; im Umkreis bis 200 km – ab 20 Personen.
-          Fingerfood, Buffets und zuverlässiger Service – passend zu Ihrem Anlass.
-        </p>
-        <div class="text-center mt-10">
-          <a href="/contact.html" class="btn">Jetzt anfragen</a>
-        </div>
-      </div>
-    </section>
+  <div class="hero-below container mx-auto px-4">
+    <h1 class="hero-title">Partyservice &amp; Catering in Hameln</h1>
+    <p class="hero-subtitle">
+      Für Events in Hannover, Bielefeld &amp; im Umkreis bis 200 km – ab 20 Personen.
+      Fingerfood, Buffets und zuverlässiger Service – passend zu Ihrem Anlass.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact.html" class="btn">Jetzt anfragen</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- =========================================================
           SERVICES (Alt texts optimized)
