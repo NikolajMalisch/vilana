@@ -40,25 +40,40 @@
   <meta name="twitter:url" content="https://www.vilana-event.de/partyservice.html">
 
   <!-- =========================================================
-        CSS
+        Performance (place early!)
   ========================================================== -->
-  <link rel="preload" href="/css/output.css" as="style">
-  <link rel="stylesheet" href="/css/output.css">
-  <link rel="stylesheet" href="/css/anlass.css">
-  <link rel="stylesheet" href="/css/footer-premium.css">
-  <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
-  <!-- Hero preload -->
-  <link rel="preload" as="image" href="/images/anlass/partyservice-hero.webp" type="image/webp" fetchpriority="high">
-
-  <!-- Fonts -->
+  <!-- Fonts: preconnect first -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" crossorigin
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap">
+
+  <!-- LCP image preload (hero) -->
+  <link rel="preload" as="image" href="/images/anlass/partyservice-hero.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Fonts: load non-blocking (IMPORTANT: reduce weights to cut woff2 count) -->
+  <!-- Рекомендую: Cormorant SC 400/700 + Cinzel Decorative 400 (без лишнего) -->
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap"
         media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap&display=swap">
+  </noscript>
+
+  <!-- =========================================================
+        CSS
+  ========================================================== -->
+
+  <!-- Tailwind build (critical) -->
+  <link rel="preload" href="/css/output.css" as="style">
+  <link rel="stylesheet" href="/css/output.css">
+
+  <!-- Anlass styles (critical, hero/layout) -->
+  <link rel="stylesheet" href="/css/anlass.css">
+
+  <!-- Footer: NON-critical -> load non-blocking (fix for your Lighthouse chain) -->
+  <link rel="preload" href="/css/footer-premium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/footer-premium.css"></noscript>
 
   <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
@@ -109,7 +124,6 @@
 
   <!-- =========================================================
         JSON-LD (Optimized for "Partyservice" page)
-        - Keep design unchanged, only semantics
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -264,6 +278,7 @@
   }
   </script>
 </head>
+
 
 <body class="text-gray-800 antialiased">
   <a href="#main"

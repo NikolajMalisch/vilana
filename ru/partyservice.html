@@ -27,7 +27,7 @@
   <meta property="og:description" content="Свадьба, день рождения, корпоратив — fingerfood, буфет, сервис и оборудование.">
   <meta property="og:url" content="https://www.vilana-event.de/ru/partyservice.html">
   <meta property="og:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
-  <meta property="og:image:alt" content="Partyservice &amp; Catering — Vilana Event &amp; Catering">
+  <meta property="og:image:alt" content="Кейтеринг и обслуживание мероприятий — Vilana Event &amp; Catering">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -36,29 +36,43 @@
   <meta name="twitter:title" content="Кейтеринг и обслуживание мероприятий в Хамельне | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Свадьба, день рождения, корпоратив — стильный partyservice с кейтерингом и сервисом.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
-  <meta name="twitter:image:alt" content="Partyservice &amp; Catering — Vilana Event &amp; Catering">
+  <meta name="twitter:image:alt" content="Кейтеринг и обслуживание мероприятий — Vilana Event &amp; Catering">
   <meta name="twitter:url" content="https://www.vilana-event.de/ru/partyservice.html">
+
+  <!-- =========================================================
+        Performance (LCP / Critical Path)
+  ========================================================== -->
+
+  <!-- Fonts: preconnect first (ускоряет цепочку fonts.gstatic.com) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- LCP image preload (hero) -->
+  <link rel="preload" as="image" href="/images/anlass/partyservice-hero.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Fonts: non-blocking load (минимизируем веса, чтобы убрать лишние woff2) -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap">
+  </noscript>
 
   <!-- =========================================================
         CSS
   ========================================================== -->
+
+  <!-- Tailwind build (critical) -->
   <link rel="preload" href="/css/output.css" as="style">
   <link rel="stylesheet" href="/css/output.css">
+
+  <!-- Anlass styles (critical, hero/layout) -->
   <link rel="stylesheet" href="/css/anlass.css">
-  <link rel="stylesheet" href="/css/footer-premium.css">
-  <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
-  <!-- Hero preload -->
-  <link rel="preload" as="image" href="/images/anlass/partyservice-hero.webp" type="image/webp" fetchpriority="high">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" crossorigin
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap">
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
-        media="print" onload="this.media='all'">
+  <!-- Footer (non-critical): НЕ блокируем рендер -->
+  <link rel="preload" href="/css/footer-premium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/footer-premium.css"></noscript>
 
   <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
@@ -109,6 +123,7 @@
 
   <!-- =========================================================
         JSON-LD (RU, optimized for Partyservice page)
+        (оставляю твой блок без изменений — он норм)
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -263,6 +278,7 @@
   }
   </script>
 </head>
+
 
 <body class="text-gray-800 antialiased">
   <a href="#main"
