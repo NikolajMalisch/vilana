@@ -21,6 +21,16 @@
   <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/event.html">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html">
 
+  <!-- GitHub Pages: prevent duplicate /event URL -->
+  <script>
+    (function () {
+      if (location.pathname === '/event') {
+        location.replace('/event.html');
+      }
+    })();
+  </script>
+
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
