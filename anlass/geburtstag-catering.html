@@ -237,90 +237,98 @@
     Zum Inhalt springen
   </a>
 
-  <!-- HEADER (твой, 1:1) -->
-  <header class="bg-white shadow-md relative">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-         aria-label="Vilana Event &amp; Catering – Startseite">
-        <span class="logo-title">Vilana</span>
-        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
-          Event &amp; Catering
-        </span>
-      </a>
+<!-- HEADER -->
+<header class="bg-white shadow-md relative z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+       aria-label="Vilana Event &amp; Catering – Startseite">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+        Event &amp; Catering
+      </span>
+    </a>
 
-      <div class="flex items-center gap-3">
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
-          <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
-          <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
-          <a href="/partyservice.html" class="text-gray-800 hover:text-amber-800">Partyservice</a>
-          <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
-          <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
-          <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
-          <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
-          <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
-        </nav>
+    <div class="flex items-center gap-3">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+        <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
+        <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+        <a href="/partyservice.html" class="text-gray-800 hover:text-amber-800">Partyservice</a>
+        <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
+        <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
+        <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
+        <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+        <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
+        <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
+      </nav>
 
-        <!-- Language switch (Desktop) -->
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
-             href="/ru/anlass/geburtstag-catering.html"
-             rel="alternate"
-             hreflang="ru-RU">RU</a>
-        </div>
+      <!-- Language switch (Desktop) -->
+      <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
+        <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
+        <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
+           href="/ru/anlass/geburtstag-catering.html"
+           rel="alternate"
+           hreflang="ru-RU">RU</a>
+      </div>
 
-        <!-- Mobile controls -->
-        <div class="flex items-center gap-2 md:hidden">
-          <a href="/ru/anlass/geburtstag-catering.html"
-             class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-             rel="alternate"
-             hreflang="ru-RU"
-             aria-label="Русская версия">RU</a>
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-2 md:hidden">
+        <a href="/ru/anlass/geburtstag-catering.html"
+           class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+           rel="alternate"
+           hreflang="ru-RU"
+           aria-label="Русская версия">RU</a>
 
-          <button id="menuToggle" type="button"
-                  aria-label="Menü öffnen"
-                  aria-controls="mobileMenu"
-                  aria-expanded="false"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        <button id="menuToggle" type="button"
+                aria-label="Menü öffnen"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile menu (ВАЖНО: отдельно, чтобы не ломать верстку) -->
-    <div id="mobileMenu"
-         class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-50"
-         role="menu"
-         aria-label="Mobiles Menü">
-      <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
-      <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
-      <a href="/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Partyservice</a>
-      <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
-      <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
-      <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
-      <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
-      <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
-      <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
-    </div>
-  </header>
+  <!-- Mobile menu -->
+  <div id="mobileMenu"
+       class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-50"
+       role="menu"
+       aria-label="Mobiles Menü">
+    <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
+    <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+    <a href="/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Partyservice</a>
+    <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
+    <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
+    <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
+    <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Event</a>
+    <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Bewertung</a>
+    <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Kontakt</a>
+  </div>
+</header>
+
 
   <!-- MAIN -->
   <main id="main">
 
 <!-- HERO -->
-<section class="hero" style="--hero-img: url('/images/anlass/geburtstag-hero.webp');"
-  aria-label="Geburtstagsparty Hero">
+<section class="hero" aria-label="Geburtstagsparty in Hameln und Niedersachsen">
   <div class="hero-media">
     <picture>
       <source media="(max-width: 640px)" srcset="/images/anlass/geburtstag-hero.webp" type="image/webp" />
       <source srcset="/images/anlass/geburtstag-hero.webp" type="image/webp" />
-      <img src="/images/anlass/geburtstag-hero.webp" alt="" loading="eager" decoding="async" fetchpriority="high" />
+      <img
+        src="/images/anlass/geburtstag-hero.webp"
+        alt="Geburtstagsparty Catering – Vilana Event &amp; Catering"
+        width="1600" height="900"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        style="width:100%;height:auto;"
+      />
     </picture>
   </div>
 
@@ -335,18 +343,19 @@
   </div>
 </section>
 
+
 <!-- SERVICES -->
-<section class="services" id="services">
+<section class="services" id="services" aria-labelledby="services-heading">
   <div class="container mx-auto px-4">
-    <h2 class="section-title">UNSERE LEISTUNGEN</h2>
+    <h2 class="section-title" id="services-heading">Unsere Leistungen</h2>
     <p class="section-subtitle">Geburtstagsfeier mit Stil – unkompliziert, hochwertig, gut organisiert</p>
 
     <div class="services-grid">
-      <!-- Card 1 -->
       <article class="service-card reveal">
         <div class="service-media">
           <img src="/images/anlass/geburtstag-food.webp"
                alt="Empfang &amp; Häppchen"
+               width="1200" height="900"
                loading="lazy"
                decoding="async">
         </div>
@@ -358,11 +367,11 @@
         </div>
       </article>
 
-      <!-- Card 2 -->
       <article class="service-card reveal">
         <div class="service-media">
           <img src="/images/anlass/geburtstag-buffet.webp"
                alt="Party-Buffet warm &amp; kalt"
+               width="1200" height="900"
                loading="lazy"
                decoding="async">
         </div>
@@ -374,11 +383,11 @@
         </div>
       </article>
 
-      <!-- Card 3 -->
       <article class="service-card reveal">
         <div class="service-media">
           <img src="/images/anlass/geburtstag-sweettable.webp"
                alt="Sweet Table &amp; Service"
+               width="1200" height="900"
                loading="lazy"
                decoding="async">
         </div>
@@ -392,6 +401,7 @@
     </div>
   </div>
 </section>
+
 
 
     <!-- FAQ -->

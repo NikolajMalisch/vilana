@@ -236,167 +236,176 @@
     Перейти к содержанию
   </a>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-md relative">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/ru/"
-         class="logo-container flex items-center gap-1 whitespace-nowrap"
-         style="min-height: 38px;"
-         aria-label="Vilana Event &amp; Catering — Главная">
-        <span class="logo-title">Vilana</span>
-        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
-          Event &amp; Catering
-        </span>
-      </a>
+<!-- HEADER -->
+<header class="bg-white shadow-md relative z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/ru/"
+       class="logo-container flex items-center gap-1 whitespace-nowrap"
+       style="min-height: 38px;"
+       aria-label="Vilana Event &amp; Catering — Главная">
+      <span class="logo-title">Vilana</span>
+      <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+        Event &amp; Catering
+      </span>
+    </a>
 
-      <div class="flex items-center gap-3">
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
-          <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
-          <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
-          <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
-          <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
-          <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
-          <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
-          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800">События</a>
-          <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
-          <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
-        </nav>
+    <div class="flex items-center gap-3">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
+        <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
+        <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
+        <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
+        <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
+        <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
+        <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
+        <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800">События</a>
+        <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
+        <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
+      </nav>
 
-        <!-- Language switch (Desktop) -->
-        <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
-             href="/anlass/geburtstag-catering.html"
-             rel="alternate"
-             hreflang="de-DE">DE</a>
-          <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
-        </div>
+      <!-- Language switch (Desktop) -->
+      <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+        <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
+           href="/anlass/geburtstag-catering.html"
+           rel="alternate"
+           hreflang="de-DE">DE</a>
+        <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
+      </div>
 
-        <!-- Mobile controls -->
-        <div class="flex items-center gap-2 md:hidden">
-          <a href="/anlass/geburtstag-catering.html"
-             class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-             rel="alternate"
-             hreflang="de-DE"
-             aria-label="Deutsche Version">DE</a>
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-2 md:hidden">
+        <a href="/anlass/geburtstag-catering.html"
+           class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+           rel="alternate"
+           hreflang="de-DE"
+           aria-label="Deutsche Version">DE</a>
 
-          <button id="menuToggle" type="button"
-                  aria-label="Открыть меню"
-                  aria-controls="mobileMenu"
-                  aria-expanded="false"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        <button id="menuToggle" type="button"
+                aria-label="Открыть меню"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu"
-         class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-50"
-         role="menu"
-         aria-label="Мобильное меню">
-      <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
-      <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
-      <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
-      <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
-      <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
-      <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
-      <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
-      <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
-      <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
+  <!-- Mobile menu -->
+  <div id="mobileMenu"
+       class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-50"
+       role="menu"
+       aria-label="Мобильное меню">
+    <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
+    <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
+    <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
+    <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
+    <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
+    <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
+    <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
+    <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
+    <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero"
+    aria-label="День рождения — кейтеринг в Хамельне и Нижней Саксонии">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width: 640px)" srcset="/images/anlass/geburtstag-hero.webp" type="image/webp">
+        <source srcset="/images/anlass/geburtstag-hero.webp" type="image/webp">
+        <img src="/images/anlass/geburtstag-hero.webp"
+             alt="Праздничный стол с бокалами и угощениями — день рождения от Vilana Event &amp; Catering"
+             width="1600" height="900"
+             loading="eager"
+             decoding="async"
+             fetchpriority="high"
+             style="width:100%;height:auto;">
+      </picture>
     </div>
-  </header>
 
-  <!-- MAIN -->
-  <main id="main">
-
-    <!-- HERO -->
-    <section class="hero" style="--hero-img: url('/images/anlass/geburtstag-hero.webp');"
-      aria-label="День рождения — кейтеринг в Хамельне и Нижней Саксонии">
-      <div class="hero-media">
-        <picture>
-          <source media="(max-width: 640px)" srcset="/images/anlass/geburtstag-hero.webp" type="image/webp">
-          <source srcset="/images/anlass/geburtstag-hero.webp" type="image/webp">
-          <img src="/images/anlass/geburtstag-hero.webp"
-               alt="Праздничный стол с бокалами и угощениями — день рождения от Vilana Event & Catering"
-               loading="eager"
-               decoding="async"
-               fetchpriority="high">
-        </picture>
+    <div class="hero-below container mx-auto px-4">
+      <h1 class="hero-title">День рождения в Хамельне&nbsp;&amp; Нижней Саксонии</h1>
+      <p class="hero-subtitle">
+        Праздничный буфет, приветственный фуршет и Сладкий стол — вы отмечаете, мы берём организацию на себя.
+      </p>
+      <div class="hero-cta">
+        <a href="/ru/contact.html" class="btn">Отправить запрос</a>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-below container mx-auto px-4">
-        <h1 class="hero-title">День рождения в Хамельне&nbsp;&amp; Нижней Саксонии</h1>
-        <p class="hero-subtitle">
-          Праздничный буфет, приветственный фуршет и Сладкий стол — вы отмечаете, мы берём организацию на себя.
-        </p>
-        <div class="hero-cta">
-          <a href="/ru/contact.html" class="btn">Отправить запрос</a>
-        </div>
+  <!-- SERVICES -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title" id="services-heading">Наши услуги</h2>
+      <p class="section-subtitle">Праздник со вкусом — просто, качественно и без лишних хлопот</p>
+
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="/images/anlass/geburtstag-food.webp"
+                 alt="Приветственный фуршет и закуски на день рождения"
+                 width="1200" height="900"
+                 loading="lazy"
+                 decoding="async"
+                 style="width:100%;height:auto;">
+          </div>
+          <div class="service-body">
+            <h3 class="service-name">Приветственный фуршет&nbsp;&amp; закуски</h3>
+            <p class="service-description">
+              Идеальное начало праздника: канапе, мини-закуски и изысканные угощения к напиткам и для лёгкого общения гостей.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="/images/anlass/geburtstag-buffet.webp"
+                 alt="Праздничный буфет с горячими и холодными блюдами"
+                 width="1200" height="900"
+                 loading="lazy"
+                 decoding="async"
+                 style="width:100%;height:auto;">
+          </div>
+          <div class="service-body">
+            <h3 class="service-name">Праздничный буфет (горячее&nbsp;&amp; холодное)</h3>
+            <p class="service-description">
+              Сытно и современно: горячие блюда и холодные закуски, подобранные под количество гостей, время и стиль вечеринки.
+            </p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card reveal">
+          <div class="service-media">
+            <img src="/images/anlass/geburtstag-sweettable.webp"
+                 alt="Сладкий стол, обслуживающий персонал и оборудование для праздника"
+                 width="1200" height="900"
+                 loading="lazy"
+                 decoding="async"
+                 style="width:100%;height:auto;">
+          </div>
+          <div class="service-body">
+            <h3 class="service-name">Сладкий стол, персонал&nbsp;&amp; оборудование</h3>
+            <p class="service-description">
+              Десерты в стаканчиках, Candy Bar или Сладкий стол. По желанию обслуживающий персонал, посуда, бокалы и оборудование с доставкой.
+            </p>
+          </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="services" id="services" aria-labelledby="services-heading">
-      <div class="container mx-auto px-4">
-        <h2 class="section-title" id="services-heading">Наши услуги</h2>
-        <p class="section-subtitle">Праздник со вкусом — просто, качественно и без лишних хлопот</p>
-
-        <div class="services-grid">
-          <!-- Card 1 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="/images/anlass/geburtstag-food.webp"
-                   alt="Приветственный фуршет и закуски на день рождения"
-                   loading="lazy"
-                   decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Приветственный фуршет&nbsp;&amp; закуски</h3>
-              <p class="service-description">
-                Идеальное начало праздника: канапе, мини-закуски и изысканные угощения к напиткам и для лёгкого общения гостей.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="/images/anlass/geburtstag-buffet.webp"
-                   alt="Праздничный буфет с горячими и холодными блюдами"
-                   loading="lazy"
-                   decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Праздничный буфет (горячее&nbsp;&amp; холодное)</h3>
-              <p class="service-description">
-                Сытно и современно: горячие блюда и холодные закуски, подобранные под количество гостей, время и стиль вечеринки.
-              </p>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="service-card reveal">
-            <div class="service-media">
-              <img src="/images/anlass/geburtstag-sweettable.webp"
-                   alt="Сладкий стол, обслуживающий персонал и оборудование для праздника"
-                   loading="lazy"
-                   decoding="async">
-            </div>
-            <div class="service-body">
-              <h3 class="service-name">Сладкий стол, персонал&nbsp;&amp; оборудование</h3>
-              <p class="service-description">
-                Десерты в стаканчиках, Candy Bar или Сладкий стол. По желанию обслуживающий персонал, посуда, бокалы и оборудование с доставкой.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ -->
     <section id="faq" class="py-14" aria-labelledby="faq-heading">
