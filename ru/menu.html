@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- =========================
-        SEO – Меню (RU)
-    ========================= -->
     <title>Меню | Кейтеринг и Partyservice в Хамельне | Vilana Event &amp; Catering</title>
 
     <meta name="description"
@@ -16,13 +13,11 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0e0e0e">
 
-    <!-- Canonical & Hreflang -->
     <link rel="canonical" href="https://www.vilana-event.de/ru/menu.html">
     <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/menu.html">
     <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/menu.html">
     <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/menu.html">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Vilana Event &amp; Catering">
@@ -32,14 +27,12 @@
     <meta property="og:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
     <meta property="og:image:alt" content="Vilana Event &amp; Catering – Logo">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Меню | Vilana Event &amp; Catering">
     <meta name="twitter:description" content="Горячие блюда, холодные закуски, салаты, десерты и Candy Bar — ознакомьтесь с нашим меню.">
     <meta name="twitter:image" content="https://www.vilana-event.de/images/vilana-web-logo.png">
     <meta name="twitter:image:alt" content="Vilana Event &amp; Catering – Logo">
 
-    <!-- Google Analytics — загружается только после согласия (как в index/DE) -->
     <script type="text/plain" data-cookie-category="analytics"
         src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
     <script type="text/plain" data-cookie-category="analytics">
@@ -49,21 +42,12 @@
     gtag('config', 'G-YW71FCW4FJ');
     </script>
 
-    <!-- Performance: CSS -->
     <link rel="preload" href="/css/output.css" as="style">
     <link rel="stylesheet" href="/css/output.css">
-    <noscript>
-        <link rel="stylesheet" href="/css/output.css">
-    </noscript>
-
     <link rel="preload" href="/css/custom.css" as="style">
     <link rel="stylesheet" href="/css/custom.css">
-    <noscript>
-        <link rel="stylesheet" href="/css/custom.css">
-    </noscript>
     <link rel="stylesheet" href="/css/footer-premium.css">
 
-    <!-- Fonts (perf) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" crossorigin
@@ -72,30 +56,19 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
         media="print" onload="this.media='all'">
 
-    <!-- Favicons -->
     <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg">
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/images/favicon/site.webmanifest">
 
-    <!-- Styles (Design unverändert) -->
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        body,
-        h1,
-        h2,
-        h3,
-        p,
-        span {
+        body, h1, h2, h3, p, span {
             font-family: "Cormorant SC", serif;
         }
 
-        body {
-            background-color: #fdfaf6;
-        }
+        body { background-color: #fdfaf6; }
 
         .logo-container {
             display: flex;
@@ -134,7 +107,7 @@
         }
 
         /* ======================================================================
-        Card-Style für jedes Menü-Item (Glassmorphism)
+            Card-Style (Glassmorphism)
         ====================================================================== */
         .menu-item {
             background: rgba(255, 255, 255, 0.45);
@@ -164,16 +137,40 @@
             line-height: 1.5;
         }
 
-        @media (max-width: 640px) {
-            .menu-item {
-                padding: 1.25rem 1.3rem;
-                border-radius: 16px;
-            }
+        /* ======================================================================
+            glass-box – ИСПРАВЛЕНО: добавлен отсутствующий класс
+        ====================================================================== */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
         }
 
         /* ======================================================================
-        Glassmorphism FAQ Cards
-      ====================================================================== */
+            glass-cta – ИСПРАВЛЕНО: добавлены отсутствующие классы
+        ====================================================================== */
+        .glass-cta-container {
+            padding: 0.5rem;
+        }
+
+        .glass-cta-card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 16px 48px rgba(15, 23, 42, 0.10);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ======================================================================
+            FAQ Cards
+        ====================================================================== */
         .faq-card {
             background: rgba(255, 255, 255, 0.32);
             backdrop-filter: blur(10px);
@@ -191,218 +188,231 @@
             transform: translateY(-2px);
             box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
         }
-    </style>
 
-<!-- JSON-LD (RU) -->
-<script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@graph": [
-    {
-    "@type": ["LocalBusiness", "Caterer"],
-    "@id": "https://www.vilana-event.de/#vilana",
-    "name": "Vilana Event & Catering",
-    "url": "https://www.vilana-event.de/ru/",
-    "inLanguage": "ru-RU",
-    "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
-    "priceRange": "€€",
-    "telephone": "+49 176 5777 5996",
-    "email": "v.s@vilana.info",
-    "description": "Премиальный кейтеринг и организация мероприятий в Нижней Саксонии и NRW: свадьбы, корпоративы, дни рождения, тематические вечеринки. Русская и европейская кухня.",
-    "servesCuisine": ["Russian", "European", "German", "International"],
-    "knowsLanguage": ["ru", "de"],
-    "sameAs": [
-        "https://www.instagram.com/vilana_catering/"
-    ],
-    "hasMap": "PASTE_GOOGLE_MAPS_URL_HERE",
-    "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Osterstraße 28",
-    "addressLocality": "Aerzen",
-    "addressRegion": "Niedersachsen",
-    "postalCode": "31855",
-    "addressCountry": "DE"
-    },
-    "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 52.0,
-    "longitude": 9.2
-    },
-    "areaServed": [
-        { "@type": "City", "name": "Hameln" },
-        { "@type": "City", "name": "Bad Pyrmont" },
-        { "@type": "City", "name": "Hannover" },
-        { "@type": "AdministrativeArea", "name": "Niedersachsen" },
-        { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" },
-        { "@type": "City", "name": "Bielefeld" },
-        { "@type": "City", "name": "Paderborn" },
-        { "@type": "City", "name": "Minden" },
-        { "@type": "City", "name": "Detmold" }
-    ],
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "@id": "https://www.vilana-event.de/ru/menu.html#catalog",
-        "name": "Услуги кейтеринга и мероприятия",
-        "itemListElement": [
-        {
-            "@type": "Offer",
-            "name": "Кейтеринг на русскую свадьбу",
-            "itemOffered": {
-            "@type": "Service",
-            "@id": "https://www.vilana-event.de/ru/#service-russian-wedding",
-            "name": "Кейтеринг на русскую свадьбу",
-            "serviceType": "Wedding Catering",
-            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-            "areaServed": { "@type": "AdministrativeArea", "name": "Niedersachsen" },
-            "inLanguage": "ru-RU"
+        /* ======================================================================
+            PREMIUM GLASS BUTTONS
+        ====================================================================== */
+        .btn-glass {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.6rem;
+            border-radius: 999px;
+            font-family: "Cormorant SC", serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.25s ease;
+
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            color: #2d2416;
+            box-shadow:
+                0 4px 24px rgba(120, 80, 20, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%);
+            pointer-events: none;
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.34);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow:
+                0 8px 32px rgba(120, 80, 20, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            color: #1a130a;
+        }
+
+        .btn-glass:active { transform: translateY(0); }
+
+        /* Тёмный вариант */
+        .btn-glass-dark {
+            background: rgba(30, 20, 10, 0.55);
+            border-color: rgba(180, 140, 80, 0.45);
+            color: #f5ede0;
+            box-shadow:
+                0 4px 24px rgba(0, 0, 0, 0.22),
+                inset 0 1px 0 rgba(255, 220, 140, 0.18);
+        }
+
+        .btn-glass-dark:hover {
+            background: rgba(40, 28, 14, 0.72);
+            border-color: rgba(210, 170, 100, 0.65);
+            color: #fff8ee;
+            box-shadow:
+                0 8px 36px rgba(0, 0, 0, 0.30),
+                inset 0 1px 0 rgba(255, 230, 160, 0.25);
+        }
+
+        /* Активный таб */
+        .menu-tab-active {
+            background: rgba(180, 110, 20, 0.22) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(200, 150, 60, 0.55) !important;
+            color: #5a3500 !important;
+            box-shadow:
+                0 4px 20px rgba(150, 90, 10, 0.15),
+                inset 0 1px 0 rgba(255, 220, 130, 0.45);
+        }
+
+        /* Неактивный таб */
+        .menu-tab-inactive {
+            background: rgba(255, 255, 255, 0.28) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            color: #5a4a35 !important;
+        }
+
+        .menu-tab-inactive:hover {
+            background: rgba(255, 255, 255, 0.45) !important;
+        }
+
+        @media (max-width: 640px) {
+            .menu-item {
+                padding: 1.25rem 1.3rem;
+                border-radius: 16px;
             }
-        },
-        {
-            "@type": "Offer",
-            "name": "Русские вечеринки и юбилеи (тамада/банкет/фуршет)",
-            "itemOffered": {
-            "@type": "Service",
-            "@id": "https://www.vilana-event.de/ru/#service-russian-party",
-            "name": "Русские вечеринки и юбилеи",
-            "serviceType": "Event Catering",
-            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-            "areaServed": [
-                { "@type": "AdministrativeArea", "name": "Niedersachsen" },
-                { "@type": "AdministrativeArea", "name": "Nordrhein-Westfalen" }
-            ],
-            "inLanguage": "ru-RU"
-            }
-        },
-        {
-            "@type": "Offer",
-            "name": "Выездной кейтеринг / Partyservice",
-            "itemOffered": {
-            "@type": "Service",
-            "@id": "https://www.vilana-event.de/ru/#service-partyservice",
-            "name": "Выездной кейтеринг / Partyservice",
-            "serviceType": "Catering",
-            "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-            "inLanguage": "ru-RU"
+            .glass-box {
+                padding: 1.25rem;
+                border-radius: 18px;
             }
         }
-        ]
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["LocalBusiness", "Caterer"],
+          "@id": "https://www.vilana-event.de/#vilana",
+          "name": "Vilana Event & Catering",
+          "url": "https://www.vilana-event.de/ru/",
+          "inLanguage": "ru-RU",
+          "image": "https://www.vilana-event.de/images/vilana-web-logo.png",
+          "priceRange": "€€",
+          "telephone": "+49 176 5777 5996",
+          "email": "v.s@vilana.info",
+          "description": "Премиальный кейтеринг и организация мероприятий в Нижней Саксонии и NRW.",
+          "servesCuisine": ["Russian", "European", "German", "International"],
+          "knowsLanguage": ["ru", "de"],
+          "sameAs": ["https://www.instagram.com/vilana_catering/"],
+          "hasMap": "https://share.google/0EVU2kV33A5CjhvlU",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Osterstraße 28",
+            "addressLocality": "Aerzen",
+            "addressRegion": "Niedersachsen",
+            "postalCode": "31855",
+            "addressCountry": "DE"
+          },
+          "areaServed": [
+            "Hameln","Bad Pyrmont","Hannover","Niedersachsen","Nordrhein-Westfalen",
+            "Bielefeld","Paderborn","Minden","Detmold"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.vilana-event.de/ru/" },
+            { "@type": "ListItem", "position": 2, "name": "Меню", "item": "https://www.vilana-event.de/ru/menu.html" }
+          ]
+        }
+      ]
     }
-    },
-
-    {
-        "@type": "WebSite",
-        "@id": "https://www.vilana-event.de/ru/#website",
-        "url": "https://www.vilana-event.de/ru/",
-        "name": "Vilana Event & Catering (RU)",
-        "inLanguage": "ru-RU",
-        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
-    },
-
-    {
-        "@type": "WebPage",
-        "@id": "https://www.vilana-event.de/ru/menu.html#webpage",
-        "url": "https://www.vilana-event.de/ru/menu.html",
-        "name": "Меню — Vilana Event & Catering",
-        "inLanguage": "ru-RU",
-        "isPartOf": { "@id": "https://www.vilana-event.de/ru/#website" },
-        "about": { "@id": "https://www.vilana-event.de/#vilana" }
-    },
-
-    {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.vilana-event.de/ru/menu.html#breadcrumbs",
-        "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.vilana-event.de/ru/" },
-        { "@type": "ListItem", "position": 2, "name": "Меню", "item": "https://www.vilana-event.de/ru/menu.html" }
-        ]
-    }
-    ]
-}
-</script>
+    </script>
 </head>
 
 <body class="text-gray-800 antialiased">
-    <!-- Skip-Link -->
     <a href="#content"
         class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
         Перейти к содержанию
     </a>
 
-<!-- HEADER -->
-<header class="bg-white shadow-md relative">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-            aria-label="Vilana Event &amp; Catering – Главная">
-            <span class="logo-title">Vilana</span>
-            <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
-                Event &amp; Catering
-            </span>
-        </a>
+    <!-- HEADER – ИСПРАВЛЕНО: правильная структура и закрытие тегов -->
+    <header class="bg-white shadow-md relative">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
+                aria-label="Vilana Event &amp; Catering – Главная">
+                <span class="logo-title">Vilana</span>
+                <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
+                    Event &amp; Catering
+                </span>
+            </a>
 
-        <div class="flex items-center gap-3">
-            <!-- Desktop Nav (RU anchors) -->
-            <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
-                <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
-                <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
-                <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
-                <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
-                <!-- Остальные страницы пока DE (если RU-версий нет) -->
-                <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
-                <a href="/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
-                <a href="/event.html" class="text-gray-800 hover:text-amber-800">События</a>
-                <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
-                <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
-            </nav>
+            <div class="flex items-center gap-3">
+                <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
+                    <a href="/ru/#home" class="text-gray-800 hover:text-amber-800">Главная</a>
+                    <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
+                    <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
+                    <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
+                    <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
+                    <a href="/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
+                    <a href="/event.html" class="text-gray-800 hover:text-amber-800">События</a>
+                    <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
+                    <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
+                </nav>
 
-            <!-- Language switch (SEO-friendly links) -->
-            <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
-                <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/menu.html">DE</a>
-                <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100" aria-current="true">RU</span>
-            </div>
+                <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
+                    <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/menu.html">DE</a>
+                    <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100" aria-current="true">RU</span>
+                </div>
 
-            <!-- Mobile: DE link + Burger (outside mobile menu) -->
-            <div class="flex items-center gap-2 md:hidden">
-                <a href="/menu.html"
-                    class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-                    aria-label="Немецкая версия">DE</a>
+                <div class="flex items-center gap-2 md:hidden">
+                    <a href="/menu.html"
+                        class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
+                        aria-label="Немецкая версия">DE</a>
 
-                <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu"
-                    aria-expanded="false"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                    <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu"
+                        aria-expanded="false"
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu"
-        class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
-        role="menu" aria-label="Мобильное меню">
-        <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
-        <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
-        <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
-        <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
-        <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
-        <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
-        <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
-        <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
-        <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
-    </div>
-</header>
-
-
+        <!-- ИСПРАВЛЕНО: мобильное меню внутри header, header закрыт правильно -->
+        <div id="mobileMenu"
+            class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+            role="menu" aria-label="Мобильное меню">
+            <a href="/ru/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
+            <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
+            <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
+            <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
+            <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
+            <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
+            <a href="/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
+            <a href="/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
+            <a href="/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
+        </div>
+    </header>
 
     <!-- MAIN -->
     <main id="content" class="py-16 bg-amber-50">
         <div class="container mx-auto px-4">
 
-            <!-- H1 (SEO: 1x на страницу) -->
-            <header class="text-center mb-8">
+            <!-- ИСПРАВЛЕНО: <header> внутри <main> заменён на <div> -->
+            <div class="text-center mb-8">
                 <h1 class="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
                     Меню кейтеринга и обслуживания мероприятий в Хамельне
                 </h1>
@@ -410,154 +420,131 @@
                     Меню можно комбинировать индивидуально для свадеб, корпоративов и частных мероприятий
                     в Нижней Саксонии и Северном Рейне — Вестфалии. Напишите нам — подготовим предложение под ваш вкус и формат события.
                 </p>
-            </header>
+            </div>
 
-
-            <!-- Kategorie Tabs -->
+            <!-- Табы – ОБНОВЛЕНО: стеклянный стиль -->
             <div class="flex justify-center mb-8 flex-wrap gap-2">
                 <button data-category="warm"
-                    class="menu-tab bg-amber-600 text-white px-4 py-2 rounded-full font-medium">
+                    class="menu-tab btn-glass menu-tab-active px-4 py-2 rounded-full font-medium transition-all duration-200">
                     Горячие блюда
                 </button>
                 <button data-category="cold"
-                    class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">
+                    class="menu-tab btn-glass menu-tab-inactive px-4 py-2 rounded-full font-medium transition-all duration-200">
                     Холодные закуски
                 </button>
                 <button data-category="salad"
-                    class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">
+                    class="menu-tab btn-glass menu-tab-inactive px-4 py-2 rounded-full font-medium transition-all duration-200">
                     Салаты
                 </button>
                 <button data-category="dessert"
-                    class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">
+                    class="menu-tab btn-glass menu-tab-inactive px-4 py-2 rounded-full font-medium transition-all duration-200">
                     Десерты
                 </button>
                 <button data-category="candy"
-                    class="menu-tab bg-gray-300 text-gray-700 px-4 py-2 rounded-full font-medium">
+                    class="menu-tab btn-glass menu-tab-inactive px-4 py-2 rounded-full font-medium transition-all duration-200">
                     Candy Bar
                 </button>
             </div>
 
-            <!-- CTA -->
-            <div class="text-center mb-10 space-x-2">
-                <a href="/event.html"
-                    class="inline-block px-4 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700">
+            <!-- CTA кнопки – ОБНОВЛЕНО: стеклянный стиль -->
+            <div class="text-center mb-10 space-x-3">
+                <a href="/event.html" class="btn-glass">
                     События и услуги
                 </a>
-                <a href="/contact.html"
-                    class="inline-block px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-black">
+                <a href="/contact.html" class="btn-glass btn-glass-dark">
                     Отправить запрос
                 </a>
             </div>
 
-            <!-- Горячие блюда -->
-            <div class="menu-category" data-category="warm">
+            <!-- Горячие блюда – ИСПРАВЛЕНО: добавлен aria-labelledby -->
+            <div class="menu-category" data-category="warm" aria-labelledby="warm-heading">
+                <h2 id="warm-heading" class="sr-only">Горячие блюда</h2>
                 <div class="glass-box">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Шашлык</h4>
                             <p class="text-gray-600">Индейка, свинина или баранина — маринованное и жареное мясо.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Фаршированный перец</h4>
                             <p class="text-gray-600">С мясной или вегетарианской начинкой.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Жаркое из говядины</h4>
                             <p class="text-gray-600">Нежное тушеное мясо с классическим соусом.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Бараньи отбивные</h4>
                             <p class="text-gray-600">С картофелем с розмарином и фасолью в беконе.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Голубцы</h4>
                             <p class="text-gray-600">С мясо-рисовой начинкой в томатном соусе.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Хрустящие куриные шницели</h4>
                             <p class="text-gray-600">Классическая панировка, обжарены до золотистой корочки.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Куриная грудка в грибном сливочном соусе</h4>
                             <p class="text-gray-600">Нежная куриная грудка под кремовым грибным соусом.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Кёфте / Котлеты</h4>
                             <p class="text-gray-600">Приправлены по восточному или классическому рецепту.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Плов</h4>
                             <p class="text-gray-600">Рис с морковью и мясом, приготовленный на сковороде.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Касселер с квашеной капустой</h4>
                             <p class="text-gray-600">Сытное и традиционное блюдо.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Куриные рулетики со шпинатом в соусе Беарнез</h4>
                             <p class="text-gray-600">Сытная начинка и утончённый соус.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Утиная грудка с апельсиновым соусом</h4>
                             <p class="text-gray-600">Фруктовое и изысканное блюдо для особых случаев.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Картофельный гратен / пюре</h4>
                             <p class="text-gray-600">Нежные классические гарниры.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Китайская лапша (веганская)</h4>
                             <p class="text-gray-600">Легко приправленная с овощами.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Жареные кальмары</h4>
                             <p class="text-gray-600">Хрустящие и нежные с соусом.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Жареные креветки</h4>
                             <p class="text-gray-600">Ароматный маринад, слегка обжарены.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Нежная зелёная фасоль</h4>
-                            <p class="text-gray-600"> Сочно и ароматно обжаренная в беконе.</p>
+                            <p class="text-gray-600">Сочно и ароматно обжаренная в беконе.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Рис или шпецле</h4>
                             <p class="text-gray-600">В качестве гарнира к мясным или рыбным блюдам.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Средиземноморские овощи</h4>
                             <p class="text-gray-600">Запечённые с оливковым маслом и травами.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Овощи в соусе голландез</h4>
                             <p class="text-gray-600">Приготовлены на пару с нежным сливочным соусом.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Лосось в сливочно-травяном соусе</h4>
                             <p class="text-gray-600">Нежное филе в сливочно-травяном соусе.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Филе судака в сливочно-укропном соусе</h4>
                             <p class="text-gray-600">Нежно приготовлено в изысканном укропном соусе.</p>
@@ -568,8 +555,8 @@
 
             <!-- Холодные закуски -->
             <div class="menu-category hidden" data-category="cold" aria-labelledby="cold-heading">
+                <h2 id="cold-heading" class="sr-only">Холодные закуски</h2>
                 <div class="glass-box">
-                    <h2 id="cold-heading" class="sr-only">Холодные закуски</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Баклажаны с помидорами слоями</h4>
@@ -623,20 +610,13 @@
                             <h4 class="text-lg font-bold">Канапе (мини-закуски)</h4>
                             <p class="text-gray-600">Элегантные мини-бутерброды с разнообразной начинкой.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Рыбное ассорти</h4>
-                            <p class="text-gray-600">
-                                Нежное рыбное ассорти: баттерфиш, копчёный лосось, сельдь и копчёная скумбрия.
-                            </p>
+                            <p class="text-gray-600">Нежное рыбное ассорти: баттерфиш, копчёный лосось, сельдь и копчёная скумбрия.</p>
                         </div>
-
                         <div class="menu-item">
                             <h4 class="text-lg font-bold">Сырно-мясное ассорти</h4>
-                            <p class="text-gray-600">
-                                Аккуратно оформленное ассорти из премиальных сортов сыра и различных видов ветчины.
-                                Идеально подходит как изысканная закуска.
-                            </p>
+                            <p class="text-gray-600">Аккуратно оформленное ассорти из премиальных сортов сыра и различных видов ветчины. Идеально подходит как изысканная закуска.</p>
                         </div>
                     </div>
                 </div>
@@ -644,139 +624,55 @@
 
             <!-- Салаты -->
             <div class="menu-category hidden" data-category="salad" aria-labelledby="salad-heading">
+                <h2 id="salad-heading" class="sr-only">Салаты</h2>
                 <div class="glass-box">
-                    <h2 id="salad-heading" class="sr-only">Салаты</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Грибной салат</h4>
-                            <p class="text-gray-600">С маринованными шампиньонами и луком.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат из моркови</h4>
-                            <p class="text-gray-600">Свежая натёртая морковь с яблоком или чесноком.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат с крабами</h4>
-                            <p class="text-gray-600">С майонезом и овощными кубиками.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Летний салат</h4>
-                            <p class="text-gray-600">Лёгкий и свежий с огурцом, томатом и перцем.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат с рукколой</h4>
-                            <p class="text-gray-600">С пармезаном и бальзамическим уксусом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат из китайской капусты</h4>
-                            <p class="text-gray-600">Хрустящий, слегка сладковатый, с йогуртом или уксусом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат из остролистной капусты с фисташками</h4>
-                            <p class="text-gray-600">Тонко нарезанный с ореховой посыпкой.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Греческий салат</h4>
-                            <p class="text-gray-600">С фетой, огурцами, помидорами и оливками.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат из помидоров и оливок</h4>
-                            <p class="text-gray-600">С красным луком и свежей зеленью.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Салат с гранатом</h4>
-                            <p class="text-gray-600">С хрустящими овощами и фруктовым акцентом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Селёдка под шубой</h4>
-                            <p class="text-gray-600">Традиционно с буряком и майонезом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Оливье</h4>
-                            <p class="text-gray-600">Классический салат с горошком, яйцом и майонезом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Винегрет</h4>
-                            <p class="text-gray-600">Русский салат из свеклы и овощей.</p>
-                        </div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Грибной салат</h4><p class="text-gray-600">С маринованными шампиньонами и луком.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат из моркови</h4><p class="text-gray-600">Свежая натёртая морковь с яблоком или чесноком.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат с крабами</h4><p class="text-gray-600">С майонезом и овощными кубиками.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Летний салат</h4><p class="text-gray-600">Лёгкий и свежий с огурцом, томатом и перцем.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат с рукколой</h4><p class="text-gray-600">С пармезаном и бальзамическим уксусом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат из китайской капусты</h4><p class="text-gray-600">Хрустящий, слегка сладковатый, с йогуртом или уксусом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат из остролистной капусты с фисташками</h4><p class="text-gray-600">Тонко нарезанный с ореховой посыпкой.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Греческий салат</h4><p class="text-gray-600">С фетой, огурцами, помидорами и оливками.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат из помидоров и оливок</h4><p class="text-gray-600">С красным луком и свежей зеленью.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Салат с гранатом</h4><p class="text-gray-600">С хрустящими овощами и фруктовым акцентом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Селёдка под шубой</h4><p class="text-gray-600">Традиционно с буряком и майонезом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Оливье</h4><p class="text-gray-600">Классический салат с горошком, яйцом и майонезом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Винегрет</h4><p class="text-gray-600">Русский салат из свеклы и овощей.</p></div>
                     </div>
                 </div>
             </div>
 
             <!-- Десерты -->
             <div class="menu-category hidden" data-category="dessert" aria-labelledby="dessert-heading">
+                <h2 id="dessert-heading" class="sr-only">Десерты</h2>
                 <div class="glass-box">
-                    <h2 id="dessert-heading" class="sr-only">Десерты</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Десерт из профитролей</h4>
-                            <p class="text-gray-600">С ванильным кремом и взбитыми сливками.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Десерт с печеньем Lotus</h4>
-                            <p class="text-gray-600">Нежный десерт с карамелизированным печеньем.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Шоколадный мусс</h4>
-                            <p class="text-gray-600">Лёгкий шоколадный крем с утончённым вкусом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Панна Котта</h4>
-                            <p class="text-gray-600">Классический итальянский пудинг с фруктовым соусом.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Тирамису</h4>
-                            <p class="text-gray-600">С маскарпоне, кофе и какао-порошком.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Фрукты в шоколадной глазури</h4>
-                            <p class="text-gray-600">Свежие фрукты, покрытые шоколадной глазурью.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Десерт с печеньем и виноградом</h4>
-                            <p class="text-gray-600">Хрустящий и кремовый с фруктовой ноткой.</p>
-                        </div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Десерт из профитролей</h4><p class="text-gray-600">С ванильным кремом и взбитыми сливками.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Десерт с печеньем Lotus</h4><p class="text-gray-600">Нежный десерт с карамелизированным печеньем.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Шоколадный мусс</h4><p class="text-gray-600">Лёгкий шоколадный крем с утончённым вкусом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Панна Котта</h4><p class="text-gray-600">Классический итальянский пудинг с фруктовым соусом.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Тирамису</h4><p class="text-gray-600">С маскарпоне, кофе и какао-порошком.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Фрукты в шоколадной глазури</h4><p class="text-gray-600">Свежие фрукты, покрытые шоколадной глазурью.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Десерт с печеньем и виноградом</h4><p class="text-gray-600">Хрустящий и кремовый с фруктовой ноткой.</p></div>
                     </div>
                 </div>
             </div>
 
             <!-- Candy Bar -->
             <div class="menu-category hidden" data-category="candy" aria-labelledby="candy-heading">
+                <h2 id="candy-heading" class="sr-only">Candy Bar</h2>
                 <div class="glass-box">
-                    <h2 id="candy-heading" class="sr-only">Candy Bar</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Пончики</h4>
-                            <p class="text-gray-600">Ярко украшенные глазурью и топпингами.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Кейк попсы</h4>
-                            <p class="text-gray-600">Мини-тортики на палочке — удобно и вкусно.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Капкейки</h4>
-                            <p class="text-gray-600">С кремовым топпингом в разных вариантах.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Попкорн</h4>
-                            <p class="text-gray-600">Классический, сладкий или солёный — всегда актуально.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Жевательные мишки</h4>
-                            <p class="text-gray-600">Любимцы и детей, и взрослых гостей.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Жевательные шнурки</h4>
-                            <p class="text-gray-600">Яркие, вкусные, отлично подходят для сладкого стола.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Жевательные конфетки</h4>
-                            <p class="text-gray-600">Фруктовые сюрпризы в разных формах.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h4 class="text-lg font-bold">Шоколад в ассортименте</h4>
-                            <p class="text-gray-600">Белый, молочный и горький — ассорти на выбор.</p>
-                        </div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Пончики</h4><p class="text-gray-600">Ярко украшенные глазурью и топпингами.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Кейк попсы</h4><p class="text-gray-600">Мини-тортики на палочке — удобно и вкусно.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Капкейки</h4><p class="text-gray-600">С кремовым топпингом в разных вариантах.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Попкорн</h4><p class="text-gray-600">Классический, сладкий или солёный — всегда актуально.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Жевательные мишки</h4><p class="text-gray-600">Любимцы и детей, и взрослых гостей.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Жевательные шнурки</h4><p class="text-gray-600">Яркие, вкусные, отлично подходят для сладкого стола.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Жевательные конфетки</h4><p class="text-gray-600">Фруктовые сюрпризы в разных формах.</p></div>
+                        <div class="menu-item"><h4 class="text-lg font-bold">Шоколад в ассортименте</h4><p class="text-gray-600">Белый, молочный и горький — ассорти на выбор.</p></div>
                     </div>
                 </div>
             </div>
@@ -805,15 +701,13 @@
                     <div class="faq-body">
                         <p class="mt-2 text-gray-700">
                             Да, по запросу мы готовим эксклюзивные премиум-меню с такими продуктами, как чёрная икра,
-                            лобстеры,
-                            креветки, свежие морепродукты и особые мясные деликатесы. Это идеальный вариант для свадеб,
-                            юбилеев и
-                            торжественных вечеров — состав и стоимость мы обсуждаем индивидуально.
+                            лобстеры, креветки, свежие морепродукты и особые мясные деликатесы. Это идеальный вариант для
+                            свадеб, юбилеев и торжественных вечеров — состав и стоимость мы обсуждаем индивидуально.
                         </p>
                     </div>
                 </details>
 
-                <!-- CTA -->
+                <!-- CTA – ОБНОВЛЕНО: стеклянные кнопки -->
                 <div class="glass-cta-container mt-12 max-w-3xl mx-auto text-center">
                     <div class="glass-cta-card">
                         <p class="text-gray-800 mb-2 text-lg">
@@ -824,8 +718,7 @@
                         </p>
                     </div>
 
-                    <a href="/contact.html"
-                        class="inline-block px-5 py-2.5 rounded-full bg-amber-600 text-white font-medium hover:bg-amber-700 transition">
+                    <a href="/contact.html" class="btn-glass btn-glass-dark">
                         Отправить запрос по меню
                     </a>
                 </div>
@@ -833,177 +726,120 @@
         </div>
     </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
-  <meta itemprop="name" content="Vilana Event & Catering">
-  <meta itemprop="telephone" content="+49 176 5777 5996">
-  <meta itemprop="email" content="v.s@vilana.info">
-  <meta itemprop="url" content="https://www.vilana-event.de/">
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-    <meta itemprop="streetAddress" content="Osterstraße 28">
-    <meta itemprop="addressLocality" content="Aerzen">
-    <meta itemprop="postalCode" content="31855">
-    <meta itemprop="addressRegion" content="Niedersachsen">
-    <meta itemprop="addressCountry" content="DE">
-  </div>
+    <!-- FOOTER -->
+    <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
+        <meta itemprop="name" content="Vilana Event & Catering">
+        <meta itemprop="telephone" content="+49 176 5777 5996">
+        <meta itemprop="email" content="v.s@vilana.info">
+        <meta itemprop="url" content="https://www.vilana-event.de/">
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+            <meta itemprop="streetAddress" content="Osterstraße 28">
+            <meta itemprop="addressLocality" content="Aerzen">
+            <meta itemprop="postalCode" content="31855">
+            <meta itemprop="addressRegion" content="Niedersachsen">
+            <meta itemprop="addressCountry" content="DE">
+        </div>
 
-  <div class="footer-inner">
+        <div class="footer-inner">
+            <div class="footer-deco-line"></div>
 
-    <div class="footer-deco-line"></div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Kontakt</h3>
+                    <address class="footer-address">
+                        <p class="footer-address-name">Vilana Event &amp; Catering</p>
+                        <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
+                        <a href="tel:+4917657775996"><span class="contact-icon">☎</span> +49 176 5777 5996</a>
+                        <a href="tel:+4917642288707"><span class="contact-icon">☎</span> +49 176 4228 8707</a>
+                        <a href="mailto:v.s@vilana.info"><span class="contact-icon">✉</span> v.s@vilana.info</a>
+                        <a href="mailto:vilana-event@outlook.de"><span class="contact-icon">✉</span> vilana-event@outlook.de</a>
+                    </address>
+                    <a href="https://www.instagram.com/vilana_catering/"
+                        target="_blank" rel="noopener noreferrer"
+                        class="footer-instagram" aria-label="Instagram – vilana_catering">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+                        </svg>
+                        @vilana_catering
+                    </a>
+                </div>
 
-    <!-- 3-spalten Grid -->
-    <div class="footer-grid">
+                <div class="footer-divider-v"></div>
 
-      <!-- Kontakt -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <address class="footer-address">
-          <p class="footer-address-name">Vilana Event &amp; Catering</p>
-          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
-          </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
-        </address>
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Navigation</h3>
+                    <nav aria-label="Footer-Navigation">
+                        <ul class="footer-nav">
+                            <li><a href="/ru/">Главная</a></li>
+                            <li><a href="/ru/#services">Услуги</a></li>
+                            <li><a href="/ru/partyservice.html">Партисервис</a></li>
+                            <li><a href="/ru/menu.html">Меню</a></li>
+                            <li><a href="/galerie.html">Галерея</a></li>
+                            <li><a href="/about.html">О нас</a></li>
+                            <li><a href="/event.html">События</a></li>
+                            <li><a href="/contact.html">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-          </svg>
-          @vilana_catering
-        </a>
-      </div>
+                <div class="footer-divider-v"></div>
 
-      <div class="footer-divider-v"></div>
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Servicegebiet</h3>
+                    <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+                    <ul class="footer-regions">
+                        <li>Hameln</li>
+                        <li>Hannover</li>
+                        <li>Bad Pyrmont</li>
+                        <li>Bielefeld</li>
+                        <li>Paderborn</li>
+                        <li>Minden</li>
+                        <li>Detmold</li>
+                        <li>Münster</li>
+                        <li>Braunschweig</li>
+                        <li>Wunstorf</li>
+                    </ul>
+                    <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+                </div>
+            </div>
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Navigation</h3>
-        <nav aria-label="Footer-Navigation">
-          <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
-            <li><a href="/#services">Leistungen</a></li>
-            <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
-            <li><a href="/galerie.html">Galerie</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2026 Vilana Event &amp; Catering.
+                    <br class="br-mobile" />
+                    Alle Rechte vorbehalten.
+                </p>
+                <nav class="footer-legal" aria-label="Rechtliches">
+                    <a href="/impressum.html">Impressum</a>
+                    <span aria-hidden="true">|</span>
+                    <a href="/datenschutz.html">Datenschutz</a>
+                    <span aria-hidden="true">|</span>
+                    <a href="/agb.html">AGB</a>
+                </nav>
+            </div>
+        </div>
 
-      <div class="footer-divider-v"></div>
+        <button
+            type="button"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="footer-scroll-top"
+            aria-label="Nach oben scrollen"
+            title="Nach oben">
+            ▲
+        </button>
+    </footer>
 
-      <!-- Servicegebiet -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Servicegebiet</h3>
-        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
-        <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
-        </ul>
-        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
-      </div>
-
-    </div>
-
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
-
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
-
-  </div>
-
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
-</footer>
-
-    <!-- ==== Scripts ==== -->
+    <!-- Scripts – ИСПРАВЛЕНО: убран мёртвый код langToggle -->
     <script>
         (function () {
-            // helpers
             function $(s) { return document.querySelector(s); }
-            function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
             function has(el, cls) { return !!el && el.classList.contains(cls); }
-            function show(el) { el && el.classList.remove("hidden"); }
             function hide(el) { el && el.classList.add("hidden"); }
             function toggle(el) { el && el.classList.toggle("hidden"); }
 
-            // elements
-            var btnDesk = $("#langToggle");
-            var menuDesk = $("#langMenu");
             var burger = $("#menuToggle");
             var mobileNav = $("#mobileMenu");
 
-            // Language dropdown open/close (Design bleibt)
-            if (btnDesk && menuDesk) {
-                btnDesk.addEventListener("click", function (e) {
-                    e.stopPropagation();
-                    toggle(menuDesk);
-                    btnDesk.setAttribute("aria-expanded", String(!has(menuDesk, "hidden")));
-                });
-
-                menuDesk.querySelectorAll("[data-lang]").forEach(function (b) {
-                    b.addEventListener("click", function () {
-                        var lang = (b.dataset.lang || "ru").toLowerCase();
-                        // URL switch (SEO-correct: separate pages)
-                        if (lang === "de") window.location.href = "/menu.html";
-                        else window.location.href = "/ru/menu.html";
-                    });
-                });
-
-                document.addEventListener("click", function (e) {
-                    if (!menuDesk.contains(e.target) && !btnDesk.contains(e.target)) hide(menuDesk);
-                });
-
-                document.addEventListener("keydown", function (e) {
-                    if (e.key === "Escape") hide(menuDesk);
-                });
-            }
-
-            // Burger
             function closeMobile() {
                 hide(mobileNav);
                 burger && burger.setAttribute("aria-expanded", "false");
@@ -1014,11 +850,6 @@
                     e.stopPropagation();
                     toggle(mobileNav);
                     burger.setAttribute("aria-expanded", String(!has(mobileNav, "hidden")));
-
-                    var header = document.querySelector("header");
-                    if (header && getComputedStyle(mobileNav).position === "absolute") {
-                        mobileNav.style.top = header.offsetHeight + "px";
-                    }
                 });
 
                 document.addEventListener("click", function (e) {
@@ -1036,22 +867,23 @@
                 });
             }
 
-            // Tabs
-            var tabButtons = $$(".menu-tab");
-            var categories = $$(".menu-category");
+            // Tabs – ОБНОВЛЕНО: переключение стеклянных классов
+            var tabButtons = Array.prototype.slice.call(document.querySelectorAll(".menu-tab"));
+            var categories = Array.prototype.slice.call(document.querySelectorAll(".menu-category"));
 
             function setCategory(cat) {
                 tabButtons.forEach(function (btn) {
                     var active = btn.dataset.category === cat;
-                    btn.classList.toggle("bg-amber-600", active);
-                    btn.classList.toggle("text-white", active);
-                    btn.classList.toggle("bg-gray-300", !active);
-                    btn.classList.toggle("text-gray-700", !active);
+                    btn.classList.toggle("menu-tab-active", active);
+                    btn.classList.toggle("menu-tab-inactive", !active);
                 });
 
                 categories.forEach(function (sec) {
-                    if (sec.dataset.category === cat) show(sec);
-                    else hide(sec);
+                    if (sec.dataset.category === cat) {
+                        sec.classList.remove("hidden");
+                    } else {
+                        sec.classList.add("hidden");
+                    }
                 });
             }
 
@@ -1061,11 +893,10 @@
                 });
             });
 
-            setCategory("warm"); // default
+            setCategory("warm");
         })();
     </script>
 
-    <!-- Cookie Consent Wall -->
     <script src="/js/vilana-cookiewall.js" defer></script>
 </body>
 
