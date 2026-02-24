@@ -121,162 +121,179 @@
     }
   </style>
 
-  <!-- =========================================================
-        JSON-LD (RU, optimized for Partyservice page)
-        (оставляю твой блок без изменений — он норм)
-  ========================================================== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vilana-event.de/#organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/logo.png",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/"
-        ]
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://www.vilana-event.de/#organization",
+      "name":"Vilana Event & Catering",
+      "url":"https://www.vilana-event.de/",
+      "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
+      "sameAs":[
+        "https://www.instagram.com/vilana_catering/"
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://www.vilana-event.de/#website",
+      "url":"https://www.vilana-event.de/",
+      "name":"Vilana Event & Catering",
+      "inLanguage":"ru-RU",
+      "publisher":{"@id":"https://www.vilana-event.de/#organization"}
+    },
+    {
+      "@type":["LocalBusiness","Caterer"],
+      "@id":"https://www.vilana-event.de/#localbusiness",
+      "name":"Vilana Event & Catering",
+      "url":"https://www.vilana-event.de/",
+      "telephone":["+49 176 5777 5996","+49 176 4228 8707"],
+      "email":"v.s@vilana.info",
+      "priceRange":"€€€",
+      "knowsLanguage":["de-DE","ru-RU"],
+      "keywords":[
+        "Partyservice",
+        "Catering",
+        "кейтеринг",
+        "fingerfood",
+        "буфет",
+        "персонал",
+        "посуда",
+        "бокалы",
+        "оборудование буфета"
+      ],
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Osterstraße 28",
+        "postalCode":"31855",
+        "addressLocality":"Aerzen",
+        "addressRegion":"Niedersachsen",
+        "addressCountry":"DE"
       },
-      {
-        "@type":"WebSite",
-        "@id":"https://www.vilana-event.de/#website",
-        "url":"https://www.vilana-event.de/",
-        "name":"Vilana Event & Catering",
-        "inLanguage":"ru-RU",
-        "publisher":{"@id":"https://www.vilana-event.de/#organization"}
+      "geo":{
+        "@type":"GeoCoordinates",
+        "latitude":52.047847,
+        "longitude":9.263319
       },
-      {
-        "@type":"LocalBusiness",
-        "@id":"https://www.vilana-event.de/#localbusiness",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "telephone":["+49 176 5777 5996","+49 176 4228 8707"],
-        "email":"v.s@vilana.info",
-        "priceRange":"€€€",
-        "keywords":[
-          "Partyservice",
-          "Catering",
-          "кейтеринг",
-          "fingerfood",
-          "буфет",
-          "персонал",
-          "посуда",
-          "бокалы",
-          "оборудование буфета"
-        ],
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressRegion":"Niedersachsen",
-          "addressCountry":"DE"
+      "hasMap":"https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
+      "serviceArea":{
+        "@type":"GeoCircle",
+        "geoMidpoint":{
+          "@type":"GeoCoordinates",
+          "latitude":52.047847,
+          "longitude":9.263319
         },
-        "image":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/"
-        ],
-        "areaServed":[
-          {"@type":"AdministrativeArea","name":"Niedersachsen"},
-          {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"},
-          {"@type":"City","name":"Hameln"},
-          {"@type":"City","name":"Hannover"},
-          {"@type":"City","name":"Bad Pyrmont"},
-          {"@type":"City","name":"Bielefeld"}
-        ]
+        "geoRadius":200000
       },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vilana-event.de/ru/partyservice.html#webpage",
-        "url":"https://www.vilana-event.de/ru/partyservice.html",
-        "name":"Кейтеринг и partyservice в Хамельне | Vilana Event & Catering",
-        "inLanguage":"ru-RU",
-        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-        "about":{"@id":"https://www.vilana-event.de/ru/partyservice.html#service"},
-        "breadcrumb":{"@id":"https://www.vilana-event.de/ru/partyservice.html#breadcrumb"}
+      "image":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
+      "sameAs":[
+        "https://www.instagram.com/vilana_catering/"
+      ],
+      "areaServed":[
+        {"@type":"AdministrativeArea","name":"Niedersachsen"},
+        {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"},
+        {"@type":"City","name":"Hameln"},
+        {"@type":"City","name":"Hannover"},
+        {"@type":"City","name":"Bad Pyrmont"},
+        {"@type":"City","name":"Bielefeld"}
+      ]
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://www.vilana-event.de/ru/partyservice.html#webpage",
+      "url":"https://www.vilana-event.de/ru/partyservice.html",
+      "name":"Кейтеринг и partyservice в Хамельне | Vilana Event & Catering",
+      "inLanguage":"ru-RU",
+      "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
+      "about":{"@id":"https://www.vilana-event.de/ru/partyservice.html#service"},
+      "breadcrumb":{"@id":"https://www.vilana-event.de/ru/partyservice.html#breadcrumb"}
+    },
+    {
+      "@type":"Service",
+      "@id":"https://www.vilana-event.de/ru/partyservice.html#service",
+      "name":"Partyservice в Хамельне — кейтеринг, fingerfood и буфет",
+      "serviceType":"Partyservice",
+      "category":"Catering & Partyservice",
+      "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
+      "url":"https://www.vilana-event.de/ru/partyservice.html",
+      "inLanguage":"ru-RU",
+      "description":"Partyservice и кейтеринг для свадьбы, дня рождения и корпоратива — fingerfood, буфет, персонал и оборудование в Хамельне и в радиусе до ~200 км (Нижняя Саксония и части NRW).",
+      "areaServed":{
+        "@type":"GeoCircle",
+        "geoMidpoint":{
+          "@type":"GeoCoordinates",
+          "latitude":52.047847,
+          "longitude":9.263319
+        },
+        "geoRadius":200000
       },
-      {
-        "@type":"Service",
-        "@id":"https://www.vilana-event.de/ru/partyservice.html#service",
-        "name":"Partyservice в Хамельне — кейтеринг, fingerfood и буфет",
-        "serviceType":"Partyservice",
-        "category":"Catering & Partyservice",
-        "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-        "url":"https://www.vilana-event.de/ru/partyservice.html",
-        "inLanguage":"ru-RU",
-        "description":"Partyservice и кейтеринг для свадьбы, дня рождения и корпоратива — fingerfood, буфет, персонал и оборудование в Хамельне и Нижней Саксонии.",
-        "areaServed":[
-          {"@type":"AdministrativeArea","name":"Niedersachsen"},
-          {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"}
-        ],
-        "offers":{
-          "@type":"Offer",
-          "url":"https://www.vilana-event.de/ru/contact.html",
-          "priceCurrency":"EUR",
-          "availability":"https://schema.org/InStock",
-          "description":"Предложение рассчитывается индивидуально по количеству гостей, меню и объёму сервиса."
-        }
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.vilana-event.de/ru/partyservice.html#faq",
-        "inLanguage":"ru-RU",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Для каких мероприятий подходит ваш кейтеринг?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Мы работаем со свадьбами, днями рождения и корпоративами — от приветственного fingerfood до буфета с обслуживанием и оборудованием."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Вы работаете только в Хамельне?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Мы стартуем из Hameln/Aerzen и выезжаем по Нижней Саксонии и окрестностям. Точную дальность подтверждаем в предложении."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Что обычно входит в кейтеринг?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"По запросу: fingerfood, холодный/тёплый буфет, десерты, доставка и сервировка. Опционально: персонал, посуда, бокалы и буфет-оборудование."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Когда лучше отправлять запрос?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Для небольших мероприятий часто достаточно 2–4 недель. Для свадеб и популярных дат лучше 2–3 месяца заранее."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Есть ли вегетарианские/веганские варианты?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. Мы адаптируем меню под ваших гостей, включая вегетарианские и веганские позиции."
-            }
-          }
-        ]
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://www.vilana-event.de/ru/partyservice.html#breadcrumb",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Главная","item":"https://www.vilana-event.de/ru/"},
-          {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/ru/partyservice.html"}
-        ]
+      "offers":{
+        "@type":"Offer",
+        "url":"https://www.vilana-event.de/ru/contact.html",
+        "priceCurrency":"EUR",
+        "availability":"https://schema.org/InStock",
+        "description":"Предложение рассчитывается индивидуально по количеству гостей, меню и объёму сервиса."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://www.vilana-event.de/ru/partyservice.html#faq",
+      "inLanguage":"ru-RU",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Для каких мероприятий подходит ваш кейтеринг?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Мы работаем со свадьбами, днями рождения и корпоративами — от приветственного fingerfood до буфета с обслуживанием и оборудованием."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Вы работаете только в Хамельне?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Мы базируемся в Aerzen (район Hameln-Pyrmont) и выезжаем в радиусе до ~200 км по Нижней Саксонии и в части NRW."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Что обычно входит в кейтеринг?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"По запросу: fingerfood, холодный/тёплый буфет, десерты, доставка и сервировка. Опционально: персонал, посуда, бокалы и буфет-оборудование."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Когда лучше отправлять запрос?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Для небольших мероприятий часто достаточно 2–4 недель. Для свадеб и популярных дат лучше 2–3 месяца заранее."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Есть ли вегетарианские/веганские варианты?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Да. Мы адаптируем меню под ваших гостей, включая вегетарианские и веганские позиции."
+          }
+        }
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://www.vilana-event.de/ru/partyservice.html#breadcrumb",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Главная","item":"https://www.vilana-event.de/ru/"},
+        {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/ru/partyservice.html"}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 
