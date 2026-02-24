@@ -8,21 +8,18 @@
         SEO-Basis – Vilana Galerie
     ========================== -->
     <title>Galerie – Vilana Event &amp; Catering | Hochzeiten, Buffets &amp; Events in Hameln</title>
-
     <meta
       name="description"
       content="Galerie von Vilana Event &amp; Catering in Hameln: Eindrücke von Hochzeiten, Firmenfeiern und privaten Events. Stilvolle Buffets, festliche Dekorationen, Desserttische und Eventdesign – Qualität für Hameln, Bad Pyrmont &amp; Niedersachsen."
     />
-
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#fdfaf6" />
 
     <!-- Canonical & Hreflang (DE = Root, RU = /ru/) -->
     <link rel="canonical" href="https://www.vilana-event.de/galerie.html" />
-    <link rel="alternate" hreflang="de" href="https://www.vilana-event.de/galerie.html" />
-    <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/galerie.html" />
+    <link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/galerie.html" />
+    <link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/galerie.html" />
     <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/galerie.html" />
-
-    <meta name="theme-color" content="#fdfaf6" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
@@ -36,18 +33,56 @@
     <meta property="og:image" content="https://www.vilana-event.de/images/social/vilana-gallery-cover.webp" />
     <meta property="og:locale" content="de_DE" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-YW71FCW4FJ");
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Galerie – Vilana Event &amp; Catering" />
+    <meta
+      name="twitter:description"
+      content="Einblicke in Hochzeiten, Firmenfeiern und private Events: Buffets, Desserts und Dekoration."
+    />
+    <meta name="twitter:image" content="https://www.vilana-event.de/images/social/vilana-gallery-cover.webp" />
+
+    <!-- =========================
+      JSON-LD (Breadcrumbs + einfache Gallery-List)
+      Примечание: ItemList ограничен первыми 12 изображениями, чтобы не раздувать HTML.
+    ========================== -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.vilana-event.de/" },
+              { "@type": "ListItem", "position": 2, "name": "Galerie", "item": "https://www.vilana-event.de/galerie.html" }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Galerie – Vilana Event & Catering",
+            "itemListOrder": "https://schema.org/ItemListOrderAscending",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "url": "https://www.vilana-event.de/images/event/event-1.webp" },
+              { "@type": "ListItem", "position": 2, "url": "https://www.vilana-event.de/images/event/event-2.webp" },
+              { "@type": "ListItem", "position": 3, "url": "https://www.vilana-event.de/images/event/event-3.webp" },
+              { "@type": "ListItem", "position": 4, "url": "https://www.vilana-event.de/images/event/event-4.webp" },
+              { "@type": "ListItem", "position": 5, "url": "https://www.vilana-event.de/images/event/event-5.webp" },
+              { "@type": "ListItem", "position": 6, "url": "https://www.vilana-event.de/images/event/event-6.webp" },
+              { "@type": "ListItem", "position": 7, "url": "https://www.vilana-event.de/images/event/event-7.webp" },
+              { "@type": "ListItem", "position": 8, "url": "https://www.vilana-event.de/images/event/event-8.webp" },
+              { "@type": "ListItem", "position": 9, "url": "https://www.vilana-event.de/images/event/event-9.webp" },
+              { "@type": "ListItem", "position": 10, "url": "https://www.vilana-event.de/images/event/event-10.webp" },
+              { "@type": "ListItem", "position": 11, "url": "https://www.vilana-event.de/images/event/event-11.webp" },
+              { "@type": "ListItem", "position": 12, "url": "https://www.vilana-event.de/images/event/event-12.webp" }
+            ]
+          }
+        ]
+      }
     </script>
 
     <!-- Tailwind CSS (lokal kompiliert) -->
     <link rel="stylesheet" href="css/output.css" />
-    <link rel="stylesheet" href="/css/footer-premium.css">
+    <link rel="stylesheet" href="/css/footer-premium.css" />
 
     <!-- Fallback: wenn lokales CSS nicht greift — CDN laden -->
     <script>
@@ -73,7 +108,6 @@
     ========================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
@@ -86,6 +120,44 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
       />
     </noscript>
+
+    <!-- =========================
+      GA4 (DSGVO-safe): загружаем только после consent
+      Требование: твой cookiewall должен вызвать window.vilanaGrantAnalyticsConsent()
+      или dispatch event: document.dispatchEvent(new Event('vilana:analytics-consent'))
+    ========================== -->
+    <script>
+      (function () {
+        const GA_ID = "G-YW71FCW4FJ";
+        let loaded = false;
+
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+
+          const s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+          document.head.appendChild(s);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { window.dataLayer.push(arguments); }
+          window.gtag = window.gtag || gtag;
+
+          gtag("js", new Date());
+          gtag("config", GA_ID, { anonymize_ip: true });
+        }
+
+        // 1) Глобальный хук для cookiewall
+        window.vilanaGrantAnalyticsConsent = loadGtag;
+
+        // 2) Или событие
+        document.addEventListener("vilana:analytics-consent", loadGtag);
+
+        // Если у тебя уже есть флаг в cookiewall — поддержим
+        if (window.vilanaConsentGranted === true) loadGtag();
+      })();
+    </script>
 
     <style>
       /* =========================
@@ -116,12 +188,14 @@
         color: #1f2937;
         line-height: 1;
       }
+
       /* Zoom-Zustand im Lightbox-Bild */
       .zoomed {
         transform: scale(1.6);
         transition: transform 0.25s ease;
         cursor: zoom-out;
       }
+
       .sr-only {
         position: absolute;
         width: 1px;
@@ -138,8 +212,10 @@
 
   <body class="text-gray-800 antialiased">
     <!-- Skip-Link -->
-    <a href="#content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded">
+    <a
+      href="#content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white border px-3 py-2 rounded"
+    >
       Zum Inhalt springen
     </a>
 
@@ -147,15 +223,19 @@
         HEADER
     ========================== -->
     <header class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo (H1 entfernt: nur 1 H1 pro Seite) -->
-      <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height: 38px;"
-        aria-label="Vilana Event &amp; Catering – Startseite">
-        <span class="logo-title">Vilana</span>
-        <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px;">
-          Event &amp; Catering
-        </span>
-      </a>
+      <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <!-- Logo -->
+        <a
+          href="/"
+          class="logo-container flex items-center gap-1 whitespace-nowrap"
+          style="min-height: 38px"
+          aria-label="Vilana Event &amp; Catering – Startseite"
+        >
+          <span class="logo-title">Vilana</span>
+          <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top: 1px">
+            Event &amp; Catering
+          </span>
+        </a>
 
         <div class="flex items-center gap-3">
           <!-- Desktop-Navigation -->
@@ -171,7 +251,7 @@
             <a href="contact.html" class="text-gray-700 hover:text-amber-700">Kontakt</a>
           </nav>
 
-          <!-- Language switch (links, SEO-friendly) -->
+          <!-- Language switch -->
           <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
             <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
             <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/galerie.html">RU</a>
@@ -183,7 +263,8 @@
               href="/ru/galerie.html"
               class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
               aria-label="Русская версия"
-            >RU</a>
+              >RU</a
+            >
 
             <button
               id="menuToggle"
@@ -225,9 +306,7 @@
     ========================== -->
     <main id="content" class="py-16 px-4 max-w-7xl mx-auto">
       <!-- EIN einziger H1, sichtbar (SEO + UX) -->
-      <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3">
-        Galerie unserer Veranstaltungen
-      </h1>
+      <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-3">Galerie unserer Veranstaltungen</h1>
       <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto text-lg">
         Einblicke in unsere Hochzeiten, Familienfeiern und Firmenveranstaltungen –
         stilvoll dekorierte Buffets, feine Vorspeisen und festliche Tischarrangements von
@@ -243,6 +322,7 @@
         class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
         aria-modal="true"
         role="dialog"
+        aria-label="Bildvorschau"
       >
         <button
           id="lightbox-close"
@@ -280,133 +360,124 @@
       </div>
     </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
-  <meta itemprop="name" content="Vilana Event & Catering">
-  <meta itemprop="telephone" content="+49 176 5777 5996">
-  <meta itemprop="email" content="v.s@vilana.info">
-  <meta itemprop="url" content="https://www.vilana-event.de/">
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-    <meta itemprop="streetAddress" content="Osterstraße 28">
-    <meta itemprop="addressLocality" content="Aerzen">
-    <meta itemprop="postalCode" content="31855">
-    <meta itemprop="addressRegion" content="Niedersachsen">
-    <meta itemprop="addressCountry" content="DE">
-  </div>
-
-  <div class="footer-inner">
-
-    <div class="footer-deco-line"></div>
-
-
-    <!-- 3-spalten Grid -->
-    <div class="footer-grid">
-
-      <!-- Kontakt -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <address class="footer-address">
-          <p class="footer-address-name">Vilana Event &amp; Catering</p>
-          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
-          </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
-        </address>
-
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-          </svg>
-          @vilana_catering
-        </a>
+    <!-- =========================================
+      FOOTER – Premium Version
+    ========================================= -->
+    <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
+      <meta itemprop="name" content="Vilana Event & Catering" />
+      <meta itemprop="telephone" content="+49 176 5777 5996" />
+      <meta itemprop="email" content="v.s@vilana.info" />
+      <meta itemprop="url" content="https://www.vilana-event.de/" />
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+        <meta itemprop="streetAddress" content="Osterstraße 28" />
+        <meta itemprop="addressLocality" content="Aerzen" />
+        <meta itemprop="postalCode" content="31855" />
+        <meta itemprop="addressRegion" content="Niedersachsen" />
+        <meta itemprop="addressCountry" content="DE" />
       </div>
 
-      <div class="footer-divider-v"></div>
+      <div class="footer-inner">
+        <div class="footer-deco-line"></div>
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Navigation</h3>
-        <nav aria-label="Footer-Navigation">
-          <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
-            <li><a href="/#services">Leistungen</a></li>
-            <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
-            <li><a href="/galerie.html">Galerie</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
+        <!-- 3-spalten Grid -->
+        <div class="footer-grid">
+          <!-- Kontakt -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Kontakt</h3>
+            <address class="footer-address">
+              <p class="footer-address-name">Vilana Event &amp; Catering</p>
+              <p class="footer-address-street">Osterstraße 28<br />31855 Aerzen, Niedersachsen</p>
+              <a href="tel:+4917657775996"><span class="contact-icon">☎</span> +49 176 5777 5996</a>
+              <a href="tel:+4917642288707"><span class="contact-icon">☎</span> +49 176 4228 8707</a>
+              <a href="mailto:v.s@vilana.info"><span class="contact-icon">✉</span> v.s@vilana.info</a>
+              <a href="mailto:vilana-event@outlook.de"><span class="contact-icon">✉</span> vilana-event@outlook.de</a>
+            </address>
+
+            <a
+              href="https://www.instagram.com/vilana_catering/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-instagram"
+              aria-label="Instagram – vilana_catering"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"
+                />
+              </svg>
+              @vilana_catering
+            </a>
+          </div>
+
+          <div class="footer-divider-v"></div>
+
+          <!-- Navigation -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Navigation</h3>
+            <nav aria-label="Footer-Navigation">
+              <ul class="footer-nav">
+                <li><a href="/">Startseite</a></li>
+                <li><a href="/#services">Leistungen</a></li>
+                <li><a href="/partyservice.html">Partyservice</a></li>
+                <li><a href="/menu.html">Menü</a></li>
+                <li><a href="/galerie.html">Galerie</a></li>
+                <li><a href="/about.html">Über uns</a></li>
+                <li><a href="/event.html">Event</a></li>
+                <li><a href="/contact.html">Kontakt</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer-divider-v"></div>
+
+          <!-- Servicegebiet -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Servicegebiet</h3>
+            <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+            <ul class="footer-regions">
+              <li>Hameln</li>
+              <li>Hannover</li>
+              <li>Bad Pyrmont</li>
+              <li>Bielefeld</li>
+              <li>Paderborn</li>
+              <li>Minden</li>
+              <li>Detmold</li>
+              <li>Münster</li>
+              <li>Braunschweig</li>
+              <li>Wunstorf</li>
+            </ul>
+            <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © <span id="year-de">2026</span> Vilana Event &amp; Catering.
+            <br class="br-mobile" />
+            Alle Rechte vorbehalten.
+          </p>
+
+          <nav class="footer-legal" aria-label="Rechtliches">
+            <a href="/impressum.html">Impressum</a>
+            <span aria-hidden="true">|</span>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <span aria-hidden="true">|</span>
+            <a href="/agb.html">AGB</a>
+          </nav>
+        </div>
       </div>
 
-      <div class="footer-divider-v"></div>
-
-      <!-- Servicegebiet -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Servicegebiet</h3>
-        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
-        <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
-        </ul>
-        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
-      </div>
-
-    </div>
-
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
-
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
-
-  </div>
-
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
-</footer>
+      <button
+        type="button"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="footer-scroll-top"
+        aria-label="Nach oben scrollen"
+        title="Nach oben"
+      >
+        ▲
+      </button>
+    </footer>
 
     <!-- =========================
         JS: Jahr, Galerie, Lightbox
@@ -429,8 +500,9 @@
         const lbPrev = document.getElementById("lightbox-prev");
         const lbNext = document.getElementById("lightbox-next");
 
+        // ВАЖНО: класс object-cover должен быть статическим (Tailwind build),
+        // иначе локальный компилятор может не включить нужный CSS.
         const CARD_RATIO = "3 / 2";
-        const IMAGE_FIT = "cover";
 
         const imageOriginal = [
           "images/event/event-1.webp","images/event/event-2.webp","images/event/event-3.webp",
@@ -443,6 +515,7 @@
           "images/event/event-22.webp","images/event/event-23.webp"
         ];
 
+        // Alt-тексты строго по количеству фото (23)
         const altTemplates = [
           "Hochzeit mit festlich gedeckter Tafel von Vilana Event & Catering",
           "Brautpaar-Tisch mit Dekoration und Blumenarrangements",
@@ -464,7 +537,9 @@
           "Moderner Buffetaufbau mit warmen und kalten Speisen",
           "Detailaufnahme einer festlichen Tischdekoration",
           "Gäste genießen Buffet und Atmosphäre bei Vilana Event & Catering",
-          "Impressionen von Hochzeiten und Feiern mit Vilana Event & Catering"
+          "Impressionen von Hochzeiten und Feiern mit Vilana Event & Catering",
+          "Buffet-Setup für Event in Niedersachsen – Vilana Event & Catering",
+          "Desserttisch und Dekoration – Vilana Event & Catering"
         ];
 
         const THUMB_480 = 480;
@@ -476,61 +551,34 @@
         }
 
         let currentIndex = 0;
-
-        imageOriginal.forEach((srcOriginal, i) => {
-          const fig = document.createElement("figure");
-          fig.className =
-            "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
-          fig.style.aspectRatio = CARD_RATIO;
-
-          const img = document.createElement("img");
-
-          const src800 = withSize(srcOriginal, THUMB_800);
-          const src480 = withSize(srcOriginal, THUMB_480);
-
-          img.src = src800;
-          img.srcset = `${src480} ${THUMB_480}w, ${src800} ${THUMB_800}w`;
-          img.sizes = SIZES_GRID;
-
-          img.alt = altTemplates[i] || "Vilana Event & Catering – Event Catering in Niedersachsen";
-
-          img.width = 1200;
-          img.height = 800;
-          img.decoding = "async";
-
-          img.loading = i === 0 ? "eager" : "lazy";
-          if (i === 0) img.fetchPriority = "high";
-
-          img.className =
-            "w-full h-full object-" +
-            IMAGE_FIT +
-            " bg-gray-100 transition-transform duration-300 group-hover:scale-105";
-
-          img.addEventListener("click", () => openLightbox(i));
-
-          img.addEventListener("error", () => {
-            if (img.src.includes("-" + THUMB_800 + ".webp") || img.src.includes("-" + THUMB_480 + ".webp")) {
-              img.srcset = "";
-              img.sizes = "";
-              img.src = srcOriginal;
-            }
-          });
-
-          fig.appendChild(img);
-          gallery.appendChild(fig);
-        });
+        let lastActiveEl = null;
 
         function openLightbox(i) {
+          lastActiveEl = document.activeElement;
           currentIndex = i;
           update();
+
           lb.classList.remove("hidden");
           lbImg.classList.remove("zoomed");
+
+          // UX/A11y: блокируем скролл фона + ставим фокус
+          document.body.style.overflow = "hidden";
+          setTimeout(() => lbClose?.focus(), 0);
+
+          // ARIA для текущего состояния меню
+          lb.setAttribute("aria-hidden", "false");
         }
 
         function closeLightbox() {
           lb.classList.add("hidden");
           lbImg.src = "";
           lbImg.classList.remove("zoomed");
+
+          document.body.style.overflow = "";
+          lb.setAttribute("aria-hidden", "true");
+
+          // Возвращаем фокус туда, откуда открывали
+          if (lastActiveEl && typeof lastActiveEl.focus === "function") lastActiveEl.focus();
         }
 
         function prevImage() {
@@ -548,30 +596,112 @@
           lbImg.alt = altTemplates[currentIndex] || "Vilana Event & Catering – Eventimpressionen";
         }
 
-        function toggleZoom(e) {
-          e.target.classList.toggle("zoomed");
+        function toggleZoom() {
+          lbImg.classList.toggle("zoomed");
         }
+
+        // Простой focus-trap внутри lightbox (минимум, но уже лучше)
+        function trapFocus(e) {
+          if (lb.classList.contains("hidden")) return;
+          if (e.key !== "Tab") return;
+
+          const focusables = [lbPrev, lbNext, lbClose].filter(Boolean);
+          if (!focusables.length) return;
+
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+
+        imageOriginal.forEach((srcOriginal, i) => {
+          const fig = document.createElement("figure");
+          fig.className = "relative overflow-hidden rounded-lg shadow-md bg-white ring-1 ring-black/5 group";
+          fig.style.aspectRatio = CARD_RATIO;
+
+          // Делать кликабельным лучше через button (A11y + UX)
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "block w-full h-full";
+          btn.setAttribute("aria-label", "Bild öffnen: " + (altTemplates[i] || "Eventimpressionen"));
+          btn.addEventListener("click", () => openLightbox(i));
+
+          const img = document.createElement("img");
+          const src800 = withSize(srcOriginal, THUMB_800);
+          const src480 = withSize(srcOriginal, THUMB_480);
+
+          img.src = src800;
+          img.srcset = `${src480} ${THUMB_480}w, ${src800} ${THUMB_800}w`;
+          img.sizes = SIZES_GRID;
+
+          img.alt = altTemplates[i] || "Vilana Event & Catering – Event Catering in Niedersachsen";
+          img.width = 1200;
+          img.height = 800;
+          img.decoding = "async";
+
+          img.loading = i === 0 ? "eager" : "lazy";
+          if (i === 0) img.fetchPriority = "high";
+
+          // ВАЖНО: статический class для Tailwind build
+          img.className =
+            "w-full h-full object-cover bg-gray-100 transition-transform duration-300 group-hover:scale-105";
+
+          // Если thumb-версии не существуют — fallback на оригинал
+          img.addEventListener("error", () => {
+            if (
+              img.src.includes("-" + THUMB_800 + ".webp") ||
+              img.src.includes("-" + THUMB_480 + ".webp")
+            ) {
+              img.srcset = "";
+              img.sizes = "";
+              img.src = srcOriginal;
+            }
+          });
+
+          btn.appendChild(img);
+          fig.appendChild(btn);
+          gallery.appendChild(fig);
+        });
 
         lbClose?.addEventListener("click", closeLightbox);
         lbPrev?.addEventListener("click", prevImage);
         lbNext?.addEventListener("click", nextImage);
         lbImg?.addEventListener("click", toggleZoom);
 
+        // Закрытие по клику на фон (опционально, но удобно)
+        lb?.addEventListener("click", (e) => {
+          if (e.target === lb) closeLightbox();
+        });
+
         document.addEventListener("keydown", (e) => {
           if (lb.classList.contains("hidden")) return;
+
           if (e.key === "Escape") closeLightbox();
           if (e.key === "ArrowLeft") prevImage();
           if (e.key === "ArrowRight") nextImage();
           if (e.key === " " || e.key === "Enter") {
-            e.preventDefault();
-            toggleZoom({ target: lbImg });
+            // zoom только когда фокус на изображении/контейнере
+            // чтобы не ломать навигацию кнопками
+            if (document.activeElement === lbImg || document.activeElement === lbClose) {
+              e.preventDefault();
+              toggleZoom();
+            }
           }
+
+          trapFocus(e);
         });
       })();
     </script>
 
     <!-- Globale Logik: Menü + Event-Link -->
     <script src="js/main.js" defer></script>
+
     <!-- Cookie Consent Wall -->
     <script src="js/vilana-cookiewall.js" defer></script>
   </body>
