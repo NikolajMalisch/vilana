@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru-RU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Primary SEO -->
-  <title>Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event & Catering</title>
+  <title>Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event &amp; Catering</title>
   <meta name="description" content="Кейтеринг на корпоратив и фирменные мероприятия в Хамельне и в радиусе 200 км: Нижняя Саксония и части NRW. Фуршет, буфет, напитки, персонал и оборудование — надёжно и стильно.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0e0e0e">
@@ -19,19 +19,19 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Vilana Event & Catering">
-  <meta property="og:title" content="Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event & Catering">
+  <meta property="og:site_name" content="Vilana Event &amp; Catering">
+  <meta property="og:title" content="Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event &amp; Catering">
   <meta property="og:description" content="Фуршет, буфет, напитки и сервис — для корпоративов и фирменных мероприятий в радиусе 200 км от Хамельна.">
   <meta property="og:url" content="https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html">
   <meta property="og:image" content="https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp">
-  <meta property="og:image:alt" content="Корпоратив — Vilana Event & Catering">
+  <meta property="og:image:alt" content="Корпоратив — Vilana Event &amp; Catering">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event & Catering">
+  <meta name="twitter:title" content="Корпоратив и фуршет в Хамельне и Нижней Саксонии | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Фуршет, буфет, напитки, персонал и оборудование — для корпоративов от Хамельна.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp">
-  <meta name="twitter:image:alt" content="Корпоратив — Vilana Event & Catering">
+  <meta name="twitter:image:alt" content="Корпоратив — Vilana Event &amp; Catering">
   <meta name="twitter:url" content="https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html">
 
   <!-- Performance -->
@@ -42,6 +42,7 @@
 
   <link rel="preload" as="image" href="/images/anlass/firmenfeier-hero.webp" type="image/webp" fetchpriority="high">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" crossorigin
@@ -49,7 +50,6 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
         media="print" onload="this.media='all'">
-
   <noscript><link rel="stylesheet" href="/css/output.css"></noscript>
 
   <!-- Favicons -->
@@ -75,7 +75,7 @@
     .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   </style>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD (fixed) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -85,47 +85,66 @@
         "@id":"https://www.vilana-event.de/#organization",
         "name":"Vilana Event & Catering",
         "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/logo.png",
+        "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
         "sameAs":[
           "https://www.instagram.com/vilana_catering/"
         ]
       },
       {
-        "@type":"LocalBusiness",
+        "@type":["LocalBusiness","Caterer"],
         "@id":"https://www.vilana-event.de/#localbusiness",
         "name":"Vilana Event & Catering",
         "url":"https://www.vilana-event.de/",
-        "email":[
-          "mailto:v.s@vilana.info",
-          "mailto:vilana-event@outlook.de"
-        ],
-        "telephone":[
-          "+49 176 5777 5996",
-          "+49 176 4228 8707"
-        ],
+        "image":"https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp",
+        "telephone":"+49 176 5777 5996",
+        "email":"v.s@vilana.info",
+        "knowsLanguage":["de-DE","ru-RU"],
         "address":{
           "@type":"PostalAddress",
           "streetAddress":"Osterstraße 28",
           "postalCode":"31855",
           "addressLocality":"Aerzen",
+          "addressRegion":"Niedersachsen",
           "addressCountry":"DE"
         },
-        "image":"https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp",
+        "geo":{
+          "@type":"GeoCoordinates",
+          "latitude":52.047847,
+          "longitude":9.263319
+        },
+        "serviceArea":{
+          "@type":"GeoCircle",
+          "geoMidpoint":{
+            "@type":"GeoCoordinates",
+            "latitude":52.047847,
+            "longitude":9.263319
+          },
+          "geoRadius":200000
+        },
+        "areaServed":[
+          { "@type":"AdministrativeArea","name":"Niedersachsen" },
+          { "@type":"AdministrativeArea","name":"Nordrhein-Westfalen" }
+        ],
+        "contactPoint":[
+          {
+            "@type":"ContactPoint",
+            "contactType":"Kundenservice",
+            "telephone":"+49 176 5777 5996",
+            "email":"v.s@vilana.info",
+            "availableLanguage":["de-DE","ru-RU"],
+            "areaServed":"DE"
+          },
+          {
+            "@type":"ContactPoint",
+            "contactType":"Kundenservice",
+            "telephone":"+49 176 4228 8707",
+            "email":"vilana-event@outlook.de",
+            "availableLanguage":["de-DE","ru-RU"],
+            "areaServed":"DE"
+          }
+        ],
         "sameAs":[
           "https://www.instagram.com/vilana_catering/"
-        ],
-        "areaServed":[
-          {
-            "@type":"GeoCircle",
-            "geoMidpoint":{
-              "@type":"GeoCoordinates",
-              "latitude":52.047847,
-              "longitude":9.263319
-            },
-            "geoRadius":200000
-          },
-          {"@type":"AdministrativeArea","name":"Niedersachsen"},
-          {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"}
         ]
       },
       {
@@ -135,18 +154,16 @@
         "serviceType":"Corporate Catering & Service",
         "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
         "url":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html",
-        "description":"Кейтеринг на корпоратив и фирменные мероприятия: приветственный фуршет с закусками, буфет (горячее и холодное) и десерты. По желанию — обслуживающий персонал, посуда, бокалы и оборудование с доставкой, монтажом и демонтажем. Работаем в радиусе около 200 км от Хамельна.",
-        "areaServed":[
-          {
-            "@type":"GeoCircle",
-            "geoMidpoint":{
-              "@type":"GeoCoordinates",
-              "latitude":52.047847,
-              "longitude":9.263319
-            },
-            "geoRadius":200000
-          }
-        ],
+        "description":"Кейтеринг на корпоратив и фирменные мероприятия: приветственный фуршет с закусками, буфет (горячее и холодное) и десерты. По желанию — обслуживающий персонал, посуда, бокалы и оборудование с доставкой, монтажом и демонтажем. Работаем в радиусе около 200 км.",
+        "areaServed":{
+          "@type":"GeoCircle",
+          "geoMidpoint":{
+            "@type":"GeoCoordinates",
+            "latitude":52.047847,
+            "longitude":9.263319
+          },
+          "geoRadius":200000
+        },
         "offers":{
           "@type":"Offer",
           "url":"https://www.vilana-event.de/ru/contact.html",
@@ -167,8 +184,8 @@
           {
             "@type":"ListItem",
             "position":2,
-            "name":"События",
-            "item":"https://www.vilana-event.de/ru/event.html"
+            "name":"Партисервис",
+            "item":"https://www.vilana-event.de/ru/partyservice.html"
           },
           {
             "@type":"ListItem",
@@ -187,7 +204,7 @@
             "name":"В каком регионе вы делаете корпоративы?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Работаем от Хамельна в радиусе около 200 км — Нижняя Саксония и части NRW."
+              "text":"Работаем в радиусе около 200 км — по Нижней Саксонии и в части NRW."
             }
           },
           {
@@ -203,7 +220,7 @@
             "name":"Можете привезти посуду, бокалы, оборудование и персонал?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Да. По желанию предоставляем обслуживающий персонал, посуду, бокалы и оборудование для буфета, включая доставку, монтаж и демонтаж."
+              "text":"Да. По желанию предоставляем персонал, посуду, бокалы и оборудование для буфета, включая доставку, монтаж и демонтаж."
             }
           },
           {
@@ -219,7 +236,7 @@
             "name":"Как быстро получить расчёт и предложение?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Самое быстрое — заполнить форму на сайте: дата, место, количество гостей и формат. Мы ответим с предложением после уточнения деталей."
+              "text":"Самое быстрое — заполнить форму на сайте: дата, место, количество гостей и формат. Мы уточним детали и подготовим предложение."
             }
           }
         ]
@@ -237,7 +254,7 @@
   </a>
 
   <!-- HEADER -->
-  <header class="bg-white shadow-md relative">
+  <header class="bg-white shadow-md relative z-50">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Logo -->
       <a href="/ru/"
@@ -264,22 +281,19 @@
           <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
         </nav>
 
-        <!-- Language switch (Desktop) -->
+        <!-- Language switch -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключатель языка">
           <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100"
              href="/anlass/firmenfeier-catering.html"
-             rel="alternate"
-             hreflang="de-DE">DE</a>
+             rel="alternate" hreflang="de-DE">DE</a>
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
         </div>
 
-        <!-- Mobile controls -->
+        <!-- Mobile -->
         <div class="flex items-center gap-2 md:hidden">
           <a href="/anlass/firmenfeier-catering.html"
              class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
-             rel="alternate"
-             hreflang="de-DE"
-             aria-label="Deutsche Version">DE</a>
+             rel="alternate" hreflang="de-DE" aria-label="Deutsche Version">DE</a>
 
           <button id="menuToggle" type="button"
                   aria-label="Открыть меню"
@@ -314,37 +328,35 @@
   <!-- MAIN -->
   <main id="main">
 
-<!-- HERO -->
-<section class="hero"
-  aria-label="Корпоратив и фирменные мероприятия — кейтеринг от Vilana Event &amp; Catering">
-  <div class="hero-media">
-    <picture>
-      <source media="(max-width: 640px)" srcset="/images/anlass/firmenfeier-hero.webp" type="image/webp" />
-      <source srcset="/images/anlass/firmenfeier-hero.webp" type="image/webp" />
-      <img
-        src="/images/anlass/firmenfeier-hero.webp"
-        alt="Корпоративный фуршет и буфет — Vilana Event &amp; Catering"
-        width="1600" height="900"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-        style="width:100%;height:auto;"
-      />
-    </picture>
-  </div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Корпоратив и фирменные мероприятия — кейтеринг от Vilana Event &amp; Catering">
+      <div class="hero-media">
+        <picture>
+          <source media="(max-width: 640px)" srcset="/images/anlass/firmenfeier-hero.webp" type="image/webp" />
+          <source srcset="/images/anlass/firmenfeier-hero.webp" type="image/webp" />
+          <img
+            src="/images/anlass/firmenfeier-hero.webp"
+            alt="Корпоративный фуршет и буфет — Vilana Event &amp; Catering"
+            width="1600" height="900"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            style="width:100%;height:auto;"
+          />
+        </picture>
+      </div>
 
-  <div class="hero-below container mx-auto px-4">
-    <h1 class="hero-title">Корпоратив в Хамельне&nbsp;&amp; Нижней Саксонии</h1>
-    <p class="hero-subtitle">
-      Приветственный фуршет, современный буфет и десерты — по желанию с персоналом, посудой, бокалами и оборудованием.
-      Вы общаетесь с командой, мы отвечаем за организацию.
-    </p>
-    <div class="hero-cta">
-      <a href="/ru/contact.html" class="btn">Отправить запрос</a>
-    </div>
-  </div>
-</section>
-
+      <div class="hero-below container mx-auto px-4">
+        <h1 class="hero-title">Корпоратив в Хамельне&nbsp;&amp; Нижней Саксонии</h1>
+        <p class="hero-subtitle">
+          Приветственный фуршет, современный буфет и десерты — по желанию с персоналом, посудой, бокалами и оборудованием.
+          Вы общаетесь с командой, мы отвечаем за организацию.
+        </p>
+        <div class="hero-cta">
+          <a href="/ru/contact.html" class="btn">Отправить запрос</a>
+        </div>
+      </div>
+    </section>
 
     <!-- SERVICES -->
     <section class="services" id="services" aria-labelledby="services-heading">
@@ -353,7 +365,6 @@
         <p class="section-subtitle">Понятно, надёжно и премиально — под формат, локацию и тайминг</p>
 
         <div class="services-grid">
-          <!-- Card 1 -->
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/firmenfeier-empfang.webp"
@@ -369,7 +380,6 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/firmenfeier-buffet.webp"
@@ -385,7 +395,6 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/firmenfeier-service.webp"
@@ -400,6 +409,44 @@
               </p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER ANLÄSSE (перелинковка как у других RU) -->
+    <section id="weitere-anlaesse" class="py-14 bg-white" aria-labelledby="weitere-anlaesse-heading">
+      <div class="container mx-auto px-4">
+        <h2 class="section-title" id="weitere-anlaesse-heading">Другие поводы</h2>
+        <p class="section-subtitle">Выберите формат кейтеринга под ваш праздник или мероприятие</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <article class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Свадебный кейтеринг</h3>
+              <p class="text-gray-700">Фуршет, fingerfood и буфет — с вниманием к деталям и надёжной организацией.</p>
+              <a href="/ru/anlass/hochzeit-catering.html" class="inline-block mt-4 btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">День рождения</h3>
+              <p class="text-gray-700">Праздничный буфет, закуски и сладкий стол — красиво и без лишних хлопот.</p>
+              <a href="/ru/anlass/geburtstag-catering.html" class="inline-block mt-4 btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Все форматы</h3>
+              <p class="text-gray-700">Fingerfood, буфеты, оборудование и персонал — полный список услуг и форматов.</p>
+              <a href="/ru/partyservice.html" class="inline-block mt-4 btn">Смотреть</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-10">
+          <a href="/ru/contact.html" class="btn">Отправить запрос</a>
         </div>
       </div>
     </section>
@@ -432,8 +479,8 @@
           </details>
 
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Как оставить запрос?</summary>
-            <p class="mt-3">Самое быстрое — через форму на сайте. Укажите дату, место, количество гостей и формат — мы уточним детали и подготовим предложение.</p>
+            <summary class="cursor-pointer font-semibold">Как быстро получить расчёт и предложение?</summary>
+            <p class="mt-3">Самое быстрое — заполнить форму на сайте: дата, место, количество гостей и формат. Мы уточним детали и подготовим предложение.</p>
           </details>
         </div>
 
@@ -445,133 +492,93 @@
 
   </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
-  <meta itemprop="name" content="Vilana Event & Catering">
-  <meta itemprop="telephone" content="+49 176 5777 5996">
-  <meta itemprop="email" content="v.s@vilana.info">
-  <meta itemprop="url" content="https://www.vilana-event.de/">
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-    <meta itemprop="streetAddress" content="Osterstraße 28">
-    <meta itemprop="addressLocality" content="Aerzen">
-    <meta itemprop="postalCode" content="31855">
-    <meta itemprop="addressRegion" content="Niedersachsen">
-    <meta itemprop="addressCountry" content="DE">
-  </div>
-
-  <div class="footer-inner">
-
-    <div class="footer-deco-line"></div>
-
-
-    <!-- 3-spalten Grid -->
-    <div class="footer-grid">
-
-      <!-- Kontakt -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <address class="footer-address">
-          <p class="footer-address-name">Vilana Event &amp; Catering</p>
-          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
-          </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
-        </address>
-
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-          </svg>
-          @vilana_catering
-        </a>
-      </div>
-
-      <div class="footer-divider-v"></div>
-
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Navigation</h3>
-        <nav aria-label="Footer-Navigation">
-          <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
-            <li><a href="/#services">Leistungen</a></li>
-            <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
-            <li><a href="/galerie.html">Galerie</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="footer-divider-v"></div>
-
-      <!-- Servicegebiet -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Servicegebiet</h3>
-        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
-        <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
-        </ul>
-        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
-      </div>
-
+  <!-- FOOTER (оставлен как у тебя) -->
+  <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
+    <meta itemprop="name" content="Vilana Event & Catering">
+    <meta itemprop="telephone" content="+49 176 5777 5996">
+    <meta itemprop="email" content="v.s@vilana.info">
+    <meta itemprop="url" content="https://www.vilana-event.de/">
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+      <meta itemprop="streetAddress" content="Osterstraße 28">
+      <meta itemprop="addressLocality" content="Aerzen">
+      <meta itemprop="postalCode" content="31855">
+      <meta itemprop="addressRegion" content="Niedersachsen">
+      <meta itemprop="addressCountry" content="DE">
     </div>
 
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
+    <div class="footer-inner">
+      <div class="footer-deco-line"></div>
 
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Kontakt</h3>
+          <address class="footer-address">
+            <p class="footer-address-name">Vilana Event &amp; Catering</p>
+            <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
+            <a href="tel:+4917657775996"><span class="contact-icon">☎</span> +49 176 5777 5996</a>
+            <a href="tel:+4917642288707"><span class="contact-icon">☎</span> +49 176 4228 8707</a>
+            <a href="mailto:v.s@vilana.info"><span class="contact-icon">✉</span> v.s@vilana.info</a>
+            <a href="mailto:vilana-event@outlook.de"><span class="contact-icon">✉</span> vilana-event@outlook.de</a>
+          </address>
 
-  </div>
+          <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+             class="footer-instagram" aria-label="Instagram – vilana_catering">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+            @vilana_catering
+          </a>
+        </div>
 
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
-</footer>
+        <div class="footer-divider-v"></div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigation</h3>
+          <nav aria-label="Footer-Navigation">
+            <ul class="footer-nav">
+              <li><a href="/ru/">Главная</a></li>
+              <li><a href="/ru/#services">Услуги</a></li>
+              <li><a href="/ru/partyservice.html">Партисервис</a></li>
+              <li><a href="/ru/menu.html">Меню</a></li>
+              <li><a href="/ru/galerie.html">Галерея</a></li>
+              <li><a href="/ru/about.html">О нас</a></li>
+              <li><a href="/ru/event.html">События</a></li>
+              <li><a href="/ru/contact.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-divider-v"></div>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Servicegebiet</h3>
+          <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+          <ul class="footer-regions">
+            <li>Hameln</li><li>Hannover</li><li>Bad Pyrmont</li><li>Bielefeld</li><li>Paderborn</li>
+            <li>Minden</li><li>Detmold</li><li>Münster</li><li>Braunschweig</li><li>Wunstorf</li>
+          </ul>
+          <p class="footer-regions-note">Radius ca. 200 km · Niedersachsen &amp; NRW</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Vilana Event &amp; Catering.<br class="br-mobile" />Alle Rechte vorbehalten.</p>
+        <nav class="footer-legal" aria-label="Rechtliches">
+          <a href="/impressum.html">Impressum</a>
+          <span aria-hidden="true">|</span>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <span aria-hidden="true">|</span>
+          <a href="/agb.html">AGB</a>
+        </nav>
+      </div>
+    </div>
+
+    <button type="button"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="footer-scroll-top"
+      aria-label="Nach oben scrollen"
+      title="Nach oben">▲</button>
+  </footer>
 
   <!-- Scripts -->
   <script src="/js/main.js" defer></script>
