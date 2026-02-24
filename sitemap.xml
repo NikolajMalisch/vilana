@@ -1,34 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- DE -->
-  <url><loc>https://www.vilana-event.de/</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/partyservice.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/menu.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/galerie.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/about.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/event.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/bewertung.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/contact.html</loc><lastmod>2026-02-14</lastmod></url>
+  <!-- =========================
+       ROOT / DE
+  ========================== -->
+  <url>
+    <loc>https://www.vilana-event.de/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/" />
+  </url>
 
-  <!-- Anlass (DE) -->
-  <url><loc>https://www.vilana-event.de/anlass/hochzeit-catering.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/anlass/geburtstag-catering.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/anlass/firmenfeier-catering.html</loc><lastmod>2026-02-14</lastmod></url>
+  <url>
+    <loc>https://www.vilana-event.de/partyservice.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/partyservice.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/partyservice.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/partyservice.html" />
+  </url>
 
-  <!-- RU -->
-  <url><loc>https://www.vilana-event.de/ru/</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/partyservice.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/menu.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/galerie.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/about.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/event.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/bewertung.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/contact.html</loc><lastmod>2026-02-14</lastmod></url>
+  <url>
+    <loc>https://www.vilana-event.de/menu.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/menu.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/menu.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/menu.html" />
+  </url>
 
-  <!-- Anlass (RU) -->
-  <url><loc>https://www.vilana-event.de/ru/anlass/hochzeit-catering.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/anlass/geburtstag-catering.html</loc><lastmod>2026-02-14</lastmod></url>
-  <url><loc>https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html</loc><lastmod>2026-02-14</lastmod></url>
+  <url>
+    <loc>https://www.vilana-event.de/galerie.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/galerie.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/galerie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/galerie.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/about.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/about.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/event.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/event.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/bewertung.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/bewertung.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/bewertung.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/bewertung.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/contact.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/contact.html" />
+  </url>
+
+  <!-- =========================
+       Anlass / DE
+  ========================== -->
+  <url>
+    <loc>https://www.vilana-event.de/anlass/hochzeit-catering.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/hochzeit-catering.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/hochzeit-catering.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/hochzeit-catering.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/anlass/geburtstag-catering.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/geburtstag-catering.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/geburtstag-catering.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/geburtstag-catering.html" />
+  </url>
+
+  <url>
+    <loc>https://www.vilana-event.de/anlass/firmenfeier-catering.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/firmenfeier-catering.html" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/anlass/firmenfeier-catering.html" />
+  </url>
+
+  <!-- =========================
+       RU (отдельно НЕ дублируем как <url>!)
+       ВАЖНО: когда используешь xhtml:link, RU-страницы
+       НЕ нужно повторять как отдельные <url>, иначе будет дубль.
+  ========================== -->
 
 </urlset>
