@@ -122,161 +122,178 @@
     }
   </style>
 
-  <!-- =========================================================
-        JSON-LD (Optimized for "Partyservice" page)
-  ========================================================== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vilana-event.de/#organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/logo.png",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/"
-        ]
+ <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://www.vilana-event.de/#organization",
+      "name":"Vilana Event & Catering",
+      "url":"https://www.vilana-event.de/",
+      "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
+      "sameAs":[
+        "https://www.instagram.com/vilana_catering/"
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://www.vilana-event.de/#website",
+      "url":"https://www.vilana-event.de/",
+      "name":"Vilana Event & Catering",
+      "inLanguage":"de-DE",
+      "publisher":{"@id":"https://www.vilana-event.de/#organization"}
+    },
+    {
+      "@type":["LocalBusiness","Caterer"],
+      "@id":"https://www.vilana-event.de/#localbusiness",
+      "name":"Vilana Event & Catering",
+      "url":"https://www.vilana-event.de/",
+      "telephone":["+49 176 5777 5996","+49 176 4228 8707"],
+      "email":"v.s@vilana.info",
+      "priceRange":"€€€",
+      "keywords":[
+        "Partyservice",
+        "Catering",
+        "Fingerfood",
+        "Buffet",
+        "Servicepersonal",
+        "Geschirr",
+        "Gläser",
+        "Buffet-Equipment",
+        "Buffet-Aufbau"
+      ],
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Osterstraße 28",
+        "postalCode":"31855",
+        "addressLocality":"Aerzen",
+        "addressRegion":"Niedersachsen",
+        "addressCountry":"DE"
       },
-      {
-        "@type":"WebSite",
-        "@id":"https://www.vilana-event.de/#website",
-        "url":"https://www.vilana-event.de/",
-        "name":"Vilana Event & Catering",
-        "inLanguage":"de-DE",
-        "publisher":{"@id":"https://www.vilana-event.de/#organization"}
+      "geo":{
+        "@type":"GeoCoordinates",
+        "latitude":52.047847,
+        "longitude":9.263319
       },
-      {
-        "@type":"LocalBusiness",
-        "@id":"https://www.vilana-event.de/#localbusiness",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "telephone":["+49 176 5777 5996","+49 176 4228 8707"],
-        "email":"v.s@vilana.info",
-        "priceRange":"€€€",
-        "keywords":[
-          "Partyservice",
-          "Catering",
-          "Fingerfood",
-          "Buffet",
-          "Servicepersonal",
-          "Geschirr",
-          "Gläser",
-          "Buffet-Equipment",
-          "Buffet-Aufbau"
-        ],
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressRegion":"Niedersachsen",
-          "addressCountry":"DE"
+      "hasMap":"https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
+      "serviceArea":{
+        "@type":"GeoCircle",
+        "geoMidpoint":{
+          "@type":"GeoCoordinates",
+          "latitude":52.047847,
+          "longitude":9.263319
         },
-        "image":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/"
-        ],
-        "areaServed":[
-          {"@type":"AdministrativeArea","name":"Niedersachsen"},
-          {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"},
-          {"@type":"City","name":"Hameln"},
-          {"@type":"City","name":"Hannover"},
-          {"@type":"City","name":"Bad Pyrmont"},
-          {"@type":"City","name":"Bielefeld"}
-        ]
+        "geoRadius":200000
       },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vilana-event.de/partyservice.html#webpage",
-        "url":"https://www.vilana-event.de/partyservice.html",
-        "name":"Partyservice & Catering in Hameln | Vilana Event & Catering",
-        "inLanguage":"de-DE",
-        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-        "about":{"@id":"https://www.vilana-event.de/partyservice.html#service"},
-        "breadcrumb":{"@id":"https://www.vilana-event.de/partyservice.html#breadcrumb"}
+      "image":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
+      "sameAs":[
+        "https://www.instagram.com/vilana_catering/"
+      ],
+      "areaServed":[
+        {"@type":"AdministrativeArea","name":"Niedersachsen"},
+        {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"},
+        {"@type":"City","name":"Hameln"},
+        {"@type":"City","name":"Hannover"},
+        {"@type":"City","name":"Bad Pyrmont"},
+        {"@type":"City","name":"Bielefeld"}
+      ]
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://www.vilana-event.de/partyservice.html#webpage",
+      "url":"https://www.vilana-event.de/partyservice.html",
+      "name":"Partyservice & Catering in Hameln | Vilana Event & Catering",
+      "inLanguage":"de-DE",
+      "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
+      "about":{"@id":"https://www.vilana-event.de/partyservice.html#service"},
+      "breadcrumb":{"@id":"https://www.vilana-event.de/partyservice.html#breadcrumb"}
+    },
+    {
+      "@type":"Service",
+      "@id":"https://www.vilana-event.de/partyservice.html#service",
+      "name":"Partyservice in Hameln – Catering, Fingerfood & Buffet",
+      "serviceType":"Partyservice",
+      "category":"Catering & Partyservice",
+      "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
+      "url":"https://www.vilana-event.de/partyservice.html",
+      "inLanguage":"de-DE",
+      "description":"Partyservice & Catering für Hochzeit, Geburtstag und Firmenfeier – Fingerfood, Buffet, Servicepersonal & Equipment in Hameln und im Radius bis ca. 200 km (Niedersachsen & NRW).",
+      "areaServed":{
+        "@type":"GeoCircle",
+        "geoMidpoint":{
+          "@type":"GeoCoordinates",
+          "latitude":52.047847,
+          "longitude":9.263319
+        },
+        "geoRadius":200000
       },
-      {
-        "@type":"Service",
-        "@id":"https://www.vilana-event.de/partyservice.html#service",
-        "name":"Partyservice in Hameln – Catering, Fingerfood & Buffet",
-        "serviceType":"Partyservice",
-        "category":"Catering & Partyservice",
-        "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-        "url":"https://www.vilana-event.de/partyservice.html",
-        "inLanguage":"de-DE",
-        "description":"Partyservice & Catering für Hochzeit, Geburtstag und Firmenfeier – Fingerfood, Buffet, Servicepersonal & Equipment in Hameln und Niedersachsen.",
-        "areaServed":[
-          {"@type":"AdministrativeArea","name":"Niedersachsen"},
-          {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"}
-        ],
-        "offers":{
-          "@type":"Offer",
-          "url":"https://www.vilana-event.de/contact.html",
-          "priceCurrency":"EUR",
-          "availability":"https://schema.org/InStock",
-          "description":"Angebot individuell nach Gästezahl, Menü und Serviceumfang."
-        }
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.vilana-event.de/partyservice.html#faq",
-        "inLanguage":"de-DE",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Für welche Anlässe eignet sich Ihr Partyservice?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Wir begleiten Hochzeiten, Geburtstage und Firmenfeiern – vom Empfang mit Fingerfood bis zum Buffet mit Service und Equipment."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Liefern Sie nur in Hameln?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Wir starten aus Hameln/Aerzen und beliefern je nach Event auch in Niedersachsen und Umgebung. Die genaue Reichweite klären wir im Angebot."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Was ist typischerweise im Catering enthalten?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Je nach Wunsch: Fingerfood, kalte/warme Buffets, Dessert, Lieferung & Aufbau. Optional: Servicepersonal, Geschirr, Gläser und Buffet-Equipment."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Wie früh sollte man anfragen?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Für kleinere Feiern oft 2–4 Wochen vorher, für Hochzeiten und beliebte Termine lieber 2–3 Monate im Voraus."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Gibt es vegetarische oder vegane Optionen?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Wir passen das Menü an Ihre Gäste an – inklusive vegetarischer und veganer Varianten."
-            }
-          }
-        ]
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://www.vilana-event.de/partyservice.html#breadcrumb",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Start","item":"https://www.vilana-event.de/"},
-          {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/partyservice.html"}
-        ]
+      "offers":{
+        "@type":"Offer",
+        "url":"https://www.vilana-event.de/contact.html",
+        "priceCurrency":"EUR",
+        "availability":"https://schema.org/InStock",
+        "description":"Angebot individuell nach Gästezahl, Menü und Serviceumfang."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://www.vilana-event.de/partyservice.html#faq",
+      "inLanguage":"de-DE",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Für welche Anlässe eignet sich Ihr Partyservice?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Wir begleiten Hochzeiten, Geburtstage und Firmenfeiern – vom Empfang mit Fingerfood bis zum Buffet mit Service und Equipment."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Liefern Sie nur in Hameln?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Wir starten aus Aerzen (Hameln-Pyrmont) und liefern im Radius bis ca. 200 km – Niedersachsen sowie Teile von NRW."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Was ist typischerweise im Catering enthalten?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Je nach Wunsch: Fingerfood, kalte/warme Buffets, Dessert, Lieferung & Aufbau. Optional: Servicepersonal, Geschirr, Gläser und Buffet-Equipment."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Wie früh sollte man anfragen?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Für kleinere Feiern oft 2–4 Wochen vorher, für Hochzeiten und beliebte Termine lieber 2–3 Monate im Voraus."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Gibt es vegetarische oder vegane Optionen?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Ja. Wir passen das Menü an Ihre Gäste an – inklusive vegetarischer und veganer Varianten."
+          }
+        }
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://www.vilana-event.de/partyservice.html#breadcrumb",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Start","item":"https://www.vilana-event.de/"},
+        {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/partyservice.html"}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 
