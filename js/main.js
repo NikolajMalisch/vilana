@@ -1,6 +1,6 @@
 // js/main.js
 // Версия: без optional chaining, safe storage, корректный язык для /de/ и /ru/,
-//         + исправление event URL (всегда /event.html)
+//         event URL всегда /event.html без старых параметров
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function getEffectiveLang() {
     var url = new URL(location.href);
 
-    // 1) Если мы на /de/ или /ru/ — язык фиксируем по пути (это важно для SEO и стабильности)
+    // 1) Если мы на /de/ или /ru/ — язык фиксируем по пути
     var byPath = langFromPathname(url.pathname);
     if (byPath) return byPath;
 
@@ -88,31 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var menuMob = document.getElementById('langMenuMobile');
 
   // ===== Event links =====
-  var EVENT_ID = 'russian-oktoberfest-2025';
-
-  function copyTrackingParams(fromURL, toURL) {
-    var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-    for (var i = 0; i < keys.length; i++) {
-      var k = keys[i];
-      var v = fromURL.searchParams.get(k);
-      if (v) toURL.searchParams.set(k, v);
-    }
-  }
-
   function buildEventURL() {
-    var url = new URL(location.href);
-
-    // Язык берём из логики "path > ?lang > storage"
-    var lang = getEffectiveLang();
-
-    // ВАЖНО: абсолютный путь, чтобы /de/ не превращалось в /de/event.html
-    var ev = new URL('/event.html', url);
-
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-
-    copyTrackingParams(url, ev);
-    return ev.href;
+    return '/event.html';
   }
 
   function setEventLinks() {
@@ -217,31 +194,36 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   // ===== INIT =====
-(function () {
-  var path = window.location.pathname;
+  (function () {
+    var path = window.location.pathname;
 
-  // Язык ТОЛЬКО по URL
-  if (path.indexOf('/ru/') === 0) {
-    setLanguage('ru');
-  } else {
-    setLanguage('de');
-  }
-})();
+    // Язык ТОЛЬКО по URL для /ru/, иначе de
+    if (path.indexOf('/ru/') === 0) {
+      setLanguage('ru');
+    } else if (path.indexOf('/de/') === 0) {
+      setLanguage('de');
+    } else {
+      setLanguage(getEffectiveLang());
+    }
+
+    setEventLinks();
+  })();
 
 });
+
 // Mobile submenu toggles (Partyservice)
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-submenu-toggle]").forEach((btn) => {
-    const id = btn.getAttribute("data-submenu-toggle");
-    const panel = document.getElementById(id);
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-submenu-toggle]").forEach(function (btn) {
+    var id = btn.getAttribute("data-submenu-toggle");
+    var panel = document.getElementById(id);
     if (!panel) return;
 
-    btn.addEventListener("click", () => {
-      const isOpen = !panel.classList.contains("hidden");
+    btn.addEventListener("click", function () {
+      var isOpen = !panel.classList.contains("hidden");
       panel.classList.toggle("hidden");
       btn.setAttribute("aria-expanded", String(!isOpen));
 
-      const icon = btn.querySelector("[data-submenu-icon]");
+      var icon = btn.querySelector("[data-submenu-icon]");
       if (icon) icon.style.transform = !isOpen ? "rotate(180deg)" : "rotate(0deg)";
     });
   });

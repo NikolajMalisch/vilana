@@ -98,30 +98,15 @@ if (toggleBtn && mobileMenu) {
 }
 }
 
-// ======================= EVENT-ССЫЛКА С UTM И ЯЗЫКОМ ==========================
-(function(){
-const EVENT_ID = 'russian-oktoberfest-2025';
-
-function copyTrackingParams(fromURL, toURL) {
-    const keep = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
-    keep.forEach(k => {
-    const v = fromURL.searchParams.get(k);
-    if (v) toURL.searchParams.set(k, v);
-    });
-}
-
-window.setEventLinks = function setEventLinks() {
-    const url  = new URL(location.href);
-    const lang = (url.searchParams.get('lang') || localStorage.getItem('vilana_lang') || 'de').toLowerCase();
-
-    const ev = new URL('event.html', url);
-    ev.searchParams.set('id', EVENT_ID);
-    ev.searchParams.set('lang', lang);
-    copyTrackingParams(url, ev);
-
+// ======================= EVENT-ССЫЛКА БЕЗ СТАРОГО EVENT ID ==========================
+(function () {
+  window.setEventLinks = function setEventLinks() {
     const selectors = '#eventLink, #eventLinkMobile, #eventLinkFooter, a[data-ev-link]';
-    document.querySelectorAll(selectors).forEach(a => { a.href = ev.href; });
-};
+
+    document.querySelectorAll(selectors).forEach(a => {
+      a.href = '/event.html';
+    });
+  };
 })();
 
 // ======================= EmailJS (если форма существует) ======================
