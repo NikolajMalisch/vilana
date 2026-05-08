@@ -1,4 +1,23 @@
 User-agent: *
 Allow: /
 
+Disallow: /tests/
+Disallow: /vilana-tailwind/
+Disallow: /src/
+Disallow: /_tmp_*.html
+Disallow: /test_*.html
+Disallow: /*.copy$
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://www.vilana-event.de/sitemap.xml
