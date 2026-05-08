@@ -6,10 +6,13 @@
   <meta name="format-detection" content="telephone=no">
 
   <!-- =========================================================
-        Primary SEO
+        Primary SEO  (Title 60 / Description 158)
+        Repositioned to avoid cannibalization with index.html
+        index.html  → "catering hameln"
+        partyservice.html → "partyservice weserbergland / hameln-pyrmont"
   ========================================================== -->
-  <title>Partyservice &amp; Catering in Hameln | Vilana Event &amp; Catering</title>
-  <meta name="description" content="Partyservice &amp; Catering in Hameln und Niedersachsen: Hochzeit, Geburtstag und Firmenfeier. Fingerfood, Buffet, Servicepersonal &amp; Equipment – stilvoll und zuverlässig.">
+  <title>Partyservice Weserbergland | Buffet &amp; Service ab 20 – Vilana</title>
+  <meta name="description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland: Buffet, Fingerfood, Service &amp; Equipment. Lieferung, Aufbau, ab 20 Gäste – Preis auf Anfrage.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0e0e0e">
 
@@ -23,20 +26,20 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Vilana Event &amp; Catering">
-  <meta property="og:title" content="Partyservice &amp; Catering in Hameln | Vilana Event &amp; Catering">
-  <meta property="og:description" content="Hochzeit, Geburtstag, Firmenfeier – Fingerfood, Buffet, Service &amp; Equipment.">
+  <meta property="og:title" content="Partyservice Weserbergland | Vilana Event &amp; Catering">
+  <meta property="og:description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland — Buffet, Fingerfood, Service &amp; Equipment. Ab 20 Gästen.">
   <meta property="og:url" content="https://www.vilana-event.de/partyservice.html">
   <meta property="og:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
-  <meta property="og:image:alt" content="Partyservice &amp; Catering — Vilana Event &amp; Catering">
+  <meta property="og:image:alt" content="Partyservice Weserbergland — Vilana Event &amp; Catering">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Partyservice &amp; Catering in Hameln | Vilana Event &amp; Catering">
-  <meta name="twitter:description" content="Hochzeit, Geburtstag, Firmenfeier – stilvoller Partyservice mit Catering &amp; Service.">
+  <meta name="twitter:title" content="Partyservice Weserbergland | Vilana Event &amp; Catering">
+  <meta name="twitter:description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland — Buffet, Service &amp; Equipment, ab 20 Gästen.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
-  <meta name="twitter:image:alt" content="Partyservice &amp; Catering — Vilana Event &amp; Catering">
+  <meta name="twitter:image:alt" content="Partyservice Weserbergland — Vilana Event &amp; Catering">
   <meta name="twitter:url" content="https://www.vilana-event.de/partyservice.html">
 
   <!-- =========================================================
@@ -50,14 +53,13 @@
   <!-- LCP image preload (hero) -->
   <link rel="preload" as="image" href="/images/anlass/partyservice-hero.webp" type="image/webp" fetchpriority="high">
 
-  <!-- Fonts: load non-blocking (IMPORTANT: reduce weights to cut woff2 count) -->
-  <!-- Рекомендую: Cormorant SC 400/700 + Cinzel Decorative 400 (без лишнего) -->
+  <!-- Fonts: load non-blocking (Cormorant SC 400/700 + Cinzel Decorative 400) -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap"
         media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap&display=swap">
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+SC:wght@400;700&display=swap">
   </noscript>
 
   <!-- =========================================================
@@ -71,7 +73,7 @@
   <!-- Anlass styles (critical, hero/layout) -->
   <link rel="stylesheet" href="/css/anlass.css">
 
-  <!-- Footer: NON-critical -> load non-blocking (fix for your Lighthouse chain) -->
+  <!-- Footer: NON-critical -> load non-blocking -->
   <link rel="preload" href="/css/footer-premium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/footer-premium.css"></noscript>
 
@@ -120,180 +122,175 @@
       white-space:nowrap;
       border:0;
     }
+
+    /* Workflow steps */
+    .workflow-grid { display:grid; gap:1rem; grid-template-columns:1fr; }
+    @media (min-width: 768px) { .workflow-grid { grid-template-columns:repeat(4, 1fr); } }
+    .workflow-step {
+      background:#fff;
+      border:1px solid #f3e7d3;
+      border-radius:1rem;
+      padding:1.25rem;
+    }
+    .workflow-num {
+      display:inline-block;
+      font-family:"Cinzel Decorative", cursive;
+      color:#9a6a2a;
+      font-size:1.1rem;
+      margin-bottom:.4rem;
+    }
+
+    /* Region two-column */
+    .region-grid { display:grid; gap:1.25rem; grid-template-columns:1fr; }
+    @media (min-width: 768px) { .region-grid { grid-template-columns:1fr 1fr; } }
+    .region-card {
+      background:#fff;
+      border:1px solid #f3e7d3;
+      border-radius:1rem;
+      padding:1.25rem 1.5rem;
+    }
   </style>
 
- <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://www.vilana-event.de/#organization",
-      "name":"Vilana Event & Catering",
-      "url":"https://www.vilana-event.de/",
-      "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
-      "sameAs":[
-        "https://www.instagram.com/vilana_catering/"
-      ]
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://www.vilana-event.de/#website",
-      "url":"https://www.vilana-event.de/",
-      "name":"Vilana Event & Catering",
-      "inLanguage":"de-DE",
-      "publisher":{"@id":"https://www.vilana-event.de/#organization"}
-    },
-    {
-      "@type":["LocalBusiness","Caterer"],
-      "@id":"https://www.vilana-event.de/#localbusiness",
-      "name":"Vilana Event & Catering",
-      "url":"https://www.vilana-event.de/",
-      "telephone":["+49 176 5777 5996","+49 176 4228 8707"],
-      "email":"v.s@vilana.info",
-      "priceRange":"€€€",
-      "keywords":[
-        "Partyservice",
-        "Catering",
-        "Fingerfood",
-        "Buffet",
-        "Servicepersonal",
-        "Geschirr",
-        "Gläser",
-        "Buffet-Equipment",
-        "Buffet-Aufbau"
-      ],
-      "address":{
-        "@type":"PostalAddress",
-        "streetAddress":"Osterstraße 28",
-        "postalCode":"31855",
-        "addressLocality":"Aerzen",
-        "addressRegion":"Niedersachsen",
-        "addressCountry":"DE"
+  <!-- =========================================================
+        JSON-LD (clean graph, no duplicate entities)
+        Organization / WebSite / LocalBusiness live on index.html
+        with @id "https://www.vilana-event.de/#vilana"
+        Here we only declare: WebPage + Service + FAQ + Breadcrumb
+        and reference the existing entities via @id
+  ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://www.vilana-event.de/partyservice.html#webpage",
+        "url":"https://www.vilana-event.de/partyservice.html",
+        "name":"Partyservice Weserbergland | Vilana Event & Catering",
+        "inLanguage":"de-DE",
+        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
+        "about":{"@id":"https://www.vilana-event.de/partyservice.html#service"},
+        "breadcrumb":{"@id":"https://www.vilana-event.de/partyservice.html#breadcrumb"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
+          "width":1600,
+          "height":900
+        }
       },
-      "geo":{
-        "@type":"GeoCoordinates",
-        "latitude":52.047847,
-        "longitude":9.263319
-      },
-      "hasMap":"https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
-      "serviceArea":{
-        "@type":"GeoCircle",
-        "geoMidpoint":{
-          "@type":"GeoCoordinates",
-          "latitude":52.047847,
-          "longitude":9.263319
+      {
+        "@type":"Service",
+        "@id":"https://www.vilana-event.de/partyservice.html#service",
+        "name":"Partyservice — Buffet, Fingerfood, Service & Equipment",
+        "serviceType":"Partyservice",
+        "category":"Catering & Partyservice",
+        "provider":{"@id":"https://www.vilana-event.de/#vilana"},
+        "url":"https://www.vilana-event.de/partyservice.html",
+        "inLanguage":"de-DE",
+        "description":"Partyservice mit Buffet, Fingerfood, Servicepersonal und Equipment. Lieferung und Aufbau im Landkreis Hameln-Pyrmont, Bad Pyrmont, Aerzen, Bad Münder, Hessisch Oldendorf, Coppenbrügge, Emmerthal sowie im gesamten Weserbergland — ab 20 Gästen.",
+        "areaServed":[
+          {"@type":"AdministrativeArea","name":"Landkreis Hameln-Pyrmont"},
+          {"@type":"AdministrativeArea","name":"Weserbergland"},
+          {"@type":"City","name":"Hameln"},
+          {"@type":"City","name":"Bad Pyrmont"},
+          {"@type":"City","name":"Aerzen"},
+          {"@type":"City","name":"Bad Münder"},
+          {"@type":"City","name":"Hessisch Oldendorf"},
+          {"@type":"City","name":"Coppenbrügge"},
+          {"@type":"City","name":"Emmerthal"},
+          {"@type":"City","name":"Salzhemmendorf"}
+        ],
+        "hasOfferCatalog":{
+          "@type":"OfferCatalog",
+          "name":"Partyservice-Leistungen",
+          "itemListElement":[
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Buffet (warm/kalt)"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fingerfood & Häppchen"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Servicepersonal"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Geschirr, Gläser & Besteck"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Stehtische & Buffet-Equipment"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lieferung & Aufbau"}}
+          ]
         },
-        "geoRadius":200000
-      },
-      "image":"https://www.vilana-event.de/images/anlass/partyservice-hero.webp",
-      "sameAs":[
-        "https://www.instagram.com/vilana_catering/"
-      ],
-      "areaServed":[
-        {"@type":"AdministrativeArea","name":"Niedersachsen"},
-        {"@type":"AdministrativeArea","name":"Nordrhein-Westfalen"},
-        {"@type":"City","name":"Hameln"},
-        {"@type":"City","name":"Hannover"},
-        {"@type":"City","name":"Bad Pyrmont"},
-        {"@type":"City","name":"Bielefeld"}
-      ]
-    },
-    {
-      "@type":"WebPage",
-      "@id":"https://www.vilana-event.de/partyservice.html#webpage",
-      "url":"https://www.vilana-event.de/partyservice.html",
-      "name":"Partyservice & Catering in Hameln | Vilana Event & Catering",
-      "inLanguage":"de-DE",
-      "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-      "about":{"@id":"https://www.vilana-event.de/partyservice.html#service"},
-      "breadcrumb":{"@id":"https://www.vilana-event.de/partyservice.html#breadcrumb"}
-    },
-    {
-      "@type":"Service",
-      "@id":"https://www.vilana-event.de/partyservice.html#service",
-      "name":"Partyservice in Hameln – Catering, Fingerfood & Buffet",
-      "serviceType":"Partyservice",
-      "category":"Catering & Partyservice",
-      "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-      "url":"https://www.vilana-event.de/partyservice.html",
-      "inLanguage":"de-DE",
-      "description":"Partyservice & Catering für Hochzeit, Geburtstag und Firmenfeier – Fingerfood, Buffet, Servicepersonal & Equipment in Hameln und im Radius bis ca. 200 km (Niedersachsen & NRW).",
-      "areaServed":{
-        "@type":"GeoCircle",
-        "geoMidpoint":{
-          "@type":"GeoCoordinates",
-          "latitude":52.047847,
-          "longitude":9.263319
-        },
-        "geoRadius":200000
-      },
-      "offers":{
-        "@type":"Offer",
-        "url":"https://www.vilana-event.de/contact.html",
-        "priceCurrency":"EUR",
-        "availability":"https://schema.org/InStock",
-        "description":"Angebot individuell nach Gästezahl, Menü und Serviceumfang."
-      }
-    },
-    {
-      "@type":"FAQPage",
-      "@id":"https://www.vilana-event.de/partyservice.html#faq",
-      "inLanguage":"de-DE",
-      "mainEntity":[
-        {
-          "@type":"Question",
-          "name":"Für welche Anlässe eignet sich Ihr Partyservice?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Wir begleiten Hochzeiten, Geburtstage und Firmenfeiern – vom Empfang mit Fingerfood bis zum Buffet mit Service und Equipment."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Liefern Sie nur in Hameln?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Wir starten aus Aerzen (Hameln-Pyrmont) und liefern im Radius bis ca. 200 km – Niedersachsen sowie Teile von NRW."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Was ist typischerweise im Catering enthalten?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Je nach Wunsch: Fingerfood, kalte/warme Buffets, Dessert, Lieferung & Aufbau. Optional: Servicepersonal, Geschirr, Gläser und Buffet-Equipment."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Wie früh sollte man anfragen?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Für kleinere Feiern oft 2–4 Wochen vorher, für Hochzeiten und beliebte Termine lieber 2–3 Monate im Voraus."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Gibt es vegetarische oder vegane Optionen?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Ja. Wir passen das Menü an Ihre Gäste an – inklusive vegetarischer und veganer Varianten."
+        "offers":{
+          "@type":"Offer",
+          "url":"https://www.vilana-event.de/contact.html",
+          "priceCurrency":"EUR",
+          "availability":"https://schema.org/InStock",
+          "description":"Preis auf Anfrage — individuelles Angebot je nach Gästezahl, Menü und Serviceumfang. Buchbar ab 20 Gästen.",
+          "eligibleQuantity":{
+            "@type":"QuantitativeValue",
+            "minValue":20,
+            "unitText":"Gäste"
           }
         }
-      ]
-    },
-    {
-      "@type":"BreadcrumbList",
-      "@id":"https://www.vilana-event.de/partyservice.html#breadcrumb",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Start","item":"https://www.vilana-event.de/"},
-        {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/partyservice.html"}
-      ]
-    }
-  ]
-}
-</script>
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://www.vilana-event.de/partyservice.html#faq",
+        "inLanguage":"de-DE",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Was unterscheidet einen Partyservice von einem klassischen Catering?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ein Partyservice liefert nicht nur Speisen, sondern bringt auf Wunsch auch Buffet-Aufbau, Geschirr, Gläser, Stehtische und geschultes Servicepersonal mit. Sie kümmern sich um Ihre Gäste — wir um alles drumherum."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"In welchen Städten im Landkreis Hameln-Pyrmont sind Sie aktiv?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Unser Standort liegt in Aerzen, nur ca. 7 km von Hameln entfernt. Wir betreuen Veranstaltungen in Hameln, Bad Pyrmont, Hessisch Oldendorf, Coppenbrügge, Emmerthal, Bad Münder, Salzhemmendorf und im gesamten Weserbergland."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Ab wie vielen Gästen ist ein Partyservice buchbar?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Wir arbeiten ab 20 Gästen — vom kleinen Familienempfang bis zur Hochzeit mit über 200 Personen. Für kleinere Runden empfehlen wir Abhol-Pakete."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Wie weit fahren Sie für einen Partyservice-Auftrag?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Standard-Liefergebiet ist das Weserbergland und der Radius bis ca. 200 km — Niedersachsen und angrenzende Teile von NRW. Anfahrtspauschalen weisen wir transparent im Angebot aus."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Welches Equipment können Sie für die Veranstaltung mitbringen?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Auf Wunsch komplette Buffet-Ausstattung: Chafing Dishes, Thermoboxen, Stehtische, Tischwäsche, Geschirr, Besteck und Gläser. Auch Bar-Setup und Theken sind möglich."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Was kostet der Partyservice?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Preis auf Anfrage. Jede Veranstaltung wird individuell kalkuliert nach Gästezahl, Menü, Serviceumfang, Equipment und Anfahrt. Sie erhalten ein verbindliches Festpreis-Angebot innerhalb von 24 Stunden."
+            }
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://www.vilana-event.de/partyservice.html#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Start","item":"https://www.vilana-event.de/"},
+          {"@type":"ListItem","position":2,"name":"Partyservice","item":"https://www.vilana-event.de/partyservice.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 
@@ -304,7 +301,7 @@
   </a>
 
   <!-- =========================================================
-        HEADER (Design unchanged, only a11y improvement)
+        HEADER
   ========================================================== -->
   <header class="bg-white shadow-md relative">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -344,14 +341,14 @@
              hreflang="ru-RU"
              aria-label="Russische Version">RU</a>
 
-          <!-- Accessibility: better contrast + focus ring, design stays the same -->
+          <!-- A11y fix: WCAG-compliant contrast (was bg-black/40 text-gray-200 on white = ~2:1) -->
           <button
             id="menuToggle"
             type="button"
             aria-label="Menü öffnen"
             aria-controls="mobileMenu"
             aria-expanded="false"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-white text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-700"
           >
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -378,50 +375,61 @@
   </header>
 
   <main id="main">
-<!-- HERO -->
-<section class="hero" aria-label="Partyservice &amp; Catering">
-  <div class="hero-media">
-    <picture>
-      <source media="(max-width: 640px)" srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
-      <source srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
-      <img src="/images/anlass/partyservice-hero.webp"
-        alt="Partyservice &amp; Catering – Buffet und Fingerfood von Vilana Event &amp; Catering" width="1600"
-        height="900" loading="eager" decoding="async" fetchpriority="high" style="width:100%;height:auto;" />
-    </picture>
-  </div>
+    <!-- =========================================================
+          HERO  (repositioned: Region instead of "in Hameln")
+    ========================================================== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-media">
+        <picture>
+          <source media="(max-width: 640px)" srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
+          <source srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
+          <img src="/images/anlass/partyservice-hero.webp"
+               alt="Partyservice Weserbergland — Buffet und Fingerfood von Vilana Event &amp; Catering"
+               width="1600" height="900"
+               loading="eager" decoding="async" fetchpriority="high"
+               style="width:100%;height:auto;" />
+        </picture>
+      </div>
 
-  <div class="hero-below container mx-auto px-4">
-    <h1 class="hero-title">Partyservice &amp; Catering in Hameln</h1>
-    <p class="hero-subtitle">
-      Für Events in Hannover, Bielefeld &amp; im Umkreis bis 200 km – ab 20 Personen.
-      Fingerfood, Buffets und zuverlässiger Service – passend zu Ihrem Anlass.
-    </p>
-    <div class="hero-cta">
-      <a href="/contact.html" class="btn">Jetzt anfragen</a>
-    </div>
-  </div>
-</section>
-
+      <div class="hero-below container mx-auto px-4">
+        <h1 id="hero-heading" class="hero-title">
+          Partyservice im Weserbergland &amp; Hameln-Pyrmont
+        </h1>
+        <p class="hero-subtitle">
+          Buffet, Fingerfood und Servicepersonal für Hochzeit, Geburtstag und Firmenfeier —
+          geliefert in Bad Pyrmont, Aerzen, Hessisch Oldendorf, Coppenbrügge, Emmerthal und im
+          gesamten Landkreis Hameln-Pyrmont. Ab 20 Gästen, Preis auf Anfrage.
+        </p>
+        <p class="hero-subtitle" style="margin-top:.5rem">
+          Mit Lieferung, Aufbau und kompletter Buffet-Ausstattung — Sie konzentrieren sich auf Ihre Gäste,
+          den Rest übernehmen wir.
+        </p>
+        <div class="hero-cta">
+          <a href="/contact.html?city=Hameln-Pyrmont&amp;service=Partyservice" class="btn">Jetzt anfragen</a>
+        </div>
+      </div>
+    </section>
 
     <!-- =========================================================
-          SERVICES (Alt texts optimized)
+          SERVICES (Anlass)
     ========================================================== -->
-    <section id="anlass" class="services">
+    <section id="anlass" class="services" aria-labelledby="anlass-heading">
       <div class="container mx-auto px-4">
-        <h2 class="section-title">Beliebte Anlässe</h2>
-        <p class="section-subtitle">Drei häufige Formate – jeweils mit passenden Catering-Ideen und Ablauf.</p>
+        <h2 id="anlass-heading" class="section-title">Beliebte Anlässe für unseren Partyservice</h2>
+        <p class="section-subtitle">Drei häufige Formate – jeweils mit passenden Buffet-Konzepten und Service-Optionen.</p>
 
         <div class="services-grid">
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/hochzeit-hero.webp"
-                   alt="Hochzeitscatering in Hameln – stilvolles Buffet &amp; Fingerfood von Vilana"
+                   alt="Hochzeit-Partyservice im Weserbergland — Sektempfang, Fingerfood, Buffet"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
-              <h3 class="service-name">Hochzeit Catering</h3>
+              <h3 class="service-name">Hochzeit Partyservice</h3>
               <p class="service-description">
-                Sektempfang, Fingerfood und Buffet – elegant geplant, sauber umgesetzt. Auf Wunsch mit Servicepersonal, Geschirr, Gläsern und Buffet-Equipment.
+                Sektempfang, Fingerfood und Buffet — elegant geplant, sauber umgesetzt. Auf Wunsch mit
+                Servicepersonal, Geschirr, Gläsern und kompletter Buffet-Ausstattung.
               </p>
               <div class="mt-5">
                 <a class="btn" href="/anlass/hochzeit-catering.html">Mehr zur Hochzeit</a>
@@ -432,13 +440,14 @@
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/geburtstag-hero.webp"
-                   alt="Geburtstagscatering – Buffet &amp; warme Speisen, Partyservice in Hameln-Pyrmont"
+                   alt="Geburtstag-Partyservice in Hameln-Pyrmont — Buffet, warme Speisen, Desserts"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
-              <h3 class="service-name">Geburtstag Catering</h3>
+              <h3 class="service-name">Geburtstag Partyservice</h3>
               <p class="service-description">
-                Von entspanntem Buffet bis Party-Setup: Snacks, warme Speisen und Desserts – abgestimmt auf Gästezahl, Location und Stimmung.
+                Vom entspannten Buffet bis zum Party-Setup: Snacks, warme Speisen und Desserts —
+                abgestimmt auf Gästezahl, Location und Stimmung.
               </p>
               <div class="mt-5">
                 <a class="btn" href="/anlass/geburtstag-catering.html">Mehr zum Geburtstag</a>
@@ -449,13 +458,14 @@
           <article class="service-card reveal">
             <div class="service-media">
               <img src="/images/anlass/firmenfeier-hero.webp"
-                   alt="Business-Catering für Firmenfeiern in Niedersachsen – Fingerfood &amp; Buffet"
+                   alt="Firmenfeier-Partyservice im Weserbergland — Empfang, Buffet, Service"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
-              <h3 class="service-name">Firmenfeier Catering</h3>
+              <h3 class="service-name">Firmenfeier Partyservice</h3>
               <p class="service-description">
-                Empfang, Buffet oder Konferenz-Catering: professionell, pünktlich und planbar – optional mit Personal, Geschirr, Gläsern und Equipment.
+                Empfang, Buffet oder Konferenz-Catering: professionell, pünktlich und planbar —
+                optional mit Personal, Geschirr, Gläsern und Equipment.
               </p>
               <div class="mt-5">
                 <a class="btn" href="/anlass/firmenfeier-catering.html">Mehr zur Firmenfeier</a>
@@ -464,103 +474,224 @@
           </article>
         </div>
 
+<!-- =========================================================
+      SEO Content Block (~400 words, unique vs index.html)
+========================================================== -->
+<div class="mt-10 bg-white/70 rounded-2xl border border-amber-100 p-6 md:p-8">
+  <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+    Was ein guter Partyservice im Weserbergland leistet
+  </h2>
+
+  <p class="text-gray-700 leading-relaxed">
+    Ein <strong>Partyservice</strong> ist mehr als ein Lieferdienst für Buffets.
+    Während ein klassisches Catering im Kern Speisen liefert, geht ein guter
+    Partyservice deutlich weiter: Er unterstützt Sie bei der Auswahl des passenden
+    Menüs, sorgt für eine frische Zubereitung, einen sauberen Buffet-Aufbau und
+    eine ansprechende Präsentation vor Ort. Auf Wunsch übernehmen wir zusätzlich
+    auch Servicepersonal, Geschirr, Gläser und passendes Equipment. So bleiben Sie
+    als Gastgeber entspannter und können sich stärker auf Ihre Gäste konzentrieren.
+  </p>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    <strong>Vilana Event &amp; Catering</strong> sitzt in Aerzen, mitten im Landkreis
+    Hameln-Pyrmont und am Rand des Weserberglandes. Diese Lage ist ein klarer Vorteil
+    für Veranstaltungen in der Region: Bad Pyrmont, Hessisch Oldendorf, Coppenbrügge,
+    Emmerthal, Bad Münder und Salzhemmendorf erreichen wir in der Regel in kurzer Zeit.
+    Das bedeutet kürzere Anfahrten, frischere Speisen am Buffet und mehr Flexibilität,
+    wenn vor Ort noch etwas abgestimmt oder angepasst werden muss.
+  </p>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    Unsere Küche verbindet klassische deutsche und europäische Gerichte mit russischen
+    und osteuropäischen Spezialitäten. Besonders bei mehrsprachigen Familienfeiern,
+    Hochzeiten, Geburtstagen oder internationalen Firmenevents im Weserbergland schätzen
+    Kunden, dass wir auf Deutsch und Russisch kommunizieren können — von der ersten
+    Anfrage über die Menüabstimmung bis zum Service vor Ort.
+  </p>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    <strong>Was Sie bei uns als Standard bekommen:</strong> frisch zubereitete Buffets,
+    pünktliche Anlieferung, sauberer Aufbau, ansprechende Präsentation und transparente
+    Kommunikation. <strong>Auf Wunsch und nach Verfügbarkeit zusätzlich:</strong>
+    Chafing Dishes, Thermoboxen, Geschirr, Gläser, Stehtische, Tischwäsche und
+    geschultes Servicepersonal.
+  </p>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    Vegetarische und vegane Varianten sind nach Absprache möglich. Bei Allergien oder
+    Unverträglichkeiten nennen Sie uns diese bitte direkt bei der Anfrage, damit wir die
+    Möglichkeiten sorgfältig prüfen und transparent mit Ihnen abstimmen können.
+  </p>
+
+  <p class="mt-4 text-gray-700 leading-relaxed">
+    Sie suchen Inspiration für Ihr Buffet? Werfen Sie einen Blick auf unser
+    <a href="/menu.html" class="underline text-amber-800 hover:text-amber-900">Menü</a> oder
+    sehen Sie sich unsere Referenzen in der
+    <a href="/galerie.html" class="underline text-amber-800 hover:text-amber-900">Galerie</a> an.
+  </p>
+</div>
+
         <!-- =========================================================
-              SEO Content Block (Information Gain)
-              - Improves relevance for Hameln/Hannover/Bielefeld + 200km radius
-              - No layout changes, same neutral card style
+              Workflow (4 steps, no JS)
         ========================================================== -->
-        <div class="mt-10 bg-white/70 rounded-2xl border border-amber-100 p-6 md:p-8">
-          <h2 class="text-2xl md:text-3xl font-semibold mb-3">
-            So funktioniert Ihr Catering mit Vilana – Ablauf, Qualität &amp; Service
+        <div class="mt-10" aria-labelledby="workflow-heading">
+          <h2 id="workflow-heading" class="text-2xl md:text-3xl font-semibold mb-6 text-center">
+            So läuft Ihre Anfrage ab
           </h2>
 
-          <p class="text-gray-700 leading-relaxed">
-            <strong>Vilana Event &amp; Catering</strong> steht für stilvollen Partyservice mit klarer Organisation und einem Anspruch,
-            der über „nur Essen liefern“ hinausgeht. Unser Fokus liegt in Hameln-Pyrmont – zugleich betreuen wir
-            Events in Hannover, Bielefeld und im Umkreis bis ca. 200 km (Niedersachsen &amp; NRW). Ob Hochzeit,
-            Geburtstag oder Firmenfeier: Wir planen Ihr Buffet so, dass es geschmacklich überzeugt und vor Ort
-            reibungslos funktioniert.
-          </p>
+          <ol class="workflow-grid list-none p-0">
+            <li class="workflow-step">
+              <span class="workflow-num">Schritt 1</span>
+              <h3 class="font-semibold text-lg">Anfrage senden</h3>
+              <p class="mt-2 text-gray-700">
+                Datum, Ort, Gästezahl (ab 20 Personen) und Wunschrichtung — kurz über das Formular oder telefonisch.
+              </p>
+            </li>
+            <li class="workflow-step">
+              <span class="workflow-num">Schritt 2</span>
+              <h3 class="font-semibold text-lg">Beratung</h3>
+              <p class="mt-2 text-gray-700">
+                Persönliches Gespräch mit Menüvorschlägen, Portionsempfehlungen und sinnvollen Kombinationen.
+              </p>
+            </li>
+            <li class="workflow-step">
+              <span class="workflow-num">Schritt 3</span>
+              <h3 class="font-semibold text-lg">Festpreis-Angebot</h3>
+              <p class="mt-2 text-gray-700">
+                Verbindliches Angebot innerhalb von 24 Stunden — transparent nach Menü, Service und Anfahrt.
+              </p>
+            </li>
+            <li class="workflow-step">
+              <span class="workflow-num">Schritt 4</span>
+              <h3 class="font-semibold text-lg">Lieferung &amp; Service</h3>
+              <p class="mt-2 text-gray-700">
+                Pünktliche Anlieferung, sauberer Buffet-Aufbau, frische Präsentation — und auf Wunsch Servicepersonal.
+              </p>
+            </li>
+          </ol>
+        </div>
 
-          <p class="mt-4 text-gray-700 leading-relaxed">
-            <strong>So läuft die Anfrage ab:</strong> Sie senden uns Datum, Ort, Gästezahl (ab 20 Personen) und
-            Ihre Wunschrichtung (Fingerfood, Buffet, warme Speisen). Danach erhalten Sie eine strukturierte Rückmeldung
-            mit Menüvorschlägen, Portionsempfehlungen und einem transparenten Angebot. Auf Wunsch beraten wir zu
-            Aufbauzeiten, Ablauf und sinnvollen Kombinationen – damit am Eventtag alles sitzt.
-          </p>
+        <!-- =========================================================
+              Region Block (Landkreis Hameln-Pyrmont focus)
+        ========================================================== -->
+        <div class="mt-12" aria-labelledby="region-heading">
+          <h2 id="region-heading" class="text-2xl md:text-3xl font-semibold mb-6 text-center">
+            Liefergebiet im Landkreis Hameln-Pyrmont &amp; Weserbergland
+          </h2>
 
-          <p class="mt-4 text-gray-700 leading-relaxed">
-            <strong>Leistung &amp; Optionen:</strong> Wir liefern pünktlich, bauen das Buffet sauber auf und achten auf
-            eine ansprechende Präsentation. Je nach Format sind Servicepersonal, Geschirr, Gläser und Buffet-Equipment
-            möglich. Für Business-Catering bieten wir planbare Lösungen, die in Zeitpläne von Meetings oder Firmenevents passen.
-            Vegetarische und vegane Varianten integrieren wir gerne.
-          </p>
+          <div class="region-grid">
+            <div class="region-card">
+              <h3 class="text-xl font-semibold mb-2">Landkreis Hameln-Pyrmont</h3>
+              <p class="text-gray-700">
+                Wir liefern und betreuen Veranstaltungen in Hameln, Bad Pyrmont, Aerzen,
+                Hessisch Oldendorf, Coppenbrügge, Emmerthal, Bad Münder und Salzhemmendorf —
+                inklusive aller umliegenden Ortsteile. Standort Aerzen, Anfahrtszeit zu den
+                meisten Orten unter 30 Minuten.
+              </p>
+            </div>
+
+            <div class="region-card">
+              <h3 class="text-xl font-semibold mb-2">Weserbergland &amp; weitere Regionen</h3>
+              <p class="text-gray-700">
+                Über den Landkreis hinaus betreuen wir das Weserbergland sowie auf Anfrage
+                Hannover, Bielefeld, Paderborn, Minden und Detmold. Standard-Liefergebiet
+                bis ca. 200 km — Anfahrtspauschalen weisen wir transparent im Angebot aus.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="text-center mt-10">
-          <a href="/contact.html" class="btn">Anfrage senden</a>
+          <a href="/contact.html?city=Hameln-Pyrmont&amp;service=Partyservice" class="btn">Anfrage senden</a>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-          FAQ
+          FAQ (6 questions, unique vs index.html)
     ========================================================== -->
-    <section id="faq" class="py-14">
+    <section id="faq" class="py-14" aria-labelledby="faq-heading">
       <div class="container mx-auto px-4">
-        <h2 class="section-title">FAQ – Partyservice</h2>
-        <p class="section-subtitle">Kurz zu Ablauf, Umfang, Vorlaufzeit und Optionen.</p>
+        <h2 id="faq-heading" class="section-title">FAQ — Partyservice</h2>
+        <p class="section-subtitle">Antworten zu Ablauf, Region, Equipment und Preisgestaltung.</p>
 
         <div class="mt-8 space-y-4">
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Was umfasst Ihr Partyservice?</summary>
-            <p class="mt-3">Je nach Wunsch: Fingerfood, kalte/warme Buffets, Dessert, Lieferung &amp; Aufbau. Optional: Servicepersonal, Geschirr, Gläser und Buffet-Equipment.</p>
+            <summary class="cursor-pointer font-semibold">
+              Was unterscheidet einen Partyservice von einem klassischen Catering?
+            </summary>
+            <p class="mt-3">
+              Ein Partyservice liefert nicht nur Speisen, sondern bringt auf Wunsch auch
+              Buffet-Aufbau, Geschirr, Gläser, Stehtische und geschultes Servicepersonal mit.
+              Sie kümmern sich um Ihre Gäste — wir um alles drumherum.
+            </p>
           </details>
 
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Für welche Anlässe bieten Sie Catering an?</summary>
-            <p class="mt-3">Am häufigsten: Hochzeit, Geburtstag und Firmenfeier. Weitere Formate sind möglich – wir beraten Sie passend zur Location und Gästezahl.</p>
+            <summary class="cursor-pointer font-semibold">
+              In welchen Städten im Landkreis Hameln-Pyrmont sind Sie aktiv?
+            </summary>
+            <p class="mt-3">
+              Unser Standort liegt in Aerzen, nur ca. 7 km von Hameln entfernt. Wir betreuen
+              Veranstaltungen in Hameln, Bad Pyrmont, Hessisch Oldendorf, Coppenbrügge,
+              Emmerthal, Bad Münder, Salzhemmendorf und im gesamten Weserbergland.
+            </p>
           </details>
 
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Wie früh sollte man anfragen?</summary>
-            <p class="mt-3">Für kleinere Feiern oft 2–4 Wochen vorher. Für Hochzeiten und beliebte Termine empfehlen wir 2–3 Monate Vorlauf.</p>
+            <summary class="cursor-pointer font-semibold">
+              Ab wie vielen Gästen ist ein Partyservice buchbar?
+            </summary>
+            <p class="mt-3">
+              Wir arbeiten <strong>ab 20 Gästen</strong> — vom kleinen Familienempfang bis zur
+              Hochzeit mit über 200 Personen. Für kleinere Runden empfehlen wir Abhol-Pakete.
+            </p>
           </details>
 
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Gibt es vegetarische/vegane Optionen?</summary>
-            <p class="mt-3">Ja. Wir passen Menü und Buffets an Ihre Gäste an – inklusive vegetarischer und veganer Varianten.</p>
+            <summary class="cursor-pointer font-semibold">
+              Wie weit fahren Sie für einen Partyservice-Auftrag?
+            </summary>
+            <p class="mt-3">
+              Standard-Liefergebiet ist das Weserbergland und der Radius bis ca. 200 km —
+              Niedersachsen und angrenzende Teile von NRW. Anfahrtspauschalen weisen wir
+              transparent im Angebot aus.
+            </p>
           </details>
 
           <details class="bg-white rounded-2xl border border-amber-100 p-5">
-            <summary class="cursor-pointer font-semibold">Wie sende ich am schnellsten eine Anfrage?</summary>
-            <p class="mt-3">Über das Formular auf der Website oder telefonisch – wir melden uns zeitnah mit Rückfragen und einem Vorschlag.</p>
+            <summary class="cursor-pointer font-semibold">
+              Welches Equipment können Sie für die Veranstaltung mitbringen?
+            </summary>
+            <p class="mt-3">
+              Auf Wunsch komplette Buffet-Ausstattung: Chafing Dishes, Thermoboxen, Stehtische,
+              Tischwäsche, Geschirr, Besteck und Gläser. Auch Bar-Setup und Theken sind möglich.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-amber-100 p-5">
+            <summary class="cursor-pointer font-semibold">
+              Was kostet der Partyservice?
+            </summary>
+            <p class="mt-3">
+              <strong>Preis auf Anfrage.</strong> Jede Veranstaltung wird individuell kalkuliert
+              nach Gästezahl, Menü, Serviceumfang, Equipment und Anfahrt. Sie erhalten ein
+              verbindliches Festpreis-Angebot innerhalb von 24 Stunden.
+            </p>
           </details>
         </div>
 
         <div class="text-center mt-10">
-          <a href="/contact.html" class="btn">Jetzt anfragen</a>
+          <a href="/contact.html?city=Hameln-Pyrmont&amp;service=Partyservice" class="btn">Jetzt anfragen</a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- =========================================================
-        FOOTER (unchanged)
+        FOOTER  (microdata duplicate removed — JSON-LD covers it)
   ========================================================== -->
-  <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
-    <meta itemprop="name" content="Vilana Event &amp; Catering">
-    <meta itemprop="telephone" content="+49 176 5777 5996">
-    <meta itemprop="email" content="v.s@vilana.info">
-    <meta itemprop="url" content="https://www.vilana-event.de/">
-    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-      <meta itemprop="streetAddress" content="Osterstraße 28">
-      <meta itemprop="addressLocality" content="Aerzen">
-      <meta itemprop="postalCode" content="31855">
-      <meta itemprop="addressRegion" content="Niedersachsen">
-      <meta itemprop="addressCountry" content="DE">
-    </div>
-
+  <footer class="footer-premium">
     <div class="footer-inner">
       <div class="footer-deco-line"></div>
 
@@ -610,18 +741,18 @@
 
         <div class="footer-col">
           <h3 class="footer-col-title">Servicegebiet</h3>
-          <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+          <p class="footer-regions-label">Partyservice &amp; Catering in:</p>
           <ul class="footer-regions">
-            <li>Hameln</li>
-            <li>Hannover</li>
+            <li>Hameln-Pyrmont</li>
             <li>Bad Pyrmont</li>
+            <li>Aerzen</li>
+            <li>Hessisch Oldendorf</li>
+            <li>Coppenbrügge</li>
+            <li>Emmerthal</li>
+            <li>Bad Münder</li>
+            <li>Hannover</li>
             <li>Bielefeld</li>
-            <li>Paderborn</li>
-            <li>Minden</li>
-            <li>Detmold</li>
-            <li>Münster</li>
-            <li>Braunschweig</li>
-            <li>Wunstorf</li>
+            <li>Weserbergland</li>
           </ul>
           <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
         </div>
