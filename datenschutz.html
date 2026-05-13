@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Datenschutz | Vilana Event &amp; Catering</title>
-  <meta name="description" content="Datenschutzerklärung von Vilana Event &amp; Catering: Hosting (GitHub Pages), Domain (IONOS), Kontaktformular (EmailJS) und Analytik (Google – nur mit Einwilligung)." />
+  <meta name="description" content="Datenschutzerklärung von Vilana Event &amp; Catering: Hosting (GitHub Pages), Domain (IONOS), Kontaktformular (EmailJS), Google Fonts, externe Links und Google Analytics nur mit Einwilligung." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0e0e0e" />
   <link rel="canonical" href="https://www.vilana-event.de/datenschutz.html" />
@@ -19,7 +19,7 @@
   <!-- Hero/Logo preload -->
   <link rel="preload" as="image" href="/images/vilana_logo.webp" type="image/webp" fetchpriority="high" />
 
-  <!-- Fonts (perf) -->
+  <!-- Fonts (external Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" crossorigin
@@ -73,7 +73,6 @@
 
     /* =========================================================
        LEGAL TYPOGRAPHY (AGB / Datenschutz / Impressum)
-       - visually structured, NOT heavy
     ========================================================= */
     .legal {
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
@@ -125,7 +124,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-YW71FCW4FJ');
+    gtag('config', 'G-YW71FCW4FJ', {
+      anonymize_ip: true
+    });
   </script>
 </head>
 
@@ -151,6 +152,7 @@
         <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
           <a href="/#home" class="text-gray-800 hover:text-amber-800">Startseite</a>
           <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
+          <a href="/partyservice.html" class="text-gray-800 hover:text-amber-800">Partyservice</a>
           <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
           <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
           <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
@@ -173,6 +175,7 @@
          role="menu" aria-label="Mobiles Menü">
       <a href="/#home" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
       <a href="/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Leistungen</a>
+      <a href="/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Partyservice</a>
       <a href="/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Menü</a>
       <a href="/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Galerie</a>
       <a href="/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Über uns</a>
@@ -186,7 +189,7 @@
   <main id="content" class="container mx-auto px-4 py-12 max-w-3xl">
     <article class="legal prose prose-gray max-w-none">
       <h1>Datenschutzerklärung</h1>
-      <p class="text-sm text-gray-600">Stand: 18.01.2026</p>
+      <p class="text-sm text-gray-600">Stand: 13.05.2026</p>
 
       <p>
         Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten personenbezogene Daten ausschließlich nach den Vorgaben der
@@ -202,10 +205,16 @@
         <strong>Vilana Event &amp; Catering</strong><br>
         Inhaberin: Viktoria Ruf<br>
         Osterstraße 28, 31855 Aerzen, Deutschland<br>
+        Telefon: <a href="tel:+4917657775996">+49 176 5777 5996</a><br>
         E-Mail: <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>
       </p>
 
-      <h2>2. Zugriffsdaten / Server-Logfiles</h2>
+      <h2>2. Datenschutzbeauftragter</h2>
+      <p>
+        Wir sind gesetzlich nicht zur Bestellung eines Datenschutzbeauftragten verpflichtet (§&nbsp;38 BDSG).
+      </p>
+
+      <h2>3. Zugriffsdaten / Server-Logfiles</h2>
       <p>
         Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in sogenannten Server-Logfiles erhoben und gespeichert.
         Dies kann insbesondere folgende Daten umfassen: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite/URL, Referrer-URL, Browser/Device,
@@ -213,80 +222,165 @@
       </p>
       <p>
         Die Verarbeitung erfolgt zur technischen Bereitstellung der Website, zur Gewährleistung von Stabilität und Sicherheit sowie zur Abwehr
-        von Missbrauch (z. B. Angriffe).
+        von Missbrauch, z. B. Angriffen auf unsere Website.
       </p>
       <p>
-        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an sicherem und störungsfreiem Betrieb).
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        (berechtigtes Interesse an sicherem und störungsfreiem Betrieb der Website).
+      </p>
+      <p>
+        <strong>Speicherdauer:</strong> Server-Logfiles werden grundsätzlich maximal 30 Tage gespeichert und anschließend gelöscht,
+        sofern keine längere Speicherung im Einzelfall erforderlich ist, etwa zur Aufklärung oder Abwehr von Angriffen oder Missbrauch.
       </p>
 
-      <h2>3. Hosting (GitHub Pages)</h2>
+      <h2>4. Hosting (GitHub Pages)</h2>
       <p>
-        Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt (Dienstanbieter: GitHub, Inc.). Im Rahmen der Bereitstellung können die unter
-        Ziffer 2 genannten Zugriffsdaten verarbeitet werden.
+        Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt. Anbieter ist GitHub, Inc.,
+        88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.
+        Im Rahmen der Bereitstellung können die unter Ziffer 3 genannten Zugriffsdaten verarbeitet werden.
       </p>
       <p>
         <strong>Drittlandübermittlung:</strong> GitHub ist ein Anbieter mit Sitz in den USA. Eine Verarbeitung personenbezogener Daten in einem Drittland
-        (insbesondere USA) kann daher nicht ausgeschlossen werden. Es kommen – soweit erforderlich – geeignete Garantien (z. B. EU-Standardvertragsklauseln)
-        in Betracht.
+        (insbesondere USA) kann daher stattfinden. Soweit erforderlich, werden geeignete Garantien, insbesondere
+        EU-Standardvertragsklauseln, eingesetzt.
       </p>
       <p>
-        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO.
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        (berechtigtes Interesse an der sicheren, stabilen und effizienten Bereitstellung unserer Website).
       </p>
       <p>
-        Weitere Informationen: Datenschutzhinweise des Anbieters (GitHub).
+        Weitere Informationen finden Sie in den Datenschutzhinweisen von GitHub:
+        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement"
+           target="_blank" rel="noopener noreferrer">
+          https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement
+        </a>.
       </p>
 
-      <h2>4. Domain / DNS (IONOS)</h2>
+      <h2>5. Domain / DNS (IONOS)</h2>
       <p>
-        Die Domain dieser Website wird über <strong>IONOS SE</strong> verwaltet. Im Rahmen der Domain-Registrierung und Verwaltung können personenbezogene
-        Daten verarbeitet werden (z. B. Kontaktdaten des Vertragsinhabers, technische Daten zur Domainverwaltung).
+        Die Domain dieser Website wird über <strong>IONOS SE</strong> verwaltet.
+        Im Rahmen der Domain-Registrierung, DNS-Verwaltung und technischen Administration können personenbezogene Daten verarbeitet werden,
+        insbesondere Vertragsdaten, Kontaktdaten sowie technische Daten zur Domainverwaltung.
       </p>
       <p>
-        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (betriebsnotwendige Administration) sowie – soweit einschlägig –
+        Soweit IONOS personenbezogene Daten in unserem Auftrag verarbeitet, erfolgt dies auf Grundlage eines
+        Vertrages zur Auftragsverarbeitung gemäß Art.&nbsp;28 DSGVO.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        (betriebsnotwendige Administration und sichere Bereitstellung der Domain) sowie – soweit einschlägig –
         Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragsabwicklung).
       </p>
       <p>
-        Weitere Informationen: Datenschutzhinweise des Anbieters (IONOS).
+        Weitere Informationen finden Sie in den Datenschutzhinweisen von IONOS:
+        <a href="https://www.ionos.de/terms-gtc/datenschutzerklaerung/"
+           target="_blank" rel="noopener noreferrer">
+          https://www.ionos.de/terms-gtc/datenschutzerklaerung/
+        </a>
+        sowie in der Vereinbarung zur Auftragsverarbeitung:
+        <a href="https://www.ionos.de/terms-gtc/avv/"
+           target="_blank" rel="noopener noreferrer">
+          https://www.ionos.de/terms-gtc/avv/
+        </a>.
       </p>
 
-      <h2>5. Kontaktaufnahme</h2>
+      <h2>6. Kontaktaufnahme</h2>
       <p>
-        Wenn Sie uns per E-Mail kontaktieren oder das Kontaktformular nutzen, verarbeiten wir die von Ihnen mitgeteilten Daten (z. B. Name, E-Mail-Adresse,
-        Inhalt Ihrer Nachricht sowie ggf. Telefonnummer), um Ihre Anfrage zu bearbeiten und zu beantworten.
+        Wenn Sie uns per E-Mail, Telefon oder über das Kontaktformular kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten
+        (z. B. Name, E-Mail-Adresse, Telefonnummer, Inhalt Ihrer Nachricht sowie ggf. Angaben zur Veranstaltung),
+        um Ihre Anfrage zu bearbeiten und zu beantworten.
       </p>
       <p>
-        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (vorvertragliche/vertragliche Kommunikation) sowie Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO
+        (vorvertragliche/vertragliche Kommunikation) sowie Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
         (allgemeine Kommunikation und organisatorische Abwicklung).
       </p>
       <p>
-        <strong>Speicherdauer:</strong> Wir löschen Anfragen grundsätzlich nach Abschluss der Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten
-        entgegenstehen. In der Regel erfolgt die Löschung spätestens nach <strong>6 Monaten</strong>.
+        <strong>Speicherdauer:</strong> Wir löschen Anfragen grundsätzlich nach Abschluss der Bearbeitung, sofern keine gesetzlichen
+        Aufbewahrungspflichten entgegenstehen. In der Regel erfolgt die Löschung spätestens nach <strong>6 Monaten</strong>.
+        Wenn aus der Anfrage ein Vertragsverhältnis entsteht, können längere gesetzliche Aufbewahrungsfristen gelten.
       </p>
 
-      <h3>5.1 Versand über EmailJS</h3>
+      <h3>6.1 Kontaktformular und Versand über EmailJS</h3>
       <p>
-        Für die technische Übermittlung von Formularnachrichten nutzen wir <strong>EmailJS</strong> als Dienstleister. Dabei werden die im Formular
-        eingegebenen Inhalte (Name, E-Mail-Adresse, Nachricht sowie technische Metadaten) zur Zustellung verarbeitet.
+        Für die technische Übermittlung von Formularnachrichten nutzen wir <strong>EmailJS</strong>. Anbieter ist EmailJS Pte. Ltd.
+        EmailJS verarbeitet die über das Kontaktformular eingegebenen Daten in unserem Auftrag, um Ihre Anfrage an unsere E-Mail-Adresse weiterzuleiten.
       </p>
       <p>
-        <strong>Drittlandübermittlung:</strong> Je nach Infrastruktur des Dienstleisters kann eine Verarbeitung in Drittländern nicht ausgeschlossen werden.
-        Soweit erforderlich, werden geeignete Garantien (z. B. EU-Standardvertragsklauseln) eingesetzt.
+        Dabei können insbesondere folgende Daten verarbeitet werden: Name, E-Mail-Adresse, Telefonnummer, Inhalt der Nachricht,
+        Angaben zur Veranstaltung sowie technische Metadaten der Übermittlung.
       </p>
       <p>
-        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO.
+        <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO,
+        sofern Ihre Anfrage mit vorvertraglichen Maßnahmen oder einem bestehenden Vertragsverhältnis zusammenhängt.
+        In allen übrigen Fällen erfolgt die Verarbeitung auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO aufgrund
+        unseres berechtigten Interesses an einer effizienten Bearbeitung von Anfragen.
       </p>
       <p>
-        Weitere Informationen: Datenschutzhinweise des Dienstleisters (EmailJS).
+        Mit EmailJS besteht ein Data Processing Agreement / Auftragsverarbeitungsvertrag gemäß Art.&nbsp;28 DSGVO.
+      </p>
+      <p>
+        <strong>Drittlandübermittlung:</strong> EmailJS Pte. Ltd. hat seinen Sitz in Singapur.
+        Bei der Nutzung von EmailJS erfolgt eine Übermittlung personenbezogener Daten in Drittländer außerhalb der Europäischen Union
+        bzw. des Europäischen Wirtschaftsraums. Eine Übermittlung in die USA ist nach dem Data Processing Agreement von EmailJS vorgesehen.
+      </p>
+      <p>
+        Für Singapur besteht derzeit kein Angemessenheitsbeschluss der Europäischen Kommission.
+        Die Übermittlung personenbezogener Daten in Drittländer erfolgt daher auf Grundlage geeigneter Garantien,
+        insbesondere der EU-Standardvertragsklauseln gemäß Art.&nbsp;46 Abs.&nbsp;2 lit.&nbsp;c DSGVO.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von EmailJS:
+        <a href="https://www.emailjs.com/legal/privacy-policy/"
+           target="_blank" rel="noopener noreferrer">
+          https://www.emailjs.com/legal/privacy-policy/
+        </a>
+        sowie im Data Processing Agreement:
+        <a href="https://www.emailjs.com/legal/data-protection-agreement/"
+           target="_blank" rel="noopener noreferrer">
+          https://www.emailjs.com/legal/data-protection-agreement/
+        </a>.
       </p>
 
-      <h2>6. Cookies &amp; Einwilligungsmanagement</h2>
+      <h3>6.2 Kontaktaufnahme über WhatsApp</h3>
       <p>
-        Wir verwenden Cookies und vergleichbare Speichertechnologien. <strong>Notwendige</strong> Technologien sind erforderlich, um die Website zu betreiben
-        und grundlegende Funktionen bereitzustellen. <strong>Optionale</strong> Technologien (z. B. Analyse) setzen wir nur ein, wenn Sie zuvor eingewilligt haben.
+        Auf unserer Website bieten wir die Möglichkeit, über einen Link mit uns per <strong>WhatsApp</strong> Kontakt aufzunehmen.
+        Anbieter ist WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland.
+      </p>
+      <p>
+        Wenn Sie den WhatsApp-Link anklicken, verlassen Sie unsere Website und werden zu WhatsApp weitergeleitet.
+        Erst durch das Anklicken des Links bzw. die Nutzung von WhatsApp können personenbezogene Daten an WhatsApp bzw. Meta übermittelt werden.
+      </p>
+      <p>
+        Dabei können insbesondere Ihre Telefonnummer, Ihr Name, Nachrichteninhalte, Kommunikationsdaten sowie technische Informationen verarbeitet werden.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO,
+        sofern Ihre Kontaktaufnahme mit vorvertraglichen Maßnahmen oder einem bestehenden Vertragsverhältnis zusammenhängt.
+        In allen übrigen Fällen erfolgt die Verarbeitung auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO aufgrund
+        unseres berechtigten Interesses an einer einfachen und schnellen Kommunikation.
+      </p>
+      <p>
+        Bitte beachten Sie, dass bei der Nutzung von WhatsApp Daten durch WhatsApp bzw. Meta verarbeitet werden können.
+        Auf diese Datenverarbeitung haben wir keinen vollständigen Einfluss.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von WhatsApp:
+        <a href="https://www.whatsapp.com/legal/privacy-policy-eea"
+           target="_blank" rel="noopener noreferrer">
+          https://www.whatsapp.com/legal/privacy-policy-eea
+        </a>.
+      </p>
+
+      <h2>7. Cookies &amp; Einwilligungsmanagement</h2>
+      <p>
+        Wir verwenden Cookies und vergleichbare Speichertechnologien. <strong>Notwendige</strong> Technologien sind erforderlich,
+        um die Website zu betreiben und grundlegende Funktionen bereitzustellen. <strong>Optionale</strong> Technologien
+        (z. B. Analyse) setzen wir nur ein, wenn Sie zuvor eingewilligt haben.
       </p>
       <p>
         Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen bzw. ändern – über die Funktion
-        <strong>„Cookie-Einstellungen“</strong> (Footer).
+        <strong>„Cookie-Einstellungen“</strong> im Footer dieser Website.
       </p>
       <p>
         <strong>Rechtsgrundlagen:</strong><br>
@@ -294,193 +388,369 @@
         Optional (z. B. Analytik): Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
       </p>
 
-      <h2>7. Webanalyse (Google Analytics)</h2>
+      <h3>7.1 Übersicht eingesetzter Cookies und Speichertechnologien</h3>
       <p>
-        Sofern Sie eingewilligt haben, verwenden wir <strong>Google Analytics</strong> zur Reichweitenmessung und Analyse der Nutzung dieser Website
-        (Anbieter: Google Ireland Limited). Die Einbindung erfolgt erst nach Ihrer Einwilligung über unsere Cookie-Einstellungen.
-      </p>
-      <p>
-        Dabei können insbesondere Nutzungsdaten (z. B. Seitenaufrufe, Interaktionen, ungefähre Standortdaten, technische Informationen zum Browser/Device)
-        verarbeitet werden.
-      </p>
-      <p>
-        <strong>Rechtsgrundlage:</strong> Ihre Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG).
-      </p>
-      <p>
-        <strong>Drittlandübermittlung:</strong> Eine Übermittlung von Daten in Drittländer (z. B. USA) kann nicht ausgeschlossen werden. Soweit erforderlich,
-        kommen geeignete Garantien (z. B. EU-Standardvertragsklauseln) zum Einsatz.
-      </p>
-      <p>
-        Weitere Informationen: Datenschutzhinweise von Google.
+        Nachfolgend finden Sie eine Übersicht über die auf dieser Website eingesetzten Cookies und vergleichbaren Speichertechnologien.
+        Die konkrete Speicherdauer kann je nach Browser, Einwilligungseinstellung und technischer Konfiguration abweichen.
       </p>
 
-      <h2>8. Empfänger / Kategorien von Empfängern</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200 text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="border border-gray-200 px-3 py-2 text-left">Name / Kategorie</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Anbieter</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Zweck</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Speicherdauer</th>
+              <th class="border border-gray-200 px-3 py-2 text-left">Rechtsgrundlage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Cookie-Einstellungen / Consent</td>
+              <td class="border border-gray-200 px-3 py-2">Vilana Event &amp; Catering</td>
+              <td class="border border-gray-200 px-3 py-2">Speicherung Ihrer Cookie-Auswahl</td>
+              <td class="border border-gray-200 px-3 py-2">je nach Konfiguration bis zu 12 Monate</td>
+              <td class="border border-gray-200 px-3 py-2">Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 TDDDG</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-200 px-3 py-2">Google Analytics Cookies / Messdaten</td>
+              <td class="border border-gray-200 px-3 py-2">Google Ireland Limited</td>
+              <td class="border border-gray-200 px-3 py-2">Reichweitenmessung und Analyse der Website-Nutzung</td>
+              <td class="border border-gray-200 px-3 py-2">je nach Einstellung 2 oder 14 Monate</td>
+              <td class="border border-gray-200 px-3 py-2">Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>8. Google Fonts</h2>
       <p>
-        Wir setzen Dienstleister ein, die personenbezogene Daten in unserem Auftrag verarbeiten (z. B. Hosting/Domain, technische Versanddienste für Formulare,
-        Analytik). Empfänger können insbesondere sein: GitHub (GitHub Pages), IONOS, EmailJS sowie – nach Einwilligung – Google (Analytics).
+        Diese Website verwendet zur einheitlichen Darstellung von Schriftarten <strong>Google Fonts</strong>.
+        Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+      </p>
+      <p>
+        Die Schriftarten werden derzeit von Servern von Google geladen. Dabei kann beim Aufruf unserer Website Ihre IP-Adresse
+        an Google übermittelt werden, da Ihr Browser eine Verbindung zu den Servern von Google aufnimmt.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO aufgrund unseres berechtigten Interesses
+        an einer einheitlichen und ansprechenden Darstellung unserer Website. Soweit für die Einbindung eine Einwilligung erforderlich ist,
+        erfolgt die Verarbeitung auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
+      </p>
+      <p>
+        Eine Übermittlung personenbezogener Daten in die USA kann stattfinden.
+        Google LLC ist nach dem EU-U.S. Data Privacy Framework zertifiziert.
+        Zusätzlich können EU-Standardvertragsklauseln eingesetzt werden.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in den Datenschutzhinweisen von Google:
+        <a href="https://policies.google.com/privacy"
+           target="_blank" rel="noopener noreferrer">
+          https://policies.google.com/privacy
+        </a>.
       </p>
 
-      <h2>9. Ihre Rechte</h2>
+      <h2>9. Webanalyse (Google Analytics)</h2>
+      <p>
+        Sofern Sie eingewilligt haben, verwenden wir <strong>Google Analytics 4</strong>
+        zur Reichweitenmessung und Analyse der Nutzung dieser Website. Anbieter ist
+        Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+        Die Einbindung erfolgt erst nach Ihrer Einwilligung über unsere Cookie-Einstellungen.
+      </p>
+      <p>
+        Dabei können insbesondere Nutzungsdaten verarbeitet werden, z. B. Seitenaufrufe,
+        Interaktionen, ungefähre Standortdaten, technische Informationen zum Browser/Device
+        sowie Informationen über die Nutzung unserer Website.
+      </p>
+      <p>
+        Google Analytics 4 speichert keine vollständigen IP-Adressen dauerhaft. Soweit möglich,
+        werden IP-Adressen gekürzt bzw. anonymisiert verarbeitet.
+      </p>
+      <p>
+        <strong>Speicherdauer:</strong> Die Aufbewahrungsdauer für nutzerbezogene und ereignisbezogene Daten in Google Analytics
+        beträgt je nach Einstellung <strong>2 Monate oder 14 Monate</strong>. Bitte prüfen Sie die konkrete Einstellung
+        in Ihrem Google-Analytics-Konto und passen Sie diesen Text entsprechend an.
+      </p>
+      <p>
+        <strong>Google Signals:</strong> Google Signals wird nur verwendet, sofern diese Funktion in Google Analytics aktiviert ist
+        und Sie zuvor eingewilligt haben. Falls Google Signals nicht aktiviert ist, findet keine Verarbeitung über Google Signals statt.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Ihre Einwilligung gemäß Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO
+        i.&nbsp;V.&nbsp;m. §&nbsp;25 Abs.&nbsp;1 TDDDG.
+      </p>
+      <p>
+        <strong>Drittlandübermittlung:</strong> Eine Übermittlung personenbezogener Daten an Google LLC in die USA kann stattfinden.
+        Google LLC ist nach dem EU-U.S. Data Privacy Framework zertifiziert.
+        Zusätzlich können EU-Standardvertragsklauseln als geeignete Garantien eingesetzt werden.
+      </p>
+      <p>
+        Mit Google bestehen, soweit erforderlich, Datenverarbeitungsbedingungen bzw. Vereinbarungen zur Auftragsverarbeitung.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in den Datenschutzhinweisen von Google:
+        <a href="https://policies.google.com/privacy"
+           target="_blank" rel="noopener noreferrer">
+          https://policies.google.com/privacy
+        </a>.
+      </p>
+
+      <h2>10. Links zu externen Diensten und Profilen</h2>
+      <p>
+        Auf unserer Website befinden sich Links zu externen Diensten und Online-Profilen,
+        insbesondere zu Google Maps, Instagram und WhatsApp. Wenn Sie einen solchen Link anklicken,
+        verlassen Sie unsere Website und werden auf die Plattform des jeweiligen Anbieters weitergeleitet.
+      </p>
+      <p>
+        Erst beim Anklicken des jeweiligen Links können personenbezogene Daten, insbesondere Ihre IP-Adresse,
+        technische Informationen zum Browser/Device sowie ggf. weitere Nutzungsdaten, an den jeweiligen Anbieter übermittelt werden.
+        Für die anschließende Verarbeitung personenbezogener Daten auf den externen Plattformen ist der jeweilige Anbieter verantwortlich.
+      </p>
+      <p>
+        Anbieter können insbesondere sein:
+      </p>
       <ul>
-        <li>Auskunft (Art.&nbsp;15 DSGVO)</li>
-        <li>Berichtigung (Art.&nbsp;16 DSGVO)</li>
-        <li>Löschung (Art.&nbsp;17 DSGVO)</li>
-        <li>Einschränkung der Verarbeitung (Art.&nbsp;18 DSGVO)</li>
-        <li>Datenübertragbarkeit (Art.&nbsp;20 DSGVO)</li>
-        <li>Widerspruch (Art.&nbsp;21 DSGVO)</li>
-        <li>Widerruf von Einwilligungen (Art.&nbsp;7 Abs.&nbsp;3 DSGVO)</li>
+        <li>
+          <strong>Google Maps:</strong> Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+        </li>
+        <li>
+          <strong>Instagram:</strong> Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland
+        </li>
+        <li>
+          <strong>WhatsApp:</strong> WhatsApp Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Irland
+        </li>
       </ul>
       <p>
-        Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.
+        Weitere Informationen finden Sie in den Datenschutzhinweisen der jeweiligen Anbieter:
+      </p>
+      <ul>
+        <li>
+          Google:
+          <a href="https://policies.google.com/privacy"
+             target="_blank" rel="noopener noreferrer">
+            https://policies.google.com/privacy
+          </a>
+        </li>
+        <li>
+          Instagram/Meta:
+          <a href="https://privacycenter.instagram.com/policy/"
+             target="_blank" rel="noopener noreferrer">
+            https://privacycenter.instagram.com/policy/
+          </a>
+        </li>
+        <li>
+          WhatsApp:
+          <a href="https://www.whatsapp.com/legal/privacy-policy-eea"
+             target="_blank" rel="noopener noreferrer">
+            https://www.whatsapp.com/legal/privacy-policy-eea
+          </a>
+        </li>
+      </ul>
+
+      <h2>11. Empfänger / Kategorien von Empfängern</h2>
+      <p>
+        Wir setzen Dienstleister ein, die personenbezogene Daten in unserem Auftrag oder in eigener Verantwortlichkeit verarbeiten können.
+        Empfänger können insbesondere sein: GitHub (GitHub Pages), IONOS, EmailJS, Google, WhatsApp und Meta.
+      </p>
+      <p>
+        Soweit Dienstleister personenbezogene Daten in unserem Auftrag verarbeiten, erfolgt dies auf Grundlage eines Vertrages
+        zur Auftragsverarbeitung gemäß Art.&nbsp;28 DSGVO oder auf Grundlage anderer geeigneter datenschutzrechtlicher Vereinbarungen.
       </p>
 
-      <h2>10. Beschwerderecht</h2>
+      <h2>12. Ihre Rechte</h2>
+      <ul>
+        <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art.&nbsp;15 DSGVO)</li>
+        <li>Berichtigung unrichtiger personenbezogener Daten (Art.&nbsp;16 DSGVO)</li>
+        <li>Löschung personenbezogener Daten (Art.&nbsp;17 DSGVO)</li>
+        <li>Einschränkung der Verarbeitung (Art.&nbsp;18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art.&nbsp;20 DSGVO)</li>
+        <li>Widerspruch gegen bestimmte Verarbeitungen (Art.&nbsp;21 DSGVO)</li>
+        <li>Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art.&nbsp;7 Abs.&nbsp;3 DSGVO)</li>
+      </ul>
       <p>
-        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig für Niedersachsen ist der
-        <em>Landesbeauftragte für den Datenschutz Niedersachsen</em>.
+        Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an
+        <a href="mailto:v.s@vilana.info">v.s@vilana.info</a>.
+      </p>
+      <p>
+        Zur Wahrung Ihrer Rechte können wir die Identität des Anfragenden überprüfen,
+        soweit begründete Zweifel an der Identität bestehen (Art.&nbsp;12 Abs.&nbsp;6 DSGVO).
       </p>
 
-      <h2>11. Datensicherheit</h2>
+      <h2>13. Beschwerderecht</h2>
       <p>
-        Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten zu schützen (z. B. TLS/HTTPS).
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren,
+        wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt.
+      </p>
+      <p>
+        Zuständig für Niedersachsen ist:
+      </p>
+      <p>
+        <strong>Die Landesbeauftragte für den Datenschutz Niedersachsen</strong><br>
+        Prinzenstraße 5<br>
+        30159 Hannover<br>
+        Telefon: 0511 120-4500<br>
+        Website:
+        <a href="https://www.lfd.niedersachsen.de/"
+           target="_blank" rel="noopener noreferrer">
+          https://www.lfd.niedersachsen.de/
+        </a>
+      </p>
+
+      <h2>14. Datensicherheit</h2>
+      <p>
+        Wir treffen angemessene technische und organisatorische Maßnahmen (TOMs), um Ihre personenbezogenen Daten gegen Verlust,
+        Missbrauch, unbefugten Zugriff, Veränderung oder Offenlegung zu schützen. Dazu gehören insbesondere TLS/HTTPS-Verschlüsselung,
+        Zugriffsbeschränkungen und eine datensparsame Konfiguration der eingesetzten Dienste.
+      </p>
+      <p>
         Bitte beachten Sie, dass eine vollständige Sicherheit bei Datenübertragungen im Internet nicht garantiert werden kann.
       </p>
 
-      <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+      <h2>15. Änderungen dieser Datenschutzerklärung</h2>
       <p>
-        Wir passen diese Datenschutzerklärung an, sobald dies aufgrund technischer Änderungen, neuer Dienste oder geänderter Rechtslage erforderlich ist.
-        Es gilt die jeweils aktuelle, auf dieser Seite veröffentlichte Fassung.
+        Wir passen diese Datenschutzerklärung an, sobald dies aufgrund technischer Änderungen, neuer Dienste
+        oder geänderter Rechtslage erforderlich ist. Es gilt die jeweils aktuelle, auf dieser Seite veröffentlichte Fassung.
       </p>
     </article>
   </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
-  <meta itemprop="name" content="Vilana Event & Catering">
-  <meta itemprop="telephone" content="+49 176 5777 5996">
-  <meta itemprop="email" content="v.s@vilana.info">
-  <meta itemprop="url" content="https://www.vilana-event.de/">
-  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
-    <meta itemprop="streetAddress" content="Osterstraße 28">
-    <meta itemprop="addressLocality" content="Aerzen">
-    <meta itemprop="postalCode" content="31855">
-    <meta itemprop="addressRegion" content="Niedersachsen">
-    <meta itemprop="addressCountry" content="DE">
-  </div>
+  <!-- =========================================
+    FOOTER – Premium Version
+  ========================================= -->
+  <footer class="footer-premium"
+    itemscope itemtype="https://schema.org/LocalBusiness">
+    <meta itemprop="name" content="Vilana Event & Catering">
+    <meta itemprop="telephone" content="+49 176 5777 5996">
+    <meta itemprop="email" content="v.s@vilana.info">
+    <meta itemprop="url" content="https://www.vilana-event.de/">
+    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" hidden>
+      <meta itemprop="streetAddress" content="Osterstraße 28">
+      <meta itemprop="addressLocality" content="Aerzen">
+      <meta itemprop="postalCode" content="31855">
+      <meta itemprop="addressRegion" content="Niedersachsen">
+      <meta itemprop="addressCountry" content="DE">
+    </div>
 
-  <div class="footer-inner">
+    <div class="footer-inner">
 
-    <div class="footer-deco-line"></div>
+      <div class="footer-deco-line"></div>
 
-    
-    <!-- 3-spalten Grid -->
-    <div class="footer-grid">
+      <!-- 3-spalten Grid -->
+      <div class="footer-grid">
 
-      <!-- Kontakt -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Kontakt</h3>
-        <address class="footer-address">
-          <p class="footer-address-name">Vilana Event &amp; Catering</p>
-          <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
+        <!-- Kontakt -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Kontakt</h3>
+          <address class="footer-address">
+            <p class="footer-address-name">Vilana Event &amp; Catering</p>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Osterstra%C3%9Fe+28+31855+Aerzen"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="footer-address-street"
+               aria-label="Adresse von Vilana Event & Catering auf Google Maps öffnen">
+              Osterstraße 28<br>31855 Aerzen, Niedersachsen
+            </a>
+
+            <a href="tel:+4917657775996">
+              <span class="contact-icon">☎</span> +49 176 5777 5996
+            </a>
+            <a href="tel:+4917642288707">
+              <span class="contact-icon">☎</span> +49 176 4228 8707
+            </a>
+            <a href="mailto:v.s@vilana.info">
+              <span class="contact-icon">✉</span> v.s@vilana.info
+            </a>
+            <a href="mailto:vilana-event@outlook.de">
+              <span class="contact-icon">✉</span> vilana-event@outlook.de
+            </a>
+          </address>
+
+          <a href="https://www.instagram.com/vilana_catering/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-instagram"
+            aria-label="Instagram – vilana_catering">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
+            </svg>
+            @vilana_catering
           </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
-        </address>
+        </div>
 
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-          </svg>
-          @vilana_catering
-        </a>
-      </div>
+        <div class="footer-divider-v"></div>
 
-      <div class="footer-divider-v"></div>
+        <!-- Navigation -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigation</h3>
+          <nav aria-label="Footer-Navigation">
+            <ul class="footer-nav">
+              <li><a href="/">Startseite</a></li>
+              <li><a href="/#services">Leistungen</a></li>
+              <li><a href="/partyservice.html">Partyservice</a></li>
+              <li><a href="/menu.html">Menü</a></li>
+              <li><a href="/galerie.html">Galerie</a></li>
+              <li><a href="/about.html">Über uns</a></li>
+              <li><a href="/event.html">Event</a></li>
+              <li><a href="/contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
+        </div>
 
-      <!-- Navigation -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Navigation</h3>
-        <nav aria-label="Footer-Navigation">
-          <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
-            <li><a href="/#services">Leistungen</a></li>
-            <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
-            <li><a href="/galerie.html">Galerie</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
+        <div class="footer-divider-v"></div>
+
+        <!-- Servicegebiet -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Servicegebiet</h3>
+          <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
+          <ul class="footer-regions">
+            <li>Hameln</li>
+            <li>Hannover</li>
+            <li>Bad Pyrmont</li>
+            <li>Bielefeld</li>
+            <li>Paderborn</li>
+            <li>Minden</li>
+            <li>Detmold</li>
+            <li>Münster</li>
+            <li>Braunschweig</li>
+            <li>Wunstorf</li>
           </ul>
-        </nav>
+          <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+        </div>
+
       </div>
 
-      <div class="footer-divider-v"></div>
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2026 Vilana Event &amp; Catering.
+          <br class="br-mobile" />
+          Alle Rechte vorbehalten.
+        </p>
 
-      <!-- Servicegebiet -->
-      <div class="footer-col">
-        <h3 class="footer-col-title">Servicegebiet</h3>
-        <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
-        <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
-        </ul>
-        <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
+        <nav class="footer-legal" aria-label="Rechtliches">
+          <a href="/impressum.html">Impressum</a>
+          <span aria-hidden="true">|</span>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <span aria-hidden="true">|</span>
+          <a href="/agb.html">AGB</a>
+          <span aria-hidden="true">|</span>
+          <a href="#" id="cookieSettingsLink">Cookie-Einstellungen</a>
+        </nav>
       </div>
 
     </div>
 
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
-
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
-
-  </div>
-
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
-</footer>
+    <button
+      type="button"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="footer-scroll-top"
+      aria-label="Nach oben scrollen"
+      title="Nach oben">
+      ▲
+    </button>
+  </footer>
 
   <script src="/js/main.js" defer></script>
   <script src="/js/vilana-cookiewall.js" defer></script>
@@ -505,7 +775,9 @@
             if (window.VilanaCookie && typeof window.VilanaCookie.open === 'function') return window.VilanaCookie.open();
             if (window.VilanaCookieWall && typeof window.VilanaCookieWall.show === 'function') return window.VilanaCookieWall.show();
             if (window.VilanaCookie && typeof window.VilanaCookie.show === 'function') return window.VilanaCookie.show();
-          } catch (err) {}
+          } catch (err) {
+            console.warn('Cookie settings could not be opened:', err);
+          }
         });
       }
     });
