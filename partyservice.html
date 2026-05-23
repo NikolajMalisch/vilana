@@ -7,32 +7,33 @@
 
   <!-- =========================================================
         Primary SEO  (Title 60 / Description 158)
-        Repositioned to avoid cannibalization with index.html
         index.html  → "catering hameln"
         partyservice.html → "partyservice weserbergland / hameln-pyrmont"
   ========================================================== -->
-  <title>Partyservice Weserbergland | Buffet &amp; Service ab 20 – Vilana</title>
+  <title>Partyservice Hameln | Buffet &amp; Catering im Weserbergland – Vilana</title>
   <meta name="description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland: Buffet, Fingerfood, Service &amp; Equipment. Lieferung, Aufbau, ab 20 Gäste – Preis auf Anfrage.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#0e0e0e">
 
-  <!-- Canonical / Hreflang -->
+  <!-- Canonical / Hreflang (full region tags, consistent ru-RU) -->
   <link rel="canonical" href="https://www.vilana-event.de/partyservice.html">
   <link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/partyservice.html">
-  <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/partyservice.html">
+  <link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/partyservice.html">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/partyservice.html">
 
-  <!-- Open Graph -->
+  <!-- Open Graph (image dims now match the real 16:9 asset) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="ru_RU">
   <meta property="og:site_name" content="Vilana Event &amp; Catering">
   <meta property="og:title" content="Partyservice Weserbergland | Vilana Event &amp; Catering">
   <meta property="og:description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland — Buffet, Fingerfood, Service &amp; Equipment. Ab 20 Gästen.">
   <meta property="og:url" content="https://www.vilana-event.de/partyservice.html">
   <meta property="og:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
+  <meta property="og:image:type" content="image/webp">
   <meta property="og:image:alt" content="Partyservice Weserbergland — Vilana Event &amp; Catering">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -40,7 +41,6 @@
   <meta name="twitter:description" content="Partyservice für Hameln-Pyrmont, Bad Pyrmont &amp; Weserbergland — Buffet, Service &amp; Equipment, ab 20 Gästen.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/anlass/partyservice-hero.webp">
   <meta name="twitter:image:alt" content="Partyservice Weserbergland — Vilana Event &amp; Catering">
-  <meta name="twitter:url" content="https://www.vilana-event.de/partyservice.html">
 
   <!-- =========================================================
         Performance (place early!)
@@ -154,9 +154,8 @@
   <!-- =========================================================
         JSON-LD (clean graph, no duplicate entities)
         Organization / WebSite / LocalBusiness live on index.html
-        with @id "https://www.vilana-event.de/#vilana"
-        Here we only declare: WebPage + Service + FAQ + Breadcrumb
-        and reference the existing entities via @id
+        Here: WebPage + Service + FAQ + Breadcrumb, referencing
+        existing entities via @id
   ========================================================== -->
   <script type="application/ld+json">
   {
@@ -167,6 +166,7 @@
         "@id":"https://www.vilana-event.de/partyservice.html#webpage",
         "url":"https://www.vilana-event.de/partyservice.html",
         "name":"Partyservice Weserbergland | Vilana Event & Catering",
+        "description":"Partyservice für Hameln-Pyrmont, Bad Pyrmont und das Weserbergland: Buffet, Fingerfood, Servicepersonal und Equipment. Lieferung und Aufbau, ab 20 Gästen.",
         "inLanguage":"de-DE",
         "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
         "about":{"@id":"https://www.vilana-event.de/partyservice.html#service"},
@@ -341,7 +341,6 @@
              hreflang="ru-RU"
              aria-label="Russische Version">RU</a>
 
-          <!-- A11y fix: WCAG-compliant contrast (was bg-black/40 text-gray-200 on white = ~2:1) -->
           <button
             id="menuToggle"
             type="button"
@@ -376,24 +375,20 @@
 
   <main id="main">
     <!-- =========================================================
-          HERO  (repositioned: Region instead of "in Hameln")
+          HERO
     ========================================================== -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-media">
-        <picture>
-          <source media="(max-width: 640px)" srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
-          <source srcset="/images/anlass/partyservice-hero.webp" type="image/webp" />
-          <img src="/images/anlass/partyservice-hero.webp"
-               alt="Partyservice Weserbergland — Buffet und Fingerfood von Vilana Event &amp; Catering"
-               width="1600" height="900"
-               loading="eager" decoding="async" fetchpriority="high"
-               style="width:100%;height:auto;" />
-        </picture>
+        <img src="/images/anlass/partyservice-hero.webp"
+             alt="Partyservice Weserbergland — Buffet und Fingerfood von Vilana Event &amp; Catering"
+             width="1600" height="900"
+             loading="eager" decoding="async" fetchpriority="high"
+             style="width:100%;height:auto;" />
       </div>
 
       <div class="hero-below container mx-auto px-4">
         <h1 id="hero-heading" class="hero-title">
-          Partyservice im Weserbergland &amp; Hameln-Pyrmont
+          Partyservice in Hameln &amp; Weserbergland
         </h1>
         <p class="hero-subtitle">
           Buffet, Fingerfood und Servicepersonal für Hochzeit, Geburtstag und Firmenfeier —
@@ -423,6 +418,7 @@
             <div class="service-media">
               <img src="/images/anlass/hochzeit-hero.webp"
                    alt="Hochzeit-Partyservice im Weserbergland — Sektempfang, Fingerfood, Buffet"
+                   width="800" height="600"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
@@ -441,6 +437,7 @@
             <div class="service-media">
               <img src="/images/anlass/geburtstag-hero.webp"
                    alt="Geburtstag-Partyservice in Hameln-Pyrmont — Buffet, warme Speisen, Desserts"
+                   width="800" height="600"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
@@ -459,6 +456,7 @@
             <div class="service-media">
               <img src="/images/anlass/firmenfeier-hero.webp"
                    alt="Firmenfeier-Partyservice im Weserbergland — Empfang, Buffet, Service"
+                   width="800" height="600"
                    loading="lazy" decoding="async">
             </div>
             <div class="service-body">
@@ -665,7 +663,7 @@
             </summary>
             <p class="mt-3">
               Auf Wunsch komplette Buffet-Ausstattung: Chafing Dishes, Thermoboxen, Stehtische,
-              Tischwäsche, Geschirr, Besteck und Gläser.
+              Tischwäsche, Geschirr, Besteck und Gläser. Auch Bar-Setup und Theken sind möglich.
             </p>
           </details>
 
@@ -689,7 +687,7 @@
   </main>
 
   <!-- =========================================================
-        FOOTER  (microdata duplicate removed — JSON-LD covers it)
+        FOOTER
   ========================================================== -->
   <footer class="footer-premium">
     <div class="footer-inner">
