@@ -4,308 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- =========================================================
-    SEO – Kontakt (RU)
-  ========================================================== -->
   <title>Контакты | Vilana Event &amp; Catering — Кейтеринг и Partyservice (Hameln-Pyrmont)</title>
-  <meta name="description"
-        content="Запрос на кейтеринг и Partyservice в Hameln-Pyrmont: от 20 гостей. Доставка и установка буфета включены. Быстрый запрос или расширенная форма для точного предложения." />
+  <meta name="description" content="Catering- & Partyservice-Anfrage in Hameln-Pyrmont: ab 20 Personen. Lieferung & Buffet-Aufbau inklusive. Anfrage schnell senden oder erweitert strukturieren." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#0e0e0e" />
+  <meta name="theme-color" content="#141822" />
 
-  <!-- Canonical & Hreflang -->
   <link rel="canonical" href="https://www.vilana-event.de/ru/contact.html" />
-  <link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/contact.html" />
-  <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/contact.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/contact.html" />
+  <link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/contact.html" />
+  <link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/ru/contact.html" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="Vilana Event &amp; Catering" />
   <meta property="og:title" content="Контакты | Vilana Event &amp; Catering" />
-  <meta property="og:description"
-        content="Быстрый запрос или структурированное предложение по кейтерингу от 20 гостей. Доставка и установка буфета включены." />
+  <meta property="og:description" content="Schnelle Anfrage oder strukturiertes Catering-Angebot ab 20 Personen. Lieferung & Buffet-Aufbau inklusive." />
   <meta property="og:url" content="https://www.vilana-event.de/ru/contact.html" />
   <meta property="og:image" content="https://www.vilana-event.de/images/event/event-1.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Контакты | Vilana Event &amp; Catering" />
-  <meta name="twitter:description" content="Запрос на кейтеринг от 20 гостей. Доставка и установка буфета включены." />
+  <meta name="twitter:description" content="Catering- & Partyservice-Anfrage ab 20 Personen. Lieferung & Buffet-Aufbau inklusive." />
   <meta name="twitter:image" content="https://www.vilana-event.de/images/event/event-1.webp" />
 
-  <!-- CSS -->
   <link rel="preload" href="/css/output.css" as="style" />
   <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/contact.css" />
-  <link rel="stylesheet" href="/css/footer-premium.css">
+  <link rel="stylesheet" href="/css/footer-premium.css" />
 
-  <noscript>
-    <link rel="stylesheet" href="/css/output.css" /> </noscript>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Favicons -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
   <style>
-    /* =========================================================
-      Minimal inline (safety)
-    ========================================================== */
-    body{
-      font-family:"Cormorant SC", serif;
-      background:#fdfaf6;
-      color:#111827;
-    }
-    h1,h2,h3,p,span,label,input,textarea,select,button{ font-family:"Cormorant SC", serif; }
-
-    .logo-title{
-      font-family:"Cinzel Decorative", cursive;
-      font-size:1.8rem;
-      font-weight:500;
-      letter-spacing:.5px;
-      color:#111827;
-      line-height:1;
-    }
-    .logo-subtitle{ font-size:1rem; color:#111827; line-height:1; }
-
-    .hidden-field{ display:none !important; }
-
-    .field-error{
-      border-color:#dc2626 !important;
-      box-shadow:0 0 0 4px rgba(220,38,38,.10) !important;
-    }
-
-    /* Header fallback (не зависит от Tailwind md:*) */
-    .nav-desktop, .lang-desktop{ display:none !important; }
-    .nav-mobile{ display:flex !important; }
-    @media (min-width:768px){
-      .nav-desktop{ display:flex !important; }
-      .lang-desktop{ display:flex !important; }
-      .nav-mobile{ display:none !important; }
-    }
-    header a{ text-decoration:none; }
-
-    /* Body lock for sheet */
-    .v-noscroll{ overflow:hidden !important; }
-
-    /* =========================================================
-      MENU ROW (opens sheet) — safe styles even without Tailwind
-    ========================================================== */
-    .v-row{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-      width:100%;
-      padding:14px 14px;
-      border:1px solid rgba(15,23,42,.14);
-      border-radius:16px;
-      background:rgba(255,255,255,.9);
-      box-shadow: 0 8px 20px rgba(15,23,42,.06);
-      text-align:left;
-    }
-    .v-row__title{ font-weight:700; }
-    .v-row__hint{ font-size:12px; opacity:.75; margin-top:2px; }
-    .v-row__right{ display:flex; align-items:center; gap:10px; }
-    .v-row__count{
-      min-width:34px; height:34px; border-radius:999px;
-      display:grid; place-items:center;
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(15,23,42,.06);
-      font-weight:700;
-    }
-    .v-row__chev{ font-size:24px; line-height:1; opacity:.7; }
-
-    /* =========================================================
-      SHEET (modal) — safe styles
-      ВАЖНО: panel не должен быть прозрачным
-    ========================================================== */
-    .v-sheet{ position:fixed; inset:0; z-index:80; }
-    .v-sheet.hidden{ display:none !important; }
-    .v-sheet__overlay{
-      position:absolute; inset:0;
-      background:rgba(0,0,0,.45);
-    }
-    .v-sheet__panel{
-      position:absolute; left:50%; top:50%;
-      transform:translate(-50%,-50%);
-      width:min(980px, 92vw);
-      height:min(720px, 86vh);
-      border-radius:26px;
-      background:#0b1220;   /* НЕ прозрачный */
-      color:#fff;
-      box-shadow:0 30px 80px rgba(0,0,0,.55);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-    .v-sheet__head{
-      display:flex; align-items:flex-start; justify-content:space-between;
-      gap:16px;
-      padding:18px 20px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .v-sheet__title{ font-size:18px; font-weight:800; }
-    .v-sheet__sub{ font-size:12px; opacity:.75; margin-top:4px; }
-    .v-sheet__close{
-      width:40px; height:40px; border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.10);
-      display:grid; place-items:center;
-    }
-    .v-sheet__close:hover{ background:rgba(255,255,255,.15); }
-
-    .v-sheet__tools{
-      display:flex; align-items:flex-end; gap:12px;
-      padding:14px 20px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .v-sheet__label{ display:block; font-size:11px; opacity:.75; margin-bottom:6px; }
-    .v-sheet__searchWrap{ flex:1; }
-    .v-sheet__search{
-      width:100%;
-      border-radius:16px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.10);
-      padding:12px 14px;
-      outline:none;
-      color:#fff;
-    }
-    .v-sheet__reset{
-      border-radius:16px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.10);
-      padding:12px 14px;
-      font-weight:700;
-    }
-    .v-sheet__reset:hover{ background:rgba(255,255,255,.15); }
-
-    .v-sheet__body{
-      display:grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap:0;
-      flex:1;
-      min-height:0;
-    }
-    .v-sheet__cats{
-      border-right:1px solid rgba(255,255,255,.10);
-      padding:14px;
-      overflow:auto;
-    }
-    .v-sheet__items{
-      padding:14px;
-      overflow:auto;
-      min-height:0;
-    }
-    .v-sheet__itemsHead{
-      display:flex; justify-content:space-between; align-items:baseline;
-      margin-bottom:10px;
-    }
-    .v-sheet__itemsTitle{ font-size:12px; opacity:.8; font-weight:700; }
-    .v-sheet__itemsMeta{ font-size:12px; opacity:.7; }
-
-    /* Cat button */
-    .v-sheet__cat{
-      width:100%;
-      text-align:left;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.06);
-      padding:12px 12px;
-      margin-bottom:10px;
-    }
-    .v-sheet__cat.is-active{
-      background:rgba(59,130,246,.18);
-      border-color:rgba(59,130,246,.35);
-    }
-    .v-sheet__catTitle{ font-weight:800; }
-    .v-sheet__catMeta{ font-size:12px; opacity:.7; margin-top:3px; }
-
-    /* Item row */
-    .v-sheet__item{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.06);
-      padding:12px 12px;
-      margin-bottom:10px;
-      cursor:pointer;
-    }
-    .v-sheet__item:hover{ background:rgba(255,255,255,.09); }
-    .v-sheet__itemName{ font-weight:800; }
-    .v-sheet__itemDesc{ font-size:12px; opacity:.75; margin-top:3px; }
-    .v-sheet__toggle{
-      width:38px; height:38px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.08);
-      display:grid; place-items:center;
-      font-weight:900;
-    }
-    .v-sheet__toggle.is-on{
-      background:rgba(16,185,129,.25);
-      border-color:rgba(16,185,129,.35);
-    }
-    .v-sheet__empty{ padding:10px; opacity:.8; }
-
-    /* Mobile tweaks */
-    @media (max-width: 900px){
-      .v-sheet__body{ grid-template-columns: 1fr; }
-      .v-sheet__cats{ border-right:none; border-bottom:1px solid rgba(255,255,255,.10); }
-    }
+    body { background: #f7f3ec; color: #1f2937; font-family: "Cormorant SC", serif; }
+    .logo-title { font-family: "Cinzel Decorative", cursive; font-size: 1.8rem; font-weight: 500; letter-spacing: .5px; color: #111827; line-height: 1; }
+    .logo-subtitle { font-size: 1rem; color: #111827; line-height: 1; }
+    header a { text-decoration: none; }
+    .hidden-field { display: none !important; }
+    .field-error { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220,38,38,.10) !important; }
   </style>
 
-  <!-- =========================================================
-    JSON-LD
-  ========================================================== -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@type":"Organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
-        "sameAs":["https://www.instagram.com/vilana_catering/"]
+        "@type": "Organization",
+        "name": "Vilana Event & Catering",
+        "url": "https://www.vilana-event.de/",
+        "logo": "https://www.vilana-event.de/images/vilana-web-logo.png",
+        "sameAs": ["https://www.instagram.com/vilana_catering/"]
       },
       {
-        "@type":["LocalBusiness","Caterer"],
-        "@id":"https://www.vilana-event.de/#vilana",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "telephone":[ "+49 176 57775996", "+49 176 42288707" ],
-        "image":"https://www.vilana-event.de/images/event/event-1.webp",
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressCountry":"DE"
+        "@type": ["LocalBusiness","Caterer"],
+        "@id": "https://www.vilana-event.de/#vilana",
+        "name": "Vilana Event & Catering",
+        "url": "https://www.vilana-event.de/",
+        "telephone": ["+49 176 57775996", "+49 176 42288707"],
+        "image": "https://www.vilana-event.de/images/event/event-1.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Osterstraße 28",
+          "postalCode": "31855",
+          "addressLocality": "Aerzen",
+          "addressCountry": "DE"
         },
-        "areaServed":["Hameln-Pyrmont","Niedersachsen","Nordrhein-Westfalen"],
-        "servesCuisine":["International","Russisch","Mediterran","Europäisch"],
-        "priceRange":"€€"
+        "areaServed": ["Hameln-Pyrmont","Niedersachsen","Nordrhein-Westfalen"],
+        "servesCuisine": ["International","Russisch","Mediterran","Europäisch"],
+        "priceRange": "€€"
       },
       {
-        "@type":"ContactPage",
-        "name":"Контакты — Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/ru/contact.html",
-        "about":{"@id":"https://www.vilana-event.de/#vilana"}
+        "@type": "ContactPage",
+        "name": "Контакты — Vilana Event & Catering",
+        "url": "https://www.vilana-event.de/ru/contact.html",
+        "about": { "@id": "https://www.vilana-event.de/#vilana" }
       }
     ]
   }
   </script>
 
-  <!-- Google Analytics — nur nach Analytics-Einwilligung -->
-  <script type="text/plain" data-cookie-category="analytics"
-          src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+  <script type="text/plain" data-cookie-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script type="text/plain" data-cookie-category="analytics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -316,495 +102,477 @@
 
 <body class="text-gray-800 antialiased contact-wrap">
 
-<!-- =========================================================
-  HEADER (RU) — Desktop/Mobile nav with hard fallback
-========================================================== -->
-<header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b border-black/10">
-  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <a href="/ru/" class="flex items-baseline gap-1" aria-label="Vilana Event &amp; Catering — Главная">
+<!-- HEADER -->
+<header class="bg-white shadow-md relative">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height:38px"
+       aria-label="Vilana Event & Catering – Startseite">
       <span class="logo-title">Vilana</span>
-      <span class="logo-subtitle">Event &amp; Catering</span>
+      <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top:1px">Event &amp; Catering</span>
     </a>
 
     <div class="flex items-center gap-3">
-
-      <nav class="nav-desktop items-center space-x-8" aria-label="Главная навигация">
-        <a href="/ru/" class="hover:opacity-80">Главная</a>
-        <a href="/ru/#services" class="hover:opacity-80">Услуги</a>
-        <a href="/ru/partyservice.html" class="hover:opacity-80">Партисервис</a>
-        <a href="/ru/menu.html" class="hover:opacity-80">Меню</a>
-        <a href="/ru/galerie.html" class="hover:opacity-80">Галерея</a>
-        <a href="/ru/about.html" class="hover:opacity-80">О нас</a>
-        <a href="/ru/event.html" class="hover:opacity-80">Событие</a>
-        <a href="/ru/bewertung.html" class="hover:opacity-80">Отзывы</a>
-        <a href="/ru/contact.html" aria-current="page" class="font-semibold">Контакты</a>
+      <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
+        <a href="/ru/" class="text-gray-800 hover:text-amber-800">Главная</a>
+        <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
+        <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
+        <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
+        <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
+        <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800">Событие</a>
+        <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
+        <a href="/ru/contact.html" class="text-amber-800 font-semibold" aria-current="page">Контакты</a>
       </nav>
 
-      <div class="lang-desktop items-center gap-2 text-sm" aria-label="Переключатель языка">
+      <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschalter">
         <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/contact.html">DE</a>
         <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
       </div>
 
-      <div class="nav-mobile items-center gap-2">
+      <div class="flex items-center gap-2 md:hidden">
         <a href="/contact.html"
            class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
            aria-label="Deutsche Version">DE</a>
-
-        <button id="menuToggle" type="button"
-                aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false"
-                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-black/20 bg-white text-gray-900">
+        <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false"
+                class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-black/40 text-gray-200 focus:outline-none">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
-
     </div>
   </div>
 
-  <div id="mobileMenu"
-       class="hidden absolute top-[64px] left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40 border-t border-black/10"
-       role="navigation" aria-label="Мобильное меню">
-    <a href="/ru/" class="block hover:opacity-80">Главная</a>
-    <a href="/ru/#services" class="block hover:opacity-80">Услуги</a>
-    <a href="/ru/partyservice.html" class="block hover:opacity-80">Партисервис</a>
-    <a href="/ru/menu.html" class="block hover:opacity-80">Меню</a>
-    <a href="/ru/galerie.html" class="block hover:opacity-80">Галерея</a>
-    <a href="/ru/about.html" class="block hover:opacity-80">О нас</a>
-    <a href="/ru/event.html" class="block hover:opacity-80">Событие</a>
-    <a href="/ru/bewertung.html" class="block hover:opacity-80">Отзывы</a>
-    <a href="/ru/contact.html" class="block font-semibold">Контакты</a>
+  <div id="mobileMenu" class="md:hidden hidden absolute left-0 top-full w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
+       role="menu" aria-label="Мобильное меню">
+    <a href="/ru/" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
+    <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
+    <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
+    <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
+    <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
+    <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Событие</a>
+    <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
+    <a href="/ru/contact.html" class="block text-amber-800 font-semibold" role="menuitem" aria-current="page">Контакты</a>
   </div>
 </header>
 
-<!-- Toast -->
+<!-- TOAST -->
 <div id="toast" role="status" aria-live="polite"></div>
 
-<!-- =========================================
-  TOP CONTACT BLOCK (RU)
-========================================= -->
+<!-- TOP CONTACT BLOCK -->
 <section class="top-contact" aria-label="Контактная информация">
   <div class="top-contact__inner">
     <h1 class="top-contact__title">Заявка на ваше событие — кейтеринг и сервис</h1>
-
-    <p class="top-contact__lead">
-      Быстрая связь по кейтерингу, билетам на мероприятия и согласованию даты.
-    </p>
+    <p class="top-contact__lead">Быстрая связь по кейтерингу, билетам на мероприятия и согласованию даты.</p>
 
     <div class="top-contact__grid">
-      <!-- E-Mail -->
       <a class="info-card" href="mailto:v.s@vilana.info" aria-label="Написать на v.s@vilana.info">
         <span class="info-card__icon" aria-hidden="true">✉</span>
         <span class="info-card__label">E-Mail</span>
         <span class="info-card__value">v.s@vilana.info</span>
       </a>
-
       <a class="info-card" href="mailto:vilana-event@outlook.de" aria-label="Написать на vilana-event@outlook.de">
         <span class="info-card__icon" aria-hidden="true">✉</span>
         <span class="info-card__label">E-Mail</span>
         <span class="info-card__value">vilana-event@outlook.de</span>
       </a>
-
-      <!-- Telefon -->
       <a class="info-card" href="tel:+4917657775996" aria-label="Позвонить +49 176 5777 5996">
         <span class="info-card__icon" aria-hidden="true">☎</span>
-        <span class="info-card__label">Телефон</span>
+        <span class="info-card__label">Telefon</span>
         <span class="info-card__value">+49 176 5777 5996</span>
       </a>
-
       <a class="info-card" href="tel:+4917642288707" aria-label="Позвонить +49 176 4228 8707">
         <span class="info-card__icon" aria-hidden="true">☎</span>
-        <span class="info-card__label">Телефон</span>
+        <span class="info-card__label">Telefon</span>
         <span class="info-card__value">+49 176 4228 8707</span>
       </a>
-
-      <!-- WhatsApp -->
       <a class="info-card info-card--accent"
          href="https://wa.me/4917657775996?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20Vilana%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D1%83."
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Написать в WhatsApp">
+         target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
         <span class="info-card__icon" aria-hidden="true">💬</span>
         <span class="info-card__label">WhatsApp</span>
         <span class="info-card__value">Написать сейчас</span>
       </a>
-
-      <!-- Adresse -->
       <a class="info-card"
          href="https://www.google.com/maps/search/?api=1&query=Osterstra%C3%9Fe+28%2C+31855+Aerzen"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Открыть адрес в Google Maps">
+         target="_blank" rel="noopener noreferrer" aria-label="Открыть адрес в Google Maps">
         <span class="info-card__icon" aria-hidden="true">📍</span>
-        <span class="info-card__label">Адрес</span>
+        <span class="info-card__label">Adresse</span>
         <span class="info-card__value">Osterstraße 28, 31855 Aerzen</span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- MAIN FORM AREA -->
+<main class="cf-main">
 
-    <form id="contactForm"
-          class="p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto"
-          novalidate
-          data-emailjs-public-key="vfmomNKrMxrf2xqDW"
-          data-emailjs-template-id="template_fuxgrlb"
-          data-emailjs-service-id="service_75biswm">
+  <!-- MODE PICKER — 2 cards above the form -->
+  <div class="cf-mode-wrap" aria-label="Тип запроса">
+    <button type="button" class="cf-mode-card cf-mode-card--active" id="modeCardQuick"
+            aria-pressed="true" data-mode="quick">
+      <span class="cf-mode-icon" aria-hidden="true">✉</span>
+      <span class="cf-mode-title">Быстрый запрос</span>
+      <span class="cf-mode-desc">Вопросы, информация, короткое сообщение</span>
+    </button>
+    <button type="button" class="cf-mode-card" id="modeCardFull"
+            aria-pressed="false" data-mode="full">
+      <span class="cf-mode-icon" aria-hidden="true">📋</span>
+      <span class="cf-mode-title">Заказ кейтеринга</span>
+      <span class="cf-mode-desc">Буфет от 20 гостей · доставка включена</span>
+    </button>
+  </div>
 
-      <!-- Anti-Spam -->
-      <input type="text" name="honeypot" class="hidden-field" autocomplete="off" tabindex="-1" />
-      <input type="text" name="cf_started_at" id="cf_started_at" class="hidden-field" autocomplete="off" tabindex="-1" />
+  <form id="contactForm" novalidate>
 
-      <!-- EmailJS hidden Template-Felder -->
-      <input type="text" name="from_name" id="from_name_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
-      <input type="text" name="reply_to" id="reply_to_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
-      <input type="text" name="subject" id="subject_hidden" class="hidden-field" autocomplete="off" tabindex="-1" />
-      <textarea name="message" id="cf-message-hidden" class="hidden-field" aria-hidden="true"></textarea>
+    <!-- Anti-spam -->
+    <input type="text" name="honeypot" class="hidden-field" autocomplete="off" tabindex="-1" />
+    <input type="text" name="cf_started_at" id="cf_started_at" class="hidden-field" autocomplete="off" tabindex="-1" />
 
-      <!-- QUICK -->
-      <section class="panel-quick p-5 sm:p-6 space-y-5">
-        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
-          <div class="flex-1 min-w-0">
-            <h2 class="text-2xl font-bold text-gray-900">Быстрый запрос</h2>
-            <p class="text-sm text-gray-600 mt-1">
-              Для вопросов, билетов (например, Event) или коротких запросов по кейтерингу.
-            </p>
-          </div>
+    <!-- EmailJS hidden fields -->
+    <input type="text"     name="from_name" id="from_name_hidden"  class="hidden-field" autocomplete="off" tabindex="-1" />
+    <input type="text"     name="reply_to"  id="reply_to_hidden"   class="hidden-field" autocomplete="off" tabindex="-1" />
+    <input type="text"     name="subject"   id="subject_hidden"    class="hidden-field" autocomplete="off" tabindex="-1" />
+    <textarea              name="message"   id="cf-message-hidden" class="hidden-field" aria-hidden="true"></textarea>
+    <textarea name="menu_selected_text" id="menuSelectedText"      class="hidden-field" aria-hidden="true"></textarea>
+    <input type="hidden"   name="menu_mode" id="menuModeHidden"    value="Keine Auswahl (Vilana schlägt vor)" />
 
-          <button type="button" id="btnToggleWizard"
-                  class="relative z-10 shrink-0 self-start rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold hover:bg-gray-50 transition">
-            Расширенно (опционально)
-          </button>
-        </div>
+    <!-- =============================================
+         PANEL: SCHNELL (always visible base)
+    ============================================= -->
+    <div class="cf-panel cf-panel--quick" id="panelQuick">
 
+      <div class="cf-panel__head">
         <div>
-          <label for="cf_message" class="block text-gray-700 mb-2 font-semibold">Сообщение *</label>
-          <textarea id="cf_message" name="quick_message" rows="6" required
-                    class="w-full border border-gray-300 rounded-xl px-4 py-3"
-                    placeholder="Коротко опишите, что нужно… (кейтеринг / буфет / вопросы / билеты / дата)"></textarea>
-          <p class="mt-2 text-xs text-gray-500">Совет: дата/место/кол-во гостей (если известно) помогут быстрее ответить.</p>
+          <h2 class="cf-panel__title">Быстрый запрос</h2>
+          <p class="cf-panel__sub">Для вопросов, билетов или коротких запросов по кейтерингу.</p>
         </div>
+        <button type="button" id="btnToggleWizard" class="cf-btn cf-btn--ghost cf-btn--sm">
+          Заказ кейтеринга (подробно)
+        </button>
+      </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="name" class="block text-gray-700 mb-2">Имя (опционально)</label>
-            <input id="name" name="name" type="text" class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-          </div>
+      <div class="cf-field">
+        <label for="cf_message" class="cf-label cf-label--req">Сообщение</label>
+        <textarea id="cf_message" name="quick_message" rows="5" required
+                  class="cf-input"
+                  placeholder="Коротко опишите, что нужно… (кейтеринг / буфет / вопросы / билеты / дата)"></textarea>
+        <p class="cf-hint">Совет: дата / место / количество гостей помогут быстрее ответить.</p>
+      </div>
 
-          <div>
-            <label for="email" class="block text-gray-700 mb-2 font-semibold">E-Mail *</label>
-            <input id="email" name="email" type="email" inputmode="email" required
-                   class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                   placeholder="name@email.de" />
-          </div>
-
-          <div class="sm:col-span-2">
-            <label for="cf-phone" class="block text-gray-700 mb-2">Телефон (опционально)</label>
-            <input id="cf-phone" name="phone" type="tel"
-                   class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                   placeholder="+49 …" />
-          </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="name" class="cf-label">Имя (опционально)</label>
+          <input id="name" name="name" type="text" class="cf-input" />
         </div>
-
-        <div>
-          <label class="inline-flex items-center">
-            <input type="checkbox" id="cf-privacy" required class="mr-2" />
-            <span class="text-sm">
-              Я принимаю <a href="/ru/agb.html" class="underline">AGB</a> и
-              <a href="/ru/datenschutz.html" class="underline">Datenschutz</a>
-            </span>
-          </label>
+        <div class="cf-field">
+          <label for="email" class="cf-label cf-label--req">E-Mail</label>
+          <input id="email" name="email" type="email" inputmode="email" required
+                 class="cf-input" placeholder="name@email.de" />
         </div>
+      </div>
 
-        <div class="flex justify-center pt-2">
-          <button type="submit" id="btnQuickSend" class="btn-graphite py-2 px-10">Отправить</button>
+      <div class="cf-field">
+        <label for="cf-phone" class="cf-label">Телефон (опционально)</label>
+        <input id="cf-phone" name="phone" type="tel" class="cf-input" placeholder="+49 …" />
+      </div>
+
+      <div class="cf-privacy">
+        <label class="cf-check-label">
+          <input type="checkbox" id="cf-privacy" required />
+          <span>Ich akzeptiere die <a href="/agb.html">AGB</a> &amp; <a href="/datenschutz.html">Datenschutz</a></span>
+        </label>
+      </div>
+
+      <div class="cf-panel__actions">
+        <button type="submit" id="btnQuickSend" class="cf-btn cf-btn--cta">Отправить</button>
+      </div>
+
+      <p id="formMsg" class="cf-success hidden">
+        Сообщение отправлено! Мы ответим как можно быстрее.
+      </p>
+    </div><!-- /panelQuick -->
+
+    <!-- =============================================
+         WIZARD (3 steps, shown when mode = full)
+    ============================================= -->
+    <div id="wizardWrap" class="cf-wizard hidden">
+
+      <!-- Progress bar -->
+      <div class="cf-progress" aria-label="Прогресс">
+        <div class="cf-progress__labels">
+          <span class="cf-progress__step-label" id="wiz-step-label">Schritt 1 von 3</span>
+          <span class="cf-progress__step-name"  id="wiz-step-name">Событие</span>
         </div>
-
-        <div id="formMsg" class="text-center text-green-600 font-semibold hidden">
-          Сообщение отправлено! Мы ответим как можно быстрее.
+        <div class="cf-progress__track" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+          <div class="cf-progress__fill" id="wizProgressFill" style="width:33%"></div>
         </div>
-      </section>
-
-      <!-- WIZARD -->
-      <section id="wizardWrap" class="hidden mt-8">
-
-        <div class="mb-5 text-center">
-          <h2 class="text-2xl font-bold text-gray-900">Расширенная заявка на кейтеринг</h2>
-          <p class="text-sm text-gray-600 mt-1">
-            Для структурированного предложения (минимальный заказ: от <strong>20 гостей</strong>).
-            <br />Доставка и установка буфета включены.
-          </p>
-        </div>
-
-        <ol class="flex items-center justify-between gap-2 mb-6" aria-label="Шаги">
-          <li class="flex-1">
-            <div class="flex items-center gap-2">
-              <span id="stepDot1" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">1</span>
-              <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Событие</span>
-            </div>
+        <ol class="cf-steps" aria-label="Шаги">
+          <li class="cf-step cf-step--active" id="stepTab1" aria-current="step">
+            <span class="cf-step__dot">1</span><span class="cf-step__name">Событие</span>
           </li>
-          <li class="flex-1">
-            <div class="flex items-center gap-2">
-              <span id="stepDot2" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">2</span>
-              <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Меню</span>
-            </div>
+          <li class="cf-step" id="stepTab2">
+            <span class="cf-step__dot">2</span><span class="cf-step__name">Меню</span>
           </li>
-          <li class="flex-1">
-            <div class="flex items-center gap-2">
-              <span id="stepDot3" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">3</span>
-              <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Опции</span>
-            </div>
-          </li>
-          <li class="flex-1">
-            <div class="flex items-center gap-2">
-              <span id="stepDot4" class="h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center text-sm font-semibold">4</span>
-              <span class="text-sm font-semibold text-gray-800 hidden sm:inline">Итог</span>
-            </div>
+          <li class="cf-step" id="stepTab3">
+            <span class="cf-step__dot">3</span><span class="cf-step__name">Обзор</span>
           </li>
         </ol>
+      </div>
 
-        <!-- Hidden menu fields -->
-        <textarea name="menu_selected_text" id="menuSelectedText" class="hidden-field" aria-hidden="true"></textarea>
-        <input type="hidden" name="menu_mode" id="menuModeHidden" value="Без выбора (Vilana предложит)" />
+      <!-- STEP 1: Event -->
+      <div class="cf-panel cf-panel--step" data-step="1">
 
-        <!-- STEP 1 -->
-        <section data-step="1" class="panel-event p-5 sm:p-6 space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-gray-700 mb-2 font-semibold" for="cf-eventType">Тип события *</label>
-              <select id="cf-eventType" name="event_type" required class="w-full border border-gray-300 rounded-xl px-4 py-2">
-                <option value="" selected disabled>Выберите…</option>
-                <option>День рождения</option>
-                <option>Свадьба</option>
-                <option>Корпоратив</option>
-                <option>Юбилей</option>
-                <option>Частная вечеринка</option>
-                <option>Другое</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-gray-700 mb-2 font-semibold" for="cf-guests">Гостей (от 20) *</label>
-              <input id="cf-guests" name="guests" type="number" min="20" inputmode="numeric" required
-                     class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="мин. 20" />
-              <p class="mt-1 text-xs text-gray-500">Минимальный заказ: от 20 гостей.</p>
-            </div>
-
-            <div>
-              <label class="block text-gray-700 mb-2 font-semibold" for="cf-date">Дата *</label>
-              <input id="cf-date" name="event_date" type="date" required
-                     class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-            </div>
-
-            <div>
-              <label class="block text-gray-700 mb-2 font-semibold" for="cf-time">Время (опционально)</label>
-              <input id="cf-time" name="event_time" type="time" class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-            </div>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-eventType" class="cf-label cf-label--req">Тип события</label>
+            <select id="cf-eventType" name="event_type" required class="cf-input">
+              <option value="" selected disabled>Выберите…</option>
+              <option>День рождения</option>
+              <option>Свадьба</option>
+              <option>Корпоратив</option>
+              <option>Юбилей</option>
+              <option>Частная вечеринка</option>
+              <option>Другое</option>
+            </select>
           </div>
-
-          <div>
-            <label class="block text-gray-700 mb-2 font-semibold" for="cf-location">Место / адрес *</label>
-            <textarea id="cf-location" name="location" rows="2" required
-                      class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                      placeholder="PLZ, город, улица / локация"></textarea>
-          </div>
-
-          <div class="rounded-2xl border border-amber-200 bg-amber-50/40 p-4">
-            <div class="font-semibold text-gray-900">Включено</div>
-            <ul class="mt-2 text-sm text-gray-700 list-disc pl-5 space-y-1">
-              <li>Доставка</li>
-              <li>Установка / оформление буфета</li>
-            </ul>
-            <p class="mt-2 text-xs text-gray-500">Разбор / уборка / посудомойка — опционально по договорённости.</p>
-          </div>
-        </section>
-
-        <!-- STEP 2 (v2 sheet) -->
-        <section data-step="2" class="panel-menu p-5 sm:p-6 space-y-4 hidden">
-
-          <div class="panel-base p-4">
-            <div class="font-semibold text-gray-900">Меню (опционально)</div>
-            <p class="text-sm text-gray-600 mt-1">
-              По умолчанию: вы ничего не выбираете — мы предложим оптимальный набор под количество гостей.
-              <br />Если хотите — отметьте блюда (без количества).
-            </p>
-
-            <div class="mt-4">
-              <label class="block text-gray-700 mb-2 font-semibold">Предпочтения (опционально)</label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
-                <label class="flex items-center gap-2"><input type="checkbox" name="pref_meat2" value="Ja" /> Мясо</label>
-                <label class="flex items-center gap-2"><input type="checkbox" name="pref_fish2" value="Ja" /> Рыба</label>
-                <label class="flex items-center gap-2"><input type="checkbox" name="pref_veg2" value="Ja" /> Вегетарианское</label>
-                <label class="flex items-center gap-2"><input type="checkbox" name="pref_kids2" value="Ja" /> Детям</label>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <label class="block text-gray-700 mb-2 font-semibold" for="cf-allergies">Аллергены / пожелания (опционально)</label>
-              <textarea id="cf-allergies" name="allergies" rows="3"
-                        class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                        placeholder="например: без глютена, без орехов, халяль, без свинины…"></textarea>
-            </div>
-          </div>
-
-          <button type="button" id="menuRow" class="v-row">
-            <div class="v-row__left">
-              <div class="v-row__title">Расширенно: выбрать блюда (опционально)</div>
-              <div class="v-row__hint" id="menuRowHint">Без выбора — Vilana предложит</div>
-            </div>
-            <div class="v-row__right">
-              <div class="v-row__count"><span data-menu-count>0</span></div>
-              <div class="v-row__chev" aria-hidden="true">›</div>
-            </div>
-          </button>
-
-        </section>
-
-        <!-- STEP 3 -->
-        <section data-step="3" class="panel-options p-5 sm:p-6 space-y-4 hidden">
-          <div class="panel-base p-4">
-            <div class="font-semibold text-gray-900">Инвентарь (опционально)</div>
-            <p class="text-sm text-gray-600 mt-1">При необходимости можем предложить посуду / приборы / бокалы (цена по объёму).</p>
-
-            <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-              <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                <input type="checkbox" name="opt_geschirr" value="Ja" />
-                <span>Посуду</span>
-              </label>
-              <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                <input type="checkbox" name="opt_besteck" value="Ja" />
-                <span>Приборы</span>
-              </label>
-              <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2">
-                <input type="checkbox" name="opt_glaeser" value="Ja" />
-                <span>Бокалы</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="panel-base p-4">
-            <div class="font-semibold text-gray-900">Персонал (опционально)</div>
-            <p class="text-sm text-gray-600 mt-1">По договорённости (цена по объёму).</p>
-
-            <div class="mt-3">
-              <label class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
-                <input type="checkbox" id="opt_service" name="opt_service" value="Ja" />
-                <span>Запросить персонал</span>
-              </label>
-            </div>
-
-            <div id="serviceDetails" class="mt-4 hidden">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div>
-                  <label class="block text-gray-700 mb-2" for="cf-service-count">Количество (опц.)</label>
-                  <input id="cf-service-count" name="service_count" type="number" min="1" inputmode="numeric"
-                         class="w-full border border-gray-300 rounded-xl px-4 py-2" placeholder="например: 2" />
-                </div>
-                <div>
-                  <label class="block text-gray-700 mb-2" for="cf-service-from">С (опц.)</label>
-                  <input id="cf-service-from" name="service_from" type="time" class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-                </div>
-                <div>
-                  <label class="block text-gray-700 mb-2" for="cf-service-to">До (опц.)</label>
-                  <input id="cf-service-to" name="service_to" type="time" class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-                </div>
-              </div>
-
-              <div class="mt-4">
-                <label class="block text-gray-700 mb-2">Задачи (опционально)</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-                  <label class="flex items-center gap-2"><input type="checkbox" name="service_buffet" value="Ja" /> Следить/пополнять буфет</label>
-                  <label class="flex items-center gap-2"><input type="checkbox" name="service_table" value="Ja" /> Сервис за столами</label>
-                  <label class="flex items-center gap-2"><input type="checkbox" name="service_bar" value="Ja" /> Бар / напитки</label>
-                  <label class="flex items-center gap-2"><input type="checkbox" name="service_cleanup" value="Ja" /> Уборка/порядок</label>
-                </div>
-              </div>
-
-              <div class="mt-4">
-                <label class="block text-gray-700 mb-2" for="cf-service-note">Комментарий (опц.)</label>
-                <textarea id="cf-service-note" name="service_note" rows="2"
-                          class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                          placeholder="например: welcome-drink, много гостей на улице, короткие пути…"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel-base p-4">
-            <div class="font-semibold text-gray-900">После мероприятия (опционально)</div>
-            <p class="text-sm text-gray-600 mt-1">Разбор / уборка / посудомойка — опционально по договорённости (цена по объёму).</p>
-
-            <label class="mt-3 flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm">
-              <input type="checkbox" id="opt_cleanup" name="cleanup_offer" value="Ja" />
-              <span>Запросить уборку / разбор / посуду</span>
-            </label>
-
-            <div id="cleanupDetails" class="mt-4 hidden">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-gray-700 mb-2" for="cf-kitchen">Есть кухня/мойка на месте?</label>
-                  <select id="cf-kitchen" name="kitchen_available" class="w-full border border-gray-300 rounded-xl px-4 py-2">
-                    <option value="" selected>—</option>
-                    <option>Ja</option>
-                    <option>Nein</option>
-                    <option>Unklar</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-gray-700 mb-2" for="cf-deadline">До какого времени закончить? (опц.)</label>
-                  <input id="cf-deadline" name="cleanup_deadline" type="time" class="w-full border border-gray-300 rounded-xl px-4 py-2" />
-                </div>
-              </div>
-
-              <div class="mt-4">
-                <label class="block text-gray-700 mb-2" for="cf-cleanupNote">Детали (опционально)</label>
-                <textarea id="cf-cleanupNote" name="cleanup_note" rows="2"
-                          class="w-full border border-gray-300 rounded-xl px-4 py-2"
-                          placeholder="например: маленькая мойка, нет тёплой воды, далеко носить…"></textarea>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- STEP 4 -->
-        <section data-step="4" class="panel-base p-5 sm:p-6 space-y-3 hidden">
-          <div class="font-semibold text-gray-900">Итог</div>
-          <pre id="summaryBox" class="text-sm whitespace-pre-wrap text-gray-700"></pre>
-          <p class="text-xs text-gray-500">Нажимая «Отправить», вы отправляете запрос без обязательств. Мы быстро свяжемся с вами.</p>
-
-          <div class="text-center pt-2">
-            <button type="submit" id="btnWizardSend" class="btn-cta py-2 px-8">Отправить</button>
-          </div>
-        </section>
-
-        <!-- Wizard Navigation -->
-        <div class="mt-6 flex items-center justify-between gap-3">
-          <button type="button" id="btnBack"
-                  class="rounded-full border border-gray-300 px-6 py-2 font-semibold hover:bg-gray-50 transition">
-            Назад
-          </button>
-
-          <div class="flex items-center gap-3">
-            <button type="button" id="btnNext" class="btn-graphite py-2 px-8">Далее</button>
+          <div class="cf-field">
+            <label for="cf-guests" class="cf-label cf-label--req">Гостей (от 20)</label>
+            <input id="cf-guests" name="guests" type="number" min="20" inputmode="numeric" required
+                   class="cf-input" placeholder="мин. 20" />
+            <p class="cf-hint cf-hint--error hidden" id="guestErr">Минимальный заказ: от 20 гостей</p>
+            <p class="cf-hint cf-hint--ok   hidden" id="guestOk">✓ Подходит</p>
           </div>
         </div>
 
-        <!-- Close wizard -->
-        <div class="mt-4 text-center">
-          <button type="button" id="btnCloseWizard"
-                  class="text-sm font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-2">
-            Закрыть расширенную форму
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-date" class="cf-label cf-label--req">Дата</label>
+            <input id="cf-date" name="event_date" type="date" required class="cf-input" />
+          </div>
+          <div class="cf-field">
+            <label for="cf-time" class="cf-label">Время (опционально)</label>
+            <input id="cf-time" name="event_time" type="time" class="cf-input" />
+          </div>
+        </div>
+
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-plz" class="cf-label cf-label--req">PLZ и город</label>
+            <input id="cf-plz" name="location_city" type="text" required class="cf-input"
+                   placeholder="30159 Hannover" />
+          </div>
+          <div class="cf-field">
+            <label for="cf-street" class="cf-label">Улица / зал (опционально)</label>
+            <input id="cf-street" name="location_street" type="text" class="cf-input"
+                   placeholder="Festsaal XY, Musterstraße 1" />
+          </div>
+        </div>
+
+        <div class="cf-include-box" aria-label="Inklusive Leistungen">
+          <span class="cf-include-box__icon" aria-hidden="true">✓</span>
+          <span>Доставка и установка буфета включены · Разбор / уборка — опционально</span>
+        </div>
+      </div><!-- /step1 -->
+
+      <!-- STEP 2: Menü + Optionen -->
+      <div class="cf-panel cf-panel--step hidden" data-step="2">
+
+        <!-- Serviceformat -->
+        <fieldset class="cf-fieldset">
+          <legend class="cf-legend">Формат обслуживания (опционально)</legend>
+          <div class="cf-chip-group">
+            <label class="cf-chip"><input type="radio" name="service_format" value="Buffet" /><span>Буфет</span></label>
+            <label class="cf-chip"><input type="radio" name="service_format" value="Fingerfood" /><span>Фингерфуд</span></label>
+            <label class="cf-chip"><input type="radio" name="service_format" value="Grillbuffet" /><span>Гриль-буфет</span></label>
+            <label class="cf-chip"><input type="radio" name="service_format" value="Menü gesetzt" /><span>Меню (подача)</span></label>
+            <label class="cf-chip"><input type="radio" name="service_format" value="Offen" checked /><span>Vilana предложит</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Präferenzen -->
+        <fieldset class="cf-fieldset">
+          <legend class="cf-legend">Предпочтения (опционально)</legend>
+          <div class="cf-chip-group">
+            <label class="cf-chip"><input type="checkbox" name="pref_meat2" value="Ja" /><span>Мясо</span></label>
+            <label class="cf-chip"><input type="checkbox" name="pref_fish2" value="Ja" /><span>Рыба</span></label>
+            <label class="cf-chip"><input type="checkbox" name="pref_veg2"  value="Ja" /><span>Vegetarisch</span></label>
+            <label class="cf-chip"><input type="checkbox" name="pref_kids2" value="Ja" /><span>Детям</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Allergene -->
+        <div class="cf-field">
+          <label for="cf-allergies" class="cf-label">Аллергены и пожелания (опционально)</label>
+          <textarea id="cf-allergies" name="allergies" rows="2" class="cf-input"
+                    placeholder="z.B. glutenfrei, ohne Nüsse, halal, kein Schweinefleisch…"></textarea>
+        </div>
+
+        <!-- Menü-Auswahl row -->
+        <button type="button" id="menuRow" class="cf-menu-row" aria-haspopup="dialog">
+          <span class="cf-menu-row__icon" aria-hidden="true">🍽</span>
+          <span class="cf-menu-row__text">
+            <span class="cf-menu-row__title">Выбрать блюда (опционально)</span>
+            <span class="cf-menu-row__hint" id="menuRowHint">Без выбора — Vilana предложит</span>
+          </span>
+          <span class="cf-menu-row__arrow" aria-hidden="true">›</span>
+        </button>
+
+        <!-- Zusatzleistungen (collapsed in step 2) -->
+        <fieldset class="cf-fieldset">
+          <legend class="cf-legend">Дополнительные услуги (опционально)</legend>
+
+          <label class="cf-check-row">
+            <input type="checkbox" name="opt_geschirr" value="Ja" />
+            <span class="cf-check-row__body">
+              <span class="cf-check-row__title">Посуда / приборы / бокалы</span>
+              <span class="cf-check-row__hint">Preis nach Absprache</span>
+            </span>
+          </label>
+
+          <label class="cf-check-row" id="rowService">
+            <input type="checkbox" name="opt_service" id="opt_service" value="Ja" />
+            <span class="cf-check-row__body">
+              <span class="cf-check-row__title">Персонал</span>
+              <span class="cf-check-row__hint">Количество и время — по договорённости</span>
+            </span>
+          </label>
+
+          <!-- Service detail (shown when checkbox ticked) -->
+          <div id="serviceDetails" class="cf-subpanel hidden">
+            <div class="cf-row cf-row--3">
+              <div class="cf-field">
+                <label for="cf-service-count" class="cf-label">Количество</label>
+                <input id="cf-service-count" name="service_count" type="number" min="1" inputmode="numeric" class="cf-input" placeholder="напр. 2" />
+              </div>
+              <div class="cf-field">
+                <label for="cf-service-from" class="cf-label">Работа с</label>
+                <input id="cf-service-from" name="service_from" type="time" class="cf-input" />
+              </div>
+              <div class="cf-field">
+                <label for="cf-service-to" class="cf-label">Работа до</label>
+                <input id="cf-service-to" name="service_to" type="time" class="cf-input" />
+              </div>
+            </div>
+            <div class="cf-chip-group" style="margin-top:.5rem">
+              <label class="cf-chip"><input type="checkbox" name="service_buffet"  value="Ja" /><span>Следить за буфетом</span></label>
+              <label class="cf-chip"><input type="checkbox" name="service_table"   value="Ja" /><span>Сервис за столами</span></label>
+              <label class="cf-chip"><input type="checkbox" name="service_bar"     value="Ja" /><span>Бар / напитки</span></label>
+              <label class="cf-chip"><input type="checkbox" name="service_cleanup" value="Ja" /><span>Уборка</span></label>
+            </div>
+            <div class="cf-field" style="margin-top:.5rem">
+              <label for="cf-service-note" class="cf-label">Комментарий</label>
+              <textarea id="cf-service-note" name="service_note" rows="2" class="cf-input"
+                        placeholder="например: welcome-drink, много гостей на улице…"></textarea>
+            </div>
+          </div>
+
+          <label class="cf-check-row" id="rowCleanup">
+            <input type="checkbox" name="cleanup_offer" id="opt_cleanup" value="Ja" />
+            <span class="cf-check-row__body">
+              <span class="cf-check-row__title">Разбор и уборка</span>
+              <span class="cf-check-row__hint">Цена по объёму</span>
+            </span>
+          </label>
+
+          <div id="cleanupDetails" class="cf-subpanel hidden">
+            <div class="cf-row">
+              <div class="cf-field">
+                <label for="cf-kitchen" class="cf-label">Есть кухня / мойка?</label>
+                <select id="cf-kitchen" name="kitchen_available" class="cf-input">
+                  <option value="">—</option>
+                  <option>Да</option>
+                  <option>Нет</option>
+                  <option>Неизвестно</option>
+                </select>
+              </div>
+              <div class="cf-field">
+                <label for="cf-deadline" class="cf-label">Закончить до</label>
+                <input id="cf-deadline" name="cleanup_deadline" type="time" class="cf-input" />
+              </div>
+            </div>
+            <div class="cf-field" style="margin-top:.5rem">
+              <label for="cf-cleanupNote" class="cf-label">Детали</label>
+              <textarea id="cf-cleanupNote" name="cleanup_note" rows="2" class="cf-input"
+                        placeholder="например: маленькая мойка, нет тёплой воды…"></textarea>
+            </div>
+          </div>
+
+        </fieldset>
+      </div><!-- /step2 -->
+
+      <!-- STEP 3: Übersicht -->
+      <div class="cf-panel cf-panel--step hidden" data-step="3">
+        <h2 class="cf-summary__heading">Ваша заявка</h2>
+
+        <div class="cf-summary" id="summaryCards">
+          <!-- JS fills these -->
+          <div class="cf-summary__row" id="sumEvent">
+            <div class="cf-summary__col">
+              <span class="cf-summary__label">СОБЫТИЕ</span>
+              <span class="cf-summary__val" id="sumEventVal">—</span>
+            </div>
+            <button type="button" class="cf-summary__edit" data-goto="1">Изменить</button>
+          </div>
+          <div class="cf-summary__row" id="sumMenu">
+            <div class="cf-summary__col">
+              <span class="cf-summary__label">МЕНЮ И ФОРМАТ</span>
+              <span class="cf-summary__val" id="sumMenuVal">—</span>
+            </div>
+            <button type="button" class="cf-summary__edit" data-goto="2">Изменить</button>
+          </div>
+          <div class="cf-summary__row" id="sumOptions">
+            <div class="cf-summary__col">
+              <span class="cf-summary__label">ОПЦИИ</span>
+              <span class="cf-summary__val" id="sumOptionsVal">Без дополнительных услуг</span>
+            </div>
+            <button type="button" class="cf-summary__edit" data-goto="2">Изменить</button>
+          </div>
+          <div class="cf-summary__row cf-summary__row--contact" id="sumContact">
+            <div class="cf-summary__col">
+              <span class="cf-summary__label">КОНТАКТ</span>
+              <span class="cf-summary__val" id="sumContactVal">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cf-trust">
+          <span>✦ Без обязательств</span>
+          <span>✦ Ответ в течение 24 ч</span>
+          <span>✦ DSGVO-konform</span>
+        </div>
+
+        <div class="cf-panel__actions">
+          <button type="submit" id="btnWizardSend" class="cf-btn cf-btn--cta cf-btn--lg">
+            Отправить заявку →
           </button>
         </div>
 
-      </section>
-    </form>
-  </div>
+        <p id="formMsgWizard" class="cf-success hidden">
+          Сообщение отправлено! Мы ответим как можно быстрее.
+        </p>
+      </div><!-- /step3 -->
+
+      <!-- Wizard navigation -->
+      <div class="cf-wizard__nav">
+        <button type="button" id="btnBack" class="cf-btn cf-btn--ghost">← Назад</button>
+        <button type="button" id="btnNext" class="cf-btn cf-btn--cta">Далее →</button>
+      </div>
+
+      <div class="cf-wizard__close-wrap">
+        <button type="button" id="btnCloseWizard" class="cf-btn cf-btn--link">
+          Закрыть расширенную форму
+        </button>
+      </div>
+
+    </div><!-- /wizardWrap -->
+
+  </form>
 </main>
 
-<!-- =========================================
-  FOOTER – Premium Version
-========================================= -->
-<footer class="footer-premium"
-  itemscope itemtype="https://schema.org/LocalBusiness">
+<!-- =============================================
+     FOOTER
+============================================= -->
+<footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
   <meta itemprop="name" content="Vilana Event & Catering">
   <meta itemprop="telephone" content="+49 176 5777 5996">
   <meta itemprop="email" content="v.s@vilana.info">
@@ -818,194 +586,106 @@
   </div>
 
   <div class="footer-inner">
-
     <div class="footer-deco-line"></div>
-
-
-    <!-- 3-spalten Grid -->
     <div class="footer-grid">
-
-      <!-- Kontakt -->
       <div class="footer-col">
         <h3 class="footer-col-title">Kontakt</h3>
         <address class="footer-address">
           <p class="footer-address-name">Vilana Event &amp; Catering</p>
           <p class="footer-address-street">Osterstraße 28<br>31855 Aerzen, Niedersachsen</p>
-          <a href="tel:+4917657775996">
-            <span class="contact-icon">☎</span> +49 176 5777 5996
-          </a>
-          <a href="tel:+4917642288707">
-            <span class="contact-icon">☎</span> +49 176 4228 8707
-          </a>
-          <a href="mailto:v.s@vilana.info">
-            <span class="contact-icon">✉</span> v.s@vilana.info
-          </a>
-          <a href="mailto:vilana-event@outlook.de">
-            <span class="contact-icon">✉</span> vilana-event@outlook.de
-          </a>
+          <a href="tel:+4917657775996"><span class="contact-icon">☎</span> +49 176 5777 5996</a>
+          <a href="tel:+4917642288707"><span class="contact-icon">☎</span> +49 176 4228 8707</a>
+          <a href="mailto:v.s@vilana.info"><span class="contact-icon">✉</span> v.s@vilana.info</a>
+          <a href="mailto:vilana-event@outlook.de"><span class="contact-icon">✉</span> vilana-event@outlook.de</a>
         </address>
-
-        <a href="https://www.instagram.com/vilana_catering/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-instagram"
-          aria-label="Instagram – vilana_catering">
+        <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+           class="footer-instagram" aria-label="Instagram – vilana_catering">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
           </svg>
           @vilana_catering
         </a>
       </div>
-
       <div class="footer-divider-v"></div>
-
-      <!-- Navigation -->
       <div class="footer-col">
         <h3 class="footer-col-title">Navigation</h3>
         <nav aria-label="Footer-Navigation">
           <ul class="footer-nav">
-            <li><a href="/">Startseite</a></li>
+            <li><a href="/ru/">Startseite</a></li>
             <li><a href="/#services">Leistungen</a></li>
             <li><a href="/partyservice.html">Partyservice</a></li>
-            <li><a href="/menu.html">Menü</a></li>
+            <li><a href="/menu.html">Меню</a></li>
             <li><a href="/galerie.html">Galerie</a></li>
             <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/event.html">Event</a></li>
+            <li><a href="/event.html">Событие</a></li>
             <li><a href="/contact.html">Kontakt</a></li>
           </ul>
         </nav>
       </div>
-
       <div class="footer-divider-v"></div>
-
-      <!-- Servicegebiet -->
       <div class="footer-col">
         <h3 class="footer-col-title">Servicegebiet</h3>
         <p class="footer-regions-label">Catering &amp; Partyservice in:</p>
         <ul class="footer-regions">
-          <li>Hameln</li>
-          <li>Hannover</li>
-          <li>Bad Pyrmont</li>
-          <li>Bielefeld</li>
-          <li>Paderborn</li>
-          <li>Minden</li>
-          <li>Detmold</li>
-          <li>Münster</li>
-          <li>Braunschweig</li>
-          <li>Wunstorf</li>
+          <li>Hameln</li><li>Hannover</li><li>Bad Pyrmont</li><li>Bielefeld</li>
+          <li>Paderborn</li><li>Minden</li><li>Detmold</li><li>Münster</li>
+          <li>Braunschweig</li><li>Wunstorf</li>
         </ul>
         <p class="footer-regions-note">Radius ca. 200 km &nbsp;·&nbsp; Niedersachsen &amp; NRW</p>
       </div>
-
     </div>
-
-    <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p class="footer-copyright">
-    © 2026 Vilana Event &amp; Catering.
-    <br class="br-mobile" />
-    Alle Rechte vorbehalten.
-  </p>
-
-  <nav class="footer-legal" aria-label="Rechtliches">
-    <a href="/impressum.html">Impressum</a>
-    <span aria-hidden="true">|</span>
-    <a href="/datenschutz.html">Datenschutz</a>
-    <span aria-hidden="true">|</span>
-    <a href="/agb.html">AGB</a>
-  </nav>
-</div>
-
+    <div class="footer-bottom">
+      <p class="footer-copyright">© <span id="year"></span> Vilana Event &amp; Catering.<br class="br-mobile" /> Alle Rechte vorbehalten.</p>
+      <nav class="footer-legal" aria-label="Rechtliches">
+        <a href="/impressum.html">Impressum</a>
+        <span aria-hidden="true">|</span>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <span aria-hidden="true">|</span>
+        <a href="/agb.html">AGB</a>
+      </nav>
+    </div>
   </div>
-
-  <button
-    type="button"
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="footer-scroll-top"
-    aria-label="Nach oben scrollen"
-    title="Nach oben">
-    ▲
-  </button>
+  <button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="footer-scroll-top" aria-label="Nach oben scrollen" title="Nach oben">▲</button>
 </footer>
 
-<!-- =========================================================
-  MENU SHEET / MODAL — v2 (обязательно для JS v2)
-  RU VERSION — FULL BLOCK (с нижней кнопкой "Применить")
-========================================================== -->
+<!-- MENÜ SHEET -->
 <div id="menuModal" class="v-sheet hidden" aria-hidden="true">
-  <div class="v-sheet__overlay" data-sheet-close></div>
-
-  <div class="v-sheet__panel" role="dialog" aria-modal="true" aria-label="Выбор блюд">
-    <!-- HEAD -->
+  <div class="v-sheet__backdrop" data-sheet-close></div>
+  <div class="v-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="menuModalTitle">
     <div class="v-sheet__head">
-      <div class="v-sheet__headLeft">
-        <div class="v-sheet__title">Выбор блюд</div>
-        <div class="v-sheet__sub">Опционально — без количества (мы рассчитаем под гостей).</div>
+      <div>
+        <div class="v-sheet__title" id="menuModalTitle">Выбор блюд</div>
+        <div class="v-sheet__sub">Опционально — без количества</div>
       </div>
-
-      <button type="button"
-              id="menuClose"
-              class="v-sheet__close"
-              aria-label="Закрыть"
-              data-sheet-close>✕</button>
+      <button type="button" id="menuClose" class="v-sheet__close" aria-label="Закрыть" data-sheet-close>✕</button>
     </div>
-
-    <!-- TOOLS (SEARCH + RESET) -->
     <div class="v-sheet__tools">
-      <div class="v-sheet__searchWrap">
-        <label class="v-sheet__label" for="menuModalSearch">Поиск</label>
-        <input id="menuModalSearch"
-               type="text"
-               class="v-sheet__search"
-               placeholder="Поиск: шашлык, лосось, тирамису..." />
-      </div>
-
+      <input id="menuModalSearch" class="v-sheet__search" type="text"
+             placeholder="Поиск: шашлык, лосось, тирамису…" />
       <button type="button" id="menuModalReset" class="v-sheet__reset">Сброс</button>
     </div>
-
-    <!-- BODY (scroll area) -->
     <div class="v-sheet__body">
-      <!-- CATEGORIES -->
-      <div class="v-sheet__cats" id="menuCats"></div>
-
-      <!-- ITEMS -->
-      <div class="v-sheet__items">
-        <div class="v-sheet__itemsHead">
-          <div class="v-sheet__itemsTitle">Блюда</div>
-          <!-- счетчик в шапке списка (опционально) -->
-          <div class="v-sheet__itemsMeta">Выбрано: <span data-menu-count>0</span></div>
+      <div class="v-sheet__cols">
+        <div class="v-sheet__col v-sheet__col--cats">
+          <div class="v-sheet__coltitle">Категории</div>
+          <div id="menuCats" class="v-sheet__list"></div>
         </div>
-
-        <div id="menuItems"></div>
+        <div class="v-sheet__col v-sheet__col--items">
+          <div class="v-sheet__coltitle">Блюда</div>
+          <div id="menuItems" class="v-sheet__items"></div>
+        </div>
       </div>
     </div>
-
-    <!-- FOOT (sticky bottom bar) -->
     <div class="v-sheet__foot">
-      <div class="v-sheet__footLeft">
-        <span class="v-sheet__footLabel">Выбрано:</span>
-        <span class="v-sheet__badge" data-menu-count>0</span>
-      </div>
-
-      <!-- IMPORTANT:
-           id должен совпадать с тем, что ожидает JS v2.
-           Если в DE другой id — замени тут на него один-в-один.
-      -->
-      <button type="button" id="menuApply" class="v-sheet__apply">
-        Применить
-      </button>
+      <div class="v-sheet__count">Выбрано: <strong id="menuCount">0</strong></div>
+      <button type="button" id="menuApply" class="v-sheet__apply">Сохранить</button>
     </div>
   </div>
 </div>
 
-
-<!-- EmailJS SDK (CDN) -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<!-- Kontakt-Logik (RU) — должен быть v2, RU текст -->
 <script src="/js/contact-ru.js" defer></script>
-
-<!-- Cookie Consent Wall -->
 <script src="/js/vilana-cookiewall.js" defer></script>
 </body>
 </html>
