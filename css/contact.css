@@ -1,73 +1,71 @@
 /* =========================================================
-   Vilana Contact — Ivory · Navy · Matte White Neon
-   Page: warm ivory #f7f3ec (matches menu.html)
-   CTA: #141822 (matches footer)
-   Gold accent: only on light-bg elements (info-cards, includes)
-   Sheet: dark #0d0f14 with matte white neon selection
+   Vilana Kontaktseite — Elfenbein · Marine · Anthrazit
+   Hintergrund: warmes Elfenbein #f7f3ec (passend zu menu.html)
+   CTA-Farbe: #141822 (passend zum Footer)
+   Gold-Akzent: nur auf hellen Elementen (Info-Karten, Hinweisboxen)
+   Menü-Sheet: heller Hintergrund mit Anthrazit-Auswahl
 ========================================================= */
 
 /* =========================================================
-   1. TOKENS
+   1. DESIGN-TOKENS (CSS-Variablen)
 ========================================================= */
 :root {
-  /* Page background — warm ivory */
+  /* Seitenhintergrund — warmes Elfenbein */
   --bg:      #f7f3ec;
   --paper:   #ffffff;
   --paper-2: #fdfaf6;
 
-  /* Text on light backgrounds */
+  /* Textfarben auf hellem Hintergrund */
   --text:    #1a1e2a;
   --muted:   rgba(26,30,42,.65);
   --hint:    rgba(26,30,42,.42);
 
-  /* Borders on light backgrounds */
+  /* Rahmenfarben auf hellem Hintergrund */
   --line:    rgba(20,24,34,.12);
   --line-2:  rgba(20,24,34,.20);
 
-  /* CTA = footer dark navy */
+  /* CTA-Farbe — dunkles Marine wie Footer */
   --cta:      #141822;
   --cta-2:    #06070B;
   --cta-text: #e8e2d9;
 
-  /* Gold = footer gold */
+  /* Gold — passend zum Footer-Gold */
   --gold:      #c9a96e;
   --gold-soft: rgba(201,169,110,.13);
   --gold-mid:  rgba(201,169,110,.28);
 
-  /* Shadows */
+  /* Anthrazit — für ausgewählte Elemente im Menü-Sheet */
+  --anthrazit:        #3a3f4a;
+  --anthrazit-light:  rgba(58,63,74,.08);
+  --anthrazit-border: rgba(58,63,74,.30);
+
+  /* Schatten */
   --shadow-sm: 0 2px 12px rgba(20,24,34,.08);
   --shadow-md: 0 8px 36px rgba(20,24,34,.12);
 
-  /* Radii */
+  /* Eckenradien */
   --r-sm:   8px;
   --r-md:   12px;
   --r-lg:   18px;
   --r-xl:   24px;
   --r-pill: 999px;
 
-  /* Sheet — dark, matte white neon */
-  --sheet-bg:      #0d0f14;
-  --sheet-text:    rgba(255,255,255,.72);
-  --sheet-bright:  #ffffff;
-  --sheet-muted:   rgba(255,255,255,.35);
-  --sheet-dim:     rgba(255,255,255,.20);
-  --sheet-line:    rgba(255,255,255,.07);
-  --sheet-item:    rgba(255,255,255,.03);
-  --sheet-hover:   rgba(255,255,255,.06);
-  --neon-bg:       rgba(255,255,255,.09);
-  --neon-border:   rgba(255,255,255,.22);
-  --neon-glow:     0 0 18px rgba(255,255,255,.50), 0 0 5px rgba(255,255,255,.25);
-  --neon-glow-sm:  0 0 14px rgba(255,255,255,.40);
+  /* Sheet-Variablen (werden im hellen Sheet verwendet) */
+  --sheet-muted: rgba(255,255,255,.35);
+  --sheet-text:  rgba(255,255,255,.72);
+  --sheet-dim:   rgba(255,255,255,.20);
 }
 
 /* =========================================================
-   2. BASE
+   2. GRUNDSTILE
 ========================================================= */
 body { background: var(--bg); color: var(--text); }
 
 /* =========================================================
-   3. FORM ELEMENTS
+   3. FORMULAR-ELEMENTE
 ========================================================= */
+
+/* Eingabefelder — einheitliches Basis-Styling */
 .cf-input {
   display: block;
   width: 100%;
@@ -89,11 +87,14 @@ body { background: var(--bg); color: var(--text); }
   border-color: var(--gold);
   box-shadow: 0 0 0 3px var(--gold-soft);
 }
+
+/* Fehlerzustand — rote Umrandung */
 .cf-input.field-error {
   border-color: #dc2626;
   box-shadow: 0 0 0 3px rgba(220,38,38,.10);
 }
 
+/* Dropdown mit eigenem Pfeil-Icon */
 select.cf-input {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a1e2a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -102,15 +103,18 @@ select.cf-input {
   cursor: pointer;
 }
 
+/* Zahlenfeld — Browser-Pfeile ausblenden */
 input[type="number"].cf-input::-webkit-inner-spin-button,
 input[type="number"].cf-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 input[type="number"].cf-input { -moz-appearance: textfield; }
 
+/* Datums- und Zeitfelder — Kalender-Icon dezenter */
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator { opacity: .50; cursor: pointer; transition: opacity .15s; }
 input[type="date"]::-webkit-calendar-picker-indicator:hover,
 input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 
+/* Beschriftungen */
 .cf-label {
   display: block;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -120,10 +124,13 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--muted);
   margin-bottom: 5px;
 }
+/* Pflichtfeld-Markierung mit Goldpunkt */
 .cf-label--req::after { content: " *"; color: var(--gold); }
 
+/* Feld-Wrapper */
 .cf-field { display: flex; flex-direction: column; margin-bottom: .75rem; }
 
+/* Hinweistexte unter Feldern */
 .cf-hint {
   font-size: 11px;
   margin-top: 4px;
@@ -133,7 +140,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 .cf-hint--error { color: #c0392b; }
 .cf-hint--ok    { color: #2b7a53; }
 
-/* Fieldset */
+/* Fieldset ohne Browser-Standard-Styling */
 .cf-fieldset { border: none; padding: 0; margin: 0 0 1rem; }
 .cf-legend {
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -148,7 +155,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   width: 100%;
 }
 
-/* Chip group */
+/* Chip-Auswahl (Radio/Checkbox als Pillen) */
 .cf-chip-group { display: flex; flex-wrap: wrap; gap: .4rem; }
 .cf-chip { display: inline-flex; align-items: center; cursor: pointer; }
 .cf-chip input { position: absolute; opacity: 0; width: 0; height: 0; }
@@ -164,6 +171,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   transition: border-color .15s, background .15s, color .15s;
   user-select: none;
 }
+/* Aktiver Chip — dunkles Marine */
 .cf-chip input:checked + span {
   border-color: var(--cta);
   background: var(--cta);
@@ -171,7 +179,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-chip:hover span { border-color: var(--gold); }
 
-/* Check rows */
+/* Checkbox-Zeilen (Zusatzleistungen) */
 .cf-check-row {
   display: flex;
   align-items: flex-start;
@@ -207,7 +215,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--hint);
 }
 
-/* Privacy */
+/* Datenschutz-Checkbox */
 .cf-privacy { margin-bottom: 1rem; }
 .cf-check-label {
   display: inline-flex;
@@ -229,7 +237,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-check-label a { color: var(--cta); text-decoration: underline; text-underline-offset: 2px; }
 
-/* Sub-panel */
+/* Unterpanel (z.B. Service-Details nach Checkbox-Auswahl) */
 .cf-subpanel {
   margin-top: .5rem;
   margin-left: 1rem;
@@ -240,21 +248,26 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 
 /* =========================================================
-   4. LAYOUT HELPERS
+   4. LAYOUT-HILFKLASSEN
 ========================================================= */
+
+/* Zweispaltiges Raster */
 .cf-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: .75rem;
   margin-bottom: .75rem;
 }
+/* Dreispaltiges Raster */
 .cf-row--3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* Auf kleinen Bildschirmen einspaltiges Layout */
 @media (max-width: 560px) {
   .cf-row, .cf-row--3 { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
-   5. BUTTONS
+   5. SCHALTFLÄCHEN
 ========================================================= */
 .cf-btn {
   display: inline-flex;
@@ -273,7 +286,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-btn:active { transform: translateY(1px); }
 
-/* CTA — footer dark navy */
+/* Haupt-CTA — dunkles Marine wie Footer */
 .cf-btn--cta {
   background: linear-gradient(180deg, var(--cta) 0%, var(--cta-2) 100%);
   border-color: rgba(201,169,110,.25);
@@ -286,7 +299,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-btn--lg { padding: 12px 32px; font-size: 1rem; }
 
-/* Ghost */
+/* Geisterknopf — transparent mit Rahmen */
 .cf-btn--ghost {
   background: transparent;
   border-color: var(--line-2);
@@ -300,8 +313,10 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--text);
 }
 
+/* Klein */
 .cf-btn--sm { padding: 6px 14px; font-size: .78rem; }
 
+/* Link-Stil */
 .cf-btn--link {
   background: none;
   border: none;
@@ -315,7 +330,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 .cf-btn--link:hover { color: var(--muted); }
 
 /* =========================================================
-   6. MAIN LAYOUT
+   6. HAUPT-LAYOUT
 ========================================================= */
 .cf-main {
   max-width: 680px;
@@ -324,7 +339,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 
 /* =========================================================
-   7. MODE PICKER
+   7. MODUS-AUSWAHL (Schnell / Catering-Angebot)
 ========================================================= */
 .cf-mode-wrap {
   display: grid;
@@ -332,6 +347,8 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   gap: .75rem;
   margin-bottom: 1.25rem;
 }
+
+/* Auswahlkarte */
 .cf-mode-card {
   display: flex;
   flex-direction: column;
@@ -347,6 +364,8 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   box-shadow: var(--shadow-sm);
 }
 .cf-mode-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+
+/* Aktive Karte — dunkle Umrandung */
 .cf-mode-card--active {
   border-color: var(--cta);
   box-shadow: 0 0 0 3px rgba(20,24,34,.08), var(--shadow-sm);
@@ -367,7 +386,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 
 /* =========================================================
-   8. PANELS
+   8. PANEL-KARTEN
 ========================================================= */
 .cf-panel {
   border: 1px solid var(--line);
@@ -377,6 +396,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   padding: 1.5rem 1.75rem;
   margin-bottom: 1rem;
 }
+/* Schnell-Panel — goldene Umrandung */
 .cf-panel--quick  { border-color: var(--gold-mid); }
 .cf-panel--step   { border-color: var(--line); }
 
@@ -408,6 +428,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   padding-top: .5rem;
 }
 
+/* Erfolgsmeldung nach dem Absenden */
 .cf-success {
   text-align: center;
   color: #2b7a53;
@@ -417,7 +438,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   margin-top: .75rem;
 }
 
-/* Include box */
+/* Inklusive-Box (Lieferung, Aufbau) */
 .cf-include-box {
   display: flex;
   align-items: flex-start;
@@ -434,7 +455,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-include-box__icon { color: var(--gold); font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
 
-/* Menu row */
+/* Menü-Zeile — Schaltfläche zum Öffnen des Sheets */
 .cf-menu-row {
   display: flex;
   align-items: center;
@@ -466,7 +487,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-menu-row__arrow { color: var(--gold); font-size: 1.4rem; flex-shrink: 0; }
 
-/* Selected dishes tags under menu row */
+/* Tags für ausgewählte Gerichte unter der Menü-Zeile */
 .cf-menu-tags {
   display: flex;
   flex-wrap: wrap;
@@ -488,11 +509,11 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 
 /* =========================================================
-   9. WIZARD
+   9. WIZARD (3-Schritt-Formular)
 ========================================================= */
 .cf-wizard { margin-top: .5rem; }
 
-/* Progress header — dark navy like footer */
+/* Fortschrittsleiste — dunkles Marine wie Footer */
 .cf-progress {
   background: linear-gradient(180deg, var(--cta) 0%, var(--cta-2) 100%);
   border-radius: var(--r-xl) var(--r-xl) 0 0;
@@ -517,6 +538,8 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--sheet-text);
   letter-spacing: .05em;
 }
+
+/* Fortschrittsbalken */
 .cf-progress__track {
   height: 2px;
   background: rgba(255,255,255,.12);
@@ -531,7 +554,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   transition: width .35s cubic-bezier(.4,0,.2,1);
 }
 
-/* Step tabs */
+/* Schritt-Tabs in der Fortschrittsleiste */
 .cf-steps {
   list-style: none;
   padding: 0; margin: 0;
@@ -544,6 +567,8 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   gap: 6px;
   padding: .2rem 0;
 }
+
+/* Schritt-Punkt (Kreis mit Nummer) */
 .cf-step__dot {
   width: 22px; height: 22px;
   border-radius: 50%;
@@ -564,6 +589,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 @media (min-width: 480px) { .cf-step__name { display: inline; } }
 
+/* Aktiver Schritt — goldener Punkt */
 .cf-step--active .cf-step__dot {
   background: var(--gold);
   border-color: var(--gold);
@@ -571,6 +597,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-step--active .cf-step__name { color: rgba(255,255,255,.88); }
 
+/* Abgeschlossener Schritt */
 .cf-step--done .cf-step__dot {
   background: rgba(201,169,110,.25);
   border-color: var(--gold);
@@ -578,7 +605,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-step--done .cf-step__name { color: var(--sheet-muted); }
 
-/* Wizard nav */
+/* Navigationsleiste (Zurück / Weiter) */
 .cf-wizard__nav {
   display: flex;
   align-items: center;
@@ -589,7 +616,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 .cf-wizard__close-wrap { text-align: center; padding-bottom: .5rem; }
 
 /* =========================================================
-   10. SUMMARY (step 3)
+   10. ZUSAMMENFASSUNG (Schritt 3)
 ========================================================= */
 .cf-summary__heading {
   font-family: 'Cormorant SC', serif;
@@ -599,6 +626,8 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   letter-spacing: .04em;
   margin-bottom: 1rem;
 }
+
+/* Zusammenfassungs-Tabelle */
 .cf-summary {
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
@@ -645,7 +674,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 .cf-summary__val small { color: var(--muted); font-size: .75rem; }
 
-/* Dishes list in summary */
+/* Gericht-Tags in der Zusammenfassung */
 .cf-summary__dishes {
   display: flex;
   flex-wrap: wrap;
@@ -663,6 +692,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--muted);
 }
 
+/* Bearbeiten-Schaltfläche in der Zusammenfassung */
 .cf-summary__edit {
   flex-shrink: 0;
   background: none;
@@ -685,7 +715,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   background: var(--gold-soft);
 }
 
-/* Trust bar */
+/* Vertrauensleiste (unverbindlich, Antwort in 24h, DSGVO) */
 .cf-trust {
   display: flex;
   gap: 1.25rem;
@@ -700,7 +730,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 
 /* =========================================================
-   11. TOP CONTACT BLOCK
+   11. KONTAKT-KOPFBEREICH (oben auf der Seite)
 ========================================================= */
 .top-contact {
   padding: clamp(32px,6vw,60px) 16px clamp(20px,4vw,36px);
@@ -734,6 +764,7 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
 }
 @media (max-width: 680px) { .top-contact__grid { grid-template-columns: 1fr; } }
 
+/* Kontakt-Info-Karte (E-Mail, Telefon, WhatsApp, Adresse) */
 .info-card {
   display: grid;
   grid-template-columns: 32px auto;
@@ -779,35 +810,43 @@ input[type="time"]::-webkit-calendar-picker-indicator:hover { opacity: .85; }
   color: var(--text);
   overflow-wrap: anywhere;
 }
+/* Hervorgehobene Karte (z.B. WhatsApp) */
 .info-card--accent {
   border-color: var(--gold-mid);
   background: rgba(201,169,110,.05);
 }
 
 /* =========================================================
-   12. MENU SHEET — dark, matte white neon
+   12. MENÜ-SHEET — heller Hintergrund mit Anthrazit-Auswahl
 ========================================================= */
+
+/* Scrollsperre wenn Sheet geöffnet */
 html.v-noscroll,
 body.v-noscroll { overflow: hidden !important; }
 
+/* Sheet-Overlay — feste Positionierung über allem */
 .v-sheet { position: fixed; inset: 0; z-index: 1000; }
 .v-sheet.hidden { display: none !important; }
 
+/* Halbtransparenter Hintergrund-Vorhang */
 .v-sheet__backdrop {
   position: absolute; inset: 0;
-  background: rgba(0,0,0,.72);
-  backdrop-filter: blur(5px);
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
 }
 
+/* Sheet-Panel — heller Hintergrund */
 .v-sheet__panel {
   position: absolute;
   left: 0; right: 0; bottom: 0;
   height: 100dvh;
-  background: var(--sheet-bg);
-  color: var(--sheet-text);
+  background: #FAFAF8;
+  color: var(--text);
   display: flex;
   flex-direction: column;
 }
+
+/* Desktop: zentriertes Modal-Fenster */
 @media (min-width: 900px) {
   .v-sheet__panel {
     width: min(1000px,92vw);
@@ -817,38 +856,42 @@ body.v-noscroll { overflow: hidden !important; }
     bottom: 4vh;
     border-radius: var(--r-xl);
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid var(--line-2);
   }
 }
 
+/* Sheet-Kopfzeile mit Titel und Schließen-Knopf */
 .v-sheet__head {
   padding: 14px 18px 12px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 1px solid var(--sheet-line);
+  border-bottom: 1px solid var(--line);
   flex-shrink: 0;
+  background: #FAFAF8;
 }
 .v-sheet__title {
   font-family: 'Cormorant SC', serif;
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: .04em;
-  color: var(--sheet-bright);
+  color: var(--text);
 }
 .v-sheet__sub {
   margin-top: 3px;
   font-size: 12px;
-  color: var(--sheet-muted);
+  color: var(--hint);
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Schließen-Knopf (X) */
 .v-sheet__close {
   width: 30px; height: 30px;
   border-radius: 50%;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  color: var(--sheet-muted);
+  background: var(--paper-2);
+  border: 1px solid var(--line-2);
+  color: var(--muted);
   display: flex; align-items: center; justify-content: center;
   font-size: 13px;
   cursor: pointer;
@@ -856,69 +899,78 @@ body.v-noscroll { overflow: hidden !important; }
   flex-shrink: 0;
 }
 .v-sheet__close:hover {
-  background: rgba(255,255,255,.12);
-  color: var(--sheet-bright);
+  background: var(--line);
+  color: var(--text);
 }
 
+/* Suchzeile mit Reset-Knopf */
 .v-sheet__tools {
   padding: 10px 14px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px;
-  border-bottom: 1px solid var(--sheet-line);
+  border-bottom: 1px solid var(--line);
   flex-shrink: 0;
+  background: #FAFAF8;
 }
 .v-sheet__search {
   width: 100%;
   border-radius: var(--r-md);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.05);
-  color: var(--sheet-bright);
+  border: 1px solid var(--line-2);
+  background: var(--paper);
+  color: var(--text);
   padding: 9px 13px;
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
   outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
-.v-sheet__search::placeholder { color: var(--sheet-dim); }
+.v-sheet__search::placeholder { color: var(--hint); }
 .v-sheet__search:focus {
-  border-color: rgba(255,255,255,.30);
-  box-shadow: 0 0 0 3px rgba(255,255,255,.06);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-soft);
 }
 .v-sheet__reset {
   border-radius: var(--r-md);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.05);
-  color: var(--sheet-muted);
+  border: 1px solid var(--line-2);
+  background: var(--paper);
+  color: var(--muted);
   padding: 9px 15px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background .15s, color .15s;
+  transition: background .15s, color .15s, border-color .15s;
 }
 .v-sheet__reset:hover {
-  background: rgba(255,255,255,.10);
-  color: var(--sheet-bright);
+  border-color: var(--gold);
+  color: var(--text);
+  background: var(--gold-soft);
 }
 
+/* Inhaltsbereich — scrollbar */
 .v-sheet__body { flex: 1; min-height: 0; overflow: hidden; }
+
+/* Zweispaltiges Layout: Kategorien | Gerichte */
 .v-sheet__cols { height: 100%; display: grid; grid-template-columns: 1fr; }
 @media (min-width: 900px) { .v-sheet__cols { grid-template-columns: 220px 1fr; } }
 
 .v-sheet__col { min-height: 0; display: flex; flex-direction: column; }
+
+/* Spalten-Überschrift (KATEGORIEN / GERICHTE) */
 .v-sheet__coltitle {
   padding: 9px 14px;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--sheet-dim);
-  border-bottom: 1px solid var(--sheet-line);
+  color: var(--hint);
+  border-bottom: 1px solid var(--line);
   font-family: ui-sans-serif, system-ui, sans-serif;
   flex-shrink: 0;
+  background: var(--paper-2);
 }
 
-/* ── Categories ── */
+/* ── Kategorienliste (linke Spalte) ── */
 .v-sheet__list {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -926,15 +978,17 @@ body.v-noscroll { overflow: hidden !important; }
   display: flex;
   flex-direction: column;
   gap: 4px;
+  background: var(--paper-2);
 }
 
+/* Kategorie-Schaltfläche */
 .v-sheet__cat {
   width: 100%;
   text-align: left;
   border-radius: var(--r-md);
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   background: transparent;
-  color: var(--sheet-text);
+  color: var(--muted);
   padding: 10px 12px;
   display: flex;
   align-items: center;
@@ -944,22 +998,21 @@ body.v-noscroll { overflow: hidden !important; }
   transition: background .15s, border-color .15s, color .15s;
 }
 .v-sheet__cat:hover {
-  background: var(--sheet-hover);
-  border-color: rgba(255,255,255,.08);
+  background: var(--paper);
+  border-color: var(--line-2);
 }
 
-/* Active — matte white neon */
+/* Aktive Kategorie — Anthrazit-Rahmen mit linkem Akzentbalken */
 .v-sheet__cat.is-active {
-  background: var(--neon-bg);
-  border-color: var(--neon-border);
-  border-left: 2px solid rgba(255,255,255,.75);
+  background: rgba(58,63,74,.06);
+  border-color: var(--anthrazit-border);
+  border-left: 3px solid var(--anthrazit);
 }
 .v-sheet__cat.is-active .v-sheet__catTitle {
-  color: var(--sheet-bright);
+  color: var(--text);
   font-weight: 600;
-  text-shadow: var(--neon-glow);
 }
-.v-sheet__cat.is-active .v-sheet__catMeta { color: rgba(255,255,255,.40); }
+.v-sheet__cat.is-active .v-sheet__catMeta { color: var(--anthrazit); }
 
 .v-sheet__catTitle {
   font-family: 'Cormorant SC', serif;
@@ -969,45 +1022,46 @@ body.v-noscroll { overflow: hidden !important; }
 }
 .v-sheet__catMeta {
   font-size: 10px;
-  color: var(--sheet-dim);
+  color: var(--hint);
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ── Items ── */
+/* ── Gerichteliste (rechte Spalte) ── */
 .v-sheet__items {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 8px;
   display: grid;
   gap: 5px;
+  background: var(--paper);
 }
 
+/* Einzelnes Gericht */
 .v-sheet__item {
   display: flex;
   align-items: flex-start;
   gap: 11px;
   padding: 11px 12px;
   border-radius: var(--r-md);
-  border: 1px solid rgba(255,255,255,.07);
-  background: var(--sheet-item);
+  border: 1.5px solid var(--line);
+  background: var(--paper);
   cursor: pointer;
   user-select: none;
   transition: background .15s, border-color .15s;
 }
 .v-sheet__item:hover {
-  background: var(--sheet-hover);
-  border-color: rgba(255,255,255,.12);
+  background: var(--paper-2);
+  border-color: var(--line-2);
 }
 
-/* Selected item — matte white neon */
+/* Ausgewähltes Gericht — Anthrazit-Rahmen, heller Hintergrund */
 .v-sheet__item:has(.v-sheet__toggle.is-on) {
-  background: var(--neon-bg);
-  border-color: var(--neon-border);
+  background: var(--anthrazit-light);
+  border-color: var(--anthrazit-border);
 }
 .v-sheet__item:has(.v-sheet__toggle.is-on) .v-sheet__itemName {
-  color: var(--sheet-bright);
+  color: var(--text);
   font-weight: 600;
-  text-shadow: var(--neon-glow-sm);
 }
 
 .v-sheet__itemText { flex: 1; }
@@ -1015,86 +1069,89 @@ body.v-noscroll { overflow: hidden !important; }
   font-family: 'Cormorant SC', serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--sheet-text);
+  color: var(--text);
   margin-bottom: 3px;
   letter-spacing: .02em;
-  transition: color .15s, text-shadow .15s;
+  transition: color .15s;
 }
 .v-sheet__itemDesc {
   font-size: 11px;
-  color: var(--sheet-dim);
+  color: var(--hint);
   line-height: 1.35;
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Toggle +/✓ */
+/* Toggle-Knopf: + (nicht ausgewählt) / ✓ (ausgewählt) */
 .v-sheet__toggle {
   flex-shrink: 0;
   width: 30px; height: 30px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05);
-  color: var(--sheet-dim);
+  border: 1.5px solid var(--line-2);
+  background: var(--paper-2);
+  color: var(--hint);
   font-size: 16px;
   display: flex; align-items: center; justify-content: center;
   pointer-events: none;
-  transition: background .15s, border-color .15s, color .15s, box-shadow .15s;
-}
-.v-sheet__toggle.is-on {
-  border-color: rgba(255,255,255,.50);
-  background: rgba(255,255,255,.12);
-  color: var(--sheet-bright);
-  box-shadow: 0 0 0 2px rgba(255,255,255,.07), var(--neon-glow-sm);
+  transition: background .15s, border-color .15s, color .15s;
 }
 
+/* Ausgewählter Zustand — Anthrazit-Würfel mit weißem Häkchen */
+.v-sheet__toggle.is-on {
+  border-color: var(--anthrazit);
+  background: var(--anthrazit);
+  color: #ffffff;
+}
+
+/* Keine Treffer bei der Suche */
 .v-sheet__empty {
   padding: 14px;
-  color: var(--sheet-dim);
+  color: var(--hint);
   font-size: 13px;
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ── Sheet footer ── */
+/* ── Sheet-Fußzeile (Anzahl + Übernehmen) ── */
 .v-sheet__foot {
   padding: 11px 15px;
-  border-top: 1px solid var(--sheet-line);
+  border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  background: rgba(0,0,0,.22);
+  background: var(--paper-2);
   flex-shrink: 0;
 }
+
+/* Zähler ausgewählter Gerichte */
 .v-sheet__count {
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
-  color: var(--sheet-muted);
+  color: var(--muted);
 }
-.v-sheet__count strong {
-  color: var(--sheet-bright);
-  text-shadow: var(--neon-glow-sm);
-}
+.v-sheet__count strong { color: var(--text); }
+
+/* Übernehmen-Knopf — dunkles Marine */
 .v-sheet__apply {
   border-radius: var(--r-pill);
-  border: 1px solid rgba(255,255,255,.22);
-  background: rgba(255,255,255,.10);
-  color: var(--sheet-bright);
+  border: 1px solid transparent;
+  background: var(--cta);
+  color: var(--cta-text);
   padding: 9px 22px;
   font-family: 'Cormorant SC', serif;
   font-size: .88rem;
   font-weight: 500;
   letter-spacing: .06em;
   cursor: pointer;
-  transition: background .15s, box-shadow .15s;
-  box-shadow: 0 0 16px rgba(255,255,255,.06);
+  transition: filter .15s, box-shadow .15s;
+  box-shadow: 0 4px 14px rgba(20,24,34,.18);
 }
 .v-sheet__apply:hover {
-  background: rgba(255,255,255,.16);
-  box-shadow: 0 0 20px rgba(255,255,255,.10);
+  filter: brightness(1.12);
+  box-shadow: 0 6px 20px rgba(20,24,34,.25);
 }
 
 /* =========================================================
-   13. TOAST
+   13. TOAST-BENACHRICHTIGUNG
 ========================================================= */
 #toast {
   position: fixed;
@@ -1116,7 +1173,7 @@ body.v-noscroll { overflow: hidden !important; }
 }
 
 /* =========================================================
-   14. DESKTOP NAV FIX
+   14. DESKTOP-NAVIGATION (Korrektur für contact-wrap)
 ========================================================= */
 @media (min-width: 768px) {
   body.contact-wrap header nav[aria-label="Hauptnavigation"] {
@@ -1132,6 +1189,6 @@ body.v-noscroll { overflow: hidden !important; }
 }
 
 /* =========================================================
-   15. UTILITY
+   15. HILFSMITTEL
 ========================================================= */
 .hidden { display: none !important; }
