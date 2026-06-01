@@ -882,7 +882,7 @@ body.v-noscroll { overflow: hidden !important; }
   margin-top: 3px;
   font-size: 12px;
   color: var(--hint);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 /* Schließen-Knopf (X) */
@@ -920,7 +920,7 @@ body.v-noscroll { overflow: hidden !important; }
   background: var(--paper);
   color: var(--text);
   padding: 9px 13px;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 13px;
   outline: none;
   transition: border-color .15s, box-shadow .15s;
@@ -938,6 +938,7 @@ body.v-noscroll { overflow: hidden !important; }
   padding: 9px 15px;
   font-size: 12px;
   font-weight: 600;
+  font-family: 'Lato', sans-serif;
   cursor: pointer;
   transition: background .15s, color .15s, border-color .15s;
 }
@@ -965,7 +966,7 @@ body.v-noscroll { overflow: hidden !important; }
   text-transform: uppercase;
   color: var(--hint);
   border-bottom: 1px solid var(--line);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Lato', sans-serif;
   flex-shrink: 0;
   background: var(--paper-2);
 }
@@ -1014,16 +1015,19 @@ body.v-noscroll { overflow: hidden !important; }
 }
 .v-sheet__cat.is-active .v-sheet__catMeta { color: var(--anthrazit); }
 
+/* Kategoriename — Cormorant bleibt */
 .v-sheet__catTitle {
   font-family: 'Cormorant SC', serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: .03em;
 }
+
+/* Anzahl Gerichte in der Kategorie */
 .v-sheet__catMeta {
   font-size: 10px;
-  color: var(--hint);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--muted);
+  font-family: 'Lato', sans-serif;
 }
 
 /* ── Gerichteliste (rechte Spalte) ── */
@@ -1065,6 +1069,8 @@ body.v-noscroll { overflow: hidden !important; }
 }
 
 .v-sheet__itemText { flex: 1; }
+
+/* Gerichtename — Cormorant bleibt */
 .v-sheet__itemName {
   font-family: 'Cormorant SC', serif;
   font-size: 14px;
@@ -1074,11 +1080,15 @@ body.v-noscroll { overflow: hidden !important; }
   letter-spacing: .02em;
   transition: color .15s;
 }
+
+/* Beschreibungstext — Lato für bessere Lesbarkeit auf Mobilgeräten */
 .v-sheet__itemDesc {
-  font-size: 11px;
-  color: var(--hint);
-  line-height: 1.35;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  letter-spacing: .01em;
 }
 
 /* Toggle-Knopf: + (nicht ausgewählt) / ✓ (ausgewählt) */
@@ -1107,7 +1117,7 @@ body.v-noscroll { overflow: hidden !important; }
   padding: 14px;
   color: var(--hint);
   font-size: 13px;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 /* ── Sheet-Fußzeile (Anzahl + Übernehmen) ── */
@@ -1124,7 +1134,7 @@ body.v-noscroll { overflow: hidden !important; }
 
 /* Zähler ausgewählter Gerichte */
 .v-sheet__count {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 12px;
   color: var(--muted);
 }
