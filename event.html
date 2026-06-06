@@ -4,22 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- =========================================================
+       SEO — Primäre Meta-Tags
+  ========================================================== -->
   <title>Besondere Events &amp; Veranstaltungen in Hameln | Vilana Event &amp; Catering</title>
   <meta name="description" content="Entdecken Sie besondere Events, Themenabende und vergangene Veranstaltungen von Vilana Event &amp; Catering in Hameln und Niedersachsen. Exklusive Abende, stilvolle Atmosphäre und neue Events sind bereits in Planung.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
+  <!-- =========================================================
+       Canonical & Hreflang
+  ========================================================== -->
   <link rel="canonical" href="https://www.vilana-event.de/event.html">
   <link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html">
   <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/event.html">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html">
 
+  <!-- Weiterleitung: /event → /event.html (ohne .html-Erweiterung) -->
   <script>
     (function () {
       if (location.pathname === '/event') location.replace('/event.html');
     })();
   </script>
 
+  <!-- =========================================================
+       Open Graph & Twitter Card
+  ========================================================== -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Vilana Event &amp; Catering">
@@ -29,26 +39,51 @@
   <meta property="og:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Events von Vilana Event &amp; Catering in Hameln">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Besondere Events &amp; Veranstaltungen in Hameln | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Besondere Abende, exklusive Eventformate und vergangene Veranstaltungen von Vilana Event &amp; Catering in Hameln und Niedersachsen.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
+  <meta name="twitter:image:alt" content="Events von Vilana Event &amp; Catering in Hameln">
 
+  <!-- =========================================================
+       Performance — Preconnect & LCP Preload (vor CSS, damit
+       der Browser das Hero-Bild so früh wie möglich lädt)
+  ========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/event-new/hero-event.webp" type="image/webp" fetchpriority="high">
 
+  <!-- =========================================================
+       Fonts — nicht-blockierend (media="print" Trick)
+  ========================================================== -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- =========================================================
+       CSS
+  ========================================================== -->
   <link rel="stylesheet" href="/css/output.css">
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="stylesheet" href="/css/footer-premium.css">
-  <link rel="preload" as="image" href="/images/event-new/hero-event.webp" type="image/webp">
 
+  <!-- =========================================================
+       Favicons & Webmanifest
+  ========================================================== -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/images/favicon/site.webmanifest">
 
+  <!-- =========================================================
+       Inline-Styles — Seiten-spezifische Design-Tokens &
+       Komponenten (card, buttons, FAQ, stats, quote)
+  ========================================================== -->
   <style>
     :root {
       --cream: #fbf7f1;
@@ -97,6 +132,7 @@
       line-height:1;
     }
 
+    /* Glassmorphism-Karte */
     .card {
       background: var(--card);
       border-radius: var(--radius);
@@ -105,6 +141,7 @@
       backdrop-filter: blur(10px);
     }
 
+    /* Badge "Events by Vilana" */
     .soon-badge {
       display: inline-flex;
       align-items: center;
@@ -120,6 +157,7 @@
       border: 1px solid rgba(200,160,50,.22);
     }
 
+    /* Info-Chip (Datum, Ort, DJ usw.) */
     .chip {
       border-radius: 9999px;
       padding: .42rem .95rem;
@@ -134,6 +172,7 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* Basis-Button (Pill-Form) */
     .btn-pill {
       position: relative;
       display: inline-flex;
@@ -168,6 +207,7 @@
     .btn-pill:hover { transform: translateY(-2px) scale(1.015); }
     .btn-pill:active { transform: translateY(0) scale(.985); transition-duration: .08s; }
 
+    /* Dunkelroter CTA-Button */
     .btn-gold {
       background: linear-gradient(155deg, #9e2a4a 0%, #7a1e38 55%, #5e1228 100%);
       color: #fde8ef;
@@ -194,6 +234,7 @@
         0 8px 28px rgba(100,15,40,.36);
     }
 
+    /* Dunkler Button */
     .btn-dark {
       background: linear-gradient(160deg, #1e2636 0%, #0b0e14 100%);
       color: #dde4f0;
@@ -219,6 +260,7 @@
       box-shadow: 0 0 0 3px rgba(120,140,180,.30), 0 8px 24px rgba(0,0,0,.28);
     }
 
+    /* Transparenter Outline-Button */
     .btn-outline {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
@@ -240,6 +282,7 @@
       box-shadow: 0 0 0 3px rgba(15,23,42,.12), 0 4px 14px rgba(15,23,42,.06);
     }
 
+    /* Instagram-Button (Gradient bei Hover) */
     .btn-insta {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
@@ -254,6 +297,7 @@
       box-shadow: 0 10px 28px rgba(238,42,123,.32);
     }
 
+    /* FAQ-Accordion-Wrapper */
     .faq-wrap {
       border-radius: var(--radius);
       border: 1px solid var(--line);
@@ -279,6 +323,7 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
+    /* Chevron-Pfeil dreht sich bei geöffnetem FAQ */
     .chev {
       width:18px; height:18px;
       flex: 0 0 auto;
@@ -287,10 +332,12 @@
     }
     details[open] .chev { transform: rotate(180deg); }
 
+    /* Hero-Bild mit leichtem Zoom-Effekt bei Hover */
     .hero-img { transform: translateZ(0); }
     .hero-img img { transition: transform .35s ease; }
     .hero-img:hover img { transform: scale(1.02); }
 
+    /* Platzhalter-Box für noch nicht vorhandene Bilder */
     .placeholder-box {
       min-height: 320px;
       background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(248,243,236,.95)), #f8f3ec;
@@ -300,6 +347,7 @@
       background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(248,243,236,.95)), #f8f3ec;
     }
 
+    /* Event-Statistik-Kachel (Gäste, Preis, Uhrzeit usw.) */
     .event-stat {
       display: flex;
       flex-direction: column;
@@ -326,6 +374,7 @@
       line-height: 1.3;
     }
 
+    /* Zitat-Block (Gäste-Feedback / Motto) */
     .event-quote {
       position: relative;
       padding: 1rem 1.1rem 1rem 1.4rem;
@@ -350,6 +399,7 @@
       margin: 0;
     }
 
+    /* Flex-Gruppe für mehrere Buttons nebeneinander */
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -358,6 +408,9 @@
     }
   </style>
 
+  <!-- =========================================================
+       JSON-LD — CollectionPage (Übersicht aller Events)
+  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -373,6 +426,7 @@
   }
   </script>
 
+  <!-- JSON-LD — Vergangenes Event (Weltfrauentag 2026) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -403,6 +457,7 @@
   }
   </script>
 
+  <!-- JSON-LD — FAQPage (muss mit HTML-FAQ übereinstimmen) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -426,14 +481,6 @@
       },
       {
         "@type":"Question",
-        "name":"Wo finde ich Fotos vergangener Events von Vilana?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Fotos und Impressionen vergangener Veranstaltungen werden in der Galerie von Vilana Event & Catering veröffentlicht."
-        }
-      },
-      {
-        "@type":"Question",
         "name":"Kann ich Vilana für ein privates oder geschäftliches Event anfragen?",
         "acceptedAnswer":{
           "@type":"Answer",
@@ -444,6 +491,7 @@
   }
   </script>
 
+  <!-- Google Analytics — wird erst nach Einwilligung geladen -->
   <script type="text/plain" data-cookie-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script type="text/plain" data-cookie-category="analytics">
     window.dataLayer=window.dataLayer||[];
@@ -455,6 +503,10 @@
 
 <body class="text-gray-800 antialiased">
 
+  <!-- =========================================================
+       HEADER — Logo, Desktop-Navigation, Sprachumschalter,
+       Mobile-Burger-Button
+  ========================================================== -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height:38px;"
@@ -464,6 +516,7 @@
       </a>
 
       <div class="flex items-center gap-3">
+        <!-- Desktop-Navigation -->
         <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Hauptnavigation">
           <a href="/" class="text-gray-800 hover:text-amber-800">Startseite</a>
           <a href="/#services" class="text-gray-800 hover:text-amber-800">Leistungen</a>
@@ -471,16 +524,18 @@
           <a href="/menu.html" class="text-gray-800 hover:text-amber-800">Menü</a>
           <a href="/galerie.html" class="text-gray-800 hover:text-amber-800">Galerie</a>
           <a href="/about.html" class="text-gray-800 hover:text-amber-800">Über uns</a>
-          <a href="/event.html" class="text-gray-800 hover:text-amber-800">Event</a>
+          <a href="/event.html" class="text-gray-800 hover:text-amber-800" aria-current="page">Event</a>
           <a href="/bewertung.html" class="text-gray-800 hover:text-amber-800">Bewertung</a>
           <a href="/contact.html" class="text-gray-800 hover:text-amber-800">Kontakt</a>
         </nav>
 
+        <!-- Sprachumschalter DE / RU -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Sprachumschaltung">
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">DE</span>
           <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/event.html">RU</a>
         </div>
 
+        <!-- Mobile: RU-Link + Burger-Menü-Button -->
         <div class="flex items-center gap-2 md:hidden">
           <a href="/ru/event.html"
              class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
@@ -495,6 +550,7 @@
       </div>
     </div>
 
+    <!-- Mobile-Dropdown-Menü (per JS ein-/ausgeblendet) -->
     <div id="mobileMenu" class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
          role="menu" aria-label="Mobiles Menü">
       <a href="/" class="block text-gray-700 hover:text-amber-700" role="menuitem">Startseite</a>
@@ -509,9 +565,13 @@
     </div>
   </header>
 
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
   <main class="py-12">
     <div class="mx-auto px-4 max-w-6xl">
 
+      <!-- Hero-Sektion: Intro-Text + Hero-Bild -->
       <section class="grid md:grid-cols-2 gap-6 items-stretch">
         <div class="card p-6 flex flex-col justify-center gap-6">
           <div class="flex flex-wrap items-center gap-3">
@@ -520,6 +580,7 @@
             <span class="chip">🥂 Exklusive Abende</span>
           </div>
 
+          <!-- H1 — Haupt-SEO-Überschrift der Seite -->
           <h1 class="text-3xl md:text-4xl font-medium leading-tight"
               style="text-transform:none; font-variant-caps:normal; letter-spacing:normal;">
             Besondere Events und exklusive Veranstaltungen in Hameln von Vilana
@@ -550,6 +611,7 @@
           </div>
         </div>
 
+        <!-- LCP-Bild — eager + fetchpriority für schnellen First Paint -->
         <div class="hero-img rounded-3xl overflow-hidden placeholder-box">
           <img src="/images/event-new/hero-event.webp"
                alt="Exklusive Events von Vilana Event &amp; Catering in Hameln"
@@ -558,89 +620,115 @@
         </div>
       </section>
 
-<section class="mt-10">
-  <div class="card p-6">
-    <div class="mb-6">
-      <h2 class="text-2xl font-semibold">Kommende Events</h2>
-      <p class="text-lg text-gray-700 mt-2">
-        Unser nächstes Event bei Vilana Event &amp; Catering in Hameln.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 items-stretch">
-      <!-- EVENT POSTER -->
-      <div
-        class="hero-img rounded-2xl overflow-hidden flex items-center justify-center bg-[#120d0a] h-[460px] md:h-[720px]">
-        <img src="images/vilana-slawishe.webp"
-          alt="Slawische Party von Vilana Event &amp; Catering in Hameln am 13.06.2026"
-          class="block max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
-      </div>
-
-      <!-- EVENT INFO -->
-      <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="chip">🎶 DJ Ram</span>
-            <span class="chip">📅 13.06.2026</span>
-            <span class="chip">🕙 Einlass ab 22 Uhr</span>
-            <span class="chip">📍 Hameln</span>
+      <!-- =========================================================
+           Kommende Events
+      ========================================================== -->
+      <section class="mt-10">
+        <div class="card p-6">
+          <div class="mb-6">
+            <h2 class="text-2xl font-semibold">Kommende Events</h2>
+            <p class="text-lg text-gray-700 mt-2">
+              Unser nächstes Event bei Vilana Event &amp; Catering in Hameln.
+            </p>
           </div>
 
-          <h3 class="text-2xl font-semibold">Slawische Party</h3>
+          <div class="grid md:grid-cols-2 gap-6 items-stretch">
+            <!-- Event-Poster -->
+            <div
+              class="hero-img rounded-2xl overflow-hidden flex items-center justify-center bg-[#120d0a] h-[460px] md:h-[720px]">
+              <img src="/images/slawischeparty.webp"
+                alt="Slawische Party von Vilana Event &amp; Catering in Hameln am 13.06.2026"
+                class="block max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
+            </div>
 
-          <p class="text-lg leading-relaxed text-gray-700">
-            Freuen Sie sich auf einen stimmungsvollen Disco-Abend mit DJ Ram,
-            Musik, Tanz und Snacks den ganzen Abend über.
-          </p>
+            <!-- Event-Details -->
+            <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="chip">🎶 DJ Ram</span>
+                  <span class="chip">📅 13.06.2026</span>
+                  <span class="chip">🕙 Einlass ab 22 Uhr</span>
+                  <span class="chip">📍 Hameln Altstadt</span>
+                </div>
+
+                <h3 class="text-2xl font-semibold">Slawische Party</h3>
+
+                <p class="text-lg leading-relaxed text-gray-700">
+                  Freuen Sie sich auf einen stimmungsvollen Disco-Abend mit DJ Ram,
+                  Musik, Tanz und Snacks den ganzen Abend über.
+                </p>
+
+                <!-- Location-Info -->
+                <div style="border-radius:14px; border:1px solid rgba(15,23,42,.09); background:rgba(255,255,255,.6); padding:1rem 1.1rem;">
+                  <p class="text-base font-semibold" style="margin-bottom:.3rem;">📍 Merengue Mo – Hamelner Altstadt</p>
+                  <p class="text-base text-gray-600" style="line-height:1.6;">
+                    Eine der bekanntesten Locations in Hameln – seit 2000 das Zuhause für gute Unterhaltung,
+                    Cocktails und unvergessliche Abende. Zentral in der Altstadt, gut erreichbar mit Bus &amp; Taxi.
+                  </p>
+                </div>
+
+                <!-- Social-Sharing-Aufruf -->
+                <div style="border-radius:14px; background:linear-gradient(135deg,#fff8f0,#fff3ea); border:1px solid rgba(158,42,74,.15); padding:1rem 1.1rem;">
+                  <p class="text-base text-gray-700" style="line-height:1.6;">
+                    🙌 <strong>Teilt diesen Abend mit euren Freunden!</strong><br>
+                    Schickt das Poster weiter, postet es in euren Status oder Gruppen – je mehr dabei sind, desto schöner wird die Nacht.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Statistik-Kacheln -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
+                <div class="event-stat">
+                  <span class="event-stat-num">15 €</span>
+                  <span class="event-stat-label">Eintritt</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">22 Uhr</span>
+                  <span class="event-stat-label">Einlass</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">DJ Ram</span>
+                  <span class="event-stat-label">Musik</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">Snacks</span>
+                  <span class="event-stat-label">inklusive</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">13.06.</span>
+                  <span class="event-stat-label">Datum</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">Altstadt</span>
+                  <span class="event-stat-label">Hameln</span>
+                </div>
+              </div>
+
+              <!-- Adresse & Details -->
+              <div class="space-y-2 text-lg text-gray-700">
+                <p><strong>Ort:</strong> Neue Marktstraße 12, 31785 Hameln</p>
+                <p><strong>Location:</strong> Merengue Mo – Cocktailbar &amp; Eventlocation</p>
+                <p><strong>Eintritt:</strong> 15 € pro Person / Plätze begrenzt</p>
+                <p><strong>Snacks:</strong> den ganzen Abend über</p>
+              </div>
+
+              <div class="btn-group">
+                <a href="/contact.html" class="btn-pill btn-gold">
+                  Anfrage senden
+                </a>
+                <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+                  class="btn-pill btn-insta">
+                  Instagram öffnen
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
-          <div class="event-stat">
-            <span class="event-stat-num">15 €</span>
-            <span class="event-stat-label">Eintritt</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">22 Uhr</span>
-            <span class="event-stat-label">Einlass</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">DJ Ram</span>
-            <span class="event-stat-label">Musik</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">Snacks</span>
-            <span class="event-stat-label">inklusive</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">13.06.</span>
-            <span class="event-stat-label">Datum</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">Hameln</span>
-            <span class="event-stat-label">Ort</span>
-          </div>
-        </div>
-
-        <div class="space-y-2 text-lg text-gray-700">
-          <p><strong>Ort:</strong> Fluthamelstraße 2, 31789 Hameln</p>
-          <p><strong>Eintritt:</strong> 15 € pro Person / Plätze begrenzt</p>
-          <p><strong>Snacks:</strong> den ganzen Abend über</p>
-        </div>
-
-        <div class="btn-group">
-          <a href="/contact.html" class="btn-pill btn-gold">
-            Anfrage senden
-          </a>
-          <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
-            class="btn-pill btn-insta">
-            Instagram öffnen
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      <!-- =========================================================
+           Vergangene Events
+      ========================================================== -->
       <section class="mt-10">
         <div class="card p-6">
           <div class="mb-6">
@@ -651,6 +739,7 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-6 items-stretch">
+            <!-- Event-Foto -->
             <div class="hero-img rounded-2xl overflow-hidden" style="min-height:340px; background:#f8f3ec;">
               <img src="/images/event-new/hero-8merz.webp"
                    alt="Dekoration und Tischgestaltung beim Weltfrauentag-Event von Vilana Event &amp; Catering in Hameln"
@@ -658,6 +747,7 @@
                    loading="lazy" decoding="async" />
             </div>
 
+            <!-- Event-Beschreibung -->
             <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-wrap items-center gap-3">
@@ -674,6 +764,7 @@
                 </p>
               </div>
 
+              <!-- Statistik-Kacheln des vergangenen Events -->
               <div class="grid grid-cols-3 gap-3 text-center">
                 <div class="event-stat">
                   <span class="event-stat-num">180+</span>
@@ -689,6 +780,7 @@
                 </div>
               </div>
 
+              <!-- Gäste-Zitat / Motto des Abends -->
               <blockquote class="event-quote">
                 <svg class="event-quote-icon" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true">
                   <path d="M0 22V13.2C0 5.87 4.4 1.47 13.2 0l1.47 2.2C9.53 3.3 6.6 5.87 5.87 9.53H11V22H0zm17.6 0V13.2C17.6 5.87 22 1.47 30.8 0l1.47 2.2c-5.13 1.1-8.07 3.67-8.8 7.33H28.6V22H17.6z"/>
@@ -713,6 +805,7 @@
         </div>
       </section>
 
+      <!-- SEO-Textblock: lokaler Content für Hameln -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">Events, Themenabende und exklusive Veranstaltungen in Hameln</h2>
@@ -727,6 +820,7 @@
         </div>
       </section>
 
+      <!-- Kurzer Über-uns-Block -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">Vilana Event &amp; Catering</h2>
@@ -737,6 +831,10 @@
         </div>
       </section>
 
+      <!-- =========================================================
+           FAQ — Accordion (details/summary, kein JS nötig)
+           Inhalt muss mit JSON-LD FAQPage übereinstimmen
+      ========================================================== -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">FAQ</h2>
@@ -763,16 +861,6 @@
 
             <details class="faq-item">
               <summary class="faq-q">
-                <h3>Wo finde ich Fotos vergangener Events von Vilana?</h3>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
-                </svg>
-              </summary>
-              <div class="faq-a">Fotos und Impressionen vergangener Veranstaltungen werden in der Galerie von Vilana Event &amp; Catering veröffentlicht.</div>
-            </details>
-
-            <details class="faq-item">
-              <summary class="faq-q">
                 <h3>Kann ich Vilana für ein privates oder geschäftliches Event anfragen?</h3>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
@@ -787,6 +875,10 @@
     </div>
   </main>
 
+  <!-- =========================================================
+       FOOTER — Kontakt, Navigation, Servicegebiet,
+       Microdata (schema.org/LocalBusiness)
+  ========================================================== -->
   <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
     <meta itemprop="name" content="Vilana Event & Catering">
     <meta itemprop="telephone" content="+49 176 5777 5996">
@@ -873,6 +965,11 @@
             class="footer-scroll-top" aria-label="Nach oben scrollen" title="Nach oben">▲</button>
   </footer>
 
+  <!-- =========================================================
+       SCRIPTS
+       Mobile-Menü: Toggle, Schließen per Link-Klick,
+       Schließen bei Klick außerhalb, Escape-Taste
+  ========================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuToggle = document.getElementById("menuToggle");
@@ -885,6 +982,7 @@
         menuToggle.setAttribute("aria-expanded", hidden ? "false" : "true");
       });
 
+      // Menü schließen, wenn ein Link angeklickt wird
       mobileMenu.querySelectorAll("a").forEach((a) => {
         a.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
@@ -892,6 +990,7 @@
         });
       });
 
+      // Menü schließen bei Klick außerhalb
       document.addEventListener("click", (e) => {
         const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
         if (!inside && !mobileMenu.classList.contains("hidden")) {
@@ -900,6 +999,7 @@
         }
       });
 
+      // Menü schließen per Escape-Taste
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
           mobileMenu.classList.add("hidden");
