@@ -4,22 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- =========================================================
+       SEO — Первичные мета-теги
+  ========================================================== -->
   <title>Особенные события и мероприятия в Хамельне | Vilana Event &amp; Catering</title>
   <meta name="description" content="Откройте для себя особенные события, тематические вечера и прошедшие мероприятия Vilana Event &amp; Catering в Хамельне и Нижней Саксонии. Эксклюзивные вечера, стильная атмосфера и новые события уже в планах.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
+  <!-- =========================================================
+       Canonical & Hreflang
+  ========================================================== -->
   <link rel="canonical" href="https://www.vilana-event.de/ru/event.html">
   <link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html">
   <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/event.html">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html">
 
+  <!-- Перенаправление: /ru/event → /ru/event.html -->
   <script>
     (function () {
       if (location.pathname === '/ru/event') location.replace('/ru/event.html');
     })();
   </script>
 
+  <!-- =========================================================
+       Open Graph & Twitter Card
+  ========================================================== -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Vilana Event &amp; Catering">
@@ -29,26 +39,50 @@
   <meta property="og:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="События Vilana Event &amp; Catering в Хамельне">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Особенные события и мероприятия в Хамельне | Vilana Event &amp; Catering">
   <meta name="twitter:description" content="Особенные вечера, эксклюзивные форматы и прошедшие мероприятия Vilana Event &amp; Catering в Хамельне и Нижней Саксонии.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
+  <meta name="twitter:image:alt" content="События Vilana Event &amp; Catering в Хамельне">
 
+  <!-- =========================================================
+       Performance — Preconnect & LCP Preload (до CSS)
+  ========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/images/event-new/hero-event.webp" type="image/webp" fetchpriority="high">
 
+  <!-- =========================================================
+       Шрифты — неблокирующая загрузка (трюк media="print")
+  ========================================================== -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- =========================================================
+       CSS
+  ========================================================== -->
   <link rel="stylesheet" href="/css/output.css">
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="stylesheet" href="/css/footer-premium.css">
-  <link rel="preload" as="image" href="/images/event-new/hero-event.webp" type="image/webp">
 
+  <!-- =========================================================
+       Favicons & Webmanifest
+  ========================================================== -->
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/images/favicon/site.webmanifest">
 
+  <!-- =========================================================
+       Inline-стили — дизайн-токены и компоненты страницы
+       (карточки, кнопки, FAQ, статистика, цитата)
+  ========================================================== -->
   <style>
     :root {
       --cream: #fbf7f1;
@@ -97,14 +131,17 @@
       line-height:1;
     }
 
+    /* Glassmorphism-карточка */
     .card {
       background: var(--card);
       border-radius: var(--radius);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
 
+    /* Бейдж «События Vilana» */
     .soon-badge {
       display: inline-flex;
       align-items: center;
@@ -120,6 +157,7 @@
       border: 1px solid rgba(200,160,50,.22);
     }
 
+    /* Чип-информер (дата, место, DJ и т.д.) */
     .chip {
       border-radius: 9999px;
       padding: .42rem .95rem;
@@ -134,6 +172,7 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* Базовая кнопка-«пилюля» */
     .btn-pill {
       position: relative;
       display: inline-flex;
@@ -168,6 +207,7 @@
     .btn-pill:hover { transform: translateY(-2px) scale(1.015); }
     .btn-pill:active { transform: translateY(0) scale(.985); transition-duration: .08s; }
 
+    /* Тёмно-красная CTA-кнопка */
     .btn-gold {
       background: linear-gradient(155deg, #9e2a4a 0%, #7a1e38 55%, #5e1228 100%);
       color: #fde8ef;
@@ -194,6 +234,7 @@
         0 8px 28px rgba(100,15,40,.36);
     }
 
+    /* Тёмная кнопка */
     .btn-dark {
       background: linear-gradient(160deg, #1e2636 0%, #0b0e14 100%);
       color: #dde4f0;
@@ -219,11 +260,13 @@
       box-shadow: 0 0 0 3px rgba(120,140,180,.30), 0 8px 24px rgba(0,0,0,.28);
     }
 
+    /* Прозрачная outline-кнопка */
     .btn-outline {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
       border: 1px solid rgba(15,23,42,.16);
       box-shadow: 0 4px 14px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.08);
+      -webkit-backdrop-filter: blur(6px);
       backdrop-filter: blur(6px);
     }
     .btn-outline::before {
@@ -240,11 +283,13 @@
       box-shadow: 0 0 0 3px rgba(15,23,42,.12), 0 4px 14px rgba(15,23,42,.06);
     }
 
+    /* Instagram-кнопка (градиент при hover) */
     .btn-insta {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
       border: 1px solid rgba(15,23,42,.14);
       box-shadow: 0 4px 14px rgba(15,23,42,.06);
+      -webkit-backdrop-filter: blur(6px);
       backdrop-filter: blur(6px);
     }
     .btn-insta:hover {
@@ -254,6 +299,7 @@
       box-shadow: 0 10px 28px rgba(238,42,123,.32);
     }
 
+    /* FAQ-аккордеон */
     .faq-wrap {
       border-radius: var(--radius);
       border: 1px solid var(--line);
@@ -279,6 +325,7 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
+    /* Стрелка поворачивается при открытом FAQ */
     .chev {
       width:18px; height:18px;
       flex: 0 0 auto;
@@ -287,10 +334,12 @@
     }
     details[open] .chev { transform: rotate(180deg); }
 
+    /* Hero-изображение с лёгким зумом при hover */
     .hero-img { transform: translateZ(0); }
     .hero-img img { transition: transform .35s ease; }
     .hero-img:hover img { transform: scale(1.02); }
 
+    /* Заглушка для отсутствующих изображений */
     .placeholder-box {
       min-height: 320px;
       background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(248,243,236,.95)), #f8f3ec;
@@ -300,6 +349,7 @@
       background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(248,243,236,.95)), #f8f3ec;
     }
 
+    /* Плитка статистики события (гости, цена, время и т.д.) */
     .event-stat {
       display: flex;
       flex-direction: column;
@@ -326,6 +376,7 @@
       line-height: 1.3;
     }
 
+    /* Блок цитаты (отзыв гостей / девиз вечера) */
     .event-quote {
       position: relative;
       padding: 1rem 1.1rem 1rem 1.4rem;
@@ -350,6 +401,7 @@
       margin: 0;
     }
 
+    /* Flex-группа для нескольких кнопок в ряд */
     .btn-group {
       display: flex;
       flex-wrap: wrap;
@@ -358,6 +410,9 @@
     }
   </style>
 
+  <!-- =========================================================
+       JSON-LD — CollectionPage (обзор всех событий)
+  ========================================================== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -373,6 +428,7 @@
   }
   </script>
 
+  <!-- JSON-LD — Прошедшее событие (Международный женский день 2026) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -403,6 +459,7 @@
   }
   </script>
 
+  <!-- JSON-LD — FAQPage (должен совпадать с HTML-FAQ) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -426,14 +483,6 @@
       },
       {
         "@type":"Question",
-        "name":"Где найти фотографии прошедших событий Vilana?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Фотографии и впечатления с прошедших мероприятий публикуются в галерее Vilana Event & Catering."
-        }
-      },
-      {
-        "@type":"Question",
         "name":"Можно ли пригласить Vilana на частное или корпоративное мероприятие?",
         "acceptedAnswer":{
           "@type":"Answer",
@@ -444,6 +493,7 @@
   }
   </script>
 
+  <!-- Google Analytics — загружается только после согласия -->
   <script type="text/plain" data-cookie-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script type="text/plain" data-cookie-category="analytics">
     window.dataLayer=window.dataLayer||[];
@@ -455,6 +505,10 @@
 
 <body class="text-gray-800 antialiased">
 
+  <!-- =========================================================
+       HEADER — Логотип, десктопная навигация,
+       переключатель языка, мобильная кнопка-бургер
+  ========================================================== -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height:38px;"
@@ -464,6 +518,7 @@
       </a>
 
       <div class="flex items-center gap-3">
+        <!-- Десктопная навигация -->
         <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Основная навигация">
           <a href="/ru/" class="text-gray-800 hover:text-amber-800">Главная</a>
           <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
@@ -471,16 +526,18 @@
           <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
           <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
           <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
-          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800">События</a>
+          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800" aria-current="page">События</a>
           <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
           <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакт</a>
         </nav>
 
+        <!-- Переключатель языка DE / RU -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
           <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/event.html">DE</a>
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
         </div>
 
+        <!-- Мобильный: ссылка DE + кнопка-бургер -->
         <div class="flex items-center gap-2 md:hidden">
           <a href="/event.html"
              class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
@@ -495,6 +552,7 @@
       </div>
     </div>
 
+    <!-- Мобильное выпадающее меню (управляется через JS) -->
     <div id="mobileMenu" class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
          role="menu" aria-label="Мобильное меню">
       <a href="/ru/" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
@@ -509,9 +567,13 @@
     </div>
   </header>
 
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
   <main class="py-12">
     <div class="mx-auto px-4 max-w-6xl">
 
+      <!-- Hero-секция: вводный текст + hero-изображение -->
       <section class="grid md:grid-cols-2 gap-6 items-stretch">
         <div class="card p-6 flex flex-col justify-center gap-6">
           <div class="flex flex-wrap items-center gap-3">
@@ -520,6 +582,7 @@
             <span class="chip">🥂 Эксклюзивные вечера</span>
           </div>
 
+          <!-- H1 — главный SEO-заголовок страницы -->
           <h1 class="text-3xl md:text-4xl font-medium leading-tight"
               style="text-transform:none; font-variant-caps:normal; letter-spacing:normal;">
             Особенные события и эксклюзивные мероприятия в Хамельне от Vilana
@@ -550,6 +613,7 @@
           </div>
         </div>
 
+        <!-- LCP-изображение — eager + fetchpriority для быстрого First Paint -->
         <div class="hero-img rounded-3xl overflow-hidden placeholder-box">
           <img src="/images/event-new/hero-event.webp"
                alt="Эксклюзивные события Vilana Event &amp; Catering в Хамельне"
@@ -558,90 +622,115 @@
         </div>
       </section>
 
-<section class="mt-10">
-  <div class="card p-6">
-    <div class="mb-6">
-      <h2 class="text-2xl font-semibold">Ближайшие события</h2>
-      <p class="text-lg text-gray-700 mt-2">
-        Наше ближайшее событие от Vilana Event &amp; Catering в Хамельне.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6 items-stretch">
-      <!-- EVENT POSTER -->
-      <div class="hero-img rounded-2xl overflow-hidden flex items-center justify-center bg-[#120d0a] h-[460px] md:h-[720px]">
-        <img src="/images/vilana-slawishe.webp"
-             alt="Славянская вечеринка от Vilana Event &amp; Catering в Хамельне 13.06.2026"
-             class="block max-w-full max-h-full object-contain"
-             loading="lazy"
-             decoding="async" />
-      </div>
-
-      <!-- EVENT INFO -->
-      <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="chip">🎶 DJ Ram</span>
-            <span class="chip">📅 13.06.2026</span>
-            <span class="chip">🕙 Вход с 22:00</span>
-            <span class="chip">📍 Hameln</span>
+      <!-- =========================================================
+           Ближайшие события
+      ========================================================== -->
+      <section class="mt-10">
+        <div class="card p-6">
+          <div class="mb-6">
+            <h2 class="text-2xl font-semibold">Ближайшие события</h2>
+            <p class="text-lg text-gray-700 mt-2">
+              Наше ближайшее событие от Vilana Event &amp; Catering в Хамельне.
+            </p>
           </div>
 
-          <h3 class="text-2xl font-semibold">Славянская вечеринка</h3>
+          <div class="grid md:grid-cols-2 gap-6 items-stretch">
+            <!-- Постер события -->
+            <div class="hero-img rounded-2xl overflow-hidden flex items-center justify-center bg-[#120d0a] h-[460px] md:h-[720px]">
+              <img src="/images/slawischeparty.webp"
+                   alt="Славянская вечеринка от Vilana Event &amp; Catering в Хамельне 13.06.2026"
+                   class="block max-w-full max-h-full object-contain"
+                   loading="lazy" decoding="async" />
+            </div>
 
-          <p class="text-lg leading-relaxed text-gray-700">
-            Приглашаем вас на атмосферный disco-вечер с DJ Ram,
-            музыкой, танцами и снеками в течение всего вечера.
-          </p>
+            <!-- Детали события -->
+            <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="chip">🎶 DJ Ram</span>
+                  <span class="chip">📅 13.06.2026</span>
+                  <span class="chip">🕙 Вход с 22:00</span>
+                  <span class="chip">📍 Hameln</span>
+                </div>
+
+                <h3 class="text-2xl font-semibold">Славянская вечеринка</h3>
+
+                <p class="text-lg leading-relaxed text-gray-700">
+                  Приглашаем вас на атмосферный disco-вечер с DJ Ram,
+                  музыкой, танцами и снеками в течение всего вечера.
+                </p>
+
+                <!-- Информация о локации -->
+                <div style="border-radius:14px; border:1px solid rgba(15,23,42,.09); background:rgba(255,255,255,.6); padding:1rem 1.1rem;">
+                  <p class="text-base font-semibold" style="margin-bottom:.3rem;">📍 Merengue Mo – Хамельн Альтштадт</p>
+                  <p class="text-base text-gray-600" style="line-height:1.6;">
+                    Одна из самых известных площадок Хамельна — с 2000 года место для хорошего отдыха,
+                    коктейлей и незабываемых вечеров. В центре Альтштадта, удобно добираться на автобусе и такси.
+                  </p>
+                </div>
+
+                <!-- Объявление о смене адреса -->
+                <div style="border-radius:14px; background:linear-gradient(135deg,#fff8f0,#fff3ea); border:1px solid rgba(158,42,74,.15); padding:1rem 1.1rem;">
+                  <p class="text-base text-gray-700" style="line-height:1.6;">
+                    🙌 <strong>Передайте друзьям — адрес изменился!</strong><br>
+                    Если вы уже знаете об этом вечере: пожалуйста, сообщите своим друзьям и знакомым. Новый адрес: <strong>Neue Marktstraße 12, 31785 Hameln (Merengue Mo)</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Плитки статистики -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
+                <div class="event-stat">
+                  <span class="event-stat-num">15 €</span>
+                  <span class="event-stat-label">Вход</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">22:00</span>
+                  <span class="event-stat-label">Начало / вход</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">DJ Ram</span>
+                  <span class="event-stat-label">Музыка</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">Закуски</span>
+                  <span class="event-stat-label">включены</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">13.06.</span>
+                  <span class="event-stat-label">Дата</span>
+                </div>
+                <div class="event-stat">
+                  <span class="event-stat-num">Hameln</span>
+                  <span class="event-stat-label">Место</span>
+                </div>
+              </div>
+
+              <!-- Адрес и подробности -->
+              <div class="space-y-2 text-lg text-gray-700">
+                <p><strong>Адрес:</strong> Neue Marktstraße 12, 31785 Hameln</p>
+                <p><strong>Место:</strong> Merengue Mo – Cocktailbar &amp; Eventlocation</p>
+                <p><strong>Вход:</strong> 15 € с человека / количество мест ограничено</p>
+                <p><strong>Закуски:</strong> в течение всего вечера</p>
+              </div>
+
+              <div class="btn-group">
+                <a href="/ru/contact.html" class="btn-pill btn-gold">
+                  Отправить запрос
+                </a>
+                <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+                   class="btn-pill btn-insta">
+                  Открыть Instagram
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
-          <div class="event-stat">
-            <span class="event-stat-num">15 €</span>
-            <span class="event-stat-label">Вход</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">22:00</span>
-            <span class="event-stat-label">Начало / вход</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">DJ Ram</span>
-            <span class="event-stat-label">Музыка</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">Закуски</span>
-            <span class="event-stat-label">включены</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">13.06.</span>
-            <span class="event-stat-label">Дата</span>
-          </div>
-          <div class="event-stat">
-            <span class="event-stat-num">Hameln</span>
-            <span class="event-stat-label">Место</span>
-          </div>
-        </div>
-
-        <div class="space-y-2 text-lg text-gray-700">
-          <p><strong>Адрес:</strong> Fluthamelstraße 2, 31789 Hameln</p>
-          <p><strong>Вход:</strong> 15 € с человека / количество мест ограничено</p>
-          <p><strong>Закуски:</strong> в течение всего вечера</p>
-        </div>
-
-        <div class="btn-group">
-          <a href="/ru/contact.html" class="btn-pill btn-gold">
-            Отправить запрос
-          </a>
-          <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
-             class="btn-pill btn-insta">
-            Открыть Instagram
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      <!-- =========================================================
+           Прошедшие события
+      ========================================================== -->
       <section class="mt-10">
         <div class="card p-6">
           <div class="mb-6">
@@ -652,6 +741,7 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-6 items-stretch">
+            <!-- Фото события -->
             <div class="hero-img rounded-2xl overflow-hidden" style="min-height:340px; background:#f8f3ec;">
               <img src="/images/event-new/hero-8merz.webp"
                    alt="Декор и оформление стола на мероприятии к Международному женскому дню от Vilana Event &amp; Catering в Хамельне"
@@ -659,6 +749,7 @@
                    loading="lazy" decoding="async" />
             </div>
 
+            <!-- Описание события -->
             <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
               <div class="flex flex-col gap-4">
                 <div class="flex flex-wrap items-center gap-3">
@@ -675,6 +766,7 @@
                 </p>
               </div>
 
+              <!-- Плитки статистики прошедшего события -->
               <div class="grid grid-cols-3 gap-3 text-center">
                 <div class="event-stat">
                   <span class="event-stat-num">180+</span>
@@ -690,6 +782,7 @@
                 </div>
               </div>
 
+              <!-- Цитата / девиз вечера -->
               <blockquote class="event-quote">
                 <svg class="event-quote-icon" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true">
                   <path d="M0 22V13.2C0 5.87 4.4 1.47 13.2 0l1.47 2.2C9.53 3.3 6.6 5.87 5.87 9.53H11V22H0zm17.6 0V13.2C17.6 5.87 22 1.47 30.8 0l1.47 2.2c-5.13 1.1-8.07 3.67-8.8 7.33H28.6V22H17.6z"/>
@@ -714,6 +807,7 @@
         </div>
       </section>
 
+      <!-- SEO-текстовый блок: локальный контент для Хамельна -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">События, тематические вечера и эксклюзивные мероприятия в Хамельне</h2>
@@ -728,6 +822,7 @@
         </div>
       </section>
 
+      <!-- Короткий блок «О нас» -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">Vilana Event &amp; Catering</h2>
@@ -738,6 +833,10 @@
         </div>
       </section>
 
+      <!-- =========================================================
+           FAQ — Аккордеон (details/summary, без JS)
+           Содержимое должно совпадать с JSON-LD FAQPage
+      ========================================================== -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">FAQ</h2>
@@ -764,16 +863,6 @@
 
             <details class="faq-item">
               <summary class="faq-q">
-                <h3>Где найти фотографии прошедших событий Vilana?</h3>
-                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
-                </svg>
-              </summary>
-              <div class="faq-a">Фотографии и впечатления с прошедших мероприятий публикуются в галерее Vilana Event &amp; Catering.</div>
-            </details>
-
-            <details class="faq-item">
-              <summary class="faq-q">
                 <h3>Можно ли пригласить Vilana на частное или корпоративное мероприятие?</h3>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
@@ -788,6 +877,10 @@
     </div>
   </main>
 
+  <!-- =========================================================
+       FOOTER — Контакты, навигация, регион обслуживания,
+       Microdata (schema.org/LocalBusiness)
+  ========================================================== -->
   <footer class="footer-premium" itemscope itemtype="https://schema.org/LocalBusiness">
     <meta itemprop="name" content="Vilana Event & Catering">
     <meta itemprop="telephone" content="+49 176 5777 5996">
@@ -874,6 +967,11 @@
             class="footer-scroll-top" aria-label="Прокрутить вверх" title="Наверх">▲</button>
   </footer>
 
+  <!-- =========================================================
+       SCRIPTS
+       Мобильное меню: toggle, закрытие по клику на ссылку,
+       закрытие при клике вне меню, клавиша Escape
+  ========================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuToggle = document.getElementById("menuToggle");
@@ -886,6 +984,7 @@
         menuToggle.setAttribute("aria-expanded", hidden ? "false" : "true");
       });
 
+      // Закрыть меню при клике на ссылку
       mobileMenu.querySelectorAll("a").forEach((a) => {
         a.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
@@ -893,6 +992,7 @@
         });
       });
 
+      // Закрыть при клике вне меню
       document.addEventListener("click", (e) => {
         const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
         if (!inside && !mobileMenu.classList.contains("hidden")) {
@@ -901,6 +1001,7 @@
         }
       });
 
+      // Закрыть по клавише Escape
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
           mobileMenu.classList.add("hidden");
