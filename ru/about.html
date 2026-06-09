@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>О нас | Vilana Event &amp; Catering</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
-    <script>
+    <!-- Google Analytics — только после согласия -->
+    <script type="text/plain" data-cookie-category="analytics"
+        src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+    <script type="text/plain" data-cookie-category="analytics">
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
@@ -33,20 +34,32 @@
         content="Премиальный кейтеринг и Eventservice — индивидуальные концепции, точная организация и сервис высокого уровня." />
     <meta property="og:url" content="https://www.vilana-event.de/ru/about.html" />
     <meta property="og:image" content="https://www.vilana-event.de/images/og/og-cover.webp" />
+    <meta property="og:image:alt" content="Vilana Event &amp; Catering — премиальный кейтеринг и Eventservice в Хамельне" />
     <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="de_DE" />
     <meta property="og:site_name" content="Vilana Event &amp; Catering" />
     <meta name="theme-color" content="#0e0e0e" />
 
-    <!-- Tailwind (из /ru/ нужен ../) -->
-    <link rel="stylesheet" href="../css/output.css" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="О нас | Vilana Event &amp; Catering" />
+    <meta name="twitter:description" content="Премиальный кейтеринг и Eventservice — индивидуальные концепции, точная организация и сервис высокого уровня." />
+    <meta name="twitter:image" content="https://www.vilana-event.de/images/og/og-cover.webp" />
+    <meta name="twitter:image:alt" content="Vilana Event &amp; Catering — премиальный кейтеринг и Eventservice в Хамельне" />
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="/css/output.css" />
     <link rel="stylesheet" href="/css/footer-premium.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap"
-        rel="stylesheet" />
+        media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    </noscript>
 
     <style>
         body {
