@@ -92,7 +92,18 @@
         "@type": "ContactPage",
         "name": "Kontakt – Vilana Event & Catering",
         "url": "https://www.vilana-event.de/contact.html",
-        "about": { "@id": "https://www.vilana-event.de/#vilana" }
+        "about": { "@id": "https://www.vilana-event.de/#vilana" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.vilana-event.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://www.vilana-event.de/contact.html" }
+        ]
       }
     ]
   }

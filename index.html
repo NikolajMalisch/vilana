@@ -337,6 +337,35 @@
   }
   </script>
 
+  <!-- JSON-LD (WebSite + WebPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.vilana-event.de/#website",
+        "url": "https://www.vilana-event.de/",
+        "name": "Vilana Event & Catering",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.vilana-event.de/#webpage",
+        "url": "https://www.vilana-event.de/",
+        "name": "Catering & Partyservice Hameln | Vilana Event & Catering",
+        "inLanguage": "de-DE",
+        "isPartOf": { "@id": "https://www.vilana-event.de/#website" },
+        "about": { "@id": "https://www.vilana-event.de/#vilana" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "#faq"]
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
   <script type="text/plain" data-cookie-category="analytics"
