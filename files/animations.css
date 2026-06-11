@@ -1,0 +1,235 @@
+/* ============================================================
+   Vilana Event & Catering — animations.css
+   Подключение: <link rel="stylesheet" href="css/animations.css">
+   Все эффекты только на transform/opacity — без влияния на CLS.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ----------------------------------------------------------
+     1. SCROLL REVEAL — появление блоков при скролле
+     Использование: class="reveal" на любом блоке.
+     Варианты направления: reveal--left, reveal--right
+     ---------------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal--left  { transform: translateX(-36px); }
+  .reveal--right { transform: translateX(36px); }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  /* ----------------------------------------------------------
+     2. STAGGER — каскадное появление детей контейнера
+     Использование: data-stagger на контейнер (сетка карточек,
+     список, грид галереи). Детям класс ставить НЕ нужно —
+     JS сам навесит .reveal и задержки.
+     Шаг задержки можно менять: data-stagger="120" (мс), по
+     умолчанию 90 мс.
+     ---------------------------------------------------------- */
+
+  /* ----------------------------------------------------------
+     3. HERO TEXT REVEAL — строки выезжают из-под маски
+     Использование:
+     <h1 class="clip-reveal">
+       <span>Erleben Sie Catering neu –</span>
+       <span>mit Liebe, Geschmack und Stil.</span>
+     </h1>
+     Каждая строка — отдельный <span>.
+     ---------------------------------------------------------- */
+  .clip-reveal > span {
+    display: block;
+    overflow: hidden;
+  }
+  .clip-reveal > span::after { content: none; }
+  .clip-reveal > span > i,
+  .clip-reveal > span {
+    font-style: normal;
+  }
+  .clip-reveal > span {
+    opacity: 1;
+  }
+  .clip-reveal .clip-line {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: clipUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .clip-reveal span:nth-child(1) .clip-line { animation-delay: 0.15s; }
+  .clip-reveal span:nth-child(2) .clip-line { animation-delay: 0.30s; }
+  .clip-reveal span:nth-child(3) .clip-line { animation-delay: 0.45s; }
+
+  @keyframes clipUp {
+    to { transform: translateY(0); }
+  }
+
+  /* ----------------------------------------------------------
+     4. КАРТОЧКИ — подъём на hover (Leistungen, города, FAQ)
+     Использование: class="hover-lift" на карточку.
+     ---------------------------------------------------------- */
+  .hover-lift {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease;
+  }
+  .hover-lift:hover,
+  .hover-lift:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  /* ----------------------------------------------------------
+     5. ZOOM КАРТИНОК — медленное приближение внутри обрезки
+     Использование: обернуть <img> в контейнер class="img-zoom".
+     Работает в карточках городов, галерее, меню.
+     ---------------------------------------------------------- */
+  .img-zoom {
+    overflow: hidden;
+  }
+  .img-zoom img {
+    display: block;
+    width: 100%;
+    transform: scale(1.001);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .img-zoom:hover img,
+  .img-zoom:focus-within img {
+    transform: scale(1.06);
+  }
+
+  /* Подпись, выезжающая снизу (для галереи) */
+  .img-zoom .img-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px 16px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
+  .img-zoom { position: relative; }
+  .img-zoom:hover .img-caption,
+  .img-zoom:focus-within .img-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ----------------------------------------------------------
+     6. КНОПКИ — shine + magnetic
+     Shine: class="btn-shine" — блик проходит по кнопке на hover.
+     Magnetic: class="btn-magnetic" — тянется к курсору (JS,
+     только desktop с мышью).
+     Оба класса можно совмещать с существующим глассморфизмом.
+     ---------------------------------------------------------- */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.22) 50%,
+      transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    pointer-events: none;
+  }
+  .btn-shine:hover::after {
+    animation: shine 0.85s ease forwards;
+  }
+  @keyframes shine {
+    to { left: 130%; }
+  }
+
+  .btn-magnetic {
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  /* ----------------------------------------------------------
+     7. FAQ — плавное раскрытие аккордеона
+     Использование (структура):
+     <div class="faq-item">
+       <button class="faq-q">Вопрос…</button>
+       <div class="faq-a"><div class="faq-a-inner">Ответ…</div></div>
+     </div>
+     JS вешает .is-open на .faq-item.
+     ---------------------------------------------------------- */
+  .faq-a {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .faq-a-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .faq-item.is-open .faq-a {
+    grid-template-rows: 1fr;
+  }
+  .faq-q {
+    cursor: pointer;
+  }
+
+  /* ----------------------------------------------------------
+     8. ЛАЙТБОКС — открытие/закрытие
+     JS вешает .lb-open на контейнер лайтбокса.
+     Адаптируй селекторы под свою разметку лайтбокса в меню.
+     ---------------------------------------------------------- */
+  .lightbox {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .lightbox img,
+  .lightbox figure {
+    transform: scale(0.95);
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .lightbox.lb-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .lightbox.lb-open img,
+  .lightbox.lb-open figure {
+    transform: scale(1);
+  }
+
+  /* ----------------------------------------------------------
+     9. Стрелка вниз в hero — мягкий bounce
+     Использование: class="arrow-bounce"
+     ---------------------------------------------------------- */
+  .arrow-bounce {
+    animation: arrowBounce 2.2s ease-in-out infinite;
+  }
+  @keyframes arrowBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.85; }
+    50%       { transform: translateY(8px); opacity: 1; }
+  }
+
+} /* конец prefers-reduced-motion */
+
+/* ------------------------------------------------------------
+   Для пользователей с reduced motion всё видно сразу,
+   без движения — никаких дополнительных правил не нужно,
+   так как все стартовые состояния внутри media query выше.
+   ------------------------------------------------------------ */
