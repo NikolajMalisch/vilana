@@ -133,42 +133,14 @@
       />
     </noscript>
 
-    <!-- =========================
-      GA4 (DSGVO-safe): загружаем только после consent
-      Требование: твой cookiewall должен вызвать window.vilanaGrantAnalyticsConsent()
-      или dispatch event: document.dispatchEvent(new Event('vilana:analytics-consent'))
-    ========================== -->
-    <script>
-      (function () {
-        const GA_ID = "G-YW71FCW4FJ";
-        let loaded = false;
-
-        function loadGtag() {
-          if (loaded) return;
-          loaded = true;
-
-          const s = document.createElement("script");
-          s.async = true;
-          s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
-          document.head.appendChild(s);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { window.dataLayer.push(arguments); }
-          window.gtag = window.gtag || gtag;
-
-          gtag("js", new Date());
-          gtag("config", GA_ID, { anonymize_ip: true });
-        }
-
-        // 1) Глобальный хук для cookiewall
-        window.vilanaGrantAnalyticsConsent = loadGtag;
-
-        // 2) Или событие
-        document.addEventListener("vilana:analytics-consent", loadGtag);
-
-        // Если у тебя уже есть флаг в cookiewall — поддержим
-        if (window.vilanaConsentGranted === true) loadGtag();
-      })();
+    <!-- Google Analytics – wird nur nach Analytics-Einwilligung durch vilana-cookiewall.js aktiviert -->
+    <script type="text/plain" data-cookie-category="analytics"
+      src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
+    <script type="text/plain" data-cookie-category="analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-YW71FCW4FJ', { anonymize_ip: true });
     </script>
 
     <style>

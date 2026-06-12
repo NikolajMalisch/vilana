@@ -124,6 +124,20 @@ function lockScroll(lock) {
   function addDays(date, n){ var d=new Date(date); d.setDate(d.getDate()+n); return d; }
   function isExpired(rec){ return !rec || !rec.expiresAt || new Date(rec.expiresAt) < new Date(); }
 
+  // [DE] GA-Cookies löschen bei Widerruf der Analytics-Einwilligung.
+  // [RU] Удаляем GA-cookies при отзыве согласия на аналитику.
+  function _deleteGaCookies() {
+    var domains = [location.hostname, '.' + location.hostname];
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.trim().split('=')[0];
+      if (name === '_ga' || name.indexOf('_ga_') === 0) {
+        domains.forEach(function (d) {
+          document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=' + d;
+        });
+      }
+    });
+  }
+
   // [DE] CSP Nonce aus erstem <script[nonce]> übernehmen.
   // [RU] Переносим CSP nonce из первого <script[nonce]>.
   function getNonce(){ var s=document.querySelector('script[nonce]'); return s ? s.getAttribute('nonce') : null; }
@@ -144,6 +158,10 @@ function lockScroll(lock) {
     };
     safeSet(LS_KEY, record);
     applyConsent(record);
+    // [DE] GA-Disable-Flag setzen; bei Widerruf GA-Cookies löschen.
+    // [RU] Устанавливаем флаг отключения GA; при отзыве — удаляем GA-cookies.
+    window['ga-disable-G-YW71FCW4FJ'] = !record.analytics;
+    if (!record.analytics) { _deleteGaCookies(); }
     // [DE] Event für Integrationen (z. B. GA/Tagging)
     // [RU] Событие для интеграций (например, GA/тегирование)
     window.dispatchEvent(new CustomEvent('vilana:consentChanged', { detail: { consent: record } }));
@@ -162,6 +180,8 @@ function lockScroll(lock) {
     document.querySelectorAll('script[type="text/plain"][data-cookie-category]').forEach(function (node) {
       var cat = node.getAttribute('data-cookie-category');
       if (cat && consent[cat] === true) {
+        var nodeSrc = node.getAttribute('src') || '';
+        if (nodeSrc && document.querySelector('script[src="' + nodeSrc + '"]')) return;
         var s = document.createElement('script');
         for (var i = 0; i < node.attributes.length; i++) {
           var attr = node.attributes[i];
