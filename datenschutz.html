@@ -725,7 +725,7 @@
           <span aria-hidden="true">|</span>
           <a href="/agb.html">AGB</a>
           <span aria-hidden="true">|</span>
-          <a href="#" id="cookieSettingsLink">Cookie-Einstellungen</a>
+          <a href="#" id="cookie-reopen">Cookie-Einstellungen</a>
         </nav>
       </div>
 
@@ -754,21 +754,6 @@
         el.textContent = (now > start) ? (start + '–' + now) : String(start);
       }
 
-      // cookie settings open (best effort)
-      var link = document.getElementById('cookieSettingsLink');
-      if (link) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          try {
-            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.open === 'function') return window.VilanaCookieWall.open();
-            if (window.VilanaCookie && typeof window.VilanaCookie.open === 'function') return window.VilanaCookie.open();
-            if (window.VilanaCookieWall && typeof window.VilanaCookieWall.show === 'function') return window.VilanaCookieWall.show();
-            if (window.VilanaCookie && typeof window.VilanaCookie.show === 'function') return window.VilanaCookie.show();
-          } catch (err) {
-            console.warn('Cookie settings could not be opened:', err);
-          }
-        });
-      }
     });
   </script>
 </body>
