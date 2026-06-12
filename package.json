@@ -2,7 +2,6 @@
   "name": "vilana",
   "version": "1.0.0",
   "description": "Offizielle Website für Vilana Event & Catering – Catering für Hochzeiten, Firmen- und Privatfeiern in Niedersachsen & NRW.",
-  "main": "script.js",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
     "build:css": "npx tailwindcss -i ./src/input.css -o ./css/output.css --minify",
