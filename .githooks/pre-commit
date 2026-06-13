@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+# Update sitemap dates before every commit and include the result in that commit.
+python scripts/update_sitemap_lastmod.py
+git add sitemap.xml
