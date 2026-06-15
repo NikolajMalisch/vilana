@@ -1,14 +1,14 @@
 ﻿<!doctype html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- =========================================================
-       SEO — Первичные мета-теги
+       SEO — Primäre Meta-Tags (RU)
   ========================================================== -->
-  <title>Особенные события и мероприятия в Хамельне | Vilana Event &amp; Catering</title>
-  <meta name="description" content="События и тематические вечера в Хамельне: Vilana Event &amp; Catering приглашает на эксклюзивные мероприятия. Стильная атмосфера – новые даты уже в планах!">
+  <title>Мероприятия и события в Hameln | Vilana Event &amp; Catering</title>
+  <meta name="description" content="Актуальные мероприятия и обзоры от Vilana Event &amp; Catering: тематические вечера, культурные события и особые праздники в Hameln, Bad Pyrmont и Niedersachsen.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0e0e0e">
 
@@ -20,7 +20,7 @@
   <link rel="alternate" hreflang="ru" href="https://www.vilana-event.de/ru/event.html">
   <link rel="alternate" hreflang="x-default" href="https://www.vilana-event.de/event.html">
 
-  <!-- Перенаправление: /ru/event → /ru/event.html -->
+  <!-- Weiterleitung: /ru/event → /ru/event.html (ohne .html-Erweiterung) -->
   <script>
     (function () {
       if (location.pathname === '/ru/event') location.replace('/ru/event.html');
@@ -33,28 +33,28 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Vilana Event &amp; Catering">
-  <meta property="og:title" content="Особенные события и мероприятия в Хамельне | Vilana Event &amp; Catering">
-  <meta property="og:description" content="Особенные вечера, эксклюзивные форматы и прошедшие мероприятия Vilana Event &amp; Catering в Хамельне и Нижней Саксонии.">
+  <meta property="og:title" content="Мероприятия и события в Hameln | Vilana Event &amp; Catering">
+  <meta property="og:description" content="Актуальные даты и обзоры особых мероприятий от Vilana Event &amp; Catering в Hameln, Bad Pyrmont и Niedersachsen.">
   <meta property="og:url" content="https://www.vilana-event.de/ru/event.html">
   <meta property="og:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="События Vilana Event &amp; Catering в Хамельне">
+  <meta property="og:image:alt" content="Мероприятия Vilana Event &amp; Catering в Hameln">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Особенные события и мероприятия в Хамельне | Vilana Event &amp; Catering">
-  <meta name="twitter:description" content="Особенные вечера, эксклюзивные форматы и прошедшие мероприятия Vilana Event &amp; Catering в Хамельне и Нижней Саксонии.">
+  <meta name="twitter:title" content="Мероприятия и события в Hameln | Vilana Event &amp; Catering">
+  <meta name="twitter:description" content="Актуальные даты и обзоры особых мероприятий от Vilana Event &amp; Catering в Hameln, Bad Pyrmont и Niedersachsen.">
   <meta name="twitter:image" content="https://www.vilana-event.de/images/event-new/hero-event.webp">
-  <meta name="twitter:image:alt" content="События Vilana Event &amp; Catering в Хамельне">
+  <meta name="twitter:image:alt" content="Мероприятия Vilana Event &amp; Catering в Hameln">
 
   <!-- =========================================================
-       Performance — Preconnect & LCP Preload (до CSS)
+       Performance — Preconnect & LCP Preload
   ========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/images/event-new/hero-event.webp" type="image/webp" fetchpriority="high">
 
   <!-- =========================================================
-       Шрифты — неблокирующая загрузка (трюк media="print")
+       Fonts — nicht-blockierend (media="print" Trick)
   ========================================================== -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+SC:wght@400;500;700&display=swap"
@@ -80,8 +80,7 @@
   <link rel="manifest" href="/images/favicon/site.webmanifest">
 
   <!-- =========================================================
-       Inline-стили — дизайн-токены и компоненты страницы
-       (карточки, кнопки, FAQ, статистика, цитата)
+       Inline-Styles — идентичны DE-версии
   ========================================================== -->
   <style>
     :root {
@@ -131,7 +130,6 @@
       line-height:1;
     }
 
-    /* Glassmorphism-карточка */
     .card {
       background: var(--card);
       border-radius: var(--radius);
@@ -141,7 +139,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Бейдж «События Vilana» */
     .soon-badge {
       display: inline-flex;
       align-items: center;
@@ -157,7 +154,6 @@
       border: 1px solid rgba(200,160,50,.22);
     }
 
-    /* Чип-информер (дата, место, DJ и т.д.) */
     .chip {
       border-radius: 9999px;
       padding: .42rem .95rem;
@@ -172,7 +168,6 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* Базовая кнопка-«пилюля» */
     .btn-pill {
       position: relative;
       display: inline-flex;
@@ -207,7 +202,6 @@
     .btn-pill:hover { transform: translateY(-2px) scale(1.015); }
     .btn-pill:active { transform: translateY(0) scale(.985); transition-duration: .08s; }
 
-    /* Тёмно-красная CTA-кнопка */
     .btn-gold {
       background: linear-gradient(155deg, #9e2a4a 0%, #7a1e38 55%, #5e1228 100%);
       color: #fde8ef;
@@ -234,7 +228,6 @@
         0 8px 28px rgba(100,15,40,.36);
     }
 
-    /* Тёмная кнопка */
     .btn-dark {
       background: linear-gradient(160deg, #1e2636 0%, #0b0e14 100%);
       color: #dde4f0;
@@ -260,7 +253,6 @@
       box-shadow: 0 0 0 3px rgba(120,140,180,.30), 0 8px 24px rgba(0,0,0,.28);
     }
 
-    /* Прозрачная outline-кнопка */
     .btn-outline {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
@@ -283,7 +275,6 @@
       box-shadow: 0 0 0 3px rgba(15,23,42,.12), 0 4px 14px rgba(15,23,42,.06);
     }
 
-    /* Instagram-кнопка (градиент при hover) */
     .btn-insta {
       background: rgba(255,255,255,.70);
       color: var(--onyx);
@@ -299,7 +290,6 @@
       box-shadow: 0 10px 28px rgba(238,42,123,.32);
     }
 
-    /* FAQ-аккордеон */
     .faq-wrap {
       border-radius: var(--radius);
       border: 1px solid var(--line);
@@ -325,7 +315,6 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
-    /* Стрелка поворачивается при открытом FAQ */
     .chev {
       width:18px; height:18px;
       flex: 0 0 auto;
@@ -334,12 +323,10 @@
     }
     details[open] .chev { transform: rotate(180deg); }
 
-    /* Hero-изображение с лёгким зумом при hover */
     .hero-img { transform: translateZ(0); }
     .hero-img img { transition: transform .35s ease; }
     .hero-img:hover img { transform: scale(1.02); }
 
-    /* Заглушка для отсутствующих изображений */
     .placeholder-box {
       min-height: 320px;
       background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(248,243,236,.95)), #f8f3ec;
@@ -349,7 +336,6 @@
       background: linear-gradient(135deg, rgba(255,255,255,.72), rgba(248,243,236,.95)), #f8f3ec;
     }
 
-    /* Плитка статистики события (гости, цена, время и т.д.) */
     .event-stat {
       display: flex;
       flex-direction: column;
@@ -376,7 +362,6 @@
       line-height: 1.3;
     }
 
-    /* Блок цитаты (отзыв гостей / девиз вечера) */
     .event-quote {
       position: relative;
       padding: 1rem 1.1rem 1rem 1.4rem;
@@ -401,25 +386,276 @@
       margin: 0;
     }
 
-    /* Flex-группа для нескольких кнопок в ряд */
     .btn-group {
       display: flex;
       flex-wrap: wrap;
       gap: .75rem;
       align-items: center;
     }
+
+
+    /* =========================================================
+       Event-Übersicht
+    ========================================================== */
+    .event-status {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      padding: 1.4rem;
+      background:
+        radial-gradient(500px 220px at 90% 0%, rgba(200,146,42,.17), transparent 65%),
+        linear-gradient(145deg, #151b27 0%, #0b0e14 100%);
+      color: #f4ead8;
+      border: 1px solid rgba(232,217,184,.16);
+      box-shadow: 0 18px 42px rgba(2,6,23,.22);
+    }
+    .event-status-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #d8b66a;
+    }
+    .event-status h2 {
+      margin-top: .7rem;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.15;
+      color: #fffaf1;
+    }
+    .event-status p {
+      margin-top: .65rem;
+      max-width: 820px;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: rgba(244,234,216,.82);
+    }
+
+    .archive-head {
+      margin-bottom: 1.35rem;
+    }
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      align-items: start;
+    }
+
+    .archive-card {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      background:
+        radial-gradient(500px 220px at 90% 0%, rgba(200,146,42,.15), transparent 65%),
+        linear-gradient(145deg, #151b27 0%, #0b0e14 100%);
+      border: 1px solid rgba(232,217,184,.16);
+      box-shadow: 0 18px 42px rgba(2,6,23,.22);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .archive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 52px rgba(2,6,23,.32);
+      border-color: rgba(200,146,42,.34);
+    }
+    .archive-cover {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: linear-gradient(145deg, #2a1c20, #0b0e14);
+    }
+    .archive-cover img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform .45s ease;
+    }
+    .archive-card:hover .archive-cover img { transform: scale(1.035); }
+    .archive-cover::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      inset: auto 0 0 0;
+      height: 42%;
+      background: linear-gradient(to top, rgba(5,7,11,.55), rgba(5,7,11,0));
+      pointer-events: none;
+    }
+    .archive-cover-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      color: rgba(255,255,255,.74);
+      font-family: "Cinzel Decorative", cursive;
+      font-size: 1.2rem;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+    .archive-year {
+      position: absolute;
+      z-index: 3;
+      right: .8rem;
+      top: .8rem;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      background: rgba(8,10,15,.72);
+      color: #f4ead8;
+      border: 1px solid rgba(255,255,255,.18);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .archive-place {
+      position: absolute;
+      z-index: 3;
+      left: .9rem;
+      right: .9rem;
+      bottom: .8rem;
+      color: #fff;
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .archive-body {
+      padding: 1.15rem 1.15rem 1.25rem;
+    }
+    .archive-kicker {
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      color: #8a5b11;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .archive-card .archive-kicker { color: #d8b66a; }
+
+    .archive-title {
+      margin-top: .45rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.18;
+      color: #fffaf1;
+    }
+    .archive-text {
+      margin-top: .65rem;
+      color: rgba(244,234,216,.78);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .event-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .55rem;
+      margin-top: .95rem;
+    }
+    .event-fact {
+      min-width: 0;
+      padding: .65rem .7rem;
+      border-radius: 12px;
+      background: rgba(232,217,184,.06);
+      border: 1px solid rgba(232,217,184,.14);
+    }
+    .event-fact-label {
+      display: block;
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(244,234,216,.55);
+    }
+    .event-fact-value {
+      display: block;
+      margin-top: .2rem;
+      font-size: .96rem;
+      font-weight: 700;
+      color: rgba(244,234,216,.92);
+      line-height: 1.3;
+    }
+
+    .archive-details {
+      margin-top: .95rem;
+      border-top: 1px solid rgba(232,217,184,.14);
+      padding-top: .85rem;
+    }
+    .archive-details summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      cursor: pointer;
+      list-style: none;
+      color: #d8b66a;
+      font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      font-size: .84rem;
+      font-weight: 700;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .archive-details summary::-webkit-details-marker { display: none; }
+    .archive-details-icon {
+      width: 1.7rem;
+      height: 1.7rem;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: rgba(200,146,42,.16);
+      color: #d8b66a;
+      transition: transform .2s ease;
+    }
+    .archive-details[open] .archive-details-icon {
+      transform: rotate(45deg);
+    }
+    .archive-details-content {
+      padding-top: .85rem;
+      color: rgba(244,234,216,.76);
+      font-size: .98rem;
+      line-height: 1.62;
+    }
+    .archive-details-content p + p {
+      margin-top: .65rem;
+    }
+
+    .archive-note {
+      margin-top: 1.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: rgba(146,97,13,.055);
+      border: 1px solid rgba(146,97,13,.13);
+      color: rgba(15,23,42,.74);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .archive-grid { grid-template-columns: 1fr; }
+      .event-status { padding: 1.2rem; }
+      .archive-cover { aspect-ratio: 16 / 10; }
+    }
+
   </style>
 
   <!-- =========================================================
-       JSON-LD — CollectionPage (обзор всех событий)
+       JSON-LD — CollectionPage (RU)
   ========================================================== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
-    "name":"События Vilana Event & Catering",
+    "name":"Мероприятия Vilana Event & Catering",
     "url":"https://www.vilana-event.de/ru/event.html",
-    "description":"Обзор предстоящих и прошедших событий Vilana Event & Catering в Хамельне и Нижней Саксонии.",
+    "description":"Обзор новых дат и прошедших мероприятий Vilana Event & Catering в Hameln, Bad Pyrmont и Niedersachsen.",
     "inLanguage":"ru-RU",
     "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
     "speakable":{
@@ -434,38 +670,104 @@
   }
   </script>
 
-  <!-- JSON-LD — Прошедшее событие (Международный женский день 2026) -->
+  <!-- JSON-LD — прошедшие мероприятия -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Event",
-    "name":"Стиль и чувственность — Международный женский день 2026",
-    "startDate":"2026-03-14T17:00:00+01:00",
-    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus":"https://schema.org/EventCompleted",
-    "location":{
-      "@type":"Place",
-      "name":"Forum Hameln",
-      "address":{
-        "@type":"PostalAddress",
-        "addressLocality":"Hameln",
-        "addressRegion":"Niedersachsen",
-        "addressCountry":"DE"
+    "@type":"ItemList",
+    "name":"Прошедшие мероприятия Vilana Event & Catering",
+    "itemListOrder":"https://schema.org/ItemListOrderDescending",
+    "numberOfItems":3,
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "item":{
+          "@type":"Event",
+          "name":"Славянская вечеринка в Hameln 2026",
+          "startDate":"2026-06-13T22:00:00+02:00",
+          "eventStatus":"https://schema.org/EventCompleted",
+          "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+          "description":"Диско-вечер с DJ Ram, музыкой, танцами и закусками в старом городе Hameln.",
+          "location":{
+            "@type":"Place",
+            "name":"Merengue Mo",
+            "address":{
+              "@type":"PostalAddress",
+              "streetAddress":"Neue Marktstraße 12",
+              "postalCode":"31785",
+              "addressLocality":"Hameln",
+              "addressCountry":"DE"
+            }
+          },
+          "image":"https://www.vilana-event.de/images/slawischeparty.webp",
+          "organizer":{
+            "@type":"Organization",
+            "name":"Vilana Event & Catering",
+            "url":"https://www.vilana-event.de/"
+          }
+        }
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "item":{
+          "@type":"Event",
+          "name":"Стиль и чувственность – Международный женский день 2026",
+          "startDate":"2026-03-14T17:00:00+01:00",
+          "eventStatus":"https://schema.org/EventCompleted",
+          "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+          "description":"Стильный тематический вечер с музыкой, танцами, ведением, кейтерингом и более чем 180 гостями.",
+          "location":{
+            "@type":"Place",
+            "name":"Forum Hameln",
+            "address":{
+              "@type":"PostalAddress",
+              "addressLocality":"Hameln",
+              "addressRegion":"Niedersachsen",
+              "addressCountry":"DE"
+            }
+          },
+          "image":"https://www.vilana-event.de/images/Weltfrauentag.webp",
+          "organizer":{
+            "@type":"Organization",
+            "name":"Vilana Event & Catering",
+            "url":"https://www.vilana-event.de/"
+          }
+        }
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "item":{
+          "@type":"Event",
+          "name":"Октоберфест в Bad Pyrmont 2025",
+          "startDate":"2025-10-25T17:00:00+02:00",
+          "eventStatus":"https://schema.org/EventCompleted",
+          "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+          "description":"Душевный тематический вечер в Lindenhof в Bad Pyrmont с праздничной атмосферой и кулинарным сопровождением.",
+          "location":{
+            "@type":"Place",
+            "name":"Lindenhof",
+            "address":{
+              "@type":"PostalAddress",
+              "addressLocality":"Bad Pyrmont",
+              "addressRegion":"Niedersachsen",
+              "addressCountry":"DE"
+            }
+          },
+          "organizer":{
+            "@type":"Organization",
+            "name":"Vilana Event & Catering",
+            "url":"https://www.vilana-event.de/"
+          }
+        }
       }
-    },
-    "image":[
-      "https://www.vilana-event.de/images/event-new/hero-8merz.webp"
-    ],
-    "description":"Стильный вечер в Forum Hameln с музыкой, танцами, ведущим, качественным кейтерингом и особой атмосферой.",
-    "organizer":{
-      "@type":"Organization",
-      "name":"Vilana Event & Catering",
-      "url":"https://www.vilana-event.de/"
-    }
+    ]
   }
   </script>
 
-  <!-- JSON-LD — FAQPage (должен совпадать с HTML-FAQ) -->
+  <!-- JSON-LD — FAQPage (совпадает с HTML-FAQ) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -473,10 +775,10 @@
     "mainEntity":[
       {
         "@type":"Question",
-        "name":"Будут ли новые события от Vilana в Хамельне?",
+        "name":"Будут ли новые мероприятия от Vilana в Hameln?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Да, новые мероприятия, тематические вечера и особые форматы от Vilana Event & Catering в Хамельне и Нижней Саксонии уже находятся в разработке."
+          "text":"Да, новые мероприятия, тематические вечера и особые форматы событий от Vilana Event & Catering в Hameln и Niedersachsen уже в планах."
         }
       },
       {
@@ -484,15 +786,15 @@
         "name":"Какие мероприятия организует Vilana Event & Catering?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Vilana организует стильные тематические вечера, особые праздники, культурные мероприятия, а также эксклюзивные частные и корпоративные события с качественным кейтерингом."
+          "text":"Vilana организует стильные тематические вечера, особые праздники, культурные события, а также эксклюзивные частные и деловые мероприятия с качественным кейтерингом."
         }
       },
       {
         "@type":"Question",
-        "name":"Можно ли пригласить Vilana на частное или корпоративное мероприятие?",
+        "name":"Можно ли заказать Vilana для частного или делового мероприятия?",
         "acceptedAnswer":{
           "@type":"Answer",
-          "text":"Да, Vilana Event & Catering можно пригласить для частных праздников, свадеб, дней рождения и корпоративных мероприятий."
+          "text":"Да, Vilana Event & Catering можно заказать для частных праздников, свадеб, дней рождения и корпоративных мероприятий."
         }
       }
     ]
@@ -506,12 +808,12 @@
     "@type":"BreadcrumbList",
     "itemListElement":[
       {"@type":"ListItem","position":1,"name":"Главная","item":"https://www.vilana-event.de/ru/"},
-      {"@type":"ListItem","position":2,"name":"События","item":"https://www.vilana-event.de/ru/event.html"}
+      {"@type":"ListItem","position":2,"name":"Мероприятия","item":"https://www.vilana-event.de/ru/event.html"}
     ]
   }
   </script>
 
-  <!-- Google Analytics — загружается только после согласия -->
+  <!-- Google Analytics — wird erst nach Einwilligung geladen -->
   <script type="text/plain" data-cookie-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-YW71FCW4FJ"></script>
   <script type="text/plain" data-cookie-category="analytics">
     window.dataLayer=window.dataLayer||[];
@@ -524,40 +826,39 @@
 <body class="text-gray-800 antialiased">
 
   <!-- =========================================================
-       HEADER — Логотип, десктопная навигация,
-       переключатель языка, мобильная кнопка-бургер
+       HEADER
   ========================================================== -->
   <header class="bg-white shadow-md">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/ru/" class="logo-container flex items-center gap-1 whitespace-nowrap" style="min-height:38px;"
-         aria-label="Vilana Event &amp; Catering – Главная страница">
+         aria-label="Vilana Event &amp; Catering – Главная">
         <span class="logo-title">Vilana</span>
         <span class="logo-subtitle text-xs sm:text-sm tracking-wide" style="padding-top:1px;">Event &amp; Catering</span>
       </a>
 
       <div class="flex items-center gap-3">
-        <!-- Десктопная навигация -->
-        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Основная навигация">
+        <!-- Desktop-Navigation -->
+        <nav class="hidden md:flex items-center gap-6 mr-2" aria-label="Главная навигация">
           <a href="/ru/" class="text-gray-800 hover:text-amber-800">Главная</a>
           <a href="/ru/#services" class="text-gray-800 hover:text-amber-800">Услуги</a>
-          <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Кейтеринг</a>
+          <a href="/ru/partyservice.html" class="text-gray-800 hover:text-amber-800">Партисервис</a>
           <a href="/ru/menu.html" class="text-gray-800 hover:text-amber-800">Меню</a>
           <a href="/ru/galerie.html" class="text-gray-800 hover:text-amber-800">Галерея</a>
           <a href="/ru/about.html" class="text-gray-800 hover:text-amber-800">О нас</a>
-          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800" aria-current="page">События</a>
+          <a href="/ru/event.html" class="text-gray-800 hover:text-amber-800" aria-current="page">Мероприятия</a>
           <a href="/ru/bewertung.html" class="text-gray-800 hover:text-amber-800">Отзывы</a>
-          <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакт</a>
+          <a href="/ru/contact.html" class="text-gray-800 hover:text-amber-800">Контакты</a>
         </nav>
 
-        <!-- Переключатель языка DE / RU -->
+        <!-- Sprachumschalter RU / DE -->
         <div class="hidden md:flex items-center gap-2 text-sm" aria-label="Переключение языка">
-          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/ru/event.html">DE</a>
+          <a class="px-3 py-1 rounded border border-gray-300 hover:bg-gray-100" href="/event.html">DE</a>
           <span class="px-3 py-1 rounded border border-gray-300 bg-gray-100">RU</span>
         </div>
 
-        <!-- Мобильный: ссылка DE + кнопка-бургер -->
+        <!-- Mobile: DE-Link + Burger-Menü-Button -->
         <div class="flex items-center gap-2 md:hidden">
-          <a href="/ru/event.html"
+          <a href="/event.html"
              class="inline-flex h-8 px-3 items-center justify-center rounded border border-gray-300 text-gray-800 text-xs font-semibold"
              aria-label="Deutsche Version">DE</a>
           <button id="menuToggle" type="button" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false"
@@ -570,18 +871,18 @@
       </div>
     </div>
 
-    <!-- Мобильное выпадающее меню (управляется через JS) -->
+    <!-- Mobile-Dropdown-Menü -->
     <div id="mobileMenu" class="md:hidden hidden absolute left-0 w-full bg-white px-4 pb-6 pt-2 space-y-3 shadow-lg z-40"
          role="menu" aria-label="Мобильное меню">
       <a href="/ru/" class="block text-gray-700 hover:text-amber-700" role="menuitem">Главная</a>
       <a href="/ru/#services" class="block text-gray-700 hover:text-amber-700" role="menuitem">Услуги</a>
-      <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Кейтеринг</a>
+      <a href="/ru/partyservice.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Партисервис</a>
       <a href="/ru/menu.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Меню</a>
       <a href="/ru/galerie.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Галерея</a>
       <a href="/ru/about.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">О нас</a>
-      <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">События</a>
+      <a href="/ru/event.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Мероприятия</a>
       <a href="/ru/bewertung.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Отзывы</a>
-      <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакт</a>
+      <a href="/ru/contact.html" class="block text-gray-700 hover:text-amber-700" role="menuitem">Контакты</a>
     </div>
   </header>
 
@@ -591,26 +892,26 @@
   <main class="py-12">
     <div class="mx-auto px-4 max-w-6xl">
 
-      <!-- Hero-секция: вводный текст + hero-изображение -->
+      <!-- Hero-Sektion -->
       <section class="grid md:grid-cols-2 gap-6 items-stretch">
         <div class="card p-6 flex flex-col justify-center gap-6">
           <div class="flex flex-wrap items-center gap-3">
-            <span class="soon-badge">✨ События Vilana</span>
-            <span class="chip">📍 Нижняя Саксония и окрестности</span>
+            <span class="soon-badge">✨ Мероприятия от Vilana</span>
+            <span class="chip">📍 Niedersachsen и окрестности</span>
             <span class="chip">🥂 Эксклюзивные вечера</span>
           </div>
 
-          <!-- H1 — главный SEO-заголовок страницы -->
+          <!-- H1 -->
           <h1 class="text-3xl md:text-4xl font-medium leading-tight"
               style="text-transform:none; font-variant-caps:normal; letter-spacing:normal;">
-            Особенные события и эксклюзивные мероприятия в Хамельне от Vilana
+            Особые мероприятия и эксклюзивные события в Hameln от Vilana
           </h1>
 
           <div class="card p-5">
             <p class="text-lg leading-relaxed">
-              Vilana Event &amp; Catering организует особенные события, стильные праздники и эксклюзивные мероприятия
-              в Хамельне и Нижней Саксонии — с качественным кейтерингом, особой атмосферой и вниманием к деталям.
-              Новые тематические вечера и форматы уже в разработке и скоро будут опубликованы здесь.
+              Vilana Event &amp; Catering объединяет особые тематические вечера, музыку, кулинарию и стильную атмосферу.
+              На этой странице мы публикуем новые даты и показываем обзоры уже проведённых мероприятий
+              в Hameln, Bad Pyrmont и Niedersachsen.
             </p>
           </div>
 
@@ -626,247 +927,286 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 4a6 6 0 100 12 6 6 0 000-12zm6-.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
               </svg>
-              Instagram
+              Смотреть Instagram
             </a>
           </div>
         </div>
 
-        <!-- LCP-изображение — eager + fetchpriority для быстрого First Paint -->
+        <!-- LCP-Bild -->
         <div class="hero-img rounded-3xl overflow-hidden placeholder-box">
           <img src="/images/event-new/hero-event.webp"
-               alt="Эксклюзивные события Vilana Event &amp; Catering в Хамельне"
+               alt="Эксклюзивные мероприятия Vilana Event &amp; Catering в Hameln"
                class="block w-full h-full object-cover"
                loading="eager" decoding="async" fetchpriority="high" />
         </div>
       </section>
 
       <!-- =========================================================
-           Ближайшие события
+           Актуальный статус мероприятий
       ========================================================== -->
-      <section class="mt-10">
-        <div class="card p-6">
-          <div class="mb-6">
-            <h2 class="text-2xl font-semibold">Ближайшие события</h2>
-            <p class="text-lg text-gray-700 mt-2">
-              Наше ближайшее событие от Vilana Event &amp; Catering в Хамельне.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6 items-stretch">
-            <!-- Постер события -->
-            <div class="hero-img rounded-2xl overflow-hidden flex items-center justify-center bg-[#120d0a] h-[460px] md:h-[720px]">
-              <img src="/images/slawischeparty.webp"
-                   alt="Славянская вечеринка от Vilana Event &amp; Catering в Хамельне 13.06.2026"
-                   class="block max-w-full max-h-full object-contain"
-                   loading="lazy" decoding="async" />
-            </div>
-
-            <!-- Детали события -->
-            <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-wrap items-center gap-3">
-                  <span class="chip">🎶 DJ Ram</span>
-                  <span class="chip">📅 13.06.2026</span>
-                  <span class="chip">🕙 Вход с 22:00</span>
-                  <span class="chip">📍 Hameln</span>
-                </div>
-
-                <h3 class="text-2xl font-semibold">Славянская вечеринка</h3>
-
-                <p class="text-lg leading-relaxed text-gray-700">
-                  Приглашаем вас на атмосферный disco-вечер с DJ Ram,
-                  музыкой, танцами и снеками в течение всего вечера.
-                </p>
-
-                <!-- Информация о локации -->
-                <div style="border-radius:14px; border:1px solid rgba(15,23,42,.09); background:rgba(255,255,255,.6); padding:1rem 1.1rem;">
-                  <p class="text-base font-semibold" style="margin-bottom:.3rem;">📍 Merengue Mo – Хамельн Альтштадт</p>
-                  <p class="text-base text-gray-600" style="line-height:1.6;">
-                    Одна из самых известных площадок Хамельна — с 2000 года место для хорошего отдыха,
-                    коктейлей и незабываемых вечеров. В центре Альтштадта, удобно добираться на автобусе и такси.
-                  </p>
-                </div>
-
-                <!-- Объявление о смене адреса -->
-                <div style="border-radius:14px; background:linear-gradient(135deg,#fff8f0,#fff3ea); border:1px solid rgba(158,42,74,.15); padding:1rem 1.1rem;">
-                  <p class="text-base text-gray-700" style="line-height:1.6;">
-                    🙌 <strong>Передайте друзьям — адрес изменился!</strong><br>
-                    Если вы уже знаете об этом вечере: пожалуйста, сообщите своим друзьям и знакомым. Новый адрес: <strong>Neue Marktstraße 12, 31785 Hameln (Merengue Mo)</strong>.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Плитки статистики -->
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-center">
-                <div class="event-stat">
-                  <span class="event-stat-num">15 €</span>
-                  <span class="event-stat-label">Вход</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">22:00</span>
-                  <span class="event-stat-label">Начало / вход</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">DJ Ram</span>
-                  <span class="event-stat-label">Музыка</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">Закуски</span>
-                  <span class="event-stat-label">включены</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">13.06.</span>
-                  <span class="event-stat-label">Дата</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">Hameln</span>
-                  <span class="event-stat-label">Место</span>
-                </div>
-              </div>
-
-              <!-- Адрес и подробности -->
-              <div class="space-y-2 text-lg text-gray-700">
-                <p><strong>Адрес:</strong> Neue Marktstraße 12, 31785 Hameln</p>
-                <p><strong>Место:</strong> Merengue Mo – Cocktailbar &amp; Eventlocation</p>
-                <p><strong>Вход:</strong> 15 € с человека / количество мест ограничено</p>
-                <p><strong>Закуски:</strong> в течение всего вечера</p>
-              </div>
-
-              <div class="btn-group">
-                <a href="/ru/contact.html" class="btn-pill btn-gold">
-                  Отправить запрос
-                </a>
-                <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
-                   class="btn-pill btn-insta">
-                  Открыть Instagram
-                </a>
-              </div>
-            </div>
+      <section class="mt-10" aria-labelledby="event-status-title">
+        <div class="event-status">
+          <span class="event-status-label">✦ Актуальная информация</span>
+          <h2 id="event-status-title">Новые публичные мероприятия в планах</h2>
+          <p>
+            Славянская вечеринка 13 июня 2026 года завершилась. Новые даты мы публикуем здесь,
+            а также в нашем Instagram. Как только определится следующее публичное мероприятие,
+            для него появится отдельная страница с программой, билетами и всей важной информацией.
+          </p>
+          <div class="btn-group" style="margin-top:1.1rem;">
+            <a href="https://www.instagram.com/vilana_catering/" target="_blank" rel="noopener noreferrer"
+               class="btn-pill btn-gold">Новые даты в Instagram</a>
+            <a href="/ru/contact.html" class="btn-pill btn-outline" style="background:rgba(255,255,255,.92);">
+              Запросить своё мероприятие
+            </a>
           </div>
         </div>
       </section>
 
       <!-- =========================================================
-           Прошедшие события
+           Прошедшие мероприятия
       ========================================================== -->
-      <section class="mt-10">
+      <section class="mt-10" aria-labelledby="event-archive-title">
         <div class="card p-6">
-          <div class="mb-6">
-            <h2 class="text-2xl font-semibold">Прошедшие события</h2>
+          <div class="archive-head">
+            <span class="archive-kicker">Обзоры и впечатления</span>
+            <h2 id="event-archive-title" class="text-2xl md:text-3xl font-semibold mt-2">Прошедшие мероприятия</h2>
             <p class="text-lg text-gray-700 mt-2">
-              Впечатления от уже проведённых мероприятий Vilana Event &amp; Catering в Хамельне.
+              Три особых вечера со своей атмосферой, музыкой и кулинарным сопровождением.
+              Вся важная информация — прямо в карточках.
             </p>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-6 items-stretch">
-            <!-- Фото события -->
-            <div class="hero-img rounded-2xl overflow-hidden" style="min-height:340px; background:#f8f3ec;">
-              <img src="/images/event-new/hero-8merz.webp"
-                   alt="Декор и оформление стола на мероприятии к Международному женскому дню от Vilana Event &amp; Catering в Хамельне"
-                   class="block w-full h-full object-cover"
-                   loading="lazy" decoding="async" />
-            </div>
+          <div class="archive-grid">
 
-            <!-- Описание события -->
-            <div class="card p-6 lg:p-8 flex flex-col justify-between gap-5">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-wrap items-center gap-3">
-                  <span class="chip">🌸 Международный женский день</span>
-                  <span class="chip">📅 14 марта 2026</span>
-                  <span class="chip">📍 Хамельн</span>
-                </div>
+            <!-- 1. Славянская вечеринка -->
+            <article class="archive-card">
+              <div class="archive-cover">
+                <div class="archive-cover-fallback" aria-hidden="true">Славянская вечеринка</div>
+                <img src="/images/slawischeparty.webp"
+                     alt="Славянская вечеринка в Hameln с DJ Ram"
+                     loading="lazy" decoding="async"
+                     style="object-fit:cover;"
+                     onerror="this.style.display='none'">
+                <span class="archive-year">2026</span>
+                <span class="archive-place">📍 Hameln · Merengue Mo</span>
+              </div>
 
-                <h3 class="text-2xl font-semibold">Стиль и чувственность — Международный женский день 2026</h3>
-
-                <p class="text-lg leading-relaxed text-gray-700">
-                  Стильный вечер в Forum Hameln с музыкой, танцами, ведущим, качественным кейтерингом
-                  и особой атмосферой. Благодарим всех гостей за этот удавшийся и незабываемый вечер.
+              <div class="archive-body">
+                <span class="archive-kicker">13 июня 2026 · Вечеринка</span>
+                <h3 class="archive-title">Славянская вечеринка в Hameln</h3>
+                <p class="archive-text">
+                  Атмосферный диско-вечер с DJ Ram, танцами, музыкой и закусками
+                  в старом городе Hameln.
                 </p>
+
+                <div class="event-facts" aria-label="Информация о Славянской вечеринке">
+                  <div class="event-fact">
+                    <span class="event-fact-label">Локация</span>
+                    <span class="event-fact-value">Merengue Mo</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Начало</span>
+                    <span class="event-fact-value">22:00</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Музыка</span>
+                    <span class="event-fact-value">DJ Ram</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Длительность</span>
+                    <span class="event-fact-value">7 часов</span>
+                  </div>
+                </div>
+
+                <details class="archive-details">
+                  <summary>
+                    Подробнее о мероприятии
+                    <span class="archive-details-icon" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="archive-details-content">
+                    <p>
+                      Славянская вечеринка прошла в коктейль-баре и event-локации Merengue Mo
+                      на Neue Marktstraße 12 в Hameln.
+                    </p>
+                    <p>
+                      DJ Ram отвечал за музыкальное сопровождение. Танцы, хорошее настроение и
+                      закуски в течение вечера были в центре концепции мероприятия.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <!-- 2. Международный женский день -->
+            <article class="archive-card">
+              <div class="archive-cover">
+                <div class="archive-cover-fallback" aria-hidden="true">Стиль и чувственность</div>
+                <img src="/images/Weltfrauentag.webp"
+                     alt="Стильно оформленное мероприятие к Международному женскому дню в Hameln"
+                     loading="lazy" decoding="async"
+                     style="object-fit:cover;"
+                     onerror="this.style.display='none'">
+                <span class="archive-year">2026</span>
+                <span class="archive-place">📍 Hameln · Forum</span>
               </div>
 
-              <!-- Плитки статистики прошедшего события -->
-              <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="event-stat">
-                  <span class="event-stat-num">180+</span>
-                  <span class="event-stat-label">гостей</span>
+              <div class="archive-body">
+                <span class="archive-kicker">14 марта 2026 · Тематический вечер</span>
+                <h3 class="archive-title">Стиль и чувственность</h3>
+                <p class="archive-text">
+                  Элегантный вечер к Международному женскому дню с музыкой, танцами, ведением,
+                  изысканным кейтерингом и особой атмосферой.
+                </p>
+
+                <div class="event-facts" aria-label="Информация о Международном женском дне">
+                  <div class="event-fact">
+                    <span class="event-fact-label">Локация</span>
+                    <span class="event-fact-value">Forum Hameln</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Гости</span>
+                    <span class="event-fact-value">180+</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Программа</span>
+                    <span class="event-fact-value">ок. 8 часов</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Формат</span>
+                    <span class="event-fact-value">Гала-вечер</span>
+                  </div>
                 </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">8 часов</span>
-                  <span class="event-stat-label">программы</span>
-                </div>
-                <div class="event-stat">
-                  <span class="event-stat-num">♾</span>
-                  <span class="event-stat-label">воспоминаний</span>
-                </div>
+
+                <details class="archive-details">
+                  <summary>
+                    Подробнее о мероприятии
+                    <span class="archive-details-icon" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="archive-details-content">
+                    <p>
+                      Более 180 гостей провели стильный вечер с разнообразной программой
+                      из музыки, танцев и ведения.
+                    </p>
+                    <p>
+                      Vilana Event &amp; Catering обеспечила кулинарное сопровождение и
+                      атмосферное оформление вечера с вниманием к деталям.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <!-- 3. Октоберфест -->
+            <article class="archive-card">
+              <div class="archive-cover" style="background:linear-gradient(145deg,#704019,#160f0a);">
+                <div class="archive-cover-fallback" aria-hidden="true">Октоберфест<br>Bad Pyrmont</div>
+                <img src="/images/octoberfest.webp"
+                     alt="Октоберфест от Vilana Event und Catering в Bad Pyrmont"
+                     loading="lazy" decoding="async"
+                     style="object-fit:cover;"
+                     onerror="this.style.display='none'">
+                <span class="archive-year">2025</span>
+                <span class="archive-place">📍 Bad Pyrmont · Lindenhof</span>
               </div>
 
-              <!-- Цитата / девиз вечера -->
-              <blockquote class="event-quote">
-                <svg class="event-quote-icon" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true">
-                  <path d="M0 22V13.2C0 5.87 4.4 1.47 13.2 0l1.47 2.2C9.53 3.3 6.6 5.87 5.87 9.53H11V22H0zm17.6 0V13.2C17.6 5.87 22 1.47 30.8 0l1.47 2.2c-5.13 1.1-8.07 3.67-8.8 7.33H28.6V22H17.6z"/>
-                </svg>
-                <p>Вечер, наполненный элегантностью, теплом и незабываемыми моментами.</p>
-              </blockquote>
+              <div class="archive-body">
+                <span class="archive-kicker">25 октября 2025 · Тематический вечер</span>
+                <h3 class="archive-title">Октоберфест в Bad Pyrmont</h3>
+                <p class="archive-text">
+                  Душевный тематический вечер в Lindenhof с праздничной атмосферой,
+                  развлечениями и кулинарной концепцией Vilana.
+                </p>
 
-              <div class="btn-group">
-                <a href="/ru/galerie.html" class="btn-pill btn-gold">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 15l-5-5L5 21"/>
-                  </svg>
-                  Фотографии скоро
-                </a>
-                <a href="/ru/contact.html" class="btn-pill btn-outline">
-                  Запросить своё мероприятие
-                </a>
+                <div class="event-facts" aria-label="Информация об Октоберфесте">
+                  <div class="event-fact">
+                    <span class="event-fact-label">Локация</span>
+                    <span class="event-fact-value">Lindenhof</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Начало</span>
+                    <span class="event-fact-value">17:00</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Гости</span>
+                    <span class="event-fact-value">170</span>
+                  </div>
+                  <div class="event-fact">
+                    <span class="event-fact-label">Место</span>
+                    <span class="event-fact-value">Bad Pyrmont</span>
+                  </div>
+                </div>
+
+                <details class="archive-details">
+                  <summary>
+                    Подробнее о мероприятии
+                    <span class="archive-details-icon" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="archive-details-content">
+                    <p>
+                      Октоберфест прошёл 25 октября 2025 года в Lindenhof в Bad Pyrmont.
+                      Вечер сочетал душевную атмосферу с праздничным форматом.
+                    </p>
+                    <p>
+                      Концепция включала развлечения, общую праздничную атмосферу и
+                      кулинарное сопровождение от Vilana Event &amp; Catering.
+                    </p>
+                  </div>
+                </details>
               </div>
-            </div>
+            </article>
+
           </div>
-        </div>
-      </section>
 
-      <!-- SEO-текстовый блок: локальный контент для Хамельна -->
-      <section class="mt-10">
-        <div class="card p-6">
-          <h2 class="text-2xl font-semibold mb-4">События, тематические вечера и эксклюзивные мероприятия в Хамельне</h2>
-          <p class="text-lg leading-relaxed text-gray-700">
-            Vilana Event &amp; Catering — это особенные события в Хамельне и Нижней Саксонии. Будь то стильный тематический вечер,
-            культурное мероприятие, частный праздник или эксклюзивное корпоративное событие — мы объединяем качественную кухню,
-            профессиональную организацию и атмосферную общую концепцию. Так рождаются мероприятия с характером, элегантностью
-            и индивидуальным почерком. На этой странице вы найдёте информацию о предстоящих событиях, избранные впечатления
-            от уже прошедших вечеров, а также вдохновение для собственного мероприятия. Если вы планируете индивидуальный
-            праздник с кейтерингом, сервисом и стильной реализацией, вы можете напрямую связаться с Vilana Event &amp; Catering.
+          <p class="archive-note" style="background:radial-gradient(420px 180px at 92% 0%, rgba(200,146,42,.14), transparent 65%), linear-gradient(145deg,#151b27 0%,#0b0e14 100%); border:1px solid rgba(232,217,184,.16); box-shadow:0 14px 34px rgba(2,6,23,.20); color:rgba(244,234,216,.80);">
+            Как только определится новое публичное мероприятие, для него появится отдельная актуальная
+            страница с датой, программой, билетами и всей организационной информацией.
           </p>
         </div>
       </section>
 
-      <!-- Короткий блок «О нас» -->
+      <!-- SEO-Textblock: локальный контент для Hameln -->
+      <section class="mt-10">
+        <div class="card p-6">
+          <h2 class="text-2xl font-semibold mb-4">Мероприятия, тематические вечера и эксклюзивные события в Hameln</h2>
+          <p class="text-lg leading-relaxed text-gray-700">
+            Vilana Event &amp; Catering — это особые мероприятия в Hameln и Niedersachsen. Будь то стильный тематический вечер,
+            культурное событие, частный праздник или эксклюзивное корпоративное мероприятие — мы соединяем качественную кулинарию,
+            профессиональную организацию и атмосферную концепцию. Так рождаются мероприятия с характером, элегантностью и личным почерком.
+            На этой странице вы найдёте актуальные анонсы предстоящих событий, избранные обзоры прошедших вечеров, а также
+            вдохновение для собственных мероприятий. Если вы планируете индивидуальное мероприятие с кейтерингом, сервисом и стильной
+            реализацией, вы можете напрямую обратиться в Vilana Event &amp; Catering.
+          </p>
+        </div>
+      </section>
+
+      <!-- Краткий блок «О нас» -->
       <section class="mt-10">
         <div class="card p-6">
           <h2 class="text-2xl font-semibold mb-4">Vilana Event &amp; Catering</h2>
           <p class="text-lg leading-relaxed text-gray-700">
-            Будь то тематический вечер, частный праздник или эксклюзивное корпоративное мероприятие — мы объединяем стильную атмосферу,
-            профессиональную организацию и качественный кейтеринг в гармоничное общее впечатление.
+            Будь то тематический вечер, частный праздник или эксклюзивное корпоративное мероприятие — мы соединяем стильную
+            атмосферу, профессиональную организацию и качественный кейтеринг в гармоничное целое.
           </p>
         </div>
       </section>
 
       <!-- =========================================================
-           FAQ — Аккордеон (details/summary, без JS)
-           Содержимое должно совпадать с JSON-LD FAQPage
+           FAQ — Accordion (details/summary)
+           Содержимое совпадает с JSON-LD FAQPage
       ========================================================== -->
-      <section class="mt-10">
+      <section class="mt-10" id="faq">
         <div class="card p-6">
-          <h2 class="text-2xl font-semibold mb-4">FAQ</h2>
+          <h2 class="text-2xl font-semibold mb-4">Частые вопросы</h2>
           <div class="faq-wrap">
             <details class="faq-item">
               <summary class="faq-q">
-                <h3>Будут ли новые события от Vilana в Хамельне?</h3>
+                <h3>Будут ли новые мероприятия от Vilana в Hameln?</h3>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
                 </svg>
               </summary>
-              <div class="faq-a">Да, новые мероприятия, тематические вечера и особые форматы от Vilana Event &amp; Catering в Хамельне и Нижней Саксонии уже находятся в разработке.</div>
+              <div class="faq-a">Да, новые мероприятия, тематические вечера и особые форматы событий от Vilana Event &amp; Catering в Hameln и Niedersachsen уже в планах.</div>
             </details>
 
             <details class="faq-item">
@@ -876,17 +1216,17 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
                 </svg>
               </summary>
-              <div class="faq-a">Vilana организует стильные тематические вечера, особые праздники, культурные мероприятия, а также эксклюзивные частные и корпоративные события с качественным кейтерингом.</div>
+              <div class="faq-a">Vilana организует стильные тематические вечера, особые праздники, культурные события, а также эксклюзивные частные и деловые мероприятия с качественным кейтерингом.</div>
             </details>
 
             <details class="faq-item">
               <summary class="faq-q">
-                <h3>Можно ли пригласить Vilana на частное или корпоративное мероприятие?</h3>
+                <h3>Можно ли заказать Vilana для частного или делового мероприятия?</h3>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
                 </svg>
               </summary>
-              <div class="faq-a">Да, Vilana Event &amp; Catering можно пригласить для частных праздников, свадеб, дней рождения и корпоративных мероприятий.</div>
+              <div class="faq-a">Да, Vilana Event &amp; Catering можно заказать для частных праздников, свадеб, дней рождения и корпоративных мероприятий.</div>
             </details>
           </div>
         </div>
@@ -896,8 +1236,7 @@
   </main>
 
   <!-- =========================================================
-       FOOTER — Контакты, навигация, регион обслуживания,
-       Microdata (schema.org/LocalBusiness)
+       FOOTER
   ========================================================== -->
     <footer class="footer-premium">
 
@@ -908,7 +1247,7 @@
       <!-- 3-spalten Grid -->
       <div class="footer-grid">
 
-        <!-- Kontakt -->
+        <!-- Контакты -->
         <div class="footer-col">
           <h3 class="footer-col-title">Контакты</h3>
           <address class="footer-address">
@@ -940,29 +1279,29 @@
 
         <div class="footer-divider-v"></div>
 
-        <!-- Navigation -->
+        <!-- Навигация -->
         <div class="footer-col">
           <h3 class="footer-col-title">Навигация</h3>
-          <nav aria-label="Навигация">
+          <nav aria-label="Навигация в подвале">
             <ul class="footer-nav">
               <li><a href="/ru/">Главная</a></li>
               <li><a href="/ru/#services">Услуги</a></li>
-              <li><a href="/ru/partyservice.html">Кейтеринг</a></li>
+              <li><a href="/ru/partyservice.html">Партисервис</a></li>
               <li><a href="/ru/menu.html">Меню</a></li>
               <li><a href="/ru/galerie.html">Галерея</a></li>
               <li><a href="/ru/about.html">О нас</a></li>
               <li><a href="/ru/event.html">Мероприятия</a></li>
-              <li><a href="/ru/contact.html">Контакт</a></li>
+              <li><a href="/ru/contact.html">Контакты</a></li>
             </ul>
           </nav>
         </div>
 
         <div class="footer-divider-v"></div>
 
-        <!-- Servicegebiet -->
+        <!-- Зона обслуживания -->
         <div class="footer-col">
-          <h3 class="footer-col-title">Регион работы</h3>
-          <p class="footer-regions-label">Банкетный сервис и кейтеринг:</p>
+          <h3 class="footer-col-title">Зона обслуживания</h3>
+          <p class="footer-regions-label">Партисервис и кейтеринг в:</p>
           <ul class="footer-regions">
             <li>Hameln</li>
             <li>Hameln-Pyrmont</li>
@@ -976,7 +1315,7 @@
             <li>Bielefeld</li>
             <li>Weserbergland</li>
           </ul>
-          <p class="footer-regions-note">Наш основной регион обслуживания — Хамельн-Пирмонт и Везербергланд. Крупные свадьбы, корпоративные мероприятия и другие события мы по индивидуальному согласованию обслуживаем также в радиусе до 200 км.</p>
+          <p class="footer-regions-note">Наш основной регион — Hameln-Pyrmont и Weserbergland. Крупные свадьбы, корпоративы и другие мероприятия по индивидуальной договорённости мы обслуживаем также в радиусе до 200 км.</p>
         </div>
 
       </div>
@@ -989,12 +1328,12 @@
           Все права защищены.
         </p>
 
-        <nav class="footer-legal" aria-label="Правовые документы">
-          <a href="/impressum.html">Импрессум</a>
+        <nav class="footer-legal" aria-label="Правовая информация">
+          <a href="/impressum.html">Impressum</a>
           <span aria-hidden="true">|</span>
           <a href="/datenschutz.html">Конфиденциальность</a>
           <span aria-hidden="true">|</span>
-          <a href="/agb.html">Условия</a>
+          <a href="/agb.html">Условия (AGB)</a>
         </nav>
       </div>
 
@@ -1007,9 +1346,7 @@
   </footer>
 
   <!-- =========================================================
-       SCRIPTS
-       Мобильное меню: toggle, закрытие по клику на ссылку,
-       закрытие при клике вне меню, клавиша Escape
+       SCRIPTS — Mobile-Menü
   ========================================================== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -1023,7 +1360,6 @@
         menuToggle.setAttribute("aria-expanded", hidden ? "false" : "true");
       });
 
-      // Закрыть меню при клике на ссылку
       mobileMenu.querySelectorAll("a").forEach((a) => {
         a.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
@@ -1031,7 +1367,6 @@
         });
       });
 
-      // Закрыть при клике вне меню
       document.addEventListener("click", (e) => {
         const inside = mobileMenu.contains(e.target) || menuToggle.contains(e.target);
         if (!inside && !mobileMenu.classList.contains("hidden")) {
@@ -1040,7 +1375,6 @@
         }
       });
 
-      // Закрыть по клавише Escape
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
           mobileMenu.classList.add("hidden");
