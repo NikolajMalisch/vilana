@@ -142,219 +142,343 @@
 
   <!-- JSON-LD (LocalBusiness/Caterer) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness","Caterer"],
-    "@id": "https://www.vilana-event.de/#vilana",
-    "name": "Vilana Event & Catering",
-    "url": "https://www.vilana-event.de/",
-    "inLanguage": "de-DE",
-
-    "image": [
-      "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
-      "https://www.vilana-event.de/images/vilana-web-logo.png",
-      "https://www.vilana-event.de/images/stadte/Event-Catering.webp"
-    ],
-    "logo": "https://www.vilana-event.de/images/vilana-web-logo.png",
-
-    "description": "Catering und Partyservice aus Aerzen bei Hameln für Hochzeiten, Firmenfeiern und private Veranstaltungen. Buffets, kalte Platten, warme Speisen, kleine Häppchen, Servicepersonal, Equipment und Eventplanung ab 20 Gästen. Betreuung auf Deutsch und Russisch möglich. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km.",
-    "priceRange": "€€",
-    "servesCuisine": ["Deutsch", "Europäisch", "Russisch", "International"],
-
-    "telephone": "+49 176 5777 5996",
-    "email": "v.s@vilana.info",
-
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Osterstraße 28",
-      "addressLocality": "Aerzen",
-      "addressRegion": "Niedersachsen",
-      "postalCode": "31855",
-      "addressCountry": "DE"
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "Caterer"
+  ],
+  "@id": "https://www.vilana-event.de/#localBusiness",
+  "name": "Vilana Event & Catering",
+  "url": "https://www.vilana-event.de/",
+  "inLanguage": "de-DE",
+  "image": [
+    "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
+    "https://www.vilana-event.de/images/vilana-web-logo.png",
+    "https://www.vilana-event.de/images/stadte/Event-Catering.webp"
+  ],
+  "logo": "https://www.vilana-event.de/images/vilana-web-logo.png",
+  "description": "Catering und Partyservice aus Aerzen bei Hameln für Hochzeiten, Firmenfeiern und private Veranstaltungen. Buffets, kalte Platten, warme Speisen, kleine Häppchen, Servicepersonal, Equipment und Eventplanung ab 20 Gästen. Betreuung auf Deutsch und Russisch möglich. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km.",
+  "priceRange": "€€",
+  "servesCuisine": [
+    "Deutsch",
+    "Europäisch",
+    "Russisch",
+    "International"
+  ],
+  "telephone": "+49 176 5777 5996",
+  "email": "v.s@vilana.info",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Osterstraße 28",
+    "addressLocality": "Aerzen",
+    "addressRegion": "Niedersachsen",
+    "postalCode": "31855",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.047847,
+    "longitude": 9.263319
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Aerzen"
     },
-
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 52.047847,
-      "longitude": 9.263319
+    {
+      "@type": "City",
+      "name": "Hameln"
     },
-
-    "hasMap": "https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
-
-    "areaServed": [
-      { "@type": "City", "name": "Aerzen" },
-      { "@type": "City", "name": "Hameln" },
-      { "@type": "City", "name": "Bad Pyrmont" },
-      { "@type": "City", "name": "Hessisch Oldendorf" },
-      { "@type": "City", "name": "Emmerthal" },
-      { "@type": "City", "name": "Coppenbrügge" },
-      { "@type": "AdministrativeArea", "name": "Landkreis Hameln-Pyrmont" },
-      { "@type": "AdministrativeArea", "name": "Weserbergland" },
+    {
+      "@type": "City",
+      "name": "Bad Pyrmont"
+    },
+    {
+      "@type": "City",
+      "name": "Hessisch Oldendorf"
+    },
+    {
+      "@type": "City",
+      "name": "Emmerthal"
+    },
+    {
+      "@type": "City",
+      "name": "Coppenbrügge"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Landkreis Hameln-Pyrmont"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Weserbergland"
+    },
+    {
+      "@type": "GeoCircle",
+      "name": "Erweiterter Einsatzbereich für größere Veranstaltungen nach individueller Abstimmung",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.047847,
+        "longitude": 9.263319
+      },
+      "geoRadius": 200000,
+      "description": "Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
+    }
+  ],
+  "serviceType": [
+    "Catering",
+    "Partyservice",
+    "Eventservice",
+    "Hochzeitscatering",
+    "Firmencatering",
+    "Mobiler Caterer"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catering & Event-Services",
+    "itemListElement": [
       {
-        "@type": "GeoCircle",
-        "name": "Erweiterter Einsatzbereich für größere Veranstaltungen nach individueller Abstimmung",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 52.047847,
-          "longitude": 9.263319
-        },
-        "geoRadius": 200000,
-        "description": "Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
-      }
-    ],
-
-    "serviceType": ["Catering", "Partyservice", "Eventservice", "Hochzeitscatering", "Firmencatering", "Mobiler Caterer"],
-
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Catering & Event-Services",
-      "itemListElement": [
-        {
-          "@type": "OfferCatalog",
-          "name": "Catering & Buffets",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Buffet-Catering warm und kalt" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kalte Platten und kleine Häppchen" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hochzeitscatering" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Catering und Firmenverpflegung" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desserts und Candy Bar" } }
-          ]
-        },
-        {
-          "@type": "OfferCatalog",
-          "name": "Service & Eventplanung",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicepersonal" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Eventplanung und Ablaufkoordination" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lieferung und Aufbau" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobiles Buffet und Equipment" } }
-          ]
-        }
-      ]
-    },
-
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+49 176 5777 5996",
-        "contactType": "Kundenservice",
-        "areaServed": "DE",
-        "availableLanguage": ["de","ru"]
+        "@type": "OfferCatalog",
+        "name": "Catering & Buffets",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Buffet-Catering warm und kalt",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Kalte Platten und kleine Häppchen",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hochzeitscatering",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Catering und Firmenverpflegung",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desserts und Candy Bar",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          }
+        ]
       },
       {
-        "@type": "ContactPoint",
-        "telephone": "+49 176 4228 8707",
-        "contactType": "Kundenservice",
-        "areaServed": "DE",
-        "availableLanguage": ["de","ru"]
+        "@type": "OfferCatalog",
+        "name": "Service & Eventplanung",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Servicepersonal",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Eventplanung und Ablaufkoordination",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lieferung und Aufbau",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobiles Buffet und Equipment",
+              "provider": {
+                "@id": "https://www.vilana-event.de/#localBusiness"
+              }
+            }
+          }
+        ]
       }
-    ],
-
-    "sameAs": [
-      "https://www.instagram.com/vilana_catering/",
-      "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
     ]
-  }
-  </script>
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+49 176 5777 5996",
+      "contactType": "Kundenservice",
+      "areaServed": "DE",
+      "availableLanguage": [
+        "de",
+        "ru"
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+49 176 4228 8707",
+      "contactType": "Kundenservice",
+      "areaServed": "DE",
+      "availableLanguage": [
+        "de",
+        "ru"
+      ]
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/vilana_catering/",
+    "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
+  ]
+}
+</script>
 
   <!-- JSON-LD (FAQPage) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Liefern Sie Catering in ganz Hameln und im Weserbergland?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ab wie vielen Gästen kommt ein Catering in Hameln in Frage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wir arbeiten ab 20 Gästen — von der intimen Geburtstagsfeier bis zur Hochzeit mit 200+ Personen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Was kostet Catering in Hameln?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jede Veranstaltung wird individuell kalkuliert. Der Preis hängt von Gästezahl, Menüauswahl, Serviceumfang, Equipment und Anfahrt ab. Nach der Abstimmung erhalten Sie ein transparentes und verbindliches Angebot."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Bieten Sie Hochzeitscatering in Hameln und im Weserbergland an?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, Hochzeiten sind eine unserer Spezialitäten. Wir liefern Buffet, Sektempfang, Mitternachtssnack und Servicepersonal für Hochzeitslocations in Hameln, Bad Pyrmont und im Weserbergland. Auf Wunsch zweisprachig Deutsch/Russisch."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie früh sollte ich Catering in Hameln anfragen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Für Hochzeiten und größere Firmenfeiern ideal 2–6 Monate im Voraus, für kleinere Anlässe (Geburtstag, Empfang) reichen meist 2–4 Wochen. Kurzfristige Anfragen versuchen wir möglich zu machen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Gibt es vegetarische, vegane oder angepasste Menüoptionen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vegetarische und vegane Varianten sind nach Absprache möglich. Bitte teilen Sie uns Allergien, Unverträglichkeiten oder besondere Ernährungswünsche bereits bei der Anfrage mit. Wir prüfen anschließend, welche Gerichte und Anpassungen im konkreten Fall möglich sind."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Bringen Sie auch Geschirr, Gläser und Servicepersonal mit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja. Auf Wunsch bringen wir komplettes Equipment (Geschirr, Besteck, Gläser, Tischwäsche, Stehtische, Thermoboxen) sowie geschulte Servicekräfte und Barpersonal — alles aus einer Hand."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Liefern Sie Catering in ganz Hameln und im Weserbergland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "Ab wie vielen Gästen kommt ein Catering in Hameln in Frage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir arbeiten ab 20 Gästen — von der intimen Geburtstagsfeier bis zur Hochzeit mit 200+ Personen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet Catering in Hameln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jede Veranstaltung wird individuell kalkuliert. Der Preis hängt von Gästezahl, Menüauswahl, Serviceumfang, Equipment und Anfahrt ab. Nach der Abstimmung erhalten Sie ein transparentes und verbindliches Angebot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bieten Sie Hochzeitscatering in Hameln und im Weserbergland an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Hochzeiten sind eine unserer Spezialitäten. Wir liefern Buffet, Sektempfang, Mitternachtssnack und Servicepersonal für Hochzeitslocations in Hameln, Bad Pyrmont und im Weserbergland. Auf Wunsch zweisprachig Deutsch/Russisch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie früh sollte ich Catering in Hameln anfragen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für Hochzeiten und größere Firmenfeiern ideal 2–6 Monate im Voraus, für kleinere Anlässe (Geburtstag, Empfang) reichen meist 2–4 Wochen. Kurzfristige Anfragen versuchen wir möglich zu machen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es vegetarische, vegane oder angepasste Menüoptionen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vegetarische und vegane Varianten sind nach Absprache möglich. Bitte teilen Sie uns Allergien, Unverträglichkeiten oder besondere Ernährungswünsche bereits bei der Anfrage mit. Wir prüfen anschließend, welche Gerichte und Anpassungen im konkreten Fall möglich sind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bringen Sie auch Geschirr, Gläser und Servicepersonal mit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Auf Wunsch bringen wir komplettes Equipment (Geschirr, Besteck, Gläser, Tischwäsche, Stehtische, Thermoboxen) sowie geschulte Servicekräfte und Barpersonal — alles aus einer Hand."
+      }
+    }
+  ]
+}
+</script>
 
   <!-- JSON-LD (WebSite + WebPage) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.vilana-event.de/#website",
-        "url": "https://www.vilana-event.de/",
-        "name": "Vilana Event & Catering",
-        "inLanguage": "de-DE",
-        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.vilana-event.de/#webpage",
-        "url": "https://www.vilana-event.de/",
-        "name": "Catering in Hameln & Weserbergland | Vilana",
-        "description": "Catering in Hameln-Pyrmont und im Weserbergland für Hochzeiten, Geburtstage und Firmenfeiern. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km.",
-        "inLanguage": "de-DE",
-        "isPartOf": { "@id": "https://www.vilana-event.de/#website" },
-        "about": { "@id": "https://www.vilana-event.de/#vilana" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
-          "width": 1368,
-          "height": 1024
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.vilana-event.de/#website",
+      "url": "https://www.vilana-event.de/",
+      "name": "Vilana Event & Catering",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.vilana-event.de/#webpage",
+      "url": "https://www.vilana-event.de/",
+      "name": "Catering in Hameln & Weserbergland | Vilana",
+      "description": "Catering in Hameln-Pyrmont und im Weserbergland für Hochzeiten, Geburtstage und Firmenfeiern. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://www.vilana-event.de/#website"
+      },
+      "about": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
+        "width": 1368,
+        "height": 1024
+      },
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      }
+    }
+  ]
+}
+</script>
 
   <!-- Google Analytics — wird erst nach Analytics-Einwilligung geladen -->
   <script type="text/plain" data-cookie-category="analytics"

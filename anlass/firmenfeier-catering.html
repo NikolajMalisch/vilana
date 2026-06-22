@@ -78,188 +78,131 @@
 
   <!-- JSON-LD (fixed, consistent coords) -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vilana-event.de/#organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.vilana-event.de/anlass/firmenfeier-catering.html#service",
+      "name": "Firmenfeier Catering — Buffet, Fingerfood & Service",
+      "serviceType": "Corporate Catering & Eventservice",
+      "provider": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
       },
-      {
-        "@type":["LocalBusiness","Caterer"],
-        "@id":"https://www.vilana-event.de/#localbusiness",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "image":"https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp",
-        "telephone":"+49 176 5777 5996",
-        "email":"v.s@vilana.info",
-        "knowsLanguage":["de-DE","ru-RU"],
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressRegion":"Niedersachsen",
-          "addressCountry":"DE"
+      "url": "https://www.vilana-event.de/anlass/firmenfeier-catering.html",
+      "description": "Firmenfeier-Catering mit Empfang (Fingerfood/Canapés), Buffet (warm & kalt) und Desserts. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Buffet-Equipment – mit Lieferung, Aufbau und Abbau im Radius von ca. 200 km ab Hameln.",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.047847,
+          "longitude": 9.263319
         },
-        "geo":{
-          "@type":"GeoCoordinates",
-          "latitude":52.047847,
-          "longitude":9.263319
-        },
-        "serviceArea":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "areaServed":[
-          { "@type":"AdministrativeArea","name":"Niedersachsen" },
-          { "@type":"AdministrativeArea","name":"Nordrhein-Westfalen" }
-        ],
-        "contactPoint":[
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 5777 5996",
-            "email":"v.s@vilana.info",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          },
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 4228 8707",
-            "email":"vilana-event@outlook.de",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          }
-        ],
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+        "geoRadius": 200000
       },
-      {
-        "@type":"Service",
-        "@id":"https://www.vilana-event.de/anlass/firmenfeier-catering.html#service",
-        "name":"Firmenfeier Catering — Buffet, Fingerfood & Service",
-        "serviceType":"Corporate Catering & Eventservice",
-        "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-        "url":"https://www.vilana-event.de/anlass/firmenfeier-catering.html",
-        "description":"Firmenfeier-Catering mit Empfang (Fingerfood/Canapés), Buffet (warm & kalt) und Desserts. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Buffet-Equipment – mit Lieferung, Aufbau und Abbau im Radius von ca. 200 km ab Hameln.",
-        "areaServed":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "offers":{
-          "@type":"Offer",
-          "url":"https://www.vilana-event.de/contact.html",
-          "priceCurrency":"EUR",
-          "availability":"https://schema.org/InStock"
-        }
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://www.vilana-event.de/anlass/firmenfeier-catering.html#breadcrumb",
-        "itemListElement":[
-          {
-            "@type":"ListItem",
-            "position":1,
-            "name":"Startseite",
-            "item":"https://www.vilana-event.de/"
-          },
-          {
-            "@type":"ListItem",
-            "position":2,
-            "name":"Partyservice",
-            "item":"https://www.vilana-event.de/partyservice.html"
-          },
-          {
-            "@type":"ListItem",
-            "position":3,
-            "name":"Firmenfeier Catering",
-            "item":"https://www.vilana-event.de/anlass/firmenfeier-catering.html"
-          }
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.vilana-event.de/anlass/firmenfeier-catering.html#faq",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Liefern Sie Catering in ganz Hameln und im Weserbergland?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Bietet ihr Servicepersonal, Geschirr und Equipment an?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Buffet-Equipment (z.B. Chafing-Dishes) sowie Lieferung, Aufbau und Abbau."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Wie läuft eine Firmenfeier typischerweise ab?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Häufig startet es mit einem Empfang (Fingerfood/Canapés), danach folgt ein Buffet (warm & kalt). Zum Abschluss passen Desserts im Glas oder ein Sweet Table."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Gibt es vegetarische/vegane Optionen und Allergene?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Wir planen vegetarische/vegane Optionen und berücksichtigen Allergene transparent nach Absprache."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Wie stelle ich eine Anfrage?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Am schnellsten über das Kontaktformular oder telefonisch unter +49 176 5777 5996. Bitte nennen Sie Datum, Ort, Gästezahl und gewünschtes Format."
-            }
-          }
-        ]
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vilana-event.de/anlass/firmenfeier-catering.html#webpage",
-        "url":"https://www.vilana-event.de/anlass/firmenfeier-catering.html",
-        "name":"Firmenfeier Catering Hameln | Vilana Event & Catering",
-        "inLanguage":"de-DE",
-        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-        "about":{"@id":"https://www.vilana-event.de/#vilana"},
-        "speakable":{
-          "@type":"SpeakableSpecification",
-          "cssSelector":["h1","#faq"]
-        }
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.vilana-event.de/contact.html",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.vilana-event.de/anlass/firmenfeier-catering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.vilana-event.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Partyservice",
+          "item": "https://www.vilana-event.de/partyservice.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Firmenfeier Catering",
+          "item": "https://www.vilana-event.de/anlass/firmenfeier-catering.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.vilana-event.de/anlass/firmenfeier-catering.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Liefern Sie Catering in ganz Hameln und im Weserbergland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Unser Schwerpunkt liegt in Hameln-Pyrmont und im Weserbergland. Größere Hochzeiten, Firmenfeiern und andere Veranstaltungen betreuen wir nach individueller Abstimmung auch in einem Umkreis von bis zu 200 km."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bietet ihr Servicepersonal, Geschirr und Equipment an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Auf Wunsch inkl. Servicepersonal, Geschirr, Gläser und Buffet-Equipment (z.B. Chafing-Dishes) sowie Lieferung, Aufbau und Abbau."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie läuft eine Firmenfeier typischerweise ab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Häufig startet es mit einem Empfang (Fingerfood/Canapés), danach folgt ein Buffet (warm & kalt). Zum Abschluss passen Desserts im Glas oder ein Sweet Table."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es vegetarische/vegane Optionen und Allergene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Wir planen vegetarische/vegane Optionen und berücksichtigen Allergene transparent nach Absprache."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie stelle ich eine Anfrage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am schnellsten über das Kontaktformular oder telefonisch unter +49 176 5777 5996. Bitte nennen Sie Datum, Ort, Gästezahl und gewünschtes Format."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.vilana-event.de/anlass/firmenfeier-catering.html#webpage",
+      "url": "https://www.vilana-event.de/anlass/firmenfeier-catering.html",
+      "name": "Firmenfeier Catering Hameln | Vilana Event & Catering",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://www.vilana-event.de/#website"
+      },
+      "about": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#faq"
+        ]
+      },
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="text-gray-800 antialiased">

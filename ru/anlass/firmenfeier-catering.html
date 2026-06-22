@@ -77,188 +77,131 @@
 
   <!-- JSON-LD (fixed) -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vilana-event.de/#organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#service",
+      "name": "Корпоратив — кейтеринг, буфет и сервис",
+      "serviceType": "Corporate Catering & Service",
+      "provider": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
       },
-      {
-        "@type":["LocalBusiness","Caterer"],
-        "@id":"https://www.vilana-event.de/#localbusiness",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "image":"https://www.vilana-event.de/images/anlass/firmenfeier-hero.webp",
-        "telephone":"+49 176 5777 5996",
-        "email":"v.s@vilana.info",
-        "knowsLanguage":["de-DE","ru-RU"],
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressRegion":"Niedersachsen",
-          "addressCountry":"DE"
+      "url": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html",
+      "description": "Кейтеринг на корпоратив и фирменные мероприятия: приветственный фуршет с закусками, буфет (горячее и холодное) и десерты. По желанию — обслуживающий персонал, посуда, бокалы и оборудование с доставкой, монтажом и демонтажем. Работаем в радиусе около 200 км.",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.047847,
+          "longitude": 9.263319
         },
-        "geo":{
-          "@type":"GeoCoordinates",
-          "latitude":52.047847,
-          "longitude":9.263319
-        },
-        "serviceArea":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "areaServed":[
-          { "@type":"AdministrativeArea","name":"Niedersachsen" },
-          { "@type":"AdministrativeArea","name":"Nordrhein-Westfalen" }
-        ],
-        "contactPoint":[
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 5777 5996",
-            "email":"v.s@vilana.info",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          },
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 4228 8707",
-            "email":"vilana-event@outlook.de",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          }
-        ],
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+        "geoRadius": 200000
       },
-      {
-        "@type":"Service",
-        "@id":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#service",
-        "name":"Корпоратив — кейтеринг, буфет и сервис",
-        "serviceType":"Corporate Catering & Service",
-        "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-        "url":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html",
-        "description":"Кейтеринг на корпоратив и фирменные мероприятия: приветственный фуршет с закусками, буфет (горячее и холодное) и десерты. По желанию — обслуживающий персонал, посуда, бокалы и оборудование с доставкой, монтажом и демонтажем. Работаем в радиусе около 200 км.",
-        "areaServed":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "offers":{
-          "@type":"Offer",
-          "url":"https://www.vilana-event.de/ru/contact.html",
-          "priceCurrency":"EUR",
-          "availability":"https://schema.org/InStock"
-        }
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#breadcrumb",
-        "itemListElement":[
-          {
-            "@type":"ListItem",
-            "position":1,
-            "name":"Главная",
-            "item":"https://www.vilana-event.de/ru/"
-          },
-          {
-            "@type":"ListItem",
-            "position":2,
-            "name":"Партисервис",
-            "item":"https://www.vilana-event.de/ru/partyservice.html"
-          },
-          {
-            "@type":"ListItem",
-            "position":3,
-            "name":"Корпоратив",
-            "item":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html"
-          }
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#faq",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Вы обслуживаете мероприятия в Хамельне и Везербергланде?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. Наш основной регион обслуживания — Хамельн-Пирмонт и Везербергланд. Крупные свадьбы, корпоративные мероприятия и другие события мы по индивидуальному согласованию обслуживаем также в радиусе до 200 км."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Как обычно выглядит сценарий корпоратива?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Обычно всё начинается с приветственного фуршета и напитков, затем идёт буфет с горячими и холодными блюдами, а в конце — десерты в стаканчиках или Sweet Table."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Можете привезти посуду, бокалы, оборудование и персонал?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. По желанию предоставляем персонал, посуду, бокалы и оборудование для буфета, включая доставку, монтаж и демонтаж."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Есть ли вегетарианские и веганские варианты?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. Мы адаптируем меню под ваши пожелания: возможны вегетарианские и веганские позиции."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Как быстро получить расчёт и предложение?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Самое быстрое — заполнить форму на сайте: дата, место, количество гостей и формат. Мы уточним детали и подготовим предложение."
-            }
-          }
-        ]
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#webpage",
-        "url":"https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html",
-        "name":"Кейтеринг на корпоратив | Vilana Event & Catering",
-        "inLanguage":"ru-RU",
-        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-        "about":{"@id":"https://www.vilana-event.de/#vilana"},
-        "speakable":{
-          "@type":"SpeakableSpecification",
-          "cssSelector":["h1","#faq"]
-        }
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.vilana-event.de/ru/contact.html",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://www.vilana-event.de/ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Партисервис",
+          "item": "https://www.vilana-event.de/ru/partyservice.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Корпоратив",
+          "item": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Вы обслуживаете мероприятия в Хамельне и Везербергланде?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Наш основной регион обслуживания — Хамельн-Пирмонт и Везербергланд. Крупные свадьбы, корпоративные мероприятия и другие события мы по индивидуальному согласованию обслуживаем также в радиусе до 200 км."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как обычно выглядит сценарий корпоратива?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обычно всё начинается с приветственного фуршета и напитков, затем идёт буфет с горячими и холодными блюдами, а в конце — десерты в стаканчиках или Sweet Table."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можете привезти посуду, бокалы, оборудование и персонал?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. По желанию предоставляем персонал, посуду, бокалы и оборудование для буфета, включая доставку, монтаж и демонтаж."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли вегетарианские и веганские варианты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы адаптируем меню под ваши пожелания: возможны вегетарианские и веганские позиции."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как быстро получить расчёт и предложение?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Самое быстрое — заполнить форму на сайте: дата, место, количество гостей и формат. Мы уточним детали и подготовим предложение."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html#webpage",
+      "url": "https://www.vilana-event.de/ru/anlass/firmenfeier-catering.html",
+      "name": "Кейтеринг на корпоратив | Vilana Event & Catering",
+      "inLanguage": "ru-RU",
+      "isPartOf": {
+        "@id": "https://www.vilana-event.de/#website"
+      },
+      "about": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#faq"
+        ]
+      },
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="text-gray-800 antialiased">

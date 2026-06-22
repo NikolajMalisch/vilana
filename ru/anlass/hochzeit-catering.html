@@ -105,188 +105,131 @@
 
   <!-- JSON-LD — Organization + LocalBusiness/Caterer + Service + Breadcrumb + FAQ -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vilana-event.de/#organization",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "logo":"https://www.vilana-event.de/images/vilana-web-logo.png",
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#service",
+      "name": "Свадебный кейтеринг",
+      "serviceType": "Wedding Catering",
+      "provider": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
       },
-      {
-        "@type":["LocalBusiness","Caterer"],
-        "@id":"https://www.vilana-event.de/#localbusiness",
-        "name":"Vilana Event & Catering",
-        "url":"https://www.vilana-event.de/",
-        "image":"https://www.vilana-event.de/images/anlass/hochzeit-hero.webp",
-        "telephone":"+49 176 5777 5996",
-        "email":"v.s@vilana.info",
-        "knowsLanguage":["de-DE","ru-RU"],
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Osterstraße 28",
-          "postalCode":"31855",
-          "addressLocality":"Aerzen",
-          "addressRegion":"Niedersachsen",
-          "addressCountry":"DE"
+      "url": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html",
+      "description": "Свадебный кейтеринг: фуршет, fingerfood, буфет, персонал и оборудование в радиусе ~200 км от Хамельна.",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.047847,
+          "longitude": 9.263319
         },
-        "geo":{
-          "@type":"GeoCoordinates",
-          "latitude":52.047847,
-          "longitude":9.263319
-        },
-        "serviceArea":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "areaServed":[
-          { "@type":"AdministrativeArea","name":"Niedersachsen" },
-          { "@type":"AdministrativeArea","name":"Nordrhein-Westfalen" }
-        ],
-        "contactPoint":[
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 5777 5996",
-            "email":"v.s@vilana.info",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          },
-          {
-            "@type":"ContactPoint",
-            "contactType":"Kundenservice",
-            "telephone":"+49 176 4228 8707",
-            "email":"vilana-event@outlook.de",
-            "availableLanguage":["de-DE","ru-RU"],
-            "areaServed":"DE"
-          }
-        ],
-        "sameAs":[
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ]
+        "geoRadius": 200000
       },
-      {
-        "@type":"Service",
-        "@id":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#service",
-        "name":"Свадебный кейтеринг",
-        "serviceType":"Wedding Catering",
-        "provider":{"@id":"https://www.vilana-event.de/#localbusiness"},
-        "url":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html",
-        "description":"Свадебный кейтеринг: фуршет, fingerfood, буфет, персонал и оборудование в радиусе ~200 км от Хамельна.",
-        "areaServed":{
-          "@type":"GeoCircle",
-          "geoMidpoint":{
-            "@type":"GeoCoordinates",
-            "latitude":52.047847,
-            "longitude":9.263319
-          },
-          "geoRadius":200000
-        },
-        "offers":{
-          "@type":"Offer",
-          "url":"https://www.vilana-event.de/ru/contact.html",
-          "priceCurrency":"EUR",
-          "availability":"https://schema.org/InStock"
-        }
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#breadcrumb",
-        "itemListElement":[
-          {
-            "@type":"ListItem",
-            "position":1,
-            "name":"Главная",
-            "item":"https://www.vilana-event.de/ru/"
-          },
-          {
-            "@type":"ListItem",
-            "position":2,
-            "name":"Партисервис",
-            "item":"https://www.vilana-event.de/ru/partyservice.html"
-          },
-          {
-            "@type":"ListItem",
-            "position":3,
-            "name":"Свадебный кейтеринг",
-            "item":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html"
-          }
-        ]
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#faq",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Вы обслуживаете мероприятия в Хамельне и Везербергланде?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. Наш основной регион обслуживания — Хамельн-Пирмонт и Везербергланд. Крупные свадьбы, корпоративные мероприятия и другие события мы по индивидуальному согласованию обслуживаем также в радиусе до 200 км."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Что входит в свадебный кейтеринг?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Фуршет, fingerfood, холодные и горячие буфеты. По запросу — персонал, посуда, бокалы и буфетное оборудование."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"За сколько заранее лучше отправить запрос?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Оптимально за 2–6 недель. На популярные свадебные даты рекомендуем 2–3 месяца."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Есть ли вегетарианские и веганские позиции?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Да. Мы адаптируем меню под ваши пожелания, включая вегетарианские и веганские варианты."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Как быстро сделать запрос?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Самый быстрый способ — форма на сайте или звонок по телефону +49 176 5777 5996."
-            }
-          }
-        ]
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#webpage",
-        "url":"https://www.vilana-event.de/ru/anlass/hochzeit-catering.html",
-        "name":"Свадебный кейтеринг Хамельн | Vilana Event & Catering",
-        "inLanguage":"ru-RU",
-        "isPartOf":{"@id":"https://www.vilana-event.de/#website"},
-        "about":{"@id":"https://www.vilana-event.de/#vilana"},
-        "speakable":{
-          "@type":"SpeakableSpecification",
-          "cssSelector":["h1","#faq"]
-        }
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.vilana-event.de/ru/contact.html",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://www.vilana-event.de/ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Партисервис",
+          "item": "https://www.vilana-event.de/ru/partyservice.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Свадебный кейтеринг",
+          "item": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Вы обслуживаете мероприятия в Хамельне и Везербергланде?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Наш основной регион обслуживания — Хамельн-Пирмонт и Везербергланд. Крупные свадьбы, корпоративные мероприятия и другие события мы по индивидуальному согласованию обслуживаем также в радиусе до 200 км."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что входит в свадебный кейтеринг?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Фуршет, fingerfood, холодные и горячие буфеты. По запросу — персонал, посуда, бокалы и буфетное оборудование."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "За сколько заранее лучше отправить запрос?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оптимально за 2–6 недель. На популярные свадебные даты рекомендуем 2–3 месяца."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли вегетарианские и веганские позиции?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Мы адаптируем меню под ваши пожелания, включая вегетарианские и веганские варианты."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как быстро сделать запрос?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Самый быстрый способ — форма на сайте или звонок по телефону +49 176 5777 5996."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html#webpage",
+      "url": "https://www.vilana-event.de/ru/anlass/hochzeit-catering.html",
+      "name": "Свадебный кейтеринг Хамельн | Vilana Event & Catering",
+      "inLanguage": "ru-RU",
+      "isPartOf": {
+        "@id": "https://www.vilana-event.de/#website"
+      },
+      "about": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "#faq"
+        ]
+      },
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="text-gray-800 antialiased">

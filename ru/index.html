@@ -117,207 +117,107 @@
 
   <!-- JSON-LD (RU) — расширенный @graph -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["LocalBusiness","Caterer"],
-        "@id": "https://www.vilana-event.de/#vilana",
-        "name": "Vilana Event & Catering",
-        "url": "https://www.vilana-event.de/ru/",
-        "inLanguage": "ru-RU",
-        "image": [
-          "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
-          "https://www.vilana-event.de/images/vilana-web-logo.png",
-          "https://www.vilana-event.de/images/stadte/Event-Catering.webp"
-        ],
-        "logo": "https://www.vilana-event.de/images/vilana-web-logo.png",
-        "priceRange": "€€",
-        "telephone": "+49 176 5777 5996",
-        "email": "v.s@vilana.info",
-        "description": "Кейтеринг из Аэрцена рядом с Хамельном для свадеб, юбилеев, корпоративов и частных мероприятий. Буфеты, горячие блюда, закуски, персонал, оборудование и организация событий от 20 гостей. Обслуживание на русском и немецком языках.",
-        "servesCuisine": ["Russian", "European", "German", "International"],
-        "sameAs": [
-          "https://www.instagram.com/vilana_catering/",
-          "https://www.google.com/maps/place/Vilana+Event+%26+Catering/@52.0478366,9.2633167,607m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47ba8b00170a2b5b:0xf11111cc16bf8031!8m2!3d52.0478366!4d9.2633167!16s%2Fg%2F11wqw_k1t5"
-        ],
-        "hasMap": "https://www.google.com/maps/search/?api=1&query=52.047847,9.263319",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Osterstraße 28",
-          "addressLocality": "Aerzen",
-          "addressRegion": "Niedersachsen",
-          "postalCode": "31855",
-          "addressCountry": "DE"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 52.047847,
-          "longitude": 9.263319
-        },
-        "areaServed": [
-          { "@type":"City", "name":"Aerzen" },
-          { "@type":"City", "name":"Hameln" },
-          { "@type":"City", "name":"Bad Pyrmont" },
-          { "@type":"City", "name":"Hessisch Oldendorf" },
-          { "@type":"City", "name":"Emmerthal" },
-          { "@type":"City", "name":"Coppenbrügge" },
-          { "@type":"AdministrativeArea", "name":"Landkreis Hameln-Pyrmont" },
-          { "@type":"AdministrativeArea", "name":"Weserbergland" }
-        ],
-        "serviceType": ["Кейтеринг", "Банкетный сервис", "Организация мероприятий", "Выездное обслуживание мероприятий", "Свадебный кейтеринг", "Корпоративный кейтеринг", "Business Catering", "Firmenverpflegung"],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+49 176 5777 5996",
-            "contactType": "customer support",
-            "areaServed": "DE",
-            "availableLanguage": ["ru","de"]
-          },
-          {
-            "@type": "ContactPoint",
-            "telephone": "+49 176 4228 8707",
-            "contactType": "customer support",
-            "areaServed": "DE",
-            "availableLanguage": ["ru","de"]
-          }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "@id": "https://www.vilana-event.de/ru/#services",
-          "name": "Услуги",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "name": "Кейтеринг на русскую свадьбу",
-              "itemOffered": {
-                "@type": "Service",
-                "@id": "https://www.vilana-event.de/ru/#service-russian-wedding",
-                "name": "Кейтеринг на русскую свадьбу",
-                "serviceType": "Wedding Catering",
-                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-                "inLanguage": "ru-RU"
-              }
-            },
-            {
-              "@type": "Offer",
-              "name": "Русские вечеринки и юбилеи",
-              "itemOffered": {
-                "@type": "Service",
-                "@id": "https://www.vilana-event.de/ru/#service-russian-party",
-                "name": "Русские вечеринки и юбилеи",
-                "serviceType": "Event Catering",
-                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-                "inLanguage": "ru-RU"
-              }
-            },
-            {
-              "@type": "Offer",
-              "name": "Корпоративы и бизнес-ивенты",
-              "itemOffered": {
-                "@type": "Service",
-                "@id": "https://www.vilana-event.de/ru/#service-corporate",
-                "name": "Корпоративный кейтеринг",
-                "serviceType": "Corporate Catering",
-                "provider": { "@id": "https://www.vilana-event.de/#vilana" },
-                "inLanguage": "ru-RU"
-              }
-            }
-          ]
-        }
-      },
-
-      {
-        "@type": "WebSite",
-        "@id": "https://www.vilana-event.de/ru/#website",
-        "url": "https://www.vilana-event.de/ru/",
-        "name": "Vilana Event & Catering (RU)",
-        "inLanguage": "ru-RU",
-        "publisher": { "@id": "https://www.vilana-event.de/#vilana" }
-      },
-
-      {
-        "@type": "WebPage",
-        "@id": "https://www.vilana-event.de/ru/#webpage",
-        "url": "https://www.vilana-event.de/ru/",
-        "name": "Кейтеринг в Хамельне и Везербергланде",
-        "description": "Кейтеринг в Хамельне, районе Хамельн-Пирмонт и Везербергланде для свадеб, юбилеев и корпоративных мероприятий.",
-        "inLanguage": "ru-RU",
-        "isPartOf": { "@id": "https://www.vilana-event.de/ru/#website" },
-        "about": { "@id": "https://www.vilana-event.de/#vilana" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
-          "width": 1368,
-          "height": 1024
-        }
-      },
-
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.vilana-event.de/ru/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Вы работаете в Хамельне и по всему Везербергланду?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Да. Наш основной регион работы — Хамельн, Аэрцен, Бад-Пирмонт, район Хамельн-Пирмонт и Везербергланд. Крупные мероприятия по предварительному согласованию обслуживаем также в других городах Нижней Саксонии и Северного Рейна — Вестфалии."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "От скольких гостей вы берёте заказ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Мы работаем от 20 гостей — от камерного дня рождения до свадьбы на 200+ человек."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Сколько стоит кейтеринг в Хамельне?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Стоимость рассчитывается индивидуально и зависит от количества гостей, меню, объёма сервиса, оборудования и расстояния. После согласования деталей вы получите прозрачное письменное предложение."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Организуете ли вы русские и смешанные свадьбы?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Да. Для русских и смешанных свадеб мы предлагаем буфеты с русскими и европейскими блюдами, приём гостей, поздние закуски, двуязычное обслуживание на русском и немецком языках, а также сопровождение мероприятия."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "За сколько нужно делать запрос?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Идеально: для свадеб и крупных корпоративов — за 2–6 месяцев, для небольших мероприятий (день рождения, фуршет) достаточно 2–4 недель. Срочные заказы по Хамельну и окрестностям — стараемся помочь, спрашивайте."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Есть ли вегетарианские, веганские и адаптированные варианты меню?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Вегетарианские и веганские варианты возможны по предварительному согласованию. Об аллергиях, непереносимостях и особых пожеланиях необходимо сообщить уже при запросе, чтобы мы могли проверить подходящие блюда и возможные изменения."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Привозите ли вы посуду, бокалы и персонал?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Да. По запросу привозим полный комплект (тарелки, приборы, бокалы, текстиль, столы для фуршета, термобоксы) и предоставляем обученный персонал и бариста — всё под ключ."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.vilana-event.de/ru/#website",
+      "url": "https://www.vilana-event.de/ru/",
+      "name": "Vilana Event & Catering (RU)",
+      "inLanguage": "ru-RU",
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.vilana-event.de/ru/#webpage",
+      "url": "https://www.vilana-event.de/ru/",
+      "name": "Кейтеринг в Хамельне и Везербергланде",
+      "description": "Кейтеринг в Хамельне, районе Хамельн-Пирмонт и Везербергланде для свадеб, юбилеев и корпоративных мероприятий.",
+      "inLanguage": "ru-RU",
+      "isPartOf": {
+        "@id": "https://www.vilana-event.de/ru/#website"
+      },
+      "about": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.vilana-event.de/images/anlass/hochzeit-buffet.webp",
+        "width": 1368,
+        "height": 1024
+      },
+      "publisher": {
+        "@id": "https://www.vilana-event.de/#localBusiness"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.vilana-event.de/ru/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Вы работаете в Хамельне и по всему Везербергланду?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Наш основной регион работы — Хамельн, Аэрцен, Бад-Пирмонт, район Хамельн-Пирмонт и Везербергланд. Крупные мероприятия по предварительному согласованию обслуживаем также в других городах Нижней Саксонии и Северного Рейна — Вестфалии."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "От скольких гостей вы берёте заказ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы работаем от 20 гостей — от камерного дня рождения до свадьбы на 200+ человек."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит кейтеринг в Хамельне?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость рассчитывается индивидуально и зависит от количества гостей, меню, объёма сервиса, оборудования и расстояния. После согласования деталей вы получите прозрачное письменное предложение."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Организуете ли вы русские и смешанные свадьбы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Для русских и смешанных свадеб мы предлагаем буфеты с русскими и европейскими блюдами, приём гостей, поздние закуски, двуязычное обслуживание на русском и немецком языках, а также сопровождение мероприятия."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "За сколько нужно делать запрос?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Идеально: для свадеб и крупных корпоративов — за 2–6 месяцев, для небольших мероприятий (день рождения, фуршет) достаточно 2–4 недель. Срочные заказы по Хамельну и окрестностям — стараемся помочь, спрашивайте."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли вегетарианские, веганские и адаптированные варианты меню?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Вегетарианские и веганские варианты возможны по предварительному согласованию. Об аллергиях, непереносимостях и особых пожеланиях необходимо сообщить уже при запросе, чтобы мы могли проверить подходящие блюда и возможные изменения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Привозите ли вы посуду, бокалы и персонал?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. По запросу привозим полный комплект (тарелки, приборы, бокалы, текстиль, столы для фуршета, термобоксы) и предоставляем обученный персонал и бариста — всё под ключ."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <!-- Google Analytics — загружается только после согласия -->
   <script
