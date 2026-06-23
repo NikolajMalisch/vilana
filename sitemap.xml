@@ -7,7 +7,7 @@
   <!-- ============ DE ROOT ============ -->
   <url>
     <loc>https://www.vilana-event.de/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/" />
@@ -32,7 +32,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/menu.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/menu.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/menu.html" />
@@ -41,7 +41,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/galerie.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/galerie.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/galerie.html" />
@@ -50,7 +50,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/about.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/about.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/about.html" />
@@ -59,7 +59,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/event.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/event.html" />
@@ -87,7 +87,7 @@
   <!-- ============ ANLASS / DE ============ -->
   <url>
     <loc>https://www.vilana-event.de/anlass/hochzeit-catering.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/hochzeit-catering.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/hochzeit-catering.html" />
@@ -96,7 +96,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/anlass/geburtstag-catering.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/anlass/geburtstag-catering.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/anlass/geburtstag-catering.html" />
@@ -151,7 +151,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/ru/about.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/about.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/about.html" />
@@ -160,7 +160,7 @@
 
   <url>
     <loc>https://www.vilana-event.de/ru/event.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://www.vilana-event.de/event.html" />
     <xhtml:link rel="alternate" hreflang="ru-RU" href="https://www.vilana-event.de/ru/event.html" />
