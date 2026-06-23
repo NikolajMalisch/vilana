@@ -24,7 +24,7 @@
   // [DE] Schlüssel im Storage, Version der Einwilligung, Gültigkeit in Tagen.
   // [RU] Ключ в хранилище, версия согласия, срок действия в днях.
   var LS_KEY = 'vilana_cookie_consent';
-  var CONSENT_VERSION = '2025-09-02';
+  var CONSENT_VERSION = '2026-06-23';
   var VALID_DAYS = 180;
 
   // [DE] Sprachwahl aus <html lang="…">, Standard 'de'.
@@ -40,9 +40,10 @@
       text: 'Wir verwenden notwendige Cookies für den Betrieb dieser Seite. Optionale Dienste (z. B. Analytics, externe Medien) werden nur mit Ihrer Zustimmung geladen.',
       summary: 'Einstellungen',
       nec: 'Notwendig', necDesc: 'Erforderlich für Grundfunktionen (immer aktiv).',
-      func: 'Funktional', funcDesc: 'Externe Schriften, Karten u. ä.',
+      func: 'Funktional', funcDesc: 'Komfortfunktionen und technische Darstellungen ohne Marketingzweck.',
       ana: 'Analytics',  anaDesc: 'Anonyme Reichweitenmessung.',
       mkt: 'Marketing',  mktDesc: 'Instagram/YouTube-Einbindungen, Pixel.',
+      ext: 'Externe Medien', extDesc: 'Externe Inhalte wie Bewertungs-Widgets oder Karten werden erst nach Ihrer Einwilligung geladen.',
       btnEssential: 'Nur notwendige',
       btnSettings:  'Einstellungen',
       btnSave:      'Auswahl speichern',
@@ -58,6 +59,7 @@
       func: 'Функциональные', funcDesc: 'Внешние шрифты, карты и т.п.',
       ana: 'Аналитика',  anaDesc: 'Анонимная статистика.',
       mkt: 'Маркетинг',  mktDesc: 'Встраивания Instagram/YouTube, пиксели.',
+      ext: 'Внешние медиа', extDesc: 'Внешние элементы, например виджеты отзывов или карты, загружаются только после вашего согласия.',
       btnEssential: 'Только необходимые',
       btnSettings:  'Настройки',
       btnSave:      'Сохранить выбор',
@@ -150,18 +152,19 @@ function lockScroll(lock) {
       version:    CONSENT_VERSION,
       givenAt:    nowISO(),
       expiresAt:  addDays(new Date(), VALID_DAYS).toISOString(),
-      necessary:  true,
-      functional: !!consent.functional,
-      analytics:  !!consent.analytics,
-      marketing:  !!consent.marketing,
-      dnt:        !!consent.dnt
+      necessary:     true,
+      functional:    !!consent.functional,
+      analytics:     !!consent.analytics,
+      marketing:     !!consent.marketing,
+      externalMedia: !!consent.externalMedia,
+      dnt:           !!consent.dnt
     };
     safeSet(LS_KEY, record);
-    applyConsent(record);
-    // [DE] GA-Disable-Flag setzen; bei Widerruf GA-Cookies löschen.
-    // [RU] Устанавливаем флаг отключения GA; при отзыве — удаляем GA-cookies.
+    // [DE] GA-Disable-Flag VOR applyConsent setzen, damit Analytics nicht vor dem Flag lädt.
+    // [RU] Флаг GA-disable устанавливаем ДО applyConsent, чтобы Analytics не загрузился раньше.
     window['ga-disable-G-YW71FCW4FJ'] = !record.analytics;
     if (!record.analytics) { _deleteGaCookies(); }
+    applyConsent(record);
     // [DE] Event für Integrationen (z. B. GA/Tagging)
     // [RU] Событие для интеграций (например, GA/тегирование)
     window.dispatchEvent(new CustomEvent('vilana:consentChanged', { detail: { consent: record } }));
@@ -212,6 +215,67 @@ function lockScroll(lock) {
         ifr.setAttribute('src', ifr.getAttribute('data-cookie-src'));
       }
     });
+
+    // -- 4) Externe Medien-Widgets (data-external-widget) --
+    // [DE] Widget laden oder auf Fallback zurücksetzen je nach Einwilligung.
+    // [RU] Загружаем виджет или восстанавливаем fallback в зависимости от согласия.
+    if (consent.externalMedia === true) {
+      initExternalMediaWidgets();
+    } else {
+      restoreExternalMediaWidgets();
+    }
+  }
+
+  // ===================== Externe Medien / Внешние медиа ================
+  // [DE] Jotform-Reviews-Widget nach Einwilligung dynamisch in den Container laden.
+  // [RU] Динамически загружаем виджет Jotform Reviews после согласия.
+  function loadJotformReviewsWidget(container) {
+    var src = container.getAttribute('data-jotform-src');
+    if (!src) return; // Kein Embed-Src konfiguriert / Embed-Src не задан
+    var widgetId = container.getAttribute('data-jotform-widget-id');
+    container.innerHTML = '';
+    // [DE] Jotform erwartet ein Ziel-Div mit spezifischer ID, dann ein Script.
+    // [RU] Jotform ожидает целевой div с конкретным ID, затем скрипт.
+    if (widgetId) {
+      var widgetDiv = document.createElement('div');
+      widgetDiv.id = 'JFWebsiteWidget-' + widgetId;
+      container.appendChild(widgetDiv);
+    }
+    var script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    container.appendChild(script);
+  }
+
+  function loadExternalWidget(container) {
+    var widgetType = container.getAttribute('data-external-widget');
+    if (widgetType === 'jotform-reviews') {
+      loadJotformReviewsWidget(container);
+    }
+  }
+
+  // [DE] Alle Externe-Medien-Container laden, die noch nicht geladen wurden.
+  // [RU] Загружаем все контейнеры внешних медиа, которые ещё не загружены.
+  function initExternalMediaWidgets() {
+    document.querySelectorAll('[data-external-widget]:not([data-widget-loaded])').forEach(function (container) {
+      if (!container.getAttribute('data-original-html')) {
+        container.setAttribute('data-original-html', container.innerHTML);
+      }
+      container.setAttribute('data-widget-loaded', 'true');
+      loadExternalWidget(container);
+    });
+  }
+
+  // [DE] Alle geladenen Widgets auf Fallback zurücksetzen (z. B. nach Widerruf).
+  // [RU] Восстанавливаем fallback всех загруженных виджетов (напр. при отзыве согласия).
+  function restoreExternalMediaWidgets() {
+    document.querySelectorAll('[data-external-widget][data-widget-loaded]').forEach(function (container) {
+      var orig = container.getAttribute('data-original-html');
+      if (orig !== null) {
+        container.innerHTML = orig;
+        container.removeAttribute('data-widget-loaded');
+      }
+    });
   }
 
   // ===================== UI / Интерфейс ================================
@@ -244,6 +308,10 @@ function lockScroll(lock) {
     '            <label class="flex items-start gap-3">' +
     '              <input id="cw-marketing" type="checkbox" class="mt-1">' +
     '              <span class="text-sm"><span id="cw-cat-mkt" class="font-medium"></span><br><span id="cw-cat-mkt-desc" class="text-gray-600"></span></span>' +
+    '            </label>' +
+    '            <label class="flex items-start gap-3">' +
+    '              <input id="cw-externalMedia" type="checkbox" class="mt-1">' +
+    '              <span class="text-sm"><span id="cw-cat-ext" class="font-medium"></span><br><span id="cw-cat-ext-desc" class="text-gray-600"></span></span>' +
     '            </label>' +
     '          </div>' +
     '        </details>' +
@@ -290,6 +358,8 @@ function lockScroll(lock) {
     document.getElementById('cw-cat-ana-desc').textContent = I18N.anaDesc;
     document.getElementById('cw-cat-mkt').textContent = I18N.mkt;
     document.getElementById('cw-cat-mkt-desc').textContent = I18N.mktDesc;
+    document.getElementById('cw-cat-ext').textContent = I18N.ext;
+    document.getElementById('cw-cat-ext-desc').textContent = I18N.extDesc;
     document.getElementById('cw-essential').textContent = I18N.btnEssential;
     document.getElementById('cw-settings').textContent = I18N.btnSettings;
     document.getElementById('cw-save').textContent = I18N.btnSave;
@@ -317,9 +387,10 @@ function lockScroll(lock) {
     var btnSettings  = document.getElementById('cw-settings');
     var btnSave      = document.getElementById('cw-save');
     var btnAccept    = document.getElementById('cw-accept');
-    var cbFunctional = document.getElementById('cw-functional');
-    var cbAnalytics  = document.getElementById('cw-analytics');
-    var cbMarketing  = document.getElementById('cw-marketing');
+    var cbFunctional    = document.getElementById('cw-functional');
+    var cbAnalytics     = document.getElementById('cw-analytics');
+    var cbMarketing     = document.getElementById('cw-marketing');
+    var cbExternalMedia = document.getElementById('cw-externalMedia');
 
     // [DE] DNT: Wenn aktiv und keine Einwilligung vorhanden → nur necessary, ohne Banner.
     // [RU] DNT: если включён и согласия нет → только necessary, баннер не показываем.
@@ -330,30 +401,31 @@ function lockScroll(lock) {
     var needPrompt = !existing || existing.version !== CONSENT_VERSION || isExpired(existing);
 
     if (DNT && !existing) {
-      saveConsent({ functional:false, analytics:false, marketing:false, dnt:true });
+      saveConsent({ functional:false, analytics:false, marketing:false, externalMedia:false, dnt:true });
       // [DE] Kein Banner anzeigen / [RU] Баннер не показываем
     } else if (needPrompt) {
       openWall(wall);
     } else {
       // [DE] Checkboxen aus gespeicherter Auswahl setzen + Ressourcen anwenden
       // [RU] Устанавливаем чекбоксы по сохранённому выбору + применяем ресурсы
-      cbFunctional.checked = !!existing.functional;
-      cbAnalytics.checked  = !!existing.analytics;
-      cbMarketing.checked  = !!existing.marketing;
+      cbFunctional.checked    = !!existing.functional;
+      cbAnalytics.checked     = !!existing.analytics;
+      cbMarketing.checked     = !!existing.marketing;
+      cbExternalMedia.checked = !!existing.externalMedia;
       applyConsent(existing);
     }
 
     // ---------------- Aktionen / Действия ----------------
     // [DE] Nur notwendige / [RU] Только необходимые
     btnEssential.addEventListener('click', function () {
-      var consent = { functional:false, analytics:false, marketing:false };
+      var consent = { functional:false, analytics:false, marketing:false, externalMedia:false };
       saveConsent(consent);
       wall.classList.add('hidden'); lockScroll(false);
     });
 
     // [DE] Alle akzeptieren / [RU] Принять все
     btnAccept.addEventListener('click', function () {
-      var consent = { functional:true, analytics:true, marketing:true };
+      var consent = { functional:true, analytics:true, marketing:true, externalMedia:true };
       saveConsent(consent);
       wall.classList.add('hidden'); lockScroll(false);
     });
@@ -366,9 +438,10 @@ function lockScroll(lock) {
     // [DE] Auswahl speichern / [RU] Сохранить выбор
     btnSave.addEventListener('click', function () {
       var consent = {
-        functional: !!cbFunctional.checked,
-        analytics:  !!cbAnalytics.checked,
-        marketing:  !!cbMarketing.checked
+        functional:    !!cbFunctional.checked,
+        analytics:     !!cbAnalytics.checked,
+        marketing:     !!cbMarketing.checked,
+        externalMedia: !!cbExternalMedia.checked
       };
       saveConsent(consent);
       wall.classList.add('hidden'); lockScroll(false);
@@ -378,19 +451,37 @@ function lockScroll(lock) {
     if (reopenLink) {
       reopenLink.addEventListener('click', function (e) {
         e.preventDefault();
-        var c = loadConsent() || { necessary:true, functional:false, analytics:false, marketing:false };
-        cbFunctional.checked = !!c.functional;
-        cbAnalytics.checked  = !!c.analytics;
-        cbMarketing.checked  = !!c.marketing;
+        var c = loadConsent() || { necessary:true, functional:false, analytics:false, marketing:false, externalMedia:false };
+        cbFunctional.checked    = !!c.functional;
+        cbAnalytics.checked     = !!c.analytics;
+        cbMarketing.checked     = !!c.marketing;
+        cbExternalMedia.checked = !!c.externalMedia;
         openWall(wall);
       });
     }
 
+    // [DE] data-open-cookie-settings: Banner öffnen ohne direkt Jotform zu laden.
+    // [RU] data-open-cookie-settings: открывает баннер, не загружая Jotform напрямую.
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-open-cookie-settings]');
+      if (!btn) return;
+      e.preventDefault();
+      var c = loadConsent() || { necessary:true, functional:false, analytics:false, marketing:false, externalMedia:false };
+      cbFunctional.checked    = !!c.functional;
+      cbAnalytics.checked     = !!c.analytics;
+      cbMarketing.checked     = !!c.marketing;
+      cbExternalMedia.checked = !!c.externalMedia;
+      openWall(wall);
+    });
+
     // [DE] Öffentliche API / [RU] Публичный API
     window.VilanaCookie = {
-      open:  function () { openWall(wall); },
-      reset: function () { try{ localStorage.removeItem(LS_KEY); }catch(_){ __MEM=null; } openWall(wall); },
-      get:   loadConsent
+      open:                    function () { openWall(wall); },
+      reset:                   function () { try{ localStorage.removeItem(LS_KEY); }catch(_){ __MEM=null; } openWall(wall); },
+      get:                     loadConsent,
+      initExternalMedia:       initExternalMediaWidgets,
+      loadJotformReviews:      loadJotformReviewsWidget,
+      restoreExternalMedia:    restoreExternalMediaWidgets
     };
   });
 })();
