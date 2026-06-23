@@ -527,7 +527,7 @@ Abbau / Reinigung:                  ${optCleanupV}
     if (msgHidden)      msgHidden.value      = body;
 
     if (!window.emailjs?.sendForm) {
-      alert("EmailJS nicht geladen. Bitte Internet-Verbindung prüfen.");
+      alert("Bitte funktionale Cookies erlauben, um das Formular zu senden (Cookie-Einstellungen im Footer).");
       return;
     }
 

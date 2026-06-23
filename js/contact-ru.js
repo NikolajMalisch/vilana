@@ -513,7 +513,7 @@ ${selectedTxt}
     if (msgHidden)      msgHidden.value      = body;
 
     if (!window.emailjs?.sendForm) {
-      alert("EmailJS не загружен. Проверьте интернет / блокировщик.");
+      alert("Разрешите функциональные cookies для отправки формы (Настройки cookies в футере).");
       return;
     }
 
