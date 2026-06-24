@@ -11,7 +11,7 @@
   --f-gold:       #c9a96e;
   --f-text:       #e8e2d9;   /* основной текст — светлый */
   --f-text-muted: #b0a898;   /* второстепенный — виден, но тихий */
-  --f-text-dim:   #7a7068;   /* совсем приглушённый */
+  --f-text-dim:   #8f867c;   /* совсем приглушённый */
 }
 
 .footer-premium {
@@ -170,6 +170,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  min-height: 48px;
 }
 
 .footer-address a:hover { color: var(--f-gold); }
@@ -303,6 +304,12 @@
   letter-spacing: 2px;
   color: var(--f-text-muted); /* ← виден */
   text-transform: uppercase;
+}
+
+/* A11y: keyboard focus ring for burger menu (all pages) */
+#menuToggle:focus-visible {
+  outline: 2px solid #b45309;
+  outline-offset: 2px;
 }
 
 .footer-legal {
