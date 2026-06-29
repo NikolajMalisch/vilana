@@ -184,7 +184,7 @@ function lockScroll(lock) {
       var cat = node.getAttribute('data-cookie-category');
       if (cat && consent[cat] === true) {
         var nodeSrc = node.getAttribute('src') || '';
-        if (nodeSrc && document.querySelector('script[src="' + nodeSrc + '"]')) return;
+        if (nodeSrc && document.querySelector('script[src="' + nodeSrc + '"]:not([type="text/plain"])')) return;
         var s = document.createElement('script');
         for (var i = 0; i < node.attributes.length; i++) {
           var attr = node.attributes[i];
